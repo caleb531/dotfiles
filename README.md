@@ -17,9 +17,9 @@ I use [Homebrew](http://brew.sh/) as my package manager of choice. With it, I ca
 
 ### Autocompletion
 
-I use Bash Completion 1.3 for tab autocompletion on the command line. I do not use version 2.0 because it requires Bash 4.2, which I cannot use (the reasons for which are given above).
+I use Bash Completion 1.3 for tab autocompletion on the command line. I do not use version 2.0 because it requires Bash 4.2.
 
-I also use a third-party script called [bash dyncompletion](http://fahdshariff.blogspot.com/2011/09/speeding-up-bash-profile-load-time.html), which preloads completions to improve startup performance significantly.
+I also use a third-party script called [bash dyncompletion](http://fahdshariff.blogspot.com/2011/09/speeding-up-bash-profile-load-time.html), which preloads completions as needed to improve startup performance significantly.
 
 ### Color highlighting
 
@@ -30,11 +30,11 @@ My `.bash_profile ` enables color highlighting for a number of commands and inte
 * `less`
 * `ls`
 
-The setup also applies color highlighting to `vim` for editing a git commit message (generally when `git commit` without arguments is used).
+My setup also applies color highlighting when editing the message for a git commit or merge in Vim.
 
 ### Interactive prompt
 
-The interactive prompt (*i.e.* `PS1`) that I have set for my shell is intended to be concise, readable, and useful. The prompt only displays the name of the current working directory, followed by the name of the current branch (if the directory is a git repository). Spacing is also utilized to improve readability.
+The `PS1` interactive prompt which I have set for my shell is intended to be concise, readable, and useful. The prompt only displays the name of the current working directory, followed by the name of the current branch (if the directory is a git repository). Spacing is also utilized to improve readability.
 
 #### Examples
 
@@ -49,10 +49,10 @@ The interactive prompt (*i.e.* `PS1`) that I have set for my shell is intended t
 You can install Homebrew via Ruby:
 
 ```
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-The `.bash_profile` expects that your Homebrew cellar is located at `/usr/local/bin`.
+The `.bash_profile` expects that your Homebrew cellar is located at `/usr/local/bin`. Ensure that you have sufficient privileges to write to this directory.
 
 ### Install Bash Completion
 
@@ -64,7 +64,7 @@ Upon installing Bash Completion, you also need to run `dyncomp.sh`, which is inc
 
 ### Colorize `diff`
 
-In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to have a pretty diff output, install the `colordiff` package via Homebrew:
+In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to have enable color-coding for diff output, install the `colordiff` package via Homebrew:
 
 ```
 brew install colordiff
