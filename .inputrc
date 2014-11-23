@@ -1,0 +1,5 @@
+# Search history matching typed input using up and down arrow keys
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+set show-all-if-ambiguous on
+set completion-ignore-case on

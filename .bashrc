@@ -31,12 +31,12 @@ export HISTFILESIZE=250
 export HISTCONTROL=ignoredups:erasedups
 
 # Create aliases to long git commands for use in PS1
-alias _get_git_dir_name='git rev-parse --git-dir &> /dev/null'
-alias _get_current_git_branch='git rev-parse --abbrev-ref HEAD 2> /dev/null'
+alias _get_git_dir='git rev-parse --git-dir &> /dev/null'
+alias _get_git_branch='git rev-parse --abbrev-ref HEAD 2> /dev/null'
 
 # Set a succinct and useful interactive prompt
 # Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
-PS1='\W$( _get_git_dir_name && echo " : "$(_get_current_git_branch) ) : \$ '
+PS1='\W$( _get_git_dir && echo " ": $(_get_git_branch) ) : \$ '
 
 # If dynamic Bash completions exist
 if [ -f /usr/local/etc/bash_dyncompletion ]; then
@@ -51,7 +51,7 @@ ulimit -u 1024 2> /dev/null
 
 ## Aliases
 
-# Enable aliases to be run via sudo
+# Enable aliases to be run as root
 alias sudo='sudo '
 # Reloads shell
 alias reload='exec $SHELL -l'
