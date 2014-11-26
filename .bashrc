@@ -44,6 +44,11 @@ if [ -f /usr/local/etc/bash_dyncompletion ]; then
 	source /usr/local/etc/bash_dyncompletion
 fi
 
+# Update history file before presenting prompt
+PROMPT_COMMAND=$PROMPT_COMMAND'history -a;'
+
+## Limitations on system resources
+
 # Increase open files limit
 ulimit -n 1024 2> /dev/null
 # Increase available processes limit
@@ -72,4 +77,9 @@ alias fgrep='fgrep --color=auto'
 if type colordiff &> /dev/null; then
 	# Colorize diff output
 	alias diff='colordiff'
+fi
+# If tree package is installed
+if type tree &> /dev/null; then
+	# Colorize tree output
+	alias tree='tree -C'
 fi
