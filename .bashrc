@@ -24,9 +24,9 @@ export EDITOR='vim'
 # Set less as default text viewer
 export PAGER='less'
 # Number of lines of command history to keep in memory
-export HISTSIZE=100
+export HISTSIZE=250
 # Number of lines of command history to keep in file
-export HISTFILESIZE=250
+export HISTFILESIZE=500
 # Prevent duplicate entries in command history
 export HISTCONTROL=ignoredups:erasedups
 
@@ -45,7 +45,7 @@ if [ -f /usr/local/etc/bash_dyncompletion ]; then
 fi
 
 # Update history file before presenting prompt
-PROMPT_COMMAND=$PROMPT_COMMAND'history -a;'
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 ## Limitations on system resources
 
@@ -58,10 +58,8 @@ ulimit -u 1024 2> /dev/null
 
 # Enable aliases to be run as root
 alias sudo='sudo '
-# Reloads shell
-alias reload='exec $SHELL -l'
-# Outputs permissions for file/directory in octal format
-alias octmod='stat -f %Lp'
+# Reloads .bashrc and .inputrc
+alias reload='exec $SHELL -l; bind -f ~/.inputrc'
 # Colorize directory listings
 # LSCOLORS syntax: http://www.sbras.ru/cgi-bin/www/unix_help/unix-man?ls
 export LSCOLORS='excxfxbxhxexexhxhxexex'
