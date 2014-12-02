@@ -6,18 +6,18 @@
 "\e\e[D": backward-word
 
 # Use tab and shift-tab to cycle through completions
-TAB: menu-complete
-"\e[Z": "\e-1\C-i"
+# TAB: menu-complete
+# "\e[Z": "\e-1\C-i"
 
 # Navigate history matching typed input using up/down arrow keys
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
 # Show completions (w/ common prefix) upon pressing tab once
-set show-all-if-ambiguous on
+# set show-all-if-ambiguous on
 
 # Show completions (w/o common prefix) upon pressing tab once
-set show-all-if-unmodified on
+# set show-all-if-unmodified on
 
 # Do not ignore case when completing commands
 set completion-ignore-case off
