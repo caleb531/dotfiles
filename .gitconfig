@@ -1,0 +1,12 @@
+# User information
+[user]
+	name = Caleb Evans
+	email = calebevans.me@gmail.com
+
+# Store user credentials in OS X Keychain
+[credential]
+	helper = osxkeychain
+
+# Handy Git aliases
+[alias]
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
