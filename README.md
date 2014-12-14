@@ -1,40 +1,43 @@
 # dotfiles
-*Caleb Evans*
+*Copyright 2014, Caleb Evans*  
+*Released under the MIT license*
 
 ## Introduction
 
-My shell setup is optimized for efficiency and convenience, yet only to the degree that I actually use the shell.
+My OS X shell setup is optimized for efficiency and convenience.
 
 ## Features
 
 ### Shells
 
-I use Bash 3.2 as my preferred shell, mainly because this is the version of Bash which comes comes bundled with OS X.
+OS X ships with Bash 3.2, however I use Bash 4 as my shell of choice. Bash 4 offers support for Unicode literals, and the more-performant Bash Completion 2 requires Bash 4.2 or newer. These reasons are enough for me to use Bash 4 over the bundled v3.2 shell.
+
+#### Regarding zsh...
+
+I prefer Bash over zsh because I have never found need for any the features which supposedly make it the superior shell. Additionally, I find Bash easier to use and configure for casual use, and it remains the most popular of existing UNIX shells.
 
 ### Packages
 
-I use [Homebrew](http://brew.sh/) as my package manager of choice. With it, I can install most of the other packages required for my shell setup.
+I use [Homebrew](http://brew.sh/) as my preferred package manager, which enables me to install all other packages required for my shell setup.
 
-### Autocompletion
+### Completion
 
-I use Bash Completion 1.3 for tab autocompletion on the command line. I do not use version 2.0 because it requires Bash 4.2.
-
-I also use a third-party script called [bash dyncompletion](http://fahdshariff.blogspot.com/2011/09/speeding-up-bash-profile-load-time.html), which preloads completions as needed to improve startup performance significantly.
+I use Bash Completion 2.1 for tab autocompletion on the command line. Bash Completion 2 offers significant performance advantages over its predecessor (v1.3), making it the .
 
 ### Color highlighting
 
-My `.bash_profile ` enables color highlighting for a number of commands and interfaces. These include:
+My `.bash_profile` enables color highlighting for a number of commands and interfaces. These include:
 
 * `diff`
 * `grep`
 * `less`
 * `ls`
 
-My setup also applies color highlighting when editing the message for a git commit or merge in Vim.
+My setup also applies color highlighting when editing Git commit or merge in Vim.
 
 ### Interactive prompt
 
-The `PS1` interactive prompt which I have set for my shell is intended to be concise, readable, and useful. The prompt only displays the name of the current working directory, followed by the name of the current branch (if the directory is a git repository). Spacing is also utilized to improve readability.
+The `PS1` interactive prompt which I have set for my shell is intended to be concise, readable, and useful. The prompt displays the name of the current working directory, followed by the name of the current branch (if the directory is a git repository). Colons are used as separators, and spacing is utilized to improve readability.
 
 #### Examples
 
@@ -44,9 +47,17 @@ The `PS1` interactive prompt which I have set for my shell is intended to be con
 
 ## Setup
 
+### Create symlinks
+
+I recommend cloning this repository to the directory of your choice, and then creating symlinks to the necessary files within your home directory. These files include:
+
+* `.bash_profile`
+* `.bashrc`
+* `.inputrc`
+
 ### Install Homebrew
 
-You can install Homebrew via Ruby:
+You can install Homebrew using the following command:
 
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -54,13 +65,35 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 The `.bash_profile` expects that your Homebrew cellar is located at `/usr/local/bin`. Ensure that you have sufficient privileges to write to this directory.
 
-### Install Bash Completion
+### Install Bash 4
+
+To install and use Bash 4 as the default shell for OS X, proceed through the following steps:
+
+#### Install latest version of Bash 4
 
 ```
-brew install bash-completion
+brew install bash
 ```
 
-Upon installing Bash Completion, you also need to run `dyncomp.sh`, which is included in this repository for your convenience. This script only needs to be run once *and* whenever you add/update/remove completion definitions.
+#### Set Bash 4 as login shell
+
+```
+sudo chsh -s /usr/local/bin/bash $USER
+```
+
+### Install Bash Completion 2
+
+Note that Bash Completion 2 requires Bash 4.2 or newer.
+
+```
+brew install homebrew/versions/bash-completion2
+```
+
+Note that if you have Git installed prior to installing Bash Completion, Git may not automatically install its completions. If this is the case, reinstalling Git should add the completions.
+
+```
+brew reinstall git
+```
 
 ### Colorize `diff`
 

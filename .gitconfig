@@ -9,4 +9,5 @@
 
 # Handy Git aliases
 [alias]
+	# Display colored hierarchical log output
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all

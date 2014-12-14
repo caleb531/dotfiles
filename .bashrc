@@ -34,14 +34,18 @@ export HISTCONTROL=ignoredups:erasedups
 alias _get_git_dir='git rev-parse --git-dir &> /dev/null'
 alias _get_git_branch='git rev-parse --abbrev-ref HEAD 2> /dev/null'
 
-# Set a succinct and useful interactive prompt
-# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
-PS1='\W$( _get_git_dir && echo " ": $(_get_git_branch) ) : \$ '
+
+# If shell is not nested
+if [ $SHLVL == 1 ]; then
+	# Set a succinct and useful interactive prompt
+	# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
+	PS1='\W$( _get_git_dir && echo " ": $(_get_git_branch) ) : \$ '
+fi
 
 # If dynamic Bash completions exist
-if [ -f /usr/local/etc/bash_dyncompletion ]; then
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
 	# Load dynamic Bash completions
-	source /usr/local/etc/bash_dyncompletion
+	source /usr/local/share/bash-completion/bash_completion
 fi
 
 # Update history file before presenting prompt
