@@ -1,5 +1,5 @@
-""" .vimrc
-""" Caleb Evans
+" .vimrc
+" Caleb Evans
 
 " Enable syntax highlighting
 syntax enable

@@ -1,5 +1,5 @@
-### .inputrc
-### Caleb Evans
+# .inputrc
+# Caleb Evans
 
 # Use meta key with left/right arrow keys to navigate between words
 "\e\e[C": forward-word

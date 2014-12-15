@@ -1,5 +1,5 @@
-### .bashrc
-### Caleb Evans
+# .bashrc
+# Caleb Evans
 
 # If PATH does not begin with /usr/local/bin
 if [[ $PATH != /usr/local/bin* ]]; then
@@ -34,18 +34,19 @@ export HISTCONTROL=ignoredups:erasedups
 alias _get_git_dir='git rev-parse --git-dir &> /dev/null'
 alias _get_git_branch='git rev-parse --abbrev-ref HEAD 2> /dev/null'
 
-
-# If shell is not nested
+# If shell was not invoked by another shell
 if [ $SHLVL == 1 ]; then
+
 	# Set a succinct and useful interactive prompt
 	# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
 	PS1='\W$( _get_git_dir && echo " ": $(_get_git_branch) ) : \$ '
-fi
 
-# If dynamic Bash completions exist
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-	# Load dynamic Bash completions
-	source /usr/local/share/bash-completion/bash_completion
+	# If Bash Completion is installed
+	if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+		# Load Bash completions
+		source /usr/local/share/bash-completion/bash_completion
+	fi
+
 fi
 
 # Update history file before presenting prompt
@@ -62,24 +63,30 @@ ulimit -u 1024 2> /dev/null
 
 # Enable aliases to be run as root
 alias sudo='sudo '
+
 # Reloads .bashrc and .inputrc
 alias reload='exec $SHELL -l; bind -f ~/.inputrc'
+
 # Colorize directory listings
 # LSCOLORS syntax: http://www.sbras.ru/cgi-bin/www/unix_help/unix-man?ls
 export LSCOLORS='excxfxbxhxexexhxhxexex'
 alias ls='ls -G'
+
 # Colorize grep matches
 # GREP_COLOR syntax: http://www.termsys.demon.co.uk/vtansi.htm#colors
 export GREP_COLOR='04;32'
+
 # --color=auto does not colorize piped output
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
 # If colordiff package is installed
 if type colordiff &> /dev/null; then
 	# Colorize diff output
 	alias diff='colordiff'
 fi
+
 # If tree package is installed
 if type tree &> /dev/null; then
 	# Colorize tree output

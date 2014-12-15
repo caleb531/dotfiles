@@ -63,7 +63,7 @@ You can install Homebrew using the following command:
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-The `.bash_profile` expects that your Homebrew cellar is located at `/usr/local/bin`. Ensure that you have sufficient privileges to write to this directory.
+My `.bashrc` expects that your Homebrew cellar is located at `/usr/local/bin`.
 
 ### Install Bash 4
 

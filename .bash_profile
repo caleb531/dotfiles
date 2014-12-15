@@ -1,5 +1,5 @@
-### .bash_profile
-### Caleb Evans
+# .bash_profile
+# Caleb Evans
 
 # If .bashrc exists
 if [ -f ~/.bashrc ]; then

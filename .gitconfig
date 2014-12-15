@@ -1,3 +1,6 @@
+# .gitconfig
+# Caleb Evans
+
 # User information
 [user]
 	name = Caleb Evans
@@ -11,3 +14,8 @@
 [alias]
 	# Display colored hierarchical log output
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+# Core configuration
+[core]
+	# Use tab width of 4 spaces for git diff/show
+	pager = less -x1,5
