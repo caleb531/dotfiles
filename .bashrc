@@ -64,7 +64,7 @@ ulimit -u 1024 2> /dev/null
 # Enable aliases to be run as root
 alias sudo='sudo '
 
-# Reloads .bashrc and .inputrc
+# Reloads .bash_profile and .inputrc
 alias reload='exec $SHELL -l; bind -f ~/.inputrc'
 
 # Colorize directory listings

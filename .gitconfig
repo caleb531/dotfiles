@@ -4,7 +4,7 @@
 # User information
 [user]
 	name = Caleb Evans
-	email = calebevans.me@gmail.com
+	email = caleb@calebevans.me
 
 # Store user credentials in OS X Keychain
 [credential]
