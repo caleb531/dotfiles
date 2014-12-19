@@ -41,6 +41,11 @@ if [ $SHLVL == 1 ]; then
 	# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
 	PS1='\W$( _get_git_dir && echo " ": $(_get_git_branch) ) : \$ '
 
+fi
+
+# If shell is Bash 4 or newer
+if [ $BASH_VERSINFO -ge 4 ]; then
+
 	# If Bash Completion is installed
 	if [ -f /usr/local/share/bash-completion/bash_completion ]; then
 		# Load Bash completions

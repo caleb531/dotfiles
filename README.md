@@ -26,14 +26,14 @@ I use Bash Completion 2.1 for tab autocompletion on the command line. Bash Compl
 
 ### Color highlighting
 
-My `.bash_profile` enables color highlighting for a number of commands and interfaces. These include:
+My setup enables color highlighting for a number of commands and interfaces. These include:
 
 * `diff`
-* `grep`
+* `grep`, `egrep`, `fgrep`
 * `less`
 * `ls`
 
-My setup also applies color highlighting when editing Git commit or merge in Vim.
+My setup also applies color highlighting when editing Git commit or merge messages in Vim.
 
 ### Interactive prompt
 
