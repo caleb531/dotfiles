@@ -30,7 +30,7 @@ export HISTFILESIZE=500
 # Prevent duplicate entries in command history
 export HISTCONTROL=ignoredups:erasedups
 
-# Create aliases to long git commands for use in PS1
+# Create aliases to git commands used by custom PS1
 alias _get_git_dir='git rev-parse --git-dir &> /dev/null'
 alias _get_git_branch='git rev-parse --abbrev-ref HEAD 2> /dev/null'
 
@@ -48,7 +48,7 @@ if [ $BASH_VERSINFO -ge 4 ]; then
 
 	# If Bash Completion is installed
 	if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-		# Load Bash completions
+		# Load completions
 		source /usr/local/share/bash-completion/bash_completion
 	fi
 
@@ -74,7 +74,7 @@ alias reload='exec $SHELL -l; bind -f ~/.inputrc'
 
 # Colorize directory listings
 # LSCOLORS syntax: http://www.sbras.ru/cgi-bin/www/unix_help/unix-man?ls
-export LSCOLORS='excxfxbxhxexexhxhxexex'
+export LSCOLORS='excxfxbxxxexexxxxxexex'
 alias ls='ls -G'
 
 # Colorize grep matches
@@ -85,15 +85,3 @@ export GREP_COLOR='04;32'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-
-# If colordiff package is installed
-if type colordiff &> /dev/null; then
-	# Colorize diff output
-	alias diff='colordiff'
-fi
-
-# If tree package is installed
-if type tree &> /dev/null; then
-	# Colorize tree output
-	alias tree='tree -C'
-fi

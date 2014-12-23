@@ -1,7 +1,7 @@
 # .inputrc
 # Caleb Evans
 
-# Use meta key with left/right arrow keys to navigate between words
+# Use option-left and option-rightq to navigate between words
 "\e\e[C": forward-word
 "\e\e[D": backward-word
 
