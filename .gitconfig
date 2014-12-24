@@ -12,6 +12,8 @@
 
 # Core configuration
 [core]
+	# Do not ignore case for filenames
+	ignorecase = false
 	# Use tab width of 4 spaces for git diff/show
 	pager = less -x1,5
 
