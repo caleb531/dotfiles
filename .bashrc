@@ -60,9 +60,9 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 ## Limitations on system resources
 
 # Increase open files limit
-ulimit -n 1024 2> /dev/null
+ulimit -n 1024 &> /dev/null
 # Increase available processes limit
-ulimit -u 1024 2> /dev/null
+ulimit -u 1024 &> /dev/null
 
 ## Aliases
 
@@ -70,7 +70,7 @@ ulimit -u 1024 2> /dev/null
 alias sudo='sudo '
 
 # Reloads .bash_profile and .inputrc
-alias reload='exec $SHELL -l; bind -f ~/.inputrc'
+alias reload='exec $SHELL -l; bind -f ~/.inputrc &> /dev/null'
 
 # Colorize directory listings
 # LSCOLORS syntax: http://www.sbras.ru/cgi-bin/www/unix_help/unix-man?ls

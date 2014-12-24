@@ -102,3 +102,11 @@ In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed.
 ```
 brew install colordiff
 ```
+
+### Upgrade Vim (if on Ubuntu)
+
+As described in [this article](http://www.cyberciti.biz/faq/howto-install-full-vim-under-ubuntu-linux/), Ubuntu Linux ships with a minimal version of Vim, which does not support syntax highlighting. Therefore, to install the full version of Vim and thus enable syntax highlighting, run the following shell command:
+
+```
+sudo apt-get install vim
+```

@@ -1,7 +1,7 @@
 # .inputrc
 # Caleb Evans
 
-# Use option-left and option-rightq to navigate between words
+# Use meta key with left/right arrow keys to navigate between words
 "\e\e[C": forward-word
 "\e\e[D": backward-word
 
@@ -9,9 +9,9 @@
 # TAB: menu-complete
 # "\e[Z": "\e-1\C-i"
 
-# Navigate history matching typed input using up/down arrow keys
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+	# Navigate history matching typed input using up/down arrow keys
+	"\e[A": history-search-backward
+	"\e[B": history-search-forward
 
 # Show completions (w/ common prefix) upon pressing tab once
 # set show-all-if-ambiguous on
