@@ -22,7 +22,7 @@ I use [Homebrew](http://brew.sh/) as my preferred package manager, which enables
 
 ### Completion
 
-I use Bash Completion 2.1 for tab autocompletion on the command line. Bash Completion 2 offers significant performance advantages over its predecessor (v1.3), making it the .
+I use Bash Completion 2.1 for tab completion on the command line. Bash Completion 2 offers significant performance advantages over its predecessor (v1.3), making it the optimal choice for my completion needs.
 
 ### Color highlighting
 
@@ -45,11 +45,11 @@ The `PS1` interactive prompt which I have set for my shell is intended to be con
 * `my-dir : $`
 * `my-repo : master : $`
 
-## Setup
+## Setup Procedure
 
 ### Create symlinks
 
-I recommend cloning this repository to the directory of your choice, and then creating symlinks to the necessary files within your home directory. These files include:
+I recommend cloning this repository to the directory of your choice, preferrably using some cloud syncing service such as Dropbox. Then, you should create symlinks within your home directory pointing to the necessary files. These files include:
 
 * `.bash_profile`
 * `.bashrc`
@@ -97,15 +97,27 @@ brew reinstall git
 
 ### Colorize `diff`
 
-In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to have enable color-coding for diff output, install the `colordiff` package via Homebrew:
+In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to enable color-coding for diff output, install the `colordiff` package via Homebrew:
 
 ```
 brew install colordiff
 ```
 
+### Install GNU `grep`
+
+The GNU version of `grep` supports Perl regular expressions (PCRE) via the `-P` option. Installing the `grep` via Homebrew will enable this functionality.
+
+```
+brew install homebrew/dupes/grep --with-default-names
+```
+
 ### Upgrade Vim (if on Ubuntu)
 
-As described in [this article](http://www.cyberciti.biz/faq/howto-install-full-vim-under-ubuntu-linux/), Ubuntu Linux ships with a minimal version of Vim, which does not support syntax highlighting. Therefore, to install the full version of Vim and thus enable syntax highlighting, run the following shell command:
+As described in [this
+post](http://www.cyberciti.biz/faq/howto-install-full-vim-under-ubuntu-linux/),
+Ubuntu Linux ships with a minimal version of Vim, which does not support syntax
+highlighting. Therefore, to install the full version of Vim and thus enable
+syntax highlighting, run the following shell command:
 
 ```
 sudo apt-get install vim
