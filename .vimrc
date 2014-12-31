@@ -39,9 +39,12 @@ highlight gitcommitOnBranch ctermfg=LightGray
 highlight PreProc ctermfg=LightGray
 highlight gitcommitHeader ctermfg=LightGray
 
-" Git commit type (modified, untracked, etc.)
+" Git commit type (added, modified, etc.)
 highlight Type ctermfg=DarkGreen
 highlight gitcommitType ctermfg=DarkGreen
 
 " Git commit filename
 highlight gitcommitFile ctermfg=DarkGreen
+
+" Git commit arrow (for indicating renames and such)
+highlight gitcommitArrow ctermfg=DarkGreen

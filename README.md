@@ -4,17 +4,17 @@
 
 ## Introduction
 
-My OS X shell setup is optimized for efficiency and convenience.
+This repository describes and features not only my shell configuration files (*i.e.* dotfiles) but also my overall Terminal setup. Note that I am an avid OS X user, and so a number of these customizations and instructions are specific to OS X. However, many of these customizations can also be applied to other UNIX systems.
 
 ## Features
 
-### Shells
+### Bash 4
 
 OS X ships with Bash 3.2, however I use Bash 4 as my shell of choice. Bash 4 offers support for Unicode literals, and the more-performant Bash Completion 2 requires Bash 4.2 or newer. These reasons are enough for me to use Bash 4 over the bundled v3.2 shell.
 
-#### Regarding zsh...
+### Terminal theme
 
-I prefer Bash over zsh because I have never found need for any the features which supposedly make it the superior shell. Additionally, I find Bash easier to use and configure for casual use, and it remains the most popular of existing UNIX shells.
+I've included my preferred Terminal theme, a modified version of the [IR_Black theme](http://toddwerth.com/2011/07/21/the-original-ir_black-for-os-x-lion) which I call IR_Better. IR_Better features a few modest improvements over IR_Black, including an 80x20 window size and additional key bindings. While most of these changes are founded in my personal tastes, I have still chosen to include the theme (with screenshots) in this repository for your convenience.
 
 ### Packages
 
@@ -41,9 +41,9 @@ The `PS1` interactive prompt which I have set for my shell is intended to be con
 
 #### Examples
 
-* `~ : $`
-* `my-dir : $`
-* `my-repo : master : $`
+- `~ : $`
+- `my-dir : $`
+- `my-repo : master : $`
 
 ## Setup Procedure
 
@@ -51,9 +51,8 @@ The `PS1` interactive prompt which I have set for my shell is intended to be con
 
 I recommend cloning this repository to the directory of your choice, preferrably using some cloud syncing service such as Dropbox. Then, you should create symlinks within your home directory pointing to the necessary files. These files include:
 
-* `.bash_profile`
-* `.bashrc`
-* `.inputrc`
+- `.bash_profile`
+- `.bashrc`
 
 ### Install Homebrew
 
@@ -89,7 +88,7 @@ Note that Bash Completion 2 requires Bash 4.2 or newer.
 brew install homebrew/versions/bash-completion2
 ```
 
-Note that if you have Git installed prior to installing Bash Completion, Git may not automatically install its completions. If this is the case, reinstalling Git should add the completions.
+Note that if you installed Git prior to installing Bash Completion, Git may not automatically install its completions. If this is the case, reinstalling Git should add the completions:
 
 ```
 brew reinstall git
@@ -97,7 +96,7 @@ brew reinstall git
 
 ### Colorize `diff`
 
-In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to enable color-coding for diff output, install the `colordiff` package via Homebrew:
+In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to enable color-coding for `diff` output, install the `colordiff` package via Homebrew:
 
 ```
 brew install colordiff
@@ -109,16 +108,4 @@ The GNU version of `grep` supports Perl regular expressions (PCRE) via the `-P` 
 
 ```
 brew install homebrew/dupes/grep --with-default-names
-```
-
-### Upgrade Vim (if on Ubuntu)
-
-As described in [this
-post](http://www.cyberciti.biz/faq/howto-install-full-vim-under-ubuntu-linux/),
-Ubuntu Linux ships with a minimal version of Vim, which does not support syntax
-highlighting. Therefore, to install the full version of Vim and thus enable
-syntax highlighting, run the following shell command:
-
-```
-sudo apt-get install vim
 ```
