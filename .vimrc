@@ -45,3 +45,6 @@ highlight gitcommitType ctermfg=DarkGreen
 
 " Git commit filename
 highlight gitcommitFile ctermfg=DarkGreen
+
+" Git commit arrow (for indicating renames and such)
+highlight gitcommitArrow ctermfg=DarkGreen
