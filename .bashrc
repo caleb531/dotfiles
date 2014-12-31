@@ -30,6 +30,10 @@ export HISTFILESIZE=500
 # Prevent duplicate entries in command history
 export HISTCONTROL=ignoredups:erasedups
 
+# Navigate history matching typed input using up/down arrow keys
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
 # Create aliases to git commands used by custom PS1
 alias _get_git_dir='git rev-parse --git-dir &> /dev/null'
 alias _get_git_branch='git rev-parse --abbrev-ref HEAD 2> /dev/null'
