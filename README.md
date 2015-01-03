@@ -41,9 +41,9 @@ The `PS1` interactive prompt which I have set for my shell is intended to be con
 
 #### Examples
 
-- `~ : $`
-- `my-dir : $`
-- `my-repo : master : $`
+* `~ : $`
+* `my-dir : $`
+* `my-repo : master : $`
 
 ## Setup Procedure
 
@@ -51,8 +51,8 @@ The `PS1` interactive prompt which I have set for my shell is intended to be con
 
 I recommend cloning this repository to the directory of your choice, preferrably using some cloud syncing service such as Dropbox. Then, you should create symlinks within your home directory pointing to the necessary files. These files include:
 
-- `.bash_profile`
-- `.bashrc`
+* `.bash_profile`
+* `.vimrc`
 
 ### Install Homebrew
 
@@ -62,7 +62,7 @@ You can install Homebrew using the following command:
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-My `.bashrc` expects that your Homebrew cellar is located at `/usr/local/bin`.
+My `.bashrc` expects that your Homebrew cellar is located in `/usr/local/bin`. If you've already symlinked my `.bash_profile` to your home directory, then `/usr/local/bin` will already be at the front of your PATH.
 
 ### Install Bash 4
 
@@ -82,13 +82,13 @@ sudo chsh -s /usr/local/bin/bash $USER
 
 ### Install Bash Completion 2
 
-Note that Bash Completion 2 requires Bash 4.2 or newer.
+Recall that Bash Completion 2 requires Bash 4.2 or newer.
 
 ```
 brew install homebrew/versions/bash-completion2
 ```
 
-Note that if you installed Git prior to installing Bash Completion, Git may not automatically install its completions. If this is the case, reinstalling Git should add the completions:
+Note that if you installed Git prior to installing Bash Completion, Git may not automatically install its completions. If this is the case, reinstalling Git should add the completions.
 
 ```
 brew reinstall git
@@ -96,7 +96,7 @@ brew reinstall git
 
 ### Colorize `diff`
 
-In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to enable color-coding for `diff` output, install the `colordiff` package via Homebrew:
+In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to enable color highlighting for `diff` output, install the `colordiff` package via Homebrew:
 
 ```
 brew install colordiff
@@ -109,3 +109,21 @@ The GNU version of `grep` supports Perl regular expressions (PCRE) via the `-P` 
 ```
 brew install homebrew/dupes/grep --with-default-names
 ```
+
+### Install `tree`
+
+The `tree` command is useful for quickly listing the full hierarchy of a directory. You can also install it via Homebrew:
+
+```
+brew install tree
+```
+
+### Install GNU `ls`
+
+My `.bash_profile` uses the GNU flavor of `ls`, which supports colorizing `ls` output in a manner consistent with `grep` and `tree`. Installing it requires installing the `coreutils` package via Homebrew:
+
+```
+brew install coreutils
+``
+
+Also note that `/usr/local/opt/coreutils/libexec/gnubin` needs to exist on your PATH (before `/bin`, of course). Fortunately, my `.bash_profile` already does so for your convenience.

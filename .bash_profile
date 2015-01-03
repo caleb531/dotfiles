@@ -1,10 +1,13 @@
 # .bash_profile
 # Caleb Evans
 
-# If PATH does not begin with /usr/local/bin
+# Ensure installed packages are preferred over system packages
 if [[ $PATH != /usr/local/bin* ]]; then
-	# Prefer Homebrew packages over system packages
 	export PATH=/usr/local/bin:$PATH
+fi
+if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
+	export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+	export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 fi
 
 # Colorize less
@@ -77,9 +80,7 @@ alias sudo='sudo '
 alias reload='exec $SHELL -l'
 
 # Colorize directory listings
-# LSCOLORS syntax: http://www.sbras.ru/cgi-bin/www/unix_help/unix-man?ls
-export LSCOLORS='excxfxbxxxexexxxxxexex'
-alias ls='ls -G'
+alias ls='ls --color=auto'
 
 # Colorize grep matches
 # GREP_COLOR syntax: http://www.termsys.demon.co.uk/vtansi.htm#colors
@@ -89,3 +90,9 @@ export GREP_COLOR='04;32'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+# If tree package is installed
+if type tree &> /dev/null; then
+	# Colorize tree output
+	alias tree='tree -C'
+fi
