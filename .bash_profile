@@ -32,6 +32,8 @@ export HISTSIZE=250
 export HISTFILESIZE=500
 # Prevent duplicate entries in command history
 export HISTCONTROL=ignoredups:erasedups
+# Prevent Python from generating bytecode files
+export PYTHONDONTWRITEBYTECODE=1
 
 # Navigate history matching typed input using up/down arrow keys
 bind '"\e[A": history-search-backward'
@@ -40,13 +42,38 @@ bind '"\e[B": history-search-forward'
 # If shell was not invoked by another shell
 if [ $SHLVL == 1 ]; then
 
-	# Create aliases to git commands used by custom PS1
-	alias _get_git_dir='git rev-parse --git-dir &> /dev/null'
-	alias _get_git_branch='git rev-parse --abbrev-ref HEAD 2> /dev/null'
-
-	# Set a succinct and useful interactive prompt
+	# Outputs a succinct and useful interactive prompt
 	# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
-	PS1='\W$( _get_git_dir && echo " ": $(_get_git_branch) ) : \$ '
+	output_ps1() {
+		# Output color variables
+		local color_green="\[\e[1;32m\]"
+		local color_reset='\[\e[0m\]'
+		echo -en "$color_green"
+		# Output name of current working directory (with ~ denoting HOME)
+		echo -n '\W'
+		echo -en "$color_reset"
+		echo -n ' : '
+		# If PWD is a git repository (or if resides in one)
+		if git rev-parse --git-dir &> /dev/null; then
+			echo -en "$color_green"
+			# Output name of current branch
+			echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+			echo -en "$color_reset"
+			echo -n " : "
+		fi
+		echo -en "$color_green"
+		echo -n '$'
+		echo -en "$color_reset"
+		echo -n ' '
+	}
+
+	update_prompt_command() {
+		history -a
+		update_terminal_cwd
+		# Update PS1 variable for each new command
+		PS1="$(output_ps1)"
+	}
+	PROMPT_COMMAND="update_prompt_command;"
 
 fi
 
@@ -60,9 +87,6 @@ if [ $BASH_VERSINFO -ge 4 ]; then
 	fi
 
 fi
-
-# Update history file before presenting next prompt
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 ## Limitations on system resources
 
