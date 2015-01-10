@@ -51,8 +51,8 @@ The `PS1` interactive prompt which I have set for my shell is intended to be con
 
 I recommend cloning this repository to the directory of your choice, preferrably using some cloud syncing service such as Dropbox. Then, you should create symlinks within your home directory pointing to the necessary files. These files include:
 
-* `.bash_profile`
-* `.vimrc`
+* `bash_profile`
+* `vimrc`
 
 ### Install Homebrew
 
@@ -62,7 +62,7 @@ You can install Homebrew using the following command:
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-My `.bashrc` expects that your Homebrew cellar is located in `/usr/local/bin`. If you've already symlinked my `.bash_profile` to your home directory, then `/usr/local/bin` will already be at the front of your PATH.
+My `bash_profile` expects that your Homebrew cellar is located in `/usr/local/bin`. If you've already symlinked my `bash_profile` to your home directory, then `/usr/local/bin` will already be at the front of your PATH.
 
 ### Install Bash 4
 
@@ -96,7 +96,7 @@ brew reinstall git
 
 ### Colorize `diff`
 
-In my `.bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to enable color highlighting for `diff` output, install the `colordiff` package via Homebrew:
+In my `bash_profile`, I alias `diff` to `colordiff` if the latter is installed. Therefore, if you desire to enable color highlighting for `diff` output, install the `colordiff` package via Homebrew:
 
 ```
 brew install colordiff
@@ -120,10 +120,10 @@ brew install tree
 
 ### Install GNU `ls`
 
-My `.bash_profile` uses the GNU flavor of `ls`, which supports colorizing `ls` output in a manner consistent with `grep` and `tree`. Installing it requires installing the `coreutils` package via Homebrew:
+My `bash_profile` uses the GNU flavor of `ls`, which supports colorizing `ls` output in a manner consistent with `grep` and `tree`. Installing it requires installing the `coreutils` package via Homebrew:
 
 ```
 brew install coreutils
 ``
 
-Also note that `/usr/local/opt/coreutils/libexec/gnubin` needs to exist on your PATH (before `/bin`, of course). Fortunately, my `.bash_profile` already does so for your convenience.
+Also note that `/usr/local/opt/coreutils/libexec/gnubin` needs to exist on your PATH (before `/bin`, of course). Fortunately, my `bash_profile` already does so for your convenience.

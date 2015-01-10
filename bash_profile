@@ -46,25 +46,20 @@ if [ $SHLVL == 1 ]; then
 	# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
 	output_ps1() {
 		# Output color variables
-		local color_green="\[\e[1;32m\]"
+		local color_green='\[\e[1;32m\]'
+		local color_white='\[\e[1;37m\]'
 		local color_reset='\[\e[0m\]'
-		echo -en "$color_green"
 		# Output name of current working directory (with ~ denoting HOME)
-		echo -n '\W'
-		echo -en "$color_reset"
-		echo -n ' : '
+		echo -n "${color_green}\W${color_white} : "
 		# If PWD is a git repository (or if resides in one)
 		if git rev-parse --git-dir &> /dev/null; then
-			echo -en "$color_green"
+			echo -n "${color_green}"
 			# Output name of current branch
 			echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-			echo -en "$color_reset"
-			echo -n " : "
+			echo -n "${color_white} : "
 		fi
-		echo -en "$color_green"
-		echo -n '$'
-		echo -en "$color_reset"
-		echo -n ' '
+		# Output $ for user and # for root
+		echo -n "${color_green}\$${color_reset} "
 	}
 
 	update_prompt_command() {
@@ -91,9 +86,9 @@ fi
 ## Limitations on system resources
 
 # Increase open files limit
-ulimit -n 1024 &> /dev/null
+ulimit -n 1024 2> /dev/null
 # Increase available processes limit
-ulimit -u 1024 &> /dev/null
+ulimit -u 1024 2> /dev/null
 
 ## Aliases
 
