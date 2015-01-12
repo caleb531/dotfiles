@@ -40,11 +40,17 @@ highlight PreProc ctermfg=LightGray
 highlight gitcommitHeader ctermfg=LightGray
 
 " Git commit type (added, modified, etc.)
-highlight Type ctermfg=DarkGreen
-highlight gitcommitType ctermfg=DarkGreen
+highlight Type ctermfg=DarkRed
+highlight gitcommitType ctermfg=DarkRed
+" Git commit type (staged files)
+highlight gitcommitSelectedType ctermfg=DarkGreen
 
 " Git commit filename
-highlight gitcommitFile ctermfg=DarkGreen
+highlight gitcommitFile ctermfg=DarkRed
+" Git commit filename (staged files)
+highlight gitcommitSelectedFile ctermfg=DarkGreen
 
 " Git commit arrow (for indicating renames and such)
-highlight gitcommitArrow ctermfg=DarkGreen
+highlight gitcommitArrow ctermfg=DarkRed
+" Git commit arrow (staged files)
+highlight gitcommitSelectedArrow ctermfg=DarkGreen
