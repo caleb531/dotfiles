@@ -36,42 +36,37 @@ export HISTCONTROL=ignoredups:erasedups
 export PYTHONDONTWRITEBYTECODE=1
 
 # Navigate history matching typed input using up/down arrow keys
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+bind '"\e[A": history-search-backward' 2> /dev/null
+bind '"\e[B": history-search-forward' 2> /dev/null
 
-# If shell was not invoked by another shell
-if [ $SHLVL == 1 ]; then
+# Outputs a succinct and useful interactive prompt
+# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
+_output_ps1() {
+	# Output color variables
+	local color_blue='\[\e[1;34m\]'
+	local color_white='\[\e[1;37m\]'
+	local color_reset='\[\e[0m\]'
+	# Output name of current working dir (with ~ denoting HOME)
+	echo -n "${color_blue}\W${color_white} : "
+	# If working directory is a git repository (or if resides in one)
+	if git rev-parse --git-dir &> /dev/null; then
+		echo -n "${color_blue}"
+		# Output name of current branch
+		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+		echo -n "${color_white} : "
+	fi
+	# Output $ for user and # for root
+	echo -n "${color_blue}\$ ${color_reset}"
+}
 
-	# Outputs a succinct and useful interactive prompt
-	# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
-	output_ps1() {
-		# Output color variables
-		local color_blue='\[\e[1;34m\]'
-		local color_white='\[\e[1;37m\]'
-		local color_reset='\[\e[0m\]'
-		# Output name of current working dir (with ~ denoting HOME)
-		echo -n "${color_blue}\W${color_white} : "
-		# If working directory is a git repository (or if resides in one)
-		if git rev-parse --git-dir &> /dev/null; then
-			echo -n "${color_blue}"
-			# Output name of current branch
-			echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-			echo -n "${color_white} : "
-		fi
-		# Output $ for user and # for root
-		echo -n "${color_blue}\$ ${color_reset}"
-	}
-
-	# Run the following for each new command
-	update_prompt_command() {
-		# Update PS1 variable
-		PS1="$(output_ps1)"
-		# Write in-memory command history to file
-		history -a
-	}
-	PROMPT_COMMAND="update_prompt_command"
-
-fi
+# Run the following for each new command
+_update_prompt_command() {
+	# Update PS1 variable
+	PS1="$(_output_ps1)"
+	# Write in-memory command history to file
+	history -a
+}
+PROMPT_COMMAND="_update_prompt_command"
 
 # If shell is Bash 4 or newer
 if [ $BASH_VERSINFO -ge 4 ]; then
@@ -96,7 +91,7 @@ ulimit -u 1024 2> /dev/null
 # Enable aliases to be run as root
 alias sudo='sudo '
 
-# Reloads .bash_profile and .inputrc
+# Reloads .bash_profile
 alias reload='exec $SHELL -l'
 
 # Colorize directory listings

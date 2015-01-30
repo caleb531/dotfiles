@@ -120,10 +120,10 @@ brew install tree
 
 ### Install GNU `ls`
 
-My `bash_profile` uses the GNU flavor of `ls`, which supports colorizing `ls` output in a manner consistent with `grep` and `tree`. Installing it requires installing the `coreutils` package via Homebrew:
+My `bash_profile` uses the GNU flavor of `ls`, which supports colorizing `ls` output in a manner consistent with `grep` and `tree` (using the `--color` option). Installing it requires installing the `coreutils` package via Homebrew:
 
 ```
 brew install coreutils
-``
+```
 
 Also note that `/usr/local/opt/coreutils/libexec/gnubin` needs to exist on your PATH (before `/bin`, of course). Fortunately, my `bash_profile` already does so for your convenience.
