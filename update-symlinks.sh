@@ -5,6 +5,6 @@
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 # Force create symlinks
-ln -sf "$(pwd)/.bash_profile" ~
-ln -sf "$(pwd)/.vimrc" ~
-ln -sf "$(pwd)/.gitconfig" ~
+ln -sf "$PWD/.bash_profile" ~
+ln -sf "$PWD/.vimrc" ~
+ln -sf "$PWD/.gitconfig" ~
