@@ -52,9 +52,6 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 echo "- Disable Finder status bar"
 defaults write com.apple.finder ShowStatusBar -bool false
 
-echo "- Show all extensions"
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
 echo "- Search the current folder by default"
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
