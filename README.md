@@ -65,6 +65,10 @@ improve readability.
 * `my-dir : $`
 * `my-repo : master : $`
 
+## Configuration scripts
+
+For configuring fresh OS X installs, I have also created a serious of scripts which automatically configures the shell and sets my preferred OS X preferences, among other tasks. You can run these scripts altogether using `config-all.sh`, or individually by executing the respective script.
+
 ## Setup Procedure
 
 ### Create symlinks
