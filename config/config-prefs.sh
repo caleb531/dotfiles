@@ -2,14 +2,14 @@
 
 echo "Configuring global OS X preferences..."
 
-echo "- Disable window animations..."
+echo "- Disable window animations"
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 
-echo "- Prevent apps from saving new documents to iCloud..."
+echo "- Prevent apps from saving new documents to iCloud"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-echo "- Disable screenshot shadows..."
+echo "- Disable screenshot shadows"
 defaults write com.apple.screencapture disable-shadow -bool true
 killall SystemUIServer
 
@@ -21,13 +21,16 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 echo "- Automatically quit printer app when print jobs complete"
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true
+
+echo "- Disable auto-correct"
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 echo "- Disable smart quotes/dashes"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-echo "- Disable Lion-style natural scrolling"
+echo "- Disable \"natural\" scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 echo "- Require password 5 minutes after sleep"
@@ -41,19 +44,18 @@ echo "Configuring Finder preferences..."
 
 echo "- Set Home folder as default location for new windows"
 defaults write com.apple.finder NewWindowTarget 'PfHm'
-defaults write com.apple.finder NewWindowTargetPath 'file:///Users/Caleb/'
 
-echo "- Enable display of hidden files..."
+echo "- Enable display of hidden files"
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-echo "- Enable text selection in Quick Look..."
+echo "- Enable text selection in Quick Look"
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
 echo "- Disable Finder status bar"
 defaults write com.apple.finder ShowStatusBar -bool false
 
 echo "- Search the current folder by default"
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+defaults write com.apple.finder FXDefaultSearchScope -string 'SCcf'
 
 echo "- Disable warning upon changing file extensions"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -66,6 +68,9 @@ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
+echo "- Set column view as preferred Finder view"
+defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'
 
 echo "- Restarting Finder..."
 killall Finder
@@ -98,7 +103,7 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
-echo "- Preven Time Machine from asking to use new drives as backup volumes"
+echo "- Prevent Time Machine from asking to use new drives as backup volumes"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 echo "- Disable automatic emoji substitution in Messages"
