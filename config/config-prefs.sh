@@ -30,6 +30,9 @@ echo "- Disable smart quotes/dashes"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+echo "- Display key press-and-hold in favor of key repeat"
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
 echo "- Disable \"natural\" scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
