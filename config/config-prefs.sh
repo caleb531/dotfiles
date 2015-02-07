@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 echo "Configuring global OS X preferences..."
 
@@ -11,10 +11,12 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 echo "- Disable screenshot shadows"
 defaults write com.apple.screencapture disable-shadow -bool true
-killall SystemUIServer
 
 echo "- Only show scroll bars when scrolling"
 defaults write NSGlobalDomain AppleShowScrollBars -string 'WhenScrolling'
+
+echo "- Disable \"natural\" scrolling"
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 echo "- Expand save/print panels by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -33,9 +35,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 echo "- Display key press-and-hold in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-echo "- Disable \"natural\" scrolling"
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
 echo "- Require password 5 minutes after sleep"
 defaults write com.apple.screensaver askForPassword -bool true
 defaults write com.apple.screensaver askForPasswordDelay -int 300
@@ -45,7 +44,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 echo "Configuring Finder preferences..."
 
-echo "- Set Home folder as default location for new windows"
+echo "- Set home folder as default location for new windows"
 defaults write com.apple.finder NewWindowTarget 'PfHm'
 
 echo "- Enable display of hidden files"
@@ -75,9 +74,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 echo "- Set column view as preferred Finder view"
 defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'
 
-echo "- Restarting Finder..."
-killall Finder
-
 echo "Configuring Dock preferences..."
 
 echo "- Minimize windows using scale effect"
@@ -96,9 +92,6 @@ echo "- Set bottom right hot corner to show/hide desktop"
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
 
-echo "- Restart Dock"
-killall Dock
-
 echo "Configuring miscellaneous preferences..."
 
 echo "- Enable Safari Develop menu and Web Inspector"
@@ -114,3 +107,6 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 echo "- Make Help Viewer windows non-floating"
 defaults write com.apple.helpviewer DevMode -bool true
+
+echo "- Restarting necessary processes..."
+killall Dock Finder SystemUIServer
