@@ -65,6 +65,8 @@ _update_prompt_command() {
 	PS1="$(_output_ps1)"
 	# Write in-memory command history to file
 	history -a
+	# Ensure that current working directory is updated as needed
+	update_terminal_cwd
 }
 PROMPT_COMMAND="_update_prompt_command"
 
