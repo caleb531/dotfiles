@@ -49,7 +49,8 @@ These include:
 * `less`
 * `ls`
 
-My setup also applies color highlighting when editing Git commit or merge messages in Vim.
+My setup also applies color highlighting when editing Git commit or merge
+messages in Vim.
 
 ### Interactive prompt
 
@@ -67,7 +68,10 @@ improve readability.
 
 ## Configuration scripts
 
-For configuring fresh OS X installs, I have also created a serious of scripts which automatically configures the shell and sets my preferred OS X preferences, among other tasks. You can run these scripts altogether using `config-all.sh`, or individually by executing the respective script.
+For configuring fresh OS X installs, I have also created a serious of scripts
+which automatically configures the shell and sets my preferred OS X preferences,
+among other tasks. You can run these scripts altogether using `config-all.sh`,
+or individually by executing the respective script.
 
 ## Setup Procedure
 
@@ -95,7 +99,8 @@ directory, then `/usr/local/bin` will already be at the front of your PATH.
 
 ### Install Bash 4
 
-To install and use Bash 4 as the default shell for OS X, proceed through the following steps:
+To install and use Bash 4 as the default shell for OS X, proceed through the
+following steps:
 
 #### Install latest version of Bash 4
 
