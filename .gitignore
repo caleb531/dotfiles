@@ -1,1 +1,13 @@
+# OS-generated files
 .DS_Store
+
+# Atom configuration and package-related directories
+atom/.apm
+atom/.node-gyp
+atom/.npm
+atom/build
+atom/compile-cache
+atom/config.cson
+atom/dev
+atom/packages
+atom/storage

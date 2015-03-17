@@ -1,0 +1,111 @@
+# Your keymap
+#
+# Atom keymaps work similarly to stylesheets. Just as stylesheets use selectors
+# to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * https://atom.io/docs/latest/customizing-atom#customizing-key-bindings
+# * https://atom.io/docs/latest/advanced/keymaps
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it here:
+# https://github.com/bevry/cson#what-is-cson
+
+'.platform-darwin':
+
+  # Unset old key binding for "Go to Line" panel (preferred keybinding below)
+
+  'ctrl-g': 'unset!'
+
+'.platform-darwin .editor:not([mini])':
+
+  'alt-cmd-r': 'autoflow:reflow-selection'
+
+  'ctrl-shift-L': 'unset!'
+
+  'shift-cmd-L': 'grammar-selector:show'
+
+  'shift-cmd-I': 'window:toggle-invisibles'
+
+  'alt-shift-cmd-I': 'editor:toggle-indent-guide'
+
+  'shift-cmd-R': 'script:run'
+
+  'alt-shift-cmd-R': 'script:run-options'
+
+  'cmd-j': 'go-to-line:toggle'
+
+  'ctrl-shift-U': 'unset!'
+
+  'shift-cmd-U': 'encoding-selector:show'
+
+  'ctrl-shift-K': 'unset!'
+
+  'shift-cmd-X': 'editor:delete-line'
+
+  'alt-cmd-d': 'find-and-replace:select-all'
+
+'atom-text-editor':
+
+  'ctrl-{': 'unset!'
+
+  'ctrl-}': 'unset!'
+
+  'cmd-{': 'resize-indent:halve'
+
+  'cmd-}': 'resize-indent:double'
+
+  'ctrl-alt-cmd-]': 'whitespace:convert-spaces-to-tabs'
+
+  'ctrl-alt-cmd-[': 'whitespace:convert-tabs-to-spaces'
+
+  'alt-b': 'unset!'
+
+  'alt-shift-B': 'unset!'
+
+  'alt-d': 'unset!'
+
+  'alt-f': 'unset!'
+
+  'alt-shift-F': 'unset!'
+
+  'alt-h': 'unset!'
+
+'atom-text-editor:not([mini])':
+
+  'alt-shift-S': 'unset!'
+
+  'ctrl-cmd-s': 'snippets:available'
+
+'.platform-darwin atom-workspace':
+
+  'ctrl-shift-O': 'unset!'
+
+  'shift-cmd-O': 'link:open'
+
+'atom-workspace, atom-workspace atom-text-editor':
+
+  'ctrl-shift-M': 'unset!'
+
+  'shift-cmd-M': 'markdown-preview:toggle'
+
+'atom-text-editor[data-grammar~="php"]:not([mini])':
+
+  'tab': 'emmet:expand-abbreviation-with-tab'
+
+'.platform-darwin atom-text-editor[data-grammar~="scss"]:not([mini])':
+
+  'cmd-/': 'unset!'

@@ -1,0 +1,10 @@
+{
+  "php": {
+    "filters": "html",
+    "profile": "html",
+    "snippets": {
+      "php": "<?php ${code} ?>",
+      "phpb": "<?php\n\t${code}\n?>"
+    }
+  }
+}
