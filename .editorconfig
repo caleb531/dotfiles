@@ -12,6 +12,6 @@ indent_style = tab
 [*.md]
 trim_trailing_whitespace = false
 
-[atom/*]
+[{*.json,*.cson,*.coffee,*.less}]
 indent_style = space
 indent_size = 2
