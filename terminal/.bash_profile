@@ -34,6 +34,8 @@ export HISTFILESIZE=500
 export HISTCONTROL=ignoredups:erasedups
 # Prevent Python from generating bytecode files
 export PYTHONDONTWRITEBYTECODE=1
+# Use /Applications for apps installed with Homebrew Cask
+export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
 # Navigate history matching typed input using up/down arrow keys
 bind '"\e[A": history-search-backward' 2> /dev/null
