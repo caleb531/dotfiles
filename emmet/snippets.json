@@ -1,5 +1,6 @@
 {
   "php": {
+    "extends": "html",
     "filters": "html",
     "profile": "html",
     "snippets": {
