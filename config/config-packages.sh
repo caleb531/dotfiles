@@ -9,15 +9,15 @@ is_installed() {
 }
 
 is_pkg_installed() {
-	brew ls --versions "$1" &> /dev/null
+	brew ls -1 | grep -q "^$1\$"
 }
 
 is_app_installed() {
-	brew cask ls "$1" &> /dev/null
+	brew cask ls -1 | grep -q "^$1\$"
 }
 
 is_tapped() {
-	brew tap | grep "homebrew/versions" &> /dev/null
+	brew tap | grep "$1" &> /dev/null
 }
 
 install_pkg() {
@@ -95,8 +95,10 @@ if is_installed brew; then
 		install_app joinme
 		install_app flux
 		# Install additional (though not nearly as essential) OS X apps
+		install_app appcleaner
 		install_app namechanger
 		install_app codekit
+		install_app forklift
 		install_app mamp
 
 	fi
