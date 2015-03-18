@@ -1,9 +1,18 @@
 /*
  * Your Stylesheet
- *
- * This stylesheet is loaded when Atom starts up and is reloaded automatically
- * when it is changed.
- *
- * If you are unfamiliar with LESS, you can read more about it here:
- * http://www.lesscss.org
  */
+
+@import "ui-variables";
+
+// Increase prominence of left-hand gutter
+atom-text-editor::shadow {
+  .gutter {
+    border-right: solid 1px @base-border-color;
+    background-color: @base-background-color;
+  }
+}
+
+// Increase prominence of status bar
+status-bar {
+  background-color: @base-background-color;
+}
