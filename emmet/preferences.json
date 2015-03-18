@@ -9,14 +9,27 @@
     "zoom"
   ],
   "format.forceIndentationForTags": [
+    "address",
+    "aside",
     "body",
     "dl",
+    "fielset",
+    "figure",
+    "footer",
     "form",
     "head",
+    "header",
+    "hr",
     "html",
     "main",
+    "nav",
+    "noscript",
     "ol",
     "section",
+    "table",
+    "tfoot",
+    "thead",
+    "tr",
     "ul"
   ],
   "format.noIndentTags": []
