@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Configuring global OS X preferences..."
+echo "Setting global OS X preferences..."
 
 echo "- Disable window animations"
 defaults write com.apple.Mail DisableReplyAnimations -bool true
@@ -42,7 +42,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 300
 echo "- Disable .DS_Store creation on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-echo "Configuring Finder preferences..."
+echo "Setting Finder preferences..."
 
 echo "- Set home folder as default location for new windows"
 defaults write com.apple.finder NewWindowTarget 'PfHm'
@@ -74,7 +74,7 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 echo "- Set column view as preferred Finder view"
 defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'
 
-echo "Configuring Dock preferences..."
+echo "Setting Dock preferences..."
 
 echo "- Minimize windows using scale effect"
 defaults write com.apple.dock mineffect -string "scale"
@@ -92,7 +92,7 @@ echo "- Set bottom right hot corner to show/hide desktop"
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
 
-echo "Configuring miscellaneous preferences..."
+echo "Setting miscellaneous preferences..."
 
 echo "- Enable Safari Develop menu and Web Inspector"
 defaults write com.apple.Safari IncludeDevelopMenu -bool true

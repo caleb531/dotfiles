@@ -2,12 +2,19 @@
 # Caleb Evans
 
 # Ensure installed packages are preferred over system packages
+
+# Homebrew and other user-installed packages
 if [[ $PATH != /usr/local/bin* ]]; then
 	export PATH=/usr/local/bin:$PATH
 fi
+# GNU core utilities
 if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
 	export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 	export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+fi
+# Ruby gems
+if [ -d /usr/local/opt/ruby/bin ]; then
+	export PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
 # Colorize less
@@ -20,7 +27,7 @@ export LESS_TERMCAP_se=$'\e[1;0m'	# end standout mode
 export LESS_TERMCAP_us=$'\e[1;32m'	# start underlining
 export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
 
-## Environment variables
+# Environment variables
 
 # Explicitly declare vim as default text editor
 export EDITOR='vim'
@@ -83,14 +90,14 @@ if [ $BASH_VERSINFO -ge 4 ]; then
 
 fi
 
-## Limitations on system resources
+# Limitations on system resources
 
 # Increase open files limit
 ulimit -n 1024 2> /dev/null
 # Increase available processes limit
 ulimit -u 1024 2> /dev/null
 
-## Aliases
+# Aliases
 
 # Enable aliases to be run as root
 alias sudo='sudo '

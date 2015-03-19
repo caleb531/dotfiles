@@ -1,8 +1,10 @@
 #!/bin/bash
 
-cd "$(dirname "${BASH_SOURCE[0]}")"/..
+if [ -z "$CONFIG_ALL" ]; then
+	cd "$(dirname "$0")"/..
+fi
 
-echo "Configuring symlinks..."
+echo "Creating symlinks..."
 
 # Force create symlinks
 ln -snf "$PWD/atom" ~/.atom
