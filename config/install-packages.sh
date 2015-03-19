@@ -44,15 +44,23 @@ if is_installed brew; then
 	# Install Homebrew Cask for managing packaged apps
 	tap_repo caskroom/cask
 	install_pkg brew-cask
-	# Ensure that all Cask-installed apps are linked to /Applications
-	export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
 	if is_installed npm; then
 
 		echo "Installing npm packages..."
 
-		install_npm_pkg grunt-cli
 		install_npm_pkg bower
+		install_npm_pkg grunt-cli
+		install_npm_pkg gulp
+		install_npm_pkg ios-sim
+
+	fi
+
+	if is_installed gem; then
+
+		echo "Installing Ruby gems..."
+
+		install_gem sass
 
 	fi
 

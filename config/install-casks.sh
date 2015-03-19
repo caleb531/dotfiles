@@ -5,9 +5,12 @@ if [ -z "$CONFIG_ALL" ]; then
 	source ./config/helper-functions.sh
 fi
 
-echo "Installing Homebrew Casks..."
-
 if is_pkg_installed brew-cask; then
+
+	echo "Installing Homebrew Casks..."
+
+	# Ensure that all Cask-installed apps are linked to /Applications
+	export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
 	# Install essential OS X apps via Cask (in order of essentiality)
 	install_cask google-chrome
@@ -19,14 +22,14 @@ if is_pkg_installed brew-cask; then
 	install_cask skype
 	install_cask joinme
 	install_cask flux
-	# Install additional (though not nearly as essential) OS X apps
+	# Install additional OS X apps
 	install_cask appcleaner
 	install_cask namechanger
 	install_cask codekit
 	install_cask forklift
 	install_cask mamp
 
-	echo "Installing QuickLook plugins..."
+	echo "Installing Quick Look plugins..."
 
 	install_cask qlstephen
 	install_cask qlmarkdown

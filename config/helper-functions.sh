@@ -5,15 +5,19 @@ is_installed() {
 }
 
 is_pkg_installed() {
-	brew ls -1 | grep -q "^$1\$"
+	brew list -1 | grep -q "^$1\$"
 }
 
 is_npm_pkg_installed() {
-	npm ls -g --depth=0 | grep -q " $1@"
+	npm list -g --depth=0 | grep -q " $1@"
 }
 
 is_cask_installed() {
-	brew cask ls -1 | grep -q "^$1\$"
+	brew cask list -1 | grep -q "^$1\$"
+}
+
+is_gem_installed() {
+	gem list | grep -q "^$1 "
 }
 
 is_tapped() {
@@ -22,7 +26,10 @@ is_tapped() {
 
 tap_repo() {
 	if ! is_tapped "$1"; then
+		echo "Tapping $1..."
 		brew tap "$@"
+	else
+		echo "Already tapped: $1"
 	fi
 }
 
@@ -36,6 +43,7 @@ install_pkg() {
 
 install_npm_pkg() {
 	if ! is_npm_pkg_installed "$1"; then
+		echo "Installing $1..."
 		npm install -g "$@"
 	else
 		echo "Already installed: $1"
@@ -46,6 +54,15 @@ install_cask() {
 	if ! is_cask_installed "$1"; then
 		echo "Installing $1..."
 		brew cask install "$@"
+	else
+		echo "Already installed: $1"
+	fi
+}
+
+install_gem() {
+	if ! is_gem_installed "$1"; then
+		echo "Installing $1..."
+		sudo gem install "$@"
 	else
 		echo "Already installed: $1"
 	fi

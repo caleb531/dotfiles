@@ -7,8 +7,8 @@ fi
 echo "Creating symlinks..."
 
 # Force create symlinks
-ln -snf "$PWD/atom" ~/.atom
-ln -snf "$PWD/emmet" ~/emmet
-ln -snf "$PWD/terminal/.bash_profile" ~/.bash_profile
-ln -snf "$PWD/terminal/.vimrc" ~/.vimrc
-ln -snf "$PWD/terminal/.gitconfig" ~/.gitconfig
+ln -snfv "$PWD/atom" ~/.atom
+ln -snfv "$PWD/emmet" ~/emmet
+ln -snfv "$PWD/terminal/.bash_profile" ~/.bash_profile
+ln -snfv "$PWD/terminal/.vimrc" ~/.vimrc
+ln -snfv "$PWD/terminal/.gitconfig" ~/.gitconfig

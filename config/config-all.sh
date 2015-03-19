@@ -15,5 +15,3 @@ source ./config/set-prefs.sh
 source ./config/install-packages.sh
 # Install OS X packages, plugins, fonts, etc. using Homebrew Cask
 source ./config/install-casks.sh
-
-echo "Done."
