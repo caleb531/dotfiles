@@ -5,7 +5,7 @@
 syntax enable
 syntax reset
 
-"" Syntax highlighting
+" Syntax highlighting
 
 " Available highlight groups
 " http://vimdoc.sourceforge.net/htmldoc/syntax.html#highlight-groups
