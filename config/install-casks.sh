@@ -5,7 +5,7 @@ if [ -z "$CONFIG_ALL" ]; then
 	source ./config/helper-functions.sh
 fi
 
-if is_pkg_installed brew-cask; then
+if is_installed brew && is_pkg_installed brew-cask; then
 
 	echo "Installing Homebrew Casks..."
 
