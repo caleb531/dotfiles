@@ -2,6 +2,9 @@
 
 echo "Setting global OS X preferences..."
 
+echo "- Disable Gatekeeper"
+sudo spctl --master-disable
+
 echo "- Disable window animations"
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
@@ -15,8 +18,12 @@ defaults write com.apple.screencapture disable-shadow -bool true
 echo "- Only show scroll bars when scrolling"
 defaults write NSGlobalDomain AppleShowScrollBars -string 'WhenScrolling'
 
-echo "- Disable \"natural\" scrolling"
+echo "- Disable iOS-style natural scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+echo "- Disable undesired gestures"
+defaults write com.apple.dock showDesktopGestureEnabled -bool false
+defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
 echo "- Expand save/print panels by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
