@@ -31,6 +31,7 @@ if is_pkg_installed brew-cask; then
 
 	echo "Installing Quick Look plugins..."
 
+	install_cask qlcolorcode
 	install_cask qlstephen
 	install_cask qlmarkdown
 	install_cask quicklook-json

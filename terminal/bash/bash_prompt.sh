@@ -32,7 +32,6 @@ _output_ps1() {
 # Run the following for each new command
 _update_prompt_command() {
 
-	# Update PS1 variable
 	PS1="$(_output_ps1)"
 	# Write in-memory command history to file
 	history -a

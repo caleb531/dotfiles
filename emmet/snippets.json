@@ -4,8 +4,8 @@
     "filters": "html",
     "profile": "html",
     "snippets": {
-      "php": "<?php ${code} ?>",
-      "phpb": "<?php\n\t${code}\n?>"
+      "php": "<?php ${1:code} ?>",
+      "phpb": "<?php\n\t${1:code}\n?>"
     }
   }
 }
