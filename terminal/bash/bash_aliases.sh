@@ -11,15 +11,16 @@ alias reload='exec $SHELL -l'
 # Colorize directory listings
 alias ls='ls --color=auto'
 
-# Colorize grep matches
+# Colorize grep matches (but not for piped output)
 
-# --color=auto does not colorize piped output
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# If tree package is installed
+# Colorize tree output
 if type tree &> /dev/null; then
-	# Colorize tree output
 	alias tree='tree -C'
 fi
+
+# Displays information related to the system's ability to sleep
+alias whyunosleep='pmset -g assertions | grep --color=never Sleep'

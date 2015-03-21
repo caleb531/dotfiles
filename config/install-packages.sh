@@ -1,13 +1,8 @@
 #!/bin/bash
 
-if [ -z "$CONFIG_ALL" ]; then
-	cd "$(dirname "$0")"/..
-	source ./config/helper-functions.sh
-fi
+source ./config/header.sh
 
 echo "Installing Homebrew packages..."
-
-# Main configuration
 
 if ! is_installed brew; then
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
