@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [ -z "$CONFIG_ALL" ]; then
-	cd "$(dirname "$0")"/..
-fi
+source ./config/header.sh
 
 echo "Creating symlinks..."
 

@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if [ -z "$CONFIG_ALL" ]; then
-	cd "$(dirname "$0")"/..
-	source ./config/helper-functions.sh
-fi
+source ./config/header.sh
 
 if is_installed brew && is_pkg_installed brew-cask; then
 

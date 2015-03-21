@@ -1,11 +1,14 @@
 #!/bin/bash
 
+source ./config/header.sh
+
 echo "Setting global OS X preferences..."
 
 echo "- Disable Gatekeeper"
 sudo spctl --master-disable
 
 echo "- Disable window animations"
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 
@@ -84,7 +87,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'
 echo "Setting Dock preferences..."
 
 echo "- Minimize windows using scale effect"
-defaults write com.apple.dock mineffect -string "scale"
+defaults write com.apple.dock mineffect -string 'scale'
 
 echo "- Disable Dashboard"
 defaults write com.apple.dashboard mcx-disabled -bool true
@@ -115,5 +118,5 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 echo "- Make Help Viewer windows non-floating"
 defaults write com.apple.helpviewer DevMode -bool true
 
-echo "- Restarting necessary processes..."
+echo "Restarting affected processes..."
 killall Dock Finder SystemUIServer

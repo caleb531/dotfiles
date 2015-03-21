@@ -1,14 +1,11 @@
 #!/bin/bash
 
-if [ -z "$CONFIG_ALL" ]; then
-	cd "$(dirname "$0")"/..
-	source ./config/helper-functions.sh
-fi
+source ./config/header.sh
 
 echo "Updating software..."
 
 # Update App Store apps
-sudo softwareupdate -i -a
+sudo softwareupdate -ia
 
 # Update Homebrew packages, casks
 brew update
