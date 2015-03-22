@@ -42,6 +42,7 @@ These include:
 * `grep`, `egrep`, `fgrep`
 * `less`
 * `ls`
+* `tree`
 
 My setup also applies color highlighting when editing Git commit or merge
 messages in Vim.
