@@ -7,25 +7,25 @@
 _output_ps1() {
 
 	# Output color variables
-	local color_green='\[\e[1;32m\]'
+	local color_blue='\[\e[1;34m\]'
 	local color_white='\[\e[1;37m\]'
 	local color_reset='\[\e[0m\]'
 
 	# Output name of current working dir (with ~ denoting HOME)
-	echo -n "${color_green}\W${color_white} : "
+	echo -n "${color_blue}\W${color_white} : "
 
 	# If working directory is a git repository (or if it resides in one)
 	if git rev-parse --git-dir &> /dev/null; then
 
 		# Output name of current branch
-		echo -n "${color_green}"
+		echo -n "${color_blue}"
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 		echo -n "${color_white} : "
 
 	fi
 
 	# Output $ for user and # for root
-	echo -n "${color_green}\$ ${color_reset}"
+	echo -n "${color_blue}\$ ${color_reset}"
 
 }
 
