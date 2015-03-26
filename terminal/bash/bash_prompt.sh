@@ -2,41 +2,52 @@
 # bash_prompt.sh
 # Caleb Evans
 
+# Output ANSI escape sequence for the given color code
+__set_color() {
+	echo -n "\[\e[${1}m\]"
+}
+
+# Reset color escape sequences
+__reset_color() {
+	__set_color 0
+}
+
 # Outputs a succinct and useful interactive prompt
 # Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
-_output_ps1() {
+__output_ps1() {
 
-	# Output color variables
-	local color_blue='\[\e[1;34m\]'
-	local color_white='\[\e[1;37m\]'
-	local color_reset='\[\e[0m\]'
+	# Output name of current working directory (with ~ denoting HOME)
+	__set_color $PURPLE_BOLD
+	echo -n "\W"
+	__set_color $WHITE_BOLD
+	echo -n " : "
 
-	# Output name of current working dir (with ~ denoting HOME)
-	echo -n "${color_blue}\W${color_white} : "
-
-	# If working directory is a git repository (or if it resides in one)
+	# If working directory is (or resides in) a git repository
 	if git rev-parse --git-dir &> /dev/null; then
 
 		# Output name of current branch
-		echo -n "${color_blue}"
+		__set_color $PURPLE_BOLD
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-		echo -n "${color_white} : "
+		__set_color $WHITE_BOLD
+		echo -n " : "
 
 	fi
 
 	# Output $ for user and # for root
-	echo -n "${color_blue}\$ ${color_reset}"
+	__set_color $PURPLE_BOLD
+	echo -n "\$ "
+	__reset_color
 
 }
 
 # Run the following for each new command
-_update_prompt_command() {
+__update_prompt_command() {
 
-	PS1="$(_output_ps1)"
+	PS1="$(__output_ps1)"
 	# Write in-memory command history to file
 	history -a
 	# Ensure that current working directory is updated as needed
 	update_terminal_cwd
 
 }
-PROMPT_COMMAND="_update_prompt_command"
+PROMPT_COMMAND="__update_prompt_command"
