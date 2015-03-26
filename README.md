@@ -20,11 +20,10 @@ the bundled v3.2 shell.
 
 ### Terminal theme
 
-For my work in the Terminal, I created a theme called MD Terminal, which
-utilizes the Google's Material Design color palette. MD Terminal features a few
-modest improvements over IR_Black, including an 80x20 window size and additional
-key bindings. While most of these changes are founded in my personal tastes, I
-have still chosen to include the theme in this repository for your convenience.
+For my work in the Terminal, I created MD Terminal, a minimalist theme which
+utilizes Google's Material Design color palette. While the theme's
+characteristics are largely founded in my personal tastes, I have chosen to
+include the theme in this repository for your convenience.
 
 ### Completion
 
