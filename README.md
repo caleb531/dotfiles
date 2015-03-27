@@ -20,11 +20,9 @@ the bundled v3.2 shell.
 
 ### Terminal theme
 
-I've included my preferred Terminal theme, a modified version of the [IR_Black
-theme](http://toddwerth.com/2011/07/21/the-original-ir_black-for-os-x-lion)
-which I call IR_Better. IR_Better features a few modest improvements over
-IR_Black, including an 80x20 window size and additional key bindings. While most
-of these changes are founded in my personal tastes, I have still chosen to
+For my work in the Terminal, I created Material Colors, a minimalist theme which
+utilizes Google's Material Design color palette. While the theme's
+characteristics are largely founded in my personal tastes, I have chosen to
 include the theme in this repository for your convenience.
 
 ### Completion

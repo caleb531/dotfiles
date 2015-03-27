@@ -28,7 +28,7 @@ export LESS_TERMCAP_se=$'\e[1;0m'	# end standout mode
 export LESS_TERMCAP_us=$'\e[1;32m'	# start underlining
 export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
 
-# Environment variables
+# Miscellaneous environment variables
 
 # Explicitly declare vim as default text editor
 export EDITOR='vim'
@@ -48,5 +48,28 @@ export PYTHONDONTWRITEBYTECODE=1
 # Use /Applications for apps installed with Homebrew Cask
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
-# GREP_COLOR syntax: http://www.termsys.demon.co.uk/vtansi.htm#colors
-export GREP_COLOR='04;32'
+# Colors
+# ANSI color reference: http://www.termsys.demon.co.uk/vtansi.htm#colors
+
+# Standard colors
+export BLACK='0;30'
+export RED='0;31'
+export GREEN='0;32'
+export YELLOW='0;33'
+export BLUE='0;34'
+export PURPLE='0;35'
+export CYAN='0;36'
+export WHITE='0;37'
+
+# Bold colors
+export BLACK_BOLD='1;30'
+export RED_BOLD='1;31'
+export GREEN_BOLD='1;32'
+export YELLOW_BOLD='1;33'
+export BLUE_BOLD='1;34'
+export PURPLE_BOLD='1;35'
+export CYAN_BOLD='1;36'
+export WHITE_BOLD='1;37'
+
+# Use green, underlined text for grep matches
+export GREP_COLOR='4;32'
