@@ -2,6 +2,9 @@
 # bash_config.sh
 # Caleb Evans
 
+# Expand multiple subdirectories using the globstar (**) option
+shopt -s globstar
+
 # Navigate history matching typed input using up/down arrow keys
 bind '"\e[A": history-search-backward' 2> /dev/null
 bind '"\e[B": history-search-forward' 2> /dev/null

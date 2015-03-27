@@ -14,9 +14,9 @@ X. However, some of these customizations can also be applied to Linux systems.
 ### Bash 4
 
 OS X ships with Bash 3.2, however I use Bash 4 as my shell of choice. Bash 4
-offers support for Unicode literals, and the more-performant Bash Completion 2
-requires Bash 4.2 or newer. These reasons are enough for me to use Bash 4 over
-the bundled v3.2 shell.
+adds Unicode literals, the new *globstar* option, and support for Bash
+Completion 2. These reasons are enough for me to use Bash 4 over the bundled
+v3.2 shell.
 
 ### Terminal theme
 
