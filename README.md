@@ -20,7 +20,7 @@ the bundled v3.2 shell.
 
 ### Terminal theme
 
-For my work in the Terminal, I created MD Terminal, a minimalist theme which
+For my work in the Terminal, I created Material Colors, a minimalist theme which
 utilizes Google's Material Design color palette. While the theme's
 characteristics are largely founded in my personal tastes, I have chosen to
 include the theme in this repository for your convenience.
