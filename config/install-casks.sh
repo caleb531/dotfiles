@@ -24,6 +24,7 @@ if is_installed brew && is_pkg_installed brew-cask; then
 	install_cask namechanger
 	install_cask codekit
 	install_cask forklift
+	install_cask onyx
 	install_cask mamp
 
 	echo "Installing Quick Look plugins..."

@@ -2,15 +2,23 @@
 
 source ./config/header.sh
 
-echo "Installing Homebrew packages..."
-
 if ! is_installed brew; then
+
+	echo "Installing Command Line Tools..."
+	xcode-select --install
+
+	echo "Installing Homebrew..."
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 else
+
 	echo "Already installed: Homebrew"
+
 fi
 
 if is_installed brew; then
+
+	echo "Installing Homebrew packages..."
 
 	install_pkg bash
 
