@@ -98,6 +98,9 @@ defaults write com.apple.dock mru-spaces -bool false
 echo "- Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
+echo "- Remove all applications from Dock"
+defaults write com.apple.dock persistent-apps -array
+
 echo "- Set bottom right hot corner to show/hide desktop"
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
