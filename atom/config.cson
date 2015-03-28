@@ -1,0 +1,55 @@
+"*":
+  core:
+    disabledPackages: [
+      "archive-view"
+      "background-tips"
+      "deprecation-cop"
+      "dev-live-reload"
+      "welcome"
+      "update-package-dependencies"
+      "timecop"
+      "exception-reporting"
+      "image-view"
+      "metrics"
+      "open-on-github"
+      "release-notes"
+      "styleguide"
+      "autocomplete"
+      "tree-view"
+      "bookmarks"
+      "autosave"
+    ]
+    followSymlinks: true
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+    projectHome: "~"
+  editor:
+    fontFamily: "Monaco"
+    tabLength: 4
+    softTabs: false
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    invisibles: {}
+    autoIndentOnPaste: false
+  welcome:
+    showOnStartup: false
+  linter:
+    statusBar: "Show all errors"
+    showHighlighting: false
+    showErrorInline: false
+    lintOnChange: false
+    lintOnEditorFocus: false
+  autosave:
+    enabled: true
+  "linter-jshint": {}
+  tabs: {}
+  whitespace: {}
+  script:
+    enableExecTime: false
+  "linter-pep8": {}
+  emmet:
+    extensionsPath: "~/.emmet"
+  "fuzzy-finder": {}
+  "linter-jscs": {}
