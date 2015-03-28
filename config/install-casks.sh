@@ -22,10 +22,12 @@ if is_installed brew && is_pkg_installed brew-cask; then
 	# Install additional OS X apps
 	install_cask appcleaner
 	install_cask namechanger
+	install_cask textwrangler
 	install_cask codekit
 	install_cask forklift
 	install_cask onyx
 	install_cask mamp
+	install_cask asepsis
 
 	echo "Installing Quick Look plugins..."
 

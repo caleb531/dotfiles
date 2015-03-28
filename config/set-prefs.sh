@@ -118,6 +118,9 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 echo "- Make Help Viewer windows non-floating"
 defaults write com.apple.helpviewer DevMode -bool true
 
+echo "- Force Chrome to use system print dialog"
+defaults write com.google.Chrome DisablePrintPreview -bool true
+
 echo "Adding preferred menu items..."
 
 menu_extras_dir='/System/Library/CoreServices/Menu Extras'
