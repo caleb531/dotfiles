@@ -20,6 +20,10 @@ is_gem_installed() {
 	gem list | grep -q "^$1 "
 }
 
+is_pip_pkg_installed() {
+	pip list | grep -q "^$1 "
+}
+
 is_tapped() {
 	brew tap | grep "$1" &> /dev/null
 }
@@ -63,6 +67,15 @@ install_gem() {
 	if ! is_gem_installed "$1"; then
 		echo "Installing $1..."
 		sudo gem install "$@"
+	else
+		echo "Already installed: $1"
+	fi
+}
+
+install_pip_pkg() {
+	if ! is_pip_pkg_installed "$1"; then
+		echo "Installing $1..."
+		pip install "$@"
 	else
 		echo "Already installed: $1"
 	fi
