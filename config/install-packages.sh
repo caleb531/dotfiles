@@ -80,6 +80,28 @@ if is_installed brew; then
 
 	fi
 
+	if is_installed apm; then
+
+		echo "Installing Atom packages..."
+
+		install_apm_pkg editorconfig
+		install_apm_pkg resize-indent
+		install_apm_pkg line-ending-converter
+		install_apm_pkg language-applescript
+		install_apm_pkg language-gitignore
+		install_apm_pkg language-apache
+		install_apm_pkg language-viml
+		install_apm_pkg language-x86
+		install_apm_pkg script
+		install_apm_pkg emmet
+		install_apm_pkg linter
+		install_apm_pkg linter-jshint
+		install_apm_pkg linter-jscs
+		install_apm_pkg linter-pep8
+		install_apm_pkg linter-php
+
+	fi
+
 else
 
 	echo "Homebrew is not installed."
