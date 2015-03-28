@@ -118,5 +118,15 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 echo "- Make Help Viewer windows non-floating"
 defaults write com.apple.helpviewer DevMode -bool true
 
+echo "Adding preferred menu items..."
+
+menu_extras_dir='/System/Library/CoreServices/Menu Extras'
+defaults write com.apple.systemuiserver menuExtras -array \
+	"$menu_extras_dir/Volume.menu" \
+	"$menu_extras_dir/Bluetooth.menu" \
+	"$menu_extras_dir/AirPort.menu" \
+	"$menu_extras_dir/Battery.menu" \
+	"$menu_extras_dir/Clock.menu" \
+
 echo "Restarting affected processes..."
 killall Dock Finder SystemUIServer
