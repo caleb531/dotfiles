@@ -124,7 +124,9 @@ defaults write com.apple.helpviewer DevMode -bool true
 echo "- Force Chrome to use system print dialog"
 defaults write com.google.Chrome DisablePrintPreview -bool true
 
-echo "Adding preferred menu items..."
+echo "Updating menu bar..."
+
+echo "- Adding preferred menu extras..."
 
 menu_extras_dir='/System/Library/CoreServices/Menu Extras'
 defaults write com.apple.systemuiserver menuExtras -array \
@@ -133,6 +135,9 @@ defaults write com.apple.systemuiserver menuExtras -array \
 	"$menu_extras_dir/AirPort.menu" \
 	"$menu_extras_dir/Battery.menu" \
 	"$menu_extras_dir/Clock.menu" \
+
+echo "- Update clock to show current date and current day of the week"
+defaults write com.apple.menuextra.clock DateFormat 'EEE MMM d  h:mm a'
 
 echo "Restarting affected processes..."
 killall Dock Finder SystemUIServer
