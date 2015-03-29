@@ -21,7 +21,7 @@ is_gem_installed() {
 }
 
 is_pip_pkg_installed() {
-	pip list | grep -q "^$1 "
+	pip list | grep "^$1 " &> /dev/null
 }
 
 is_apm_pkg_installed() {
@@ -87,7 +87,6 @@ install_pip_pkg() {
 
 install_apm_pkg() {
 	if ! is_apm_pkg_installed "$1"; then
-		echo "Installing $1..."
 		apm install "$@"
 	else
 		echo "Already installed: $1"

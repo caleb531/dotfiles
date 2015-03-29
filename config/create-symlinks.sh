@@ -6,7 +6,8 @@ echo "Creating symlinks..."
 
 # Force create symlinks
 
-ln -snf "$PWD"/atom ~/.atom
+mkdir -p ~/.atom
+ln -sf "$PWD"/atom/* ~/.atom
 ln -snf "$PWD"/emmet ~/.emmet
 
 ln -snf "$PWD"/terminal/.bash_profile ~/.bash_profile

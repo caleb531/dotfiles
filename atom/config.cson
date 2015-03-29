@@ -20,11 +20,11 @@
       "autosave"
     ]
     followSymlinks: true
+    projectHome: "~"
     themes: [
       "atom-dark-ui"
       "atom-dark-syntax"
     ]
-    projectHome: "~"
   editor:
     fontFamily: "Monaco"
     tabLength: 4
@@ -52,4 +52,6 @@
   emmet:
     extensionsPath: "~/.emmet"
   "fuzzy-finder": {}
-  "linter-jscs": {}
+  "linter-jscs":
+    onlyConfig: true
+    preset: "jquery"
