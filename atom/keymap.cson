@@ -1,87 +1,60 @@
 # Your keymap
 
 '.platform-darwin':
-
-  # Unset old key binding for "Go to Line" panel (preferred keybinding below)
+  # Unset old key binding for "Go to Line" command
   'ctrl-g': 'unset!'
+  # Fuzzy Finder is already bound to cmd-t anyway
+  'cmd-p': 'unset!'
 
 '.platform-darwin .editor:not([mini])':
-
   'alt-cmd-r': 'autoflow:reflow-selection'
-
   'ctrl-shift-L': 'unset!'
-
   'shift-cmd-L': 'grammar-selector:show'
-
   'shift-cmd-I': 'window:toggle-invisibles'
-
   'alt-shift-cmd-I': 'editor:toggle-indent-guide'
-
   'shift-cmd-R': 'script:run'
-
   'alt-shift-cmd-R': 'script:run-options'
-
-  'cmd-j': 'go-to-line:toggle'
-
   'ctrl-shift-U': 'unset!'
-
-  'shift-cmd-U': 'encoding-selector:show'
-
+  # Make some commands more conveniently accessible
+  'cmd-j': 'go-to-line:toggle'
   'ctrl-shift-K': 'unset!'
-
   'shift-cmd-X': 'editor:delete-line'
-
   'alt-cmd-d': 'find-and-replace:select-all'
 
 'atom-text-editor':
-
+  # Indentation-related commands
   'ctrl-{': 'unset!'
-
   'ctrl-}': 'unset!'
-
   'cmd-{': 'resize-indent:halve'
-
   'cmd-}': 'resize-indent:double'
-
   'ctrl-alt-cmd-]': 'whitespace:convert-spaces-to-tabs'
-
   'ctrl-alt-cmd-[': 'whitespace:convert-tabs-to-spaces'
-
+  # Disable all existing alt-* key bindings
   'alt-b': 'unset!'
-
   'alt-shift-B': 'unset!'
-
   'alt-d': 'unset!'
-
   'alt-f': 'unset!'
-
   'alt-shift-F': 'unset!'
-
   'alt-h': 'unset!'
 
 'atom-text-editor:not([mini])':
-
   'alt-shift-S': 'unset!'
-
   'ctrl-cmd-s': 'snippets:available'
 
 '.platform-darwin atom-workspace':
-
   'ctrl-shift-O': 'unset!'
-
   'shift-cmd-O': 'link:open'
 
 'atom-workspace, atom-workspace atom-text-editor':
-
   'ctrl-shift-M': 'unset!'
-
+'.platform-darwin atom-text-editor:not([mini])':
   'shift-cmd-M': 'markdown-preview:toggle'
 
+# Enable Emmet abbreviation expansion for PHP files
 'atom-text-editor[data-grammar~="php"]:not([mini])':
-
   'tab': 'emmet:expand-abbreviation-with-tab'
 
+# Prevent Emmet from imposing block-style comments for SCSS and LESS files
 '.platform-darwin atom-text-editor[data-grammar~="scss"]:not([mini]),
  .platform-darwin atom-text-editor[data-grammar~="less"]:not([mini])':
-
   'cmd-/': 'unset!'

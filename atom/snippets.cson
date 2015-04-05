@@ -6,11 +6,11 @@
 
 	'it':
 		'prefix': 'it'
-		'body': "it('$1', function($2) {\n\t$3\n});$4"
+		'body': "it('$1', function ($2) {\n\t$3\n});$4"
 
 	'describe':
 		'prefix': 'desc'
-		'body': "describe('$1', function($2) {\n\t$3\n});$4"
+		'body': "describe('$1', function ($2) {\n\t$3\n});$4"
 
 	'expect':
 		'prefix': 'expect'
