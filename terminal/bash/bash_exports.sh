@@ -4,10 +4,6 @@
 
 # Ensure installed packages are recognized and preferred
 
-# Homebrew and other user-installed packages
-if [[ $PATH != /usr/local/bin* ]]; then
-	export PATH=/usr/local/bin:$PATH
-fi
 # GNU core utilities
 if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
 	export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
