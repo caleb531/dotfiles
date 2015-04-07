@@ -14,16 +14,6 @@ setup() {
 	# Import helper functions for use by other configuration scripts
 	source ./config/helper-functions.sh
 
-	# Run teardown function on script exit
-	trap teardown EXIT
-
-}
-
-teardown() {
-
-	# Forget admin password persisted by sudo
-	sudo -k
-
 }
 
 # Prevent header code from running more than once
