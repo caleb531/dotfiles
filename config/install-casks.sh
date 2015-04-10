@@ -42,9 +42,8 @@ if is_installed brew && is_pkg_installed brew-cask; then
 	echo "Installing fonts..."
 
 	tap_repo caskroom/fonts
-	# Installing fonts from Google Web Fonts is currently broken
-	# install_cask font-open-sans
-	# install_cask font-montserrat
+	install_cask font-open-sans
+	install_cask font-montserrat
 	install_cask font-ubuntu
 
 	echo "Installing additional plugins..."
