@@ -55,12 +55,12 @@
   "linter-jscs":
     onlyConfig: true
     preset: "jquery"
-".applescript.source":
-  editor:
-    commentStart: "-- "
-".ini.source":
-  editor:
-    commentStart: "# "
 ".source.viml":
   editor:
     commentStart: "\" "
+".ini.source":
+  editor:
+    commentStart: "# "
+".applescript.source":
+  editor:
+    commentStart: "-- "

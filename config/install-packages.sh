@@ -44,6 +44,7 @@ if is_installed brew; then
 	install_pkg python3
 	install_pkg node
 	install_pkg ruby
+	install_pkg ssh-copy-id
 	# Install Homebrew Cask for managing packaged apps
 	tap_repo caskroom/cask
 	install_pkg brew-cask
@@ -91,6 +92,7 @@ if is_installed brew; then
 		install_apm_pkg language-gitignore
 		install_apm_pkg language-apache
 		install_apm_pkg language-viml
+		install_apm_pkg language-ini
 		install_apm_pkg language-x86
 		install_apm_pkg script
 		install_apm_pkg emmet

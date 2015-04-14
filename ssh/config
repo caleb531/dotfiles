@@ -1,0 +1,11 @@
+# SSH Configuration
+
+# These settings apply to all hosts
+Host *
+    # "Wake up" SSH session every minute
+    ServerAliveInterval 60
+    # Use existing connections if possible
+    ControlMaster auto
+    ControlPath ~/.ssh/control:%h:%p:%r
+    # Keep connection alive for 1 minute after exit
+    ControlPersist 60
