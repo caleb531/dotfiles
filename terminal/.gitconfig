@@ -16,8 +16,3 @@
 	ignorecase = false
 	# Use tab width of 4 columns for git diff/show
 	pager = less -x1,5
-
-# Handy Git aliases
-[alias]
-	# Display colored hierarchical log output
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
