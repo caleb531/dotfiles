@@ -4,7 +4,7 @@
   # Unset old key binding for "Go to Line" command
   'ctrl-g': 'unset!'
 
-'.platform-darwin atom-text-editor':
+'.platform-darwin atom-workspace atom-text-editor:not([mini])':
   # Breaks current selection/paragraph into lines no longer than 80 chars
   'alt-cmd-q': 'unset!'
   'alt-cmd-r': 'autoflow:reflow-selection'
