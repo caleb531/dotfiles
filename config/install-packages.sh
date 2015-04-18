@@ -85,12 +85,14 @@ if is_installed brew; then
 
 		echo "Installing Atom packages..."
 
+		install_apm_pkg monokai
 		install_apm_pkg editorconfig
 		install_apm_pkg resize-indent
 		install_apm_pkg line-ending-converter
 		install_apm_pkg language-applescript
 		install_apm_pkg language-gitignore
 		install_apm_pkg language-apache
+		install_apm_pkg language-hosts
 		install_apm_pkg language-viml
 		install_apm_pkg language-ini
 		install_apm_pkg language-x86

@@ -19,11 +19,10 @@
       "bookmarks"
       "autosave"
     ]
-    followSymlinks: true
     projectHome: "~"
     themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
+      "one-dark-ui"
+      "monokai"
     ]
   editor:
     fontFamily: "Monaco"
@@ -43,24 +42,19 @@
     lintOnEditorFocus: false
   autosave:
     enabled: true
-  "linter-jshint": {}
-  tabs: {}
-  whitespace: {}
   script:
     enableExecTime: false
-  "linter-pep8": {}
   emmet:
     extensionsPath: "~/.emmet"
-  "fuzzy-finder": {}
   "linter-jscs":
     onlyConfig: true
     preset: "jquery"
-".source.viml":
-  editor:
-    commentStart: "\" "
-".ini.source":
-  editor:
-    commentStart: "# "
 ".applescript.source":
   editor:
     commentStart: "-- "
+".ini.source":
+  editor:
+    commentStart: "# "
+".source.viml":
+  editor:
+    commentStart: "\" "

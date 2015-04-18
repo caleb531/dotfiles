@@ -1,3 +1,16 @@
 /*
  * Your Stylesheet
  */
+
+@import 'ui-variables';
+
+// De-italicize all syntax components which Monokai italicizes
+atom-text-editor::shadow {
+  .storage.type,
+  .entity.other.inherited-class,
+  .variable.parameter,
+  .support.type,
+  .support.class {
+    font-style: normal;
+  }
+}

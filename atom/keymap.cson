@@ -3,33 +3,43 @@
 '.platform-darwin':
   # Unset old key binding for "Go to Line" command
   'ctrl-g': 'unset!'
-  # Fuzzy Finder is already bound to cmd-t anyway
-  'cmd-p': 'unset!'
 
-'.platform-darwin .editor:not([mini])':
+'.platform-darwin atom-text-editor':
+  # Breaks current selection/paragraph into lines no longer than 80 chars
+  'alt-cmd-q': 'unset!'
   'alt-cmd-r': 'autoflow:reflow-selection'
+  # Toggles grammar (language) selection panel
   'ctrl-shift-L': 'unset!'
   'shift-cmd-L': 'grammar-selector:show'
+  # Toggles invisible characters and guides
   'shift-cmd-I': 'window:toggle-invisibles'
   'alt-shift-cmd-I': 'editor:toggle-indent-guide'
+  # Execute and view output from scripts within the editor
   'shift-cmd-R': 'script:run'
   'alt-shift-cmd-R': 'script:run-options'
+  # Toggles character encoding selection panel
   'ctrl-shift-U': 'unset!'
-  # Make some commands more conveniently accessible
+  'cmd-shift-U': 'encoding-selector:show'
+  # Toggles line jump panel
   'cmd-j': 'go-to-line:toggle'
+  # Rebind "Delete Line" key key binding to something more convenient
   'ctrl-shift-K': 'unset!'
   'shift-cmd-X': 'editor:delete-line'
+  # Selects all occurences of the current selection (complements cmd-d)
   'alt-cmd-d': 'find-and-replace:select-all'
+  # Selects all text between the outer matching pair of parens/brackets
+  'alt-cmd-b': 'bracket-matcher:select-inside-brackets'
 
 'atom-text-editor':
-  # Indentation-related commands
+  # Resizes spaces-per-indent amount for entire document
   'ctrl-{': 'unset!'
   'ctrl-}': 'unset!'
   'cmd-{': 'resize-indent:halve'
   'cmd-}': 'resize-indent:double'
+  # Convert between tabs and spaces used for indentation
   'ctrl-alt-cmd-]': 'whitespace:convert-spaces-to-tabs'
   'ctrl-alt-cmd-[': 'whitespace:convert-tabs-to-spaces'
-  # Disable all existing alt-* key bindings
+  # Disable all alt-* key bindings
   'alt-b': 'unset!'
   'alt-shift-B': 'unset!'
   'alt-d': 'unset!'
@@ -37,20 +47,20 @@
   'alt-shift-F': 'unset!'
   'alt-h': 'unset!'
 
+# Toggle list of snippets that apply to current document
 'atom-text-editor:not([mini])':
   'alt-shift-S': 'unset!'
   'ctrl-cmd-s': 'snippets:available'
 
-'.platform-darwin atom-workspace':
-  'ctrl-shift-O': 'unset!'
-  'shift-cmd-O': 'link:open'
-
-'atom-workspace, atom-workspace atom-text-editor':
-  'ctrl-shift-M': 'unset!'
+# Disable Emmet's key vinding for merging lines
 '.platform-darwin atom-text-editor:not([mini])':
   'shift-cmd-M': 'unset!'
 '.platform-darwin atom-workspace':
+  # Toggles Markdown Preview (even if editor is unfocused)
   'shift-cmd-M': 'markdown-preview:toggle'
+  # Open URLs in the browser if the insertion point is within the URL
+  'ctrl-shift-O': 'unset!'
+  'shift-cmd-O': 'link:open'
 
 # Enable Emmet abbreviation expansion for PHP files
 'atom-text-editor[data-grammar~="php"]:not([mini]),
