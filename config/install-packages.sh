@@ -96,6 +96,7 @@ if is_installed brew; then
 		install_apm_pkg language-viml
 		install_apm_pkg language-ini
 		install_apm_pkg language-x86
+		install_apm_pkg ssh-config
 		install_apm_pkg script
 		install_apm_pkg emmet
 		install_apm_pkg linter
