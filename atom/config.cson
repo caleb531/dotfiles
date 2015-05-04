@@ -3,7 +3,6 @@
     disabledPackages: [
       "archive-view"
       "background-tips"
-      "deprecation-cop"
       "dev-live-reload"
       "welcome"
       "update-package-dependencies"
@@ -18,6 +17,7 @@
       "tree-view"
       "bookmarks"
       "autosave"
+      "deprecation-cop"
     ]
     projectHome: "~"
     themes: [
@@ -35,11 +35,11 @@
   welcome:
     showOnStartup: false
   linter:
-    statusBar: "Show all errors"
-    showHighlighting: false
     showErrorInline: false
+    statusBar: "Show error of the selected line"
+    showInfoMessages: true
     lintOnChange: false
-    lintOnEditorFocus: false
+    showHighlighting: false
   autosave:
     enabled: true
   script:
@@ -49,12 +49,12 @@
   "linter-jscs":
     onlyConfig: true
     preset: "jquery"
-".applescript.source":
-  editor:
-    commentStart: "-- "
-".ini.source":
-  editor:
-    commentStart: "# "
 ".source.viml":
   editor:
     commentStart: "\" "
+".ini.source":
+  editor:
+    commentStart: "# "
+".applescript.source":
+  editor:
+    commentStart: "-- "
