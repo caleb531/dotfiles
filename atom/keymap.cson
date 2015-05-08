@@ -52,7 +52,7 @@
   'alt-shift-S': 'unset!'
   'ctrl-cmd-s': 'snippets:available'
 
-# Disable Emmet's key vinding for merging lines
+# Disable Emmet's key binding for merging lines
 '.platform-darwin atom-text-editor:not([mini])':
   'shift-cmd-M': 'unset!'
 '.platform-darwin atom-workspace':
