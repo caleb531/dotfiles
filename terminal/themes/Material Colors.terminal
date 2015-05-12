@@ -220,6 +220,8 @@
 	<string>Material Colors</string>
 	<key>rowCount</key>
 	<integer>20</integer>
+	<key>shellExitAction</key>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 	<key>useOptionAsMetaKey</key>
