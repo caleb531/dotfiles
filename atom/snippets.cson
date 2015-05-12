@@ -2,6 +2,20 @@
 
 '.source.js':
 
+  # Functions
+
+  'Function Declaration':
+    'prefix': 'fd'
+    'body': "function ${1:name}($2) {\n\t$3\n}$4"
+
+  'Function Expression':
+    'prefix': 'fe'
+    'body': "function ($1) {\n\t$2\n}$3"
+
+  'Prototype Method':
+    'prefix': 'ptm'
+    'body': "${1:Class}.prototype.${2:name} = function ($3) {\n\t$4\n}$5"
+
   # Jasmine
 
   'it':
