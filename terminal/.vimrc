@@ -1,6 +1,9 @@
 " .vimrc
 " Caleb Evans
 
+" Disable highlighting of parens
+:let loaded_matchparen = 1
+
 " Enable syntax highlighting
 syntax enable
 syntax reset
