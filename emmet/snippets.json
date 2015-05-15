@@ -1,0 +1,11 @@
+{
+  "php": {
+    "extends": "html",
+    "filters": "html",
+    "profile": "php",
+    "snippets": {
+      "php": "<?php ${1:code} ?>",
+      "phpb": "<?php\n\t${1:code}\n?>"
+    }
+  }
+}

@@ -62,6 +62,10 @@
   'ctrl-shift-O': 'unset!'
   'alt-cmd-o': 'link:open'
 
+# Enable Emmet HTML abbreviations for PHP files
+'atom-text-editor[data-grammar~="php"]:not([mini])':
+  'tab': 'emmet:expand-abbreviation-with-tab'
+
 # Prevent Emmet from imposing block-style comments for SCSS and LESS files
 '.platform-darwin atom-text-editor[data-grammar~="scss"]:not([mini]),
  .platform-darwin atom-text-editor[data-grammar~="less"]:not([mini])':
