@@ -32,6 +32,14 @@
 
 '.source.python':
 
+  'env (python3)':
+    'prefix': 'env3'
+    'body': "#!/usr/bin/env python3\n"
+
+  'name import':
+    'prefix': 'fromi'
+    'body': "from ${1:module} import ${2:name}"
+
   'docstring':
     'prefix': 'docstr'
-    'body': '\'\'\'$1\'\'\'$2'
+    'body': "'''$1'''$2"
