@@ -45,6 +45,7 @@ if is_installed brew; then
 	install_pkg node
 	install_pkg ruby
 	install_pkg ssh-copy-id
+	install_pkg closure-compiler
 	# Install Homebrew Cask for managing packaged apps
 	tap_repo caskroom/cask
 	install_pkg brew-cask
