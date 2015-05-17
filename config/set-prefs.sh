@@ -60,9 +60,6 @@ defaults write com.apple.finder NewWindowTarget 'PfHm'
 echo "- Enable display of hidden files"
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-echo "- Enable text selection in Quick Look"
-defaults write com.apple.finder QLEnableTextSelection -bool true
-
 echo "- Disable Finder status bar"
 defaults write com.apple.finder ShowStatusBar -bool false
 
