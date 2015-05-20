@@ -34,8 +34,8 @@
   # Resizes spaces-per-indent amount for entire document
   'ctrl-{': 'unset!'
   'ctrl-}': 'unset!'
-  'cmd-{': 'resize-indent:halve'
-  'cmd-}': 'resize-indent:double'
+  'ctrl-cmd-[': 'resize-indent:halve'
+  'ctrl-cmd-]': 'resize-indent:double'
   # Convert between tabs and spaces used for indentation
   'ctrl-alt-cmd-]': 'whitespace:convert-spaces-to-tabs'
   'ctrl-alt-cmd-[': 'whitespace:convert-tabs-to-spaces'
