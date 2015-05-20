@@ -5,7 +5,15 @@
     "profile": "php",
     "snippets": {
       "php": "<?php ${1:code} ?>",
-      "phpb": "<?php\n\t${1:code}\n?>"
+      "phpb": "<?php\n\t${1:code}\n?>",
+      "pecho": "<?php echo ${1:code}; ?>",
+      "e": "echo $1;",
+      "pr": "print_r( $1 );",
+      "f": "function ${1:name}($2) {\n\t${3:// code}\n}",
+      "if": "if ( ${1:condition} ) {\n\t${2:// code}\n}",
+      "fore": "foreach ( ${1:\\object} as ${2:\\value} ) {\n\t${3:// code}\n}",
+      "pif": "<?php if ( ${1:condition} ): ?>\n\t${2:// markup}\n<?php endif; ?>",
+      "pfore": "<?php foreach ( ${1:\\object} as ${2:\\value} ): ?>\n\t${3:markup}\n<?php endforeach; ?>"
     }
   }
 }
