@@ -17,12 +17,6 @@
       "tree-view"
       "bookmarks"
       "autosave"
-      "deprecation-cop"
-      "autocomplete-css"
-      "autocomplete-html"
-      "autocomplete-plus"
-      "autocomplete-snippets"
-      "autocomplete-atom-api"
     ]
     projectHome: "~"
     themes: [
@@ -57,6 +51,12 @@
     preset: "jquery"
   "fuzzy-finder":
     preserveLastSearch: true
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: false
+    scopeBlacklist: [
+      ".text.html"
+    ]
+    maxVisibleSuggestions: 5
 ".applescript.source":
   editor:
     commentStart: "-- "
