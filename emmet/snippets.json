@@ -11,7 +11,7 @@
       "pr": "print_r( $1 );",
       "f": "function ${1:name}($2) {\n\t$3\n}",
       "if": "if ( ${1:condition} ) {\n\t$2\n}",
-      "fore": "foreach ( ${1:\\object} as ${2:\\value} ) {\n\t${3:// code}\n}",
+      "fore": "foreach ( ${1:object} as ${2:value} ) {\n\t${3:// code}\n}",
       "pif": "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>",
       "pfore": "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>"
     }
