@@ -42,30 +42,43 @@ if is_installed brew; then
 	install_pkg git
 	install_pkg python
 	install_pkg python3
-	install_pkg node
-	install_pkg ruby
 	install_pkg ssh-copy-id
 	install_pkg closure-compiler
 	# Install Homebrew Cask for managing packaged apps
 	tap_repo caskroom/cask
 	install_pkg brew-cask
 
-	if is_installed npm; then
 
-		echo "Installing npm packages..."
+	echo -n "Install dev env packages for work? (y/n) "
+	read prompt_answer
 
-		install_npm_pkg bower
-		install_npm_pkg grunt-cli
-		install_npm_pkg gulp
-		install_npm_pkg ios-sim
+	if [ "$prompt_answer" == y ]; then
 
-	fi
+		install_pkg ruby
+		install_pkg node
+		install_pkg postgresql
+		install_pkg imagemagick	--with-webp
+		install_pkg graphicsmagick
 
-	if is_installed gem; then
+		if is_installed npm; then
 
-		echo "Installing Ruby gems..."
+			echo "Installing npm packages..."
 
-		install_gem sass
+			install_npm_pkg bower
+			install_npm_pkg grunt-cli
+			install_npm_pkg gulp
+			install_npm_pkg ios-sim
+			install_npm_pkg node-inspector
+
+		fi
+
+		if is_installed gem; then
+
+			echo "Installing Ruby gems..."
+
+			install_gem sass
+
+		fi
 
 	fi
 
