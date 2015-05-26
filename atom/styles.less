@@ -4,6 +4,12 @@
 
 @import 'ui-variables';
 
+// Ensure that workspace is distinguishable from tab bar and status bar
+// (when no tabs are open)
+atom-workspace {
+  background-color: @base-background-color;
+}
+
 // De-italicize all syntax components which Monokai italicizes
 atom-text-editor::shadow {
   .storage.type,
