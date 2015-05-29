@@ -62,10 +62,6 @@
   'ctrl-shift-O': 'unset!'
   'alt-cmd-o': 'link:open'
 
-# Enable Emmet HTML abbreviations for PHP files
-'atom-text-editor[data-grammar~="php"]:not([mini])':
-  'tab': 'emmet:expand-abbreviation-with-tab'
-
 # Prevent Emmet from hijacking autocomplete
 'atom-text-editor.autocomplete-active:not([mini])':
   'tab': 'autocomplete-plus:confirm'

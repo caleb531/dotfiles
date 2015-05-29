@@ -12,10 +12,6 @@
     'prefix': 'fe'
     'body': "function ($1) {\n\t$2\n}$3"
 
-  'Prototype Method':
-    'prefix': 'ptm'
-    'body': "${1:Class}.prototype.${2:name} = function ($3) {\n\t$4\n}$5"
-
   # Jasmine
 
   'it':
@@ -43,3 +39,45 @@
   'docstring':
     'prefix': 'docstr'
     'body': "'''$1'''$2"
+
+'.text.php':
+
+    'PHP Block (inline)':
+      'prefix': 'php'
+      'body': "<?php $1 ?>"
+
+    'PHP Block (multiline)':
+      'prefix': 'phpb'
+      'body': "<?php\n\t$2\n?>"
+
+    'PHP Block (echo)':
+      'prefix': 'pe'
+      'body': "<?php echo $1; ?>"
+
+    'echo':
+      'prefix': 'e'
+      'body': "echo $1;"
+
+    'print_r':
+      'prefix': 'pr'
+      'body': "print_r( $1 );"
+
+    'function':
+      'prefix': 'f'
+      'body': "function ${1:name}($2) {\n\t$3\n}"
+
+    'if':
+      'prefix': 'if'
+      'body': "if ( ${1:condition} ) {\n\t$2\n}"
+
+    'foreach':
+      'prefix': 'fore'
+      'body': "foreach ( ${1:object} as ${2:value} ) {\n\t${3:// code}\n}"
+
+    'if (inline)':
+      'prefix': 'pif'
+      'body': "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>"
+
+    'foreach (inline)':
+      'prefix': 'pfore'
+      'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>"

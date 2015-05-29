@@ -23,6 +23,15 @@
       "one-dark-ui"
       "monokai"
     ]
+    ignoredNames: [
+      ".sass-cache"
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+    ]
   editor:
     fontFamily: "Monaco"
     tabLength: 4
@@ -53,16 +62,13 @@
     preserveLastSearch: true
   "autocomplete-plus":
     includeCompletionsFromAllBuffers: false
-    scopeBlacklist: [
-      ".text.html"
-    ]
     maxVisibleSuggestions: 5
-".applescript.source":
-  editor:
-    commentStart: "-- "
-".ini.source":
-  editor:
-    commentStart: "# "
 ".source.viml":
   editor:
     commentStart: "\" "
+".ini.source":
+  editor:
+    commentStart: "# "
+".applescript.source":
+  editor:
+    commentStart: "-- "
