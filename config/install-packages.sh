@@ -86,12 +86,7 @@ if is_installed brew; then
 
 		echo "Installing pip packages..."
 
-		install_pip_pkg nose
-		install_pip_pkg rednose
-		install_pip_pkg coverage
-		install_pip_pkg pep8
-		install_pip_pkg jsonschema
-		install_pip_pkg pyquery
+		install_pip_pkg virtualenv
 
 	fi
 

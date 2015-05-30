@@ -40,9 +40,29 @@ __output_ps1() {
 
 }
 
+# Detect and manage Python virtualenvs when changing directories
+__detect_python_virtualenv() {
+
+	local virtualenv=~/VirtualEnvs/"$(basename "$PWD")"
+	# If current directory has a corresponding virtualenv that is not itself
+	if [ -d "$virtualenv" -a "$virtualenv" != "$PWD" ]; then
+		# Activate virtualenv if it is not already active
+		if [[ $PATH != $virtualenv* ]]; then
+			source "$virtualenv"/bin/activate
+		fi
+	else
+		# Otherwise, deactivate any active virtualenv
+		if type deactivate &> /dev/null; then
+			deactivate
+		fi
+	fi
+
+}
+
 # Run the following for each new command
 __update_prompt_command() {
 
+	__detect_python_virtualenv
 	PS1="$(__output_ps1)"
 	# Write in-memory command history to file
 	history -a
