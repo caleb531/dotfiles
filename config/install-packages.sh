@@ -87,6 +87,7 @@ if is_installed brew; then
 		echo "Installing pip packages..."
 
 		install_pip_pkg virtualenv
+		install_pip_pkg pep8
 
 	fi
 
