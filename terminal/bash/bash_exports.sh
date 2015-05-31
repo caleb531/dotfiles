@@ -45,7 +45,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
 # Directory containing all Python virtualenvs
-export VIRTUALENV_DIR=~/Virtualenvs
+export WORKON_HOME=~/.virtualenvs
 
 # Colors
 # ANSI color reference: http://www.termsys.demon.co.uk/vtansi.htm#colors
