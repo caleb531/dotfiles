@@ -112,9 +112,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 echo "- Prevent Time Machine from asking to use new drives as backup volumes"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-echo "- Disable automatic emoji substitution in Messages"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
-
 echo "- Make Help Viewer windows non-floating"
 defaults write com.apple.helpviewer DevMode -bool true
 
