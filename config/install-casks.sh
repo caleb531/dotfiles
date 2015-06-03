@@ -33,6 +33,7 @@ if is_installed brew && is_pkg_installed brew-cask; then
 
 	install_cask qlstephen
 	install_cask qlmarkdown
+	install_cask scriptql
 	install_cask quicklook-json
 	install_cask betterzipql
 	install_cask suspicious-package
