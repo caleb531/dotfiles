@@ -49,6 +49,9 @@
     showInfoMessages: true
     lintOnChange: false
     showHighlighting: false
+    ignoredLinterErrors: [
+      "pep8"
+    ]
   autosave:
     enabled: true
   script:
