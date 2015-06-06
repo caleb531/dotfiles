@@ -66,12 +66,3 @@
   "autocomplete-plus":
     includeCompletionsFromAllBuffers: false
     maxVisibleSuggestions: 5
-".source.viml":
-  editor:
-    commentStart: "\" "
-".ini.source":
-  editor:
-    commentStart: "# "
-".applescript.source":
-  editor:
-    commentStart: "-- "
