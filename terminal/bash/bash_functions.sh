@@ -4,8 +4,9 @@
 
 # Make new Python virtualenv in designated virtualenv home
 mkenv() {
+	local env_name="$(basename "$PWD")"
 	pushd "$WORKON_HOME" &> /dev/null
-	virtualenv -p "$1" "$(basename "$PWD")"
+	virtualenv -p "$1" "$env_name"
 	popd &> /dev/null
 }
 
