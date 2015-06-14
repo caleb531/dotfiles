@@ -55,9 +55,11 @@
 # Disable Emmet's key binding for merging lines
 '.platform-darwin atom-text-editor:not([mini])':
   'shift-cmd-M': 'unset!'
-'.platform-darwin atom-workspace':
   # Toggles Markdown Preview (even if editor is unfocused)
   'shift-cmd-M': 'markdown-preview:toggle'
+  'ctrl-w': 'unset!'
+  'alt-shift-cmd-E': 'emmet:wrap-with-abbreviation'
+'.platform-darwin atom-workspace':
   # Open URLs in the browser if the insertion point is within the URL
   'ctrl-shift-O': 'unset!'
   'alt-cmd-o': 'link:open'
