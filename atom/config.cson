@@ -38,8 +38,7 @@
     softTabs: false
     softWrap: true
     softWrapAtPreferredLineLength: true
-    invisibles:
-      {}
+    invisibles: {}
     autoIndentOnPaste: false
   welcome:
     showOnStartup: false
