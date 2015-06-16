@@ -16,7 +16,7 @@ rmenv() {
 }
 
 # Recreate Python virtualenv associated with this directory
-reenv() {
+rmkenv() {
 	if [ -f "$VIRTUAL_ENV/bin/python3" ]; then
 		local binary=python3
 	elif [ -f "$VIRTUAL_ENV/bin/python2" ]; then
