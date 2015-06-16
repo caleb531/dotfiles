@@ -14,3 +14,16 @@ mkenv() {
 rmenv() {
 	rm -r "$WORKON_HOME"/"$(basename "$PWD")"
 }
+
+# Recreate Python virtualenv associated with this directory
+reenv() {
+	if [ -f "$VIRTUAL_ENV/bin/python3" ]; then
+		local binary=python3
+	elif [ -f "$VIRTUAL_ENV/bin/python2" ]; then
+		local binary=python2
+	fi
+	if [ ! -z "$binary" ]; then
+		rmenv
+		mkenv "$binary"
+	fi
+}
