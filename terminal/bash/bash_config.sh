@@ -26,6 +26,3 @@ fi
 ulimit -n 1024 2> /dev/null
 # Increase available processes limit
 ulimit -u 1024 2> /dev/null
-
-# Active NVM (Node Version Manager)
-source /usr/local/opt/nvm/nvm.sh 2> /dev/null
