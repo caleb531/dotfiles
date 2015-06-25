@@ -60,4 +60,4 @@
     maxVisibleSuggestions: 5
   linter:
     lintOnFly: false
-    showErrorInline: false
+    showErrorPanel: false
