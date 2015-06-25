@@ -58,7 +58,9 @@
   # Toggles Markdown Preview (even if editor is unfocused)
   'shift-cmd-M': 'markdown-preview:toggle'
   'ctrl-w': 'unset!'
-  'alt-shift-cmd-E': 'emmet:wrap-with-abbreviation'
+  'cmd-e': 'emmet:expand-abbreviation'
+  'shift-cmd-E': 'emmet:wrap-with-abbreviation'
+  'alt-cmd-l': 'linter:next-error'
 '.platform-darwin atom-workspace':
   # Open URLs in the browser if the insertion point is within the URL
   'ctrl-shift-O': 'unset!'
