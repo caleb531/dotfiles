@@ -1,5 +1,46 @@
 # Your snippets
 
+# Control structures for all C-based languages
+
+'.source.c,
+ .source.cpp,
+ .source.cs,
+ .source.java,
+ .source.js,
+ .source.php':
+
+  # Conditional blocks
+
+  'if':
+    'prefix': 'if'
+    'body': "if (${1:condition}) {\n\t$2\n} $3"
+
+  'else if':
+    'prefix': 'elseif'
+    'body': "else if (${1:condition}) {\n\t$2\n} $3"
+
+  'else':
+    'prefix': 'else'
+    'body': "else {\n\t$1\n} $2"
+
+  'for':
+    'prefix': 'for'
+    'body': "for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i} += ${4:1}) {\n\t$5\n}$6"
+
+  # Error handling
+
+  'try':
+    'prefix': 'try'
+    'body': "try {\n\t$1\n} $2"
+
+  'catch':
+    'prefix': 'catch'
+    'body': "catch ($1) {\n\t$2\n} $3"
+
+  'finally':
+    'prefix': 'finally'
+    'body': "finally {\n\t$1\n} $2"
+
 '.source.js':
 
   # Functions
@@ -26,6 +67,8 @@
     'prefix': 'expect'
     'body': "expect($1).${2:toBe}($3);$4"
 
+# Python 2 and 3 blocks/statements
+
 '.source.python':
 
   'env (python3)':
@@ -33,51 +76,81 @@
     'body': "#!/usr/bin/env python3\n"
 
   'name import':
-    'prefix': 'fromi'
+    'prefix': 'from'
     'body': "from ${1:module} import ${2:name}"
 
   'docstring':
     'prefix': 'docstr'
     'body': "'''$1'''$2"
 
-'.text.php':
+  'if':
+    'prefix': 'if'
+    'body': "if ${1:condition}:\n\t${2:pass}\n$3"
 
-    'PHP Block (inline)':
-      'prefix': 'php'
-      'body': "<?php $1 ?>"
+  'elif':
+    'prefix': 'elif'
+    'body': "elif ${1:condition}:\n\t${2:pass}\n$3"
 
-    'PHP Block (multiline)':
-      'prefix': 'phpb'
-      'body': "<?php\n\t$2\n?>"
+  'else':
+    'prefix': 'else'
+    'body': "else:\n\t${1:pass}\n$2"
 
-    'PHP Block (echo)':
-      'prefix': 'pe'
-      'body': "<?php echo $1; ?>"
+  'try':
+    'prefix': 'try'
+    'body': "try:\n\t${1:pass}\n$2"
 
-    'echo':
-      'prefix': 'e'
-      'body': "echo $1;"
+  'except':
+    'prefix': 'except'
+    'body': "except ${1:Exception}:\n\t${2:pass}\n$3"
 
-    'print_r':
-      'prefix': 'pr'
-      'body': "print_r( $1 );"
+  'finally':
+    'prefix': 'finally'
+    'body': "finally:\n\t${1:pass}\n$2"
 
-    'function':
-      'prefix': 'f'
-      'body': "function ${1:name}($2) {\n\t$3\n}"
+# PHP blocks/statements (meant to be used within PHP source blocks)
 
-    'if':
-      'prefix': 'if'
-      'body': "if ( ${1:condition} ) {\n\t$2\n}"
+'.source.php':
 
-    'foreach':
-      'prefix': 'fore'
-      'body': "foreach ( ${1:object} as ${2:value} ) {\n\t${3:// code}\n}"
+  'echo':
+    'prefix': 'e'
+    'body': "echo $1;"
 
-    'if (inline)':
-      'prefix': 'pif'
-      'body': "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>"
+  'print_r':
+    'prefix': 'pr'
+    'body': "print_r( $1 );"
 
-    'foreach (inline)':
-      'prefix': 'pfore'
-      'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>"
+  'function':
+    'prefix': 'f'
+    'body': "function ${1:name}($2) {\n\t$3\n}"
+
+  'foreach':
+    'prefix': 'fore'
+    'body': "foreach ( ${1:object} as ${2:value} ) {\n\t${3:// code}\n}"
+
+# Inline PHP Blocks (meant to be intermixed with HTML)
+
+'.text.html.php':
+
+  'PHP Block (inline)':
+    'prefix': 'php'
+    'body': "<?php $1 ?>"
+
+  'PHP Block (multiline)':
+    'prefix': 'phpb'
+    'body': "<?php\n\t$2\n?>"
+
+  'echo (inline)':
+    'prefix': 'pe'
+    'body': "<?php echo $1; ?>"
+
+  'if (inline)':
+    'prefix': 'pif'
+    'body': "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>"
+
+  'for (inline)':
+    'prefix': 'pfor'
+    'body': "<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>\n\t$5\n<?php endfor; ?>"
+
+  'foreach (inline)':
+    'prefix': 'pfore'
+    'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>"
