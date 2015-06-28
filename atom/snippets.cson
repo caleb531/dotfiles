@@ -132,7 +132,7 @@
     'body': "function ${1:name}($2) {\n\t$3\n}"
 
   'foreach':
-    'prefix': 'fore'
+    'prefix': 'foreach'
     'body': "foreach ( ${1:object} as ${2:value} ) {\n\t${3:// code}\n}"
 
 # Inline PHP Blocks (meant to be intermixed with HTML)
@@ -160,5 +160,5 @@
     'body': "<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>\n\t$5\n<?php endfor; ?>"
 
   'foreach (inline)':
-    'prefix': 'pfore'
+    'prefix': 'pforeach'
     'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>"
