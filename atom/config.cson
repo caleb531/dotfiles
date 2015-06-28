@@ -61,3 +61,4 @@
   linter:
     lintOnFly: false
     showErrorPanel: false
+    statusIconPosition: "Right"
