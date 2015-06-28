@@ -30,3 +30,8 @@ linter-bottom-status {
 linter-bottom-tab {
   display: none;
 }
+
+// Ensure that Linter panel is always visible (if it exists in DOM)
+#linter-panel[hidden] {
+  display: block;
+}

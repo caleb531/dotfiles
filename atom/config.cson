@@ -60,5 +60,9 @@
     maxVisibleSuggestions: 5
   linter:
     lintOnFly: false
-    showErrorPanel: false
     statusIconPosition: "Right"
+    showErrorTabProject: false
+    showErrorTabFile: false
+    showErrorInline: false
+    showErrorPanel: false
+    showErrorTabLine: true
