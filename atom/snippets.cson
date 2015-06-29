@@ -148,7 +148,7 @@
 
   'foreach':
     'prefix': 'foreach'
-    'body': "foreach ( ${1:\$object} as ${2:\$value} ) {\n\t${3:// code}\n}$4"
+    'body': "foreach ( ${1:\$object} as ${2:\$value} ) {\n\t$3\n}$4"
 
 # Inline PHP Blocks (meant to be intermixed with HTML)
 
