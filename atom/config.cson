@@ -67,3 +67,5 @@
     showErrorInline: false
     showErrorPanel: false
     showErrorTabLine: true
+  "line-ending-converter":
+    showEolInStatusBar: false
