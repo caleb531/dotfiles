@@ -6,8 +6,7 @@
  .source.cpp,
  .source.cs,
  .source.java,
- .source.js,
- .source.php':
+ .source.js':
 
   # Conditional blocks
 
@@ -107,25 +106,49 @@
     'prefix': 'finally'
     'body': "finally:\n\t${1:pass}\n$2"
 
+  'with':
+    'prefix': 'with'
+    'body': "with ${1:contextmanager}:\n\t${2:pass}\n$3"
+
+  'with open()':
+    'prefix': 'witho'
+    'body': "with open(${1:path}, '${2:r}') as ${3:file}:\n\t${4:pass}\n$5"
+
 # PHP blocks/statements (meant to be used within PHP source blocks)
 
 '.source.php':
 
   'echo':
     'prefix': 'e'
-    'body': "echo $1;"
+    'body': "echo $1;$2"
 
   'print_r':
     'prefix': 'pr'
-    'body': "print_r( $1 );"
+    'body': "print_r( $1 );$2"
 
   'function':
     'prefix': 'f'
-    'body': "function ${1:name}($2) {\n\t$3\n}"
+    'body': "function ${1:name}( $2 ) {\n\t$3\n}$4"
+
+  'if':
+    'prefix': 'if'
+    'body': "if ( ${1:condition} ) {\n\t$2\n} $3"
+
+  'else if':
+    'prefix': 'elseif'
+    'body': "else if ( ${1:condition} ) {\n\t$2\n} $3"
+
+  'else':
+    'prefix': 'else'
+    'body': "else {\n\t$1\n} $2"
+
+  'for':
+    'prefix': 'for'
+    'body': "for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ) {\n\t$5\n}$6"
 
   'foreach':
-    'prefix': 'fore'
-    'body': "foreach ( ${1:object} as ${2:value} ) {\n\t${3:// code}\n}"
+    'prefix': 'foreach'
+    'body': "foreach ( ${1:\$object} as ${2:\$value} ) {\n\t$3\n}$4"
 
 # Inline PHP Blocks (meant to be intermixed with HTML)
 
@@ -133,24 +156,24 @@
 
   'PHP Block (inline)':
     'prefix': 'php'
-    'body': "<?php $1 ?>"
+    'body': "<?php $1 ?>$2"
 
   'PHP Block (multiline)':
     'prefix': 'phpb'
-    'body': "<?php\n\t$2\n?>"
+    'body': "<?php\n\t$1\n?>$2"
 
   'echo (inline)':
     'prefix': 'pe'
-    'body': "<?php echo $1; ?>"
+    'body': "<?php echo $1; ?>$2"
 
   'if (inline)':
     'prefix': 'pif'
-    'body': "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>"
+    'body': "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>$3"
 
   'for (inline)':
     'prefix': 'pfor'
-    'body': "<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>\n\t$5\n<?php endfor; ?>"
+    'body': "<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>\n\t$5\n<?php endfor; ?>$6"
 
   'foreach (inline)':
-    'prefix': 'pfore'
-    'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>"
+    'prefix': 'pforeach'
+    'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>$4"

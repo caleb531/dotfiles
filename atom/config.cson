@@ -50,6 +50,7 @@
     enableExecTime: false
   emmet:
     extensionsPath: "~/.emmet"
+    useEmmetComments: false
   "linter-jscs":
     onlyConfig: true
     preset: "jquery"
@@ -66,3 +67,5 @@
     showErrorInline: false
     showErrorPanel: false
     showErrorTabLine: true
+  "line-ending-converter":
+    showEolInStatusBar: false
