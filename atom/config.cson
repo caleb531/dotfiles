@@ -65,7 +65,7 @@
     showErrorTabProject: false
     showErrorTabFile: false
     showErrorInline: false
-    showErrorPanel: false
+    defaultErrorTab: "Line"
     showErrorTabLine: true
   "line-ending-converter":
     showEolInStatusBar: false
