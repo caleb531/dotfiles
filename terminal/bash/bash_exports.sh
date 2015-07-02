@@ -2,6 +2,12 @@
 # bash_exports.sh
 # Caleb Evans
 
+# Reset PATH to original value (if shell was reloaded)
+if [ ! -z "$OLDPATH" ]; then
+	export PATH="$OLDPATH"
+fi
+export OLDPATH="$PATH"
+
 # Ensure installed packages are recognized and preferred
 
 # GNU core utilities

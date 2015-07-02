@@ -5,9 +5,6 @@
 # Enable aliases to be run as root
 alias sudo='sudo '
 
-# Reloads .bash_profile
-alias reload='exec $SHELL -l'
-
 # Colorize directory listings
 alias ls='ls --color=auto'
 
