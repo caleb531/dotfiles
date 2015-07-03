@@ -14,4 +14,5 @@ ln -snf "$PWD"/terminal/bash ~/.bash
 ln -snf "$PWD"/terminal/.vimrc ~/.vimrc
 ln -snf "$PWD"/terminal/.gitconfig ~/.gitconfig
 
+mkdir -p ~/.ssh
 ln -snf "$PWD"/ssh/config ~/.ssh/config
