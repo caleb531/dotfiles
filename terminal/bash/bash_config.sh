@@ -4,6 +4,8 @@
 
 # Expand multiple subdirectories using the globstar (**) option
 shopt -s globstar
+# Ensure that history is appended to and not overwritten
+shopt -s histappend
 
 # Navigate history matching typed input using up/down arrow keys
 bind '"\e[A": history-search-backward' 2> /dev/null
