@@ -64,7 +64,7 @@ __detect_python_virtualenv() {
 __update_prompt_command() {
 
 	__detect_python_virtualenv
-	PS1="$(__output_ps1)"
+	export PS1="$(__output_ps1)"
 	# Write in-memory command history to file
 	history -a
 	# Ensure that current working directory is updated as needed
