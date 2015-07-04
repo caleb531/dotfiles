@@ -10,10 +10,13 @@ reload() {
 
 # Makes new Python virtualenv in designated virtualenv home
 mkenv() {
-	local env_name="$(basename "$PWD")"
+	local envname="$(basename "$PWD")"
 	pushd "$WORKON_HOME" > /dev/null
-	virtualenv -p "$1" "$env_name"
+	virtualenv -p "$1" "$envname"
 	popd > /dev/null
+	# Activate virtualenv and install pip requirements if possible
+	source "$WORKON_HOME/$envname"/bin/activate
+	pip install -r requirements.txt 2> /dev/null
 }
 
 # Removes existing Python virtualenv
