@@ -4,15 +4,19 @@ source ./config/header.sh sudo
 
 echo "Updating software..."
 
-# Update App Store apps
+# App Store apps
 sudo softwareupdate -ia
 
-# Update Homebrew packages, casks
+# Homebrew packages, casks
 brew update
 brew upgrade --all
 
-# Update npm & packages
-npm install npm -g
-npm update -g
-# Update Ruby gems
+# Atom packages
+apm update --no-confirm
+
+# Node packages
+npm install npm --global
+npm update --global
+
+# Ruby gems
 sudo gem update
