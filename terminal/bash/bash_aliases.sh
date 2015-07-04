@@ -9,7 +9,6 @@ alias sudo='sudo '
 alias ls='ls --color=auto'
 
 # Colorize grep matches (but not for piped output)
-
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -18,6 +17,3 @@ alias fgrep='fgrep --color=auto'
 if type tree &> /dev/null; then
 	alias tree='tree -C'
 fi
-
-# Displays information related to the system's ability to sleep
-alias whyunosleep='pmset -g assertions | grep --color=never Sleep'
