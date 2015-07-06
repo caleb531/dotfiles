@@ -14,7 +14,7 @@ setup() {
 	caffeinate -w "$$" &
 
 	# Import helper functions for use by other configuration scripts
-	source ./config/helper-functions.sh
+	source ./config/helper_functions.sh
 
 }
 
