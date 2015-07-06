@@ -8,7 +8,7 @@ reload() {
 	exec $SHELL -l
 }
 
-# Makes new Python virtualenv in designated virtualenv home
+# Makes new Python virtualenv for current directory
 mkenv() {
 	local envname="$(basename "$PWD")"
 	pushd "$WORKON_HOME" > /dev/null
@@ -22,4 +22,17 @@ mkenv() {
 # Removes existing Python virtualenv
 rmenv() {
 	rm -r "$WORKON_HOME"/"$(basename "$PWD")"
+}
+
+# Remake Python virtualenv belonging to CWD and reinstall pip requirements
+rmkenv() {
+	if [ -f "$VIRTUAL_ENV/bin/python3" ]; then
+		local binary=python3
+	elif [ -f "$VIRTUAL_ENV/bin/python2" ]; then
+		local binary=python2
+	fi
+	if [ ! -z "$binary" ]; then
+		rmenv
+		mkenv "$binary"
+	fi
 }
