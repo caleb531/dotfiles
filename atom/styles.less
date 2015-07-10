@@ -22,8 +22,9 @@ atom-text-editor::shadow {
 }
 
 // Move Linter Status to the left of Encoding and Language in status bar
-linter-bottom-status {
-  float: left;
+.status-bar linter-bottom-status.inline-block {
+  float: right;
+  margin-right: 0;
 }
 
 // Hide Linter file tabs to conserve space in status bar
