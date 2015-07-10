@@ -34,8 +34,6 @@ export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
 
 # Explicitly declare vim as default text editor
 export EDITOR='vim'
-# Explicitly declare less as default pager
-export PAGER='less'
 
 # Number of lines of command history to keep in memory
 export HISTSIZE=250
@@ -43,6 +41,8 @@ export HISTSIZE=250
 export HISTFILESIZE=500
 # Prevent duplicate entries in command history
 export HISTCONTROL=ignoredups:erasedups
+# Prevent potentially dangerous commands in command history
+export HISTIGNORE='git checkout *:git clean *: rm *:git reset *'
 
 # Prevent Python from generating bytecode files
 export PYTHONDONTWRITEBYTECODE=1
