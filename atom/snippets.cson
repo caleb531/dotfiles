@@ -94,6 +94,14 @@
     'prefix': 'else'
     'body': "else:\n\t${1:pass}\n$2"
 
+  'for':
+    'prefix': 'for'
+    'body': "for ${1:value} in ${2:iterable}:\n\t${3:pass}\n$4"
+
+  'while':
+    'prefix': 'while'
+    'body': "while ${1:condition}:\n\t${2:pass}\n$3"
+
   'try':
     'prefix': 'try'
     'body': "try:\n\t${1:pass}\n$2"
