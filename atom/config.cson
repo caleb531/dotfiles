@@ -62,11 +62,10 @@
     maxVisibleSuggestions: 5
   linter:
     lintOnFly: false
-    statusIconPosition: "Right"
     showErrorTabProject: false
     showErrorTabFile: false
     showErrorInline: false
-    defaultErrorTab: "Line"
     showErrorTabLine: true
   "line-ending-converter":
     showEolInStatusBar: false
+  "linter-shellcheck": {}
