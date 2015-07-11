@@ -39,10 +39,10 @@ export EDITOR='vim'
 export HISTSIZE=250
 # Number of lines of command history to keep in file
 export HISTFILESIZE=500
-# Prevent duplicate entries in command history
+# Keep duplicate entries out of command history
 export HISTCONTROL=ignoredups:erasedups
-# Prevent potentially dangerous commands in command history
-export HISTIGNORE='git checkout *:git clean *: rm *:git reset *'
+# Keep potentially dangerous commands out of command history
+export HISTIGNORE='rm *:git checkout *:git clean *:git reset *'
 
 # Prevent Python from generating bytecode files
 export PYTHONDONTWRITEBYTECODE=1
