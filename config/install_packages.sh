@@ -114,6 +114,7 @@ if is_installed brew; then
 		install_apm_pkg linter-jscs
 		install_apm_pkg linter-pep8
 		install_apm_pkg linter-php
+		install_apm_pkg linter-shellcheck
 
 	fi
 
