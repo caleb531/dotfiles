@@ -70,3 +70,8 @@
     showEolInStatusBar: false
   "linter-shellcheck": {}
   "atom-alignment": {}
+  pigments:
+    ignoredScopes: [
+      "\\.comment"
+      "\\.string"
+    ]
