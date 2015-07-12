@@ -54,7 +54,8 @@
 
 # Disable Emmet's key binding for merging lines
 '.platform-darwin atom-text-editor:not([mini])':
-  'shift-cmd-M': 'unset!'
+  'ctrl-cmd-a': 'unset!'
+  'shift-cmd-A': 'atom-alignment:alignMultiple'
   # Toggles Markdown Preview (even if editor is unfocused)
   'shift-cmd-M': 'markdown-preview:toggle'
   'ctrl-w': 'unset!'

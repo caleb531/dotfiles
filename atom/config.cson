@@ -69,3 +69,4 @@
   "line-ending-converter":
     showEolInStatusBar: false
   "linter-shellcheck": {}
+  "atom-alignment": {}
