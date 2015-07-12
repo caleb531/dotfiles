@@ -36,3 +36,8 @@ rmkenv() {
 		mkenv "$binary"
 	fi
 }
+
+# Upgrade all pip packages
+pip-upgrade-all() {
+	pip install --upgrade $(pip list --outdated | awk '{print $1}')
+}
