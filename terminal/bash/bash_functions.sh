@@ -37,7 +37,10 @@ rmkenv() {
 	fi
 }
 
-# Upgrade all pip packages
+# Upgrade any and all outdated pip packages
 pip-upgrade-all() {
-	pip install --upgrade $(pip list --outdated | awk '{print $1}')
+	local pkgs="$(pip list --outdated | awk '{print $1}')"
+	if [ ! -z $pkgs ]; then
+		pip install --upgrade $pkgs
+	fi
 }
