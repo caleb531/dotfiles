@@ -10,29 +10,34 @@ atom-workspace {
   background-color: @base-background-color;
 }
 
-// De-italicize all syntax components which Monokai italicizes
-atom-text-editor::shadow {
-  .storage.type,
-  .entity.other.inherited-class,
-  .variable.parameter,
-  .support.type,
-  .support.class {
-    font-style: normal;
+atom-text-editor {
+  &::shadow {
+    // De-italicize all syntax components which Monokai italicizes
+    .storage.type,
+    .entity.other.inherited-class,
+    .variable.parameter,
+    .support.type,
+    .support.class {
+      font-style: normal;
+    }
+    // Make selected line more prominent
+    .line.cursor-line {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
   }
 }
 
 // Move Linter Status to the left of Encoding and Language in status bar
+// Also reduce margin to converve space
 .status-bar linter-bottom-status.inline-block {
   float: right;
   margin-right: 0;
 }
 
-// Hide Linter file tabs to conserve space in status bar
 linter-bottom-tab {
+  // Hide Linter file tabs to conserve space in status bar
   display: none;
-}
-
-// Ensure that Linter panel is always visible (if it exists in DOM)
-#linter-panel[hidden] {
-  display: block;
+  // Decrease font size of file tabs to vertically center them
+  // (in case I ever decide to show them again)
+  font-size: 10px;
 }
