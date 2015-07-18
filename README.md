@@ -7,7 +7,7 @@
 This repository describes and features the configuration files for my Terminal,
 as well as configuration for the applications and packages I use. Note that I am
 an avid OS X user, and therefore most of these customizations are specific to OS
-X. However, some of these customizations can also be applied to Linux systems.
+X. However, some of these customizations can also be applied on Linux systems.
 
 ## Features
 
@@ -18,23 +18,23 @@ adds Unicode literals, the new *globstar* option, and support for Bash
 Completion 2. These reasons are enough for me to use Bash 4 over the bundled
 v3.2 shell.
 
-### Terminal theme
-
-For my work in the Terminal, I created Material Colors, a minimalist theme which
-utilizes Google's Material Design color palette. While the theme's
-characteristics are largely founded in my personal tastes, I have chosen to
-include the theme in this repository for your convenience.
-
 ### Completion
 
 I use Bash Completion 2.1 for tab completion on the command line. Bash
 Completion 2 offers significant performance advantages over its predecessor
 (v1.3), making it the optimal choice for my completion needs.
 
+### Terminal theme
+
+For my work in the Terminal, I created Material Colors, a minimalist theme which
+utilizes Google's Material Design color palette. While the theme's
+characteristics are largely founded in my personal tastes, I have chosen to
+include the theme in this repository for your convenience at `terminal/themes/Material Colors.terminal`.
+
 ### Color highlighting
 
-My setup enables color highlighting for a number of commands and interfaces.
-These include:
+My setup enables color highlighting for a number of commands and interfaces,
+including:
 
 * `diff`
 * `grep`, `egrep`, `fgrep`
@@ -69,8 +69,8 @@ script and custom styles.
 ### Emmet configuration
 
 I have also included my configuration for [Emmet](http://emmet.io/), an
-invaluable package which I use within Atom. This configuration consists of both
-preferences and snippets for HTML/CSS expansion.
+invaluable package which enables quick HTML expansion within Atom. This
+configuration consists of both preferences and snippets for HTML/CSS expansion.
 
 Please note that running the below symlink script will symlink `emmet/` to
 `~/.emmet`. Therefore, please ensure that this directory is set as your
@@ -78,11 +78,11 @@ Please note that running the below symlink script will symlink `emmet/` to
 
 ## Configuration scripts
 
-For configuring fresh OS X installs, I have also created a serious of scripts
-which automatically configures my shell, sets my preferred OS X preferences, and
-installs packages, among other tasks. All of these scripts are located within
-the `config/` directory. You can run these scripts altogether using
-`config-all.sh`, or individually by executing the respective script.
+For configuring fresh OS X installs, I have also created a series of scripts
+which automatically configure my shell, set my preferred OS X preferences, and
+install packages, among other tasks. All of these scripts are located within the
+`config/` directory. You can run these scripts altogether using `config-all.sh`,
+or individually by executing the respective script.
 
 Generally, it is most useful to execute `config/create-symlinks.sh`, which will
 forcefully create/update the respective symlinks to these dotfiles within your
