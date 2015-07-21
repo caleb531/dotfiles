@@ -27,7 +27,7 @@ rmenv() {
 # Upgrade any and all outdated pip packages
 pip-upgrade-all() {
 	local pkgs="$(pip list --outdated | awk '{print $1}')"
-	if [ ! -z $pkgs ]; then
+	if [ ! -z "$pkgs" ]; then
 		pip install --upgrade $pkgs
 	fi
 }
