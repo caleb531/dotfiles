@@ -12,33 +12,33 @@
 
   'if':
     'prefix': 'if'
-    'body': "if (${1:condition}) {\n\t$2\n} $3"
+    'body': "if (${1:condition}) {\n\t$2\n}"
 
   'else if':
     'prefix': 'elseif'
-    'body': "else if (${1:condition}) {\n\t$2\n} $3"
+    'body': "else if (${1:condition}) {\n\t$2\n}"
 
   'else':
     'prefix': 'else'
-    'body': "else {\n\t$1\n} $2"
+    'body': "else {\n\t$1\n}"
 
   'for':
     'prefix': 'for'
-    'body': "for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i} += ${4:1}) {\n\t$5\n}$6"
+    'body': "for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i} += ${4:1}) {\n\t$5\n}"
 
   # Error handling
 
   'try':
     'prefix': 'try'
-    'body': "try {\n\t$1\n} $2"
+    'body': "try {\n\t$1\n}"
 
   'catch':
     'prefix': 'catch'
-    'body': "catch ($1) {\n\t$2\n} $3"
+    'body': "catch ($1) {\n\t$2\n}"
 
   'finally':
     'prefix': 'finally'
-    'body': "finally {\n\t$1\n} $2"
+    'body': "finally {\n\t$1\n}"
 
 '.source.js':
 
@@ -46,25 +46,25 @@
 
   'Function Declaration':
     'prefix': 'fd'
-    'body': "function ${1:name}($2) {\n\t$3\n}$4"
+    'body': "function ${1:name}($2) {\n\t$3\n}"
 
   'Function Expression':
     'prefix': 'fe'
-    'body': "function ($1) {\n\t$2\n}$3"
+    'body': "function ($1) {\n\t$2\n}"
 
   # Jasmine
 
   'it':
     'prefix': 'it'
-    'body': "it('$1', function ($2) {\n\t$3\n});$4"
+    'body': "it('$1', function ($2) {\n\t$3\n});"
 
   'describe':
     'prefix': 'desc'
-    'body': "describe('$1', function ($2) {\n\t$3\n});$4"
+    'body': "describe('$1', function ($2) {\n\t$3\n});"
 
   'expect':
     'prefix': 'expect'
-    'body': "expect($1).${2:toBe}($3);$4"
+    'body': "expect($1).${2:toBe}($3);"
 
 # Python 2 and 3 blocks/statements
 
@@ -80,55 +80,55 @@
 
   'docstring':
     'prefix': 'docstr'
-    'body': "'''$1'''$2"
+    'body': "'''$1'''"
 
   'if':
     'prefix': 'if'
-    'body': "if ${1:condition}:\n\t${2:pass}\n$3"
+    'body': "if ${1:condition}:\n\t${2:pass}"
 
   'elif':
     'prefix': 'elif'
-    'body': "elif ${1:condition}:\n\t${2:pass}\n$3"
+    'body': "elif ${1:condition}:\n\t${2:pass}"
 
   'else':
     'prefix': 'else'
-    'body': "else:\n\t${1:pass}\n$2"
+    'body': "else:\n\t${1:pass}"
 
   'for':
     'prefix': 'for'
-    'body': "for ${1:value} in ${2:iterable}:\n\t${3:pass}\n$4"
+    'body': "for ${1:value} in ${2:iterable}:\n\t${3:pass}"
 
   'while':
     'prefix': 'while'
-    'body': "while ${1:condition}:\n\t${2:pass}\n$3"
+    'body': "while ${1:condition}:\n\t${2:pass}"
 
   'try':
     'prefix': 'try'
-    'body': "try:\n\t${1:pass}\n$2"
+    'body': "try:\n\t${1:pass}"
 
   'except':
     'prefix': 'except'
-    'body': "except ${1:Exception}:\n\t${2:pass}\n$3"
+    'body': "except ${1:Exception}:\n\t${2:pass}"
 
   'finally':
     'prefix': 'finally'
-    'body': "finally:\n\t${1:pass}\n$2"
+    'body': "finally:\n\t${1:pass}"
 
   'with':
     'prefix': 'with'
-    'body': "with ${1:contextmanager}:\n\t${2:pass}\n$3"
+    'body': "with ${1:contextmanager}:\n\t${2:pass}"
 
   'with open()':
     'prefix': 'witho'
-    'body': "with open(${1:path}, '${2:r}') as ${3:file}:\n\t${4:pass}\n$5"
+    'body': "with open(${1:path}, '${2:r}') as ${3:file}:\n\t${4:pass}"
 
   'function':
     'prefix': 'def'
-    'body': "def ${1:fname}($2):\n\t${3:pass}\n$4"
+    'body': "def ${1:fname}($2):\n\t${3:pass}"
 
   'class':
     'prefix': 'class'
-    'body': "class ${1:ClassName}(${2:object}):\n\t${3:pass}\n$4"
+    'body': "class ${1:ClassName}(${2:object}):\n\t${3:pass}"
 
 # PHP blocks/statements (meant to be used within PHP source blocks)
 
@@ -136,35 +136,35 @@
 
   'echo':
     'prefix': 'e'
-    'body': "echo $1;$2"
+    'body': "echo $1;"
 
   'print_r':
     'prefix': 'pr'
-    'body': "print_r( $1 );$2"
+    'body': "print_r( $1 );"
 
   'function':
     'prefix': 'f'
-    'body': "function ${1:name}( $2 ) {\n\t$3\n}$4"
+    'body': "function ${1:name}( $2 ) {\n\t$3\n}"
 
   'if':
     'prefix': 'if'
-    'body': "if ( ${1:condition} ) {\n\t$2\n} $3"
+    'body': "if ( ${1:condition} ) {\n\t$2\n}"
 
   'else if':
     'prefix': 'elseif'
-    'body': "else if ( ${1:condition} ) {\n\t$2\n} $3"
+    'body': "else if ( ${1:condition} ) {\n\t$2\n}"
 
   'else':
     'prefix': 'else'
-    'body': "else {\n\t$1\n} $2"
+    'body': "else {\n\t$1\n}"
 
   'for':
     'prefix': 'for'
-    'body': "for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ) {\n\t$5\n}$6"
+    'body': "for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ) {\n\t$5\n}"
 
   'foreach':
     'prefix': 'foreach'
-    'body': "foreach ( ${1:\$object} as ${2:\$value} ) {\n\t$3\n}$4"
+    'body': "foreach ( ${1:\$object} as ${2:\$value} ) {\n\t$3\n}"
 
 # Inline PHP Blocks (meant to be intermixed with HTML)
 
@@ -172,24 +172,24 @@
 
   'PHP Block (inline)':
     'prefix': 'php'
-    'body': "<?php $1 ?>$2"
+    'body': "<?php $1 ?>"
 
   'PHP Block (multiline)':
     'prefix': 'phpb'
-    'body': "<?php\n\t$1\n?>$2"
+    'body': "<?php\n\t$1\n?>"
 
   'echo (inline)':
     'prefix': 'pe'
-    'body': "<?php echo $1; ?>$2"
+    'body': "<?php echo $1; ?>"
 
   'if (inline)':
     'prefix': 'pif'
-    'body': "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>$3"
+    'body': "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>"
 
   'for (inline)':
     'prefix': 'pfor'
-    'body': "<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>\n\t$5\n<?php endfor; ?>$6"
+    'body': "<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>\n\t$5\n<?php endfor; ?>"
 
   'foreach (inline)':
     'prefix': 'pforeach'
-    'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>$4"
+    'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>"
