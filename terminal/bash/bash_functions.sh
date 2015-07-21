@@ -44,26 +44,3 @@ pip-upgrade-all() {
 		pip install --upgrade $pkgs
 	fi
 }
-
-# Reclone a git repository
-git-reclone() {
-	if [ ! -z "$(git status --porcelain)" ]; then
-		# Stop if there are no uncommitted changes
-		echo "There are uncommitted changes; please commit and push them before recloning"
-		return 1
-	elif [ ! -z "$(git log --branches --not --remotes)" ]; then
-		# Stop if there are unpushed changes on any branch
-		echo "There are unpushed changes; please push all changes before recloning"
-		echo "You can push all branches and tags using git push --all origin"
-		return 1
-	fi
-	local reponame="$(basename "$PWD")"
-	local remote="$(git config --get remote.origin.url)"
-	pushd .. > /dev/null
-	# Delete and recreate repository directory with same name
-	rm -rf "$reponame"
-	mkdir "$reponame"
-	popd > /dev/null
-	# Reclone contents of remote repository into recreated local repository
-	git clone "$remote" .
-}
