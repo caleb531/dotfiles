@@ -24,19 +24,6 @@ rmenv() {
 	rm -r "$WORKON_HOME"/"$(basename "$PWD")"
 }
 
-# Remake Python virtualenv belonging to CWD and reinstall pip requirements
-rmkenv() {
-	if [ -f "$VIRTUAL_ENV/bin/python3" ]; then
-		local binary=python3
-	elif [ -f "$VIRTUAL_ENV/bin/python2" ]; then
-		local binary=python2
-	fi
-	if [ ! -z "$binary" ]; then
-		rmenv
-		mkenv "$binary"
-	fi
-}
-
 # Upgrade any and all outdated pip packages
 pip-upgrade-all() {
 	local pkgs="$(pip list --outdated | awk '{print $1}')"
