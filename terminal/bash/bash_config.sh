@@ -4,10 +4,10 @@
 
 # Expand multiple subdirectories using the globstar (**) option
 shopt -s globstar
-# Ensure that history is appended to and not overwritten
+# Ensure that command history is appended to and not overwritten
 shopt -s histappend
 
-# Navigate history matching typed input using up/down arrow keys
+# Navigate command history matching typed input using up/down arrow keys
 bind '"\e[A": history-search-backward' 2> /dev/null
 bind '"\e[B": history-search-forward' 2> /dev/null
 
@@ -16,13 +16,13 @@ if [ $BASH_VERSINFO -ge 4 ]; then
 
 	# If Bash Completion is installed
 	if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-		# Load completions
+		# Load all completions
 		source /usr/local/share/bash-completion/bash_completion
 	fi
 
 fi
 
-# Limitations on system resources
+# Set limitations on system resources
 
 # Increase open files limit
 ulimit -n 1024 2> /dev/null

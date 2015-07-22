@@ -44,7 +44,7 @@ export HISTCONTROL=ignoredups:erasedups
 # Keep potentially dangerous commands out of command history
 export HISTIGNORE='rm *:git checkout *:git clean *:git reset *'
 
-# Prevent Python from generating bytecode files
+# Prevent Python from generating bytecode (*.pyc, __pycache__, etc.)
 export PYTHONDONTWRITEBYTECODE=1
 
 # Use /Applications for apps installed with Homebrew Cask

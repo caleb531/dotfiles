@@ -2,12 +2,12 @@
 # bash_prompt.sh
 # Caleb Evans
 
-# Output ANSI escape sequence for the given color code
+# Outputs ANSI escape sequence for the given color code
 __set_color() {
 	echo -n "\[\e[${1}m\]"
 }
 
-# Reset color escape sequences
+# Resets color escape sequences
 __reset_color() {
 	__set_color 0
 }
@@ -40,7 +40,7 @@ __output_ps1() {
 
 }
 
-# Detect and manage Python virtualenvs when changing directories
+# Activates/deactivates Python virtualenv depending on the current directory
 __detect_python_virtualenv() {
 
 	local dirname="$(basename "$PWD")"
@@ -63,11 +63,12 @@ __detect_python_virtualenv() {
 # Run the following for each new command
 __update_prompt_command() {
 
+	# Activate/deactivate virtualenvs as necessary when changing directories
 	__detect_python_virtualenv
 	export PS1="$(__output_ps1)"
 	# Write in-memory command history to file
 	history -a
-	# Ensure that current working directory is updated as needed
+	# Ensure current working directory carries to new tabs
 	update_terminal_cwd
 
 }
