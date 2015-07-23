@@ -14,9 +14,8 @@ mkenv() {
 	pushd "$WORKON_HOME" > /dev/null
 	virtualenv -p "$1" "$envname"
 	popd > /dev/null
-	# Activate virtualenv and install pip requirements if possible
+	# Activate virtualenv so packages can be installed
 	source "$WORKON_HOME/$envname"/bin/activate
-	pip install -r requirements.txt 2> /dev/null
 }
 
 # Removes existing Python virtualenv
