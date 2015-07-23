@@ -23,11 +23,3 @@ mkenv() {
 rmenv() {
 	rm -r "$WORKON_HOME"/"$(basename "$PWD")"
 }
-
-# Upgrades any and all outdated pip packages
-pip-upgrade-all() {
-	local pkgs="$(pip list --outdated | awk '{print $1}')"
-	if [ ! -z "$pkgs" ]; then
-		pip install --upgrade $pkgs
-	fi
-}
