@@ -16,3 +16,9 @@
 	ignorecase = false
 	# Use tab width of 4 columns for git diff/show
 	pager = less -x1,5
+
+# Push/pull current branch by default (when no arguments are given)
+[push]
+	default = simple
+[pull]
+	default = simple
