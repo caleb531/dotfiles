@@ -24,7 +24,8 @@ activateVirtualenv = ->
     if virtualenv isnt project
       fs.lstat(virtualenv, (err, stats) ->
         if not err and stats.isDirectory()
-          process.env.PATH = [virtualenv, process.env.PATH].join ':'
+          virtualenv_bin = path.join(virtualenv, 'bin')
+          process.env.PATH = [virtualenv_bin, process.env.PATH].join ':'
           process.env.VIRTUAL_ENV = virtualenv
           console.log "Activated virtualenv at #{virtualenv}"
       )
