@@ -10,7 +10,7 @@ atom-workspace {
   background-color: @base-background-color;
 }
 
-atom-text-editor {
+atom-text-editor:not([mini]) {
   &::shadow {
     // De-italicize all syntax components which Monokai italicizes
     .storage.type,
