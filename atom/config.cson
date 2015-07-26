@@ -75,3 +75,5 @@
       "\\.string"
     ]
     markerType: "dot"
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
