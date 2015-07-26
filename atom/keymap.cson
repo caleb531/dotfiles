@@ -51,6 +51,9 @@
 'atom-text-editor:not([mini])':
   'alt-shift-S': 'unset!'
   'ctrl-cmd-s': 'snippets:available'
+  'alt-cmd-l': 'linter:next-error'
+  'alt-up': 'expand-region:expand'
+  'alt-down': 'expand-region:shrink'
 
 # Disable Emmet's key binding for merging lines
 '.platform-darwin atom-text-editor:not([mini])':
@@ -61,7 +64,6 @@
   'ctrl-w': 'unset!'
   'cmd-e': 'emmet:expand-abbreviation'
   'shift-cmd-E': 'emmet:wrap-with-abbreviation'
-  'alt-cmd-l': 'linter:next-error'
 '.platform-darwin atom-workspace':
   # Open URLs in the browser if the insertion point is within the URL
   'ctrl-shift-O': 'unset!'
