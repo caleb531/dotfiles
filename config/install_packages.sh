@@ -99,6 +99,7 @@ if is_installed brew; then
 		install_apm_pkg monokai
 		install_apm_pkg editorconfig
 		install_apm_pkg resize-indent
+		install_apm_pkg expand-region
 		install_apm_pkg line-ending-converter
 		install_apm_pkg language-applescript
 		install_apm_pkg language-gitignore
@@ -108,14 +109,17 @@ if is_installed brew; then
 		install_apm_pkg language-ini
 		install_apm_pkg language-x86
 		install_apm_pkg ssh-config
+		install_apm_pkg atom-alignment
+		install_apm_pkg advanced-new-file
 		install_apm_pkg script
 		install_apm_pkg emmet
 		install_apm_pkg linter
 		install_apm_pkg linter-jshint
 		install_apm_pkg linter-jscs
-		install_apm_pkg linter-pep8
+		install_apm_pkg linter-flake8
 		install_apm_pkg linter-php
-		install_apm_pkg linter-shellcheck
+		install_apm_pkg pigments
+		install_apm_pkg merge-conflicts
 
 	fi
 
