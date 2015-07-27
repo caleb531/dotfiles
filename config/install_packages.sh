@@ -2,7 +2,7 @@
 
 source ./config/header.sh sudo
 
-if ! is_installed brew; then
+if ! is_cmd_installed brew; then
 
 	echo "Installing Command Line Tools..."
 	xcode-select --install
@@ -16,11 +16,11 @@ else
 
 fi
 
-if is_installed brew; then
+if is_cmd_installed brew; then
 
 	echo "Installing Homebrew packages..."
 
-	install_pkg bash
+	install_brew_pkg bash
 
 	if [ -f /usr/local/bin/bash -a $SHELL != /usr/local/bin/bash ]; then
 		echo "Changing login shell to Bash 4..."
@@ -30,23 +30,23 @@ if is_installed brew; then
 	fi
 
 	# Install packages used by dotfiles
-	tap_repo homebrew/versions
-	install_pkg bash-completion2
-	install_pkg colordiff
-	tap_repo homebrew/dupes
-	install_pkg grep --with-default-names
-	install_pkg coreutils
-	install_pkg tree
+	tap_brew_repo homebrew/versions
+	install_brew_pkg bash-completion2
+	install_brew_pkg colordiff
+	tap_brew_repo homebrew/dupes
+	install_brew_pkg grep --with-default-names
+	install_brew_pkg coreutils
+	install_brew_pkg tree
 
 	# Install additional packages for personal use
-	install_pkg git
-	install_pkg python
-	install_pkg python3
-	install_pkg ssh-copy-id
-	install_pkg closure-compiler
+	install_brew_pkg git
+	install_brew_pkg python
+	install_brew_pkg python3
+	install_brew_pkg ssh-copy-id
+	install_brew_pkg closure-compiler
 	# Install Homebrew Cask for managing packaged apps
-	tap_repo caskroom/cask
-	install_pkg brew-cask
+	tap_brew_repo caskroom/cask
+	install_brew_pkg brew-cask
 
 
 	echo -n "Install dev env packages for work? (y/n) "
@@ -54,13 +54,13 @@ if is_installed brew; then
 
 	if [ "$prompt_answer" == y ]; then
 
-		install_pkg ruby
-		install_pkg node
-		install_pkg postgresql
-		install_pkg imagemagick	--with-webp
-		install_pkg graphicsmagick
+		install_brew_pkg ruby
+		install_brew_pkg node
+		install_brew_pkg postgresql
+		install_brew_pkg imagemagick	--with-webp
+		install_brew_pkg graphicsmagick
 
-		if is_installed npm; then
+		if is_cmd_installed npm; then
 
 			echo "Installing npm packages..."
 
@@ -72,7 +72,7 @@ if is_installed brew; then
 
 		fi
 
-		if is_installed gem; then
+		if is_cmd_installed gem; then
 
 			echo "Installing Ruby gems..."
 
@@ -82,7 +82,7 @@ if is_installed brew; then
 
 	fi
 
-	if is_installed pip; then
+	if is_cmd_installed pip; then
 
 		echo "Installing pip packages..."
 
@@ -92,7 +92,7 @@ if is_installed brew; then
 
 	fi
 
-	if is_installed apm; then
+	if is_cmd_installed apm; then
 
 		echo "Installing Atom packages..."
 

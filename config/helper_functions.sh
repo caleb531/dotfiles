@@ -1,10 +1,10 @@
 #!/bin/bash
 
-is_installed() {
+is_cmd_installed() {
 	type "$1" &> /dev/null
 }
 
-is_pkg_installed() {
+is_brew_pkg_installed() {
 	brew list -1 | grep -q "^$1\$"
 }
 
@@ -32,7 +32,7 @@ is_tapped() {
 	brew tap | grep "$1" &> /dev/null
 }
 
-tap_repo() {
+tap_brew_repo() {
 	if ! is_tapped "$1"; then
 		echo "Tapping $1..."
 		brew tap "$@"
@@ -41,8 +41,8 @@ tap_repo() {
 	fi
 }
 
-install_pkg() {
-	if ! is_pkg_installed "$1"; then
+install_brew_pkg() {
+	if ! is_brew_pkg_installed "$1"; then
 		brew install "$@"
 	else
 		echo "Already installed: $1"
