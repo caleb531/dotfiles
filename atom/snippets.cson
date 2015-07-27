@@ -80,7 +80,7 @@
 
   'docstring':
     'prefix': 'docstr'
-    'body': "'''$1'''"
+    'body': "\"\"\"$1\"\"\""
 
   'if':
     'prefix': 'if'
