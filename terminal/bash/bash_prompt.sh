@@ -43,10 +43,10 @@ __output_ps1() {
 # Activates/deactivates Python virtualenv depending on the current directory
 __detect_python_virtualenv() {
 
-	local dirname="$(basename "$PWD")"
-	local virtualenv="$WORKON_HOME"/"$dirname"
+	local envname="$(basename "$PWD")"
+	local virtualenv="$WORKON_HOME"/"$envname"
 	# If current directory has a virtualenv that is not itself
-	if [ "$dirname" != "/" -a -d "$virtualenv" -a "$virtualenv" != "$PWD" ]; then
+	if [ "$envname" != "/" -a -d "$virtualenv" -a "$virtualenv" != "$PWD" ]; then
 		# Activate virtualenv if it is not already active
 		if [ -z "$VIRTUAL_ENV" -o "$VIRTUAL_ENV" != "$virtualenv" ]; then
 			source "$virtualenv"/bin/activate
