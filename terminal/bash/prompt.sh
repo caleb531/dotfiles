@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash_prompt.sh
+# prompt.sh
 # Caleb Evans
 
 # Outputs ANSI escape sequence for the given color code

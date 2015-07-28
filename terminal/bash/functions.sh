@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash_functions.sh
+# functions.sh
 # Caleb Evans
 
 # Reloads entire shell, including .bash_profile and any activated virtualenv

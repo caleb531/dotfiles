@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash_aliases.sh
+# aliases.sh
 # Caleb Evans
 
 # Enable aliases to be run as root

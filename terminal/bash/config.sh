@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash_config.sh
+# config.sh
 # Caleb Evans
 
 # Expand multiple subdirectories using the globstar (**) option

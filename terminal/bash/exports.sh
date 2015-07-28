@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash_exports.sh
+# exports.sh
 # Caleb Evans
 
 # Reset PATH to original value (if shell was reloaded)
