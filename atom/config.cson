@@ -33,6 +33,7 @@
       "._*"
       "Thumbs.db"
     ]
+    followSymlinks: false
   editor:
     fontFamily: "Monaco"
     tabLength: 4
