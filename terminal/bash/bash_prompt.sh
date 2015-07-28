@@ -16,11 +16,25 @@ __reset_color() {
 # Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
 __output_ps1() {
 
+    # Define a local constant for the separator between items in the prompt
+	local SEPARATOR=' : '
+
 	# Output name of current working directory (with ~ denoting HOME)
 	__set_color $PURPLE_BOLD
 	echo -n "\W"
 	__set_color $WHITE_BOLD
-	echo -n " : "
+	echo -n "$SEPARATOR"
+
+	# If working directory is a virtualenv
+	if [ ! -z "$VIRTUAL_ENV" ]; then
+
+		# Output Python version used by virtualenv
+		__set_color $PURPLE_BOLD
+		echo -n "$(readlink "$VIRTUAL_ENV"/bin/python)"
+		__set_color $WHITE_BOLD
+		echo -n "$SEPARATOR"
+
+	fi
 
 	# If working directory is (or resides in) a git repository
 	if git rev-parse --git-dir &> /dev/null; then
@@ -29,7 +43,7 @@ __output_ps1() {
 		__set_color $PURPLE_BOLD
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 		__set_color $WHITE_BOLD
-		echo -n " : "
+		echo -n "$SEPARATOR"
 
 	fi
 
