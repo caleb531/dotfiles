@@ -9,7 +9,7 @@ reload() {
 }
 
 # Makes new Python virtualenv for current directory
-mkenv() {
+mkvirtualenv() {
 	local envname="$(basename "$PWD")"
 	pushd "$WORKON_HOME" > /dev/null
 	virtualenv -p "$1" "$envname"
@@ -19,6 +19,6 @@ mkenv() {
 }
 
 # Removes existing Python virtualenv
-rmenv() {
+rmvirtualenv() {
 	rm -r "$WORKON_HOME"/"$(basename "$PWD")"
 }
