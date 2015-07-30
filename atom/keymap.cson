@@ -12,9 +12,9 @@
   'ctrl-shift-L': 'unset!'
   'shift-cmd-L': 'grammar-selector:show'
   # Toggles invisible characters and guides
-  'shift-cmd-I': 'window:toggle-invisibles'
-  'alt-shift-cmd-I': 'editor:toggle-indent-guide'
-  # Execute and view output from scripts within the editor
+  'cmd-i': 'window:toggle-invisibles'
+  'shift-cmd-I': 'editor:toggle-indent-guide'
+  # Execute and view output from scripts within editor
   'shift-cmd-R': 'script:run'
   'alt-shift-cmd-R': 'script:run-options'
   # Toggles character encoding selection panel
@@ -22,12 +22,12 @@
   'cmd-shift-U': 'encoding-selector:show'
   # Toggles line jump panel
   'cmd-j': 'go-to-line:toggle'
-  # Rebind "Delete Line" key key binding to something more convenient
+  # Deletes an entire line without copying it
   'ctrl-shift-K': 'unset!'
   'shift-cmd-X': 'editor:delete-line'
-  # Selects all occurences of the current selection (complements cmd-d)
+  # Selects all occurences of current selection (complements cmd-d)
   'alt-cmd-d': 'find-and-replace:select-all'
-  # Selects all text between the outer matching pair of parens/brackets
+  # Selects all text between outer matching pair of parens/brackets
   'alt-cmd-b': 'bracket-matcher:select-inside-brackets'
 
 'atom-text-editor':
@@ -46,26 +46,29 @@
   'alt-f': 'unset!'
   'alt-shift-F': 'unset!'
   'alt-h': 'unset!'
-
-# Toggle list of snippets that apply to current document
-'atom-text-editor:not([mini])':
   'alt-shift-S': 'unset!'
+
+'atom-text-editor:not([mini])':
+  # Toggles list of snippets that apply to current document
   'ctrl-cmd-s': 'snippets:available'
+  # Advances to next Linter error in document
   'alt-cmd-l': 'linter:next-error'
+  # Expands/contracts selection to next outermost/innermost set of tokens
   'alt-up': 'expand-region:expand'
   'alt-down': 'expand-region:shrink'
 
-# Disable Emmet's key binding for merging lines
 '.platform-darwin atom-text-editor:not([mini])':
+  # Aligns values to same column if list of key-value pairs is selected
   'ctrl-cmd-a': 'unset!'
   'shift-cmd-A': 'atom-alignment:alignMultiple'
   # Toggles Markdown Preview (even if editor is unfocused)
   'shift-cmd-M': 'markdown-preview:toggle'
   'ctrl-w': 'unset!'
+  # Expands Emmet HTML abbreviations
   'cmd-e': 'emmet:expand-abbreviation'
   'shift-cmd-E': 'emmet:wrap-with-abbreviation'
 '.platform-darwin atom-workspace':
-  # Open URLs in the browser if the insertion point is within the URL
+  # Opens inline URL in default web browser if cursor is within URL
   'ctrl-shift-O': 'unset!'
   'alt-cmd-o': 'link:open'
 
