@@ -59,8 +59,11 @@ if is_cmd_installed brew; then
 		install_brew_pkg node
 	    pin_brew_pkg node
 		install_brew_pkg postgresql
-		install_brew_pkg imagemagick	--with-webp
+	    pin_brew_pkg postgresql
+		install_brew_pkg imagemagick --with-webp
+	    pin_brew_pkg imagemagick
 		install_brew_pkg graphicsmagick
+	    pin_brew_pkg graphicsmagick
 
 		if is_cmd_installed npm; then
 
