@@ -8,6 +8,10 @@ is_brew_pkg_installed() {
 	brew list -1 | grep -q "^$1\$"
 }
 
+is_brew_pkg_pinned() {
+	brew list --pinned -1 | grep -q "^$1\$"
+}
+
 is_npm_pkg_installed() {
 	npm list -g --depth=0 | grep -q " $1@"
 }
@@ -46,6 +50,14 @@ install_brew_pkg() {
 		brew install "$@"
 	else
 		echo "Already installed: $1"
+	fi
+}
+
+pin_brew_pkg() {
+	if ! is_brew_pkg_pinned "$1"; then
+		brew pin "$@"
+	else
+		echo "Already pinned: $1"
 	fi
 }
 

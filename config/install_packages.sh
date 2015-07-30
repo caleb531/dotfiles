@@ -55,7 +55,9 @@ if is_cmd_installed brew; then
 	if [ "$prompt_answer" == y ]; then
 
 		install_brew_pkg ruby
+	    pin_brew_pkg ruby
 		install_brew_pkg node
+	    pin_brew_pkg node
 		install_brew_pkg postgresql
 		install_brew_pkg imagemagick	--with-webp
 		install_brew_pkg graphicsmagick
