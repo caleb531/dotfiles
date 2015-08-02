@@ -144,7 +144,7 @@
 
   'function':
     'prefix': 'f'
-    'body': "function ${1:name}( $2 ) {\n\t$3\n}"
+    'body': "function ${1:name}($2) {\n\t$3\n}"
 
   'if':
     'prefix': 'if'
