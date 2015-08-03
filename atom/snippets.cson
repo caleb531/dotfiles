@@ -166,6 +166,14 @@
     'prefix': 'foreach'
     'body': "foreach ( ${1:\$object} as ${2:\$value} ) {\n\t$3\n}"
 
+  'array function call':
+    'prefix': 'fca'
+    'body': "${1:name}( array(\n\t$2\n)$3 );"
+
+  'key-value pair':
+    'prefix': 'kv'
+    'body': "'${1:key}' => ${2:value}$3"
+
 # Inline PHP Blocks (meant to be intermixed with HTML)
 
 '.text.html.php':
