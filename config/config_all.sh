@@ -2,6 +2,6 @@
 
 echo "Configuring all..."
 
-source ./config/set-prefs.sh
-source ./config/install-packages.sh
-source ./config/install-casks.sh
+source ./config/set_prefs.sh
+source ./config/install_packages.sh
+source ./config/install_casks.sh
