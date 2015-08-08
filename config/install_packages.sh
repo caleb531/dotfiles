@@ -44,6 +44,8 @@ if is_cmd_installed brew; then
 	install_brew_pkg python3
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler
+	tap_brew_repo beeftornado/rmtree
+	brew install brew-rmtree
 	# Install Homebrew Cask for managing packaged apps
 	tap_brew_repo caskroom/cask
 	install_brew_pkg brew-cask
@@ -127,6 +129,7 @@ if is_cmd_installed brew; then
 		install_apm_pkg linter-php
 		install_apm_pkg pigments
 		install_apm_pkg merge-conflicts
+		install_apm_pkg svg-preview
 
 	fi
 
