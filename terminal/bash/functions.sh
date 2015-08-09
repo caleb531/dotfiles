@@ -22,3 +22,9 @@ mkvirtualenv() {
 rmvirtualenv() {
 	rm -r "$WORKON_HOME"/"$(basename "$PWD")"
 }
+
+# Flushes all DNS caches for OS X 10.10.4 and onward
+flushdns() {
+	sudo dscacheutil -flushcache
+	sudo killall -HUP mDNSResponder
+}
