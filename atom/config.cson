@@ -33,6 +33,8 @@
       ".DS_Store"
       "._*"
       "Thumbs.db"
+      "*.png"
+      "*.jpg"
     ]
     followSymlinks: false
   editor:
