@@ -7,7 +7,7 @@ echo "Updating software..."
 # App Store apps
 sudo softwareupdate -ia
 
-# Homebrew packages, casks
+# Homebrew packages
 brew update
 brew upgrade --all
 
@@ -15,8 +15,12 @@ brew upgrade --all
 apm update --no-confirm
 
 # Node packages
-npm install npm --global
-npm update --global
+if is_cmd_installed npm; then
+	npm install npm --global
+	npm update --global
+fi
 
 # Ruby gems
-sudo gem update
+if is_cmd_installed gem; then
+	sudo gem update
+fi
