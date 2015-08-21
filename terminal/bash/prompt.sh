@@ -21,7 +21,7 @@ __output_ps1() {
 
 	# Output name of current working directory (with ~ denoting HOME)
 	__set_color $PURPLE_BOLD
-	echo -n "\W"
+	echo -n '\W'
 	__set_color $WHITE_BOLD
 	echo -n "$SEPARATOR"
 
@@ -49,7 +49,7 @@ __output_ps1() {
 
 	# Output $ for user and # for root
 	__set_color $PURPLE_BOLD
-	echo -n "\$ "
+	echo -n '\$ '
 	__reset_color
 
 }
