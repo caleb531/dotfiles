@@ -40,10 +40,9 @@
     'prefix': 'finally'
     'body': "finally {\n\t$1\n}"
 
-# C and C++
+# C++
 
-'.source.c,
- .source.cpp':
+'.source.cpp':
 
   'include guard':
     'prefix': 'once'
@@ -87,7 +86,7 @@
 
   'this pointer access':
     'prefix': 'this'
-    'body': 'this->'
+    'body': "this->"
 
   'cin':
     'prefix': 'cin'
@@ -100,6 +99,14 @@
   'cerr':
     'prefix': 'cerr'
     'body': "cerr << $1;"
+
+  'operator (=) ':
+    'prefix': 'op='
+    'body': "${1:Class}& operator=(const ${1:Class}& other)$2"
+
+  'friend operator':
+    'prefix': 'fop'
+    'body': "${1:friend }${2:Class} operator${3:+}(const ${4:Left}& left, const ${5:Right}& right)$6"
 
 # JavaScript
 
