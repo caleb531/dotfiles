@@ -79,5 +79,6 @@
       "\\.string"
     ]
     markerType: "dot"
-  whitespace: {}
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
   "find-and-replace": {}
