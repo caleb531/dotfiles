@@ -32,6 +32,9 @@ echo "- Expand save/print panels by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
+echo "- Re-enable 'Save As' menu item"
+defaults write -globalDomain NSUserKeyEquivalents -dict-add 'Save As...' '@$S'
+
 echo "- Automatically quit printer app when print jobs complete"
 defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true
 
