@@ -104,9 +104,34 @@
     'prefix': 'op='
     'body': "${1:Class}& operator=(const ${1:Class}& other)$2"
 
-  'friend operator':
-    'prefix': 'fop'
+  'operator (friend)':
+    'prefix': 'opfriend'
     'body': "${1:friend }${2:Class} operator${3:+}(const ${4:Left}& left, const ${5:Right}& right)$6"
+
+  'operator (<<)':
+    'prefix': 'op<<'
+    'body': "${1:friend }ostream& operator<<(ostream& out, const ${2:Class}& other)$3"
+
+  'operator ([])':
+    'prefix': 'op[]'
+    'body': "${1:Class}& operator[](int) const$5"
+
+  'operator (++x)':
+    'prefix': 'op++x'
+    'body': "${1:Class}& operator${2:++}()$3"
+
+  'operator (x++)':
+    'prefix': 'opx++'
+    'body': "${1:Class} operator${2:++}(int)$3"
+
+  'operator (+)':
+    'prefix': 'op+'
+    'body': "${1:Class} operator${2:+}() const$3"
+
+  'operator (+=/-=)':
+    'prefix': 'op+='
+    'body': "${1:Class} operator${2:+}=() const$3"
+
 
 # JavaScript
 
