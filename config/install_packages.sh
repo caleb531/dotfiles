@@ -50,44 +50,10 @@ if is_cmd_installed brew; then
 	tap_brew_repo caskroom/cask
 	install_brew_pkg brew-cask
 
-
-	echo -n "Install dev env packages for work? (y/n) "
-	read prompt_answer
-
-	if [ "$prompt_answer" == y ]; then
-
-		install_brew_pkg ruby
-	    pin_brew_pkg ruby
-		install_brew_pkg node
-	    pin_brew_pkg node
-		install_brew_pkg postgresql
-	    pin_brew_pkg postgresql
-		install_brew_pkg imagemagick --with-webp
-	    pin_brew_pkg imagemagick
-		install_brew_pkg graphicsmagick
-	    pin_brew_pkg graphicsmagick
-
-		if is_cmd_installed npm; then
-
-			echo "Installing npm packages..."
-
-			install_npm_pkg bower
-			install_npm_pkg grunt-cli
-			install_npm_pkg gulp
-			install_npm_pkg ios-sim
-			install_npm_pkg node-inspector
-
-		fi
-
-		if is_cmd_installed gem; then
-
-			echo "Installing Ruby gems..."
-
-			install_gem sass
-
-		fi
-
-	fi
+	# OS X now disguises clang as gcc/g++. Install and link real gcc/g++
+	install_brew_pkg gcc
+	ln -sf /usr/local/bin/gcc-5 /usr/local/bin/gcc
+	ln -sf /usr/local/bin/g++-5 /usr/local/bin/g++
 
 	if is_cmd_installed pip; then
 
