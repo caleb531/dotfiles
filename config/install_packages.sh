@@ -118,7 +118,7 @@ if is_cmd_installed brew; then
 		install_apm_pkg language-x86
 		install_apm_pkg ssh-config
 		install_apm_pkg atom-alignment
-		install_apm_pkg advanced-new-file
+		install_apm_pkg advanced-open-file
 		install_apm_pkg auto-update-packages
 		install_apm_pkg script
 		install_apm_pkg emmet
