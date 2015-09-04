@@ -44,6 +44,7 @@ if is_cmd_installed brew; then
 	install_brew_pkg python3
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler
+	install_brew_pkg node
 	tap_brew_repo beeftornado/rmtree
 	brew install brew-rmtree
 	# Install Homebrew Cask for managing packaged apps
