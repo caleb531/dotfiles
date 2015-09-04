@@ -19,6 +19,7 @@
       "autosave"
       "deprecation-cop"
       "language-c"
+      "language-objective-c"
     ]
     projectHome: "~"
     themes: [
