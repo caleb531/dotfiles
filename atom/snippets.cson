@@ -26,6 +26,10 @@
     'prefix': 'for'
     'body': "for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i} += ${4:1}) {\n\t$5\n}"
 
+  'while':
+    'prefix': 'while'
+    'body': "while (${1:true}) {\n\t$2\n}"
+
   # Error handling
 
   'try':
@@ -195,7 +199,7 @@
 
   'while':
     'prefix': 'while'
-    'body': "while ${1:condition}:\n\t${2:pass}"
+    'body': "while ${1:True}:\n\t${2:pass}"
 
   'try':
     'prefix': 'try'
@@ -260,6 +264,10 @@
   'foreach':
     'prefix': 'foreach'
     'body': "foreach ( ${1:\$object} as ${2:\$value} ) {\n\t$3\n}"
+
+  'while':
+    'prefix': 'while'
+    'body': "while ( ${1:true} ) {\n\t$2\n}"
 
   'array function call':
     'prefix': 'fca'
