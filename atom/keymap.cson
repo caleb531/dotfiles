@@ -49,6 +49,8 @@
   'alt-shift-S': 'unset!'
 
 'atom-text-editor:not([mini])':
+  # Auto-indents the selection according to the file's designated grammar
+  'alt-cmd-tab': 'editor:auto-indent'
   # Toggles list of snippets that apply to current document
   'ctrl-cmd-s': 'snippets:available'
   # Advances to next Linter error in document
