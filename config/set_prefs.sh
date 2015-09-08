@@ -18,6 +18,9 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 echo "- Disable screenshot shadows"
 defaults write com.apple.screencapture disable-shadow -bool true
 
+echo "- Ask to save changes when closing windows"
+defaults write NSGlobalDomain NSCloseAlwaysConfirmsChanges -bool true
+
 echo "- Only show scroll bars when scrolling"
 defaults write NSGlobalDomain AppleShowScrollBars -string 'WhenScrolling'
 
