@@ -20,7 +20,6 @@
       "deprecation-cop"
       "language-c"
       "language-objective-c"
-      "script"
     ]
     projectHome: "~"
     themes: [
