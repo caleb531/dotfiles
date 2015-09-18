@@ -36,6 +36,7 @@
       "Thumbs.db"
       "*.png"
       "*.jpg"
+      "*.out"
     ]
     followSymlinks: false
   editor:
@@ -78,6 +79,7 @@
     ignoredScopes: [
       "\\.comment"
       "\\.string"
+      "\\.source\\.gfm"
     ]
     markerType: "dot"
   whitespace:
