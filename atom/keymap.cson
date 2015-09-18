@@ -73,11 +73,9 @@
   # Opens inline URL in default web browser if cursor is within URL
   'ctrl-shift-O': 'unset!'
   'alt-cmd-o': 'link:open'
+  # Create new files using advanced-open-file rather than open existing files
+  'alt-cmd-n': 'advanced-open-file:toggle'
 
 # Prevent Emmet from hijacking autocomplete
 'atom-text-editor.autocomplete-active:not([mini])':
   'tab': 'autocomplete-plus:confirm'
-
-'.platform-darwin atom-workspace':
-  # Create key binding alias for creating new files using Advanced Open File
-  'alt-cmd-n': 'advanced-open-file:toggle'
