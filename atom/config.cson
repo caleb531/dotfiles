@@ -37,6 +37,7 @@
       "*.png"
       "*.jpg"
       "*.out"
+      "*.docx"
     ]
     followSymlinks: false
   editor:
