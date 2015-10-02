@@ -27,7 +27,6 @@ if is_cmd_installed brew && is_brew_pkg_installed brew-cask; then
 	install_cask forklift
 	install_cask onyx
 	install_cask mamp
-	install_cask asepsis
 
 	echo "Installing Quick Look plugins..."
 
