@@ -100,9 +100,17 @@
     'prefix': 'cout'
     'body': "cout << $1;"
 
+  'cout endl':
+    'prefix': 'coute'
+    'body': "cout << $1 << endl;"
+
   'cerr':
     'prefix': 'cerr'
     'body': "cerr << $1;"
+
+  'cerr endl':
+    'prefix': 'cerre'
+    'body': "cerr << $1 << endl;"
 
   'operator (=) ':
     'prefix': 'op='
