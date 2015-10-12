@@ -242,7 +242,7 @@
 '.source.php':
 
   'echo':
-    'prefix': 'e'
+    'prefix': 'echo'
     'body': "echo $1;"
 
   'print_r':
@@ -289,6 +289,10 @@
     'prefix': 'def'
     'body': "define('$1', ${2:''});"
 
+  'define constant conditionally':
+    'prefix': 'ifndef'
+    'body': "if ( ! defined( '$1' ) ) {\n\tdefine( '$1', ${2:false} );\n}"
+
   'display errors':
     'prefix': 'derr'
     'body': "ini_set('display_errors', '1');"
@@ -299,24 +303,36 @@
 
   'PHP Block (inline)':
     'prefix': 'php'
-    'body': "<?php $1 ?>"
+    'body': "<?php $1 ?>$2"
 
   'PHP Block (multiline)':
-    'prefix': 'phpb'
-    'body': "<?php\n\t$1\n?>"
+    'prefix': 'phpblock'
+    'body': "<?php\n\t$1\n?>$2"
 
   'echo (inline)':
-    'prefix': 'pe'
-    'body': "<?php echo $1; ?>"
+    'prefix': 'pecho'
+    'body': "<?php echo $1; ?>$2"
 
   'if (inline)':
     'prefix': 'pif'
-    'body': "<?php if ( ${1:condition} ): ?>\n\t$2\n<?php endif; ?>"
+    'body': "<?php if ( ${1:condition} ): ?>$2"
+
+  'else (inline)':
+    'prefix': 'pelse'
+    'body': "<?php else$1: ?>$2"
+
+  'else (inline)':
+    'prefix': 'pelseif'
+    'body': "<?php elseif: ?>$2"
 
   'for (inline)':
     'prefix': 'pfor'
-    'body': "<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>\n\t$5\n<?php endfor; ?>"
+    'body': "<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>$5"
 
   'foreach (inline)':
     'prefix': 'pforeach'
-    'body': "<?php foreach ( ${1:object} as ${2:value} ): ?>\n\t$3 \n<?php endforeach; ?>"
+    'body': "<?php foreach ( ${1:\$object} as ${2:\$value} ): ?>$3"
+
+  'end block (inline)':
+    'prefix': 'pend'
+    'body': "<?php end$1; ?>$2"
