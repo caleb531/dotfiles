@@ -265,6 +265,10 @@
     'prefix': 'else'
     'body': "else {\n\t$1\n}"
 
+  'not empty':
+    'prefix': 'nem'
+    'body': "! empty( $1 )"
+
   'for':
     'prefix': 'for'
     'body': "for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ) {\n\t$5\n}"
@@ -287,7 +291,7 @@
 
   'define constant':
     'prefix': 'def'
-    'body': "define('$1', ${2:''});"
+    'body': "define( '$1', ${2:''} );"
 
   'define constant conditionally':
     'prefix': 'ifndef'
