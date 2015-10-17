@@ -19,3 +19,6 @@ ln -snf "$PWD"/ssh/config ~/.ssh/config
 
 # Symlinks for personal configuration
 source ./personal/config/create_symlinks.sh 2> /dev/null
+
+# Disable Bash Sessions feature in OS X El Capitan
+touch ~/.bash_sessions_disable
