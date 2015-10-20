@@ -291,7 +291,7 @@
 
   'define constant':
     'prefix': 'def'
-    'body': "define( '$1', ${2:''} );"
+    'body': "define( '$1', ${2:false} );"
 
   'define constant conditionally':
     'prefix': 'ifndef'
