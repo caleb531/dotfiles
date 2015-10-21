@@ -40,6 +40,18 @@
       "*.docx"
     ]
     followSymlinks: false
+    packagesWithKeymapsDisabled: [
+      "emmet"
+      "atom-alignment"
+      "linter"
+      "resize-indent"
+      "merge-conflicts"
+      "autoflow"
+      "link"
+      "grammar-selector"
+      "encoding-selector"
+      "go-to-line"
+    ]
   editor:
     fontFamily: "Monaco"
     tabLength: 4
@@ -72,6 +84,7 @@
     showErrorTabFile: false
     showErrorInline: false
     showErrorTabLine: true
+    statusIconScope: "File"
   "line-ending-converter":
     showEolInStatusBar: false
   "linter-shellcheck": {}
@@ -86,3 +99,6 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   "find-and-replace": {}
+  "merge-conflicts": {}
+  "markdown-preview": {}
+  "svg-preview": {}

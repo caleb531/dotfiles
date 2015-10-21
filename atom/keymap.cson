@@ -1,9 +1,5 @@
 # Your keymap
 
-'.platform-darwin':
-  # Unset old key binding for "Go to Line" command
-  'ctrl-g': 'unset!'
-
 '.platform-darwin atom-workspace atom-text-editor:not([mini])':
   # Breaks current selection/paragraph into lines no longer than 80 chars
   'alt-cmd-q': 'unset!'
@@ -11,14 +7,11 @@
   # Toggles grammar (language) selection panel
   'ctrl-shift-L': 'unset!'
   'shift-cmd-L': 'grammar-selector:show'
-  # Toggles invisible characters and guides
-  'cmd-i': 'window:toggle-invisibles'
-  'shift-cmd-I': 'editor:toggle-indent-guide'
   # Execute and view output from scripts within editor
   'shift-cmd-R': 'script:run'
   'alt-shift-cmd-R': 'script:run-options'
   # Toggles character encoding selection panel
-  'ctrl-shift-U': 'unset!'
+  # 'ctrl-shift-U': 'unset!'
   'cmd-shift-U': 'encoding-selector:show'
   # Toggles line jump panel
   'cmd-j': 'go-to-line:toggle'
@@ -32,8 +25,8 @@
 
 'atom-text-editor':
   # Resizes spaces-per-indent amount for entire document
-  'ctrl-{': 'unset!'
-  'ctrl-}': 'unset!'
+  # 'ctrl-{': 'unset!'
+  # 'ctrl-}': 'unset!'
   'ctrl-cmd-[': 'resize-indent:halve'
   'ctrl-cmd-]': 'resize-indent:double'
   # Convert between tabs and spaces used for indentation
@@ -49,6 +42,9 @@
   'alt-shift-S': 'unset!'
 
 'atom-text-editor:not([mini])':
+  # Toggles invisible characters and guides
+  'cmd-i': 'window:toggle-invisibles'
+  'shift-cmd-I': 'editor:toggle-indent-guide'
   # Auto-indents the selection according to the file's designated grammar
   'alt-cmd-tab': 'editor:auto-indent'
   # Toggles list of snippets that apply to current document
@@ -61,7 +57,7 @@
 
 '.platform-darwin atom-text-editor:not([mini])':
   # Aligns values to same column if list of key-value pairs is selected
-  'ctrl-cmd-a': 'unset!'
+  # 'ctrl-cmd-a': 'unset!'
   'shift-cmd-A': 'atom-alignment:alignMultiple'
   # Toggles Markdown Preview (even if editor is unfocused)
   'shift-cmd-M': 'markdown-preview:toggle'
@@ -71,7 +67,7 @@
   'shift-cmd-E': 'emmet:wrap-with-abbreviation'
 '.platform-darwin atom-workspace':
   # Opens inline URL in default web browser if cursor is within URL
-  'ctrl-shift-O': 'unset!'
+  # 'ctrl-shift-O': 'unset!'
   'alt-cmd-o': 'link:open'
   # Create new files using advanced-open-file rather than open existing files
   'alt-cmd-n': 'advanced-open-file:toggle'
