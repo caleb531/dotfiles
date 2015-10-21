@@ -325,7 +325,7 @@
     'prefix': 'pelse'
     'body': "<?php else$1: ?>$2"
 
-  'else (inline)':
+  'else if (inline)':
     'prefix': 'pelseif'
     'body': "<?php elseif: ?>$2"
 
