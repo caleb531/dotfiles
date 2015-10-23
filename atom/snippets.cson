@@ -4,7 +4,6 @@
 
 '.source.c,
  .source.cpp,
- .source.cs,
  .source.java,
  .source.js':
 
@@ -28,7 +27,7 @@
 
   'while':
     'prefix': 'while'
-    'body': "while (${1:true}) {\n\t$2\n}"
+    'body': "while (${1:condition}) {\n\t$2\n}"
 
   # Error handling
 
@@ -175,7 +174,7 @@
 
   'while':
     'prefix': 'while'
-    'body': "while ${1:True}:\n\t${2:pass}"
+    'body': "while ${1:condition}:\n\t${2:pass}"
 
   'try':
     'prefix': 'try'
@@ -247,7 +246,7 @@
 
   'while':
     'prefix': 'while'
-    'body': "while ( ${1:true} ) {\n\t$2\n}"
+    'body': "while ( ${1:condition} ) {\n\t$2\n}"
 
   'array function call':
     'prefix': 'fca'
