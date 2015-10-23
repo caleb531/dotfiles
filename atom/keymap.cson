@@ -64,14 +64,17 @@
   'ctrl-w': 'unset!'
   # Expands Emmet HTML abbreviations
   'cmd-e': 'emmet:expand-abbreviation'
-  'shift-cmd-E': 'emmet:wrap-with-abbreviation'
+
 '.platform-darwin atom-workspace':
   # Opens inline URL in default web browser if cursor is within URL
   # 'ctrl-shift-O': 'unset!'
   'alt-cmd-o': 'link:open'
   # Create new files using advanced-open-file rather than open existing files
   'alt-cmd-n': 'advanced-open-file:toggle'
+  # Toggles SVG Preview (even if editor is unfocused)
+  'alt-cmd-v': 'unset!'
+  'shift-cmd-v': 'svg-preview:toggle'
 
 # Prevent Emmet from hijacking autocomplete
-'atom-text-editor.autocomplete-active:not([mini])':
-  'tab': 'autocomplete-plus:confirm'
+# 'atom-text-editor.autocomplete-active:not([mini])':
+#   'tab': 'autocomplete-plus:confirm'
