@@ -27,10 +27,11 @@ atom-text-editor:not([mini]) {
   }
 }
 
-// Move Linter Status to the left of Encoding and Language in status bar
-// Also reduce margin to converve space
 .status-bar linter-bottom-status.inline-block {
+  // Move Linter Status to the left of Encoding and Language in status bar
+  // Only looks good if Position setting is "left"
   float: right;
+  // Also reduce margin to converve space
   margin-right: 0;
 }
 
@@ -42,10 +43,10 @@ linter-bottom-tab {
   font-size: 10px;
 }
 
-// Add thin dashed border around SVG preview to indicate view box boundaries
-// Also replace checkered transparency background with white background
 .svg-preview > :nth-child(1) {
+  // Add thin dashed border around SVG preview to indicate view box boundaries
   border: dashed 1px #999;
+  // Also replace checkered transparency background with white background
   background-color: #fff;
   background-image: none;
 }
