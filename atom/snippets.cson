@@ -304,6 +304,22 @@
     'prefix': 'pforeach'
     'body': "<?php foreach ( ${1:\$object} as ${2:\$value} ): ?>$3"
 
-  'end block (inline)':
-    'prefix': 'pend'
-    'body': "<?php end$1; ?>$2"
+  'while (inline)':
+    'prefix': 'pwhile'
+    'body': "<?php while ( ${1:condition} ): ?>$2"
+
+  'endif (inline)':
+    'prefix': 'pendif'
+    'body': "<?php endif; ?>$1"
+
+  'endfor (inline)':
+    'prefix': 'pendfor'
+    'body': "<?php endfor; ?>$1"
+
+  'endforeach (inline)':
+    'prefix': 'pendforeach'
+    'body': "<?php endforeach; ?>$1"
+
+  'endwhile (inline)':
+    'prefix': 'pendwhile'
+    'body': "<?php endwhile; ?>$1"
