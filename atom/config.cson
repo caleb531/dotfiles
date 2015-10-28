@@ -38,6 +38,7 @@
       "*.jpg"
       "*.out"
       "*.docx"
+      "*.pages"
     ]
     followSymlinks: false
     packagesWithKeymapsDisabled: [
