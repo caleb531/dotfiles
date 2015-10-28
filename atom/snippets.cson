@@ -266,7 +266,11 @@
 
   'display errors':
     'prefix': 'derr'
-    'body': "ini_set('display_errors', '1');"
+    'body': "ini_set( 'display_errors', '1' );"
+
+  'var_dump':
+    'prefix': 'vd'
+    'body': "var_dump( $1 );"
 
 # Inline PHP Blocks (meant to be intermixed with HTML)
 
@@ -290,7 +294,7 @@
 
   'else (inline)':
     'prefix': 'pelse'
-    'body': "<?php else$1: ?>$2"
+    'body': "<?php else: ?>$2"
 
   'else if (inline)':
     'prefix': 'pelseif'
