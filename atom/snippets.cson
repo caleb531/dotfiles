@@ -298,7 +298,7 @@
 
   'else if (inline)':
     'prefix': 'pelseif'
-    'body': "<?php elseif: ?>$2"
+    'body': "<?php elseif ( ${1:condition} ): ?>$2"
 
   'for (inline)':
     'prefix': 'pfor'
