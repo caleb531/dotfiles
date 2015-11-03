@@ -8,6 +8,7 @@ mkdir -p ~/.atom
 ln -sf "$PWD"/atom/* ~/.atom
 ln -snf "$PWD"/emmet ~/.emmet
 
+ln -snf "$PWD"/terminal/.bashrc ~/.bashrc
 ln -snf "$PWD"/terminal/.bash_profile ~/.bash_profile
 ln -snf "$PWD"/terminal/bash ~/.bash
 
