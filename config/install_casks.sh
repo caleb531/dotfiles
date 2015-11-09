@@ -17,6 +17,7 @@ if is_cmd_installed brew && is_brew_pkg_installed brew-cask; then
 	install_cask evernote
 	install_cask keyboard-maestro
 	install_cask skype
+	install_cask jitsi
 	install_cask joinme
 	install_cask flux
 	# Install additional OS X apps
