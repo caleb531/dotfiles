@@ -101,5 +101,6 @@
     ignoreWhitespaceOnCurrentLine: false
   "find-and-replace": {}
   "merge-conflicts": {}
-  "markdown-preview": {}
+  "markdown-preview":
+    useGitHubStyle: true
   "svg-preview": {}
