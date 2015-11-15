@@ -44,7 +44,19 @@ if is_cmd_installed brew; then
 	install_brew_pkg python3
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler
+
+	# Install utilities necessary for Grunt projects
+	install_brew_pkg ruby
+	pin_brew_pkg ruby
+	if is_cmd_installed gem; then
+		install_gem sass
+	fi
 	install_brew_pkg node
+	pin_brew_pkg node
+	if is_cmd_installed npm; then
+		install_npm_pkg grunt-cli
+	fi
+
 	tap_brew_repo beeftornado/rmtree
 	brew install brew-rmtree
 	# Install Homebrew Cask for managing packaged apps
