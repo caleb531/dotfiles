@@ -50,8 +50,8 @@ export PYTHONDONTWRITEBYTECODE=1
 # Use /Applications for apps installed with Homebrew Cask
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
-# Directory containing all Python virtualenvs
-export WORKON_HOME=~/.virtualenvs
+# The name of the virtualenv directory (within the respective project directory)
+export VIRTUAL_ENV_NAME='.virtualenv'
 
 # Colors
 # ANSI color reference: http://www.termsys.demon.co.uk/vtansi.htm#colors

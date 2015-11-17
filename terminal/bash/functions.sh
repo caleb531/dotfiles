@@ -10,17 +10,14 @@ reload() {
 
 # Makes new Python virtualenv for current directory
 mkvirtualenv() {
-	local envname="$(basename "$PWD")"
-	pushd "$WORKON_HOME" > /dev/null
-	virtualenv -p "$1" "$envname"
-	popd > /dev/null
+	virtualenv -p "$1" "$VIRTUAL_ENV_NAME"
 	# Activate virtualenv so packages can be installed
-	source "$WORKON_HOME/$envname"/bin/activate
+	source ./"$VIRTUAL_ENV_NAME"/bin/activate
 }
 
 # Removes existing Python virtualenv
 rmvirtualenv() {
-	rm -r "$WORKON_HOME"/"$(basename "$PWD")"
+	rm -r ./"$VIRTUAL_ENV_NAME"
 }
 
 # Flushes all DNS caches for OS X 10.10.4 and onward

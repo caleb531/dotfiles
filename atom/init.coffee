@@ -2,24 +2,14 @@
 
 fs = require 'fs'
 path = require 'path'
-DEFAULT_WORKON_HOME = path.join(process.env.HOME, '.virtualenvs')
-
-
-# Get path to directory containing all Python virtualenvs
-getVirtualenvHome = ->
-
-  if process.env.WORKON_HOME
-    return process.env.WORKON_HOME
-  else
-    return DEFAULT_WORKON_HOME
-
+VIRTUAL_ENV_NAME = '.virtualenv'
 
 # Activate Python virtualenv for this project directory if it exists
 activateVirtualenv = ->
 
   project = atom.project.getPaths()[0]
   if project
-    virtualenv = path.join(getVirtualenvHome(), path.basename(project))
+    virtualenv = path.join(project, VIRTUAL_ENV_NAME)
     # Do not activate virtualenv if project is itself a virtualenv
     if virtualenv isnt project
       fs.lstat(virtualenv, (err, stats) ->
