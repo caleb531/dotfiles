@@ -103,12 +103,10 @@ if is_cmd_installed brew; then
 		install_apm_pkg emmet
 		install_apm_pkg linter
 		install_apm_pkg linter-jshint
-		install_apm_pkg linter-jscs
 		install_apm_pkg linter-flake8
 		install_apm_pkg linter-php
 		install_apm_pkg pigments
 		install_apm_pkg merge-conflicts
-		install_apm_pkg svg-preview
 
 	fi
 
