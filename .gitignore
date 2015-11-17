@@ -4,3 +4,6 @@
 # Personal configuration which should not be tracked
 personal/
 terminal/bash/personal.sh
+
+# Atom packages
+atom/packages
