@@ -28,10 +28,6 @@ is_pip_pkg_installed() {
 	pip list | grep "^$1 " &> /dev/null
 }
 
-is_apm_pkg_installed() {
-	apm list | grep -q " $1@"
-}
-
 is_tapped() {
 	brew tap | grep "$1" &> /dev/null
 }
@@ -92,14 +88,6 @@ install_pip_pkg() {
 	if ! is_pip_pkg_installed "$1"; then
 		echo "Installing $1..."
 		pip install "$@"
-	else
-		echo "Already installed: $1"
-	fi
-}
-
-install_apm_pkg() {
-	if ! is_apm_pkg_installed "$1"; then
-		apm install "$@"
 	else
 		echo "Already installed: $1"
 	fi
