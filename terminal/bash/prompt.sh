@@ -82,7 +82,7 @@ __update_prompt_command() {
 	# Write in-memory command history to file
 	history -a
 	# Ensure current working directory carries to new tabs
-	update_terminal_cwd
+	update_terminal_cwd 2> /dev/null
 
 }
 PROMPT_COMMAND="__update_prompt_command"
