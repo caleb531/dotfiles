@@ -66,8 +66,7 @@
     showOnStartup: false
   autosave:
     enabled: true
-  script:
-    enableExecTime: false
+  script: {}
   emmet:
     extensionsPath: "~/.emmet"
     useEmmetComments: false
