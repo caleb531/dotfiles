@@ -82,31 +82,12 @@ if is_cmd_installed brew; then
 
 		echo "Installing Atom packages..."
 
-		install_apm_pkg monokai
-		install_apm_pkg editorconfig
-		install_apm_pkg resize-indent
-		install_apm_pkg expand-region
-		install_apm_pkg line-ending-converter
-		install_apm_pkg language-applescript
-		install_apm_pkg language-gitignore
-		install_apm_pkg language-apache
-		install_apm_pkg language-hosts
-		install_apm_pkg language-viml
-		install_apm_pkg language-ini
-		install_apm_pkg language-cpp14
-		install_apm_pkg language-x86
-		install_apm_pkg ssh-config
-		install_apm_pkg atom-alignment
-		install_apm_pkg advanced-open-file
-		install_apm_pkg auto-update-packages
-		install_apm_pkg script
-		install_apm_pkg emmet
-		install_apm_pkg linter
-		install_apm_pkg linter-jshint
-		install_apm_pkg linter-flake8
-		install_apm_pkg linter-php
-		install_apm_pkg pigments
-		install_apm_pkg merge-conflicts
+		# Install Atom packages by reading each line from packages text file
+		while IFS='' read -r pkg || [ -n "$pkg" ]; do
+			if [ -n "$pkg" ]; then
+				install_apm_pkg "$pkg"
+			fi
+		done < ./atom/packages.txt
 
 	fi
 
