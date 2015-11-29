@@ -1,4 +1,4 @@
-#!/bin/bash
+''#!/bin/bash
 # functions.sh
 # Caleb Evans
 
@@ -10,7 +10,7 @@ reload() {
 
 # Makes new Python virtualenv for current directory
 mkvirtualenv() {
-	virtualenv -p "$1" "$VIRTUAL_ENV_NAME"
+	virtualenv --python="$1" "$VIRTUAL_ENV_NAME"
 	# Activate virtualenv so packages can be installed
 	source ./"$VIRTUAL_ENV_NAME"/bin/activate
 }
