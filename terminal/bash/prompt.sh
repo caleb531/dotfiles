@@ -30,7 +30,11 @@ __output_ps1() {
 
 		# Output Python version used by virtualenv
 		__set_color $PURPLE_BOLD
-		echo -n "$(readlink "$VIRTUAL_ENV"/bin/python)"
+		if [ -f "$VIRTUAL_ENV"/bin/python2 ]; then
+			echo -n "python2"
+		elif [ -f "$VIRTUAL_ENV"/bin/python3 ]; then
+			echo -n "python3"
+		fi
 		__set_color $WHITE_BOLD
 		echo -n "$SEPARATOR"
 
