@@ -29,7 +29,7 @@ is_pip_pkg_installed() {
 }
 
 is_apm_pkg_installed() {
-	apm list | grep -q " $1@"
+	apm list --installed --bare | grep -q "^$1@"
 }
 
 is_tapped() {
