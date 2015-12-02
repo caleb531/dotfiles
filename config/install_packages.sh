@@ -78,6 +78,19 @@ if is_cmd_installed brew; then
 
 	fi
 
+	if is_cmd_installed apm; then
+
+		echo "Installing Atom packages..."
+
+		# Install Atom packages by reading each line from packages text file
+		while IFS='' read -r pkg || [ -n "$pkg" ]; do
+			if [ -n "$pkg" ]; then
+				install_apm_pkg "$pkg"
+			fi
+		done < ./atom/packages.txt
+
+	fi
+
 else
 
 	echo "Homebrew is not installed."
