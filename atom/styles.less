@@ -24,6 +24,10 @@ atom-text-editor:not([mini]) {
     .line.cursor-line {
       background-color: rgba(255, 255, 255, 0.05);
     }
+    // Make the underline under matched brackets solid rather than dotted
+    .bracket-matcher .region {
+      border-bottom-style: solid;
+    }
   }
 }
 
