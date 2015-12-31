@@ -92,7 +92,6 @@ install_pip_pkg() {
 	if ! is_pip_pkg_installed "$1"; then
 		echo "Installing $1..."
 		pip install "$@"
-		pip3 install "$@"
 	else
 		echo "Already installed: $1"
 	fi

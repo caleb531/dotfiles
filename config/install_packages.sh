@@ -42,6 +42,8 @@ if is_cmd_installed brew; then
 	install_brew_pkg git
 	install_brew_pkg python
 	install_brew_pkg python3
+	# Always use Python 3 pip
+	ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler
 
