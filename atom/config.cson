@@ -85,6 +85,7 @@
     showErrorInline: false
     showErrorTabLine: true
     statusIconScope: "File"
+    errorPanelHeight: 142
   "line-ending-converter":
     showEolInStatusBar: false
   "linter-shellcheck": {}
@@ -103,3 +104,4 @@
   "markdown-preview":
     useGitHubStyle: true
   "svg-preview": {}
+  "expand-region": {}
