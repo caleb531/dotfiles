@@ -1,4 +1,8 @@
 "*":
+  "atom-alignment": {}
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: false
+    maxVisibleSuggestions: 5
   core:
     disabledPackages: [
       "archive-view"
@@ -16,16 +20,12 @@
       "autocomplete"
       "tree-view"
       "bookmarks"
-      "autosave"
       "deprecation-cop"
       "language-c"
       "language-objective-c"
+      "autosave"
     ]
-    projectHome: "~"
-    themes: [
-      "one-dark-ui"
-      "monokai"
-    ]
+    followSymlinks: false
     ignoredNames: [
       ".sass-cache"
       ".git"
@@ -40,7 +40,6 @@
       "*.docx"
       "*.pages"
     ]
-    followSymlinks: false
     packagesWithKeymapsDisabled: [
       "emmet"
       "atom-alignment"
@@ -53,43 +52,44 @@
       "encoding-selector"
       "go-to-line"
     ]
+    projectHome: "~"
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
   editor:
+    autoIndentOnPaste: false
     fontFamily: "Monaco"
-    tabLength: 4
+    fontSize: 16
+    invisibles: {}
     softTabs: false
     softWrap: true
     softWrapAtPreferredLineLength: true
-    invisibles: {}
-    autoIndentOnPaste: false
-    fontSize: 16
-  welcome:
-    showOnStartup: false
-  autosave:
-    enabled: true
-  script: {}
+    tabLength: 4
   emmet:
-    extensionsPath: "~/.emmet"
+    extensionsPath: "/Users/Caleb/.emmet"
     useEmmetComments: false
+  "expand-region": {}
+  "find-and-replace": {}
+  "fuzzy-finder":
+    preserveLastSearch: true
+  "line-ending-converter":
+    showEolInStatusBar: false
+  linter:
+    errorPanelHeight: 142
+    lintOnFly: false
+    showErrorInline: false
+    showErrorTabFile: false
+    showErrorTabLine: true
+    showErrorTabProject: false
+    statusIconScope: "File"
   "linter-jscs":
     onlyConfig: true
     preset: "jquery"
-  "fuzzy-finder":
-    preserveLastSearch: true
-  "autocomplete-plus":
-    includeCompletionsFromAllBuffers: false
-    maxVisibleSuggestions: 5
-  linter:
-    lintOnFly: false
-    showErrorTabProject: false
-    showErrorTabFile: false
-    showErrorInline: false
-    showErrorTabLine: true
-    statusIconScope: "File"
-    errorPanelHeight: 142
-  "line-ending-converter":
-    showEolInStatusBar: false
   "linter-shellcheck": {}
-  "atom-alignment": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  "merge-conflicts": {}
   pigments:
     ignoredScopes: [
       "\\.comment"
@@ -97,11 +97,9 @@
       "\\.source\\.gfm"
     ]
     markerType: "dot"
+  script: {}
+  "svg-preview": {}
+  welcome:
+    showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-  "find-and-replace": {}
-  "merge-conflicts": {}
-  "markdown-preview":
-    useGitHubStyle: true
-  "svg-preview": {}
-  "expand-region": {}
