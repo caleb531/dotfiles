@@ -72,9 +72,9 @@ I have also included my configuration for [Emmet](http://emmet.io/), an
 invaluable package which enables quick HTML expansion within Atom. This
 configuration consists of both preferences and snippets for HTML/CSS expansion.
 
-Please note that running the below symlink script will symlink `emmet/` to
-`~/.emmet`. Therefore, please ensure that this directory is set as your
-*Extensions Path* within the package's preferences (within Atom's Settings).
+Please ensure that the `~/.emmet` directory is set as your *Extensions Path*
+within the Atom package's preferences, because this directory is where my Atom
+configuration expects to find user configuration for Emmet.
 
 ## Configuration scripts
 
