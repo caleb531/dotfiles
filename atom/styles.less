@@ -12,7 +12,7 @@
 // Ensure that workspace is distinguishable from tab bar and status bar
 // (when no tabs are open)
 atom-workspace {
-  background: @base-background-color;
+  background: @base-background-color !important;
 }
 
 atom-text-editor:not([mini])::shadow {
@@ -22,27 +22,32 @@ atom-text-editor:not([mini])::shadow {
   .variable.parameter,
   .support.type,
   .support.class {
-    font-style: normal;
+    font-style: normal !important;
   }
   // Make selected line more prominent
   .line.cursor-line {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.05) !important;
   }
   // Make the underline under matched brackets solid rather than dotted
   .bracket-matcher .region {
-    border-bottom-style: solid;
+    border-bottom-style: solid !important;
   }
 }
 
 // Selected tab highlight
 .tab-bar .tab::before {
-  background: @ce-color-green;
+  background: @ce-color-green !important;
 }
 
 // Focused text inputs
 atom-text-editor[mini].is-focused {
-  border-color: @ce-color-blue;
-  box-shadow: 0 0 0 1px @ce-color-blue;
+  border-color: @ce-color-blue !important;
+  box-shadow: 0 0 0 1px @ce-color-blue !important;
+}
+
+// Remove ugly fuzzy outline from buttons when focused
+.btn {
+  outline-width: 0 !important;
 }
 
 // Informational buttons used for the find panel and package/theme search
@@ -60,17 +65,17 @@ atom-text-editor[mini].is-focused {
 
 // Fade out Linter status indicator when no issues are found
 .linter-highlight.status-success {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.3) !important;
 }
 
 // "Lines modified" status bar indicator
 .status-modified {
-  color: @ce-color-blue;
+  color: @ce-color-blue !important;
 }
 
 // Informational text labels (notably used for "updates" link in status bar)
 .text-info {
-  color: @ce-color-blue;
+  color: @ce-color-blue !important;
 }
 
 .settings-view {
@@ -78,31 +83,27 @@ atom-text-editor[mini].is-focused {
   input[type="checkbox"] {
     &:active,
     &:checked {
-      background: @ce-color-green;
+      background: @ce-color-green !important;
     }
   }
   // Informational alert panels
   .alert-info {
     // Make them gray instead of an ugly blue
-    border-color: @button-border-color;
-    background: @button-background-color;
-    color: @text-color-highlight;
+    border-color: @button-border-color !important;
+    background: @button-background-color !important;
+    color: @text-color-highlight !important;
   }
   // "Enabled" package status indicators
   .package-card .meta-controls .status-indicator {
-    background: @ce-color-green;
+    background: @ce-color-green !important;
     // "Disabled" package status indicators
     &.is-disabled {
-      background-color: @ce-color-red;
+      background-color: @ce-color-red !important;
     }
   }
   // Link anchors of all kinds
   .link {
-    &,
-    &:hover,
-    &:focus {
-      color: @ce-color-blue;
-    }
+    color: @ce-color-blue !important;
   }
 }
 
@@ -110,15 +111,15 @@ atom-text-editor[mini].is-focused {
 // Move Linter Status to the left of Encoding and Language in status bar
 // Only looks good if Position setting is "right"
 .status-bar linter-bottom-status.inline-block {
-  float: left;
+  float: left !important;
 }
 
 // Hide Linter file tabs to conserve space in status bar
 linter-bottom-tab {
-  display: none;
+  display: none !important;
 }
 
 // Hide obtrusive overlay icon that displays when Find And Replace wraps around
 .find-wrap-icon {
-  display: none;
+  display: none !important;
 }
