@@ -83,6 +83,7 @@
     showErrorTabFile: false
     showErrorTabLine: true
     showErrorTabProject: false
+    statusIconPosition: "Right"
     statusIconScope: "File"
   "linter-jscs":
     onlyConfig: true
