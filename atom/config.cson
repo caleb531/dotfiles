@@ -24,6 +24,7 @@
       "language-c"
       "language-objective-c"
       "autosave"
+      "git-diff"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -67,7 +68,7 @@
     softWrapAtPreferredLineLength: true
     tabLength: 4
   emmet:
-    extensionsPath: "/Users/Caleb/.emmet"
+    extensionsPath: "~/.emmet"
     useEmmetComments: false
   "expand-region": {}
   "find-and-replace": {}
