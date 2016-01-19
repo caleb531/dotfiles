@@ -59,6 +59,9 @@ defaults write com.apple.screensaver askForPasswordDelay -int 300
 echo "- Disable .DS_Store creation on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+echo "- Send app crash reports to Notification Center"
+defaults write com.apple.CrashReporter UseUNC -bool true
+
 echo "Setting Finder preferences..."
 
 echo "- Set home folder as default location for new windows"
