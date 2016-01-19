@@ -1,10 +1,8 @@
 # Your snippets
 
-# C-based languages
+# C++ and JavaScript
 
-'.source.c,
- .source.cpp,
- .source.java,
+'.source.cpp,
  .source.js':
 
   # Conditional blocks
@@ -20,10 +18,6 @@
   'else':
     'prefix': 'else'
     'body': 'else {\n\t$1\n}'
-
-  'for':
-    'prefix': 'for'
-    'body': 'for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i} += ${4:1}) {\n\t$5\n}'
 
   'while':
     'prefix': 'while'
@@ -117,10 +111,13 @@
 
   # Control structures
 
+  'for':
+    'prefix': 'for'
+    'body': 'for (var ${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i} += s${4:1}) {\n\t$5\n}'
+
   'for..in':
     'prefix': 'forin'
     'body': 'for (${1:key} in ${2:object}) {\n\tif (${2:object}.hasOwnProperty(${1:key})) {\n\t\t$3\n\t}\n}'
-
 
   # Functions
 
@@ -155,7 +152,7 @@
     'body': 'it(\'$1\', function ($2) {\n\t$3\n});'
 
   'describe':
-    'prefix': 'desc'
+    'prefix': 'describe'
     'body': 'describe(\'$1\', function ($2) {\n\t$3\n});'
 
   'expect':
@@ -166,7 +163,15 @@
 
 '.source.python':
 
-  'env (python3)':
+  'env python':
+    'prefix': 'env'
+    'body': '#!/usr/bin/env python\n'
+
+  'env python2':
+    'prefix': 'env2'
+    'body': '#!/usr/bin/env python2\n'
+
+  'env python3':
     'prefix': 'env3'
     'body': '#!/usr/bin/env python3\n'
 
