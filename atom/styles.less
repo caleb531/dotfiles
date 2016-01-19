@@ -7,7 +7,7 @@
 // Set preferred theme accent color to a mostly-red-but-slightly-orange color
 @ce-color-green: #6c3;
 @ce-color-blue: #39f;
-@ce-color-red: #e53;
+@ce-color-orange: #e53;
 
 // Ensure that workspace is distinguishable from tab bar and status bar
 // (when no tabs are open)
@@ -70,7 +70,7 @@ atom-text-editor[mini].is-focused {
 
 // "Lines modified" status bar indicator
 .status-modified {
-  color: @ce-color-blue !important;
+  color: @ce-color-orange !important;
 }
 
 // Informational text labels (notably used for "updates" link in status bar)
@@ -98,7 +98,7 @@ atom-text-editor[mini].is-focused {
     background: @ce-color-green !important;
     // "Disabled" package status indicators
     &.is-disabled {
-      background-color: @ce-color-red !important;
+      background-color: @ce-color-orange !important;
     }
   }
   // Link anchors of all kinds
