@@ -11,11 +11,11 @@
 
   'if':
     prefix: 'if'
-    body: "if (${1:condition}) {\n\t$2\n}"
+    body: "if (${1:condition}) {\n\t$2\n} $3"
 
   'else if':
     prefix: 'elseif'
-    body: "else if (${1:condition}) {\n\t$2\n}"
+    body: "else if (${1:condition}) {\n\t$2\n} $3"
 
   'else':
     prefix: 'else'
@@ -33,11 +33,11 @@
 
   'try':
     prefix: 'try'
-    body: "try {\n\t$1\n}"
+    body: "try {\n\t$1\n} $2"
 
   'catch':
     prefix: 'catch'
-    body: "catch ($1) {\n\t$2\n}"
+    body: "catch ($1) {\n\t$2\n} $3"
 
   'finally':
     prefix: 'finally'
@@ -111,20 +111,42 @@
     prefix: 'cerre'
     body: "cerr << $1 << endl;"
 
-
 # JavaScript
 
 '.source.js':
 
+  # Control structures
+
+  'for..in':
+    prefix: 'forin'
+    body: "for (${1:key} in ${2:object}) {\n\tif (${2:object}.hasOwnProperty(${1:key})) {\n\t\t$3\n\t}\n}"
+
+
   # Functions
 
-  'Function Declaration':
+  'function declaration':
     prefix: 'fd'
     body: "function ${1:name}($2) {\n\t$3\n}"
 
-  'Function Expression':
+  'function expression':
     prefix: 'fe'
     body: "function ($1) {\n\t$2\n}"
+
+  'wrapped function expression':
+    prefix: '(fe)'
+    body: "(function ($1) {\n\t$2\n})"
+
+  'wrapped function expression (w/ semicolon)':
+    prefix: '(fe);'
+    body: "(function ($1) {\n\t$2\n});"
+
+  'immediately-invoked function expression':
+    prefix: 'iife'
+    body: '(function($1) {\n$3\n}($2));'
+
+  'jquery document.ready':
+    prefix: 'jqready'
+    body: '$(document).ready(function() {\n$2\n});'
 
   # Jasmine
 
@@ -147,6 +169,10 @@
   'env (python3)':
     prefix: 'env3'
     body: "#!/usr/bin/env python3\n"
+
+  'module import':
+    prefix: 'import'
+    body: "import "
 
   'name import':
     prefix: 'from'
@@ -193,12 +219,16 @@
     body: "with ${1:contextmanager}:\n\t${2:pass}"
 
   'with open()':
-    prefix: 'witho'
+    prefix: 'withopen'
     body: "with open(${1:path}, '${2:r}') as ${3:file}:\n\t${4:pass}"
 
   'function':
     prefix: 'def'
     body: "def ${1:fname}($2):\n\t${3:pass}"
+
+  'magic method':
+    prefix: 'mdef'
+    body: "def __${1:fname}__(self$2):\n\t${3:pass}"
 
   'class':
     prefix: 'class'
@@ -222,11 +252,11 @@
 
   'if':
     prefix: 'if'
-    body: "if ( ${1:condition} ) {\n\t$2\n}"
+    body: "if ( ${1:condition} ) {\n\t$2\n} $3"
 
   'else if':
     prefix: 'elseif'
-    body: "else if ( ${1:condition} ) {\n\t$2\n}"
+    body: "else if ( ${1:condition} ) {\n\t$2\n} $3"
 
   'else':
     prefix: 'else'
@@ -248,9 +278,13 @@
     prefix: 'while'
     body: "while ( ${1:condition} ) {\n\t$2\n}"
 
-  'array function call':
-    prefix: 'fca'
-    body: "${1:name}( array(\n\t$2\n)$3 );"
+  'wrapped array':
+    prefix: '(a)'
+    body: "( array(\n\t$2\n) )$3"
+
+  'wrapped array (w/ semicolon)':
+    prefix: '(a);'
+    body: "( array(\n\t$2\n)$3 );"
 
   'key-value pair':
     prefix: 'kv'
@@ -327,3 +361,31 @@
   'endwhile (inline)':
     prefix: 'pendwhile'
     body: "<?php endwhile; ?>$1"
+
+# Shell scripts (particularly Bash)
+
+'.source.shell':
+
+  'local variable':
+    prefix: 'local'
+    body: "local ${1:name}=${2:value}"
+
+  'if':
+    prefix: 'if'
+    body: "if ${1:condition}; then\n\t$2\nfi"
+
+  'elif':
+    prefix: 'elif'
+    body: "elif ${1:condition}; then\n\t$2"
+
+  'else':
+    prefix: 'else'
+    body: "else\n\t$2"
+
+  'for..in':
+    prefix: 'for'
+    body: "for ${1:f} in ${2:seq}; do\n\t$3\ndone"
+
+  'function':
+    prefix: 'f'
+    body: "${1:fname}() {\n\t$2\n}"
