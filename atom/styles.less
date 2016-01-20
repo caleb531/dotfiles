@@ -6,13 +6,12 @@
 
 // Set preferred theme accent color to a mostly-red-but-slightly-orange color
 @ce-color-green: #6c3;
-@ce-color-blue: #39f;
 @ce-color-orange: #e53;
 
 // Ensure that workspace is distinguishable from tab bar and status bar
 // (when no tabs are open)
 atom-workspace {
-  background: @base-background-color !important;
+  background: @base-background-color;
 }
 
 atom-text-editor:not([mini])::shadow {
@@ -22,27 +21,21 @@ atom-text-editor:not([mini])::shadow {
   .variable.parameter,
   .support.type,
   .support.class {
-    font-style: normal !important;
+    font-style: normal;
   }
   // Make selected line more prominent
   .line.cursor-line {
-    background-color: rgba(255, 255, 255, 0.05) !important;
+    background-color: rgba(255, 255, 255, 0.05);
   }
-  // Make the underline under matched brackets solid rather than dotted
+  // Make underline under matched brackets solid rather than dotted
   .bracket-matcher .region {
-    border-bottom-style: solid !important;
+    border-bottom-style: solid;
   }
 }
 
 // Selected tab highlight
 .tab-bar .tab::before {
-  background: @ce-color-green !important;
-}
-
-// Focused text inputs
-atom-text-editor[mini].is-focused {
-  border-color: @ce-color-blue !important;
-  box-shadow: 0 0 0 1px @ce-color-blue !important;
+  background: @ce-color-green;
 }
 
 // Remove ugly fuzzy outline from buttons when focused
@@ -50,32 +43,20 @@ atom-text-editor[mini].is-focused {
   outline-width: 0 !important;
 }
 
-// Informational buttons used for the find panel and package/theme search
-.btn.selected,
-.btn.selected:hover,
-.btn.selected:focus, {
-  background: @ce-color-blue !important;
-}
-
-// Don't use an ugly border for hovered/active/focused buttons
+// Use prettier border for hovered/active/focused buttons
 .btn-default,
 .btn-info {
   border-color: @button-border-color !important;
 }
 
-// Fade out Linter status indicator when no issues are found
+// Hide Linter status indicator when no issues are found
 .linter-highlight.status-success {
-  color: rgba(255, 255, 255, 0.3) !important;
+  display: none;
 }
 
 // "Lines modified" status bar indicator
 .status-modified {
-  color: @ce-color-orange !important;
-}
-
-// Informational text labels (notably used for "updates" link in status bar)
-.text-info {
-  color: @ce-color-blue !important;
+  color: @ce-color-orange;
 }
 
 .settings-view {
@@ -83,27 +64,23 @@ atom-text-editor[mini].is-focused {
   input[type="checkbox"] {
     &:active,
     &:checked {
-      background: @ce-color-green !important;
+      background: @ce-color-green;
     }
   }
-  // Informational alert panels
+  // Informational alert panels (e.g. the panel on the Updates screen)
   .alert-info {
     // Make them gray instead of an ugly blue
-    border-color: @button-border-color !important;
-    background: @button-background-color !important;
-    color: @text-color-highlight !important;
+    border-color: @button-border-color;
+    background: @button-background-color;
+    color: @text-color-highlight;
   }
   // "Enabled" package status indicators
   .package-card .meta-controls .status-indicator {
-    background: @ce-color-green !important;
+    background: @ce-color-green;
     // "Disabled" package status indicators
     &.is-disabled {
-      background-color: @ce-color-orange !important;
+      background-color: @ce-color-orange;
     }
-  }
-  // Link anchors of all kinds
-  .link {
-    color: @ce-color-blue !important;
   }
 }
 
@@ -111,12 +88,12 @@ atom-text-editor[mini].is-focused {
 // Move Linter Status to the left of Encoding and Language in status bar
 // Only looks good if Position setting is "right"
 .status-bar linter-bottom-status.inline-block {
-  float: left !important;
+  float: left;
 }
 
 // Hide Linter file tabs to conserve space in status bar
 linter-bottom-tab {
-  display: none !important;
+  display: none;
 }
 
 // Hide obtrusive overlay icon that displays when Find And Replace wraps around
