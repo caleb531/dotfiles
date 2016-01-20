@@ -9,7 +9,7 @@
       "circle": "<circle cx=\"\" cy=\"\" r=\"\" />",
       "clipPath": "<clipPath id=\"\">",
       "ellipse": "<ellipse cx=\"\" cy=\"\" width=\"\" height=\"\" />",
-      "line": "<line x=\"\" y=\"\">",
+      "line": "<line x1=\"\" y1=\"\" x2=\"\" y2=\"\" />",
       "mask": "<mask id=\"\">",
       "path": "<path d=\"\" />",
       "pattern": "<pattern id=\"\" x=\"\" y=\"\" width=\"\" height=\"\" patternUnits=\"userSpaceOnUse\">",
