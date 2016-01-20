@@ -52,6 +52,7 @@
       "grammar-selector"
       "encoding-selector"
       "go-to-line"
+      "script"
     ]
     projectHome: "~"
     themes: [
