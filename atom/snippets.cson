@@ -185,7 +185,7 @@
 
   'docstring':
     'prefix': 'docstr'
-    'body': '\'\'\'$1\'\'\'$2'
+    'body': '\"\"\"$1\"\"\"$2'
 
   'if':
     'prefix': 'if'
