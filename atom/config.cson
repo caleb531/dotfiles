@@ -4,6 +4,7 @@
     includeCompletionsFromAllBuffers: false
     maxVisibleSuggestions: 5
   core:
+    closeEmptyWindows: false
     disabledPackages: [
       "archive-view"
       "background-tips"
@@ -16,7 +17,6 @@
       "metrics"
       "open-on-github"
       "release-notes"
-      "styleguide"
       "autocomplete"
       "tree-view"
       "bookmarks"
