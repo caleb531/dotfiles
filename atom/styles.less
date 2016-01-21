@@ -8,12 +8,6 @@
 @ce-color-green: #6c3;
 @ce-color-orange: #e53;
 
-// Ensure that workspace is distinguishable from tab bar and status bar
-// (when no tabs are open)
-atom-workspace {
-  background: @base-background-color;
-}
-
 atom-text-editor:not([mini])::shadow {
   // De-italicize all syntax components which Monokai italicizes
   .storage.type,
@@ -99,4 +93,19 @@ linter-bottom-tab {
 // Hide obtrusive overlay icon that displays when Find And Replace wraps around
 .find-wrap-icon {
   display: none !important;
+}
+
+// SVG Preview pane
+.svg-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: @inset-panel-background-color;
+  // SVG canvas
+  svg {
+    width: 100%;
+    flex-shrink: 0;
+    margin: 10px 0;
+    background: #fff !important;
+  }
 }
