@@ -394,3 +394,87 @@
   'function':
     'prefix': 'f'
     'body': '${1:fname}() {\n\t$2\n}'
+
+# AppleScript
+
+'.source.applescript':
+
+  'property':
+    'prefix': 'prop'
+    'body': 'property ${1:pname} : ${2:value}'
+
+  'set':
+    'prefix': 'set'
+    'body': 'set ${1:vname} to ${2:value}'
+
+  'if':
+    'prefix': 'if'
+    'body': 'if ${1:condition} then\n\t$2\nend if'
+
+  'if (one-line)':
+    'prefix': 'ifthen'
+    'body': 'if ${1:condition} then $2'
+
+  'elseif':
+    'prefix': 'elseif'
+    'body': 'else if ${1:condition} then\n\t$2'
+
+  'else':
+    'prefix': 'else'
+    'body': 'else\n\t$2'
+
+  'repeat':
+    'prefix': 'repeat'
+    'body': 'repeat\n\t$1\nend repeat'
+
+  'repeat from..to':
+    'prefix': 'repeatfromto'
+    'body': 'repeat with ${1:i} from ${2:1} to ${3:end}\n\t$4\nend repeat'
+
+  'repeat in':
+    'prefix': 'repeatin'
+    'body': 'repeat with ${1:theItem} in ${2:object}\n\t$3\nend repeat'
+
+  'repeat while':
+    'prefix': 'repeatwhile'
+    'body': 'repeat while ${1:condition}\n\t$2\nend repeat'
+
+  'repeat until':
+    'prefix': 'repeatuntil'
+    'body': 'repeat until ${1:condition}\n\t$2\nend repeat'
+
+  'repeat times':
+    'prefix': 'repeattimes'
+    'body': 'repeat ${1:n} times\n\t$2\nend repeat'
+
+  'tell':
+    'prefix': 'tell'
+    'body': 'tell ${1:object}\n\t$2\nend tell'
+
+  'tell app':
+    'prefix': 'tellapp'
+    'body': 'tell application "${1:App Name}"\n\t$2\nend tell'
+
+  'display alert':
+    'prefix': 'displayalert'
+    'body': 'display alert ${1:theText} message ${2:theMessage}'
+
+  'display dialog':
+    'prefix': 'displaydialog'
+    'body': 'display dialog ${1:theText} with title ${2:theTitle}'
+
+  'display prompt':
+    'prefix': 'displayprompt'
+    'body': 'display dialog ${1:theText} with title ${2:theTitle} default answer ${3:theAnswer}'
+
+  'choose file':
+    'prefix': 'choosefile'
+    'body': 'choose file default location ${2:alias textPath} with prompt ${3:thePrompt}'
+
+  'choose folder':
+    'prefix': 'choosefolder'
+    'body': 'choose folder default location ${2:alias textPath} with prompt ${3:thePrompt}'
+
+  'handler':
+    'prefix': 'on'
+    'body': 'on ${1:hname}($2)\n\t$3\nend ${1:hname}'
