@@ -2,7 +2,7 @@ advanced-open-file@0.14.1
 atom-alignment@0.12.1
 auto-update-packages@1.0.0
 editorconfig@1.2.4
-emmet@2.3.18
+emmet@2.4.1
 expand-region@0.2.4
 language-apache@1.4.0
 language-applescript@0.2.0

@@ -26,7 +26,6 @@
       "language-objective-c"
       "autosave"
       "git-diff"
-      "auto-update-packages"
     ]
     followSymlinks: false
     ignoredNames: [
