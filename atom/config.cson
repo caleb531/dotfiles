@@ -1,5 +1,6 @@
 "*":
   "atom-alignment": {}
+  "auto-update-packages": {}
   "autocomplete-plus":
     includeCompletionsFromAllBuffers: false
     maxVisibleSuggestions: 5
@@ -25,6 +26,7 @@
       "language-objective-c"
       "autosave"
       "git-diff"
+      "auto-update-packages"
     ]
     followSymlinks: false
     ignoredNames: [
