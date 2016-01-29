@@ -11,6 +11,7 @@ language-generic-config@1.0.0
 language-gitignore@0.2.0
 language-hosts@0.1.2
 language-ini@1.14.0
+language-latex@0.6.1
 language-svg@0.9.0
 language-viml@0.3.0
 language-x86@0.1.0
@@ -27,3 +28,4 @@ script@3.4.1
 sort-lines@0.14.0
 ssh-config@0.10.1
 svg-preview@0.7.3
+
