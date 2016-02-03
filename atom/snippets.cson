@@ -37,6 +37,16 @@
     'prefix': 'finally'
     'body': 'finally {\n\t$1\n}'
 
+  # Switch constructs
+
+  'switch':
+    'prefix': 'switch'
+    'body': 'switch (${1:variable}) {\n\t$2\n}'
+
+  'case':
+    'prefix': 'case'
+    'body': 'case ${1:value}:\n\t$2'
+
 # C++
 
 '.source.cpp':
