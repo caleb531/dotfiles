@@ -17,12 +17,12 @@ language-viml@0.3.0
 language-x86@0.1.0
 linter@1.11.3
 linter-flake8@1.10.0
-linter-jshint@1.2.2
+linter-jshint@1.3.0
 linter-jsonlint@1.1.4
 linter-php@1.1.7
 merge-conflicts@1.3.7
 monokai@0.18.0
-pigments@0.22.1
+pigments@0.23.0
 resize-indent@0.2.1
 script@3.4.1
 sort-lines@0.14.0
