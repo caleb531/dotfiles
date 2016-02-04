@@ -61,9 +61,6 @@ if is_cmd_installed brew; then
 
 	tap_brew_repo beeftornado/rmtree
 	brew install brew-rmtree
-	# Install Homebrew Cask for managing packaged apps
-	tap_brew_repo caskroom/cask
-	install_brew_pkg brew-cask
 
 	# OS X now disguises clang as gcc/g++. Install and link real gcc/g++
 	install_brew_pkg gcc
