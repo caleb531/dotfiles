@@ -6,7 +6,7 @@ emmet
 expand-region
 language-apache
 language-applescript
-language-cpp
+language-cpp14
 language-generic-config
 language-gitignore
 language-hosts
@@ -15,9 +15,9 @@ language-latex
 language-lisp
 language-svg
 language-viml
-language-x
+language-x86
 linter
-linter-flake
+linter-flake8
 linter-jshint
 linter-jsonlint
 linter-php
