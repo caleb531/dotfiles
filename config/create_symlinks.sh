@@ -5,7 +5,11 @@ source ./config/header.sh
 echo "Creating symlinks..."
 
 mkdir -p ~/.atom
-ln -sf "$PWD"/atom/* ~/.atom
+ln -sf "$PWD"/atom/config.cson ~/.atom
+ln -sf "$PWD"/atom/keymap.cson ~/.atom
+ln -sf "$PWD"/atom/snippets.cson ~/.atom
+ln -sf "$PWD"/atom/init.coffee ~/.atom
+ln -sf "$PWD"/atom/styles.less ~/.atom
 ln -snf "$PWD"/emmet ~/.emmet
 
 ln -snf "$PWD"/terminal/.bashrc ~/.bashrc
