@@ -22,7 +22,7 @@ if is_cmd_installed brew; then
 
 	install_brew_pkg bash
 
-	if [ -f /usr/local/bin/bash -a $SHELL != /usr/local/bin/bash ]; then
+	if [ -f /usr/local/bin/bash -a "$SHELL" != /usr/local/bin/bash ]; then
 		echo "Changing login shell to Bash 4..."
 		sudo chsh -s /usr/local/bin/bash $USER
 	else
@@ -46,6 +46,9 @@ if is_cmd_installed brew; then
 	ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler
+	# librsvg 2.40.11 and newer are broken; use working 2.40.10 release
+	install_brew_pkg https://raw.githubusercontent.com/Homebrew/homebrew/136cb2216d3f23b2b10d89a71200d8ca0c1ca592/Library/Formula/librsvg.rb
+	pin_brew_pkg librsvg
 
 	# Install utilities necessary for Grunt projects
 	install_brew_pkg ruby
@@ -59,6 +62,7 @@ if is_cmd_installed brew; then
 		install_npm_pkg grunt-cli
 	fi
 
+	# Install rmtree command for uninstalling packages and their leaf deps
 	tap_brew_repo beeftornado/rmtree
 	brew install brew-rmtree
 
@@ -81,8 +85,9 @@ if is_cmd_installed brew; then
 
 		echo "Installing Atom packages..."
 
-		# Install Atom packages by reading each line from packages text file
+		# Install Atom packages by reading each line from packages.txt file
 		while IFS='' read -r pkg || [ -n "$pkg" ]; do
+			# Ignore blank lines
 			if [ -n "$pkg" ]; then
 				install_apm_pkg "$pkg"
 			fi
