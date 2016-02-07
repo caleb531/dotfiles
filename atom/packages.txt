@@ -17,6 +17,7 @@ language-svg
 language-viml
 language-x86
 linter
+linter-coffeescript
 linter-flake8
 linter-jshint
 linter-jsonlint
