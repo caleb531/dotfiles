@@ -2,12 +2,16 @@
 
 fs = require 'fs'
 path = require 'path'
-VIRTUAL_ENV_NAME = '.virtualenv'
 
+# Path to the directory where Atom stores user-installed packages
 LOCAL_PKG_DIR_PATH = atom.packages.getPackageDirPaths()[0]
+# Path to the remote package list used for comparison when syncing
 REMOTE_PKG_LIST_PATH = fs.readlinkSync(
   path.join(path.dirname(LOCAL_PKG_DIR_PATH), 'packages.txt'))
+# Limit the rate of sync pushes to one second
 PKG_SYNC_DELAY = 1000
+# The name used for Python virtualenv directories
+VIRTUAL_ENV_NAME = '.virtualenv'
 
 # Activates Python virtualenv for this project directory if it exists
 activateVirtualenv = ->
@@ -29,14 +33,13 @@ activateVirtualenv = ->
 # Retrieves the list of all user-installed local packages
 getLocalPkgList = ->
   pkgList = fs.readdirSync LOCAL_PKG_DIR_PATH
-  return pkgList.filter (pkg) -> (pkg.indexOf('.') == -1)
+  return pkgList.filter (pkg) -> pkg.indexOf('.') == -1
 
 
 # Retrueves the list of all synced packages
 getRemotePkgList = ->
-    pkgList = fs.readFileSync(REMOTE_PKG_LIST_PATH, {
-      encoding: 'utf8'
-    }).trimRight().split('\n')
+    pkgList = fs.readFileSync(REMOTE_PKG_LIST_PATH, 'utf8')
+      .trimRight().split('\n')
     return pkgList
 
 
@@ -44,11 +47,11 @@ getRemotePkgList = ->
 pushPkgList = ->
   localPkgList = getLocalPkgList()
   remotePkgList = getRemotePkgList()
+	# Only push if local package list differs from remote package list
   if localPkgList.join(',') isnt remotePkgList.join(',')
     console.log('Pushing local package list to remote...')
     fs.writeFile(REMOTE_PKG_LIST_PATH, localPkgList.join('\n') + '\n')
-  else
-    console.log('Already up-to-date')
+
 
 # Initializes package sync within Atom
 initializePackageSync = ->
