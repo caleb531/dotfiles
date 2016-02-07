@@ -45,41 +45,47 @@ genfile() {
 	dd if=/dev/zero of="$filepath" bs="$filesize" count=1
 }
 
-# Lists all user-installed Atom packages for this system (faster tham `apm ls`)
-# Usage: __apm_ls
+# Lists all local Atom packages on this system (much faster than `apm ls`)
 __apm_ls() {
 	ls --color=never -1 ~/.atom/packages
 }
 
-# Brings local Atom packages into sync with remote package list
+# Returns a diff between the local Atom package list and the remote package list
+__apm_diff() {
+	__apm_ls | diff - ~/.atom/packages.txt
+}
+
+# Brings local Atom package list into sync with remote package list
 # Usage: apm pull
 __apm_pull() {
-	local pkg_diff="$(__apm_ls | diff - ~/.atom/packages.txt)"
-	if [ -z "$pkg_diff" ]; then
-		echo "Already up-to-date"
-	else
-		local removed_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\< )[a-z0-9\-]+')"
-		local added_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\> )[a-z0-9\-]+')"
+	local pkg_diff="$(__apm_diff)"
+	if [ -n "$pkg_diff" ]; then
 		# Uninstall local packages that are missing on remote
+		local removed_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\< )[a-z0-9\-]+')"
 		while read -r pkg; do
 			if [ -n "$pkg" ]; then
-				apm uninstall "$pkg"
+				/usr/local/bin/apm uninstall "$pkg"
 			fi
 		done <<< "$removed_pkgs"
 		# Install remote packages that are missing on local
+		local added_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\> )[a-z0-9\-]+')"
 		while read -r pkg; do
 			if [ -n "$pkg" ]; then
-				apm install "$pkg"
+				/usr/local/bin/apm install "$pkg"
 			fi
 		done <<< "$added_pkgs"
 	fi
 }
 
-# Pushes list of currently-installed Atom packages to remote package list
+# Pushes list of local Atom packages to the remote package list
 # Usage: apm push
 __apm_push() {
-	local pkgs_txt="$(readlink -f ~/.atom/packages.txt)"
-	__apm_ls > "$pkgs_txt"
+	# Only push if local package list differs from remote package list
+	if [ -n "$(__apm_diff)" ]; then
+		echo "Pushing local package list to remote..."
+		local remote_pkgs="$(readlink -f ~/.atom/packages.txt)"
+		__apm_ls > "$remote_pkgs"
+	fi
 }
 
 # Override apm command to integrate custom push and pull commands
