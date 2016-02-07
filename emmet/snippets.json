@@ -17,6 +17,7 @@
       "polyline": "<polyline points=\"\" />",
       "rect": "<rect x=\"\" y=\"\" width=\"\" height=\"\" />",
       "svg": "<svg viewBox=\"\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">",
+      "text": "<text x=\"\" y=\"\">",
       "use": "<use xlink:href=\"\" x=\"\" y=\"\" />"
     }
   }
