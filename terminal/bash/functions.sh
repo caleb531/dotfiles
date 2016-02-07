@@ -78,7 +78,6 @@ __apm_pull() {
 # Pushes list of currently-installed Atom packages to remote package list
 # Usage: apm push
 __apm_push() {
-	__apm_pull > /dev/null
 	local pkgs_txt="$(readlink -f ~/.atom/packages.txt)"
 	__apm_ls > "$pkgs_txt"
 }
