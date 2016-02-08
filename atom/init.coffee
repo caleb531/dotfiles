@@ -2,6 +2,7 @@
 
 fs = require 'fs'
 path = require 'path'
+child_process = require('child_process');
 
 # Path to the directory where Atom stores user-installed packages
 LOCAL_PKG_DIR_PATH = atom.packages.getPackageDirPaths()[0]
@@ -30,6 +31,11 @@ activateVirtualenv = ->
       )
 
 
+# Returns elements in the first array that aren't in the second
+getArrayDiff = (first, second) ->
+  return first.filter((elem) -> second.indexOf(elem) == -1)
+
+
 # Retrieves the list of all user-installed local packages
 getLocalPkgList = ->
   pkgList = fs.readdirSync LOCAL_PKG_DIR_PATH
@@ -43,7 +49,28 @@ getRemotePkgList = ->
     return pkgList
 
 
-# Pushes local package list to remote when packages are installed/uninstalled
+# Brings local package list into sync with remote package list
+pullPkgList = ->
+  localPkgList = getLocalPkgList()
+  remotePkgList = getRemotePkgList()
+	# Only push if local package list differs from remote package list
+  if localPkgList.join(',') isnt remotePkgList.join(',')
+    console.log('Pulling package list from remote...')
+		# Uninstall local packages that are missing on remote
+    removedPkgs = getArrayDiff(localPkgList, remotePkgList)
+    console.log('Uninstalling removed packages: ' + removedPkgs.join(', '))
+    child_process.spawn(
+      '/usr/local/bin/apm', ['uninstall'].concat(removedPkgs))
+		# Install remote packages that are missing on local
+    addedPkgs = getArrayDiff(remotePkgList, localPkgList)
+    console.log('Installing added packages: ' + addedPkgs.join(', '))
+    child_process.spawn(
+      '/usr/local/bin/apm', ['install'].concat(addedPkgs))
+  else
+    console.log('No changes to pull')
+
+
+# Pushes local package list to remote
 pushPkgList = ->
   localPkgList = getLocalPkgList()
   remotePkgList = getRemotePkgList()
@@ -51,11 +78,13 @@ pushPkgList = ->
   if localPkgList.join(',') isnt remotePkgList.join(',')
     console.log('Pushing local package list to remote...')
     fs.writeFile(REMOTE_PKG_LIST_PATH, localPkgList.join('\n') + '\n')
-
+  else
+    console.log('No changes to push')
 
 # Initializes package sync within Atom
 initializePackageSync = ->
   timeout = null
+  # Push package list when packages are activated or deactivated
   atom.packages.onDidActivatePackage (pkg) ->
     clearTimeout(timeout)
     timeout = setTimeout(pushPkgList, PKG_SYNC_DELAY)
@@ -71,4 +100,6 @@ activateVirtualenv()
 process.env.PYTHONIOENCODING = 'utf_8'
 # Prevent Python from generating bytecode (.pyc, .pyo) files
 process.env.PYTHONDONTWRITEBYTECODE = '1'
-initializePackageSync()
+
+pullPkgList()
+# initializePackageSync()
