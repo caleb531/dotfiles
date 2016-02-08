@@ -2,8 +2,10 @@
 
 fs = require 'fs'
 path = require 'path'
-child_process = require('child_process');
+spawn = require('child_process').spawn;
 
+# Path to the binary for Atom's package manager, apm
+APM_PATH = '/usr/local/bin/apm'
 # Path to the directory where Atom stores user-installed packages
 LOCAL_PKG_DIR_PATH = atom.packages.getPackageDirPaths()[0]
 # Path to the remote package list used for comparison when syncing
@@ -33,13 +35,13 @@ activateVirtualenv = ->
 
 # Returns elements in the first array that aren't in the second
 getArrayDiff = (first, second) ->
-  return first.filter((elem) -> second.indexOf(elem) == -1)
+  return first.filter((elem) -> second.indexOf(elem) is -1)
 
 
 # Retrieves the list of all user-installed local packages
 getLocalPkgList = ->
   pkgList = fs.readdirSync LOCAL_PKG_DIR_PATH
-  return pkgList.filter (pkg) -> pkg.indexOf('.') == -1
+  return pkgList.filter (pkg) -> pkg.indexOf('.') is -1
 
 
 # Retrueves the list of all synced packages
@@ -50,39 +52,51 @@ getRemotePkgList = ->
 
 
 # Brings local package list into sync with remote package list
-pullPkgList = ->
+pullPkgList = (callback) ->
   localPkgList = getLocalPkgList()
   remotePkgList = getRemotePkgList()
-	# Only push if local package list differs from remote package list
+  # Only push if local package list differs from remote package list
   if localPkgList.join(',') isnt remotePkgList.join(',')
     console.log('Pulling package list from remote...')
-		# Uninstall local packages that are missing on remote
+    # Uninstall local packages that are missing on remote
     removedPkgs = getArrayDiff(localPkgList, remotePkgList)
-    console.log('Uninstalling removed packages: ' + removedPkgs.join(', '))
-    child_process.spawn(
-      '/usr/local/bin/apm', ['uninstall'].concat(removedPkgs))
-		# Install remote packages that are missing on local
-    addedPkgs = getArrayDiff(remotePkgList, localPkgList)
-    console.log('Installing added packages: ' + addedPkgs.join(', '))
-    child_process.spawn(
-      '/usr/local/bin/apm', ['install'].concat(addedPkgs))
+    console.log('Uninstalling packages:', removedPkgs)
+    if removedPkgs.length isnt 0
+      child = spawn(APM_PATH, ['uninstall'].concat(removedPkgs))
+      child.stdout.on('data', (data) -> console.log(data))
+      child.stderr.on('data', (data) -> console.log(data))
+      child.on('close', (code) ->
+        # Install remote packages that are missing on local
+        addedPkgs = getArrayDiff(remotePkgList, localPkgList)
+        console.log('Installing packages:', addedPkgs)
+        if addedPkgs.length isnt 0
+          child = spawn(APM_PATH, ['install'].concat(addedPkgs))
+          child.stdout.on('data', (data) -> console.log(data))
+          child.stderr.on('data', (data) -> console.log(data))
+          child.on('close', (code) -> callback())
+        else
+          callback()
+      )
   else
     console.log('No changes to pull')
+    callback()
 
 
 # Pushes local package list to remote
 pushPkgList = ->
   localPkgList = getLocalPkgList()
   remotePkgList = getRemotePkgList()
-	# Only push if local package list differs from remote package list
+  # Only push if local package list differs from remote package list
   if localPkgList.join(',') isnt remotePkgList.join(',')
     console.log('Pushing local package list to remote...')
     fs.writeFile(REMOTE_PKG_LIST_PATH, localPkgList.join('\n') + '\n')
   else
     console.log('No changes to push')
 
+
 # Initializes package sync within Atom
 initializePackageSync = ->
+  console.log('Watching for package install/uninstall...')
   timeout = null
   # Push package list when packages are activated or deactivated
   atom.packages.onDidActivatePackage (pkg) ->
@@ -101,5 +115,4 @@ process.env.PYTHONIOENCODING = 'utf_8'
 # Prevent Python from generating bytecode (.pyc, .pyo) files
 process.env.PYTHONDONTWRITEBYTECODE = '1'
 
-pullPkgList()
-# initializePackageSync()
+pullPkgList(-> initializePackageSync())
