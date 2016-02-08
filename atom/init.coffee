@@ -51,6 +51,28 @@ getRemotePkgList = ->
     return pkgList
 
 
+# Uninstalls the given list of packages
+uninstallPkgs = (pkgs, callback) ->
+  if pkgs.length isnt 0
+    console.log('Uninstalling packages: ' + pkgs.join(', '))
+    child = spawn(APM_PATH, ['uninstall'].concat(pkgs))
+    child.stderr.on('data', (data) -> console.log(String(data)))
+    child.on('close', (code) -> callback?())
+  else
+    callback?()
+
+
+# Installs the given list of packages
+installPkgs = (pkgs, callback) ->
+  if pkgs.length isnt 0
+    console.log('Installing packages: ' + pkgs.join(', '))
+    child = spawn(APM_PATH, ['install'].concat(pkgs))
+    child.stderr.on('data', (data) -> console.log(String(data)))
+    child.on('close', (code) -> callback?())
+  else
+    callback?()
+
+
 # Brings local package list into sync with remote package list
 pullPkgList = (callback) ->
   localPkgList = getLocalPkgList()
@@ -58,28 +80,17 @@ pullPkgList = (callback) ->
   # Only push if local package list differs from remote package list
   if localPkgList.join(',') isnt remotePkgList.join(',')
     console.log('Pulling package list from remote...')
-    # Uninstall local packages that are missing on remote
     removedPkgs = getArrayDiff(localPkgList, remotePkgList)
-    console.log('Uninstalling packages:', removedPkgs)
-    if removedPkgs.length isnt 0
-      child = spawn(APM_PATH, ['uninstall'].concat(removedPkgs))
-      child.stdout.on('data', (data) -> console.log(data))
-      child.stderr.on('data', (data) -> console.log(data))
-      child.on('close', (code) ->
-        # Install remote packages that are missing on local
-        addedPkgs = getArrayDiff(remotePkgList, localPkgList)
-        console.log('Installing packages:', addedPkgs)
-        if addedPkgs.length isnt 0
-          child = spawn(APM_PATH, ['install'].concat(addedPkgs))
-          child.stdout.on('data', (data) -> console.log(data))
-          child.stderr.on('data', (data) -> console.log(data))
-          child.on('close', (code) -> callback())
-        else
-          callback()
-      )
+    addedPkgs = getArrayDiff(remotePkgList, localPkgList)
+    # Uninstall local packages that are missing on remote
+    uninstallPkgs(removedPkgs, ->
+      # Install remote packages that are missing on local
+      installPkgs(addedPkgs)
+      callback?()
+    )
   else
     console.log('No changes to pull')
-    callback()
+    callback?()
 
 
 # Pushes local package list to remote
