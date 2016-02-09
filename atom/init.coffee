@@ -1,11 +1,11 @@
 # Your init script
 
-fs = require 'fs'
-path = require 'path'
-spawn = require('child_process').spawn;
+fs = require('fs')
+path = require('path')
+BufferedProcess = require('atom').BufferedProcess
 
 # Path to the binary for Atom's package manager, apm
-APM_PATH = '/usr/local/bin/apm'
+APM_PATH = atom.packages.getApmPath()
 # Path to the directory where Atom stores user-installed packages
 LOCAL_PKG_DIR_PATH = atom.packages.getPackageDirPaths()[0]
 # Path to the remote package list used for comparison when syncing
@@ -55,9 +55,12 @@ getRemotePkgList = ->
 uninstallPkgs = (pkgs, callback) ->
   if pkgs.length isnt 0
     console.log('Uninstalling packages: ' + pkgs.join(', '))
-    child = spawn(APM_PATH, ['uninstall'].concat(pkgs))
-    child.stderr.on('data', (data) -> console.log(String(data)))
-    child.on('exit', (code) -> callback?())
+    process = new BufferedProcess({
+      command: APM_PATH,
+      args: ['uninstall'].concat(pkgs),
+      stderr: (data) -> console.log(String(data)),
+      exit: (code) -> callback?()
+    })
   else
     callback?()
 
@@ -72,12 +75,14 @@ activatePkgs = (pkgs) ->
 installPkgs = (pkgs, callback) ->
   if pkgs.length isnt 0
     console.log('Installing packages: ' + pkgs.join(', '))
-    child = spawn(APM_PATH, ['install'].concat(pkgs))
-    child.stderr.on('data', (data) -> console.log(String(data)))
-    child.on('exit', (code) ->
-      activatePkgs(pkgs)
-      callback?()
-    )
+    process = new BufferedProcess({
+      command: APM_PATH,
+      args: ['install'].concat(pkgs),
+      stderr: (data) -> console.log(String(data)),
+      exit: (code) ->
+        activatePkgs(pkgs)
+        callback?()
+    })
   else
     callback?()
 
