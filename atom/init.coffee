@@ -10,7 +10,7 @@ APM_PATH = '/usr/local/bin/apm'
 LOCAL_PKG_DIR_PATH = atom.packages.getPackageDirPaths()[0]
 # Path to the remote package list used for comparison when syncing
 REMOTE_PKG_LIST_PATH = fs.readlinkSync(
-  path.join(path.dirname(LOCAL_PKG_DIR_PATH), 'packages.txt'))
+  path.join(atom.configDirPath, 'packages.txt'))
 # Limit the rate of sync pushes to one second
 PKG_SYNC_DELAY = 1000
 # The name used for Python virtualenv directories
@@ -62,13 +62,22 @@ uninstallPkgs = (pkgs, callback) ->
     callback?()
 
 
+# Activates the given list of installed packages
+activatePkgs = (pkgs) ->
+  console.log('Activating packages: ' + pkgs.join(', '))
+  pkgs.forEach((pkg) -> atom.packages.activatePackage(pkg))
+
+
 # Installs the given list of packages
 installPkgs = (pkgs, callback) ->
   if pkgs.length isnt 0
     console.log('Installing packages: ' + pkgs.join(', '))
     child = spawn(APM_PATH, ['install'].concat(pkgs))
     child.stderr.on('data', (data) -> console.log(String(data)))
-    child.on('exit', (code) -> callback?())
+    child.on('exit', (code) ->
+      activatePkgs(pkgs)
+      callback?()
+    )
   else
     callback?()
 
@@ -85,9 +94,7 @@ pullPkgList = (callback) ->
     # Uninstall local packages that are missing on remote
     uninstallPkgs(removedPkgs, ->
       # Install remote packages that are missing on local
-      installPkgs(addedPkgs, ->
-        callback?()
-      )
+      installPkgs(addedPkgs, -> callback?())
     )
   else
     console.log('No changes to pull')
