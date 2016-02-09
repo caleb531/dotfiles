@@ -85,8 +85,9 @@ pullPkgList = (callback) ->
     # Uninstall local packages that are missing on remote
     uninstallPkgs(removedPkgs, ->
       # Install remote packages that are missing on local
-      installPkgs(addedPkgs)
-      callback?()
+      installPkgs(addedPkgs, ->
+        callback?()
+      )
     )
   else
     console.log('No changes to pull')
