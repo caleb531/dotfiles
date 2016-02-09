@@ -10,7 +10,7 @@ APM_PATH = atom.packages.getApmPath()
 LOCAL_PKG_DIR_PATH = atom.packages.getPackageDirPaths()[0]
 # Path to the remote package list used for comparison when syncing
 REMOTE_PKG_LIST_PATH = fs.readlinkSync(
-  path.join(atom.configDirPath, 'packages.txt'))
+  path.join(atom.getConfigDirPath(), 'packages.txt'))
 # Limit the rate of sync pushes to one second
 PKG_SYNC_DELAY = 1000
 # The name used for Python virtualenv directories
@@ -40,7 +40,7 @@ getArrayDiff = (first, second) ->
 
 # Retrieves the list of all user-installed local packages
 getLocalPkgList = ->
-  pkgList = fs.readdirSync LOCAL_PKG_DIR_PATH
+  pkgList = fs.readdirSync(LOCAL_PKG_DIR_PATH)
   return pkgList.filter (pkg) -> pkg.indexOf('.') is -1
 
 
@@ -138,5 +138,6 @@ activateVirtualenv()
 process.env.PYTHONIOENCODING = 'utf_8'
 # Prevent Python from generating bytecode (.pyc, .pyo) files
 process.env.PYTHONDONTWRITEBYTECODE = '1'
-
+# Pull package list from remote; install missing packages and uninstall
+# extraneous packages
 pullPkgList(-> initializePackageSync())
