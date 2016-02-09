@@ -57,7 +57,7 @@ uninstallPkgs = (pkgs, callback) ->
     console.log('Uninstalling packages: ' + pkgs.join(', '))
     child = spawn(APM_PATH, ['uninstall'].concat(pkgs))
     child.stderr.on('data', (data) -> console.log(String(data)))
-    child.on('close', (code) -> callback?())
+    child.on('exit', (code) -> callback?())
   else
     callback?()
 
@@ -68,7 +68,7 @@ installPkgs = (pkgs, callback) ->
     console.log('Installing packages: ' + pkgs.join(', '))
     child = spawn(APM_PATH, ['install'].concat(pkgs))
     child.stderr.on('data', (data) -> console.log(String(data)))
-    child.on('close', (code) -> callback?())
+    child.on('exit', (code) -> callback?())
   else
     callback?()
 
