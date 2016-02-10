@@ -115,11 +115,11 @@ pullPkgList = (callback) ->
   # Only push if local package list differs from remote package list
   if localPkgList.join(',') isnt remotePkgList.join(',')
     console.log('Pulling package list from remote...')
-    removedPkgs = getArrayDiff(localPkgList, remotePkgList)
-    addedPkgs = getArrayDiff(remotePkgList, localPkgList)
     # Uninstall local packages that are missing on remote
+    removedPkgs = getArrayDiff(localPkgList, remotePkgList)
     uninstallPkgs(removedPkgs, ->
       # Install remote packages that are missing on local
+      addedPkgs = getArrayDiff(remotePkgList, localPkgList)
       installPkgs(addedPkgs, -> callback?())
     )
   else
