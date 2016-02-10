@@ -1,4 +1,5 @@
 # Your init script
+#
 # Atom will evaluate this file each time a new window is opened. It is run
 # after packages are loaded/activated and after the previous editor state
 # has been restored.
@@ -132,8 +133,8 @@ pushPkgList = ->
   remotePkgList = getRemotePkgList()
   # Only push if local package list differs from remote package list
   if localPkgList.join(',') isnt remotePkgList.join(',')
-    console.log('Pushing local package list to remote...')
-    fs.writeFile(REMOTE_PKG_LIST_PATH, localPkgList.join('\n') + '\n')
+    fs.writeFileSync(REMOTE_PKG_LIST_PATH, localPkgList.join('\n') + '\n')
+    atom.notifications.addSuccess('Pushed package list to remote')
   else
     console.log('No changes to push')
 
