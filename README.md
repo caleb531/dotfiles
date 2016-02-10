@@ -45,6 +45,14 @@ including:
 My setup also applies color highlighting when editing Git commit or merge
 messages in Vim.
 
+### Python virtualenv switching
+
+If you open or `cd` into a current working directory contains a Python
+virtualenv (under the name `.virtualenv`), my Bash configuration will
+automatically activate that virtualenv. When you `cd` to another directory, that
+currently-active virtualenv will be automatically deactivated (and of course,
+any virtualenv present in the new directory will be activated).
+
 ### Interactive prompt
 
 The `PS1` interactive prompt which I have set for my shell is intended to be
@@ -89,6 +97,11 @@ configuration consists of both preferences and snippets for HTML/CSS expansion.
 Please ensure that the `~/.emmet` directory is set as your *Extensions Path*
 within the Atom package's preferences, because this directory is where my Atom
 configuration expects to find user configuration for Emmet.
+
+### Python virtualenv activation
+
+When you open in Atom a project directory containing a Python virtualenv, Atom
+will automatically activate that virtualenv.
 
 ## Configuration scripts
 
