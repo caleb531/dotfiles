@@ -13,7 +13,6 @@
       "welcome"
       "update-package-dependencies"
       "timecop"
-      "exception-reporting"
       "image-view"
       "metrics"
       "open-on-github"
@@ -70,6 +69,8 @@
   emmet:
     extensionsPath: "~/.emmet"
     useEmmetComments: false
+  "exception-reporting":
+    userId: "f12f97d7-4abc-ae8e-e993-bf2f40749e71"
   "expand-region": {}
   "find-and-replace": {}
   "fuzzy-finder":
