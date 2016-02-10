@@ -18,19 +18,16 @@ VIRTUAL_ENV_NAME = '.virtualenv'
 
 # Activates Python virtualenv for this project directory if it exists
 activateVirtualenv = ->
-
   project = atom.project.getPaths()[0]
   if project
     virtualenv = path.join(project, VIRTUAL_ENV_NAME)
-    # Do not activate virtualenv if project is itself a virtualenv
-    if virtualenv isnt project
-      fs.lstat(virtualenv, (err, stats) ->
-        if not err and stats.isDirectory()
-          virtualenv_bin = path.join(virtualenv, 'bin')
-          process.env.PATH = [virtualenv_bin, process.env.PATH].join ':'
-          process.env.VIRTUAL_ENV = virtualenv
-          console.log("Activated virtualenv at #{virtualenv}")
-      )
+    fs.lstat(virtualenv, (err, stats) ->
+      if not err and stats.isDirectory()
+        virtualenv_bin = path.join(virtualenv, 'bin')
+        process.env.PATH = [virtualenv_bin, process.env.PATH].join ':'
+        process.env.VIRTUAL_ENV = virtualenv
+        console.log("Activated virtualenv at #{virtualenv}")
+    )
 
 
 # Returns elements in the first array that aren't in the second
@@ -41,7 +38,7 @@ getArrayDiff = (first, second) ->
 # Retrieves the list of all user-installed local packages
 getLocalPkgList = ->
   pkgList = fs.readdirSync(LOCAL_PKG_DIR_PATH)
-  return pkgList.filter (pkg) -> pkg.indexOf('.') is -1
+  return pkgList.filter((pkg) -> pkg.indexOf('.') is -1)
 
 
 # Retrueves the list of all synced packages
