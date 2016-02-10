@@ -1,4 +1,7 @@
 # Your init script
+# Atom will evaluate this file each time a new window is opened. It is run
+# after packages are loaded/activated and after the previous editor state
+# has been restored.
 
 fs = require('fs')
 path = require('path')
@@ -48,21 +51,35 @@ getRemotePkgList = ->
     return pkgList
 
 
+# Deactivates the given list of packages
+deactivatePkgs = (pkgs) ->
+  console.log('Deactivating packages: ' + pkgs.join(', '))
+  pkgs.forEach((pkg) -> atom.packages.deactivatePackage(pkg))
+
+
 # Uninstalls the given list of packages
 uninstallPkgs = (pkgs, callback) ->
   if pkgs.length isnt 0
-    console.log('Uninstalling packages: ' + pkgs.join(', '))
+    pkgsStr = pkgs.join(', ')
+    atom.notifications.addInfo('Uninstalling packages', {
+        detail: pkgsStr
+    })
+    deactivatePkgs(pkgs)
     process = new BufferedProcess({
       command: APM_PATH,
       args: ['uninstall'].concat(pkgs),
       stderr: (data) -> console.log(String(data)),
-      exit: (code) -> callback?()
+      exit: (code) ->
+        atom.notifications.addSuccess('Finished uninstalling packages', {
+            detail: pkgsStr
+        })
+        callback?()
     })
   else
     callback?()
 
 
-# Activates the given list of installed packages
+# Activates the given list of packages
 activatePkgs = (pkgs) ->
   console.log('Activating packages: ' + pkgs.join(', '))
   pkgs.forEach((pkg) -> atom.packages.activatePackage(pkg))
@@ -71,13 +88,19 @@ activatePkgs = (pkgs) ->
 # Installs the given list of packages
 installPkgs = (pkgs, callback) ->
   if pkgs.length isnt 0
-    console.log('Installing packages: ' + pkgs.join(', '))
+    pkgsStr = pkgs.join(', ')
+    atom.notifications.addInfo('Installing packages', {
+        detail: pkgsStr
+    })
     process = new BufferedProcess({
       command: APM_PATH,
       args: ['install'].concat(pkgs),
       stderr: (data) -> console.log(String(data)),
       exit: (code) ->
         activatePkgs(pkgs)
+        atom.notifications.addSuccess('Finished installing and activating packages', {
+            detail: pkgsStr
+        })
         callback?()
     })
   else
