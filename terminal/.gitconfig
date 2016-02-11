@@ -12,11 +12,18 @@
 
 # Core configuration
 [core]
-	# Use tab width of 4 columns for git diff/show
-	pager = less -x1,5
+	# Highlight line-specific changes and use diff-so-fancy to format diff
+	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 
 # Push/pull current branch by default (when no arguments are given)
 [push]
 	default = simple
 [pull]
 	default = simple
+
+# Set pleasant colors for diffs
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

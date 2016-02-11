@@ -35,6 +35,7 @@ if is_cmd_installed brew; then
 	install_brew_pkg colordiff
 	tap_brew_repo homebrew/dupes
 	install_brew_pkg grep --with-default-names
+	install_brew_pkg gnu-sed --with-default-names
 	install_brew_pkg coreutils
 	install_brew_pkg tree
 
@@ -60,6 +61,7 @@ if is_cmd_installed brew; then
 	pin_brew_pkg node
 	if is_cmd_installed npm; then
 		install_npm_pkg grunt-cli
+		install_npm_pkg diff-so-fancy
 	fi
 
 	# Install rmtree command for uninstalling packages and their leaf deps
