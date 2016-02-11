@@ -8,6 +8,11 @@
 @ce-color-green: #6c3;
 @ce-color-orange: #e53;
 
+// Use lighter gray background to more easily tell when workspace has loaded
+atom-workspace {
+  background-color: @base-background-color;
+}
+
 atom-text-editor:not([mini])::shadow {
   // De-italicize all syntax components which Monokai italicizes
   .storage.type,
