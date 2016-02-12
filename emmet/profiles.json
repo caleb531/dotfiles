@@ -4,8 +4,5 @@
     },
     "xml": {
       "self_closing_tag": "xhtml"
-    },
-    "svg": {
-      "self_closing_tag": "xhtml"
     }
 }

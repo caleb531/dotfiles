@@ -4,7 +4,7 @@
     "profile": "html"
   },
   "svg": {
-    "profile": "svg",
+    "profile": "xml",
     "abbreviations": {
       "circle": "<circle cx=\"\" cy=\"\" r=\"\" />",
       "clipPath": "<clipPath id=\"\">",
