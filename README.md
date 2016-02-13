@@ -1,5 +1,5 @@
 # dotfiles
-*Copyright 2015, Caleb Evans*  
+*Copyright 2016, Caleb Evans*  
 *Released under the MIT license*
 
 ## Introduction
