@@ -7,17 +7,17 @@
     "profile": "xml",
     "abbreviations": {
       "circle": "<circle cx=\"\" cy=\"\" r=\"\" />",
-      "clipPath": "<clipPath id=\"\">",
+      "clipPath": "<clipPath id=\"\"></clipPath>",
       "ellipse": "<ellipse cx=\"\" cy=\"\" width=\"\" height=\"\" />",
       "line": "<line x1=\"\" y1=\"\" x2=\"\" y2=\"\" />",
-      "mask": "<mask id=\"\">",
+      "mask": "<mask id=\"\"></mask>",
       "path": "<path d=\"\" />",
-      "pattern": "<pattern id=\"\" x=\"\" y=\"\" width=\"\" height=\"\" patternUnits=\"userSpaceOnUse\">",
+      "pattern": "<pattern id=\"\" x=\"\" y=\"\" width=\"\" height=\"\" patternUnits=\"userSpaceOnUse\"></pattern>",
       "polygon": "<polygon points=\"\" />",
       "polyline": "<polyline points=\"\" />",
       "rect": "<rect x=\"\" y=\"\" width=\"\" height=\"\" />",
-      "svg": "<svg viewBox=\"\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">",
-      "text": "<text x=\"\" y=\"\">",
+      "svg": "<svg viewBox=\"\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></svg>",
+      "text": "<text x=\"\" y=\"\"></text>",
       "use": "<use xlink:href=\"\" x=\"\" y=\"\" />"
     }
   }
