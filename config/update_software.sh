@@ -15,12 +15,8 @@ brew upgrade --all
 apm update --no-confirm
 
 # Node packages
-if is_cmd_installed npm; then
-	npm install npm --global
-	npm update --global
-fi
+npm install npm --global
+npm update --global
 
 # Ruby gems
-if is_cmd_installed gem; then
-	sudo gem update
-fi
+sudo gem update

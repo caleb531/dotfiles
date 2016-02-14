@@ -19,6 +19,10 @@ fi
 if [ -d /usr/local/opt/ruby/bin ]; then
 	export PATH=/usr/local/opt/ruby/bin:$PATH
 fi
+# npm packages
+if [ -d /usr/local/lib/npm-packages/bin ]; then
+	export PATH=/usr/local/lib/npm-packages/bin:$PATH
+fi
 
 # Colorize less
 # Color syntax: http://www.termsys.demon.co.uk/vtansi.htm#colors

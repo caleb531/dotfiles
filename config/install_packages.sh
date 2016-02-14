@@ -57,8 +57,21 @@ if is_cmd_installed brew; then
 	if is_cmd_installed gem; then
 		install_gem sass
 	fi
-	install_brew_pkg node
+	# Instll Node via Homebrew but install npm separately to avoid conflicts
+	install_brew_pkg node --without-npm
 	pin_brew_pkg node
+	if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
+		echo "Setting npm prefix..."
+		echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
+	else
+		echo "Correct npm prefix already set"
+	fi
+	if ! is_cmd_installed npm; then
+		echo "Installing npm..."
+		curl -L https://www.npmjs.com/install.sh | sh
+	else
+		echo "Already installed: npm"
+	fi
 	if is_cmd_installed npm; then
 		install_npm_pkg grunt-cli
 		install_npm_pkg diff-so-fancy

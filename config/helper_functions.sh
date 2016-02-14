@@ -5,23 +5,23 @@ is_cmd_installed() {
 }
 
 is_brew_pkg_installed() {
-	brew list -1 | grep -q "^$1\$"
+	brew list -1 | grep --quiet "^$1\$"
 }
 
 is_brew_pkg_pinned() {
-	brew list --pinned -1 | grep -q "^$1\$"
+	brew list --pinned -1 | grep --quiet "^$1\$"
 }
 
 is_npm_pkg_installed() {
-	npm list -g --depth=0 | grep -q " $1@"
+	npm list --global --depth=0 | grep --quiet " $1@"
 }
 
 is_cask_installed() {
-	brew cask list -1 | grep -q "^$1\$"
+	brew cask list -1 | grep --quiet "^$1\$"
 }
 
 is_gem_installed() {
-	gem list | grep -q "^$1 "
+	gem list | grep --quiet "^$1 "
 }
 
 is_pip_pkg_installed() {
@@ -29,7 +29,7 @@ is_pip_pkg_installed() {
 }
 
 is_apm_pkg_installed() {
-	apm list --installed --bare | grep -q "^$1@"
+	apm list --installed --bare | grep --quiet "^$1@"
 }
 
 is_tapped() {
@@ -64,7 +64,7 @@ pin_brew_pkg() {
 install_npm_pkg() {
 	if ! is_npm_pkg_installed "$1"; then
 		echo "Installing $1..."
-		npm install -g "$@"
+		npm install --global "$@"
 	else
 		echo "Already installed: $1"
 	fi
