@@ -35,7 +35,9 @@ if is_cmd_installed brew; then
 	install_brew_pkg colordiff
 	tap_brew_repo homebrew/dupes
 	install_brew_pkg grep --with-default-names
+	# gnu-sed is required by diff-so-fancy
 	install_brew_pkg gnu-sed --with-default-names
+	# GNU ls is required for colored ls output
 	install_brew_pkg coreutils
 	install_brew_pkg tree
 
@@ -47,8 +49,12 @@ if is_cmd_installed brew; then
 	ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler
-	# librsvg 2.40.11 and newer are broken; use working 2.40.10 release
-	install_brew_pkg https://raw.githubusercontent.com/Homebrew/homebrew/136cb2216d3f23b2b10d89a71200d8ca0c1ca592/Library/Formula/librsvg.rb
+	if ! is_brew_pkg_installed librsvg; then
+		# librsvg 2.40.11 and newer are broken; use working 2.40.10 release
+		install_brew_pkg https://raw.githubusercontent.com/Homebrew/homebrew/136cb2216d3f23b2b10d89a71200d8ca0c1ca592/Library/Formula/librsvg.rb
+	else
+		echo "Already installed: librsvg"
+	fi
 	pin_brew_pkg librsvg
 
 	# Install utilities necessary for Grunt projects
@@ -56,7 +62,10 @@ if is_cmd_installed brew; then
 	pin_brew_pkg ruby
 	if is_cmd_installed gem; then
 		install_gem sass
+	else
+		echo "Skipping Ruby gems; gem command not installed"
 	fi
+
 	# Instll Node via Homebrew but install npm separately to avoid conflicts
 	install_brew_pkg node --without-npm
 	pin_brew_pkg node
@@ -66,15 +75,25 @@ if is_cmd_installed brew; then
 	else
 		echo "Correct npm prefix already set"
 	fi
+
 	if ! is_cmd_installed npm; then
 		echo "Installing npm..."
 		curl -L https://www.npmjs.com/install.sh | sh
 	else
 		echo "Already installed: npm"
 	fi
+
 	if is_cmd_installed npm; then
+
+		echo "Installing npm packages..."
+
 		install_npm_pkg grunt-cli
 		install_npm_pkg diff-so-fancy
+
+	else
+
+		echo "Skipping npm packages; npm command not installed"
+
 	fi
 
 	# Install rmtree command for uninstalling packages and their leaf deps
@@ -94,6 +113,10 @@ if is_cmd_installed brew; then
 		install_pip_pkg flake8
 		install_pip_pkg pep8-naming
 
+	else
+
+		echo "Skipping pip packages; pip command not installed"
+
 	fi
 
 	if is_cmd_installed apm; then
@@ -101,12 +124,16 @@ if is_cmd_installed brew; then
 		echo "Installing Atom packages..."
 
 		# Install Atom packages by reading each line from packages.txt file
-		while IFS='' read -r pkg || [ -n "$pkg" ]; do
+		while read -r pkg || [ -n "$pkg" ]; do
 			# Ignore blank lines
 			if [ -n "$pkg" ]; then
 				install_apm_pkg "$pkg"
 			fi
 		done < ./atom/packages.txt
+
+	else
+
+		echo "Skipping Atom packages; apm command not installed"
 
 	fi
 
