@@ -141,7 +141,7 @@ pushPkgList = ->
 
 # Initializes package sync within Atom
 initializePackageSync = ->
-  console.log('Watching for package activate/deactivate...')
+  console.log('Watching for package activation/deactivation...')
   timeout = null
   # Push package list when packages are activated or deactivated
   atom.packages.onDidActivatePackage (pkg) ->
