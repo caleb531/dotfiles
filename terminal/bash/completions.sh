@@ -14,7 +14,7 @@ _pip() {
 
     if [ "$prev" == pip ]; then
         # Complete common pip commands when "pip" is given
-        COMPREPLY=( $(compgen -W "list install uninstall freeze" -- $cur) )
+        COMPREPLY=( $(compgen -W "freeze install list search show uninstall" -- $cur) )
     elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
         # Complete filenames when output is being redirected
         COMPREPLY=( $(compgen -f $cur) )
@@ -29,3 +29,23 @@ _pip() {
 
 }
 complete -F _pip pip
+
+# Completion function for apm, Atom's package manager
+_apm() {
+
+    cur=${COMP_WORDS[COMP_CWORD]}
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+    first=${COMP_WORDS[0]}
+    second=${COMP_WORDS[1]}
+
+    if [ "$prev" == apm ]; then
+        # Complete common apm commands when "apm" is given
+        COMPREPLY=( $(compgen -W "clean install list search show uninstall update upgrade" -- $cur) )
+    else
+        # Complete installed packages in every other case
+        local pkg_list="$(ls ~/.atom/packages 2> /dev/null)"
+        COMPREPLY=( $(compgen -W "$pkg_list" -- $cur) )
+    fi
+
+}
+complete -F _apm apm
