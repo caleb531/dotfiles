@@ -29,7 +29,6 @@ if is_cmd_installed brew; then
 		echo "Login shell already set to Bash 4"
 	fi
 
-	# Install packages used by dotfiles
 	tap_brew_repo homebrew/versions
 	install_brew_pkg bash-completion2
 	install_brew_pkg colordiff
@@ -41,17 +40,19 @@ if is_cmd_installed brew; then
 	install_brew_pkg coreutils
 	install_brew_pkg tree
 
-	# Install additional packages for personal use
 	install_brew_pkg git
+
 	install_brew_pkg python
 	install_brew_pkg python3
 	# Always use Python 3 pip
 	ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
+	curl -sL 'https://raw.githubusercontent.com/ekalinin/pip-bash-completion/master/pip' > /usr/local/etc/bash_completion.d/pip
+
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler
 	if ! is_brew_pkg_installed librsvg; then
 		# librsvg 2.40.11 and newer are broken; use working 2.40.10 release
-		install_brew_pkg https://raw.githubusercontent.com/Homebrew/homebrew/136cb2216d3f23b2b10d89a71200d8ca0c1ca592/Library/Formula/librsvg.rb
+		install_brew_pkg 'https://raw.githubusercontent.com/Homebrew/homebrew/136cb2216d3f23b2b10d89a71200d8ca0c1ca592/Library/Formula/librsvg.rb'
 	else
 		echo "Already installed: librsvg"
 	fi
