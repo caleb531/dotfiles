@@ -15,11 +15,15 @@ _pip() {
     if [ "$prev" == pip ]; then
         # Complete common pip commands when "pip" is given
         COMPREPLY=( $(compgen -W "list install uninstall freeze" -- $cur) )
-    elif [ "$second" == freeze -a "$prev" == '>' ]; then
-        # Complete filenames when "pip freeze" command is given
+    elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
+        # Complete filenames when output is being redirected
         COMPREPLY=( $(compgen -f $cur) )
     else
-        local pkg_list="$(cat ./requirements.txt | grep -Po '[a-z0-9\-]+')"
+        # Complete installed packages in every other case
+        local pkg_list="$(cat ./requirements.txt 2> /dev/null | grep -Po '[a-z0-9\-]+(?=\=\=)')"
+        if [ -z "$pkg_list" ]; then
+            local pkg_list="$(pip list 2> /dev/null | grep -Po '[a-z0-9\-]+(?= \()')"
+        fi
         COMPREPLY=( $(compgen -W "$pkg_list" -- $cur) )
     fi
 
