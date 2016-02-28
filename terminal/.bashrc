@@ -2,12 +2,12 @@
 # .bashrc
 # Caleb Evans
 
-source ~/.bash/exports.sh
-source ~/.bash/aliases.sh
-source ~/.bash/functions.sh
-source ~/.bash/config.sh
-source ~/.bash/prompt.sh
+source ~/.dotfiles/terminal/bash/exports.sh
+source ~/.dotfiles/terminal/bash/aliases.sh
+source ~/.dotfiles/terminal/bash/functions.sh
+source ~/.dotfiles/terminal/bash/config.sh
+source ~/.dotfiles/terminal/bash/prompt.sh
 # personal.sh is for users of my dotfiles who wish to add personal configuration that is not tracked by the repository
-if [ -f ~/.bash/personal.sh ]; then
-	source ~/.bash/personal.sh
+if [ -f ~/.dotfiles/terminal/bash/personal.sh ]; then
+	source ~/.dotfiles/terminal/bash/personal.sh
 fi

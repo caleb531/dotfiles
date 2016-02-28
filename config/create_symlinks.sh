@@ -6,11 +6,10 @@ echo "Creating symlinks..."
 
 mkdir -p ~/.atom
 ln -sf "$PWD"/atom/* ~/.atom
-ln -snf "$PWD"/emmet ~/.emmet
 
+ln -snf "$PWD" ~/.dotfiles
 ln -snf "$PWD"/terminal/.bashrc ~/.bashrc
 ln -snf "$PWD"/terminal/.bash_profile ~/.bash_profile
-ln -snf "$PWD"/terminal/bash ~/.bash
 ln -snf "$PWD"/terminal/bash/completions.sh /usr/local/etc/bash_completion.d/dotfiles-completions.sh
 
 ln -snf "$PWD"/terminal/.vimrc ~/.vimrc
