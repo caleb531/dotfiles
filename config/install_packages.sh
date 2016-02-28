@@ -46,7 +46,6 @@ if is_cmd_installed brew; then
 	install_brew_pkg python3
 	# Always use Python 3 pip
 	ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
-	curl -sL 'https://raw.githubusercontent.com/ekalinin/pip-bash-completion/master/pip' > /usr/local/etc/bash_completion.d/pip
 
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler

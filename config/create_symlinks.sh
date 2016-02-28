@@ -11,6 +11,7 @@ ln -snf "$PWD"/emmet ~/.emmet
 ln -snf "$PWD"/terminal/.bashrc ~/.bashrc
 ln -snf "$PWD"/terminal/.bash_profile ~/.bash_profile
 ln -snf "$PWD"/terminal/bash ~/.bash
+ln -snf "$PWD"/terminal/bash/completions.sh /usr/local/etc/bash_completion.d/dotfiles-completions.sh
 
 ln -snf "$PWD"/terminal/.vimrc ~/.vimrc
 ln -snf "$PWD"/terminal/.gitconfig ~/.gitconfig
