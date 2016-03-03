@@ -14,10 +14,14 @@ _pip() {
 
     if [ "$prev" == pip ]; then
         # Complete common pip commands when "pip" is given
-        COMPREPLY=( $(compgen -W "freeze install list search show uninstall" -- $cur) )
+        COMPREPLY=( $(compgen -W 'freeze install list search show uninstall' -- $cur) )
     elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
         # Complete filenames when output is being redirected
+        # or when `pip install -r` is given
         COMPREPLY=( $(compgen -f $cur) )
+    elif [ "$prev" == 'list'  ]; then
+        # Complete options when "list" command is given
+        COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
     else
         # Complete installed packages in every other case
         local pkg_list="$(cat ./requirements.txt 2> /dev/null | grep -Po '[a-z0-9\-]+(?=\=\=)')"
