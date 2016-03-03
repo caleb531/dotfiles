@@ -44,7 +44,7 @@ _apm() {
 
     if [ "$prev" == 'apm' ]; then
         # Complete common apm commands when "apm" is given
-        COMPREPLY=( $(compgen -W 'clean install list search show uninstall update upgrade' -- $cur) )
+        COMPREPLY=( $(compgen -W 'clean install list publish search show uninstall update upgrade' -- $cur) )
     elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
         # Complete options when "update" or "upgrade" command is given
         COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
