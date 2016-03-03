@@ -12,7 +12,7 @@ _pip() {
     first=${COMP_WORDS[0]}
     second=${COMP_WORDS[1]}
 
-    if [ "$prev" == pip ]; then
+    if [ "$prev" == 'pip' ]; then
         # Complete common pip commands when "pip" is given
         COMPREPLY=( $(compgen -W 'freeze install list search show uninstall' -- $cur) )
     elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
@@ -42,9 +42,12 @@ _apm() {
     first=${COMP_WORDS[0]}
     second=${COMP_WORDS[1]}
 
-    if [ "$prev" == apm ]; then
+    if [ "$prev" == 'apm' ]; then
         # Complete common apm commands when "apm" is given
-        COMPREPLY=( $(compgen -W "clean install list search show uninstall update upgrade" -- $cur) )
+        COMPREPLY=( $(compgen -W 'clean install list search show uninstall update upgrade' -- $cur) )
+    elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
+        # Complete options when "update" or "upgrade" command is given
+        COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
     else
         # Complete installed packages in every other case
         local pkg_list="$(ls ~/.atom/packages 2> /dev/null)"
