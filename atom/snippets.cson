@@ -457,6 +457,10 @@
     'prefix': 'repeattimes'
     'body': 'repeat ${1:n} times\n\t$2\nend repeat'
 
+  'exit repeat':
+    'prefix': 'exitrepeat'
+    'body': 'exit repeat'
+
   'tell':
     'prefix': 'tell'
     'body': 'tell ${1:object}\n\t$2\nend tell'
