@@ -2,8 +2,6 @@
 # completions.sh
 # Caleb Evans
 
-# cur = current
-
 # Completion function for pip, Python's package manager
 _pip() {
 
