@@ -133,7 +133,7 @@
 
   'function declaration':
     'prefix': 'fd'
-    'body': 'function ${1:name}($2) {\n\t$3\n}'
+    'body': 'function ${1:fname}($2) {\n\t$3\n}'
 
   'function expression':
     'prefix': 'fe'
@@ -263,7 +263,7 @@
 
   'function':
     'prefix': 'f'
-    'body': 'function ${1:name}($2) {\n\t$3\n}'
+    'body': 'function ${1:fname}($2) {\n\t$3\n}'
 
   'if':
     'prefix': 'if'
@@ -383,7 +383,7 @@
 
   'local variable':
     'prefix': 'local'
-    'body': 'local ${1:name}=${2:value}'
+    'body': 'local ${1:vname}=${2:value}'
 
   'if':
     'prefix': 'if'
