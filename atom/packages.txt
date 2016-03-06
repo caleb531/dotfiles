@@ -1,6 +1,7 @@
 advanced-open-file
 atom-alignment
 auto-update-packages
+docblockr
 editorconfig
 emmet
 expand-region
