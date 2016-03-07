@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 is_cmd_installed() {
 	type "$1" &> /dev/null
