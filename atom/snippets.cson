@@ -79,6 +79,10 @@
     'prefix': 'fm'
     'body': '${1:void} ${2:Class}::${3:fname}($4) {\n\t$5\n}'
 
+  'struct':
+    'prefix': 'struct'
+    'body': 'struct ${1:Struct} {\n\t$2\n};'
+
   'constructor definition':
     'prefix': 'ctor'
     'body': '${1:Class}::${1:Class}($2) {\n\t$3\n}'
@@ -89,7 +93,19 @@
 
   'class':
     'prefix': 'class'
-    'body': 'class ${1:Class} {\n\t$3\n};'
+    'body': 'class ${1:Class} {\n\t$2\n};'
+
+  'public blocks':
+    'prefix': 'public'
+    'body': 'public:\n\t$1'
+
+  'private blocks':
+    'prefix': 'private'
+    'body': 'private:\n\t$1'
+
+  'protected blocks':
+    'prefix': 'protected'
+    'body': 'protected:\n\t$1'
 
   'this pointer access':
     'prefix': 'this'
@@ -104,7 +120,7 @@
     'body': 'cout << $1;'
 
   'cout endl':
-    'prefix': 'coute'
+    'prefix': 'coutendl'
     'body': 'cout << $1 << endl;'
 
   'cerr':
@@ -112,7 +128,7 @@
     'body': 'cerr << $1;'
 
   'cerr endl':
-    'prefix': 'cerre'
+    'prefix': 'cerrendl'
     'body': 'cerr << $1 << endl;'
 
 # JavaScript
