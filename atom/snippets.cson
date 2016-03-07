@@ -508,3 +508,121 @@
   'handler':
     'prefix': 'on'
     'body': 'on ${1:hname}($2)\n\t$3\nend ${1:hname}'
+
+'.source.sql':
+
+  'create table':
+    'prefix': 'createtable'
+    'body': 'CREATE TABLE ${1:tname}(\n\t$2\n);'
+
+  'alter table':
+    'prefix': 'altertable'
+    'body': 'ALTER TABLE ${1:tname}\n\t${2:actions};'
+
+  'drop table':
+    'prefix': 'droptable'
+    'body': 'DROP TABLE ${1:tname}\n\t${2:actions};'
+
+  'number':
+    'prefix': 'number'
+    'body': 'NUMBER'
+
+  'char':
+    'prefix': 'char'
+    'body': 'CHAR'
+
+  'varchar2':
+    'prefix': 'varchar2'
+    'body': 'VARCHAR2'
+
+  'date':
+    'prefix': 'date'
+    'body': 'DATE'
+
+  'constraint':
+    'prefix': 'constraint'
+    'body': 'CONSTRAINT ${1:cname} ${2:ctype}'
+
+  'add constraint':
+    'prefix': 'addconstraint'
+    'body': 'ADD CONSTRAINT ${1:cname} ${2:ctype}'
+
+  'drop constraint':
+    'prefix': 'dropconstraint'
+    'body': 'DROP CONSTRAINT ${1:cname}'
+
+  'enable constraint':
+    'prefix': 'enableconstraint'
+    'body': 'ENABLE CONSTRAINT ${1:cname}'
+
+  'disable constraint':
+    'prefix': 'disableconstraint'
+    'body': 'DISABLE CONSTRAINT ${1:cname}'
+
+  'primary key':
+    'prefix': 'primarykey'
+    'body': 'PRIMARY KEY'
+
+  'foreign key':
+    'prefix': 'foreignkey'
+    'body': 'FOREIGN KEY'
+
+  'references':
+    'prefix': 'references'
+    'body': 'REFERENCES ${1:tname}(${2:column})'
+
+  'not null':
+    'prefix': 'notnull'
+    'body': 'NOT NULL'
+
+  'unique':
+    'prefix': 'unique'
+    'body': 'UNIQUE'
+
+  'check':
+    'prefix': 'check'
+    'body': 'CHECK(${1:condition})'
+
+  'select':
+    'prefix': 'select'
+    'body': 'SELECT ${1:*} FROM ${2:tname} WHERE ${3:condition};'
+
+  'where':
+    'prefix': 'where'
+    'body': 'WHERE '
+
+  'and':
+    'prefix': 'and'
+    'body': 'AND '
+
+  'or':
+    'prefix': 'or'
+    'body': 'OR '
+
+  'like':
+    'prefix': 'like'
+    'body': 'LIKE '
+
+  'rlike':
+    'prefix': 'rlike'
+    'body': 'RLIKE '
+
+  'regexp':
+    'prefix': 'regexp'
+    'body': 'REGEXP '
+
+  'insert':
+    'prefix': 'insert'
+    'body': 'INSERT INTO ${1:tname} (${2:columns}) VALUES (${3:values});'
+
+  'update':
+    'prefix': 'update'
+    'body': 'UPDATE ${1:tname} SET ${2:column = value} WHERE ${3:condition};'
+
+  'delete':
+    'prefix': 'delete'
+    'body': 'DELETE FROM ${1:tname} WHERE ${3:condition};'
+
+  'inner join':
+    'prefix': 'innerjoin'
+    'body': 'INNER JOIN ${1:tname} ON ${2:condition}'
