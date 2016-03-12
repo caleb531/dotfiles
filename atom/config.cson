@@ -38,6 +38,7 @@
       "*.out"
       "*.docx"
       "*.pages"
+      "*.alfredworkflow"
     ]
     packagesWithKeymapsDisabled: [
       "emmet"
