@@ -525,15 +525,19 @@
 
   'number':
     'prefix': 'number'
-    'body': 'NUMBER'
+    'body': 'NUMBER(${1:total}, ${2:decimal})$3'
+
+  'integer':
+    'prefix': 'integer'
+    'body': 'INTEGER'
 
   'char':
     'prefix': 'char'
-    'body': 'CHAR'
+    'body': 'CHAR(${1:maxlen})$2'
 
   'varchar2':
     'prefix': 'varchar2'
-    'body': 'VARCHAR2'
+    'body': 'VARCHAR2(${1:maxlen})$2'
 
   'date':
     'prefix': 'date'
@@ -561,27 +565,23 @@
 
   'primary key':
     'prefix': 'primarykey'
-    'body': 'PRIMARY KEY'
+    'body': 'PRIMARY KEY(${1:columns})$2'
 
   'foreign key':
     'prefix': 'foreignkey'
-    'body': 'FOREIGN KEY'
-
-  'references':
-    'prefix': 'references'
-    'body': 'REFERENCES ${1:tname}(${2:column})'
+    'body': 'FOREIGN KEY(${1:column}) REFERENCES ${2:tname}(${3:column})$4'
 
   'not null':
     'prefix': 'notnull'
-    'body': 'NOT NULL'
+    'body': 'NOT NULL(${1:column})$2'
 
   'unique':
     'prefix': 'unique'
-    'body': 'UNIQUE'
+    'body': 'UNIQUE(${1:column})$2'
 
   'check':
     'prefix': 'check'
-    'body': 'CHECK(${1:condition})'
+    'body': 'CHECK(${1:condition})$2'
 
   'select':
     'prefix': 'select'
@@ -598,6 +598,10 @@
   'or':
     'prefix': 'or'
     'body': 'OR '
+
+  'between':
+    'prefix': 'between'
+    'body': 'BETWEEN '
 
   'like':
     'prefix': 'like'
