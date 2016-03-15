@@ -9,6 +9,13 @@ reload() {
 	exec $SHELL -l
 }
 
+# Removes last command from Bash history
+# Usage: rmlastcmd
+rmlastcmd() {
+	local last_cmd_offset="$(history | tail -n 1 | awk '{print $1;}')"
+	history -d "$last_cmd_offset"
+}
+
 # Makes new Python virtualenv for current directory
 # Usage: mkvirtualenv PYTHON
 # PYTHON is the name of a python executable (typically python2 or python3)
