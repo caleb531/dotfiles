@@ -82,7 +82,7 @@ __update_prompt_command() {
 
 	# Activate/deactivate virtualenvs as necessary when changing directories
 	__detect_python_virtualenv
-	export PS1="$(__output_ps1)"
+	PS1="$(__output_ps1)"
 	# Write in-memory command history to file
 	history -a
 	# Ensure current working directory carries to new tabs
