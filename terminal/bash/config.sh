@@ -3,7 +3,7 @@
 # Caleb Evans
 
 # Expand multiple subdirectories using the globstar (**) option
-shopt -s globstar
+shopt -s globstar 2> /dev/null
 # Ensure that command history is appended to and not overwritten
 shopt -s histappend
 
