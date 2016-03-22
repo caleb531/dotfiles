@@ -1,8 +1,9 @@
 # Your snippets
 
-# C++ and JavaScript
+# C, C++ and JavaScript
 
-'.source.cpp,
+'.source.c,
+ .source.cpp,
  .source.js':
 
   # Conditional blocks
@@ -23,6 +24,22 @@
     'prefix': 'while'
     'body': 'while (${1:condition}) {\n\t$2\n}'
 
+  # Switch constructs
+
+  'switch':
+    'prefix': 'switch'
+    'body': 'switch (${1:variable}) {\n\t$2\n}'
+
+  'case':
+    'prefix': 'case'
+    'body': 'case ${1:value}:\n\t$2'
+
+# C++ and JavaScript
+
+
+'.source.cpp,
+ .source.js':
+
   # Error handling
 
   'try':
@@ -37,19 +54,10 @@
     'prefix': 'finally'
     'body': 'finally {\n\t$1\n}'
 
-  # Switch constructs
+# C and C++
 
-  'switch':
-    'prefix': 'switch'
-    'body': 'switch (${1:variable}) {\n\t$2\n}'
-
-  'case':
-    'prefix': 'case'
-    'body': 'case ${1:value}:\n\t$2'
-
-# C++
-
-'.source.cpp':
+'.source.c,
+ .source.cpp':
 
   'include guard':
     'prefix': 'once'
@@ -59,14 +67,6 @@
     'prefix': 'inc'
     'body': '#include $1'
 
-  'include iostream':
-    'prefix': 'incio'
-    'body': '#include <iostream>\n'
-
-  'using namespace std':
-    'prefix': 'using'
-    'body': 'using namespace std;\n'
-
   'for':
     'prefix': 'for'
     'body': 'for (int ${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i}${4:++}) {\n\t$5\n}'
@@ -75,13 +75,33 @@
     'prefix': 'f'
     'body': '${1:void} ${2:fname}($3) {\n\t$4\n}'
 
-  'function method':
-    'prefix': 'fm'
-    'body': '${1:void} ${2:Class}::${3:fname}($4) {\n\t$5\n}'
-
   'struct':
     'prefix': 'struct'
     'body': 'struct ${1:Struct} {\n\t$2\n};'
+
+# C
+
+'.source.c':
+
+  'include stdio':
+    'prefix': 'incstdio'
+    'body': '#include <stdio.h>\n'
+
+  'printf':
+    'prefix': 'printf'
+    'body': 'printf($1);'
+
+# C++
+
+'.source.cpp':
+
+  'include iostream':
+    'prefix': 'inciostream'
+    'body': '#include <iostream>\n'
+
+  'using namespace std':
+    'prefix': 'using'
+    'body': 'using namespace std;\n'
 
   'constructor definition':
     'prefix': 'ctor'
@@ -106,6 +126,10 @@
   'protected blocks':
     'prefix': 'protected'
     'body': 'protected:\n\t$1'
+
+  'function method':
+    'prefix': 'fm'
+    'body': '${1:void} ${2:Class}::${3:fname}($4) {\n\t$5\n}'
 
   'this pointer access':
     'prefix': 'this'
