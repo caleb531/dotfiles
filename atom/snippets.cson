@@ -289,7 +289,7 @@
     'prefix': 'class'
     'body': 'class ${1:ClassName}(${2:object}):\n\t${3:pass}'
 
-# PHP blocks/statements (meant to be used within PHP source blocks)
+# PHP code (within PHP blocks)
 
 '.source.php':
 
@@ -361,7 +361,7 @@
     'prefix': 'vd'
     'body': 'var_dump( $1 );'
 
-# Inline PHP Blocks (meant to be intermixed with HTML)
+# PHP markup (outside PHP blocks)
 
 '.text.html.php':
 
