@@ -68,7 +68,6 @@ if is_cmd_installed brew; then
 
 	# Instll Node via Homebrew but install npm separately to avoid conflicts
 	install_brew_pkg node --without-npm
-	pin_brew_pkg node
 	if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
 		echo "Setting npm prefix..."
 		echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
