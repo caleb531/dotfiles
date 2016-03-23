@@ -27,3 +27,9 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+
+# Useful Bash aliases
+[alias]
+	commita = commit --amend
+	diffc = diff --cached
+	diffno = diff --name-only
