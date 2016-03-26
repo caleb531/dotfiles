@@ -13,7 +13,7 @@ ln -snf "$PWD"/terminal/.bash_profile ~/.bash_profile
 ln -snf "$PWD"/terminal/bash/completions.sh /usr/local/etc/bash_completion.d/dotfiles-completions.sh
 
 ln -snf "$PWD"/terminal/.vimrc ~/.vimrc
-ln -snf "$PWD"/terminal/.gitconfig ~/.gitconfig
+ln -snf "$PWD"/git/.gitconfig ~/.gitconfig
 
 mkdir -p ~/.ssh
 ln -snf "$PWD"/ssh/ssh_config ~/.ssh/config
