@@ -39,6 +39,9 @@
       "*.docx"
       "*.pages"
       "*.alfredworkflow"
+      ".Spotlight-V100"
+      ".fseventsd"
+      ".Trashes"
     ]
     packagesWithKeymapsDisabled: [
       "emmet"
