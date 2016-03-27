@@ -57,8 +57,10 @@ any virtualenv present in the new directory will be activated).
 
 The `PS1` interactive prompt which I have set for my shell is intended to be
 concise, readable, and useful. The prompt displays the name of the current
-working directory, followed by the name of the current branch (if the directory
-is a git repository). Colons are used as separators, and spacing is utilized to
+working directory, followed by the name of the current branch if the directory
+is a git repository. If the directory contains a `.virtualenv` directory, the
+prompt also displays `python` or `python3` depending on the virtualenv's Python
+version. The prompt uses colons as separators, and spacing is utilized to
 improve readability.
 
 #### Examples
