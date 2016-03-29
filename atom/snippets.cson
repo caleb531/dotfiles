@@ -547,7 +547,7 @@
 
   'drop table':
     'prefix': 'droptable'
-    'body': 'DROP TABLE ${1:tname}\n\t${2:actions};'
+    'body': 'DROP TABLE ${1:tname};'
 
   'number':
     'prefix': 'number'
