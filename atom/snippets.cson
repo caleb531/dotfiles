@@ -613,6 +613,10 @@
     'prefix': 'select'
     'body': 'SELECT ${1:*} FROM ${2:tname} WHERE ${3:condition};'
 
+  'select distinct':
+    'prefix': 'selectdistinct'
+    'body': 'SELECT DISTINCT ${1:*} FROM ${2:tname} WHERE ${3:condition};'
+
   'where':
     'prefix': 'where'
     'body': 'WHERE '
