@@ -70,16 +70,12 @@ __apm_pull() {
 		# Uninstall local packages that are missing on remote
 		local removed_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\< )[a-z0-9\-]+')"
 		while read -r pkg; do
-			if [ -n "$pkg" ]; then
-				/usr/local/bin/apm uninstall "$pkg"
-			fi
+			/usr/local/bin/apm uninstall "$pkg"
 		done <<< "$removed_pkgs"
 		# Install remote packages that are missing on local
 		local added_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\> )[a-z0-9\-]+')"
 		while read -r pkg; do
-			if [ -n "$pkg" ]; then
-				/usr/local/bin/apm install "$pkg"
-			fi
+			/usr/local/bin/apm install "$pkg"
 		done <<< "$added_pkgs"
 	fi
 }

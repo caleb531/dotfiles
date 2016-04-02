@@ -126,11 +126,8 @@ if is_cmd_installed brew; then
 		echo "Installing Atom packages..."
 
 		# Install Atom packages by reading each line from packages.txt file
-		while read -r pkg || [ -n "$pkg" ]; do
-			# Ignore blank lines
-			if [ -n "$pkg" ]; then
-				install_apm_pkg "$pkg"
-			fi
+		while read -r pkg; do
+			install_apm_pkg "$pkg"
 		done < ./atom/packages.txt
 
 	else
