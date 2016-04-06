@@ -77,10 +77,22 @@ __detect_python_virtualenv() {
 
 }
 
-# Run the following for each new command
+# Remind self to pull if current directory resides in a git repository
+__output_git_pull_reminder() {
+	if git rev-parse --git-dir &> /dev/null; then
+		if [ -z "$GIT_PULL_REMINDED" ]; then
+			echo "Remember to pull!"
+			GIT_PULL_REMINDED=1
+		fi
+	else
+		unset GIT_PULL_REMINDED
+	fi
+}
+
+# Run the following before each new command
 __update_prompt_command() {
 
-	# Activate/deactivate virtualenvs as necessary when changing directories
+	__output_git_pull_reminder
 	__detect_python_virtualenv
 	PS1="$(__output_ps1)"
 	# Write in-memory command history to file
