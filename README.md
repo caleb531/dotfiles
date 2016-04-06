@@ -79,9 +79,9 @@ script and custom styles.
 ### Lightweight package sync
 
 Like most of my files, I sync my Atom configuration via Dropbox, including my
-Atom packages. However, because I did not wish to store my entire `packages`
-directory in Dropbox, because the directory would add a great deal of weight to
-my Dropbox (in terms of file size and number of files).
+Atom packages. However, I did not wish to store my entire `packages` directory
+in Dropbox, because the directory would add a great deal of weight to my Dropbox
+(in terms of file size and number of files).
 
 To solve this issue, I crafted a lightweight syncing system which only required
 that I store in Dropbox a list of the packages I use. Whenever I installed or
