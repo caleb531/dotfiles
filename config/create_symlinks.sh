@@ -16,6 +16,7 @@ ln -snf "$PWD"/terminal/.vimrc ~/.vimrc
 ln -snf "$PWD"/git/.gitconfig ~/.gitconfig
 
 mkdir -p ~/.ssh
+mkdir -p ~/.ssh/sockets
 ln -snf "$PWD"/ssh/ssh_config ~/.ssh/config
 
 # Disable Bash Sessions feature in OS X El Capitan
