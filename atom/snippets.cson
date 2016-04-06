@@ -1,10 +1,11 @@
 # Your snippets
 
-# C, C++ and JavaScript
+# C, C++, JavaScript, and Awk
 
 '.source.c,
  .source.cpp,
- .source.js':
+ .source.js,
+ .source.awk':
 
   # Conditional blocks
 
@@ -208,6 +209,34 @@
   'expect':
     'prefix': 'expect'
     'body': 'expect($1).${2:toBe}($3);'
+
+# Awk
+
+'.source.awk':
+
+  'env awk':
+    'prefix': 'env'
+    'body': '#!/usr/bin/env awk -f\n'
+
+  'BEGIN':
+    'prefix': 'begin'
+    'body': 'BEGIN {\n\t$1\n}'
+
+  'END':
+    'prefix': 'end'
+    'body': 'END {\n\t$1\n}'
+
+  'for':
+    'prefix': 'for'
+    'body': 'for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i}{$4:++}) {\n\t$5\n}'
+
+  'print':
+    'prefix': 'print'
+    'body': 'print($1);'
+
+  'printf':
+    'prefix': 'printf'
+    'body': 'printf($1);'
 
 # Python 2 and 3
 
