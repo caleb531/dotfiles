@@ -16,6 +16,7 @@ language-ini
 language-latex
 language-lisp
 language-svg
+language-tcl
 language-viml
 language-x86
 linter
