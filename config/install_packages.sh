@@ -24,7 +24,7 @@ if is_cmd_installed brew; then
 
 	if [ -f /usr/local/bin/bash -a "$SHELL" != /usr/local/bin/bash ]; then
 		echo "Changing login shell to Bash 4..."
-		sudo chsh -s /usr/local/bin/bash $USER
+		sudo chsh -s /usr/local/bin/bash "$USER"
 	else
 		echo "Login shell already set to Bash 4"
 	fi
