@@ -74,15 +74,16 @@ if is_cmd_installed brew; then
 	else
 		echo "Correct npm prefix already set"
 	fi
-	if [ ! -f /usr/local/etc/bash_completion.d/npm ]; then
-		npm completion > /usr/local/etc/bash_completion.d/npm
-	fi
 
 	if ! is_cmd_installed npm; then
 		echo "Installing npm..."
 		curl -L https://www.npmjs.com/install.sh | sh
 	else
 		echo "Already installed: npm"
+	fi
+
+	if [ ! -f /usr/local/etc/bash_completion.d/npm ]; then
+		npm completion > /usr/local/etc/bash_completion.d/npm
 	fi
 
 	if is_cmd_installed npm; then
