@@ -137,6 +137,8 @@ if is_cmd_installed brew; then
 
 	fi
 
+	brew install clisp
+
 else
 
 	echo "Homebrew is not installed."
