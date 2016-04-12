@@ -2,8 +2,6 @@
 
 # These settings apply to all hosts
 Host *
-    # "Wake up" SSH session every minute
-    ServerAliveInterval 60
     # Reuse existing connections if possible
     ControlMaster auto
     ControlPath ~/.ssh/sockets/%h:%p:%r
