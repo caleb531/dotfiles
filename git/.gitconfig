@@ -35,3 +35,4 @@
 	commita = commit --amend
 	diffc = diff --cached
 	diffno = diff --name-only
+	diffnoc = diff --name-only --cached
