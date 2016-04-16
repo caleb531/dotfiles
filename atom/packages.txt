@@ -15,6 +15,7 @@ language-hosts
 language-ini
 language-latex
 language-lisp
+language-prolog
 language-svg
 language-tcl
 language-viml

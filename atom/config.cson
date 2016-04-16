@@ -24,6 +24,7 @@
       "deprecation-cop"
       "autosave"
       "git-diff"
+      "language-perl"
     ]
     followSymlinks: false
     ignoredNames: [
