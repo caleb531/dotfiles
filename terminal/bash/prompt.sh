@@ -12,6 +12,11 @@ __reset_color() {
 	__set_color 0
 }
 
+# Checks if the given
+__in_git_dir() {
+	git rev-parse --git-dir &> /dev/null
+}
+
 # Outputs a succinct and useful interactive prompt
 # Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
 __output_ps1() {
@@ -41,7 +46,7 @@ __output_ps1() {
 	fi
 
 	# If working directory is (or resides in) a git repository
-	if git rev-parse --git-dir &> /dev/null; then
+	if __in_git_dir; then
 
 		# Output name of current branch
 		__set_color $PURPLE_BOLD
@@ -80,7 +85,7 @@ __detect_python_virtualenv() {
 # Display reminder to pull if current directory resides in a git repository
 # outside of Dropbox
 __output_git_pull_reminder() {
-	if [[ "$PWD" != "$HOME/Dropbox/"* ]] && git rev-parse --git-dir &> /dev/null; then
+	if [[ "$PWD" != "$HOME/Dropbox/"* ]] && __in_git_dir; then
 		if [ -z "$GIT_PULL_REMINDED" ]; then
 			echo "Remember to pull!"
 			GIT_PULL_REMINDED=1
