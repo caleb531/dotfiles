@@ -2,6 +2,11 @@
 
 # These settings apply to all hosts
 Host *
+    # Reuse existing connections if possible
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%h:%p:%r
+    # Keep connection alive for 1 minute after exit
+    ControlPersist 60
     # Fix OpenSSH vulnerabilities CVE-2016-0777 and CVE-2016-0778
     UseRoaming no
     # Disable GSSAPI auth since SSH keys are preferred for authentication
