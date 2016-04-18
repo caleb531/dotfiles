@@ -9,8 +9,10 @@
       "circle": "<circle cx=\"\" cy=\"\" r=\"\" />",
       "clipPath": "<clipPath id=\"\"></clipPath>",
       "ellipse": "<ellipse cx=\"\" cy=\"\" width=\"\" height=\"\" />",
+      "image": "<image xlink:href=\"\" x=\"\" y=\"\" width=\"\" height=\"\" />",
       "line": "<line x1=\"\" y1=\"\" x2=\"\" y2=\"\" />",
       "linearGradient": "<linearGradient id=\"\"></linearGradient>",
+      "marker": "<marker id=\"\" markerWidth=\"\" markerHeight=\"\" refX=\"\" refY=\"\" orient=\"\"></marker>",
       "mask": "<mask id=\"\"></mask>",
       "path": "<path d=\"\" />",
       "pattern": "<pattern id=\"\" x=\"\" y=\"\" width=\"\" height=\"\" patternUnits=\"userSpaceOnUse\"></pattern>",
@@ -20,7 +22,9 @@
       "rect": "<rect x=\"\" y=\"\" width=\"\" height=\"\" />",
       "stop": "<stop offset=\"\" stop-color=\"\"/>",
       "svg": "<svg viewBox=\"\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></svg>",
+      "symbol": "<symbol id=\"\" viewBox=\"\"></symbol>",
       "text": "<text x=\"\" y=\"\"></text>",
+      "textPath": "<textPath xlink:href=\"\"></textPath>",
       "use": "<use xlink:href=\"\" x=\"\" y=\"\" />"
     }
   }
