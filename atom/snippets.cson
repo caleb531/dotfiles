@@ -566,6 +566,10 @@
 
 '.source.sql':
 
+  'create database':
+    'prefix': 'createdatabase'
+    'body': 'CREATE DATABASE ${1:dbname} COLLATE ${2:utf8_general_ci};'
+
   'create table':
     'prefix': 'createtable'
     'body': 'CREATE TABLE ${1:tname}(\n\t$2\n);'
