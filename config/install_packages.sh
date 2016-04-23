@@ -106,7 +106,7 @@ if is_cmd_installed brew; then
 
 	# Install rmtree command for uninstalling packages and their leaf deps
 	tap_brew_repo beeftornado/rmtree
-	brew install brew-rmtree
+	install_brew_pkg brew-rmtree
 
 	# OS X now disguises clang as gcc/g++. Install and link real gcc/g++
 	install_brew_pkg gcc
@@ -142,7 +142,7 @@ if is_cmd_installed brew; then
 
 	fi
 
-	brew install clisp
+	install_brew_pkg clisp
 
 else
 
