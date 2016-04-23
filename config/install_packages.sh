@@ -49,6 +49,11 @@ if is_cmd_installed brew; then
 
 	install_brew_pkg ssh-copy-id
 	install_brew_pkg closure-compiler
+
+	install_brew_pkg speedtest_cli
+	# Prefer speedtest-cli over speedtest_cli command
+	rm -f /usr/local/bin/speedtest_cli
+
 	if ! is_brew_pkg_installed librsvg; then
 		# librsvg 2.40.11 and newer are broken; use working 2.40.10 release
 		install_brew_pkg 'https://raw.githubusercontent.com/Homebrew/homebrew/136cb2216d3f23b2b10d89a71200d8ca0c1ca592/Library/Formula/librsvg.rb'
