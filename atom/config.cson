@@ -63,6 +63,8 @@
       "one-dark-ui"
       "monokai"
     ]
+  docblockr:
+    extend_double_slash: false
   editor:
     autoIndentOnPaste: false
     fontFamily: "Monaco"
