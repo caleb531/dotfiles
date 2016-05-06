@@ -44,6 +44,7 @@
       ".Spotlight-V100"
       ".fseventsd"
       ".Trashes"
+      "*.map"
     ]
     packagesWithKeymapsDisabled: [
       "emmet"
