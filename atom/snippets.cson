@@ -168,7 +168,7 @@
 
   'for..in':
     'prefix': 'forin'
-    'body': 'for (${1:key} in ${2:object}) {\n\tif (${2:object}.hasOwnProperty(${1:key})) {\n\t\t$3\n\t}\n}'
+    'body': 'for (var ${1:key} in ${2:object}) {\n\tif (${2:object}.hasOwnProperty(${1:key})) {\n\t\t$3\n\t}\n}'
 
   # Functions
 
