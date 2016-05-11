@@ -43,6 +43,7 @@
       "*.map"
       "*.out"
       "*.pages"
+      "*.pdf"
       "*.png"
       "Thumbs.db"
     ]
