@@ -85,7 +85,7 @@ __detect_python_virtualenv() {
 # Display reminder to pull if current directory resides in a git repository
 # outside of Dropbox
 __output_git_pull_reminder() {
-	if [[ "$PWD" != "$HOME/Dropbox/"* ]] && __in_git_dir; then
+	if __in_git_dir; then
 		if [ -z "$GIT_PULL_REMINDED" ]; then
 			echo "Remember to pull!"
 			GIT_PULL_REMINDED=1
