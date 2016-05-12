@@ -97,6 +97,7 @@ if is_cmd_installed brew; then
 
 		install_npm_pkg grunt-cli
 		install_npm_pkg diff-so-fancy
+		install_npm_pkg bower
 
 	else
 
