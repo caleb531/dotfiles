@@ -25,6 +25,8 @@
       "autosave"
       "git-diff"
       "language-perl"
+      "script"
+      "pigments"
     ]
     followSymlinks: false
     ignoredNames: [
