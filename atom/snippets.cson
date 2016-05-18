@@ -538,6 +538,14 @@
     'prefix': 'tellapp'
     'body': 'tell application "${1:App Name}"\n\t$2\nend tell'
 
+  'try':
+    'prefix': 'try'
+    'body': 'try\n\t$1\nend try'
+
+  'on error':
+    'prefix': 'onerror'
+    'body': 'on error number ${1:-128}\n\t$2'
+
   'display alert':
     'prefix': 'displayalert'
     'body': 'display alert ${1:theText} message ${2:theMessage}'
