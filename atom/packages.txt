@@ -14,6 +14,7 @@ language-gitignore
 language-hosts
 language-ini
 language-latex
+language-liquid
 language-lisp
 language-prolog
 language-svg

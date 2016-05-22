@@ -701,3 +701,37 @@
   'inner join':
     'prefix': 'innerjoin'
     'body': 'INNER JOIN ${1:tname} ON ${2:condition}'
+
+'.text.html.liquid':
+
+  'expression':
+    'prefix': 'expression'
+    'body': '{{ $1 }}'
+
+  'assign':
+    'prefix': 'assign'
+    'body': '{% assign ${1:name} = ${2:value} %}'
+
+  'if':
+    'prefix': 'if'
+    'body': '{% if ${1:condition} %}$2'
+
+  'elsif':
+    'prefix': 'elseif'
+    'body': '{% elsif %}$1'
+
+  'else':
+    'prefix': 'else'
+    'body': '{% else %}$1'
+
+  'endif':
+    'prefix': 'endif'
+    'body': '{% endif %}'
+
+  'for':
+    'prefix': 'for'
+    'body': '{% for ${1:item} in ${2:object} %}$3'
+
+  'endfor':
+    'prefix': 'endfor'
+    'body': '{% endfor %}'
