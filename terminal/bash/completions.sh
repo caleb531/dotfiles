@@ -54,3 +54,22 @@ _apm() {
 
 }
 complete -F _apm apm
+
+# Completion function for jekyll, the static site generator
+_jekyll() {
+
+    cur=${COMP_WORDS[COMP_CWORD]}
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+
+    if [ "$prev" == 'jekyll' ]; then
+        # Complete common jekyll commands when "jekyll" is given
+        COMPREPLY=( $(compgen -W 'build clean doctor new serve' -- $cur) )
+    elif [ "$prev" == 'build'  ]; then
+        # Complete options when "list" command is given
+        COMPREPLY=( $(compgen -W '--watch --source --destination' -- $cur) )
+    else
+        COMPREPLY=( $(compgen -f $cur) )
+    fi
+
+}
+complete -F _jekyll jekyll
