@@ -16,7 +16,7 @@ _pip() {
     elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
         # Complete filenames when output is being redirected
         # or when `pip install -r` is given
-        COMPREPLY=( $(compgen -f $cur) )
+        COMPREPLY=()
     elif [ "$prev" == 'list'  ]; then
         # Complete options when "list" command is given
         COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
@@ -30,7 +30,7 @@ _pip() {
     fi
 
 }
-complete -F _pip pip
+complete -o default -F _pip pip
 
 # Completion function for apm, Atom's package manager
 _apm() {
@@ -53,23 +53,25 @@ _apm() {
     fi
 
 }
-complete -F _apm apm
+complete -o default -F _apm apm
 
 # Completion function for jekyll, the static site generator
 _jekyll() {
 
     cur=${COMP_WORDS[COMP_CWORD]}
     prev=${COMP_WORDS[COMP_CWORD-1]}
+    first=${COMP_WORDS[0]}
+    second=${COMP_WORDS[1]}
 
     if [ "$prev" == 'jekyll' ]; then
         # Complete common jekyll commands when "jekyll" is given
         COMPREPLY=( $(compgen -W 'build clean doctor new serve' -- $cur) )
-    elif [ "$prev" == 'build'  ]; then
+    elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
+        COMPREPLY=()
+    elif [ "$second" == 'build' ]; then
         # Complete options when "list" command is given
         COMPREPLY=( $(compgen -W '--watch --source --destination' -- $cur) )
-    else
-        COMPREPLY=( $(compgen -f $cur) )
     fi
 
 }
-complete -F _jekyll jekyll
+complete -o default -F _jekyll jekyll
