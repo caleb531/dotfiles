@@ -9,6 +9,7 @@ language-apache
 language-applescript
 language-awk
 language-cpp14
+language-env
 language-generic-config
 language-gitignore
 language-hosts
