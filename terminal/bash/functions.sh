@@ -115,3 +115,10 @@ ssh-remove-id() {
 	# Remove authorized key on server by executing script via SSH
 	ssh "$@" bash -s - "$pub_key" < ~/.dotfiles/terminal/bash/ssh-remove-id.sh
 }
+
+# Flushes DNS caches
+# Usages: flushdns
+flushdns() {
+	dscacheutil -flushcache
+	sudo killall -HUP mDNSResponder
+}
