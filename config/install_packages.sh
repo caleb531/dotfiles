@@ -34,6 +34,7 @@ if is_cmd_installed brew; then
 	install_brew_pkg colordiff
 	tap_brew_repo homebrew/dupes
 	install_brew_pkg grep --with-default-names
+	install_brew_pkg rsync
 	# gnu-sed is required by diff-so-fancy
 	install_brew_pkg gnu-sed --with-default-names
 	# GNU ls is required for colored ls output
