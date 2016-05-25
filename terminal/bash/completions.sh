@@ -67,9 +67,10 @@ _jekyll() {
         # Complete common jekyll commands when "jekyll" is given
         COMPREPLY=( $(compgen -W 'build clean doctor new serve' -- $cur) )
     elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
+        # Complete filenames when source or destination is specified for build
         COMPREPLY=()
     elif [ "$second" == 'build' ]; then
-        # Complete options when "list" command is given
+        # Complete options when "build" command is given
         COMPREPLY=( $(compgen -W '--watch --source --destination' -- $cur) )
     fi
 
