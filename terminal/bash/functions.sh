@@ -117,8 +117,45 @@ ssh-remove-id() {
 }
 
 # Flushes DNS caches
-# Usages: flushdns
+# Usage: flushdns
 flushdns() {
 	dscacheutil -flushcache
 	sudo killall -HUP mDNSResponder
+}
+
+# Finds the nearest .env file and loads it into the current shell;
+# the local root is the nearest directory defining an environment via .env
+# Usage: get-env
+get-env() {
+	local local_root="$PWD"
+	# Find nearest .env, searching parent directories until one is found
+	while [ ! -f "$local_root"/.env -a "$local_root" != / ]; do
+		local_root="$(dirname "$local_root")"
+	done
+	# If .env file exists at this point (otherwise, no parent has an .env)
+	if [ -f "$local_root"/.env ]; then
+		echo "$local_root"/.env
+	fi
+}
+
+# Brings the current directory's remote counterpart into sync with said current
+# directory; an .env file containing the below environment variables must be
+# present in said directory or one of its parent directories
+# Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
+# Usage: personal-sync
+personal-sync() {
+	local current_env="$(get-env)"
+	if [ -n "$current_env" ]; then
+		source "$current_env"
+		LOCAL_ROOT="$(dirname "$current_env")"
+		local local_pwd="$PWD"
+		local remote_pwd="${local_pwd/#$LOCAL_ROOT/$REMOTE_ROOT}"
+		rsync \
+		  --archive \
+		  --checksum \
+		  --rsh "ssh -p $SSH_PORT" \
+		  --verbose \
+		  "$local_pwd"/ \
+		  "$SSH_USER"@"$SSH_HOSTNAME":"$remote_pwd"
+	fi
 }
