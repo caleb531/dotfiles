@@ -153,6 +153,7 @@ personal-sync() {
 		rsync \
 		  --archive \
 		  --checksum \
+		  --exclude '.env' \
 		  --rsh "ssh -p $SSH_PORT" \
 		  --verbose \
 		  "$local_pwd"/ \
