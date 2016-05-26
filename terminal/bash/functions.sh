@@ -153,7 +153,11 @@ personal-sync() {
 		rsync \
 		  --archive \
 		  --checksum \
+		  --exclude '.DS_Store' \
 		  --exclude '.env' \
+		  --exclude '.git' \
+		  --exclude '.sass-cache' \
+		  --filter ':- .gitignore' \
 		  --rsh "ssh -p $SSH_PORT" \
 		  --verbose \
 		  "$local_pwd"/ \
