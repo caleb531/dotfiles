@@ -147,20 +147,26 @@ personal-sync() {
 	local current_env="$(get-env)"
 	if [ -n "$current_env" ]; then
 		source "$current_env"
-		LOCAL_ROOT="$(dirname "$current_env")"
-		local local_pwd="$PWD"
-		local remote_pwd="${local_pwd/#$LOCAL_ROOT/$REMOTE_ROOT}"
-		rsync \
-		  --archive \
-		  --checksum \
-		  --exclude '.DS_Store' \
-		  --exclude '.env' \
-		  --exclude '.git' \
-		  --exclude '.sass-cache' \
-		  --filter ':- .gitignore' \
-		  --rsh "ssh -p $SSH_PORT" \
-		  --verbose \
-		  "$local_pwd"/ \
-		  "$SSH_USER"@"$SSH_HOSTNAME":"$remote_pwd"
+		if [ -n "$REMOTE_ROOT" ]; then
+			LOCAL_ROOT="$(dirname "$current_env")"
+			local local_pwd="$PWD"
+			local remote_pwd="${local_pwd/#$LOCAL_ROOT/$REMOTE_ROOT}"
+			rsync \
+				--archive \
+				--checksum \
+				--exclude '.DS_Store' \
+				--exclude '.env' \
+				--exclude '.git' \
+				--exclude '.sass-cache' \
+				--filter ':- .gitignore' \
+				--rsh "ssh -p $SSH_PORT" \
+				--verbose \
+				"$local_pwd"/ \
+				"$SSH_USER"@"$SSH_HOSTNAME":"$remote_pwd"
+		else
+			>&2 echo "Directory has no remote counterpart!"
+		fi
+	else
+		>&2 echo "Directory has no remote environment set!"
 	fi
 }
