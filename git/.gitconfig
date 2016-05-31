@@ -36,3 +36,4 @@
 	diffc = diff --cached
 	diffno = diff --name-only
 	diffnoc = diff --name-only --cached
+	showno = show --pretty="format:" --name-only
