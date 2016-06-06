@@ -107,6 +107,8 @@
   "markdown-preview":
     useGitHubStyle: true
   "merge-conflicts": {}
+  "one-dark-ui":
+    tabSizing: "Even"
   pigments:
     ignoredScopes: [
       "\\.comment"
