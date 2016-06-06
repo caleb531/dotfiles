@@ -68,6 +68,8 @@ if is_cmd_installed brew; then
 	pin_brew_pkg ruby
 	if is_cmd_installed gem; then
 		install_gem sass
+		install_gem jekyll
+		install_gem jekyll-sitemap
 	else
 		echo "Skipping Ruby gems; gem command not installed"
 	fi
