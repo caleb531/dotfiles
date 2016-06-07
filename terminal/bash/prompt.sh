@@ -21,7 +21,7 @@ __in_git_dir() {
 # Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
 __output_ps1() {
 
-    # Define a local constant for the separator between items in the prompt
+	# Define a local constant for the separator between items in the prompt
 	local SEPARATOR=' : '
 
 	# Output name of current working directory (with ~ denoting HOME)
