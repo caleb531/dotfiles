@@ -2,7 +2,7 @@
 
 source ./config/header.sh sudo
 
-if is_cmd_installed brew && is_brew_pkg_installed brew-cask; then
+if is_cmd_installed brew; then
 
 	echo "Installing Homebrew Casks..."
 
