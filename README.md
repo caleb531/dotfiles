@@ -55,13 +55,12 @@ My setup enables color highlighting for a number of commands and interfaces,
 including:
 
 * `diff`
+* `git diff` (highlights changes within lines)
 * `grep`, `egrep`, `fgrep`
 * `less`
 * `ls`
 * `tree`
-
-My setup also applies color highlighting when editing Git commit or merge
-messages in Vim.
+* `vim` (when editing commit messages)
 
 #### Python virtualenv switching
 
