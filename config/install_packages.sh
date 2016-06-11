@@ -19,6 +19,7 @@ fi
 if is_cmd_installed brew; then
 
 	echo "Installing Homebrew packages..."
+	preload_brew_pkg_list
 
 	install_brew_pkg bash
 
@@ -67,11 +68,17 @@ if is_cmd_installed brew; then
 	install_brew_pkg ruby
 	pin_brew_pkg ruby
 	if is_cmd_installed gem; then
+
+		echo "Installing gems..."
+		preload_gem_list
+
 		install_gem sass
 		install_gem jekyll
 		install_gem jekyll-sitemap
 	else
+
 		echo "Skipping Ruby gems; gem command not installed"
+
 	fi
 
 	# Instll Node via Homebrew but install npm separately to avoid conflicts
@@ -97,6 +104,7 @@ if is_cmd_installed brew; then
 	if is_cmd_installed npm; then
 
 		echo "Installing npm packages..."
+		preload_npm_pkg_list
 
 		install_npm_pkg grunt-cli
 		install_npm_pkg diff-so-fancy
@@ -121,6 +129,7 @@ if is_cmd_installed brew; then
 	if is_cmd_installed pip; then
 
 		echo "Installing pip packages..."
+		preload_pip_pkg_list
 
 		install_pip_pkg virtualenv
 		install_pip_pkg flake8
@@ -135,6 +144,7 @@ if is_cmd_installed brew; then
 	if is_cmd_installed apm; then
 
 		echo "Installing Atom packages..."
+		preload_apm_pkg_list
 
 		# Install Atom packages by reading each line from packages.txt file
 		while read -r pkg; do

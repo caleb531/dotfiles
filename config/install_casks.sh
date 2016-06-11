@@ -5,6 +5,7 @@ source ./config/header.sh sudo
 if is_cmd_installed brew; then
 
 	echo "Installing Homebrew Casks..."
+	preload_cask_list
 
 	# Ensure that all Cask-installed apps are linked to /Applications
 	export HOMEBREW_CASK_OPTS='--appdir=/Applications'
@@ -39,7 +40,7 @@ if is_cmd_installed brew; then
 
 	echo "Installing fonts..."
 
-	tap_repo caskroom/fonts
+	tap_brew_repo caskroom/fonts
 	install_cask font-open-sans
 	install_cask font-montserrat
 	install_cask font-ubuntu

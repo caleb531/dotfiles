@@ -1,48 +1,59 @@
 #!/usr/bin/env bash
 
+preload_brew_pkg_list() {
+	BREW_PKG_LIST="$(brew list -1)"
+}
+
+preload_npm_pkg_list() {
+	NPM_PKG_LIST="$(npm list --global --depth=0)"
+}
+
+preload_cask_list() {
+	CASK_LIST="$(brew cask list -1)"
+}
+
+preload_gem_list() {
+	GEM_LIST="$(gem list)"
+}
+
+preload_pip_pkg_list() {
+	PIP_PKG_LIST="$(pip list)"
+}
+
+preload_apm_pkg_list() {
+	APM_PKG_LIST="$(apm list --installed --bare)"
+}
+
 is_cmd_installed() {
 	type "$1" &> /dev/null
 }
 
 is_brew_pkg_installed() {
-	brew list -1 | grep --quiet "^$1\$"
-}
-
-is_brew_pkg_pinned() {
-	brew list --pinned -1 | grep --quiet "^$1\$"
+	echo "$BREW_PKG_LIST" | grep --quiet "^$1\$"
 }
 
 is_npm_pkg_installed() {
-	npm list --global --depth=0 | grep --quiet " $1@"
+	echo "$NPM_PKG_LIST" | grep --quiet " $1@"
 }
 
 is_cask_installed() {
-	brew cask list -1 | grep --quiet "^$1\$"
+	echo "$CASK_LIST" | grep --quiet "^$1\$"
 }
 
 is_gem_installed() {
-	gem list | grep --quiet "^$1 "
+	echo "$GEM_LIST" | grep --quiet "^$1 "
 }
 
 is_pip_pkg_installed() {
-	pip list | grep "^$1 " &> /dev/null
+	echo "$PIP_PKG_LIST" | grep --quiet "^$1 "
 }
 
 is_apm_pkg_installed() {
-	apm list --installed --bare | grep --quiet "^$1@"
-}
-
-is_tapped() {
-	brew tap | grep "$1" &> /dev/null
+	echo "$APM_PKG_LIST" | grep --quiet "^$1@"
 }
 
 tap_brew_repo() {
-	if ! is_tapped "$1"; then
-		echo "Tapping $1..."
-		brew tap "$@"
-	else
-		echo "Already tapped: $1"
-	fi
+	brew tap "$@"
 }
 
 install_brew_pkg() {
@@ -54,11 +65,7 @@ install_brew_pkg() {
 }
 
 pin_brew_pkg() {
-	if ! is_brew_pkg_pinned "$1"; then
-		brew pin "$@"
-	else
-		echo "Already pinned: $1"
-	fi
+	brew pin "$@" 2> /dev/null
 }
 
 install_npm_pkg() {
