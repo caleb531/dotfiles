@@ -12,12 +12,6 @@ if ! is_cmd_installed brew; then
 
 else
 
-	echo "Already installed: Homebrew"
-
-fi
-
-if is_cmd_installed brew; then
-
 	echo "Installing Homebrew packages..."
 	preload_brew_pkg_list
 
@@ -26,8 +20,6 @@ if is_cmd_installed brew; then
 	if [ -f /usr/local/bin/bash -a "$SHELL" != /usr/local/bin/bash ]; then
 		echo "Changing login shell to Bash 4..."
 		sudo chsh -s /usr/local/bin/bash "$USER"
-	else
-		echo "Login shell already set to Bash 4"
 	fi
 
 	tap_brew_repo homebrew/versions
@@ -59,8 +51,6 @@ if is_cmd_installed brew; then
 	if ! is_brew_pkg_installed librsvg; then
 		# librsvg 2.40.11 and newer are broken; use working 2.40.10 release
 		install_brew_pkg 'https://raw.githubusercontent.com/Homebrew/homebrew/136cb2216d3f23b2b10d89a71200d8ca0c1ca592/Library/Formula/librsvg.rb'
-	else
-		echo "Already installed: librsvg"
 	fi
 	pin_brew_pkg librsvg
 
@@ -75,9 +65,6 @@ if is_cmd_installed brew; then
 		install_gem sass
 		install_gem jekyll
 		install_gem jekyll-sitemap
-	else
-
-		echo "Skipping Ruby gems; gem command not installed"
 
 	fi
 
@@ -86,15 +73,11 @@ if is_cmd_installed brew; then
 	if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
 		echo "Setting npm prefix..."
 		echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
-	else
-		echo "Correct npm prefix already set"
 	fi
 
 	if ! is_cmd_installed npm; then
 		echo "Installing npm..."
 		curl -L https://www.npmjs.com/install.sh | sh
-	else
-		echo "Already installed: npm"
 	fi
 
 	if [ ! -f /usr/local/etc/bash_completion.d/npm ]; then
@@ -110,10 +93,6 @@ if is_cmd_installed brew; then
 		install_npm_pkg diff-so-fancy
 		install_npm_pkg bower
 		install_npm_pkg http-server
-
-	else
-
-		echo "Skipping npm packages; npm command not installed"
 
 	fi
 
@@ -135,10 +114,6 @@ if is_cmd_installed brew; then
 		install_pip_pkg flake8
 		install_pip_pkg pep8-naming
 
-	else
-
-		echo "Skipping pip packages; pip command not installed"
-
 	fi
 
 	if is_cmd_installed apm; then
@@ -151,14 +126,6 @@ if is_cmd_installed brew; then
 			install_apm_pkg "$pkg"
 		done < ./atom/packages.txt
 
-	else
-
-		echo "Skipping Atom packages; apm command not installed"
-
 	fi
-
-else
-
-	echo "Homebrew is not installed."
 
 fi

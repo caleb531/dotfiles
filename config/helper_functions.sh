@@ -59,8 +59,6 @@ tap_brew_repo() {
 install_brew_pkg() {
 	if ! is_brew_pkg_installed "$1"; then
 		brew install "$@"
-	else
-		echo "Already installed: $1"
 	fi
 }
 
@@ -72,8 +70,6 @@ install_npm_pkg() {
 	if ! is_npm_pkg_installed "$1"; then
 		echo "Installing $1..."
 		npm install --global "$@"
-	else
-		echo "Already installed: $1"
 	fi
 }
 
@@ -81,8 +77,6 @@ install_cask() {
 	if ! is_cask_installed "$1"; then
 		echo "Installing $1..."
 		brew cask install "$@"
-	else
-		echo "Already installed: $1"
 	fi
 }
 
@@ -90,8 +84,6 @@ install_gem() {
 	if ! is_gem_installed "$1"; then
 		echo "Installing $1..."
 		sudo gem install "$@"
-	else
-		echo "Already installed: $1"
 	fi
 }
 
@@ -99,15 +91,11 @@ install_pip_pkg() {
 	if ! is_pip_pkg_installed "$1"; then
 		echo "Installing $1..."
 		pip install "$@"
-	else
-		echo "Already installed: $1"
 	fi
 }
 
 install_apm_pkg() {
 	if ! is_apm_pkg_installed "$1"; then
 		apm install "$@"
-	else
-		echo "Already installed: $1"
 	fi
 }
