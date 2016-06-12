@@ -34,6 +34,8 @@
 [alias]
 	commita = commit --amend
 	diffc = diff --cached
+	diffcw = diff --color-words
+	diffcwc = diff --color-words --cached
 	diffno = diff --name-only
 	diffnoc = diff --name-only --cached
 	showno = show --pretty="format:" --name-only
