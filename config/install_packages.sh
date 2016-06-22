@@ -48,11 +48,7 @@ else
 	# Prefer speedtest-cli over speedtest_cli command
 	rm -f /usr/local/bin/speedtest_cli
 
-	if ! is_brew_pkg_installed librsvg; then
-		# librsvg 2.40.11 and newer are broken; use working 2.40.10 release
-		install_brew_pkg 'https://raw.githubusercontent.com/Homebrew/homebrew/136cb2216d3f23b2b10d89a71200d8ca0c1ca592/Library/Formula/librsvg.rb'
-	fi
-	pin_brew_pkg librsvg
+	install_brew_pkg librsvg
 
 	# Install utilities necessary for Grunt projects
 	install_brew_pkg ruby
