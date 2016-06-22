@@ -716,6 +716,10 @@
     'prefix': 'assign'
     'body': '{% assign ${1:name} = ${2:value} %}'
 
+  'include':
+    'prefix': 'include'
+    'body': '{% include ${1:filename}.html $2%}'
+
   'if':
     'prefix': 'if'
     'body': '{% if ${1:condition} %}$2'
