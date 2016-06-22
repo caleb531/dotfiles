@@ -29,6 +29,10 @@
 [pull]
 	default = simple
 
+# Enable more-logical grouping of changes in diffs
+[diff]
+	compactionHeuristic = true
+
 # Set pleasant colors for diffs
 [color "diff-highlight"]
 	oldNormal = red bold
