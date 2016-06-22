@@ -706,7 +706,8 @@
     'prefix': 'innerjoin'
     'body': 'INNER JOIN ${1:tname} ON ${2:condition}'
 
-'.text.html.liquid':
+'.text.html.liquid,
+ .source.gfm':
 
   'expression':
     'prefix': 'expression'
