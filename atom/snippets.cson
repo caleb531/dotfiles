@@ -193,7 +193,7 @@
     'body': '(function($1) {\n$3\n}($2));'
 
   'jquery document.ready':
-    'prefix': 'jqready'
+    'prefix': 'documentready'
     'body': '$(document).ready(function() {\n$2\n});'
 
   # Jasmine
