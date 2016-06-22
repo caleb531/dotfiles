@@ -263,7 +263,7 @@
     'body': 'from ${1:module} import ${2:name}'
 
   'docstring':
-    'prefix': 'docstr'
+    'prefix': 'docstring'
     'body': '\"\"\"$1\"\"\"$2'
 
   'if':
