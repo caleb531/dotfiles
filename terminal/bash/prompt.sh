@@ -31,7 +31,7 @@ __output_ps1() {
 	echo -n "$SEPARATOR"
 
 	# If working directory is a virtualenv
-	if [ ! -z "$VIRTUAL_ENV" ]; then
+	if [ -n "$VIRTUAL_ENV" ]; then
 
 		# Output Python version used by virtualenv
 		__set_color $PURPLE_BOLD
@@ -75,7 +75,7 @@ __detect_python_virtualenv() {
 		fi
 	else
 		# Otherwise, deactivate any active virtualenv
-		if [ ! -z "$VIRTUAL_ENV" ]; then
+		if [ -n "$VIRTUAL_ENV" ]; then
 			deactivate
 		fi
 	fi

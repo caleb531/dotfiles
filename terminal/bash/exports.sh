@@ -3,7 +3,7 @@
 # Caleb Evans
 
 # Reset PATH to original value (if shell was reloaded)
-if [ ! -z "$OLDPATH" ]; then
+if [ -n "$OLDPATH" ]; then
 	export PATH="$OLDPATH"
 fi
 export OLDPATH="$PATH"
