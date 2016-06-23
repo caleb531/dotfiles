@@ -706,6 +706,8 @@
     'prefix': 'innerjoin'
     'body': 'INNER JOIN ${1:tname} ON ${2:condition}'
 
+# Liquid templating engine
+
 '.text.html.liquid,
  .source.gfm':
 
@@ -744,3 +746,39 @@
   'endfor':
     'prefix': 'endfor'
     'body': '{% endfor %}'
+
+# Apache configuration
+
+'.source.apache-config':
+
+  'IfModule':
+    'prefix': 'ifmodule'
+    'body': '<IfModule ${1:modname.c}>\n\t\n</IfModule>'
+
+  'ErrorDocument':
+    'prefix': 'errordocument'
+    'body': 'ErrorDocument ${1:404} ${1:url}'
+
+  'Header':
+    'prefix': 'header'
+    'body': 'Header ${1:set} ${2:name} ${3:value}$'
+
+  'Cache-Control':
+    'prefix': 'cachecontrol'
+    'body': 'Header set Cache-Control "$2"'
+
+  'RewriteEngine':
+    'prefix': 'rewriteengine'
+    'body': 'RewriteEngine ${1:On}'
+
+  'RewriteBase':
+    'prefix': 'rewritebase'
+    'body': 'RewriteBase ${1:/}'
+
+  'RewriteRule':
+    'prefix': 'rewriterule'
+    'body': 'RewriteRule ${1:pattern} ${2:url}'
+
+  'RewriteCond':
+    'prefix': 'rewritecond'
+    'body': 'RewriteCond ${1:%{HTTP_HOST}} ${2:pattern}'
