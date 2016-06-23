@@ -7,17 +7,17 @@ __set_color() {
 	echo -n "\[\e[${1}m\]"
 }
 
-# Resets color escape sequences
+# Reset color escape sequences
 __reset_color() {
 	__set_color 0
 }
 
-# Checks if the given
+# Check if the current directory is a Git directory
 __in_git_dir() {
 	git rev-parse --git-dir &> /dev/null
 }
 
-# Outputs a succinct and useful interactive prompt
+# Output a succinct and useful interactive prompt
 # Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
 __output_ps1() {
 
@@ -63,7 +63,7 @@ __output_ps1() {
 
 }
 
-# Activates/deactivates Python virtualenv depending on the current directory
+# Activate/deactivate Python virtualenv depending on the current directory
 __detect_python_virtualenv() {
 
 	local virtualenv=./"$VIRTUAL_ENV_NAME"

@@ -2,21 +2,21 @@
 # functions.sh
 # Caleb Evans
 
-# Reloads entire shell, including .bash_profile and any activated virtualenv
+# Reload entire shell, including .bash_profile and any activated virtualenv
 # Usage: reload
 reload() {
 	deactivate 2> /dev/null
 	exec $SHELL -l
 }
 
-# Removes last command from Bash history
+# Remove last command from Bash history
 # Usage: rmlastcmd
 rmlastcmd() {
 	local last_cmd_offset="$(history | tail -n 1 | awk '{print $1;}')"
 	history -d "$last_cmd_offset"
 }
 
-# Makes new Python virtualenv for current directory
+# Make new Python virtualenv for current directory
 # Usage: mkvirtualenv PYTHON
 # PYTHON is the name of a python executable (typically python2 or python3)
 mkvirtualenv() {
@@ -25,20 +25,20 @@ mkvirtualenv() {
 	source ./"$VIRTUAL_ENV_NAME"/bin/activate
 }
 
-# Removes existing Python virtualenv
+# Remove existing Python virtualenv
 # Usage: rmvirtualenv
 rmvirtualenv() {
 	rm -r ./"$VIRTUAL_ENV_NAME"
 }
 
-# Flushes all DNS caches for OS X 10.10.4 and onward
+# Flush all DNS caches for OS X 10.10.4 and onward
 # Usage: flushdns
 flushdns() {
 	sudo dscacheutil -flushcache
 	sudo killall -HUP mDNSResponder
 }
 
-# Generates a dummy file of any size
+# Generate a dummy file of any size
 # Usage: genfile --size SIZE FILEPATH
 # Size must be an integer ending in 'K' or 'M' (I wouldn't dare try 'G')
 genfile() {
@@ -52,17 +52,17 @@ genfile() {
 	dd if=/dev/zero of="$filepath" bs="$filesize" count=1
 }
 
-# Lists all local Atom packages on this system (much faster than `apm ls`)
+# List all local Atom packages on this system (much faster than `apm ls`)
 __apm_ls() {
 	ls --color=never -1 ~/.atom/packages
 }
 
-# Returns a diff between the local Atom package list and the remote package list
+# Return a diff between the local Atom package list and the remote package list
 __apm_diff() {
 	__apm_ls | diff - ~/.atom/packages.txt
 }
 
-# Brings local Atom package list into sync with remote package list
+# Bring local Atom package list into sync with remote package list
 # Usage: apm pull
 __apm_pull() {
 	local pkg_diff="$(__apm_diff)"
@@ -80,7 +80,7 @@ __apm_pull() {
 	fi
 }
 
-# Pushes list of local Atom packages to the remote package list
+# Push list of local Atom packages to the remote package list
 # Usage: apm push
 __apm_push() {
 	# Only push if local package list differs from remote package list
@@ -106,7 +106,7 @@ apm() {
 	fi
 }
 
-# Removes public SSH key from server
+# Remove public SSH key from server
 # Usage: ssh-remove-id -p <port> <user>@<hostname>
 ssh-remove-id() {
 	# Retrieve local public key and escape relevant regex characters
@@ -116,7 +116,7 @@ ssh-remove-id() {
 	ssh "$@" bash -s - "$pub_key" < ~/.dotfiles/terminal/bash/ssh-remove-id.sh
 }
 
-# Finds the nearest .env file and loads it into the current shell;
+# Find the nearest .env file and loads it into the current shell;
 # the local root is the nearest directory defining an environment via .env
 # Usage: get-env
 get-env() {
@@ -131,7 +131,7 @@ get-env() {
 	fi
 }
 
-# Brings the current directory's remote counterpart into sync with said current
+# Bring the current directory's remote counterpart into sync with said current
 # directory; an .env file containing the below environment variables must be
 # present in said directory or one of its parent directories
 # Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
