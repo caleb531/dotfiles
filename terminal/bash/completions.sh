@@ -78,18 +78,18 @@ _jekyll() {
 complete -o default -F _jekyll jekyll
 
 
-# Completion function for apachectl, Apache's HTTP server utility
-_apachectl() {
+# Completion function for MAMP, the Apache-MySQL-PHP stack app
+_mamp() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 	first=${COMP_WORDS[0]}
 	second=${COMP_WORDS[1]}
 
-	if [ "$prev" == 'apachectl' ]; then
-		# Complete common apachectl commands when "apachectl" is given
-		COMPREPLY=( $(compgen -W 'configtest restart start stop' -- $cur) )
+	if [ "$prev" == 'mamp' ]; then
+		# Complete common MAMP commands when "mamp" is given
+		COMPREPLY=( $(compgen -W 'restart start stop' -- $cur) )
 	fi
 
 }
-complete -o default -F _apachectl apachectl
+complete -o default -F _mamp mamp

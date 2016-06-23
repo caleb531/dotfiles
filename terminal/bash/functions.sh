@@ -96,6 +96,18 @@ personal-sync() {
 	fi
 }
 
+# Control MAMP (mainly Apache and MySQL servers)
+mamp() {
+	if [ "$1" == start ]; then
+		/Applications/MAMP/bin/start.sh > /dev/null
+	elif [ "$1" == stop ]; then
+		/Applications/MAMP/bin/stop.sh > /dev/null
+	elif [ "$1" == restart ]; then
+		/Applications/MAMP/bin/stop.sh > /dev/null
+		/Applications/MAMP/bin/start.sh > /dev/null
+	fi
+}
+
 # List all local Atom packages on this system (much faster than `apm ls`)
 __apm_ls() {
 	ls --color=never -1 ~/.atom/packages
