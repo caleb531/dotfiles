@@ -46,7 +46,7 @@ __output_ps1() {
 	fi
 
 	# If apache is running
-	if [ -n "$(ps -x | grep httpd | grep -v grep)" ]; then
+	if [ -n "$(ps aux | grep httpd | grep -v grep)" ]; then
 
 		# Output some message to indicate that it's running
 		__set_color $PURPLE_BOLD
