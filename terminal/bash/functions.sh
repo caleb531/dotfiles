@@ -111,8 +111,10 @@ mamp() {
 # Control MAMP's Apache server
 apachectl() {
 	if [ -z "$@" ]; then
+		# Run Apache as foreground process if no arguments are given
 		/Applications/MAMP/Library/bin/apachectl -DFOREGROUND
 	else
+		# Otherwise, run apachectl normally via given arguments
 		/Applications/MAMP/Library/bin/apachectl "$@"
 	fi
 }
