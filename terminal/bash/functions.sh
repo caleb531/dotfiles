@@ -116,13 +116,6 @@ ssh-remove-id() {
 	ssh "$@" bash -s - "$pub_key" < ~/.dotfiles/terminal/bash/ssh-remove-id.sh
 }
 
-# Flushes DNS caches
-# Usage: flushdns
-flushdns() {
-	dscacheutil -flushcache
-	sudo killall -HUP mDNSResponder
-}
-
 # Finds the nearest .env file and loads it into the current shell;
 # the local root is the nearest directory defining an environment via .env
 # Usage: get-env
