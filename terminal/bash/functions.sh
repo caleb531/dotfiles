@@ -52,60 +52,6 @@ genfile() {
 	dd if=/dev/zero of="$filepath" bs="$filesize" count=1
 }
 
-# List all local Atom packages on this system (much faster than `apm ls`)
-__apm_ls() {
-	ls --color=never -1 ~/.atom/packages
-}
-
-# Return a diff between the local Atom package list and the remote package list
-__apm_diff() {
-	__apm_ls | diff - ~/.atom/packages.txt
-}
-
-# Bring local Atom package list into sync with remote package list
-# Usage: apm pull
-__apm_pull() {
-	local pkg_diff="$(__apm_diff)"
-	if [ -n "$pkg_diff" ]; then
-		# Uninstall local packages that are missing on remote
-		local removed_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\< )[a-z0-9\-]+')"
-		while read -r pkg; do
-			/usr/local/bin/apm uninstall "$pkg"
-		done <<< "$removed_pkgs"
-		# Install remote packages that are missing on local
-		local added_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\> )[a-z0-9\-]+')"
-		while read -r pkg; do
-			/usr/local/bin/apm install "$pkg"
-		done <<< "$added_pkgs"
-	fi
-}
-
-# Push list of local Atom packages to the remote package list
-# Usage: apm push
-__apm_push() {
-	# Only push if local package list differs from remote package list
-	if [ -n "$(__apm_diff)" ]; then
-		echo "Pushing local package list to remote..."
-		local remote_pkgs="$(readlink -f ~/.atom/packages.txt)"
-		__apm_ls > "$remote_pkgs"
-	fi
-}
-
-# Override apm command to integrate custom push and pull commands
-apm() {
-	if [ "$1" == install -o "$1" == uninstall ]; then
-		__apm_pull
-		/usr/local/bin/apm "$@"
-		__apm_push
-	elif [ "$1" == pull ]; then
-		__apm_pull
-	elif [ "$1" == push ]; then
-		__apm_push
-	else
-		/usr/local/bin/apm "$@"
-	fi
-}
-
 # Remove public SSH key from server
 # Usage: ssh-remove-id -p <port> <user>@<hostname>
 ssh-remove-id() {
@@ -161,5 +107,59 @@ personal-sync() {
 		fi
 	else
 		>&2 echo "Directory has no remote environment set!"
+	fi
+}
+
+# List all local Atom packages on this system (much faster than `apm ls`)
+__apm_ls() {
+	ls --color=never -1 ~/.atom/packages
+}
+
+# Return a diff between the local Atom package list and the remote package list
+__apm_diff() {
+	__apm_ls | diff - ~/.atom/packages.txt
+}
+
+# Bring local Atom package list into sync with remote package list
+# Usage: apm pull
+__apm_pull() {
+	local pkg_diff="$(__apm_diff)"
+	if [ -n "$pkg_diff" ]; then
+		# Uninstall local packages that are missing on remote
+		local removed_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\< )[a-z0-9\-]+')"
+		while read -r pkg; do
+			/usr/local/bin/apm uninstall "$pkg"
+		done <<< "$removed_pkgs"
+		# Install remote packages that are missing on local
+		local added_pkgs="$(echo "$pkg_diff" | grep -Po '(?<=\> )[a-z0-9\-]+')"
+		while read -r pkg; do
+			/usr/local/bin/apm install "$pkg"
+		done <<< "$added_pkgs"
+	fi
+}
+
+# Push list of local Atom packages to the remote package list
+# Usage: apm push
+__apm_push() {
+	# Only push if local package list differs from remote package list
+	if [ -n "$(__apm_diff)" ]; then
+		echo "Pushing local package list to remote..."
+		local remote_pkgs="$(readlink -f ~/.atom/packages.txt)"
+		__apm_ls > "$remote_pkgs"
+	fi
+}
+
+# Override apm command to integrate custom push and pull commands
+apm() {
+	if [ "$1" == install -o "$1" == uninstall ]; then
+		__apm_pull
+		/usr/local/bin/apm "$@"
+		__apm_push
+	elif [ "$1" == pull ]; then
+		__apm_pull
+	elif [ "$1" == push ]; then
+		__apm_push
+	else
+		/usr/local/bin/apm "$@"
 	fi
 }
