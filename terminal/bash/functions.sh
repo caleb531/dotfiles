@@ -38,20 +38,6 @@ flushdns() {
 	sudo killall -HUP mDNSResponder
 }
 
-# Generate a dummy file of any size
-# Usage: genfile --size SIZE FILEPATH
-# Size must be an integer ending in 'K' or 'M' (I wouldn't dare try 'G')
-genfile() {
-	if [ $1 == '--size' ]; then
-		local filesize="$2"
-		local filepath="$3"
-	elif [ "$2" == '--size' ]; then
-		local filepath="$1"
-		local filesize="$3"
-	fi
-	dd if=/dev/zero of="$filepath" bs="$filesize" count=1
-}
-
 # Remove public SSH key from server
 # Usage: ssh-remove-id -p <port> <user>@<hostname>
 ssh-remove-id() {
