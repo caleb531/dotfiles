@@ -108,6 +108,15 @@ mamp() {
 	fi
 }
 
+# Control MAMP's Apache server
+apachectl() {
+	if [ -z "$@" ]; then
+		/Applications/MAMP/Library/bin/apachectl -DFOREGROUND
+	else
+		/Applications/MAMP/Library/bin/apachectl "$@"
+	fi
+}
+
 # List all local Atom packages on this system (much faster than `apm ls`)
 __apm_ls() {
 	ls --color=never -1 ~/.atom/packages
