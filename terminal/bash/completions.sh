@@ -2,6 +2,34 @@
 # completions.sh
 # Caleb Evans
 
+# Completion function for brew, the OS X package manager
+_brew() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
+	second=${COMP_WORDS[1]}
+
+	if [ "$prev" == 'brew' ]; then
+		# Complete common brew commands when "brew" is given
+		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor info install leaves link linkapps outdated pin prune reinstall rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses --version' -- $cur) )
+	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
+		# Complete common cask commands when "brew cask" is given
+		COMPREPLY=( $(compgen -W 'cleanup doctor info install list search uninstall update' -- $cur) )
+	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
+		# Complete list options when "brew list" or "brew ls" is given
+		COMPREPLY=( $(compgen -W '--full-name --pinned --multiple --versions' -- $cur) )
+	elif [ "$second" == 'cleanup' -o "$second" == 'uninstall' ]; then
+		# Complete installed packages if "brew cleanup" or "brew uninstall" is given
+		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
+	elif [ "$second" == 'cask' -o "$prev" == 'uninstall' ]; then
+		# Complete installed packages if "brew cask uninstall" is given
+		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
+	fi
+
+}
+complete -o default -F _brew brew
+
 # Completion function for pip, Python's package manager
 _pip() {
 
