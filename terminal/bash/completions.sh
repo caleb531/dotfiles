@@ -71,7 +71,7 @@ _jekyll() {
 		COMPREPLY=()
 	elif [ "$second" == 'build' ]; then
 		# Complete options when "build" command is given
-		COMPREPLY=( $(compgen -W '--watch --source --destination --trace' -- $cur) )
+		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- $cur) )
 	fi
 
 }
