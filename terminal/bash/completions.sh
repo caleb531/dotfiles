@@ -12,7 +12,7 @@ _brew() {
 
 	if [ "$prev" == 'brew' ]; then
 		# Complete common brew commands for `brew`
-		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses --version' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
 	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
 		# Complete common cask commands for `brew cask`
 		COMPREPLY=( $(compgen -W 'cleanup doctor info install list search uninstall update' -- $cur) )
