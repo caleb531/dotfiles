@@ -11,24 +11,25 @@ _brew() {
 	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'brew' ]; then
-		# Complete common brew commands when "brew" is given
+		# Complete common brew commands for `brew`
 		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor info install leaves link linkapps outdated pin prune reinstall rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses --version' -- $cur) )
 	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
-		# Complete common cask commands when "brew cask" is given
+		# Complete common cask commands for `brew cask`
 		COMPREPLY=( $(compgen -W 'cleanup doctor info install list search uninstall update' -- $cur) )
 	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
-		# Complete list options when "brew list" or "brew ls" is given
+		# Complete list options for `brew list` or `brew ls`
 		COMPREPLY=( $(compgen -W '--full-name --pinned --multiple --versions' -- $cur) )
 	elif [ "$second" == 'cleanup' -o "$second" == 'uninstall' ]; then
-		# Complete installed packages if "brew cleanup" or "brew uninstall" is given
+		# Complete installed packages for `brew cleanup` or `brew uninstall`
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'cask' -o "$prev" == 'uninstall' ]; then
-		# Complete installed packages if "brew cask uninstall" is given
+		# Complete installed packages if `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
 	fi
 
 }
 complete -o default -F _brew brew
+
 
 # Completion function for pip, Python's package manager
 _pip() {
@@ -39,14 +40,13 @@ _pip() {
 	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'pip' ]; then
-		# Complete common pip commands when "pip" is given
+		# Complete common pip commands for `pip`
 		COMPREPLY=( $(compgen -W 'freeze install list search show uninstall' -- $cur) )
 	elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
-		# Complete filenames when output is being redirected
-		# or when `pip install -r` is given
+		# Complete filenames when output is being redirected or for `pip install -r`
 		COMPREPLY=()
 	elif [ "$prev" == 'list'  ]; then
-		# Complete options when "list" command is given
+		# Complete options for `pip list`
 		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
 	else
 		# Complete installed packages in every other case
@@ -69,10 +69,10 @@ _apm() {
 	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'apm' ]; then
-		# Complete common apm commands when "apm" is given
+		# Complete common apm commands for `apm`
 		COMPREPLY=( $(compgen -W 'clean install list publish search show uninstall update upgrade' -- $cur) )
 	elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
-		# Complete options when "update" or "upgrade" command is given
+		# Complete options for `apm update` or `apm upgrade`
 		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
 	else
 		# Complete installed packages in every other case
@@ -92,7 +92,7 @@ _bundle() {
 	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'bundle' -o "$prev" == 'bundler' ]; then
-		# Complete common bundle commands when "bundle" is given
+		# Complete common bundle commands for `bundle`
 		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
 	fi
 
@@ -109,13 +109,13 @@ _jekyll() {
 	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'jekyll' ]; then
-		# Complete common jekyll commands when "jekyll" is given
+		# Complete common jekyll commands for `jekyll`
 		COMPREPLY=( $(compgen -W 'build clean doctor new serve' -- $cur) )
 	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
-		# Complete filenames when source or destination is specified for build
+		# Complete filenames for `--source` or `--destination`
 		COMPREPLY=()
 	elif [ "$second" == 'build' ]; then
-		# Complete options when "build" command is given
+		# Complete options for `jekyll build`
 		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- $cur) )
 	fi
 
@@ -131,7 +131,7 @@ _mamp() {
 	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'mamp' ]; then
-		# Complete common MAMP commands when "mamp" is given
+		# Complete common MAMP commands for `mamp`
 		COMPREPLY=( $(compgen -W 'restart start stop' -- $cur) )
 	fi
 
@@ -147,7 +147,7 @@ _apachectl() {
 	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'apachectl' ]; then
-		# Complete common apachectl commands when "apachectl" is given
+		# Complete common apachectl commands for `apachectl`
 		COMPREPLY=( $(compgen -W 'configtest restart start stop' -- $cur) )
 	fi
 
