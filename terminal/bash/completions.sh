@@ -12,7 +12,7 @@ _brew() {
 
 	if [ "$prev" == 'brew' ]; then
 		# Complete common brew commands for `brew`
-		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor info install leaves link linkapps outdated pin prune reinstall rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses --version' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses --version' -- $cur) )
 	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
 		# Complete common cask commands for `brew cask`
 		COMPREPLY=( $(compgen -W 'cleanup doctor info install list search uninstall update' -- $cur) )
@@ -41,7 +41,7 @@ _pip() {
 
 	if [ "$prev" == 'pip' ]; then
 		# Complete common pip commands for `pip`
-		COMPREPLY=( $(compgen -W 'freeze install list search show uninstall' -- $cur) )
+		COMPREPLY=( $(compgen -W 'freeze help install list search show uninstall' -- $cur) )
 	elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
 		# Complete filenames when output is being redirected or for `pip install -r`
 		COMPREPLY=()
@@ -70,7 +70,7 @@ _apm() {
 
 	if [ "$prev" == 'apm' ]; then
 		# Complete common apm commands for `apm`
-		COMPREPLY=( $(compgen -W 'clean install list publish search show uninstall update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'clean help install list publish search show uninstall update upgrade' -- $cur) )
 	elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
 		# Complete options for `apm update` or `apm upgrade`
 		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
@@ -110,7 +110,7 @@ _jekyll() {
 
 	if [ "$prev" == 'jekyll' ]; then
 		# Complete common jekyll commands for `jekyll`
-		COMPREPLY=( $(compgen -W 'build clean doctor new serve' -- $cur) )
+		COMPREPLY=( $(compgen -W 'build clean doctor help new serve' -- $cur) )
 	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
 		# Complete filenames for `--source` or `--destination`
 		COMPREPLY=()
