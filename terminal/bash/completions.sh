@@ -30,6 +30,26 @@ _brew() {
 }
 complete -o default -F _brew brew
 
+# Completion function for npm and bower, the Node-based package managers
+_npm() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
+	second=${COMP_WORDS[1]}
+
+	if [ "$prev" == 'npm' -o "$prev" == 'bower' ]; then
+		# Complete common npm commands for `npm`
+		COMPREPLY=( $(compgen -W 'cache info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
+	elif [ "$prev" == 'install' -o "$prev" == 'uninstall' ]; then
+		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- $cur) )
+	elif [ "$prev" == 'cache' ]; then
+		COMPREPLY=( $(compgen -W 'clean' -- $cur) )
+	fi
+
+}
+complete -o default -F _npm npm
+complete -o default -F _npm bower
 
 # Completion function for pip, Python's package manager
 _pip() {

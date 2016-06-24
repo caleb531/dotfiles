@@ -77,10 +77,6 @@ else
 		curl -L https://www.npmjs.com/install.sh | sh
 	fi
 
-	if [ ! -f /usr/local/etc/bash_completion.d/npm ]; then
-		npm completion > /usr/local/etc/bash_completion.d/npm
-	fi
-
 	if is_cmd_installed npm; then
 
 		echo "Installing npm packages..."
