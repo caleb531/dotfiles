@@ -55,6 +55,23 @@ _apm() {
 }
 complete -o default -F _apm apm
 
+# Completion function for Bundler, the Ruby package manager
+_bundle() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
+	second=${COMP_WORDS[1]}
+
+	if [ "$prev" == 'bundle' -o "$prev" == 'bundler' ]; then
+		# Complete common bundle commands when "bundle" is given
+		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
+	fi
+
+}
+complete -o default -F _bundle bundle
+complete -o default -F _bundle bundler
+
 # Completion function for jekyll, the static site generator
 _jekyll() {
 
