@@ -62,8 +62,6 @@ else
 		install_gem sass
 		install_gem bundler
 		install_gem jekyll
-		install_gem jekyll-seo-tag
-		install_gem jekyll-sitemap
 
 	fi
 
