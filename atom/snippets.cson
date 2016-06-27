@@ -715,6 +715,10 @@
     'prefix': 'expression'
     'body': '{{ $1 }}'
 
+  'liquid':
+    'prefix': 'liquid'
+    'body': '{% $1 %}'
+
   'assign':
     'prefix': 'assign'
     'body': '{% assign ${1:name} = ${2:value} %}'
