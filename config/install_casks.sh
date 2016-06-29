@@ -27,6 +27,7 @@ if is_cmd_installed brew; then
 	install_cask codekit
 	install_cask forklift
 	install_cask mamp
+	rm -rf '/Applications/MAMP PRO'
 
 	echo "Installing Quick Look plugins..."
 
