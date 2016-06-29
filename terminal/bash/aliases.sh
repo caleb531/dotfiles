@@ -25,9 +25,3 @@ fi
 if type tree &> /dev/null; then
 	alias tree='tree -C'
 fi
-
-# npm aliases
-alias npmi='npm install'
-alias npmig='npm install --global'
-alias npmis='npm install --save'
-alias npmisd='npm install --save-dev'
