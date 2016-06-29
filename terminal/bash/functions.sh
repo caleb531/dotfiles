@@ -67,8 +67,8 @@ get-env() {
 # server; an .env file containing the below environment variables must be
 # present in said directory or one of its parent directories
 # Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
-# Usage: personal-deploy
-personal-deploy() {
+# Usage: deploy
+deploy() {
 	local current_env="$(get-env)"
 	if [ -n "$current_env" ]; then
 		source "$current_env"
