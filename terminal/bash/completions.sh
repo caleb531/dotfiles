@@ -12,14 +12,14 @@ _brew() {
 
 	if [ "$prev" == 'brew' ]; then
 		# Complete common brew commands for `brew`
-		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
 	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
 		# Complete common cask commands for `brew cask`
 		COMPREPLY=( $(compgen -W 'cleanup doctor info install list search uninstall update' -- $cur) )
 	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
 		# Complete list options for `brew list` or `brew ls`
 		COMPREPLY=( $(compgen -W '--full-name --pinned --multiple --versions' -- $cur) )
-	elif [ "$second" == 'cleanup' -o "$second" == 'uninstall' ]; then
+	elif [ "$second" == 'cleanup' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
 		# Complete installed packages for `brew cleanup` or `brew uninstall`
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'cask' -o "$prev" == 'uninstall' ]; then
