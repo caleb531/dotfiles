@@ -63,12 +63,12 @@ get-env() {
 	fi
 }
 
-# Bring the current directory's remote counterpart into sync with said current
-# directory; an .env file containing the below environment variables must be
+# Copies changed items in current directory to corresponding directory on remote
+# server; an .env file containing the below environment variables must be
 # present in said directory or one of its parent directories
 # Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
-# Usage: personal-sync
-personal-sync() {
+# Usage: personal-deploy
+personal-deploy() {
 	local current_env="$(get-env)"
 	if [ -n "$current_env" ]; then
 		source "$current_env"
