@@ -50,8 +50,7 @@ ssh-remove-id() {
 
 # Find the nearest .env file and loads it into the current shell;
 # the local root is the nearest directory defining an environment via .env
-# Usage: get-env
-get-env() {
+__get_env() {
 	local local_root="$PWD"
 	# Find nearest .env, searching parent directories until one is found
 	while [ ! -f "$local_root"/.env -a "$local_root" != / ]; do
@@ -69,7 +68,7 @@ get-env() {
 # Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
 # Usage: deploy
 deploy() {
-	local current_env="$(get-env)"
+	local current_env="$(__get_env)"
 	if [ -n "$current_env" ]; then
 		source "$current_env"
 		if [ -n "$REMOTE_ROOT" ]; then
