@@ -119,6 +119,9 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
+echo "- Prevent Image Capture from launching when plugging in an iOS device"
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
 echo "- Prevent Time Machine from asking to use new drives as backup volumes"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
