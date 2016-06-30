@@ -25,6 +25,9 @@ _brew() {
 	elif [ "$second" == 'cask' -o "$prev" == 'uninstall' ]; then
 		# Complete installed packages for `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
+	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
+		# Complete installed packages for `brew deps` or `brew uses`
+		COMPREPLY=( $(compgen -W '--include-optional --installed' -- $cur) )
 	fi
 
 }
