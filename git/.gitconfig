@@ -15,12 +15,12 @@
 	# Use a global .gitignore for project-independent files
 	excludesfile = ~/.dotfiles/git/gitignore_global
 	# Highlight line-specific changes and use diff-so-fancy to format diff
-	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+	pager = diff-so-fancy | less --tabs=1,5 -R
 
 # Interactive staging
 [interactive]
 	# Use same diff highlighting for interactive staging
-	diffFilter = diff-highlight | diff-so-fancy
+	diffFilter = diff-so-fancy
 
 
 # Push/pull current branch by default (when no arguments are given)
