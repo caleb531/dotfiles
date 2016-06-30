@@ -31,6 +31,19 @@ rmvirtualenv() {
 	rm -r ./"$VIRTUAL_ENV_NAME"
 }
 
+# Provide convenient access to common PyPI commands
+# Usage: pypi [register|test|upload]
+pypi() {
+	if [ "$1" == 'test' ]; then
+		python setup.py register -r pypitest
+		python setup.py sdist upload -r pypitest
+	elif [ "$1" == 'register' ]; then
+		python setup.py register -r pypi
+	elif [ "$1" == 'upload' ]; then
+		python setup.py sdist upload -r pypi
+	fi
+}
+
 # Flush all DNS caches for OS X 10.10.4 and onward
 # Usage: flushdns
 flushdns() {

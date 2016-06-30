@@ -25,6 +25,3 @@ fi
 if type tree &> /dev/null; then
 	alias tree='tree -C'
 fi
-
-# Upload to PyPI
-alias pypi-upload='python setup.py sdist upload -r pypi'
