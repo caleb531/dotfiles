@@ -50,6 +50,7 @@ else
 	rm -f /usr/local/bin/speedtest_cli
 
 	install_brew_pkg librsvg
+	install_brew_pkg imagemagick
 
 	# Install utilities necessary for Grunt projects
 	install_brew_pkg ruby
