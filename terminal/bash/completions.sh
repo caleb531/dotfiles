@@ -23,7 +23,7 @@ _brew() {
 		# Complete installed packages for brew cleanup/uninstall/info commands
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'cask' -o "$prev" == 'uninstall' ]; then
-		# Complete installed packages for `brew cask uninstall`
+		# Complete installed casks for `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
