@@ -19,8 +19,8 @@ _brew() {
 	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
 		# Complete list options for `brew list` or `brew ls`
 		COMPREPLY=( $(compgen -W '--full-name --pinned --multiple --versions' -- $cur) )
-	elif [ "$second" == 'cleanup' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
-		# Complete installed packages for `brew cleanup` or `brew uninstall`
+	elif [ "$second" == 'cleanup' -o "$second" == 'info' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
+		# Complete installed packages for brew cleanup/uninstall/info commands
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'cask' -o "$prev" == 'uninstall' ]; then
 		# Complete installed packages for `brew cask uninstall`
