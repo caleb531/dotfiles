@@ -49,5 +49,7 @@
 	diffcwc = diff --color-words --cached
 	diffno = diff --name-only
 	diffnoc = diff --name-only --cached
+	diffns = diff --name-status
+	diffnsc = diff --name-status --cached
 	logg = log --grep
 	showno = show --pretty="format:" --name-only
