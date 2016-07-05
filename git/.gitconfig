@@ -43,7 +43,7 @@
 # Useful Git aliases
 [alias]
 	commita = commit --amend
-	cp = cherry-pick
+	chp = cherry-pick
 	diffc = diff --cached
 	diffcw = diff --color-words
 	diffcwc = diff --color-words --cached
