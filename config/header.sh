@@ -3,7 +3,7 @@
 setup() {
 
 	# Prompt for admin password upfront
-	if [ "$1" == sudo ]; then
+	if [ "$1" == '--sudo' ]; then
 		sudo -v
 	fi
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./config/header.sh sudo
+source ./config/header.sh --sudo
 
 echo "Setting global OS X preferences..."
 
