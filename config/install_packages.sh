@@ -51,6 +51,7 @@ else
 
 	install_brew_pkg librsvg
 	install_brew_pkg imagemagick
+	install_brew_pkg pandoc
 
 	# Install utilities necessary for Grunt projects
 	install_brew_pkg ruby
