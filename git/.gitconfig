@@ -55,5 +55,5 @@
 	diffnoc = diff --name-only --cached
 	diffns = diff --name-status
 	diffnsc = diff --name-status --cached
-	logg = log -i --grep
+	logg = log --fixed-strings -i --grep
 	showno = show --pretty="format:" --name-only
