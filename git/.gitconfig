@@ -44,6 +44,17 @@
 	newNormal = green bold
 	newHighlight = green bold 22
 
+# Disable "advice" help messages
+[advice]
+	# Advice shown when git refuses to merge or checkout due to local changes
+	commitBeforeMerge = false
+	# Advice shown when entering detached HEAD state
+	detachedHead = false
+	# Advice shown when push is rejected by remote
+	pushUpdateRejected = false
+	# Advice shown when running `git status`
+	statusHints = false
+
 # Useful Git aliases
 [alias]
 	commita = commit --amend
