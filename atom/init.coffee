@@ -55,7 +55,9 @@ getRemotePkgList = ->
 # Deactivates the given list of packages
 deactivatePkgs = (pkgs) ->
   console.log('Deactivating packages: ' + pkgs.join(', '))
-  pkgs.forEach((pkg) -> atom.packages.deactivatePackage(pkg))
+  try
+    pkgs.forEach((pkg) -> atom.packages.deactivatePackage(pkg))
+  catch error
 
 
 # Uninstalls the given list of packages
