@@ -116,7 +116,6 @@
       "\\.source\\.gfm"
     ]
     markerType: "dot"
-  script: {}
   "svg-preview": {}
   welcome:
     showOnStartup: false

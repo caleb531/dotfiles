@@ -14,11 +14,6 @@
   # Toggles grammar (language) selection panel
   'ctrl-shift-L': 'unset!'
   'shift-cmd-L': 'grammar-selector:show'
-  # Execute and view output from scripts within editor
-  'shift-cmd-R': 'script:run'
-  'alt-shift-cmd-R': 'script:run-options'
-  # Kill script processes via ^C
-  'ctrl-c': 'script:kill-process'
   # Toggles character encoding selection panel
   # 'ctrl-shift-U': 'unset!'
   'cmd-shift-U': 'encoding-selector:show'
