@@ -71,7 +71,7 @@ uninstallPkgs = (pkgs, callback) ->
     process = new BufferedProcess({
       command: APM_PATH,
       args: ['uninstall'].concat(pkgs),
-      stderr: (data) -> console.log(String(data)),
+      stderr: (data) -> console.error(String(data)),
       exit: (code) ->
         atom.notifications.addSuccess('Finished uninstalling packages', {
             detail: pkgsStr
@@ -98,7 +98,7 @@ installPkgs = (pkgs, callback) ->
     process = new BufferedProcess({
       command: APM_PATH,
       args: ['install'].concat(pkgs),
-      stderr: (data) -> console.log(String(data)),
+      stderr: (data) -> console.error(String(data)),
       exit: (code) ->
         activatePkgs(pkgs)
         atom.notifications.addSuccess('Finished installing and activating packages', {
