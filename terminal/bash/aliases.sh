@@ -9,7 +9,9 @@ alias sudo='sudo '
 alias ls='ls --color=auto'
 
 # Output the octal permissions for a file or directory
-alias octmod='stat -c %a'
+alias octmod='stat -c "%a"'
+# Output the owner/group for a file or directory
+alias owners='stat -c "%U %G"'
 
 # Colorize grep matches (but not for piped output)
 alias grep='grep --color=auto'
