@@ -26,7 +26,6 @@
       "git-diff"
       "language-perl"
       "script"
-      "pigments"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -112,7 +111,6 @@
   pigments:
     ignoredScopes: [
       "\\.comment"
-      "\\.string"
       "\\.source\\.gfm"
     ]
     markerType: "dot"
