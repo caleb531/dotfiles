@@ -2,58 +2,50 @@
 
 source ./config/header.sh --sudo
 
-if is_cmd_installed brew; then
+echo "Installing Homebrew Casks..."
+preload_cask_list
 
-	echo "Installing Homebrew Casks..."
-	preload_cask_list
+# Ensure that all Cask-installed apps are linked to /Applications
+export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
-	# Ensure that all Cask-installed apps are linked to /Applications
-	export HOMEBREW_CASK_OPTS='--appdir=/Applications'
+# Install essential OS X apps via Cask (in order of essentiality)
+install_cask google-chrome
+install_cask dropbox
+install_cask alfred
+install_cask atom
+install_cask evernote
+install_cask keyboard-maestro
+install_cask skype
+install_cask jitsi
+install_cask joinme
+install_cask flux
+# Install additional OS X apps
+install_cask appcleaner
+install_cask namechanger
+install_cask codekit
+install_cask forklift
+install_cask mamp
+rm -rf '/Applications/MAMP PRO'
 
-	# Install essential OS X apps via Cask (in order of essentiality)
-	install_cask google-chrome
-	install_cask dropbox
-	install_cask alfred
-	install_cask atom
-	install_cask evernote
-	install_cask keyboard-maestro
-	install_cask skype
-	install_cask jitsi
-	install_cask joinme
-	install_cask flux
-	# Install additional OS X apps
-	install_cask appcleaner
-	install_cask namechanger
-	install_cask codekit
-	install_cask forklift
-	install_cask mamp
-	rm -rf '/Applications/MAMP PRO'
+echo "Installing Quick Look plugins..."
 
-	echo "Installing Quick Look plugins..."
+install_cask qlstephen
+install_cask qlmarkdown
+install_cask scriptql
+install_cask quicklook-json
+install_cask betterzipql
+install_cask suspicious-package
+qlmanage -r
 
-	install_cask qlstephen
-	install_cask qlmarkdown
-	install_cask scriptql
-	install_cask quicklook-json
-	install_cask betterzipql
-	install_cask suspicious-package
-	qlmanage -r
+echo "Installing fonts..."
 
-	echo "Installing fonts..."
+tap_brew_repo caskroom/fonts
+install_cask font-open-sans
+install_cask font-montserrat
+install_cask font-ubuntu
 
-	tap_brew_repo caskroom/fonts
-	install_cask font-open-sans
-	install_cask font-montserrat
-	install_cask font-ubuntu
+echo "Installing additional plugins..."
 
-	echo "Installing additional plugins..."
-
-	install_cask colorpicker-hex
-	install_cask silverlight
-	install_cask java
-
-else
-
-	echo "Homebrew Cask is not installed."
-
-fi
+install_cask colorpicker-hex
+install_cask silverlight
+install_cask java
