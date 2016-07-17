@@ -55,12 +55,12 @@ main() {
 	if [ -n "$current_env" ]; then
 		source "$current_env"
 		if [ -n "$REMOTE_ROOT" ]; then
-			LOCAL_ROOT="$(dirname "$current_env")"
+			local local_root="$(dirname "$current_env")"
 			# Cerate a temporary directory in case it's needed (and create it
 			# here so we can delete it after everything is done)
 			local temp_dir="$(mktemp -d)"
 			local local_pwd="$(get-local-pwd "$temp_dir")"
-			local remote_pwd="${PWD/#$LOCAL_ROOT/$REMOTE_ROOT}"
+			local remote_pwd="${PWD/#$local_root/$REMOTE_ROOT}"
 			cp -r "$local_pwd" ~/Desktop
 			upload "$local_pwd" "$remote_pwd"
 			rm -rf "$temp_dir"
