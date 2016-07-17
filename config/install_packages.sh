@@ -52,6 +52,7 @@ rm -f /usr/local/bin/speedtest_cli
 install_brew_pkg librsvg
 install_brew_pkg imagemagick
 install_brew_pkg pandoc
+install_brew_pkg font-blast
 
 # Install utilities necessary for Grunt projects
 install_brew_pkg ruby
