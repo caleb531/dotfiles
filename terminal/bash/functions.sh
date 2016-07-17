@@ -58,7 +58,7 @@ ssh-remove-id() {
 	local pub_key="$(grep -Po --color=none 'ssh-rsa [A-Za-z0-9\/\+]+' < ~/.ssh/id_rsa.pub)"
 	local escaped_pub_key="$(echo "$pub_key" | sed -e 's/[\/+]/\\&/g')"
 	# Remove authorized key on server by executing script via SSH
-	ssh "$@" bash -s - "$pub_key" < ~/.dotfiles/terminal/bash/ssh-remove-id.sh
+	ssh "$@" bash -s - "$pub_key" < ~/.dotfiles/terminal/bash/functions/ssh-remove-id.sh
 }
 
 # Find the nearest .env file and loads it into the current shell;
