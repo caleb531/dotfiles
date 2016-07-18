@@ -17,8 +17,13 @@ get-env() {
 # Retrieve the local PWD, building it if necessary
 get-local-pwd() {
 	local temp_dir="$1"
-	# If local PWD is a git directory, use path to archive
-	if git rev-parse --git-dir &> /dev/null; then
+	if [ -f ./_config.yml ]; then
+		# If local PWD is a Jekyll project, use site built by Jekyll
+		local local_pwd="$temp_dir"/_site
+		JEKYLL_ENV=production jekyll build --destination "$local_pwd" --quiet
+		echo "$local_pwd"
+	elif git rev-parse --git-dir &> /dev/null; then
+		# If local PWD is a Git directory, use archive created by Git
 		local local_pwd="$temp_dir"/"$(basename "$PWD")"
 		local local_pwd_archive="$local_pwd".zip
 		git archive HEAD --output="$local_pwd_archive" -0 .
