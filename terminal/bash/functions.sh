@@ -61,51 +61,13 @@ ssh-remove-id() {
 	ssh "$@" bash -s - "$pub_key" < ~/.dotfiles/terminal/bash/functions/ssh-remove-id.sh
 }
 
-# Find the nearest .env file and loads it into the current shell;
-# the local root is the nearest directory defining an environment via .env
-__get_env() {
-	local local_root="$PWD"
-	# Find nearest .env, searching parent directories until one is found
-	while [ ! -f "$local_root"/.env -a "$local_root" != / ]; do
-		local_root="$(dirname "$local_root")"
-	done
-	# If .env file exists at this point (otherwise, no parent has an .env)
-	if [ -f "$local_root"/.env ]; then
-		echo "$local_root"/.env
-	fi
-}
-
 # Copies changed items in current directory to corresponding directory on remote
 # server; an .env file containing the below environment variables must be
 # present in said directory or one of its parent directories
 # Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
 # Usage: deploy
 deploy() {
-	local current_env="$(__get_env)"
-	if [ -n "$current_env" ]; then
-		source "$current_env"
-		if [ -n "$REMOTE_ROOT" ]; then
-			LOCAL_ROOT="$(dirname "$current_env")"
-			local local_pwd="$PWD"
-			local remote_pwd="${local_pwd/#$LOCAL_ROOT/$REMOTE_ROOT}"
-			rsync \
-				--archive \
-				--checksum \
-				--exclude '.DS_Store' \
-				--exclude '.env' \
-				--exclude '.git' \
-				--exclude '.sass-cache' \
-				--filter ':- .gitignore' \
-				--rsh "ssh -p $SSH_PORT" \
-				--verbose \
-				"$local_pwd"/ \
-				"$SSH_USER"@"$SSH_HOSTNAME":"$remote_pwd"
-		else
-			>&2 echo "Directory has no remote counterpart!"
-		fi
-	else
-		>&2 echo "Directory has no remote environment set!"
-	fi
+	~/.dotfiles/terminal/bash/functions/deploy.sh
 }
 
 # Control MAMP (mainly Apache and MySQL servers)
