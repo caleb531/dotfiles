@@ -66,7 +66,6 @@ main() {
 			local temp_dir="$(mktemp -d)"
 			local local_pwd="$(get-local-pwd "$temp_dir")"
 			local remote_pwd="${PWD/#$local_root/$REMOTE_ROOT}"
-			cp -r "$local_pwd" ~/Desktop
 			upload "$local_pwd" "$remote_pwd"
 			rm -rf "$temp_dir"
 		else
