@@ -54,6 +54,22 @@ _npm() {
 complete -o default -F _npm npm
 complete -o default -F _npm bower
 
+# Completion function for Grunt, the JavaScript task runner
+_grunt() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
+	second=${COMP_WORDS[1]}
+
+	if [ "$prev" == 'grunt' ]; then
+		# Complete Grunt tasks standard to all of my Grunt-based projects
+		COMPREPLY=( $(compgen -W 'build serve watch --help' -- $cur) )
+	fi
+
+}
+complete -o default -F _grunt grunt
+
 # Completion function for pip, Python's package manager
 _pip() {
 
