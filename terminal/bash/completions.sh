@@ -38,8 +38,6 @@ _npm() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'npm' -o "$prev" == 'bower' ]; then
 		# Complete common npm commands for `npm`
@@ -59,8 +57,6 @@ _grunt() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'grunt' ]; then
 		# Complete Grunt tasks standard to all of my Grunt-based projects
@@ -75,8 +71,6 @@ _pip() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'pip' ]; then
 		# Complete common pip commands for `pip`
@@ -104,8 +98,6 @@ _apm() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'apm' ]; then
 		# Complete common apm commands for `apm`
@@ -127,8 +119,6 @@ _bundle() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'bundle' -o "$prev" == 'bundler' ]; then
 		# Complete common bundle commands for `bundle`
@@ -144,8 +134,6 @@ _jekyll() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'jekyll' ]; then
 		# Complete common jekyll commands for `jekyll`
@@ -153,7 +141,7 @@ _jekyll() {
 	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
 		# Complete filenames for `--source` or `--destination`
 		COMPREPLY=()
-	elif [ "$second" == 'build' ]; then
+	elif [ "$prev" == 'build' ]; then
 		# Complete options for `jekyll build`
 		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- $cur) )
 	fi
@@ -166,8 +154,6 @@ _mamp() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'mamp' ]; then
 		# Complete common MAMP commands for `mamp`
@@ -182,8 +168,6 @@ _apachectl() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'apachectl' ]; then
 		# Complete common apachectl commands for `apachectl`
