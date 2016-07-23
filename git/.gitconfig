@@ -67,5 +67,5 @@
 	diffns = diff --name-status
 	diffnsc = diff --name-status --cached
 	logg = log --fixed-strings --regexp-ignore-case --grep
-	showno = show --pretty="format:" --name-only
-	showns = show --pretty="format:" --name-status
+	showno = show --name-only
+	showns = show --name-status
