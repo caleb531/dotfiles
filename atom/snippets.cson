@@ -402,6 +402,10 @@
     'prefix': 'phpblock'
     'body': '<?php\n\t$1\n?>$2'
 
+  'PHP Block (HTML)':
+    'prefix': 'phphtml'
+    'body': '?>\n\t$1\n<?php$2'
+
   'echo (inline)':
     'prefix': 'pecho'
     'body': '<?php echo $1; ?>$2'
