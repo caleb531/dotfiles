@@ -32,6 +32,11 @@ atom-text-editor:not([mini])::shadow {
   }
 }
 
+// Make labels for Merge Conflicts (e.g. "// Our changes") more prominent
+atom-text-editor:not([mini]).conflicted .text-subtle {
+  color: #fff;
+}
+
 // Selected tab highlight
 .tab-bar .tab::before {
   background: @ce-color-green;
