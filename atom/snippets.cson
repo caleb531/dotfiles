@@ -403,47 +403,47 @@
     'body': '<?php\n\t$1\n?>$2'
 
   'echo (inline)':
-    'prefix': 'pecho'
+    'prefix': 'phpecho'
     'body': '<?php echo $1; ?>$2'
 
   'if (inline)':
-    'prefix': 'pif'
+    'prefix': 'phpif'
     'body': '<?php if ( ${1:condition} ): ?>$2'
 
   'else (inline)':
-    'prefix': 'pelse'
+    'prefix': 'phpelse'
     'body': '<?php else: ?>$2'
 
   'else if (inline)':
-    'prefix': 'pelseif'
+    'prefix': 'phpelseif'
     'body': '<?php elseif ( ${1:condition} ): ?>$2'
 
   'for (inline)':
-    'prefix': 'pfor'
+    'prefix': 'phpfor'
     'body': '<?php for ( ${1:\$i} = ${2:0}; ${1:\$i} < ${3:end}; ${1:\$i} += ${4:1} ): ?>$5'
 
   'foreach (inline)':
-    'prefix': 'pforeach'
+    'prefix': 'phpforeach'
     'body': '<?php foreach ( ${1:\$object} as ${2:\$value} ): ?>$3'
 
   'while (inline)':
-    'prefix': 'pwhile'
+    'prefix': 'phpwhile'
     'body': '<?php while ( ${1:condition} ): ?>$2'
 
   'endif (inline)':
-    'prefix': 'pendif'
+    'prefix': 'phpendif'
     'body': '<?php endif; ?>$1'
 
   'endfor (inline)':
-    'prefix': 'pendfor'
+    'prefix': 'phpendfor'
     'body': '<?php endfor; ?>$1'
 
   'endforeach (inline)':
-    'prefix': 'pendforeach'
+    'prefix': 'phpendforeach'
     'body': '<?php endforeach; ?>$1'
 
   'endwhile (inline)':
-    'prefix': 'pendwhile'
+    'prefix': 'phpendwhile'
     'body': '<?php endwhile; ?>$1'
 
 # Shell scripts (particularly Bash)
