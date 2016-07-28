@@ -334,6 +334,30 @@
     'prefix': 'f'
     'body': 'function ${1:fname}($2) {\n\t$3\n}'
 
+  'class':
+    'prefix': 'class'
+    'body': 'class ${1:Class} {\n\t$2\n}'
+
+  'constructor':
+    'prefix': 'ctor'
+    'body': 'function __construct($1) {\n\t$2\n}'
+
+  'parent constructor':
+    'prefix': 'pctor'
+    'body': 'parent::__construct($1);'
+
+  'public':
+    'prefix': 'public'
+    'body': 'public '
+
+  'private':
+    'prefix': 'private'
+    'body': 'private '
+
+  'protected':
+    'prefix': 'protected'
+    'body': 'protected '
+
   'if':
     'prefix': 'if'
     'body': 'if ( ${1:condition} ) {\n\t$2\n} $3'
