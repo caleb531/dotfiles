@@ -740,7 +740,7 @@
  .source.gfm':
 
   'expression':
-    'prefix': 'expression'
+    'prefix': 'exp'
     'body': '{{ $1 }}'
 
   'liquid':
