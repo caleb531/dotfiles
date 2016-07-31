@@ -3,6 +3,7 @@
   "css.unitlessProperties": [
     "font-weight",
     "flex-grow",
+    "flex-shrink",
     "line-height",
     "opacity",
     "z-index",
