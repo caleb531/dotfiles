@@ -21,3 +21,6 @@ ln -snf "$PWD"/ssh/ssh_config ~/.ssh/config
 
 # Disable Bash Sessions feature in OS X El Capitan
 touch ~/.bash_sessions_disable
+
+# Reload shell to put changes into effect
+exec $SHELL -l
