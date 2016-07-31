@@ -106,12 +106,15 @@ linter-bottom-tab {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: @inset-panel-background-color;
-  // SVG canvas
-  svg {
+  background: none !important;
+  .image-controls {
+    display: none;
+  }
+  .image-canvas {
     max-width: 100%;
-    max-height: 100%;
-    flex-shrink: 0;
-    background: #fff !important;
+    height: auto;
+  }
+  svg {
+    background: #fff;
   }
 }
