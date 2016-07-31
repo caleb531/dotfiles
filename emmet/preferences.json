@@ -1,9 +1,9 @@
 {
   "css.autoInsertVendorPrefixes": false,
   "css.unitlessProperties": [
-    "font-weight",
     "flex-grow",
     "flex-shrink",
+    "font-weight",
     "line-height",
     "opacity",
     "z-index",
