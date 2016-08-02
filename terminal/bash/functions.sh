@@ -70,6 +70,13 @@ deploy() {
 	~/.dotfiles/terminal/bash/functions/deploy.sh
 }
 
+# SSH into the remote directory corresponding to the PWD; also requires an .env
+# file to function
+# Usage: sshcd
+sshcd() {
+	~/.dotfiles/terminal/bash/functions/sshcd.sh
+}
+
 # Control MAMP (mainly Apache and MySQL servers)
 mamp() {
 	if [ -z "$1" -o "$1" == start ]; then

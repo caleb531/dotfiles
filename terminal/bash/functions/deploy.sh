@@ -1,18 +1,6 @@
 #!/usr/bin/env bash
 
-# Find the nearest .env file and loads it into the current shell;
-# the local root is the nearest directory defining an environment via .env
-get-env() {
-	local local_root="$PWD"
-	# Find nearest .env, searching parent directories until one is found
-	while [ ! -f "$local_root"/.env -a "$local_root" != / ]; do
-		local_root="$(dirname "$local_root")"
-	done
-	# If .env file exists at this point (otherwise, no parent has an .env)
-	if [ -f "$local_root"/.env ]; then
-		echo "$local_root"/.env
-	fi
-}
+source ~/.dotfiles/terminal/bash/functions/getenv.sh
 
 # Retrieve the local PWD, building it if necessary
 get-local-pwd() {
@@ -53,8 +41,8 @@ upload() {
 	popd > /dev/null
 }
 
-main() {
-	local current_env="$(get-env)"
+deploy() {
+	local current_env="$(getenv)"
 	if [ -n "$current_env" ]; then
 		source "$current_env"
 		if [ -n "$REMOTE_ROOT" ]; then
@@ -74,4 +62,4 @@ main() {
 	fi
 }
 
-main
+deploy
