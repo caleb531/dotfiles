@@ -76,7 +76,6 @@
     invisibles: {}
     softTabs: false
     softWrap: true
-    softWrapAtPreferredLineLength: true
     tabLength: 4
   emmet:
     extensionsPath: "~/.dotfiles/emmet"
