@@ -1,3 +1,5 @@
+config.codekit
+.codekit-cache
 .DS_Store
 .env
 .git
