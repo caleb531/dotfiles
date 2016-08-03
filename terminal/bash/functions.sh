@@ -141,7 +141,9 @@ __apm_push() {
 
 # Override apm command to integrate custom push and pull commands
 apm() {
-	if [ "$1" == install -o "$1" == uninstall ]; then
+	if [ "$1" == install -a -z "$2" ]; then
+		command apm install
+	elif [ "$1" == install -o "$1" == uninstall ]; then
 		__apm_pull
 		command apm "$@"
 		__apm_push
