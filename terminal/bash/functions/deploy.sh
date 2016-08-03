@@ -33,6 +33,7 @@ upload() {
 		--checksum \
 		--exclude '.DS_Store' \
 		--exclude '.env' \
+		--exclude '.git' \
 		--exclude '.sass-cache' \
 		--rsh "ssh -p $SSH_PORT" \
 		--verbose \
