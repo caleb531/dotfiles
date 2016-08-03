@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+EXCLUSION_LIST=~/.dotfiles/terminal/bash/functions/deploy-exclusions.txt
+
 source ~/.dotfiles/terminal/bash/functions/getenv.sh
 
 # Retrieve the local PWD, building it if necessary
@@ -32,10 +34,7 @@ upload() {
 		--archive \
 		--checksum \
 		--compress \
-		--exclude '.DS_Store' \
-		--exclude '.env' \
-		--exclude '.git' \
-		--exclude '.sass-cache' \
+		--exclude-from "$EXCLUSION_LIST" \
 		--rsh "ssh -p $SSH_PORT" \
 		--verbose \
 		"$local_pwd"/ \
