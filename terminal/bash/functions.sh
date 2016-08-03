@@ -51,16 +51,6 @@ flushdns() {
 	sudo killall -HUP mDNSResponder
 }
 
-# Remove public SSH key from server
-# Usage: ssh-remove-id -p <port> <user>@<hostname>
-ssh-remove-id() {
-	# Retrieve local public key and escape relevant regex characters
-	local pub_key="$(grep -Po --color=none 'ssh-rsa [A-Za-z0-9\/\+]+' < ~/.ssh/id_rsa.pub)"
-	local escaped_pub_key="$(echo "$pub_key" | sed -e 's/[\/+]/\\&/g')"
-	# Remove authorized key on server by executing script via SSH
-	ssh "$@" bash -s - "$pub_key" < ~/.dotfiles/terminal/bash/functions/ssh-remove-id.sh
-}
-
 # Copies changed items in current directory to corresponding directory on remote
 # server; an .env file containing the below environment variables must be
 # present in said directory or one of its parent directories
