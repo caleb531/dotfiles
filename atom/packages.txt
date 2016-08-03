@@ -32,6 +32,7 @@ merge-conflicts
 monokai
 pigments
 resize-indent
+single-click-open
 sort-lines
 ssh-config
 svg-preview

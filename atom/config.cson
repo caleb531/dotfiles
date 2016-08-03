@@ -5,7 +5,6 @@
     includeCompletionsFromAllBuffers: false
     maxVisibleSuggestions: 5
   core:
-    allowPendingPaneItems: false
     closeEmptyWindows: false
     disabledPackages: [
       "archive-view"
