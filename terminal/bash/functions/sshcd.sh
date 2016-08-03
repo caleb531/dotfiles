@@ -1,20 +1,12 @@
 #!/usr/bin/env bash
 
-source ~/.dotfiles/terminal/bash/functions/getenv.sh
+source ~/.dotfiles/terminal/bash/functions/helper_functions.sh
 
 sshcd() {
-	local current_env="$(getenv)"
-	if [ -n "$current_env" ]; then
-		source "$current_env"
-		if [ -n "$REMOTE_ROOT" ]; then
-			local local_root="$(dirname "$current_env")"
-			local remote_pwd="${PWD/#$local_root/$REMOTE_ROOT}"
-			ssh -tp "$SSH_PORT" "$SSH_USER"@"$SSH_HOSTNAME" "cd $remote_pwd; bash"
-		else
-			>&2 echo "Directory has no remote counterpart!"
-		fi
-	else
-		>&2 echo "Directory has no remote environment set!"
+	__source_env
+	local remote_pwd="$(__get_remote_pwd)"
+	if [ -n "$remote_pwd" ]; then
+		ssh -tp "$SSH_PORT" "$SSH_USER"@"$SSH_HOSTNAME" "cd $remote_pwd; bash"
 	fi
 }
 

@@ -2,10 +2,10 @@
 
 EXCLUSION_LIST=~/.dotfiles/terminal/bash/functions/deploy-exclusions.txt
 
-source ~/.dotfiles/terminal/bash/functions/getenv.sh
+source ~/.dotfiles/terminal/bash/functions/helper_functions.sh
 
 # Retrieve the local PWD, building it if necessary
-get-local-pwd() {
+__get_local_pwd() {
 	local temp_dir="$1"
 	if [ -f ./_config.yml ]; then
 		# If local PWD is a Jekyll project, use site built by Jekyll
@@ -26,40 +26,40 @@ get-local-pwd() {
 }
 
 # Upload the contents of the given local PWD to the given remote PWD
-upload() {
+__upload() {
 	local local_pwd="$1"
 	local remote_pwd="$2"
-	pushd "$local_pwd" > /dev/null
-	rsync \
-		--archive \
-		--checksum \
-		--compress \
-		--exclude-from "$EXCLUSION_LIST" \
-		--rsh "ssh -p $SSH_PORT" \
-		--verbose \
-		"$local_pwd"/ \
-		"$SSH_USER"@"$SSH_HOSTNAME":"$remote_pwd"
-	popd > /dev/null
+	if [ -z "$SSH_USER" ]; then
+		>&2 echo "environment has no SSH user set!"
+	elif [ -z "$SSH_HOSTNAME" ]; then
+		>&2 echo "environment has no SSH hostname set!"
+	elif [ -z "$SSH_PORT" ]; then
+		>&2 echo "environment has no SSH port set!"
+	else
+		pushd "$local_pwd" > /dev/null
+		rsync \
+			--archive \
+			--checksum \
+			--compress \
+			--exclude-from "$EXCLUSION_LIST" \
+			--rsh "ssh -p $SSH_PORT" \
+			--verbose \
+			"$local_pwd"/ \
+			"$SSH_USER"@"$SSH_HOSTNAME":"$remote_pwd"
+		popd > /dev/null
+	fi
 }
 
 deploy() {
-	local current_env="$(getenv)"
-	if [ -n "$current_env" ]; then
-		source "$current_env"
-		if [ -n "$REMOTE_ROOT" ]; then
-			local local_root="$(dirname "$current_env")"
-			# Cerate a temporary directory in case it's needed (and create it
-			# here so we can delete it after everything is done)
-			local temp_dir="$(mktemp -d)"
-			local local_pwd="$(get-local-pwd "$temp_dir")"
-			local remote_pwd="${PWD/#$local_root/$REMOTE_ROOT}"
-			upload "$local_pwd" "$remote_pwd"
-			rm -rf "$temp_dir"
-		else
-			>&2 echo "Directory has no remote counterpart!"
-		fi
-	else
-		>&2 echo "Directory has no remote environment set!"
+	__source_env
+	local remote_pwd="$(__get_remote_pwd)"
+	if [ -n "$remote_pwd" ]; then
+		# Create a temporary directory in case it's needed (and create it
+		# here so we can delete it after everything is done)
+		local temp_dir="$(mktemp -d)"
+		local local_pwd="$(__get_local_pwd "$temp_dir")"
+		__upload "$local_pwd" "$remote_pwd"
+		rm -rf "$temp_dir"
 	fi
 }
 
