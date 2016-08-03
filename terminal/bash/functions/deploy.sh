@@ -31,6 +31,7 @@ upload() {
 	rsync \
 		--archive \
 		--checksum \
+		--compress \
 		--exclude '.DS_Store' \
 		--exclude '.env' \
 		--exclude '.git' \
