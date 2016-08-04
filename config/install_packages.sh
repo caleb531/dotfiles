@@ -62,6 +62,8 @@ preload_gem_list
 
 install_gem sass
 install_gem bundler
+# Prefer bundle over bundler command
+rm -f /usr/local/bin/bundler
 install_gem jekyll
 
 # Instll Node via Homebrew but install npm separately to avoid conflicts
