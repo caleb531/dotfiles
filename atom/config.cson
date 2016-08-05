@@ -61,7 +61,7 @@
       "go-to-line"
       "script"
     ]
-    projectHome: "~"
+    projectHome: "~/Local/Repositories"
     themes: [
       "one-dark-ui"
       "monokai"
