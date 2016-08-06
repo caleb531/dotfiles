@@ -86,8 +86,6 @@
     showSearchWrapIcon: false
   "fuzzy-finder":
     preserveLastSearch: true
-  "line-ending-converter":
-    showEolInStatusBar: false
   linter:
     errorPanelHeight: 142
     ignoreMatchedFiles: "/**/*.{min.js,min.css,md}"
