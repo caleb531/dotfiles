@@ -49,16 +49,16 @@
       "Thumbs.db"
     ]
     packagesWithKeymapsDisabled: [
-      "emmet"
       "atom-alignment"
-      "linter"
-      "resize-indent"
-      "merge-conflicts"
       "autoflow"
-      "link"
-      "grammar-selector"
+      "emmet"
       "encoding-selector"
       "go-to-line"
+      "grammar-selector"
+      "link"
+      "linter"
+      "merge-conflicts"
+      "resize-indent"
       "script"
     ]
     projectHome: "~/Local/Repositories"
