@@ -42,6 +42,7 @@ __upload() {
 			--checksum \
 			--compress \
 			--exclude-from "$EXCLUSION_LIST" \
+			--human-readable \
 			--rsh "ssh -p $SSH_PORT" \
 			--verbose \
 			"$local_pwd"/ \
