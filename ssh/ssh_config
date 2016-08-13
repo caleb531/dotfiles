@@ -2,6 +2,10 @@
 
 # These settings apply to all hosts
 Host *
+	# SSH protocol v2 looks for more than just ~/.ssh/id_rsa every time you
+	# connect, even if id_rsa is your only key; explicitly declaring id_rsa as
+	# the sole IdentityFile eliminates the redundant checks
+	IdentityFile ~/.ssh/id_rsa
     # Reuse existing connections if possible
     ControlMaster auto
     ControlPath ~/.ssh/sockets/%h:%p:%r
