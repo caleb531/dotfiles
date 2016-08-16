@@ -108,12 +108,14 @@ available Python packages in your project's virtualenv.
 
 ## Configuration scripts
 
-For configuring fresh OS X installs, I have also created a series of scripts
-which automatically configure my shell, set my preferred OS X preferences, and
-install packages, among other tasks. All of these scripts are located within the
-`config/` directory. You can run these scripts altogether using `config-all.sh`,
-or individually by executing the respective script.
+I have also created a series of scripts which automatically configure my shell,
+set my preferred OS X preferences, install packages, and so forth. All of these
+scripts are located under the `config/` directory. You can run these scripts
+altogether via `config_all.sh`, or individually by executing the respective
+script.
 
-Generally, it is most useful to execute `config/create-symlinks.sh`, which will
-forcefully create/update the respective symlinks to these dotfiles within your
-home directory.
+These scripts are generally useful for configuring fresh OS X installs, however
+they are also designed to be re-run as needed. For instance,
+`create_symlinks.sh` will ensure that the home directory symlinks to these
+dotfiles are all up to date. In addition, `install_packages.sh` installs those
+preferred Homebrew packages which are missing from the current system.
