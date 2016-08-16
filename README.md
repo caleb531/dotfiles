@@ -102,7 +102,9 @@ configuration expects to find user configuration for Emmet.
 ### Python virtualenv activation
 
 When you open in Atom a project directory containing a Python virtualenv, Atom
-will automatically activate that virtualenv.
+will automatically activate that virtualenv. This ensures that Atom packages
+like [linter-flake8](https://atom.io/packages/linter-flake8) can use any
+available Python packages in your project's virtualenv.
 
 ## Configuration scripts
 
