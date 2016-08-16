@@ -93,11 +93,13 @@ installed or uninstalled, completely automatically.
 
 I have also included my configuration for [Emmet](http://emmet.io/), an
 invaluable package which enables quick HTML expansion within Atom. This
-configuration consists of both preferences and snippets for HTML/CSS expansion.
+configuration is located under the `emmet/` directory, and consists of both
+preferences and snippets for HTML expansion.
 
-Please ensure that the `~/.emmet` directory is set as your *Extensions Path*
-within the Atom package's preferences, because this directory is where my Atom
-configuration expects to find user configuration for Emmet.
+Please ensure that the `~/.dotfiles/emmet` directory is set as your *Extensions
+Path* within the Emmet package preferences, because this directory is where my
+Atom configuration expects to find user configuration for Emmet. Executing the
+`config/create_symlinks.sh` script will create the `~/.dotfiles` directory.
 
 ### Python virtualenv activation
 
