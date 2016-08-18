@@ -1,4 +1,6 @@
 "*":
+  "advanced-open-file":
+    createDirectories: true
   "atom-alignment": {}
   "auto-update-packages": {}
   "autocomplete-plus":
