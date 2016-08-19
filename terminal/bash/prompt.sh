@@ -81,6 +81,8 @@ __detect_python_virtualenv() {
 __check_if_git_repo() {
 	if git rev-parse --git-dir &> /dev/null; then
 		IS_GIT_REPO=1
+	else
+		unset IS_GIT_REPO
 	fi
 }
 
