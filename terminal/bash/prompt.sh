@@ -91,11 +91,15 @@ __check_if_git_repo() {
 __output_git_pull_reminder() {
 	if [ -n "$IS_GIT_REPO" ]; then
 		if [ -z "$GIT_PULL_REMINDED" ]; then
-			echo "Remember to pull!"
-			GIT_PULL_REMINDED=1
+			export GIT_PULL_REMINDED="$(date +%s)"
 		fi
-	else
-		unset GIT_PULL_REMINDED
+		# Calculate the time since the last pull reminder was shown
+		local time_diff="$(expr "$(date +%s)" - $GIT_PULL_REMINDED)"
+		# Display reminder if 10+ minutes have elapsed since last reminder
+		if [ "$time_diff" -ge "600" ]; then
+			echo "Remember to pull!"
+			export GIT_PULL_REMINDED="$(date +%s)"
+		fi
 	fi
 }
 
