@@ -93,8 +93,8 @@ install_brew_pkg brew-rmtree
 
 # OS X now disguises clang as gcc/g++. Install and link real gcc/g++
 install_brew_pkg gcc
-ln -sf /usr/local/bin/gcc-5 /usr/local/bin/gcc
-ln -sf /usr/local/bin/g++-5 /usr/local/bin/g++
+ln -sf /usr/local/bin/gcc-6 /usr/local/bin/gcc
+ln -sf /usr/local/bin/g++-6 /usr/local/bin/g++
 
 echo "Installing pip packages..."
 preload_pip_pkg_list
