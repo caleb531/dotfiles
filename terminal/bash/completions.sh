@@ -10,7 +10,7 @@ _brew() {
 	first=${COMP_WORDS[0]}
 	second=${COMP_WORDS[1]}
 
-	if [ "$prev" == 'brew' ]; then
+	if [ "$prev" == 'brew' -o "$prev" == 'help' ]; then
 		# Complete common brew commands for `brew`
 		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
 	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
@@ -42,7 +42,7 @@ _npm() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'npm' -o "$prev" == 'bower' ]; then
+	if [ "$prev" == 'npm' -o "$prev" == 'bower' -o "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
 		COMPREPLY=( $(compgen -W 'cache info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
 	elif [ "$prev" == 'install' -o "$prev" == 'uninstall' ]; then
@@ -75,7 +75,7 @@ _pip() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'pip' ]; then
+	if [ "$prev" == 'pip' -o "$prev" == 'help' ]; then
 		# Complete common pip commands for `pip`
 		COMPREPLY=( $(compgen -W 'freeze help install list search show uninstall' -- $cur) )
 	elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
