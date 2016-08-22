@@ -84,8 +84,8 @@ _pip() {
 	elif [ "$prev" == 'list'  ]; then
 		# Complete options for `pip list`
 		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
-	else
-		# Complete installed packages in every other case
+	elif [ "$prev" == 'show' -o "$prev" == 'uninstall' ]; then
+		# Complete installed packages for `pip show` and `pip uninstall`
 		local pkg_list="$(cat ./requirements.txt 2> /dev/null | grep -Po '[a-z0-9\-]+(?=\=\=)')"
 		if [ -z "$pkg_list" ]; then
 			local pkg_list="$(pip list 2> /dev/null | grep -Po '[a-z0-9\-]+(?= \()')"
@@ -108,8 +108,8 @@ _apm() {
 	elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
 		# Complete options for `apm update` or `apm upgrade`
 		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
-	else
-		# Complete installed packages in every other case
+	elif [ "$prev" == 'show' -o "$prev" == 'uninstall' ]; then
+		# Complete installed packages for `apm show` and `apm uninstall`
 		local pkg_list="$(ls ~/.atom/packages 2> /dev/null)"
 		COMPREPLY=( $(compgen -W "$pkg_list" -- $cur) )
 	fi
