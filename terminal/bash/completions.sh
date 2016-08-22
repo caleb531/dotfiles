@@ -44,7 +44,7 @@ _npm() {
 
 	if [ "$prev" == 'npm' -o "$prev" == 'bower' -o "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
-		COMPREPLY=( $(compgen -W 'cache info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
 	elif [ "$prev" == 'install' -o "$prev" == 'uninstall' ]; then
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- $cur) )
 	elif [ "$prev" == 'cache' ]; then
