@@ -30,7 +30,7 @@ _brew() {
 		COMPREPLY=( $(compgen -W "--all --cleanup $(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
-		COMPREPLY=( $(compgen -W '--include-optional --installed' -- $cur) )
+		COMPREPLY=( $(compgen -W '--include-optional --installed $(ls -1 /usr/local/Cellar)' -- $cur) )
 	fi
 
 }
