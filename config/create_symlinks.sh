@@ -10,7 +10,11 @@ ln -sf "$PWD"/atom/* ~/.atom
 ln -snf "$PWD" ~/.dotfiles
 ln -snf "$PWD"/terminal/.bashrc ~/.bashrc
 ln -snf "$PWD"/terminal/.bashrc ~/.bash_profile
+
+# Add custom completions and remove overridden completions
 ln -snf "$PWD"/terminal/bash/completions.sh /usr/local/etc/bash_completion.d/dotfiles-completions.sh
+rm -f /usr/local/etc/bash_completion.d/brew
+rm -f /usr/local/etc/bash_completion.d/npm
 
 ln -snf "$PWD"/terminal/.vimrc ~/.vimrc
 ln -snf "$PWD"/git/.gitconfig ~/.gitconfig

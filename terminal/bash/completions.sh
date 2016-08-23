@@ -10,7 +10,7 @@ _brew() {
 	first=${COMP_WORDS[0]}
 	second=${COMP_WORDS[1]}
 
-	if [ "$prev" == 'brew' ]; then
+	if [ "$prev" == 'brew' -o "$prev" == 'help' ]; then
 		# Complete common brew commands for `brew`
 		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
 	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
@@ -25,9 +25,12 @@ _brew() {
 	elif [ "$second" == 'cask' -o "$prev" == 'uninstall' ]; then
 		# Complete installed casks for `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
+	elif [ "$second" == 'upgrade' ]; then
+		# Complete options and installed casks for `brew upgrade`
+		COMPREPLY=( $(compgen -W "--all --cleanup $(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
-		COMPREPLY=( $(compgen -W '--include-optional --installed' -- $cur) )
+		COMPREPLY=( $(compgen -W '--include-optional --installed $(ls -1 /usr/local/Cellar)' -- $cur) )
 	fi
 
 }
@@ -39,9 +42,9 @@ _npm() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'npm' -o "$prev" == 'bower' ]; then
+	if [ "$prev" == 'npm' -o "$prev" == 'bower' -o "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
-		COMPREPLY=( $(compgen -W 'cache info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
 	elif [ "$prev" == 'install' -o "$prev" == 'uninstall' ]; then
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- $cur) )
 	elif [ "$prev" == 'cache' ]; then
@@ -72,7 +75,7 @@ _pip() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'pip' ]; then
+	if [ "$prev" == 'pip' -o "$prev" == 'help' ]; then
 		# Complete common pip commands for `pip`
 		COMPREPLY=( $(compgen -W 'freeze help install list search show uninstall' -- $cur) )
 	elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
@@ -81,8 +84,8 @@ _pip() {
 	elif [ "$prev" == 'list'  ]; then
 		# Complete options for `pip list`
 		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
-	else
-		# Complete installed packages in every other case
+	elif [ "$prev" == 'show' -o "$prev" == 'uninstall' ]; then
+		# Complete installed packages for `pip show` and `pip uninstall`
 		local pkg_list="$(cat ./requirements.txt 2> /dev/null | grep -Po '[a-z0-9\-]+(?=\=\=)')"
 		if [ -z "$pkg_list" ]; then
 			local pkg_list="$(pip list 2> /dev/null | grep -Po '[a-z0-9\-]+(?= \()')"
@@ -105,8 +108,8 @@ _apm() {
 	elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
 		# Complete options for `apm update` or `apm upgrade`
 		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
-	else
-		# Complete installed packages in every other case
+	elif [ "$prev" == 'show' -o "$prev" == 'uninstall' ]; then
+		# Complete installed packages for `apm show` and `apm uninstall`
 		local pkg_list="$(ls ~/.atom/packages 2> /dev/null)"
 		COMPREPLY=( $(compgen -W "$pkg_list" -- $cur) )
 	fi
