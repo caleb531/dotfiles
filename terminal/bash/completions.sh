@@ -12,13 +12,13 @@ _brew() {
 
 	if [ "$prev" == 'brew' -o "$prev" == 'help' ]; then
 		# Complete common brew commands for `brew`
-		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove rmtree search tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help install info leaves link linkapps outdated prune pin reinstall rmtree search tap uninstall update upgrade uses untap unpin unlink unlinkapps' -- $cur) )
 	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
 		# Complete common cask commands for `brew cask`
-		COMPREPLY=( $(compgen -W 'cleanup doctor info install list search uninstall update' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cleanup doctor install info list search uninstall update' -- $cur) )
 	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
 		# Complete list options for `brew list` or `brew ls`
-		COMPREPLY=( $(compgen -W '--full-name --pinned --multiple --versions' -- $cur) )
+		COMPREPLY=( $(compgen -W '--pinned --full-name --multiple --versions' -- $cur) )
 	elif [ "$second" == 'cleanup' -o "$second" == 'info' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew cleanup/uninstall/info commands
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
@@ -30,7 +30,7 @@ _brew() {
 		COMPREPLY=( $(compgen -W "--all --cleanup $(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
-		COMPREPLY=( $(compgen -W '--include-optional --installed $(ls -1 /usr/local/Cellar)' -- $cur) )
+		COMPREPLY=( $(compgen -W '--installed --include-optional $(ls -1 /usr/local/Cellar)' -- $cur) )
 	fi
 
 }
@@ -44,7 +44,7 @@ _npm() {
 
 	if [ "$prev" == 'npm' -o "$prev" == 'bower' -o "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
-		COMPREPLY=( $(compgen -W 'cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cache help install info init link list outdated prune publish search start stop show test uninstall update unlink unpublish' -- $cur) )
 	elif [ "$prev" == 'install' -o "$prev" == 'uninstall' ]; then
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- $cur) )
 	elif [ "$prev" == 'cache' ]; then
@@ -83,7 +83,7 @@ _pip() {
 		COMPREPLY=()
 	elif [ "$prev" == 'list'  ]; then
 		# Complete options for `pip list`
-		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
+		COMPREPLY=( $(compgen -W '--outdated --editable --local --uptodate' -- $cur) )
 	elif [ "$prev" == 'show' -o "$prev" == 'uninstall' ]; then
 		# Complete installed packages for `pip show` and `pip uninstall`
 		local pkg_list="$(cat ./requirements.txt 2> /dev/null | grep -Po '[a-z0-9\-]+(?=\=\=)')"
@@ -104,7 +104,7 @@ _apm() {
 
 	if [ "$prev" == 'apm' ]; then
 		# Complete common apm commands for `apm`
-		COMPREPLY=( $(compgen -W 'clean help install list publish search show uninstall update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'clean help install list publish search show uninstall update' -- $cur) )
 	elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
 		# Complete options for `apm update` or `apm upgrade`
 		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
@@ -125,7 +125,7 @@ _bundle() {
 
 	if [ "$prev" == 'bundle' -o "$prev" == 'bundler' ]; then
 		# Complete common bundle commands for `bundle`
-		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
+		COMPREPLY=( $(compgen -W 'check clean exec help install init list lock outdated package show update' -- $cur) )
 	fi
 
 }
@@ -146,7 +146,7 @@ _jekyll() {
 		COMPREPLY=()
 	elif [ "$prev" == 'build' ]; then
 		# Complete options for `jekyll build`
-		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- $cur) )
+		COMPREPLY=( $(compgen -W '--watch --trace --destination --source' -- $cur) )
 	fi
 
 }
