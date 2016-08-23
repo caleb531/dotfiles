@@ -33,6 +33,7 @@ install_brew_pkg gnu-sed --with-default-names
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils
 install_brew_pkg tree
+install_brew_pkg gnu-tar --with-default-names
 
 install_brew_pkg git
 
