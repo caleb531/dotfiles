@@ -22,10 +22,10 @@ _brew() {
 	elif [ "$second" == 'cleanup' -o "$second" == 'info' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew cleanup/uninstall/info commands
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
-	elif [ "$second" == 'cask' -o "$prev" == 'install' ]; then
+	elif [ "$second" == 'cask' -a "$prev" == 'install' ]; then
 		# Complete options and installed casks for `brew cask install`
 		COMPREPLY=( $(compgen -W "--force $(ls -1 /usr/local/Caskroom)" -- $cur) )
-	elif [ "$second" == 'cask' -o "$prev" == 'uninstall' ]; then
+	elif [ "$second" == 'cask' -a "$prev" == 'uninstall' ]; then
 		# Complete installed casks for `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
 	elif [ "$second" == 'upgrade' ]; then
