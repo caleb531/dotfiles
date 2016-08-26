@@ -210,3 +210,19 @@ _pypi() {
 
 }
 complete -o default -F _pypi pypi
+
+
+# Completion function for mkvirtualenv, a function for creating new Python
+# virtualenvs
+_mkvirtualenv() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'mkvirtualenv' ]; then
+		# Complete shortcuts to common mkvirtualenv operations for `mkvirtualenv`
+		COMPREPLY=( $(compgen -W 'python python3' -- $cur) )
+	fi
+
+}
+complete -o default -F _mkvirtualenv mkvirtualenv
