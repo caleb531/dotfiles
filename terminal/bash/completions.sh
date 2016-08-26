@@ -118,7 +118,7 @@ _apm() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'apm' ]; then
+	if [ "$prev" == 'apm' -o "$prev" == 'help' ]; then
 		# Complete common apm commands for `apm`
 		COMPREPLY=( $(compgen -W 'clean develop help install list link login publish pull push search show star stars uninstall unstar update upgrade' -- $cur) )
 	elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
