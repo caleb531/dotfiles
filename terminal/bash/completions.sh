@@ -195,3 +195,18 @@ _apachectl() {
 
 }
 complete -o default -F _apachectl apachectl
+
+
+# Completion function for pypi, a custom function for interacting with PyPI
+_pypi() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'pypi' ]; then
+		# Complete shortcuts to common pypi operations for `pypi`
+		COMPREPLY=( $(compgen -W 'register test upload' -- $cur) )
+	fi
+
+}
+complete -o default -F _pypi pypi
