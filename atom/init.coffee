@@ -13,7 +13,7 @@ APM_PATH = atom.packages.getApmPath()
 # Path to the directory where Atom stores user-installed packages
 LOCAL_PKG_DIR_PATH = atom.packages.getPackageDirPaths()[0]
 # Path to the remote package list used for comparison when syncing
-REMOTE_PKG_LIST_PATH = fs.readlinkSync(
+REMOTE_PKG_LIST_PATH = fs.realpathSync(
   path.join(atom.getConfigDirPath(), 'packages.txt'))
 # Limit the rate of sync pushes to one second
 PKG_SYNC_DELAY = 1000
