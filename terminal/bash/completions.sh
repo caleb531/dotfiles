@@ -2,6 +2,17 @@
 # completions.sh
 # Caleb Evans
 
+# Retrieve list of brew taps added on this system (much faster than `brew tap`)
+__get_brew_taps() {
+	for parent_dir in /usr/local/Library/Taps/*; do
+		local parent_dir_name="$(basename "$parent_dir")"
+		for child_dir in "$parent_dir"/*; do
+			local child_dir_name="$(basename "$child_dir")"
+			echo "$parent_dir_name"/"${child_dir_name/#homebrew-/}"
+		done
+	done
+}
+
 # Completion function for brew, the OS X package manager
 _brew() {
 
@@ -22,6 +33,8 @@ _brew() {
 	elif [ "$second" == 'cleanup' -o "$second" == 'info' -o "$second" == 'reinstall' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew cleanup/uninstall/info commands
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
+	elif [ "$second" == 'untap' ]; then
+		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- $cur) )
 	elif [ "$second" == 'cask' -a "$prev" == 'install' ]; then
 		# Complete options and installed casks for `brew cask install`
 		COMPREPLY=( $(compgen -W "--force $(ls -1 /usr/local/Caskroom)" -- $cur) )
