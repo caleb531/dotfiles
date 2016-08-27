@@ -92,6 +92,10 @@
     'prefix': 'printf'
     'body': 'printf($1);'
 
+  'for':
+    'prefix': 'for'
+    'body': 'for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i}${4:++}) {\n\t$5\n}'
+
 # C++
 
 '.source.cpp':
