@@ -35,18 +35,18 @@ _brew() {
 		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'untap' ]; then
 		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- $cur) )
-	elif [ "$second" == 'cask' -a "$prev" == 'install' ]; then
-		# Complete options and installed casks for `brew cask install`
-		COMPREPLY=( $(compgen -W "--force $(ls -1 /usr/local/Caskroom)" -- $cur) )
-	elif [ "$second" == 'cask' -a "$prev" == 'uninstall' ]; then
-		# Complete installed casks for `brew cask uninstall`
-		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
 	elif [ "$second" == 'upgrade' ]; then
 		# Complete options and installed casks for `brew upgrade`
 		COMPREPLY=( $(compgen -W "--all --cleanup $(ls -1 /usr/local/Cellar)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
 		COMPREPLY=( $(compgen -W '--include-optional --installed $(ls -1 /usr/local/Cellar)' -- $cur) )
+	elif [ "$second" == 'cask' -a "$prev" == 'install' ]; then
+		# Complete options and installed casks for `brew cask install`
+		COMPREPLY=( $(compgen -W "--force $(ls -1 /usr/local/Caskroom)" -- $cur) )
+	elif [ "$second" == 'cask' -a "$prev" == 'uninstall' ]; then
+		# Complete installed casks for `brew cask uninstall`
+		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
 	fi
 
 }
