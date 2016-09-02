@@ -13,6 +13,9 @@ __get_brew_taps() {
 	done
 }
 
+# The pattern used for matching Homebrew package/cask names
+BREW_NAME_PATT='^[a-z0-9\-]'
+
 # Retrieve list of installed Homebrew packages
 __get_installed_brew_packages() {
 	ls -1 /usr/local/Cellar
@@ -21,6 +24,16 @@ __get_installed_brew_packages() {
 # Retrieve list of installed Homebrew casks
 __get_installed_brew_casks() {
 	ls -1 /usr/local/Caskroom
+}
+
+# Retrieve list of all Homebrew package names matching the given query
+__search_brew_packages() {
+	brew search "$1" | grep -P "$BREW_NAME_PATT"
+}
+
+# Retrieve list of all Homebrew cask names matching the given query
+__search_brew_casks() {
+	brew cask search "$1" | grep -P "$BREW_NAME_PATT"
 }
 
 # Completion function for brew, the OS X package manager
@@ -48,12 +61,15 @@ _brew() {
 	elif [ "$second" == 'upgrade' ]; then
 		# Complete options and installed packages for `brew upgrade`
 		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- $cur) )
+	elif [ "$second" == 'install' ]; then
+		# Complete matching packages for `brew install`
+		COMPREPLY=( $(compgen -W "$(__search_brew_packages "$cur")" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
 		COMPREPLY=( $(compgen -W '--include-optional --installed $(__get_installed_brew_packages)' -- $cur) )
 	elif [ "$second" == 'cask' -a "$prev" == 'install' ]; then
 		# Complete options and installed casks for `brew cask install`
-		COMPREPLY=( $(compgen -W "--force $(__get_installed_brew_casks)" -- $cur) )
+		COMPREPLY=( $(compgen -W "--force $(__get_installed_brew_casks) $(__search_brew_casks "$cur")" -- $cur) )
 	elif [ "$second" == 'cask' -a "$prev" == 'uninstall' ]; then
 		# Complete installed casks for `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
