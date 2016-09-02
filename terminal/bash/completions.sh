@@ -13,6 +13,16 @@ __get_brew_taps() {
 	done
 }
 
+# Retrieve list of installed Homebrew packages
+__get_installed_brew_packages() {
+	ls -1 /usr/local/Cellar
+}
+
+# Retrieve list of installed Homebrew casks
+__get_installed_brew_casks() {
+	ls -1 /usr/local/Caskroom
+}
+
 # Completion function for brew, the OS X package manager
 _brew() {
 
@@ -32,21 +42,21 @@ _brew() {
 		COMPREPLY=( $(compgen -W '--full-name --pinned --multiple --versions' -- $cur) )
 	elif [ "$second" == 'cleanup' -o "$second" == 'info' -o "$second" == 'reinstall' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew cleanup/uninstall/info commands
-		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Cellar)" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'untap' ]; then
 		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- $cur) )
 	elif [ "$second" == 'upgrade' ]; then
 		# Complete options and installed casks for `brew upgrade`
-		COMPREPLY=( $(compgen -W "--all --cleanup $(ls -1 /usr/local/Cellar)" -- $cur) )
+		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
-		COMPREPLY=( $(compgen -W '--include-optional --installed $(ls -1 /usr/local/Cellar)' -- $cur) )
+		COMPREPLY=( $(compgen -W '--include-optional --installed $(__get_installed_brew_packages)' -- $cur) )
 	elif [ "$second" == 'cask' -a "$prev" == 'install' ]; then
 		# Complete options and installed casks for `brew cask install`
-		COMPREPLY=( $(compgen -W "--force $(ls -1 /usr/local/Caskroom)" -- $cur) )
+		COMPREPLY=( $(compgen -W "--force $(__get_installed_brew_casks)" -- $cur) )
 	elif [ "$second" == 'cask' -a "$prev" == 'uninstall' ]; then
 		# Complete installed casks for `brew cask uninstall`
-		COMPREPLY=( $(compgen -W "$(ls -1 /usr/local/Caskroom)" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
 	fi
 
 }
