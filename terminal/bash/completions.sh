@@ -46,7 +46,7 @@ _brew() {
 	elif [ "$second" == 'untap' ]; then
 		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- $cur) )
 	elif [ "$second" == 'upgrade' ]; then
-		# Complete options and installed casks for `brew upgrade`
+		# Complete options and installed packages for `brew upgrade`
 		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
