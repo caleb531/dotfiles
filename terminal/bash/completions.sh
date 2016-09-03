@@ -168,14 +168,13 @@ _bundle() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'bundle' -o "$prev" == 'bundler' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'bundle' -o "$prev" == 'help' ]; then
 		# Complete common bundle commands for `bundle`
 		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
 	fi
 
 }
 complete -o default -F _bundle bundle
-complete -o default -F _bundle bundler
 
 # Completion function for jekyll, the static site generator
 _jekyll() {
