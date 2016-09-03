@@ -17,14 +17,12 @@ REMOTE_PKG_LIST_PATH = fs.realpathSync(
   path.join(atom.getConfigDirPath(), 'packages.txt'))
 # Limit the rate of sync pushes to one second
 PKG_SYNC_DELAY = 1000
-# The name used for Python virtualenv directories
-VIRTUAL_ENV_NAME = '.virtualenv'
 
 # Activates Python virtualenv for this project directory if it exists
 activateVirtualenv = ->
   project = atom.project.getPaths()[0]
   if project
-    virtualenv = path.join(project, VIRTUAL_ENV_NAME)
+    virtualenv = path.join(project, process.env.VIRTUAL_ENV_NAME)
     fs.lstat(virtualenv, (err, stats) ->
       if not err and stats.isDirectory()
         virtualenv_bin = path.join(virtualenv, 'bin')
@@ -156,7 +154,8 @@ initializePackageSync = ->
 
 # Explicitly define PATH and detect project virtualenvs
 process.env.PATH = '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-activateVirtualenv()
+if process.env.VIRTUAL_ENV_NAME
+  activateVirtualenv()
 # Ensure that Python correctly outputs Unicode characters
 process.env.PYTHONIOENCODING = 'utf_8'
 # Prevent Python from generating bytecode (.pyc, .pyo) files
