@@ -10,8 +10,6 @@ shopt -s histappend
 # Navigate command history matching typed input using up/down arrow keys
 bind '"\e[A": history-search-backward' 2> /dev/null
 bind '"\e[B": history-search-forward' 2> /dev/null
-# Enable the tab key to cycle through completions for ambiguous matches
-bind 'TAB:menu-complete' 2> /dev/null
 
 # If shell is Bash 4 or newer
 if [ $BASH_VERSINFO -ge 4 ]; then
