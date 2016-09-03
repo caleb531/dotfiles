@@ -10,7 +10,9 @@ __get_local_pwd() {
 	if [ -f ./_config.yml ]; then
 		# If local PWD is a Jekyll project, use site built by Jekyll
 		local local_pwd="$temp_dir"/_site
-		JEKYLL_ENV=production jekyll build --destination "$local_pwd" --quiet
+		JEKYLL_ENV=production \
+			bundle exec \
+			jekyll build --destination "$local_pwd" --quiet
 		echo "$local_pwd"
 	elif git rev-parse --git-dir &> /dev/null; then
 		# If local PWD is a Git directory, use archive created by Git
