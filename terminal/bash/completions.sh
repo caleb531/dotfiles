@@ -43,6 +43,7 @@ _brew() {
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 	first=${COMP_WORDS[0]}
 	second=${COMP_WORDS[1]}
+	third=${COMP_WORDS[2]}
 
 	if [ "$prev" == 'brew' -o "$prev" == 'help' ]; then
 		# Complete common brew commands for `brew`
@@ -67,10 +68,10 @@ _brew() {
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
 		COMPREPLY=( $(compgen -W '--include-optional --installed $(__get_installed_brew_packages)' -- $cur) )
-	elif [ "$second" == 'cask' -a "$prev" == 'install' ]; then
+	elif [ "$second" == 'cask' -a "$third" == 'install' ]; then
 		# Complete options and installed casks for `brew cask install`
 		COMPREPLY=( $(compgen -W "--force $(__get_installed_brew_casks) $(__search_brew_casks "$cur")" -- $cur) )
-	elif [ "$second" == 'cask' -a "$prev" == 'uninstall' ]; then
+	elif [ "$second" == 'cask' -a "$third" == 'uninstall' ]; then
 		# Complete installed casks for `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
 	fi
