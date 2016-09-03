@@ -165,7 +165,7 @@ _bundle() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'bundle' -o "$prev" == 'bundler' ]; then
+	if [ "$prev" == 'bundle' -o "$prev" == 'bundler' -o "$prev" == 'help' ]; then
 		# Complete common bundle commands for `bundle`
 		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
 	fi
