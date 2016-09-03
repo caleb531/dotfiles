@@ -183,7 +183,7 @@ _jekyll() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'jekyll' ]; then
+	if [ "$prev" == 'jekyll' -o "$prev" == 'help' ]; then
 		# Complete common jekyll commands for `jekyll`
 		COMPREPLY=( $(compgen -W 'build clean doctor help new serve' -- $cur) )
 	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
