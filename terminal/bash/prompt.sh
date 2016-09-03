@@ -41,7 +41,7 @@ __output_ps1() {
 	fi
 
 	# If working directory is (or resides in) a git repository
-	if [ -n "$IS_GIT_REPO" ]; then
+	if git rev-parse --git-dir &> /dev/null; then
 
 		# Output name of current branch
 		__set_color $MAGENTA_BOLD
@@ -77,37 +77,9 @@ __detect_python_virtualenv() {
 
 }
 
-# Check if the given directory or one of its parents is a Git repository
-__check_if_git_repo() {
-	if git rev-parse --git-dir &> /dev/null; then
-		IS_GIT_REPO=1
-	else
-		unset IS_GIT_REPO
-	fi
-}
-
-# Display reminder to pull if current directory resides in a git repository
-# outside of Dropbox
-__output_git_pull_reminder() {
-	if [ -n "$IS_GIT_REPO" ]; then
-		if [ -z "$GIT_PULL_REMINDED" ]; then
-			export GIT_PULL_REMINDED="0"
-		fi
-		# Calculate the time since the last pull reminder was shown
-		local time_diff="$(expr "$(date +%s)" - $GIT_PULL_REMINDED)"
-		# Display reminder if 10+ minutes have elapsed since last reminder
-		if [ "$time_diff" -ge "600" ]; then
-			echo "Remember to pull!"
-			export GIT_PULL_REMINDED="$(date +%s)"
-		fi
-	fi
-}
-
 # Run the following before each new command
 __update_prompt_command() {
 
-	__check_if_git_repo
-	__output_git_pull_reminder
 	__detect_python_virtualenv
 	PS1="$(__output_ps1)"
 	# Write in-memory command history to file
