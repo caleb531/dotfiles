@@ -28,12 +28,12 @@ __get_installed_brew_casks() {
 	ls -1 /usr/local/Caskroom
 }
 
-# Retrieve list of all Homebrew package names matching the given query
+# Retrieve list of all available Homebrew packages
 __get_all_brew_packages() {
 	find "$BREW_TAPS_DIR"/homebrew/ -type f -name '*.rb' | grep -oP "$BREW_NAME_PATT"
 }
 
-# Retrieve list of all Homebrew cask names matching the given query
+# Retrieve list of all available Homebrew casks
 __get_all_brew_casks() {
 	find "$BREW_TAPS_DIR"/caskroom/ -type f -name '*.rb' | grep -oP "$BREW_NAME_PATT"
 }
