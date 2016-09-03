@@ -217,7 +217,7 @@ _apachectl() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'apachectl' ]; then
+	if [ "$prev" == 'apachectl' -o "$prev" == 'help' ]; then
 		# Complete common apachectl commands for `apachectl`
 		COMPREPLY=( $(compgen -W 'configtest restart start stop' -- $cur) )
 	fi
