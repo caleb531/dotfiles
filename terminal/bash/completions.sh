@@ -56,15 +56,15 @@ _brew() {
 	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
 		# Complete list options for `brew list` or `brew ls`
 		COMPREPLY=( $(compgen -W '--full-name --pinned --multiple --versions' -- $cur) )
-	elif [ "$second" == 'cleanup' -o "$second" == 'info' -o "$second" == 'reinstall' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
-		# Complete installed packages for brew cleanup/uninstall/info commands
+	elif [ "$second" == 'cleanup' -o "$second" == 'reinstall' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
+		# Complete installed packages for brew package removal commands
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'untap' ]; then
 		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- $cur) )
 	elif [ "$second" == 'upgrade' ]; then
 		# Complete options and installed packages for `brew upgrade`
 		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- $cur) )
-	elif [ "$second" == 'install' ]; then
+	elif [ "$second" == 'install' -o "$second" == 'info' ]; then
 		# Complete matching packages for `brew install`
 		COMPREPLY=( $(compgen -W "$(__get_all_brew_packages)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
