@@ -54,21 +54,22 @@ _brew() {
 		# Complete common cask commands for `brew cask`
 		COMPREPLY=( $(compgen -W 'cleanup doctor help info install list search uninstall update' -- $cur) )
 	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
-		# Complete list options for `brew list` or `brew ls`
+		# Complete list options for `brew list` and `brew ls`
 		COMPREPLY=( $(compgen -W '--full-name --pinned --multiple --versions' -- $cur) )
 	elif [ "$second" == 'cleanup' -o "$second" == 'reinstall' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew package removal commands
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'untap' ]; then
+		# Complete all installed taps for `brew tap`
 		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- $cur) )
 	elif [ "$second" == 'upgrade' ]; then
 		# Complete options and installed packages for `brew upgrade`
 		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'install' -o "$second" == 'info' ]; then
-		# Complete matching packages for `brew install`
+		# Complete all available packages for `brew install`
 		COMPREPLY=( $(compgen -W "$(__get_all_brew_packages)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
-		# Complete installed packages for `brew deps` or `brew uses`
+		# Complete options and all available packages for `brew deps` and `brew uses`
 		COMPREPLY=( $(compgen -W "--include-optional --installed $(__get_all_brew_packages)" -- $cur) )
 	elif [ "$second" == 'cask' -a "$third" == 'info' ]; then
 		# Complete all available casks for `brew cask info`
@@ -94,8 +95,10 @@ _npm() {
 		# Complete common npm commands for `npm`
 		COMPREPLY=( $(compgen -W 'cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
 	elif [ "$prev" == 'install' -o "$prev" == 'uninstall' ]; then
+		# Complete common options for `npm install` and `npm uninstall`
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- $cur) )
 	elif [ "$prev" == 'cache' ]; then
+		# Complete subcommands for `npm cache`
 		COMPREPLY=( $(compgen -W 'clean' -- $cur) )
 	fi
 
@@ -154,7 +157,7 @@ _apm() {
 		# Complete common apm commands for `apm`
 		COMPREPLY=( $(compgen -W 'clean develop help install list link login publish pull push search show star stars uninstall unstar update upgrade' -- $cur) )
 	elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
-		# Complete options for `apm update` or `apm upgrade`
+		# Complete options for `apm update` and `apm upgrade`
 		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
 	elif [ "$prev" == 'show' -o "$prev" == 'uninstall' ]; then
 		# Complete installed packages for `apm show` and `apm uninstall`
@@ -189,7 +192,7 @@ _jekyll() {
 		# Complete common jekyll commands for `jekyll`
 		COMPREPLY=( $(compgen -W 'build clean doctor help new serve' -- $cur) )
 	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
-		# Complete filenames for `--source` or `--destination`
+		# Complete filenames for `--source` and `--destination`
 		COMPREPLY=()
 	elif [ "$prev" == 'build' ]; then
 		# Complete options for `jekyll build`
