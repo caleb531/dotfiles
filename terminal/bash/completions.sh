@@ -70,6 +70,9 @@ _brew() {
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete installed packages for `brew deps` or `brew uses`
 		COMPREPLY=( $(compgen -W "--include-optional --installed $(__get_all_brew_packages)" -- $cur) )
+	elif [ "$second" == 'cask' -a "$third" == 'info' ]; then
+		# Complete all available casks for `brew cask info`
+		COMPREPLY=( $(compgen -W "$(__get_all_brew_casks)" -- $cur) )
 	elif [ "$second" == 'cask' -a "$third" == 'install' ]; then
 		# Complete options and installed casks for `brew cask install`
 		COMPREPLY=( $(compgen -W "--force $(__get_all_brew_casks)" -- $cur) )
