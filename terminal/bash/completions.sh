@@ -173,10 +173,16 @@ _bundle() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
+	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'bundle' -o "$prev" == 'help' ]; then
 		# Complete common bundle commands for `bundle`
 		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
+	elif [ "$second" == 'exec' ]; then
+		# Complete any shell command for `bundle exec`
+		# This makes `bundle exec` behave like `command` and `exec` completion
+		_command
 	fi
 
 }
