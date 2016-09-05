@@ -22,9 +22,9 @@ if [ $BASH_VERSINFO -ge 4 ]; then
 
 fi
 
-# Set limitations on system resources
+# Set limitations on system resources (uncomment if you experience issues)
 
 # Increase open files limit
-ulimit -n 1024 2> /dev/null
+# ulimit -n 1024 2> /dev/null
 # Increase available processes limit
-ulimit -u 1024 2> /dev/null
+# ulimit -u 1024 2> /dev/null
