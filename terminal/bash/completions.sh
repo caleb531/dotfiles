@@ -193,6 +193,8 @@ _jekyll() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
+	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'jekyll' -o "$prev" == 'help' ]; then
 		# Complete common jekyll commands for `jekyll`
@@ -200,7 +202,7 @@ _jekyll() {
 	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
 		# Complete filenames for `--source` and `--destination`
 		COMPREPLY=()
-	elif [ "$prev" == 'build' ]; then
+	elif [ "$second" == 'build' ]; then
 		# Complete options for `jekyll build`
 		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- $cur) )
 	fi
