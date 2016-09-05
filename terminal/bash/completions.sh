@@ -199,12 +199,12 @@ _jekyll() {
 	if [ "$prev" == 'jekyll' -o "$prev" == 'help' ]; then
 		# Complete common jekyll commands for `jekyll`
 		COMPREPLY=( $(compgen -W 'build clean doctor help new serve' -- $cur) )
-	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
-		# Complete filenames for `--source` and `--destination`
-		COMPREPLY=()
 	elif [ "$second" == 'build' ]; then
 		# Complete options for `jekyll build`
 		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- $cur) )
+	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
+		# Complete filenames for `--source` and `--destination`
+		COMPREPLY=()
 	fi
 
 }
