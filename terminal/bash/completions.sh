@@ -103,8 +103,7 @@ _npm() {
 	fi
 
 }
-complete -o default -F _npm npm
-complete -o default -F _npm bower
+complete -o default -F _npm npm bower
 
 # Completion function for Grunt, the JavaScript task runner
 _grunt() {
