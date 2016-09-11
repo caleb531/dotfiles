@@ -79,17 +79,6 @@ mamp() {
 	fi
 }
 
-# Control MAMP's Apache server
-apachectl() {
-	if [ -z "$@" ]; then
-		# Run Apache as foreground process if no arguments are given
-		/Applications/MAMP/Library/bin/apachectl -DFOREGROUND
-	else
-		# Otherwise, run apachectl normally via given arguments
-		/Applications/MAMP/Library/bin/apachectl "$@"
-	fi
-}
-
 # List all local Atom packages on this system (much faster than `apm ls`)
 __apm_ls() {
 	ls --color=never -1 ~/.atom/packages

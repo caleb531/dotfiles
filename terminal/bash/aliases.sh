@@ -27,3 +27,6 @@ fi
 if type tree &> /dev/null; then
 	alias tree='tree -C'
 fi
+
+# Provide quick access to MAMP's Apache server
+alias apachectl='/Applications/MAMP/Library/bin/apachectl'
