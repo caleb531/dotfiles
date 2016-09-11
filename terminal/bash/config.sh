@@ -28,3 +28,13 @@ fi
 # ulimit -n 1024 2> /dev/null
 # Increase available processes limit
 # ulimit -u 1024 2> /dev/null
+
+# Remember GPG key passphrase if GPG directory exists
+if [ -d ~/.gnupg ]; then
+	if [ -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)" ]; then
+		source ~/.gnupg/.gpg-agent-info
+		export GPG_AGENT_INFO
+	else
+		eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+	fi
+fi
