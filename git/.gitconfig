@@ -14,7 +14,7 @@
 # Core configuration
 [core]
 	# Use a global .gitignore for project-independent files
-	excludesfile = ~/.dotfiles/git/gitignore_global
+	excludesfile = ~/dotfiles/git/gitignore_global
 	# Highlight line-specific changes and use diff-so-fancy to format diff
 	pager = diff-so-fancy | less --tabs=1,5 -R
 

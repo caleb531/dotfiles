@@ -96,10 +96,10 @@ invaluable package which enables quick HTML expansion within Atom. This
 configuration is located under the `emmet/` directory, and consists of both
 preferences and snippets for HTML expansion.
 
-Please ensure that the `~/.dotfiles/emmet` directory is set as your *Extensions
+Please ensure that the `~/dotfiles/emmet` directory is set as your *Extensions
 Path* within the Emmet package preferences, because this directory is where my
 Atom configuration expects to find user configuration for Emmet. Executing the
-`config/create_symlinks.sh` script will create the `~/.dotfiles` directory.
+`config/create_symlinks.sh` script will create the `~/dotfiles` directory.
 
 ### Python virtualenv activation
 
