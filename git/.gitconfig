@@ -5,6 +5,7 @@
 [user]
 	name = Caleb Evans
 	email = caleb@calebevans.me
+	signingkey = 38AFD374
 
 # Store user credentials in OS X Keychain
 [credential]
@@ -22,6 +23,9 @@
 	# Use same diff highlighting for interactive staging
 	diffFilter = diff-so-fancy
 
+# Always sign commits using GPG
+[commit]
+	gpgsign = true
 
 # Push/pull current branch by default (when no arguments are given)
 [push]
