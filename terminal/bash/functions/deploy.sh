@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-EXCLUSION_LIST=~/.dotfiles/terminal/bash/functions/deploy-exclusions.txt
+EXCLUSION_LIST=~/dotfiles/terminal/bash/functions/deploy-exclusions.txt
 
-source ~/.dotfiles/terminal/bash/functions/helper_functions.sh
+source ~/dotfiles/terminal/bash/functions/helper_functions.sh
 
 # Retrieve the local PWD, building it if necessary
 __get_local_pwd() {

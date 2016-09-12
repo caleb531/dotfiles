@@ -57,14 +57,14 @@ flushdns() {
 # Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
 # Usage: deploy
 deploy() {
-	~/.dotfiles/terminal/bash/functions/deploy.sh
+	~/dotfiles/terminal/bash/functions/deploy.sh
 }
 
 # SSH into the remote directory corresponding to the PWD; also requires an .env
 # file to function
 # Usage: sshcd
 sshcd() {
-	~/.dotfiles/terminal/bash/functions/sshcd.sh
+	~/dotfiles/terminal/bash/functions/sshcd.sh
 }
 
 # Control MAMP (mainly Apache and MySQL servers)

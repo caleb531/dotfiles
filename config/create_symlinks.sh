@@ -9,7 +9,6 @@ mkdir -p ~/.atom
 ln -sf "$PWD"/atom/* ~/.atom
 
 # Symlink Bash configuration
-ln -snf "$PWD" ~/.dotfiles
 ln -snf "$PWD"/terminal/.bashrc ~/.bashrc
 ln -snf "$PWD"/terminal/.bashrc ~/.bash_profile
 

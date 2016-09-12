@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.dotfiles/terminal/bash/functions/helper_functions.sh
+source ~/dotfiles/terminal/bash/functions/helper_functions.sh
 
 sshcd() {
 	__source_env
