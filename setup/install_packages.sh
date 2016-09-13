@@ -98,9 +98,9 @@ ln -sf /usr/local/bin/gcc-6 /usr/local/bin/gcc
 ln -sf /usr/local/bin/g++-6 /usr/local/bin/g++
 
 # Install identity-related packages
-brew install gpg
-brew install pinentry-mac
-brew install keybase
+install_brew_pkg gpg
+install_brew_pkg pinentry-mac
+install_brew_pkg keybase
 
 echo "Installing pip packages..."
 preload_pip_pkg_list
