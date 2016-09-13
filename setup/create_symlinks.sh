@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./config/header.sh
+source ./setup/header.sh
 
 echo "Creating symlinks..."
 

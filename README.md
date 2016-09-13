@@ -99,7 +99,7 @@ preferences and snippets for HTML expansion.
 Please ensure that the `~/dotfiles/emmet` directory is set as your *Extensions
 Path* within the Emmet package preferences, because this directory is where my
 Atom configuration expects to find user configuration for Emmet. Executing the
-`config/create_symlinks.sh` script will create the `~/dotfiles` directory.
+`setup/create_symlinks.sh` script will create the `~/dotfiles` directory.
 
 ### Python virtualenv activation
 
@@ -108,12 +108,12 @@ will automatically activate that virtualenv. This ensures that Atom packages
 like [linter-flake8](https://atom.io/packages/linter-flake8) can use any
 available Python packages in your project's virtualenv.
 
-## Configuration scripts
+## Setup scripts
 
 I have also created a series of scripts which automatically configure my shell,
 set my preferred OS X preferences, install packages, and so forth. All of these
-scripts are located under the `config/` directory. You can run these scripts
-altogether via `config_all.sh`, or individually by executing the respective
+scripts are located under the `setup/` directory. You can run these scripts
+altogether via `setup_all.sh`, or individually by executing the respective
 script.
 
 These scripts are generally useful for configuring fresh OS X installs, however

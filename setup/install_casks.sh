@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./config/header.sh --sudo
+source ./setup/header.sh --sudo
 
 echo "Installing Homebrew Casks..."
 preload_cask_list
