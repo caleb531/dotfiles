@@ -31,4 +31,4 @@ fi
 # Provide quick access to MAMP's Apache server
 alias apachectl='/Applications/MAMP/Library/bin/apachectl'
 # Start Node HTTP server and open web browser
-alias hso='http-server -o'
+alias hso='http-server -c-1 -o'
