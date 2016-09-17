@@ -390,13 +390,29 @@
     'prefix': 'while'
     'body': 'while ( ${1:condition} ) {\n\t$2\n}'
 
-  'wrapped array':
-    'prefix': '(a)'
-    'body': '( array(\n\t$2\n) )$3'
+  'array (one-line; space-padded)':
+    'prefix': 'ar'
+    'body': 'array( $1 )'
 
-  'wrapped array (w/ semicolon)':
-    'prefix': '(a);'
-    'body': '( array(\n\t$2\n)$3 );'
+  'array (one-line; space-padded)':
+    'prefix': 'ars'
+    'body': ' array( $1 ) '
+
+  'array (empty)':
+    'prefix': 'are'
+    'body': 'array()'
+
+  'array (empty; space-padded)':
+    'prefix': 'ares'
+    'body': ' array() '
+
+  'array (multiline)':
+    'prefix': 'arn'
+    'body': 'array(\n\t$1\n)'
+
+  'array (multiline; space-padded)':
+    'prefix': 'arns'
+    'body': ' array(\n\t$1\n) '
 
   'key-value pair':
     'prefix': 'kv'
