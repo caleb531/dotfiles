@@ -803,21 +803,57 @@
 
 '.source.apache-config':
 
-  'IfModule':
-    'prefix': 'ifmodule'
-    'body': '<IfModule ${1:modname.c}>\n\t\n</IfModule>'
+  'Disable Indexes':
+    'prefix': 'noindexes'
+    'body': 'Options -Indexes'
 
   'ErrorDocument':
     'prefix': 'errordocument'
-    'body': 'ErrorDocument ${1:404} ${1:url}'
+    'body': 'ErrorDocument ${1:404} ${2:url}'
+
+  'IfModule':
+    'prefix': 'ifmodule'
+    'body': '<IfModule ${1:modname}.c>\n\t$2\n</IfModule>'
+
+  'FilesMatch':
+    'prefix': 'filesmatch'
+    'body': '<FilesMatch \"${1:pattern}\">\n\t$2\n</FilesMatch>'
+
+  'UTF-8':
+    'prefix': 'utf8'
+    'body': 'AddDefaultCharset utf-8\n<IfModule mod_mime.c>\n\tAddCharset utf-8 ${1:extensions}\n</IfModule>'
+
+  'DEFLATE':
+    'prefix': 'deflate'
+    'body': 'AddOutputFilterByType DEFLATE ${1:mimetypes}'
 
   'Header':
     'prefix': 'header'
-    'body': 'Header ${1:set} ${2:name} ${3:value}$'
+    'body': 'Header ${1:set} ${2:name} ${3:value}'
 
   'Cache-Control':
     'prefix': 'cachecontrol'
-    'body': 'Header set Cache-Control "$2"'
+    'body': 'Header set Cache-Control \"${1:max-age=}\"'
+
+  'Content-Security-Policy':
+    'prefix': 'contentsecuritypolicy'
+    'body': 'Header always set Content-Security-Policy "${1:default-src \'none\'; }"'
+
+  'X-Frame-Options':
+    'prefix': 'frameoptions'
+    'body': 'Header always set X-Frame-Options ${1:DENY}'
+
+  'X-Content-Type-Options':
+    'prefix': 'contenttypeoptions'
+    'body': 'Header always set X-Content-Type-Options ${1:nosniff}'
+
+  'HSTS':
+    'prefix': 'hsts'
+    'body': 'Header always set Strict-Transport-Security "max-age=${1:86400}; includeSubDomains" env=HTTPS'
+
+  'Secure Cookies':
+    'prefix': 'cookiesecure'
+    'body': 'Header always edit Set-Cookie ^(.*)$ "\$1; HTTPOnly; Secure"'
 
   'RewriteEngine':
     'prefix': 'rewriteengine'
@@ -827,10 +863,18 @@
     'prefix': 'rewritebase'
     'body': 'RewriteBase ${1:/}'
 
+  'RewriteCond':
+    'prefix': 'rewritecond'
+    'body': 'RewriteCond ${1:%{HTTP_HOST}} ${2:pattern}'
+
   'RewriteRule':
     'prefix': 'rewriterule'
     'body': 'RewriteRule ${1:pattern} ${2:url}'
 
-  'RewriteCond':
-    'prefix': 'rewritecond'
-    'body': 'RewriteCond ${1:%{HTTP_HOST}} ${2:pattern}'
+  'HTTP to HTTPS':
+    'prefix': 'https'
+    'body': 'RewriteCond %{HTTPS} off\nRewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]'
+
+  'www to HTTPS apex':
+    'prefix': 'apex'
+    'body': 'RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]\nRewriteRule ^ https://%1%{REQUEST_URI} [L,R=301,NE]'
