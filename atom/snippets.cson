@@ -823,8 +823,8 @@
     'prefix': 'utf8'
     'body': 'AddDefaultCharset utf-8\n<IfModule mod_mime.c>\n\tAddCharset utf-8 ${1:extensions}\n</IfModule>'
 
-  'DEFLATE':
-    'prefix': 'deflate'
+  'gzip':
+    'prefix': 'gzip'
     'body': 'AddOutputFilterByType DEFLATE ${1:mimetypes}'
 
   'Header':
