@@ -4,6 +4,9 @@
   "atom-alignment": {}
   "auto-update-packages": {}
   "autocomplete-plus":
+    fileBlacklist: [
+      ".env"
+    ]
     includeCompletionsFromAllBuffers: false
     maxVisibleSuggestions: 5
   core:
