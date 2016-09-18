@@ -18,7 +18,10 @@ __get_local_pwd() {
 		# If local PWD is a Git directory, use archive created by Git
 		local local_pwd="$temp_dir"/"$(basename "$PWD")"
 		local local_pwd_archive="$local_pwd".zip
-		git archive HEAD --output="$local_pwd_archive" -0 .
+		# A commit containing the current state of the repository, including
+		# uncommitted working directory changes
+		local stash_id="$(git stash create)"
+		git archive "${stash_id:-HEAD}" --output="$local_pwd_archive" -0 .
 		mkdir "$local_pwd"
 		unzip -q "$local_pwd_archive" -d "$local_pwd"
 		echo "$local_pwd"
