@@ -873,8 +873,8 @@
 
   'HTTP to HTTPS':
     'prefix': 'https'
-    'body': 'RewriteCond %{HTTPS} off\nRewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]'
+    'body': 'RewriteCond %{HTTPS} off\nRewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]'
 
   'www to apex':
     'prefix': 'apex'
-    'body': 'RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]\nRewriteRule ^ ${1:http}://%1%{REQUEST_URI} [L,R=301]'
+    'body': 'RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]\nRewriteRule ^(.*)$ ${1:http}://%1/$1 [L,R=301]'
