@@ -865,7 +865,7 @@
 
   'RewriteCond':
     'prefix': 'rewritecond'
-    'body': 'RewriteCond ${1:%{HTTP_HOST}} ${2:pattern}'
+    'body': 'RewriteCond %{${1:HTTP_HOST}} ${2:pattern}'
 
   'RewriteRule':
     'prefix': 'rewriterule'
