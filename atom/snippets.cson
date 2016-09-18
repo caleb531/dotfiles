@@ -855,6 +855,10 @@
     'prefix': 'cookiesecure'
     'body': 'Header always edit Set-Cookie ^(.*)$ "\$1; HTTPOnly; Secure"'
 
+  'Vary: Accept-Encoding':
+    'prefix': 'varyae'
+    'body': '<FilesMatch "\\\\.(html|css|js|gz)$">\n\tHeader append Vary: Accept-Encoding\n</FilesMatch>'
+
   'RewriteEngine':
     'prefix': 'rewriteengine'
     'body': 'RewriteEngine ${1:On}'
