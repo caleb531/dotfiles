@@ -881,4 +881,4 @@
 
   'www to apex':
     'prefix': 'apex'
-    'body': 'RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]\nRewriteRule ^(.*)$ ${1:http}://%1/\\$1 [L,R=301]'
+    'body': 'RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]\nRewriteRule ^(.*)$ http$1://%1/\\$1 [L,R=301]'
