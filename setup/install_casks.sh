@@ -23,7 +23,7 @@ install_cask flux
 install_cask appcleaner
 install_cask namechanger
 install_cask codekit
-install_cask forklift
+install_cask cyberduck
 install_cask mamp
 rm -rf '/Applications/MAMP PRO'
 
