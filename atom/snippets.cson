@@ -390,7 +390,7 @@
     'prefix': 'while'
     'body': 'while ( ${1:condition} ) {\n\t$2\n}'
 
-  'array (one-line; space-padded)':
+  'array (one-line)':
     'prefix': 'ar'
     'body': 'array( $1 )'
 
