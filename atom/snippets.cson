@@ -25,6 +25,10 @@
     'prefix': 'while'
     'body': 'while (${1:condition}) {\n\t$2\n}'
 
+  'do..while':
+    'prefix': 'dowhile'
+    'body': 'do {\n\t$1\n} while (${2:condition});'
+
   # Switch constructs
 
   'switch':
@@ -389,6 +393,10 @@
   'while':
     'prefix': 'while'
     'body': 'while ( ${1:condition} ) {\n\t$2\n}'
+
+  'do..while':
+    'prefix': 'dowhile'
+    'body': 'do {\n\t$1\n} while ( ${2:condition} );'
 
   'array (one-line)':
     'prefix': 'ar'
