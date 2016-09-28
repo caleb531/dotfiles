@@ -142,6 +142,10 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+".html.php.text":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-"
+    tabLength: 4
 ".python.regexp.source":
   editor:
     preferredLineLength: 79
