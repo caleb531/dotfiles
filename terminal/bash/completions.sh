@@ -267,3 +267,18 @@ _mkvirtualenv() {
 
 }
 complete -o default -F _mkvirtualenv mkvirtualenv
+
+
+# Completion function for awp, my Alfred Workflow Packager utility
+_awp() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'awp' ]; then
+		# Complete common commands for `awp`
+		COMPREPLY=( $(compgen -W '--export --help --validate --version' -- $cur) )
+	fi
+
+}
+complete -o default -F _awp awp
