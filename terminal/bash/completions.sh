@@ -274,10 +274,14 @@ _awp() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
 
-	if [ "$prev" == 'awp' ]; then
+	if [ "$first" == 'awp' ]; then
 		# Complete common commands for `awp`
 		COMPREPLY=( $(compgen -W '--export --help --validate --version' -- $cur) )
+	elif [ "$prev" == '--export' ]; then
+		# Complete file/directory paths whenever `--export` option is supplied
+		COMPREPLY=()
 	fi
 
 }
