@@ -31,6 +31,15 @@ rmvirtualenv() {
 	rm -r ./"$VIRTUAL_ENV_NAME"
 }
 
+# Watch a Jekyll site, building (and using Bundler) as needed
+jbw() {
+	if [ -f ./Gemfile ]; then
+		bundle exec jekyll build --watch
+	else
+		jekyll build --watch
+	fi
+}
+
 # Provide convenient access to common PyPI commands
 # Usage: pypi [register|test|upload]
 pypi() {

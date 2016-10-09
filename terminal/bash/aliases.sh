@@ -32,5 +32,3 @@ fi
 alias apachectl='/Applications/MAMP/Library/bin/apachectl'
 # Start Node HTTP server and open web browser
 alias hso='http-server -c-1 -o'
-# Watch a Bundler-managed Jekyll site, building when changes are detected
-alias jbw='bundle exec jekyll build --watch'
