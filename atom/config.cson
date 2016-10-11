@@ -67,6 +67,7 @@
       "script"
     ]
     projectHome: "~/Local/Repositories"
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "monokai"
