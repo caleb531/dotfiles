@@ -71,6 +71,7 @@
       "one-dark-ui"
       "monokai"
     ]
+    useCustomTitleBar: true
   docblockr:
     extend_double_slash: false
   editor:
