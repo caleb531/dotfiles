@@ -52,9 +52,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 echo "- Display key press-and-hold in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-echo "- Enable keyboard focus switching between all controls"
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
 echo "- Require password 5 minutes after sleep"
 defaults write com.apple.screensaver askForPassword -bool true
 defaults write com.apple.screensaver askForPasswordDelay -int 300
