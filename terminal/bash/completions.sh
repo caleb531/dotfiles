@@ -4,7 +4,7 @@
 
 # Retrieve list of brew taps added on this system (much faster than `brew tap`)
 __get_brew_taps() {
-	for parent_dir in /usr/local/Library/Taps/*; do
+	for parent_dir in "$BREW_TAPS_DIR"/*; do
 		local parent_dir_name="$(basename "$parent_dir")"
 		for child_dir in "$parent_dir"/*; do
 			local child_dir_name="$(basename "$child_dir")"
@@ -16,7 +16,7 @@ __get_brew_taps() {
 # The pattern used for matching Homebrew package/cask names
 BREW_NAME_PATT='[a-z0-9\-]+(?=\.rb)'
 # The directory containing all Homebrew taps
-BREW_TAPS_DIR=/usr/local/Library/Taps
+BREW_TAPS_DIR=/usr/local/Homebrew/Library/Taps
 
 # Retrieve list of installed Homebrew packages
 __get_installed_brew_packages() {
