@@ -124,6 +124,8 @@ _pip() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
+	second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'pip' -o "$prev" == 'help' ]; then
 		# Complete common pip commands for `pip`
@@ -134,13 +136,14 @@ _pip() {
 	elif [ "$prev" == 'list'  ]; then
 		# Complete options for `pip list`
 		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
-	elif [ "$prev" == 'show' -o "$prev" == 'uninstall' ]; then
+	elif [ "$prev" == 'show' -o "$second" == 'uninstall' ]; then
 		# Complete installed packages for `pip show` and `pip uninstall`
-		local pkg_list="$(cat ./requirements.txt 2> /dev/null | grep -Po '[a-z0-9\-]+(?=\=\=)')"
-		if [ -z "$pkg_list" ]; then
-			local pkg_list="$(pip list 2> /dev/null | grep -Po '[a-z0-9\-]+(?= \()')"
+		if [ -z "$PIP_PKG_LIST" -o "$PWD" != "$PIP_PKG_PWD" ]; then
+			# Cache package list for the current PWD
+			PIP_PKG_LIST="$(pip list '[a-z0-9\-]+(?= )')"
+			PIP_PKG_PWD="$PWD"
 		fi
-		COMPREPLY=( $(compgen -W "$pkg_list" -- $cur) )
+		COMPREPLY=( $(compgen -W "$PIP_PKG_LIST" -- $cur) )
 	fi
 
 }
