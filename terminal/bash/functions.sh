@@ -20,7 +20,13 @@ rmlastcmd() {
 # Usage: mkvirtualenv PYTHON
 # PYTHON is the name of a python executable (typically python2 or python3)
 mkvirtualenv() {
-	virtualenv --python="$1" "$VIRTUAL_ENV_NAME"
+	local python_version="$(cat .python-version 2> /dev/null)"
+	if [ -n "$python_version" ]; then
+		local python_version_major="${python_version%.*}"
+	else
+		local python_version_major="$1"
+	fi
+	virtualenv --python=python"$python_version_major" "$VIRTUAL_ENV_NAME"
 	# Activate virtualenv so packages can be installed
 	source ./"$VIRTUAL_ENV_NAME"/bin/activate
 }
