@@ -31,6 +31,7 @@
       "tree-view"
       "update-package-dependencies"
       "welcome"
+      "whitespace"
     ]
     followSymlinks: false
     ignoredNames: [
