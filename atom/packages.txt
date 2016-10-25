@@ -10,7 +10,7 @@ language-applescript
 language-awk
 language-cpp14
 language-env
-language-generic-config
+language-gitattributes
 language-gitignore
 language-hosts
 language-ini
