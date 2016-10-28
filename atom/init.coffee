@@ -22,9 +22,8 @@ activateVirtualenv = ->
 
 # Sync Atom packages via package-sync package
 syncPackages = ->
-  activeEditor = atom.views.getView(atom.workspace.getActiveTextEditor())
-  if activeEditor
-    atom.commands.dispatch(activeEditor, 'package-sync:sync')
+  workspaceView = atom.views.getView(atom.workspace)
+  atom.commands.dispatch(workspaceView, 'package-sync:sync')
 
 # Explicitly define PATH and detect project virtualenvs
 process.env.PATH = '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
