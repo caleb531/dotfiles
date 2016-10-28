@@ -113,6 +113,9 @@
   "merge-conflicts": {}
   "one-dark-ui":
     tabSizing: "Even"
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   pigments:
     ignoredScopes: [
       "\\.comment"

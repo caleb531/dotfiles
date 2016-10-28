@@ -112,7 +112,10 @@ install_pip_pkg pep8-naming
 echo "Installing Atom packages..."
 preload_apm_pkg_list
 
-# Install Atom packages by reading each line from packages.txt file
-while read -r pkg; do
-	install_apm_pkg "$pkg"
-done < ./atom/packages.txt
+# Install Atom packages by reading each line from packages.cson file
+while read -r pkg_line; do
+	pkg="$(echo "$pkg_line" | grep -Po '(?<=")[a-z0-9\-]+(?=")')"
+	if [ -n "$pkg" ]; then
+		install_apm_pkg "$pkg"
+	fi
+done < ./atom/packages.cson

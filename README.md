@@ -75,20 +75,6 @@ writing code. My Atom configuration, included in this repository, features my
 main configuration, preferred keymaps and snippets, as well as my initialization
 script and custom styles.
 
-### Lightweight package sync
-
-Like most of my files, I sync my Atom configuration via Dropbox, including my
-Atom packages. However, I did not wish to store my entire `packages` directory
-in Dropbox, because the directory would add a great deal of weight to my Dropbox
-(in terms of file size and number of files).
-
-To solve this issue, I crafted a lightweight syncing system which only required
-that I store in Dropbox a list of the packages I use. Whenever I installed or
-uninstalled a package within Atom (or via `apm`), this list would be updated to
-reflect those changes. Then, when I launch Atom (or run `apm pull`) on another
-one of my machines, those recently-added or -removed packages are respectively
-installed or uninstalled, completely automatically.
-
 ### Emmet configuration
 
 I have also included my configuration for [Emmet](http://emmet.io/), an
