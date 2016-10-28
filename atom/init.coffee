@@ -24,7 +24,3 @@ activateVirtualenv = ->
 process.env.PATH = '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 if process.env.VIRTUAL_ENV_NAME
   activateVirtualenv()
-# Ensure that Python correctly outputs Unicode characters
-process.env.PYTHONIOENCODING = 'utf_8'
-# Prevent Python from generating bytecode (.pyc, .pyo) files
-process.env.PYTHONDONTWRITEBYTECODE = '1'
