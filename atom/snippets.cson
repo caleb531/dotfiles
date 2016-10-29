@@ -698,6 +698,10 @@
     'prefix': 'foreignkey'
     'body': 'FOREIGN KEY(${1:column}) REFERENCES ${2:tname}(${3:column})$4'
 
+  'on delete cascade':
+    'prefix': 'ondeletecascade'
+    'body': 'ON DELETE CASCADE'
+
   'not null':
     'prefix': 'notnull'
     'body': 'NOT NULL'
