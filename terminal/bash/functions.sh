@@ -21,10 +21,13 @@ rmlastcmd() {
 # PYTHONVER is a major Python version (i.e. 2 or 3)
 mkvirtualenv() {
 	local python_version="$(cat .python-version 2> /dev/null)"
-	if [ -n "$python_version" ]; then
+	if [ -n "$1" ]; then
+		local python_version_major="$1"
+	elif [ -n "$python_version" ]; then
 		local python_version_major="${python_version%.*}"
 	else
-		local python_version_major="$1"
+		>&2 echo "python version not found"
+		return 1
 	fi
 	virtualenv --python=python"$python_version_major" "$VIRTUAL_ENV_NAME"
 	# Activate virtualenv so packages can be installed
