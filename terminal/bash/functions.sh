@@ -17,8 +17,8 @@ rmlastcmd() {
 }
 
 # Make new Python virtualenv for current directory
-# Usage: mkvirtualenv PYTHON
-# PYTHON is the name of a python executable (typically python2 or python3)
+# Usage: mkvirtualenv PYTHONVER
+# PYTHONVER is a major Python version (i.e. 2 or 3)
 mkvirtualenv() {
 	local python_version="$(cat .python-version 2> /dev/null)"
 	if [ -n "$python_version" ]; then
