@@ -704,7 +704,7 @@
 
   'unique':
     'prefix': 'unique'
-    'body': 'UNIQUE(${1:column})$2'
+    'body': 'UNIQUE'
 
   'check':
     'prefix': 'check'
