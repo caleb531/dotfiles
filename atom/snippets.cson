@@ -700,7 +700,7 @@
 
   'not null':
     'prefix': 'notnull'
-    'body': 'NOT NULL(${1:column})$2'
+    'body': 'NOT NULL'
 
   'unique':
     'prefix': 'unique'
