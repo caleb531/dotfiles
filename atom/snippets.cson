@@ -662,6 +662,10 @@
     'prefix': 'char'
     'body': 'CHAR(${1:maxlen})$2'
 
+  'varchar':
+    'prefix': 'varchar'
+    'body': 'VARCHAR(${1:maxlen})$2'
+
   'varchar2':
     'prefix': 'varchar2'
     'body': 'VARCHAR2(${1:maxlen})$2'
