@@ -660,7 +660,7 @@
 
   'char':
     'prefix': 'char'
-    'body': 'CHAR(${1:maxlen})$2'
+    'body': 'CHAR(${1:len})$2'
 
   'varchar':
     'prefix': 'varchar'
