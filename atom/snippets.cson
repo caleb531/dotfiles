@@ -506,6 +506,14 @@
 
 '.source.shell':
 
+  'echo':
+    'prefix': 'echo'
+    'body': 'echo '
+
+  'echo (stderr)':
+    'prefix': 'echoerr'
+    'body': '>&2 echo '
+
   'local variable':
     'prefix': 'local'
     'body': 'local ${1:vname}=${2:value}'
