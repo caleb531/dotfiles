@@ -26,7 +26,7 @@ mkvirtualenv() {
 	elif [ -n "$python_version" ]; then
 		local python_version_major="${python_version%.*}"
 	else
-		>&2 echo "python version not found"
+		>&2 echo "${FUNCNAME[0]}: python version not found"
 		return 1
 	fi
 	virtualenv --python=python"$python_version_major" "$VIRTUAL_ENV_NAME"

@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Get the name of the nearest non-sourced executing parent script
+__get_script_name() {
+	echo $(basename "${0/%.sh/}")
+}
+
 # Find the nearest .env file and loads it into the current shell;
 # the local root is the nearest directory defining an environment via .env
 __get_env() {
@@ -12,7 +17,7 @@ __get_env() {
 	if [ -f "$local_root"/.env ]; then
 		echo "$local_root"/.env
 	else
-		>&2 echo "directory has no remote environment set"
+		>&2 echo "$(__get_script_name): directory has no remote environment set"
 	fi
 }
 
@@ -33,6 +38,6 @@ __get_remote_pwd() {
 		local remote_pwd="${PWD/#$local_root/$REMOTE_ROOT}"
 		echo "$remote_pwd"
 	else
-		>&2 echo "environment has no remote root directory set"
+		>&2 echo "$(__get_script_name): environment has no remote root directory set"
 	fi
 }

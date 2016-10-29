@@ -35,11 +35,11 @@ __upload() {
 	local local_pwd="$1"
 	local remote_pwd="$2"
 	if [ -z "$SSH_USER" ]; then
-		>&2 echo "environment has no SSH user set"
+		>&2 echo "$(__get_script_name): environment has no SSH user set"
 	elif [ -z "$SSH_HOSTNAME" ]; then
-		>&2 echo "environment has no SSH hostname set"
+		>&2 echo "$(__get_script_name): environment has no SSH hostname set"
 	elif [ -z "$SSH_PORT" ]; then
-		>&2 echo "environment has no SSH port set"
+		>&2 echo "$(__get_script_name): environment has no SSH port set"
 	else
 		pushd "$local_pwd" > /dev/null
 		rsync \
