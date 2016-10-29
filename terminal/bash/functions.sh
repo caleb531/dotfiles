@@ -34,7 +34,7 @@ mkvirtualenv() {
 # Remove existing Python virtualenv
 # Usage: rmvirtualenv
 rmvirtualenv() {
-	rm -r ./"$VIRTUAL_ENV_NAME"
+	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
 
 # Watch a Jekyll site, building (and using Bundler) as needed
