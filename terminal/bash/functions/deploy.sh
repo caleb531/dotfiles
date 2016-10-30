@@ -36,10 +36,13 @@ __upload() {
 	local remote_pwd="$2"
 	if [ -z "$SSH_USER" ]; then
 		>&2 echo "$(__get_script_name): environment has no SSH user set"
+		return 1
 	elif [ -z "$SSH_HOSTNAME" ]; then
 		>&2 echo "$(__get_script_name): environment has no SSH hostname set"
+		return 1
 	elif [ -z "$SSH_PORT" ]; then
 		>&2 echo "$(__get_script_name): environment has no SSH port set"
+		return 1
 	else
 		pushd "$local_pwd" > /dev/null
 		rsync \
@@ -57,8 +60,9 @@ __upload() {
 }
 
 deploy() {
-	__source_env
-	local remote_pwd="$(__get_remote_pwd)"
+	if __source_env; then
+		local remote_pwd="$(__get_remote_pwd)"
+	fi
 	if [ -n "$remote_pwd" ]; then
 		# Create a temporary directory in case it's needed (and create it
 		# here so we can delete it after everything is done)
@@ -66,6 +70,8 @@ deploy() {
 		local local_pwd="$(__get_local_pwd "$temp_dir")"
 		__upload "$local_pwd" "$remote_pwd"
 		rm -rf "$temp_dir"
+	else
+		return 1
 	fi
 }
 

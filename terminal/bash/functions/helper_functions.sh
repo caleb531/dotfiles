@@ -18,6 +18,7 @@ __get_env() {
 		echo "$local_root"/.env
 	else
 		>&2 echo "$(__get_script_name): directory has no remote environment set"
+		return 1
 	fi
 }
 
@@ -27,6 +28,8 @@ __source_env() {
 	if [ -n "$current_env" ]; then
 		source "$current_env"
 		CURRENT_ENV="$current_env"
+	else
+		return 1
 	fi
 }
 
@@ -39,5 +42,6 @@ __get_remote_pwd() {
 		echo "$remote_pwd"
 	else
 		>&2 echo "$(__get_script_name): environment has no remote root directory set"
+		return 1
 	fi
 }
