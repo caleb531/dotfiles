@@ -3,5 +3,6 @@ config.codekit
 .DS_Store
 .env
 .git
+.gitattributes
 .gitignore
 .sass-cache
