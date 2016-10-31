@@ -27,8 +27,7 @@ mkdir -p ~/.ssh/sockets
 ln -snf "$PWD"/ssh/ssh_config ~/.ssh/config
 
 mkdir -p ~/.gnupg
-ln -snf "$PWD"/gpg/gpg.conf ~/.gnupg/gpg.conf
-ln -snf "$PWD"/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -sf "$PWD"/gpg/* ~/.gnupg
 
 # Disable Bash Sessions feature in OS X El Capitan
 touch ~/.bash_sessions_disable
