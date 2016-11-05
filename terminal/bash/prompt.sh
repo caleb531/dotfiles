@@ -46,14 +46,11 @@ __output_ps1() {
 		# Output name of current branch
 		__set_color $MAGENTA_BOLD
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-		__set_color $WHITE_BOLD
-		echo -n "$SEPARATOR"
 
 	fi
 
 	# Output $ for user and # for root
-	__set_color $MAGENTA_BOLD
-	echo -n '\$ '
+	echo -n '\n\$ '
 	__reset_color
 
 }
