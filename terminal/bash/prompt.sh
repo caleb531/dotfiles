@@ -20,7 +20,7 @@ __output_ps1() {
 	local SEPARATOR=' : '
 
 	# Output name of current working directory (with ~ denoting HOME)
-	__set_color $MAGENTA_BOLD
+	__set_color $CYAN_BOLD
 	echo -n '\W'
 	__set_color $WHITE_BOLD
 	echo -n "$SEPARATOR"
@@ -29,7 +29,7 @@ __output_ps1() {
 	if [ -n "$VIRTUAL_ENV" ]; then
 
 		# Output Python version used by virtualenv
-		__set_color $MAGENTA_BOLD
+		__set_color $CYAN_BOLD
 		if [ -f "$VIRTUAL_ENV"/bin/python3 ]; then
 			echo -n "py3"
 		elif [ -f "$VIRTUAL_ENV"/bin/python2 ]; then
@@ -44,7 +44,7 @@ __output_ps1() {
 	if git rev-parse --git-dir &> /dev/null; then
 
 		# Output name of current branch
-		__set_color $MAGENTA_BOLD
+		__set_color $CYAN_BOLD
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 		__set_color $WHITE_BOLD
 		echo -n "$SEPARATOR"
@@ -52,7 +52,7 @@ __output_ps1() {
 	fi
 
 	# Output $ for user and # for root
-	__set_color $MAGENTA_BOLD
+	__set_color $CYAN_BOLD
 	echo -n '\$ '
 	__reset_color
 
