@@ -51,9 +51,6 @@ export HISTIGNORE='clear*:git branch -d *:git branch -D *:git checkout *:git cle
 # Prevent Python from generating bytecode (*.pyc, __pycache__, etc.)
 export PYTHONDONTWRITEBYTECODE=1
 
-# Use /Applications for apps installed with Homebrew Cask
-export HOMEBREW_CASK_OPTS='--appdir=/Applications'
-
 # The name of the virtualenv directory (within the respective project directory)
 export VIRTUAL_ENV_NAME='.virtualenv'
 
