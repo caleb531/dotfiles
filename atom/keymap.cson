@@ -18,7 +18,6 @@
   'shift-cmd-L': 'grammar-selector:show'
 
   # Toggles character encoding selection panel
-  # 'ctrl-shift-U': 'unset!'
   'cmd-shift-U': 'encoding-selector:show'
 
   # Toggles line jump panel
@@ -35,8 +34,6 @@
   'alt-cmd-b': 'bracket-matcher:select-inside-brackets'
 
   # Resizes spaces-per-indent amount for entire document
-  # 'ctrl-{': 'unset!'
-  # 'ctrl-}': 'unset!'
   'ctrl-cmd-[': 'resize-indent:halve'
   'ctrl-cmd-]': 'resize-indent:double'
 
@@ -82,7 +79,6 @@
   'cmd-e': 'emmet:expand-abbreviation'
 
   # Opens inline URL in default web browser if cursor is within URL
-  # 'ctrl-shift-O': 'unset!'
   'alt-cmd-o': 'link:open'
 
   # Create new files using advanced-open-file rather than open existing files
