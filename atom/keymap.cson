@@ -81,5 +81,7 @@
   # Opens inline URL in default web browser if cursor is within URL
   'alt-cmd-o': 'link:open'
 
+'atom-workspace':
+
   # Create new files using advanced-open-file rather than open existing files
   'alt-cmd-n': 'advanced-open-file:toggle'
