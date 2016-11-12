@@ -1,11 +1,17 @@
 # Your keymap
 
-'body':
+'atom-workspace':
+
   # Disable MRU tab switching
   'ctrl-tab ^ctrl': 'unset!'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
+
+'.platform-darwin atom-workspace':
+
+  # Create new files using advanced-open-file
+  'alt-cmd-n': 'advanced-open-file:toggle'
 
 '.platform-darwin atom-text-editor:not([mini])':
 
@@ -80,8 +86,3 @@
 
   # Opens inline URL in default web browser if cursor is within URL
   'alt-cmd-o': 'link:open'
-
-'atom-workspace':
-
-  # Create new files using advanced-open-file rather than open existing files
-  'alt-cmd-n': 'advanced-open-file:toggle'
