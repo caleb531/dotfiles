@@ -37,4 +37,5 @@ packages: [
   "sort-lines"
   "ssh-config"
   "svg-preview"
+  "tabs-to-spaces"
 ]

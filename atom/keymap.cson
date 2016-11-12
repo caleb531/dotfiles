@@ -38,8 +38,8 @@
   'ctrl-cmd-]': 'resize-indent:double'
 
   # Convert between tabs and spaces used for indentation
-  'ctrl-alt-cmd-]': 'whitespace:convert-spaces-to-tabs'
-  'ctrl-alt-cmd-[': 'whitespace:convert-tabs-to-spaces'
+  'ctrl-alt-cmd-]': 'tabs-to-spaces:tabify'
+  'ctrl-alt-cmd-[': 'tabs-to-spaces:untabify'
 
   # Disable all alt-* key bindings
   'alt-b': 'unset!'
