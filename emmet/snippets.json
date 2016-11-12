@@ -1,4 +1,10 @@
 {
+  "html": {
+    "profile": "html",
+    "snippets": {
+      "!": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\" />\n\t<title>${1:Document}</title>\n</head>\n<body>\n$2\n</body>\n</html>"
+    }
+  },
   "php": {
     "extends": "html",
     "profile": "html"
