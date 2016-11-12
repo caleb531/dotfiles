@@ -16,11 +16,9 @@
 '.platform-darwin atom-text-editor:not([mini])':
 
   # Breaks current selection/paragraph into lines no longer than 80 chars
-  'alt-cmd-q': 'unset!'
   'alt-cmd-r': 'autoflow:reflow-selection'
 
   # Toggles grammar (language) selection panel
-  'ctrl-shift-L': 'unset!'
   'shift-cmd-L': 'grammar-selector:show'
 
   # Toggles character encoding selection panel
@@ -79,7 +77,6 @@
 
   # Toggles Markdown Preview (even if editor is unfocused)
   'shift-cmd-M': 'markdown-preview:toggle'
-  'ctrl-w': 'unset!'
 
   # Expands Emmet HTML abbreviations
   'cmd-e': 'emmet:expand-abbreviation'
