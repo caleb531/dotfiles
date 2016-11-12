@@ -398,6 +398,14 @@
     'prefix': 'dowhile'
     'body': 'do {\n\t$1\n} while ( ${2:condition} );'
 
+  'try':
+    'prefix': 'try'
+    'body': 'try {\n\t$1\n} $2'
+
+  'catch':
+    'prefix': 'catch'
+    'body': 'catch ( ${1:Exception} \\$${2:e} ) {\n\t$3\n} $4'
+
   'array (one-line)':
     'prefix': 'ar'
     'body': 'array( $1 )'
