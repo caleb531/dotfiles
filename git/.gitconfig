@@ -73,5 +73,6 @@
 	gcpn = gc --prune=now
 	logg = log --fixed-strings --regexp-ignore-case --grep
 	lol = log --graph --pretty=format:'%C(auto)%h%Creset %s %Cblue(%cd)%Creset' --date=format:%-m/%-d/%y
+	rmc = rm --cached
 	showno = show --name-only
 	showns = show --name-status
