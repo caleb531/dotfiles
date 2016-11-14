@@ -30,7 +30,7 @@ The `PS1` interactive prompt which I have set for my shell is intended to be
 concise, readable, and useful. The prompt displays the name of the current
 working directory, followed by the name of the current branch if the directory
 is a git repository. If the directory contains a `.virtualenv` directory, the
-prompt also displays `python2` or `python3` depending on the virtualenv's Python
+prompt also displays `py2` or `py3` depending on the virtualenv's Python
 version. The prompt uses colons as separators, and spacing is utilized to
 improve readability.
 
@@ -39,7 +39,7 @@ improve readability.
 * `~ : $`
 * `my-dir : $`
 * `my-repo : master : $`
-* `my-python-proj : python3 : master : $`
+* `my-python-proj : py3 : master : $`
 
 ### Completion
 
