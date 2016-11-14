@@ -32,5 +32,3 @@ fi
 alias apachectl='/Applications/MAMP/Library/bin/apachectl'
 # Start Node HTTP server and open web browser
 alias hso='http-server -c-1 -o'
-# Open HTML coverage report for Python project
-alias och='open -a "Google Chrome" ./htmlcov/index.html'

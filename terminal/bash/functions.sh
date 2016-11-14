@@ -96,3 +96,20 @@ mamp() {
 		/Applications/MAMP/bin/start.sh > /dev/null
 	fi
 }
+
+# Run Python tests with Nose test runner
+rt() {
+	nosetests --rednose "$@"
+}
+
+# Run Python tests with coverage report
+cov() {
+	coverage run -m nose --rednose "$@"
+	coverage report
+}
+
+# Open HTML coverage report for Python tests
+covo() {
+	coverage html
+	open -a 'Google Chrome' ./htmlcov/index.html
+}
