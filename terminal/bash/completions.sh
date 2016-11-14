@@ -126,6 +126,7 @@ _pip() {
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 	first=${COMP_WORDS[0]}
 	second=${COMP_WORDS[1]}
+	third=${COMP_WORDS[2]}
 
 	if [ "$prev" == 'pip' -o "$prev" == 'help' ]; then
 		# Complete common pip commands for `pip`
@@ -136,7 +137,7 @@ _pip() {
 	elif [ "$prev" == 'list'  ]; then
 		# Complete options for `pip list`
 		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
-	elif [ "$prev" == 'show' -o "$second" == 'uninstall' ]; then
+	elif [ "$prev" == 'show' -o "$second" == 'uninstall' -o "$third" == '-U' ]; then
 		# Complete installed packages for `pip show` and `pip uninstall`
 		if [ -z "$PIP_PKG_LIST" -o "$PWD" != "$PIP_PKG_PWD" ]; then
 			# Cache package list for the current PWD
