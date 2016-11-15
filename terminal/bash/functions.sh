@@ -104,8 +104,9 @@ rt() {
 
 # Run Python tests with coverage report
 cov() {
-	coverage run -m nose --rednose "$@"
-	coverage report
+	if coverage run -m nose --rednose "$@"; then
+		coverage report
+	fi
 }
 
 # Open HTML coverage report for Python tests
