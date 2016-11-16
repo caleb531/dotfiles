@@ -734,6 +734,10 @@
     'prefix': 'unique'
     'body': 'UNIQUE'
 
+  'auto increment':
+    'prefix': 'autoincrement'
+    'body': 'AUTO_INCREMENT'
+
   'check':
     'prefix': 'check'
     'body': 'CHECK(${1:condition})$2'
