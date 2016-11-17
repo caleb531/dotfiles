@@ -76,3 +76,5 @@
 	rmc = rm --cached
 	showno = show --name-only
 	showns = show --name-status
+	stashki = stash --keep-index
+	stashp = stash pop
