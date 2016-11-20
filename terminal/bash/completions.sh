@@ -59,6 +59,9 @@ _brew() {
 	elif [ "$second" == 'cleanup' -o "$second" == 'reinstall' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew package removal commands
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
+	elif [ "$second" == 'pin' -o "$second" == 'unpin' ]; then
+		# Complete installed packages for brew pin commands
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'untap' ]; then
 		# Complete all installed taps for `brew tap`
 		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- $cur) )
