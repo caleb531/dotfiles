@@ -16,6 +16,17 @@ rmlastcmd() {
 	history -d "$last_cmd_offset"
 }
 
+# Removes all commands matching the given pattern from Bash history
+# Usage: rmcmd
+rmcmd() {
+	local cmd_offsets="$(history | grep "$@" | awk '{print $1;}')"
+	local delete_offset=0
+	for cmd_offset in $cmd_offsets; do
+		cmd_offset=$(("$cmd_offset"-"$delete_offset"))
+		history -d "$cmd_offset"
+	done
+}
+
 # Make new Python virtualenv for current directory
 # Usage: mkvirtualenv PYTHONVER
 # PYTHONVER is a major Python version (i.e. 2 or 3)
