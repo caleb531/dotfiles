@@ -76,6 +76,7 @@ if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
 	echo "Setting npm prefix..."
 	echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
 fi
+pin_brew_pkg node
 
 if ! is_cmd_installed npm; then
 	echo "Installing npm..."
