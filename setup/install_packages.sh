@@ -52,6 +52,9 @@ rm -f /usr/local/bin/speedtest_cli
 
 install_brew_pkg librsvg
 install_brew_pkg imagemagick
+# Pin ImageMagick because upgrading it can break plugins which depend on it
+# (like the rmagick Jekyll plugin I use for my personal website)
+pin_brew_pkg imagemagick
 install_brew_pkg pandoc
 
 # Install utilities necessary for Grunt projects
