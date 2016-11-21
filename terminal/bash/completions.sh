@@ -23,6 +23,13 @@ __get_installed_brew_packages() {
 	ls -1 /usr/local/Cellar
 }
 
+# Retrieve list of versions for the given package
+__get_brew_package_versions() {
+	if [ -d /usr/local/Cellar/"$1" ]; then
+		ls -1 /usr/local/Cellar/"$1"
+	fi
+}
+
 # Retrieve list of installed Homebrew casks
 __get_installed_brew_casks() {
 	ls -1 /usr/local/Caskroom
@@ -74,6 +81,12 @@ _brew() {
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete options and all available packages for `brew deps` and `brew uses`
 		COMPREPLY=( $(compgen -W "--include-optional --installed $(__get_all_brew_packages)" -- $cur) )
+	elif [ "$prev" == 'switch' ]; then
+		# Complete installed package names for first argument of `brew switch`
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
+	elif [ "$second" == 'switch' ]; then
+		# Complete package versions for second argument of `brew switch`
+		COMPREPLY=( $(compgen -W "$(__get_brew_package_versions "$prev")" -- $cur) )
 	elif [ "$second" == 'cask' -a "$third" == 'info' ]; then
 		# Complete all available casks for `brew cask info`
 		COMPREPLY=( $(compgen -W "$(__get_all_brew_casks)" -- $cur) )
