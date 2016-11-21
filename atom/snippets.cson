@@ -386,6 +386,14 @@
     'prefix': 'else'
     'body': 'else {\n\t$1\n}'
 
+  'isset':
+    'prefix': 'iss'
+    'body': 'isset( $1 )'
+
+  'not isset':
+    'prefix': 'niss'
+    'body': '! isset( $1 )'
+
   'empty':
     'prefix': 'em'
     'body': 'empty( $1 )'
