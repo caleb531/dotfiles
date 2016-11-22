@@ -794,6 +794,22 @@
     'prefix': 'regexp'
     'body': 'REGEXP '
 
+  'order by':
+    'prefix': 'orderby'
+    'body': 'ORDER BY '
+
+  'asc':
+    'prefix': 'asc'
+    'body': 'ASC'
+
+  'desc':
+    'prefix': 'desc'
+    'body': 'DESC'
+
+  'default':
+    'prefix': 'default'
+    'body': 'DEFAULT '
+
   'insert':
     'prefix': 'insert'
     'body': 'INSERT INTO ${1:tname} (${2:columns}) VALUES (${3:values});'
