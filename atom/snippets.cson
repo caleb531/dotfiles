@@ -760,11 +760,11 @@
 
   'select':
     'prefix': 'select'
-    'body': 'SELECT ${1:*} FROM ${2:tname} WHERE ${3:condition};'
+    'body': 'SELECT ${1:*} FROM ${2:tname};'
 
   'select distinct':
     'prefix': 'selectdistinct'
-    'body': 'SELECT DISTINCT ${1:*} FROM ${2:tname} WHERE ${3:condition};'
+    'body': 'SELECT DISTINCT ${1:*} FROM ${2:tname};'
 
   'where':
     'prefix': 'where'
@@ -800,11 +800,11 @@
 
   'update':
     'prefix': 'update'
-    'body': 'UPDATE ${1:tname} SET ${2:column = value} WHERE ${3:condition};'
+    'body': 'UPDATE ${1:tname} SET ${2:column = value};'
 
   'delete':
     'prefix': 'delete'
-    'body': 'DELETE FROM ${1:tname} WHERE ${3:condition};'
+    'body': 'DELETE FROM ${1:tname};'
 
   'inner join':
     'prefix': 'innerjoin'
