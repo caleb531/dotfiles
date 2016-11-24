@@ -12,16 +12,6 @@ ln -snf ~/dotfiles/terminal/.bashrc ~/.bash_profile
 
 # Symlink custom completions and remove overridden completions
 ln -snf ~/dotfiles/terminal/bash/completions.sh /usr/local/etc/bash_completion.d/dotfiles-completions.sh
-rm -f /usr/local/etc/bash_completion.d/brew
-rm -f /usr/local/etc/bash_completion.d/npm
-
-# Remove undesired binaries (making autocompletion easier)
-
-# Prefer `bundle` over `bundler`
-rm -f /usr/local/bin/bundler
-# Prefer `speedtest` over `speedtest-cli` and `speedtest_cli`
-rm -f /usr/local/bin/speedtest-cli
-rm -f /usr/local/bin/speedtest_cli
 
 # Symlink miscellaneous configuration
 ln -snf ~/dotfiles/terminal/.vimrc ~/.vimrc
