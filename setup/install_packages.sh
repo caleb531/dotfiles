@@ -47,8 +47,6 @@ install_brew_pkg closure-compiler
 install_brew_pkg trash
 
 install_brew_pkg speedtest_cli
-# Prefer speedtest-cli over speedtest_cli command
-rm -f /usr/local/bin/speedtest_cli
 
 install_brew_pkg librsvg
 install_brew_pkg imagemagick
@@ -66,8 +64,6 @@ preload_gem_list
 
 install_gem sass
 install_gem bundler
-# Prefer bundle over bundler command
-rm -f /usr/local/bin/bundler
 install_gem jekyll
 
 # Instll Node via Homebrew but install npm separately to avoid conflicts
