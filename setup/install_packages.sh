@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./setup/header.sh --sudo
+source ./setup/header.sh
 
 if ! is_cmd_installed brew; then
 

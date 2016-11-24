@@ -2,11 +2,6 @@
 
 setup() {
 
-	# Prompt for admin password upfront
-	if [ "$1" == '--sudo' ]; then
-		sudo -v
-	fi
-
 	# Remember admin password for lifetime of script
 	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
