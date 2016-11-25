@@ -17,6 +17,10 @@ ln -snf ~/dotfiles/terminal/bash/completions.sh /usr/local/etc/bash_completion.d
 ln -snf ~/dotfiles/terminal/.vimrc ~/.vimrc
 ln -snf ~/dotfiles/git/.gitconfig ~/.gitconfig
 
+# Symlink pip configuration
+mkdir -p ~/'Library/Application Support/pip'
+ln -snf ~/dotfiles/terminal/pip.conf ~/'Library/Application Support/pip/pip.conf'
+
 # Symlink SSH configuration
 mkdir -p ~/.ssh
 mkdir -p ~/.ssh/sockets
