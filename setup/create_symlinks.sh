@@ -22,6 +22,7 @@ mkdir -p ~/.ssh
 mkdir -p ~/.ssh/sockets
 ln -snf ~/dotfiles/ssh/ssh_config ~/.ssh/config
 
+# Symlink GPG configuration
 mkdir -p ~/.gnupg
 ln -sf ~/dotfiles/gpg/* ~/.gnupg
 
