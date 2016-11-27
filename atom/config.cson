@@ -33,6 +33,7 @@
       "welcome"
       "whitespace"
     ]
+    followSymlinks: false
     ignoredNames: [
       "._*"
       ".DS_Store"
