@@ -46,8 +46,6 @@ install_brew_pkg ssh-copy-id
 install_brew_pkg closure-compiler
 install_brew_pkg trash
 
-install_brew_pkg speedtest_cli
-
 install_brew_pkg librsvg
 install_brew_pkg imagemagick
 # Pin ImageMagick because upgrading it can break plugins which depend on it
