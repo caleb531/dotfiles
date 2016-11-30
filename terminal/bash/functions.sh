@@ -59,6 +59,9 @@ pypi() {
 		python setup.py register -r pypi
 	elif [ "$1" == 'upload' ]; then
 		python setup.py sdist upload -r pypi
+	else
+		>&2 echo "usage: ${FUNCNAME[0]} <command>"
+		>&2 echo "Available commands: test, register, upload"
 	fi
 }
 
@@ -94,6 +97,9 @@ mamp() {
 	elif [ "$1" == restart ]; then
 		/Applications/MAMP/bin/stop.sh > /dev/null
 		/Applications/MAMP/bin/start.sh > /dev/null
+	else
+		>&2 echo "usage: ${FUNCNAME[0]} <command>"
+		>&2 echo "Available commands: start, stop, restart"
 	fi
 }
 
