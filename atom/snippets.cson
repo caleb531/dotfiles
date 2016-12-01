@@ -845,7 +845,7 @@
 
   'include':
     'prefix': 'include'
-    'body': '{% include ${1:filename}.html $2%}'
+    'body': '{% include ${1:filename.html} $2%}'
 
   'if':
     'prefix': 'if'
