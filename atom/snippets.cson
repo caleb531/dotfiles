@@ -837,19 +837,19 @@
 
   'expression':
     'prefix': 'exp'
-    'body': '{{ $1 }}'
+    'body': '{{ $1 }}$2'
 
   'liquid':
     'prefix': 'liquid'
-    'body': '{% $1 %}'
+    'body': '{% $1 %}$2'
 
   'assign':
     'prefix': 'assign'
-    'body': '{% assign ${1:name} = ${2:value} %}'
+    'body': '{% assign ${1:name} = ${2:value} %}$3'
 
   'include':
     'prefix': 'include'
-    'body': '{% include ${1:filename.html} $2%}'
+    'body': '{% include ${1:filename.html} %}$3'
 
   'if':
     'prefix': 'if'
@@ -857,11 +857,11 @@
 
   'elsif':
     'prefix': 'elseif'
-    'body': '{% elsif %}$1'
+    'body': '{% elsif %}'
 
   'else':
     'prefix': 'else'
-    'body': '{% else %}$1'
+    'body': '{% else %}'
 
   'endif':
     'prefix': 'endif'
