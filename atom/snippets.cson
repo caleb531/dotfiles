@@ -831,6 +831,10 @@
 '.text.html.liquid,
  .source.gfm':
 
+  'front matter':
+    'prefix': 'fm'
+    'body': '---\n$1\n---'
+
   'expression':
     'prefix': 'exp'
     'body': '{{ $1 }}'
