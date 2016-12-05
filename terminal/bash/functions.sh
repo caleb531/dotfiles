@@ -49,6 +49,15 @@ jbw() {
 	fi
 }
 
+# Serve a Jekyll site, building (and using Bundler) as needed
+jsv() {
+	if [ -f ./Gemfile ]; then
+		bundle exec jekyll serve
+	else
+		jekyll serve
+	fi
+}
+
 # Provide convenient access to common PyPI commands
 # Usage: pypi [register|test|upload]
 pypi() {
