@@ -17,6 +17,7 @@
   },
   "svg": {
     "profile": "xml",
+    "extends": "xml",
     "abbreviations": {
       "circle": "<circle cx=\"\" cy=\"\" r=\"\" />",
       "clipPath": "<clipPath id=\"\"></clipPath>",
