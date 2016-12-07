@@ -43,18 +43,18 @@ rmvirtualenv() {
 # Watch a Jekyll site, building (and using Bundler) as needed
 jbw() {
 	if [ -f ./Gemfile ]; then
-		bundle exec jekyll build --watch
+		bundle exec jekyll build --watch "$@"
 	else
-		jekyll build --watch
+		jekyll build --watch "$@"
 	fi
 }
 
 # Serve a Jekyll site, building (and using Bundler) as needed
 jsv() {
 	if [ -f ./Gemfile ]; then
-		bundle exec jekyll serve
+		bundle exec jekyll serve "$@"
 	else
-		jekyll serve
+		jekyll serve "$@"
 	fi
 }
 
