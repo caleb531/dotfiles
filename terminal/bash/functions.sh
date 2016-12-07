@@ -49,6 +49,12 @@ jbw() {
 	fi
 }
 
+# Watch and force-rebuild Jekyll site
+jbwf() {
+	rm .jekyll-metadata
+	jbw
+}
+
 # Serve a Jekyll site, building (and using Bundler) as needed
 jsv() {
 	if [ -f ./Gemfile ]; then
@@ -56,6 +62,17 @@ jsv() {
 	else
 		jekyll serve "$@"
 	fi
+}
+
+# Serve Jekyll site, force-rebuilding initially and then building as needed
+jsvf() {
+	rm .jekyll-metadata
+	jsv
+}
+
+# Serve Jekyll site and open site in browser
+jsvo() {
+	jsv -o
 }
 
 # Provide convenient access to common PyPI commands
