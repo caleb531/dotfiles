@@ -190,7 +190,7 @@
 
   'wrapped function expression':
     'prefix': '(fe)'
-    'body': '(function ($1) {\n\t$2\n})'
+    'body': '(function ($1) {\n\t$2\n})$3'
 
   'wrapped function expression (w/ semicolon)':
     'prefix': '(fe);'
