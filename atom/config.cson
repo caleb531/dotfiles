@@ -28,7 +28,6 @@
       "release-notes"
       "script"
       "timecop"
-      "tree-view"
       "update-package-dependencies"
       "welcome"
       "whitespace"
@@ -123,6 +122,9 @@
     ]
     markerType: "dot"
   "svg-preview": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace:
