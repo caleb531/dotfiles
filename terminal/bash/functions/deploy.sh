@@ -1,22 +1,29 @@
 #!/usr/bin/env bash
 
-EXCLUSION_LIST=~/dotfiles/terminal/bash/functions/deploy-exclusions.txt
+# The list of file/directory patterns to exclude from deployment
+DEPLOY_EXCLUSION_LIST=~/dotfiles/terminal/bash/functions/deploy-exclusions.txt
+# The cache location for deployed directories
+DEPLOY_CACHE_DIR=~/.deploy-cache
 
 source ~/dotfiles/terminal/bash/functions/helper_functions.sh
 
+# Get the ID for the current directory for identification in the deploy cache
+__get_cache_id() {
+	echo "$PWD" | openssl sha1
+}
+
 # Retrieve the local PWD, building it if necessary
 __get_local_pwd() {
-	local temp_dir="$1"
 	if [ -f ./_config.yml ]; then
 		# If local PWD is a Jekyll project, use site built by Jekyll
-		local local_pwd="$temp_dir"/_site
+		local local_pwd="$DEPLOY_CACHE_DIR"/"$(__get_cache_id)"
 		JEKYLL_ENV=production \
 			bundle exec \
 			jekyll build --destination "$local_pwd" --quiet
 		echo "$local_pwd"
 	elif git rev-parse --git-dir &> /dev/null; then
 		# If local PWD is a Git directory, use archive created by Git
-		local local_pwd="$temp_dir"/"$(basename "$PWD")"
+		local local_pwd="$DEPLOY_CACHE_DIR"/"$(__get_cache_id)"
 		local local_pwd_archive="$local_pwd".zip
 		# A commit containing the current state of the repository, including
 		# uncommitted working directory changes
@@ -49,7 +56,7 @@ __upload() {
 			--archive \
 			--checksum \
 			--compress \
-			--exclude-from "$EXCLUSION_LIST" \
+			--exclude-from "$DEPLOY_EXCLUSION_LIST" \
 			--human-readable \
 			--rsh "ssh -p $SSH_PORT" \
 			--verbose \
@@ -64,12 +71,9 @@ deploy() {
 		local remote_pwd="$(__get_remote_pwd)"
 	fi
 	if [ -n "$remote_pwd" ]; then
-		# Create a temporary directory in case it's needed (and create it
-		# here so we can delete it after everything is done)
-		local temp_dir="$(mktemp -d)"
-		local local_pwd="$(__get_local_pwd "$temp_dir")"
+		mkdir -p "$DEPLOY_CACHE_DIR"
+		local local_pwd="$(__get_local_pwd)"
 		__upload "$local_pwd" "$remote_pwd"
-		rm -rf "$temp_dir"
 	else
 		return 1
 	fi
