@@ -25,6 +25,18 @@ syncPackages = ->
   workspaceView = atom.views.getView(atom.workspace)
   atom.commands.dispatch(workspaceView, 'package-sync:sync')
 
+# Set preferred size of current Atom window while preserving window position;
+# assumes Tree View is open
+setPreferredWindowDimensions = ->
+  originalWindowDimensions = atom.getWindowDimensions()
+  atom.setWindowDimensions({
+    width: 1060,
+    height: 710,
+    x: originalWindowDimensions.x,
+    y: originalWindowDimensions.y
+  })
+
+setPreferredWindowDimensions()
 # Explicitly define PATH and detect project virtualenvs
 process.env.PATH = '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 if process.env.VIRTUAL_ENV_NAME
