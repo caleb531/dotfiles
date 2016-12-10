@@ -16,6 +16,13 @@ rmlastcmd() {
 	history -d "$last_cmd_offset"
 }
 
+# Create a new directory and switch to it
+# Usage: mkdircd [OPTION]... DIRECTORY
+mkdircd() {
+	mkdir "$@"
+	cd "${@: -1}"
+}
+
 # Make new Python virtualenv for current directory
 # Usage: mkvirtualenv PYTHONVER
 # PYTHONVER is a major Python version (i.e. 2 or 3)
