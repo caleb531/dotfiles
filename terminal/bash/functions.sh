@@ -3,28 +3,24 @@
 # Caleb Evans
 
 # Reload entire shell, including .bash_profile and any activated virtualenv
-# Usage: reload
 reload() {
 	deactivate 2> /dev/null
 	exec $SHELL -l
 }
 
 # Remove last command from Bash history
-# Usage: rmlastcmd
 rmlastcmd() {
 	local last_cmd_offset="$(history | tail -n 1 | awk '{print $1;}')"
 	history -d "$last_cmd_offset"
 }
 
 # Create a new directory and switch to it
-# Usage: mkdircd [OPTION]... DIRECTORY
 mkdircd() {
 	mkdir "$@"
 	cd "${@: -1}"
 }
 
 # Make new Python virtualenv for current directory
-# Usage: mkvirtualenv PYTHONVER
 # PYTHONVER is a major Python version (i.e. 2 or 3)
 mkvirtualenv() {
 	local python_version="$(cat .python-version 2> /dev/null)"
@@ -42,7 +38,6 @@ mkvirtualenv() {
 }
 
 # Remove existing Python virtualenv
-# Usage: rmvirtualenv
 rmvirtualenv() {
 	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
@@ -83,7 +78,6 @@ jsvo() {
 }
 
 # Provide convenient access to common PyPI commands
-# Usage: pypi [register|test|upload]
 pypi() {
 	if [ "$1" == 'test' ]; then
 		python setup.py register -r pypitest
@@ -99,7 +93,6 @@ pypi() {
 }
 
 # Flush all DNS caches for OS X 10.10.4 and onward
-# Usage: flushdns
 flushdns() {
 	sudo dscacheutil -flushcache
 	sudo killall -HUP mDNSResponder
@@ -109,14 +102,12 @@ flushdns() {
 # server; an .env file containing the below environment variables must be
 # present in said directory or one of its parent directories
 # Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
-# Usage: deploy
 deploy() {
 	~/dotfiles/terminal/bash/functions/deploy.sh
 }
 
 # SSH into the remote directory corresponding to the PWD; also requires an .env
 # file to function
-# Usage: sshcd
 sshcd() {
 	~/dotfiles/terminal/bash/functions/sshcd.sh
 }
