@@ -35,7 +35,7 @@
 
 # Enable more-logical grouping of changes in diffs
 [diff]
-	compactionHeuristic = true
+	indentHeuristic = true
 
 # Set a more human-readable default date format for git log
 [log]
