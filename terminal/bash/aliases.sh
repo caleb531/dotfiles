@@ -29,7 +29,7 @@ if type tree &> /dev/null; then
 fi
 
 # Provide quick access to MAMP's Apache server
-alias apachectl='/Applications/MAMP/Library/bin/apachectl'
+alias apachectl='sudo /Applications/MAMP/Library/bin/apachectl'
 # Start Node HTTP server and open web browser
 alias hso='http-server -c-1 -o'
 # Open phpMyAdmin in web browser

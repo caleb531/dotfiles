@@ -115,12 +115,12 @@ sshcd() {
 # Control MAMP (mainly Apache and MySQL servers)
 mamp() {
 	if [ -z "$1" -o "$1" == start ]; then
-		/Applications/MAMP/bin/start.sh > /dev/null
+		sudo /Applications/MAMP/bin/start.sh > /dev/null
 	elif [ "$1" == stop ]; then
-		/Applications/MAMP/bin/stop.sh > /dev/null
+		sudo /Applications/MAMP/bin/stop.sh > /dev/null
 	elif [ "$1" == restart ]; then
-		/Applications/MAMP/bin/stop.sh > /dev/null
-		/Applications/MAMP/bin/start.sh > /dev/null
+		sudo /Applications/MAMP/bin/stop.sh > /dev/null
+		sudo /Applications/MAMP/bin/start.sh > /dev/null
 	else
 		>&2 echo "usage: ${FUNCNAME[0]} <command>"
 		>&2 echo "Available commands: start, stop, restart"
