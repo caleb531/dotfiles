@@ -35,4 +35,4 @@ alias openssl='/usr/local/opt/openssl/bin/openssl'
 # Start Node HTTP server and open web browser
 alias hso='http-server -c-1 -o'
 # Open phpMyAdmin in web browser
-alias pma='open http://localhost:8888/phpMyAdmin/'
+alias pma='open http://localhost/phpMyAdmin/'
