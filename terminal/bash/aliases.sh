@@ -30,6 +30,8 @@ fi
 
 # Provide quick access to MAMP's Apache server
 alias apachectl='sudo /Applications/MAMP/Library/bin/apachectl'
+# Use recommended version of OpenSSL over deprecated OpenSSL from system
+alias openssl='/usr/local/opt/openssl/bin/openssl'
 # Start Node HTTP server and open web browser
 alias hso='http-server -c-1 -o'
 # Open phpMyAdmin in web browser
