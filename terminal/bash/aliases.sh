@@ -28,6 +28,8 @@ if type tree &> /dev/null; then
 	alias tree='tree -C'
 fi
 
+# Search for running processes easily
+alias psgrep='ps ax | grep -v grep | grep'
 # Provide quick access to MAMP's Apache server
 alias apachectl='sudo /Applications/MAMP/Library/bin/apachectl'
 # Use recommended version of OpenSSL over deprecated OpenSSL from system
