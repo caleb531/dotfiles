@@ -40,3 +40,7 @@ alias openssl='/usr/local/opt/openssl/bin/openssl'
 alias hso='http-server -c-1 -o'
 # Open phpMyAdmin in web browser
 alias pma='open http://localhost/phpMyAdmin/'
+
+# Common Brunch commands
+alias bb='brunch build'
+alias bw='brunch watch'
