@@ -10,6 +10,9 @@
 " Automatically wrap words as close as possible without exceeding limit
 :set formatoptions+=t
 
+" Enable ruler showing current line and column
+:set ruler
+
 " Enable syntax highlighting
 syntax enable
 syntax reset
