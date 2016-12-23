@@ -30,7 +30,7 @@ syncPackages = ->
 setPreferredWindowDimensions = ->
   originalWindowDimensions = atom.getWindowDimensions()
   atom.setWindowDimensions({
-    width: 1060,
+    width: 1080,
     height: 710,
     x: originalWindowDimensions.x,
     y: originalWindowDimensions.y
