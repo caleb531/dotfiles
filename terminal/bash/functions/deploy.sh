@@ -21,6 +21,11 @@ __get_local_pwd() {
 			bundle exec \
 			jekyll build --destination "$local_pwd" --quiet
 		echo "$local_pwd"
+	elif [ -f ./brunch-config.js ]; then
+		# If local PWD is a Brunch project, use production site built by Brunch
+		rm -rf ./public
+		brunch build --production > /dev/null
+		echo "$PWD"/public
 	elif git rev-parse --git-dir &> /dev/null; then
 		# If local PWD is a Git directory, use archive created by Git
 		local local_pwd="$DEPLOY_CACHE_DIR"/"$(__get_cache_id)"
