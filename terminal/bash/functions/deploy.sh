@@ -15,7 +15,7 @@ __get_cache_id() {
 # Retrieve the local PWD, building it if necessary
 __get_local_pwd() {
 	if [ -f ./_config.yml ]; then
-		# If local PWD is a Jekyll project, use site built by Jekyll
+		# If local PWD is a Jekyll project, use production site built by Jekyll
 		local local_pwd="$DEPLOY_CACHE_DIR"/"$(__get_cache_id)"
 		JEKYLL_ENV=production \
 			bundle exec \
