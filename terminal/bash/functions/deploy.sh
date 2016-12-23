@@ -23,7 +23,6 @@ __get_local_pwd() {
 		echo "$local_pwd"
 	elif [ -f ./brunch-config.js ]; then
 		# If local PWD is a Brunch project, use production site built by Brunch
-		rm -rf ./public
 		brunch build --production > /dev/null
 		echo "$PWD"/public
 	elif git rev-parse --git-dir &> /dev/null; then
