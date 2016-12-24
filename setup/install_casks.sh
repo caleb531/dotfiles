@@ -17,7 +17,6 @@ install_cask evernote
 install_cask keyboard-maestro
 install_cask skype
 install_cask jitsi
-install_cask joinme
 install_cask flux
 # Install additional OS X apps
 install_cask appcleaner
