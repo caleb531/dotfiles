@@ -204,6 +204,32 @@
     'prefix': 'documentready'
     'body': '$(document).ready(function() {\n$2\n});'
 
+  # DOM
+
+  'document':
+    'prefix': 'doc'
+    'body': 'document'
+
+  'getElementById':
+    'prefix': 'getid'
+    'body': 'getElementById($1)$2'
+
+  'getElementsByClassName':
+    'prefix': 'getclass'
+    'body': 'getElementsByClassName($1)$2'
+
+  'getElementsByTagName':
+    'prefix': 'gettag'
+    'body': 'getElementsByTagName($1)$2'
+
+  'querySelector':
+    'prefix': 'qs'
+    'body': 'querySelector($1)$2'
+
+  'querySelectorAll':
+    'prefix': 'qsa'
+    'body': 'querySelectorAll($1)$2'
+
   # Jasmine
 
   'it':
