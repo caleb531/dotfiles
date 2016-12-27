@@ -10,6 +10,7 @@
     includeCompletionsFromAllBuffers: false
     maxVisibleSuggestions: 5
   core:
+    allowPendingPaneItems: false
     closeEmptyWindows: false
     customFileTypes:
       "text.xml.plist": [
