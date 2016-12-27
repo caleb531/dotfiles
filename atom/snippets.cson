@@ -230,7 +230,7 @@
     'prefix': 'qsa'
     'body': 'querySelectorAll($1)$2'
 
-  # Jasmine
+  # Mocha
 
   'it':
     'prefix': 'it'
@@ -242,7 +242,23 @@
 
   'expect':
     'prefix': 'expect'
-    'body': 'expect($1).${2:toBe}($3);'
+    'body': 'expect($1).$2'
+
+  'to be':
+    'prefix': 'tobe'
+    'body': 'to.be.'
+
+  'not to be':
+    'prefix': 'nottobe'
+    'body': 'not.to.be.'
+
+  'to equal':
+    'prefix': 'toequal'
+    'body': 'to.equal($1)$2'
+
+  'not to equal':
+    'prefix': 'nottoequal'
+    'body': 'not.to.equal($1);$2'
 
 # Awk
 
