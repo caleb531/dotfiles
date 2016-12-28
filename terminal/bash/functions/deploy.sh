@@ -2,21 +2,15 @@
 
 # The list of file/directory patterns to exclude from deployment
 DEPLOY_EXCLUSION_LIST=~/dotfiles/terminal/bash/functions/deploy-exclusions.txt
-# The cache location for deployed directories
-DEPLOY_CACHE_DIR=~/.deploy-cache
 
 source ~/dotfiles/terminal/bash/functions/helper_functions.sh
 
-# Get the ID for the current directory for identification in the deploy cache
-__get_cache_id() {
-	echo "$PWD" | openssl sha1
-}
-
 # Retrieve the local PWD, building it if necessary
 __get_local_pwd() {
+	local temp_dir="$1"
 	if [ -f ./_config.yml ]; then
 		# If local PWD is a Jekyll project, use production site built by Jekyll
-		local local_pwd="$DEPLOY_CACHE_DIR"/"$(__get_cache_id)"
+		local local_pwd="$temp_dir"/"$(basename "$PWD")"
 		JEKYLL_ENV=production \
 			bundle exec \
 			jekyll build --destination "$local_pwd" --quiet
@@ -27,7 +21,7 @@ __get_local_pwd() {
 		echo "$PWD"/public
 	elif git rev-parse --git-dir &> /dev/null; then
 		# If local PWD is a Git directory, use archive created by Git
-		local local_pwd="$DEPLOY_CACHE_DIR"/"$(__get_cache_id)"
+		local local_pwd="$temp_dir"/"$(basename "$PWD")"
 		local local_pwd_archive="$local_pwd".zip
 		# A commit containing the current state of the repository, including
 		# uncommitted working directory changes
@@ -75,9 +69,10 @@ deploy() {
 		local remote_pwd="$(__get_remote_pwd)"
 	fi
 	if [ -n "$remote_pwd" ]; then
-		mkdir -p "$DEPLOY_CACHE_DIR"
-		local local_pwd="$(__get_local_pwd)"
+		local temp_dir="$(mktemp -d)"
+		local local_pwd="$(__get_local_pwd "$temp_dir")"
 		__upload "$local_pwd" "$remote_pwd"
+		rm -rf "$temp_dir"
 	else
 		return 1
 	fi
