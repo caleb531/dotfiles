@@ -39,6 +39,7 @@
     'prefix': 'case'
     'body': 'case ${1:value}:\n\t$2'
 
+
 # C++ and JavaScript
 
 
@@ -229,6 +230,20 @@
   'querySelectorAll':
     'prefix': 'qsa'
     'body': 'querySelectorAll($1)$2'
+
+  # ES5/Node
+
+  'use strict':
+    'prefix': 'usestrict'
+    'body': '\'use strict\';\n'
+
+  'require':
+    'prefix': 'req'
+    'body': 'var ${1:vname} = require(\'${2:mname}\');'
+
+  'module.exports':
+    'prefix': 'moduleexports'
+    'body': 'module.exports = ${1:object};'
 
   # Mocha
 
