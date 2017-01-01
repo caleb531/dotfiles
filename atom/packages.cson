@@ -18,6 +18,7 @@ packages: [
   "language-latex"
   "language-liquid"
   "language-lisp"
+  "language-pegjs"
   "language-prolog"
   "language-svg"
   "language-tcl"
