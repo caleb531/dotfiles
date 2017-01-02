@@ -44,3 +44,4 @@ alias pma='open http://localhost/phpMyAdmin/'
 # Common Brunch commands
 alias bb='brunch build'
 alias bw='brunch watch'
+alias bws='brunch watch --server --network'
