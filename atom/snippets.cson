@@ -183,11 +183,11 @@
 
   'function declaration':
     'prefix': 'fd'
-    'body': 'function ${1:fname}($2) {\n\t$3\n}'
+    'body': 'function ${1:fname}($2) {\n\t$3\n}$4'
 
   'function expression':
     'prefix': 'fe'
-    'body': 'function ($1) {\n\t$2\n}'
+    'body': 'function ($1) {\n\t$2\n}$3'
 
   'wrapped function expression':
     'prefix': '(fe)'
