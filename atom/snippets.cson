@@ -269,7 +269,7 @@
 
   'to equal':
     'prefix': 'toequal'
-    'body': 'to.equal($1)$2'
+    'body': 'to.equal($1);$2'
 
   'not to equal':
     'prefix': 'nottoequal'
