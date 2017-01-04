@@ -193,10 +193,6 @@
     'prefix': '(fe)'
     'body': '(function ($1) {\n\t$2\n})$3'
 
-  'wrapped function expression (w/ semicolon)':
-    'prefix': '(fe);'
-    'body': '(function ($1) {\n\t$2\n});'
-
   'immediately-invoked function expression':
     'prefix': 'iife'
     'body': '(function($1) {\n$3\n}($2));'
