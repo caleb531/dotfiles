@@ -271,6 +271,14 @@
     'prefix': 'nottoequal'
     'body': 'not.to.equal($1);$2'
 
+  'to deep equal':
+    'prefix': 'todeepequal'
+    'body': 'to.deep.equal($1);$2'
+
+  'not to deep equal':
+    'prefix': 'nottodeepequal'
+    'body': 'not.to.deep.equal($1);$2'
+
   'to have length':
     'prefix': 'tohavelen'
     'body': 'to.have.length($1);$2'
