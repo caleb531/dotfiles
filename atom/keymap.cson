@@ -80,6 +80,8 @@
 
   # Expands Emmet HTML abbreviations
   'cmd-e': 'emmet:expand-abbreviation'
+  # Wrap selection in Emmet HTML abbreviation
+  'shift-cmd-e': 'emmet:wrap-with-abbreviation'
 
   # Opens inline URL in default web browser if cursor is within URL
   'alt-cmd-o': 'link:open'
