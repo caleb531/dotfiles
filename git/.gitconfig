@@ -76,7 +76,8 @@
 	logl = log --graph --pretty=format:'%C(auto)%h%Creset %s %Cblue(%cd)%Creset' --date=format:%-m/%-d/%y
 	mergenff = merge --no-ff
 	rmc = rm --cached
-	rp = rev-parse
+	rvp = rev-parse
+	rpo = remote prune origin
 	showno = show --name-only
 	showns = show --name-status
 	stashki = stash --keep-index
