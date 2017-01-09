@@ -112,23 +112,37 @@ sshcd() {
 	~/dotfiles/terminal/bash/functions/sshcd.sh
 }
 
+# Control MAMP Apache server
+
+# Start Apache
+aon() {
+	sudo /Applications/MAMP/Library/bin/apachectl start
+}
+# Stop Apache
+aoff() {
+	sudo /Applications/MAMP/Library/bin/apachectl stop
+}
+# Restart Apache
+aoffon() {
+	sudo /Applications/MAMP/Library/bin/apachectl restart
+}
+
 # Control MAMP (mainly Apache and MySQL servers)
-mamp() {
-	if [ -z "$1" -o "$1" == start ]; then
-		/Applications/MAMP/bin/startMysql.sh > /dev/null
-		sudo /Applications/MAMP/bin/startApache.sh > /dev/null
-	elif [ "$1" == stop ]; then
-		/Applications/MAMP/bin/stopMysql.sh > /dev/null
-		sudo /Applications/MAMP/bin/stopApache.sh > /dev/null
-	elif [ "$1" == restart ]; then
-		/Applications/MAMP/bin/stopMysql.sh > /dev/null
-		sudo /Applications/MAMP/bin/stopApache.sh > /dev/null
-		/Applications/MAMP/bin/startMysql.sh > /dev/null
-		sudo /Applications/MAMP/bin/startApache.sh > /dev/null
-	else
-		>&2 echo "usage: ${FUNCNAME[0]} <command>"
-		>&2 echo "Available commands: start, stop, restart"
-	fi
+
+# Start MAMP
+mon() {
+	/Applications/MAMP/bin/startMysql.sh > /dev/null
+	sudo /Applications/MAMP/bin/startApache.sh > /dev/null
+}
+# Stop MAMP
+moff() {
+	/Applications/MAMP/bin/stopMysql.sh > /dev/null
+	sudo /Applications/MAMP/bin/stopApache.sh > /dev/null
+}
+# Restart MAMP
+monoffon() {
+	moff
+	mon
 }
 
 # Run Python tests with Nose test runner
