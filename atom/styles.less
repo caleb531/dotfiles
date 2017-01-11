@@ -8,13 +8,13 @@
 @ce-color-green: #6c3;
 @ce-color-orange: #e53;
 
-atom-text-editor:not([mini])::shadow {
+atom-text-editor:not([mini]) {
   // De-italicize all syntax components which Monokai italicizes
-  .storage.type,
-  .entity.other.inherited-class,
-  .variable.parameter,
-  .support.type,
-  .support.class {
+  .syntax--storage.syntax--type,
+  .syntax--entity.syntax--other.syntax--inherited-class,
+  .syntax--variable.syntax--parameter,
+  .syntax--support.syntax--type,
+  .syntax--support.syntax--class {
     font-style: normal;
   }
   // Make selected line more prominent
@@ -26,9 +26,9 @@ atom-text-editor:not([mini])::shadow {
     border-bottom-style: solid;
   }
   // Color Apache Directory/Location paths like all other strings
-  .meta.toc-list.directory.apache-config,
-  .meta.toc-list.location.apache-config,
-  .meta.toc-list.files.apache-config {
+  .syntax--meta.syntax--toc-list.syntax--directory.syntax--apache-config,
+  .syntax--meta.syntax--toc-list.syntax--location.syntax--apache-config,
+  .syntax--meta.syntax--toc-list.syntax--files.syntax--apache-config {
     color: @yellow;
   }
 }
