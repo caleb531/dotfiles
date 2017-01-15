@@ -6,7 +6,7 @@
 
 " Set maximum line length (based on recommmended limit for Git commit messages)
 " See http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-:set tw=72
+:set textwidth=72
 " Automatically wrap words as close as possible without exceeding limit
 :set formatoptions+=t
 
