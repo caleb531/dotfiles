@@ -13,6 +13,10 @@
 " Enable ruler showing current line and column
 :set ruler
 
+" Reflow text to fit within the max line length
+" To run within Vim, type "@r" (case-insensitive) in normal mode
+:let @r='(V)gq'
+
 " Enable syntax highlighting
 syntax enable
 syntax reset
