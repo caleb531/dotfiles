@@ -4,10 +4,6 @@
 
 @import 'ui-variables';
 
-// Define palette of preferred colors
-@ce-color-green: #6c3;
-@ce-color-orange: #e53;
-
 atom-text-editor:not([mini]) {
   // De-italicize all syntax components which Monokai italicizes
   .syntax--storage.syntax--type,
@@ -34,7 +30,7 @@ atom-text-editor:not([mini]) {
 }
 
 // Use a prettier color for the find-and-replace current result "flash'"
-@syntax-selection-flash-color: @ce-color-green;
+@syntax-selection-flash-color: @green;
 @keyframes flash {
   from { background-color: @syntax-selection-flash-color; }
   to { background-color: null; }
@@ -47,7 +43,7 @@ atom-text-editor:not([mini]).conflicted .text-subtle {
 
 // Selected tab highlight
 .tab-bar .tab::before {
-  background: @ce-color-green;
+  background: @green;
 }
 
 // Remove ugly fuzzy outline from buttons when focused
@@ -68,7 +64,7 @@ atom-text-editor:not([mini]).conflicted .text-subtle {
 
 // "Lines modified" status bar indicator
 .status-modified {
-  color: @ce-color-orange;
+  color: @orange;
 }
 
 .settings-view {
@@ -76,7 +72,7 @@ atom-text-editor:not([mini]).conflicted .text-subtle {
   input[type="checkbox"] {
     &:active,
     &:checked {
-      background: @ce-color-green;
+      background: @green;
     }
   }
   // Informational alert panels (e.g. the panel on the Updates screen)
@@ -88,10 +84,10 @@ atom-text-editor:not([mini]).conflicted .text-subtle {
   }
   // "Enabled" package status indicators
   .package-card .meta-controls .status-indicator {
-    background: @ce-color-green;
+    background: @green;
     // "Disabled" package status indicators
     &.is-disabled {
-      background-color: @ce-color-orange;
+      background-color: @orange;
     }
   }
 }
