@@ -33,6 +33,13 @@ atom-text-editor:not([mini]) {
   }
 }
 
+// Use a prettier color for the find-and-replace current result "flash'"
+@syntax-selection-flash-color: @ce-color-green;
+@keyframes flash {
+  from { background-color: @syntax-selection-flash-color; }
+  to { background-color: null; }
+}
+
 // Make labels for Merge Conflicts (e.g. "// Our changes") more prominent
 atom-text-editor:not([mini]).conflicted .text-subtle {
   color: #fff;
