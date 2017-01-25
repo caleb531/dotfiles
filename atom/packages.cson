@@ -9,7 +9,6 @@ packages: [
   "language-apache"
   "language-applescript"
   "language-awk"
-  "language-cpp14"
   "language-env"
   "language-gitattributes"
   "language-gitignore"
