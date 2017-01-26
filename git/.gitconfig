@@ -65,8 +65,8 @@
 	commita = commit --amend
 	chp = cherry-pick
 	diffc = diff --cached
-	diffcw = diff --color-words
-	diffcwc = diff --color-words --cached
+	diffw = diff --ignore-all-space
+	diffwc = diff --ignore-all-space --cached
 	diffno = diff --name-only
 	diffnoc = diff --name-only --cached
 	diffns = diff --name-status
