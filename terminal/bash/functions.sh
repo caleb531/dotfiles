@@ -14,6 +14,12 @@ rmlastcmd() {
 	history -d "$last_cmd_offset"
 }
 
+# Copy last command to clipboard and remove it from Bash history
+cprmlastcmd() {
+	echo -n "$(fc -ln -1 | xargs)" | pbcopy
+	rmlastcmd
+}
+
 # Create a new directory and switch to it
 mkdircd() {
 	mkdir "$@"
