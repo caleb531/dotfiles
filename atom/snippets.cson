@@ -234,8 +234,8 @@
     'body': '\'use strict\';\n'
 
   'require':
-    'prefix': 'req'
-    'body': 'var ${1:vname} = require(\'${2:mname}\');'
+    'prefix': 're'
+    'body': '${1:var} ${2:vname} = require(\'${3:mname}\');$4'
 
   'module.exports':
     'prefix': 'moduleexports'
