@@ -129,7 +129,7 @@ aoff() {
 	sudo /Applications/MAMP/Library/bin/apachectl stop
 }
 # Restart Apache
-aoffon() {
+are() {
 	sudo /Applications/MAMP/Library/bin/apachectl restart
 }
 
@@ -146,7 +146,7 @@ moff() {
 	sudo /Applications/MAMP/bin/stopApache.sh > /dev/null
 }
 # Restart MAMP
-monoffon() {
+monre() {
 	moff
 	mon
 }
