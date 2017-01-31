@@ -34,6 +34,8 @@ alias psgrep='ps ax | grep -v grep | grep'
 alias apachectl='sudo /Applications/MAMP/Library/bin/apachectl'
 # Provide access to MAMP's MySQL utility
 alias mysql='/Applications/MAMP/Library/bin/mysql'
+# Provide access to MAMP's MySQL export utility
+alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
 # Use recommended version of OpenSSL over deprecated OpenSSL from system
 alias openssl='/usr/local/opt/openssl/bin/openssl'
 # Start Node HTTP server and open web browser
