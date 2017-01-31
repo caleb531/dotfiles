@@ -147,8 +147,9 @@ moff() {
 }
 # Restart MAMP
 mre() {
-	moff
-	mon
+	/Applications/MAMP/bin/stopMysql.sh > /dev/null
+	are
+	/Applications/MAMP/bin/startMysql.sh > /dev/null
 }
 
 # Run Python tests with Nose test runner
