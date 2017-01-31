@@ -137,13 +137,13 @@ are() {
 
 # Start MAMP
 mon() {
+	aon
 	/Applications/MAMP/bin/startMysql.sh > /dev/null
-	sudo /Applications/MAMP/bin/startApache.sh > /dev/null
 }
 # Stop MAMP
 moff() {
 	/Applications/MAMP/bin/stopMysql.sh > /dev/null
-	sudo /Applications/MAMP/bin/stopApache.sh > /dev/null
+	aoff
 }
 # Restart MAMP
 mre() {
