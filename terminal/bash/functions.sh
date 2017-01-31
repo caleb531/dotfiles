@@ -146,7 +146,7 @@ moff() {
 	sudo /Applications/MAMP/bin/stopApache.sh > /dev/null
 }
 # Restart MAMP
-monre() {
+mre() {
 	moff
 	mon
 }
