@@ -25,9 +25,6 @@ ln -snf ~/dotfiles/terminal/pip.conf ~/'Library/Application Support/pip/pip.conf
 mkdir -p ~/.ssh
 mkdir -p ~/.ssh/sockets
 ln -snf ~/dotfiles/ssh/ssh_config ~/.ssh/config
-# Load SSH key from Keychain on startup; this is necessary in macOS Sierra
-# See https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain
-ln -snf ~/dotfiles/ssh/load-ssh-key.plist ~/Library/LaunchAgents
 
 # Symlink GPG configuration
 mkdir -p ~/.gnupg

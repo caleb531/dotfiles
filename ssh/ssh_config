@@ -13,3 +13,7 @@ Host *
 	UseRoaming no
 	# Disable GSSAPI auth since SSH keys are preferred for authentication
 	GSSAPIAuthentication no
+	# Load SSH key from Keychain as needed
+	# See https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain
+	AddKeysToAgent yes
+	UseKeychain yes
