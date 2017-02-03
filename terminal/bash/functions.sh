@@ -142,9 +142,9 @@ mon() {
 }
 # Stop MAMP
 moff() {
-	# Redirect stderr to /dev/null to suppress the "Warning: Using a password on
-	# the command line interface can be insecure." message when stopping mysql
-	/Applications/MAMP/bin/stopMysql.sh 2> /dev/null
+	# Suppres the annoying "Warning: Using a password on the command line
+	# interface can be insecure." message
+	/Applications/MAMP/bin/stopMysql.sh 2>&1 | grep -v "Warning: Using a pass"
 	aoff
 }
 # Restart MAMP
