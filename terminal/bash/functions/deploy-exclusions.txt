@@ -2,6 +2,7 @@ config.codekit
 config.codekit3
 .codekit-cache
 .DS_Store
+.editorconfig
 .env
 .git
 .gitattributes
