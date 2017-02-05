@@ -171,3 +171,22 @@ covo() {
 	coverage html
 	open -a 'Google Chrome' ./htmlcov/index.html
 }
+
+# Upload file using transfer.sh and get share link (output it to the terminal
+# and copy it to the clipboard, for convenience)
+transfer() {
+	# Temporarily redirect share URL stdout to file so progress bar can be
+	# printed instead (as I understand it, the curl command cannot print
+	# both to stdout)
+	local share_url_file=$(mktemp -t transferXXX)
+	curl \
+		--progress-bar \
+		--upload-file \
+		"$1" \
+		"https://transfer.sh" \
+		> "$share_url_file"
+	local share_url="$(< "$share_url_file")"
+	echo "$share_url"
+	echo -n "$share_url" | pbcopy
+	rm -f "$share_url_file"
+}
