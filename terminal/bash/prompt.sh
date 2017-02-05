@@ -83,7 +83,7 @@ __update_prompt_command() {
 	__detect_python_virtualenv
 	PS1="$(__output_ps1)"
 	# Write in-memory command history to file
-	history -a
+	history -w
 	# Ensure current working directory carries to new tabs
 	update_terminal_cwd 2> /dev/null
 
