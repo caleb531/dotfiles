@@ -1004,6 +1004,10 @@
     'prefix': 'hsts'
     'body': 'Header always set Strict-Transport-Security "max-age=${1:86400}; includeSubDomains" env=HTTPS'
 
+  'Referrer-Policy':
+    'prefix': 'refpolicy'
+    'body': 'Header always set Referrer-Policy "${1:no-referrer}"'
+
   'Secure Cookies':
     'prefix': 'cookiesecure'
     'body': 'Header always edit Set-Cookie ^(.*)$ "\$1; HTTPOnly; Secure"'
