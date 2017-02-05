@@ -994,7 +994,7 @@
 
   'X-Frame-Options':
     'prefix': 'frameoptions'
-    'body': 'Header always set X-Frame-Options ${1:DENY}'
+    'body': 'Header always set X-Frame-Options ${1:SAMEORIGIN}'
 
   'X-Content-Type-Options':
     'prefix': 'contenttypeoptions'
