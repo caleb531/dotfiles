@@ -127,7 +127,6 @@
   "svg-preview": {}
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace:
