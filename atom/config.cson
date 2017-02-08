@@ -121,6 +121,8 @@
     ]
     markerType: "dot"
   "svg-preview": {}
+  tabs:
+    enableMruTabSwitching: false
   "tree-view":
     hideIgnoredNames: true
   welcome:
