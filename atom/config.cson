@@ -12,10 +12,6 @@
   core:
     allowPendingPaneItems: false
     closeEmptyWindows: false
-    customFileTypes:
-      "text.xml.plist": [
-        "plist"
-      ]
     disabledPackages: [
       "archive-view"
       "autocomplete"
