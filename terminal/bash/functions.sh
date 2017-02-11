@@ -16,7 +16,9 @@ rmlastcmd() {
 
 # Copy last command to clipboard and remove it from Bash history
 cprmlastcmd() {
-	echo -n "$(fc -ln -1 | xargs)" | pbcopy
+	local last_cmd="$(fc -ln -1)"
+	last_cmd="${last_cmd#"${last_cmd%%[![:space:]]*}"}"
+	echo -n "$last_cmd" | pbcopy
 	rmlastcmd
 }
 
