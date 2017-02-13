@@ -101,7 +101,7 @@ pypi() {
 }
 
 # Flush all DNS caches for OS X 10.10.4 and onward
-flushdns() {
+dnsflush() {
 	sudo dscacheutil -flushcache
 	sudo killall -HUP mDNSResponder
 }
