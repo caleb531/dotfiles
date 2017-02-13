@@ -10,6 +10,8 @@ shopt -s histappend
 # Navigate command history matching typed input using up/down arrow keys
 bind '"\e[A": history-search-backward' 2> /dev/null
 bind '"\e[B": history-search-forward' 2> /dev/null
+# Automatically add trailing slash to autocompleted directory symlinks
+bind 'set mark-symlinked-directories on' 2> /dev/null
 
 # If shell is Bash 4 or newer
 if [ $BASH_VERSINFO -ge 4 ]; then
