@@ -14,11 +14,16 @@ rmlastcmd() {
 	history -d "$last_cmd_offset"
 }
 
-# Copy last command to clipboard and remove it from Bash history
-cprmlastcmd() {
+# Copy last command to clipboard
+cplastcmd() {
 	local last_cmd="$(fc -ln -1)"
 	last_cmd="${last_cmd#"${last_cmd%%[![:space:]]*}"}"
 	echo -n "$last_cmd" | pbcopy
+}
+
+# Copy last command and remove it from Bash history
+cprmlastcmd() {
+	cplastcmd
 	rmlastcmd
 }
 
