@@ -105,6 +105,8 @@
   "linter-jscs":
     onlyConfig: true
     preset: "jquery"
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
   "linter-shellcheck": {}
   "markdown-preview":
     useGitHubStyle: true
