@@ -4,6 +4,14 @@
 
 @import 'ui-variables';
 
+// Make window title bar blend in with rest of window
+atom-panel.header {
+  border-bottom-width: 0;
+}
+.title-bar {
+  background-color: @app-background-color;
+}
+
 atom-text-editor:not([mini]) {
   // De-italicize all syntax components which Monokai italicizes
   .syntax--storage.syntax--type,
