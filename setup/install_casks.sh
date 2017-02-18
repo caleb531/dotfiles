@@ -22,6 +22,7 @@ install_cask appcleaner
 install_cask namechanger
 install_cask codekit
 install_cask cyberduck
+install_cask the-unarchiver
 install_cask mamp
 rm -rf '/Applications/MAMP PRO'
 install_cask keybase
