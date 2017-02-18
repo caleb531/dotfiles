@@ -25,6 +25,7 @@ install_cask codekit
 install_cask cyberduck
 install_cask mamp
 rm -rf '/Applications/MAMP PRO'
+install_cask keybase
 
 echo "Installing Quick Look plugins..."
 
