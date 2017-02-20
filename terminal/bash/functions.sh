@@ -17,6 +17,7 @@ rmlastcmd() {
 # Copy last command to clipboard
 cplastcmd() {
 	local last_cmd="$(fc -ln -1)"
+	# Trim trailing whitespace from last command
 	last_cmd="${last_cmd#"${last_cmd%%[![:space:]]*}"}"
 	echo -n "$last_cmd" | pbcopy
 }
