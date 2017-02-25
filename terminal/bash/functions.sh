@@ -8,6 +8,13 @@ reload() {
 	exec $SHELL -l
 }
 
+# Make pbcopy trim surrounding whitespace from copied input, for convenience
+pbcopy() {
+	local contents="$(< /dev/stdin)"
+	contents="${contents#"${contents%%[![:space:]]*}"}"
+	echo -n "$contents" | command pbcopy
+}
+
 # Remove last command from Bash history
 rmlastcmd() {
 	local last_cmd_offset="$(history | tail -n 1 | awk '{print $1;}')"
@@ -17,8 +24,6 @@ rmlastcmd() {
 # Copy last command to clipboard
 cplastcmd() {
 	local last_cmd="$(fc -ln -1)"
-	# Trim trailing whitespace from last command
-	last_cmd="${last_cmd#"${last_cmd%%[![:space:]]*}"}"
 	echo -n "$last_cmd" | pbcopy
 }
 
