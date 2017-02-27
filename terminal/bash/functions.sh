@@ -185,6 +185,13 @@ covo() {
 	open -a 'Google Chrome' ./htmlcov/index.html
 }
 
+# Run Makefile and then run compiled executable
+makerun() {
+	make -s
+	local executable="$(cat Makefile | grep -Po '[\w\-\./]+\.out')"
+	"$(realpath "$executable")" "$@"
+}
+
 # Upload file using transfer.sh and get share link (output it to the terminal
 # and copy it to the clipboard, for convenience)
 transfer() {
