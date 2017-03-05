@@ -32,6 +32,7 @@ echo "- Disable iOS-style natural scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 echo "- Disable undesired gestures"
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.apple.dock showDesktopGestureEnabled -bool false
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
