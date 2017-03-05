@@ -55,6 +55,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 echo "- Display key press-and-hold in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
+echo "- Disable cursor magnification on shake"
+defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool true
+
 echo "- Require password 5 minutes after sleep"
 defaults write com.apple.screensaver askForPassword -bool true
 defaults write com.apple.screensaver askForPasswordDelay -int 300
