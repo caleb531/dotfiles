@@ -505,7 +505,7 @@
 
   'array (one-line)':
     'prefix': 'ar'
-    'body': 'array( $1 )'
+    'body': 'array( $1 )$2'
 
   'array (one-line; space-padded)':
     'prefix': 'ars'
@@ -521,7 +521,7 @@
 
   'array (multiline)':
     'prefix': 'arn'
-    'body': 'array(\n\t$1\n)'
+    'body': 'array(\n\t$1\n)$2'
 
   'array (multiline; space-padded)':
     'prefix': 'arns'
