@@ -80,6 +80,7 @@
     fontFamily: "Monaco"
     fontSize: 16
     invisibles: {}
+    showCursorOnSelection: false
     softTabs: false
     softWrap: true
     tabLength: 4
