@@ -189,7 +189,9 @@ covo() {
 makerun() {
 	make -s
 	local executable="$(cat Makefile | grep -Po '[\w\-\./]+\.out')"
-	"$(realpath "$executable")" "$@"
+	if [ -f "$executable" ]; then
+		"$(realpath "$executable")" "$@"
+	fi
 }
 
 # Upload file using transfer.sh and get share link (output it to the terminal
