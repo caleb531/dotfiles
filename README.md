@@ -4,15 +4,15 @@
 
 This repository describes and features the configuration files for my Terminal,
 as well as configuration for the applications and packages I use. Note that I am
-an avid OS X user, and therefore the majority of these customizations are
-specific to OS X. However, many of these customizations can also be applied on
+an avid macOS user, and therefore the majority of these customizations are
+specific to macOS. However, many of these customizations can also be applied on
 Linux systems.
 
 ## Terminal configuration
 
 ### Bash 4
 
-OS X ships with Bash 3.2, however I use Bash 4 as my shell of choice. Bash 4
+macOS ships with Bash 3.2, however I use Bash 4 as my shell of choice. Bash 4
 adds Unicode literals, the new *globstar* option, and support for Bash
 Completion 2. These reasons are enough for me to use Bash 4 over the bundled
 v3.2 shell.
@@ -22,7 +22,8 @@ v3.2 shell.
 For my work in the Terminal, I created Material Colors, a minimalist theme which
 utilizes Google's Material Design color palette. While the theme's
 characteristics are largely founded in my personal tastes, I have chosen to
-include the theme in this repository for your convenience at `terminal/themes/Material Colors.terminal`.
+include the theme in this repository for your convenience at
+`terminal/themes/Material Colors.terminal`.
 
 ### Interactive prompt
 
@@ -97,12 +98,12 @@ available Python packages in your project's virtualenv.
 ## Setup scripts
 
 I have also created a series of scripts which automatically configure my shell,
-set my preferred OS X preferences, install packages, and so forth. All of these
+set my preferred macOS preferences, install packages, and so forth. All of these
 scripts are located under the `setup/` directory. You can run these scripts
 altogether via `setup_all.sh`, or individually by executing the respective
 script.
 
-These scripts are generally useful for configuring fresh OS X installs, however
+These scripts are generally useful for configuring fresh macOS installs, however
 they are also designed to be re-run as needed. For instance,
 `create_symlinks.sh` will ensure that the home directory symlinks to these
 dotfiles are all up to date. In addition, `install_packages.sh` installs those
