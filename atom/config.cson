@@ -50,6 +50,7 @@
       "*.pages"
       "*.pdf"
       "*.png"
+      "node_modules"
       "Thumbs.db"
     ]
     packagesWithKeymapsDisabled: [
