@@ -57,7 +57,7 @@
   'ctrl-cmd-s': 'snippets:available'
 
   # Advances to next Linter error in document
-  'alt-cmd-l': 'linter:next-error'
+  'alt-cmd-l': 'linter-ui-default:next'
 
   # Expands/contracts selection to next outermost/innermost set of tokens
   'alt-up': 'expand-region:expand'

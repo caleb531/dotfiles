@@ -65,9 +65,14 @@ atom-text-editor:not([mini]).conflicted .text-subtle {
   border-color: @button-border-color !important;
 }
 
-// Hide Linter status indicator when no issues are found
-.linter-highlight.status-success {
+// Hide Linter counts for error/warning/info messages in status bar
+.linter-status-count {
   display: none;
+}
+
+// Make Linter gutter blend into the line number gutter
+atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
+  background-color: @syntax-gutter-background-color;
 }
 
 // "Lines modified" status bar indicator
@@ -105,17 +110,6 @@ atom-text-editor:not([mini]).conflicted .text-subtle {
   }
 }
 
-
-// Move Linter Status to the left of Encoding and Language in status bar
-// Only looks good if Position setting is "right"
-.status-bar linter-bottom-status.inline-block {
-  float: left;
-}
-
-// Hide Linter file tabs to conserve space in status bar
-linter-bottom-tab {
-  display: none;
-}
 
 // SVG Preview pane
 .svg-preview {

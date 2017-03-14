@@ -96,15 +96,8 @@
   "fuzzy-finder":
     preserveLastSearch: true
   linter:
-    errorPanelHeight: 142
-    ignoreMatchedFiles: "/**/*.{min.js,min.css,md}"
-    lintOnFly: false
-    showErrorInline: false
-    showErrorTabFile: false
-    showErrorTabLine: true
-    showErrorTabProject: false
-    statusIconPosition: "Right"
-    statusIconScope: "File"
+    lintOnChange: false
+    lintPreviewTabs: false
   "linter-jscs":
     onlyConfig: true
     preset: "jquery"
