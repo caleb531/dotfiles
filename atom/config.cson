@@ -104,6 +104,9 @@
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "linter-shellcheck": {}
+  "linter-ui-default":
+    showPanel: true
+    showTooltip: false
   "markdown-preview":
     useGitHubStyle: true
   "merge-conflicts": {}

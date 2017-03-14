@@ -75,6 +75,42 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
   background-color: @syntax-gutter-background-color;
 }
 
+.sb-table.linter {
+  border-width: 0;
+  // Do not display column headers
+  thead {
+    display: none;
+  }
+  // Make Linter panel blend into status bar
+  tbody {
+    background: @app-background-color;
+  }
+  tr {
+    // Add border between each row
+    border-bottom: solid 1px @base-border-color;
+    &:last-child {
+      border-bottom-width: 0;
+    }
+  }
+  td {
+    padding: 5px 15px;
+    // Make Severity column more prominent
+    &:first-child {
+      width: 78px;
+      min-width: 0;
+      border-left: solid 2px @background-color-error;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+  td, th {
+    // Hide Provider column
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
 // "Lines modified" status bar indicator
 .status-modified {
   color: @orange;
