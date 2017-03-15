@@ -13,6 +13,9 @@
 " Enable ruler showing current line and column
 :set ruler
 
+" Enable auto-indent (i.e. hanging indent behavior) for all file types
+:set autoindent
+
 " Reflow text to fit within the max line length
 " To run within Vim, type "@r" (case-insensitive) in normal mode
 :let @r='(V)gq'
