@@ -18,7 +18,13 @@ __get_local_pwd() {
 	elif [ -f ./brunch-config.js ]; then
 		# If local PWD is a Brunch project, use production site built by Brunch
 		brunch build --production > /dev/null
-		echo "$PWD"/public
+		# Try to read custom build directory path from Brunch config
+		local build_dir="$(cat brunch-config.js | grep -Po "(?<=public: ')([^']+)(?=')")"
+		# Default to public/ if no custom build directory is specified
+		if [ -z "$build_dir" ]; then
+			build_dir=public
+		fi
+		echo "$PWD"/"$build_dir"
 	elif git rev-parse --git-dir &> /dev/null; then
 		# If local PWD is a Git directory, use archive created by Git
 		local local_pwd="$temp_dir"/"$(basename "$PWD")"
