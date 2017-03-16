@@ -1050,7 +1050,7 @@
 
   'RewriteEngine':
     'prefix': 'rewriteengine'
-    'body': 'RewriteEngine ${1:On}'
+    'body': 'RewriteEngine On\n'
 
   'RewriteBase':
     'prefix': 'rewritebase'
