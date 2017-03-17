@@ -2,8 +2,8 @@
 
 echo "Configuring all..."
 
-source ./setup/create_symlinks.sh
-source ./setup/set_prefs.sh
-source ./setup/install_packages.sh
-source ./setup/install_casks.sh
-source ./setup/remove_completions.sh
+source ~/dotfiles/setup/create_symlinks.sh
+source ~/dotfiles/setup/set_prefs.sh
+source ~/dotfiles/setup/install_packages.sh
+source ~/dotfiles/setup/install_casks.sh
+source ~/dotfiles/setup/remove_completions.sh

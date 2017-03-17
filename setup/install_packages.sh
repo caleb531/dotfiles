@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./setup/header.sh
+source ~/dotfiles/setup/header.sh
 
 if ! is_cmd_installed brew; then
 
@@ -110,4 +110,4 @@ while read -r pkg_line; do
 	if [ -n "$pkg" ]; then
 		install_apm_pkg "$pkg"
 	fi
-done < ./atom/packages.cson
+done < ~/dotfiles/atom/packages.cson

@@ -9,7 +9,7 @@ setup() {
 	caffeinate -w "$$" &
 
 	# Import helper functions for use by other configuration scripts
-	source ./setup/helper_functions.sh
+	source ~/dotfiles/setup/helper_functions.sh
 
 }
 
