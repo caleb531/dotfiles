@@ -143,6 +143,9 @@ aoff() {
 }
 # Restart Apache
 are() {
+	if type rln &> /dev/null; then
+		rln
+	fi
 	sudo /Applications/MAMP/Library/bin/apachectl restart
 }
 
