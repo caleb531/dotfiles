@@ -49,7 +49,7 @@ export HISTFILESIZE=500
 # Keep duplicate entries out of command history
 export HISTCONTROL='ignoreboth:erasedups'
 # Keep potentially dangerous commands out of command history
-export HISTIGNORE='clear*:cplastcmd*:cprmlastcmd*:git branch -d *:git branch -D *:git checkout *:git clean*:git reset *:git rm*:git stash drop*:history*:kill *:killall *:reload*:rm *:rmlastcmd*:sudo *'
+export HISTIGNORE='clear*:cplastcmd*:cprmlastcmd*:git checkout *:git clean*:git reset *:history*:reload*:rmlastcmd*'
 
 # Prevent Python from generating bytecode (*.pyc, __pycache__, etc.)
 export PYTHONDONTWRITEBYTECODE=1
