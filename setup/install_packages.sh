@@ -37,6 +37,7 @@ install_brew_pkg gnu-tar --with-default-names
 
 install_brew_pkg git
 
+install_brew_pkg openssl
 install_brew_pkg python
 install_brew_pkg python3
 # Always use Python 3 pip
