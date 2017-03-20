@@ -62,25 +62,25 @@
 # Useful Git aliases
 [alias]
 	addp = add -p
-	commita = commit --amend
 	chp = cherry-pick
+	commita = commit --amend
 	diffc = diff --cached
 	diffcw = diff --color-words
 	diffcwc = diff --color-words --cached
-	diffw = diff --ignore-all-space
-	diffwc = diff --ignore-all-space --cached
 	diffno = diff --name-only
 	diffnoc = diff --name-only --cached
 	diffns = diff --name-status
 	diffnsc = diff --name-status --cached
+	diffw = diff --ignore-all-space
+	diffwc = diff --ignore-all-space --cached
 	gcpn = gc --prune=now
 	logg = log --fixed-strings --regexp-ignore-case --grep
 	logl = log --graph --pretty=format:'%C(auto)%h%Creset %s %Cblue(%cd)%Creset' --date=format:%-m/%-d/%y
 	logs = log -S
 	mergenff = merge --no-ff
 	rmc = rm --cached
-	rvp = rev-parse
 	rpo = remote prune origin
+	rvp = rev-parse
 	showno = show --name-only
 	showns = show --name-status
 	stashki = stash --keep-index
