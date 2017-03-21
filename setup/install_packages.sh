@@ -22,8 +22,7 @@ if [ -f /usr/local/bin/bash -a "$SHELL" != /usr/local/bin/bash ]; then
 	sudo chsh -s /usr/local/bin/bash "$USER"
 fi
 
-tap_brew_repo homebrew/versions
-install_brew_pkg bash-completion2
+install_brew_pkg bash-completion@2
 install_brew_pkg colordiff
 tap_brew_repo homebrew/dupes
 install_brew_pkg grep --with-default-names
