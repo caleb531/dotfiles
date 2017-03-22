@@ -12,6 +12,10 @@
   core:
     allowPendingPaneItems: false
     closeEmptyWindows: false
+    customFileTypes:
+      "source.ini": [
+        "cnf"
+      ]
     disabledPackages: [
       "archive-view"
       "autocomplete"
