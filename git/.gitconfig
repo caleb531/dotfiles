@@ -81,7 +81,7 @@
 	rmc = rm --cached
 	rpo = remote prune origin
 	rvp = rev-parse
-	rvps = rev-parse --short
+	short = rev-parse --short
 	showno = show --name-only
 	showns = show --name-status
 	stashki = stash --keep-index
