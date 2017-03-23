@@ -71,7 +71,7 @@
       "resize-indent"
       "script"
     ]
-    projectHome: "~/Local/Repositories"
+    projectHome: "~/Repositories"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
