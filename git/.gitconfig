@@ -81,7 +81,7 @@
 	rmc = rm --cached
 	rpo = remote prune origin
 	rvp = rev-parse
-	short = rev-parse --short
+	short = !git rev-parse --short $@ | xargs echo -n | pbcopy
 	showno = show --name-only
 	showns = show --name-status
 	stashki = stash --keep-index
