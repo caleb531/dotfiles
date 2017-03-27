@@ -15,10 +15,14 @@ pbcopy() {
 	echo -n "$contents" | command pbcopy
 }
 
-# Remove last command from Bash history
+# Remove last n commands from Bash history (n defaults to 1)
 rmlastcmd() {
-	local last_cmd_offset="$(history | tail -n 1 | awk '{print $1;}')"
-	history -d "$last_cmd_offset"
+	local n="$([ -n "$1" ] && echo "$1" || echo 1)"
+	local i
+	for ((i=0; i<$n; i++)); do
+		local last_cmd_offset="$(history | tail -n 1 | awk '{print $1;}')"
+		history -d "$last_cmd_offset"
+	done
 }
 
 # Copy last command to clipboard
