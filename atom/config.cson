@@ -123,6 +123,7 @@
   pigments:
     ignoredScopes: [
       "\\.comment"
+      "\\.string"
       "\\.source\\.gfm"
     ]
     markerType: "dot"
