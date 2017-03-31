@@ -196,7 +196,7 @@ covo() {
 run() {
 	local executable="$(cat Makefile | grep -Po '[\w\-\./]+\.out')"
 	if [ -f "$executable" ]; then
-		"$(realpath "$executable")" "$@"
+		"$(readlink -f "$executable")" "$@"
 	fi
 }
 
