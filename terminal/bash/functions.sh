@@ -67,7 +67,7 @@ rmvirtualenv() {
 
 # Build a Jekyll site, using Bundler if needed
 jb() {
-	if [ -f ./Gemfile ]; then
+	if type bundle &> /dev/null; then
 		bundle exec jekyll build "$@"
 	else
 		jekyll build "$@"
@@ -76,7 +76,7 @@ jb() {
 
 # Watch a Jekyll site, building (and using Bundler) as needed
 jbw() {
-	if [ -f ./Gemfile ]; then
+	if type bundle &> /dev/null; then
 		bundle exec jekyll build --watch "$@"
 	else
 		jekyll build --watch "$@"
