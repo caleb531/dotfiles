@@ -65,6 +65,15 @@ rmvirtualenv() {
 	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
 
+# Build a Jekyll site, using Bundler if needed
+jb() {
+	if [ -f ./Gemfile ]; then
+		bundle exec jekyll build "$@"
+	else
+		jekyll build "$@"
+	fi
+}
+
 # Watch a Jekyll site, building (and using Bundler) as needed
 jbw() {
 	if [ -f ./Gemfile ]; then
