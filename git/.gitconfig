@@ -67,6 +67,9 @@
 	diffc = diff --cached
 	diffcw = diff --color-words
 	diffcwc = diff --color-words --cached
+	diffni = diff --no-index
+	diffnicw = diff --no-index --color-words
+	diffniw = diff --no-index --ignore-all-space
 	diffno = diff --name-only
 	diffnoc = diff --name-only --cached
 	diffns = diff --name-status
