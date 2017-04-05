@@ -12,7 +12,7 @@ export OLDPATH="$PATH"
 
 # GNU core utilities
 if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
-	export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+	export PATH=/usr/local/opt/gnupg@2.0/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 	export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 fi
 # Ruby gems

@@ -91,7 +91,7 @@ ln -sf /usr/local/bin/gcc-6 /usr/local/bin/gcc
 ln -sf /usr/local/bin/g++-6 /usr/local/bin/g++
 
 # Install identity-related packages
-install_brew_pkg gnupg2
+install_brew_pkg gnupg@2.0
 install_brew_pkg pinentry-mac
 
 echo "Installing pip packages..."
