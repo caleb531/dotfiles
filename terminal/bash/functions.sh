@@ -130,20 +130,6 @@ dnsflush() {
 	sudo killall -HUP mDNSResponder
 }
 
-# Copies changed items in current directory to corresponding directory on remote
-# server; an .env file containing the below environment variables must be
-# present in said directory or one of its parent directories
-# Required environment variables: SSH_USER, SSH_HOSTNAME, SSH_PORT, REMOTE_ROOT
-deploy() {
-	~/dotfiles/terminal/bash/functions/deploy.sh
-}
-
-# SSH into the remote directory corresponding to the PWD; also requires an .env
-# file to function
-sshcd() {
-	~/dotfiles/terminal/bash/functions/sshcd.sh
-}
-
 # Control MAMP Apache server
 
 # Start Apache
