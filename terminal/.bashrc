@@ -9,6 +9,6 @@ source ~/dotfiles/terminal/bash/config.sh
 source ~/dotfiles/terminal/bash/prompt.sh
 # personal.sh is for users of my dotfiles who wish to add personal configuration
 # that is not tracked by the repository
-if [ -f ~/dotfiles/personal/bash_personal.sh ]; then
-	source ~/dotfiles/personal/bash_personal.sh
+if [ -f ~/dotfiles/personal/terminal/bash_personal.sh ]; then
+	source ~/dotfiles/personal/terminal/bash_personal.sh
 fi
