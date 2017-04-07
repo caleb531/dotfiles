@@ -198,7 +198,7 @@ run() {
 # Run Makefile and then run compiled executable
 makerun() {
 	make -s
-	run
+	run "$@"
 }
 
 # Upload file using transfer.sh and get share link (output it to the terminal
