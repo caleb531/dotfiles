@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/setup/header.sh
-
 echo "Setting global OS X preferences..."
 
 echo "- Disable Gatekeeper permanently"
