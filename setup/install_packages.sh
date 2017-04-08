@@ -85,7 +85,7 @@ install_npm_pkg font-blast
 tap_brew_repo beeftornado/rmtree
 install_brew_pkg brew-rmtree
 
-# OS X now disguises clang as gcc/g++. Install and link real gcc/g++
+# macOS now disguises clang as gcc/g++. Install and link real gcc/g++
 install_brew_pkg gcc
 ln -sf /usr/local/bin/gcc-6 /usr/local/bin/gcc
 ln -sf /usr/local/bin/g++-6 /usr/local/bin/g++

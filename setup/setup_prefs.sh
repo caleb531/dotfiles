@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Setting global OS X preferences..."
+echo "Setting global macOS preferences..."
 
 echo "- Disable Gatekeeper permanently"
 sudo spctl --master-disable

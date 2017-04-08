@@ -8,7 +8,7 @@ preload_cask_list
 # Ensure that all Cask-installed apps are linked to /Applications
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
-# Install essential OS X apps via Cask (in order of essentiality)
+# Install essential macOS apps via Cask (in order of essentiality)
 install_cask google-chrome
 install_cask dropbox
 install_cask alfred
@@ -17,7 +17,7 @@ install_cask evernote
 install_cask keyboard-maestro
 install_cask skype
 install_cask flux
-# Install additional OS X apps
+# Install additional apps
 install_cask appcleaner
 install_cask namechanger
 install_cask codekit

@@ -35,5 +35,5 @@ if [ -f /usr/local/bin/pip ]; then
 	ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
 fi
 
-# Disable Bash Sessions feature in OS X El Capitan
+# Disable Bash Sessions feature in macOS El Capitan
 touch ~/.bash_sessions_disable

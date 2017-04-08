@@ -7,7 +7,7 @@
 	email = caleb@calebevans.me
 	signingkey = A324810138AFD374
 
-# Store user credentials in OS X Keychain
+# Store user credentials in macOS Keychain
 [credential]
 	helper = osxkeychain
 

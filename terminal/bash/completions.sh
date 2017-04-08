@@ -45,7 +45,7 @@ __get_all_brew_casks() {
 	find "$BREW_TAPS_DIR"/caskroom/ -type f -name '*.rb' | grep -oP "$BREW_NAME_PATT"
 }
 
-# Completion function for brew, the OS X package manager
+# Completion function for brew, the macOS package manager
 _brew() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
