@@ -45,6 +45,11 @@
 [log]
 	date = format:%a %b %-d %Y @ %-I:%M %p
 
+[status]
+	# List untracked files in the same directory as individual files instead of
+	# as a single directory listing
+	showUntrackedFiles = all
+
 # Set pleasant colors for diffs
 [color "diff-highlight"]
 	oldNormal = red bold
