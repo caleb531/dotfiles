@@ -5,9 +5,6 @@ source ~/dotfiles/setup/header.sh
 echo "Installing Homebrew Casks..."
 preload_cask_list
 
-# Ensure that all Cask-installed apps are linked to /Applications
-export HOMEBREW_CASK_OPTS='--appdir=/Applications'
-
 # Install essential macOS apps via Cask (in order of essentiality)
 install_cask google-chrome
 install_cask dropbox
