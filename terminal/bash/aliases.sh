@@ -43,8 +43,6 @@ alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
 alias php='/Applications/MAMP/bin/php/php7.0.12/bin/php'
 # Use recommended version of OpenSSL over deprecated OpenSSL from system
 alias openssl='/usr/local/opt/openssl/bin/openssl'
-# Start Node HTTP server and open web browser
-alias hso='http-server -c-1 -o'
 # Open phpMyAdmin in web browser
 alias pma='open http://localhost/phpMyAdmin/'
 
