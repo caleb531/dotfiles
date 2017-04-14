@@ -2,6 +2,10 @@
   "advanced-open-file":
     createDirectories: true
   "atom-alignment": {}
+  "atom-package-deps":
+    ignored: [
+      "linter-ui-default"
+    ]
   "auto-update-packages": {}
   "autocomplete-plus":
     fileBlacklist: [
