@@ -134,6 +134,9 @@ dnsflush() {
 
 # Start Apache
 aon() {
+	if type rln &> /dev/null; then
+		rln
+	fi
 	sudo /Applications/MAMP/Library/bin/apachectl start
 }
 # Stop Apache
