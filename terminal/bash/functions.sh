@@ -90,7 +90,7 @@ jb() {
 }
 
 # Watch a Jekyll site, building (and using Bundler) as needed
-jbw() {
+jw() {
 	if type bundle &> /dev/null; then
 		bundle exec jekyll build --watch "$@"
 	else
