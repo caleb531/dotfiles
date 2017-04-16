@@ -77,3 +77,9 @@
 
   # Opens inline URL in default web browser if cursor is within URL
   'alt-cmd-o': 'link:open'
+
+# Toggle match by whole word in Find and Replace / Project Find panels
+'.platform-darwin .find-and-replace':
+  'alt-cmd-b': 'find-and-replace:toggle-whole-word-option'
+'.platform-darwin .project-find':
+  'alt-cmd-b': 'project-find:toggle-whole-word-option'
