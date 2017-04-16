@@ -84,7 +84,7 @@ jbw() {
 }
 
 # Serve a Jekyll site, building (and using Bundler) as needed
-jsv() {
+js() {
 	if [ -f ./Gemfile ]; then
 		bundle exec jekyll serve "$@"
 	else
@@ -93,8 +93,18 @@ jsv() {
 }
 
 # Serve Jekyll site and open site in browser
-jsvo() {
-	jsv -o
+jso() {
+	js -o "$@"
+}
+
+# Serve a directory via a Node HTTP server
+hs() {
+	http-server -a localhost -c-1 "$@"
+}
+
+# Serve a directory and open it in web browser
+hso() {
+	hs -o "$@"
 }
 
 # Provide convenient access to common PyPI commands
