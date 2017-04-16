@@ -65,6 +65,21 @@ rmvirtualenv() {
 	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
 
+# Build a Brunch project
+bb() {
+	brunch build "$@"
+}
+
+# Watch a Brunch project for changes and build as needed
+bw() {
+	brunch watch "$@"
+}
+
+# Serve a Brunch site
+bs() {
+	brunch watch --server "$@"
+}
+
 # Build a Jekyll site, using Bundler if needed
 jb() {
 	if type bundle &> /dev/null; then

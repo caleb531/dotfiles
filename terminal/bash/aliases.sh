@@ -45,8 +45,3 @@ alias php='/Applications/MAMP/bin/php/php7.0.12/bin/php'
 alias openssl='/usr/local/opt/openssl/bin/openssl'
 # Open phpMyAdmin in web browser
 alias pma='open http://localhost/phpMyAdmin/'
-
-# Common Brunch commands
-alias bb='brunch build'
-alias bw='brunch watch'
-alias bws='brunch watch --server --network'
