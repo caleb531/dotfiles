@@ -160,14 +160,14 @@ _pip() {
 		# Complete installed packages for `pip show` and `pip uninstall`
 		if [ -z "$PIP_PKG_LIST" -o "$PWD" != "$PIP_PKG_PWD" ]; then
 			# Cache package list for the current PWD
-			PIP_PKG_LIST="$(pip list '[a-z0-9\-]+(?= )' 2> /dev/null)"
+			PIP_PKG_LIST="$($first list '[a-z0-9\-]+(?= )' 2> /dev/null)"
 			PIP_PKG_PWD="$PWD"
 		fi
 		COMPREPLY=( $(compgen -W "$PIP_PKG_LIST" -- $cur) )
 	fi
 
 }
-complete -o default -F _pip pip
+complete -o default -F _pip pip pip2 pip3
 
 # Completion function for apm, Atom's package manager
 _apm() {

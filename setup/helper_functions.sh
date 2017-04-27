@@ -17,7 +17,7 @@ preload_gem_list() {
 }
 
 preload_pip_pkg_list() {
-	PIP_PKG_LIST="$(pip list)"
+	PIP_PKG_LIST="$(pip3 list)"
 }
 
 preload_apm_pkg_list() {
@@ -90,7 +90,7 @@ install_gem() {
 install_pip_pkg() {
 	if ! is_pip_pkg_installed "$1"; then
 		echo "Installing $1..."
-		pip install "$@"
+		pip3 install "$@"
 	fi
 }
 

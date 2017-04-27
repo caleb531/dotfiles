@@ -30,10 +30,5 @@ ln -snf ~/dotfiles/ssh/ssh_config ~/.ssh/config
 mkdir -p ~/.gnupg
 ln -sf ~/dotfiles/gpg/* ~/.gnupg
 
-# Always use Python 3 pip
-if [ -f /usr/local/bin/pip ]; then
-	ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
-fi
-
 # Disable Bash Sessions feature in macOS El Capitan
 touch ~/.bash_sessions_disable
