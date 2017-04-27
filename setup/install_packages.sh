@@ -79,7 +79,6 @@ install_npm_pkg brunch
 install_npm_pkg diff-so-fancy
 install_npm_pkg bower
 install_npm_pkg http-server
-install_npm_pkg font-blast
 
 # Install rmtree command for uninstalling packages and their leaf deps
 tap_brew_repo beeftornado/rmtree
