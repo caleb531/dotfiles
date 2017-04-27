@@ -20,8 +20,7 @@ rmlastcmd() {
 	local n="$([ -n "$1" ] && echo "$1" || echo 1)"
 	local i
 	for ((i=0; i<$n; i++)); do
-		local last_cmd_offset="$(history | tail -n 1 | awk '{print $1;}')"
-		history -d "$last_cmd_offset"
+		history -d "$((HISTCMD-1))"
 	done
 }
 
