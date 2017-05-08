@@ -189,6 +189,10 @@
     'prefix': 'fe'
     'body': 'function ($1) {\n\t$2\n}$3'
 
+  'arrow function':
+    'prefix': 'af'
+    'body': '($1) => {\n\t$2\n}$3'
+
   'immediately-invoked function expression':
     'prefix': 'iife'
     'body': '(function($1) {\n$2\n}($3));'
