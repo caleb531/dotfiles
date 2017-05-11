@@ -27,14 +27,10 @@
 [commit]
 	gpgsign = true
 
+# Push/pull current branch by default (when no arguments are given)
 [push]
-	# Push current branch by default
 	default = simple
-	# Push tags when running `git push` without arguments
-	followTags = true
-
 [pull]
-	# Pull current branch by default
 	default = simple
 
 # Enable more-logical grouping of changes in diffs
