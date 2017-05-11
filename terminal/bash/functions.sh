@@ -184,22 +184,36 @@ mre() {
 	/Applications/MAMP/bin/startMysql.sh > /dev/null
 }
 
-# Run Python tests with Nose test runner
+# Run Node/Python tests with Nose test runner
 rt() {
-	nosetests --rednose "$@"
-}
-
-# Run Python tests with coverage report
-cov() {
-	if coverage run -m nose --rednose "$@"; then
-		coverage report
+	if [ -f package.json ]; then
+		npm test
+	elif [ -f requirements.txt ]; then
+		nosetests --rednose "$@"
 	fi
 }
 
-# Open HTML coverage report for Python tests
+# Run Node/Python tests with coverage report
+cov() {
+	if [ -f package.json ]; then
+		npm run coverage
+	elif [ -f requirements.txt ]; then
+		if coverage run -m nose --rednose "$@"; then
+			coverage report
+		fi
+	fi
+}
+
+# Open HTML coverage report for Node/Python tests
 covo() {
-	coverage html
-	open -a 'Google Chrome' ./htmlcov/index.html
+	local report_path;
+	if [ -f package.json ]; then
+		report_path=./coverage/index.html
+	elif [ -f requirements.txt ]; then
+		coverage html
+		report_path./htmlcov/index.html
+	fi
+	open -a 'Google Chrome' "$report_path"
 }
 
 # Run the executable compiled by the current directory's Makefile
