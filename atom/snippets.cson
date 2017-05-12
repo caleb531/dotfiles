@@ -255,6 +255,14 @@
     'prefix': 'expect'
     'body': 'expect($1).$2'
 
+  'beforeEach':
+    'prefix': 'beforeeach'
+    'body': 'beforeEach(function ($1) {\n\t$2\n});'
+
+  'afterEach':
+    'prefix': 'aftereach'
+    'body': 'afterEach(function ($1) {\n\t$2\n});'
+
   'to be':
     'prefix': 'tobe'
     'body': 'to.be.'
