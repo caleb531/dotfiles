@@ -147,7 +147,7 @@ _pip() {
 	second=${COMP_WORDS[1]}
 	third=${COMP_WORDS[2]}
 
-	if [ "$prev" == 'pip' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'pip' -o "$prev" == 'pip2' -o "$prev" == 'pip3' -o "$prev" == 'help' ]; then
 		# Complete common pip commands for `pip`
 		COMPREPLY=( $(compgen -W 'freeze help install list search show uninstall' -- $cur) )
 	elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
