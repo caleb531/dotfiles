@@ -40,7 +40,6 @@ install_brew_pkg python
 install_brew_pkg python3
 
 install_brew_pkg ssh-copy-id
-install_brew_pkg closure-compiler
 install_brew_pkg trash
 
 install_brew_pkg librsvg
