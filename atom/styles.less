@@ -166,3 +166,13 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
     background: #fff;
   }
 }
+
+// Constrain width of tree view
+.atom-dock-inner.left.atom-dock-open {
+  .atom-dock-mask,
+  .atom-dock-content-wrapper {
+    @tree-view-width: 200px;
+    min-width: @tree-view-width;
+    max-width: @tree-view-width;
+  }
+}
