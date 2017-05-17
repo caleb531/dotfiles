@@ -93,7 +93,7 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
     }
   }
   td {
-    padding: 5px 15px;
+    padding: 10px 15px;
     // Make Severity column more prominent
     &:first-child {
       width: 78px;
@@ -167,12 +167,28 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
   }
 }
 
-// Constrain width of tree view
+// Tree View dock (Atom >=1.7)
 .atom-dock-inner.left.atom-dock-open {
+  // Constrain width of tree view
   .atom-dock-mask,
   .atom-dock-content-wrapper {
     @tree-view-width: 200px;
     min-width: @tree-view-width;
     max-width: @tree-view-width;
+  }
+}
+
+// Linter panel dock (Atom >= 1.7)
+.atom-dock-inner.bottom.atom-dock-open {
+  // Hide Linter title bar
+  .tab-bar {
+    display: none;
+  }
+  // Constrain height of Linter panel
+  .atom-dock-mask,
+  .atom-dock-content-wrapper {
+    @tree-view-height: 40px;
+    min-height: @tree-view-height;
+    max-height: @tree-view-height;
   }
 }
