@@ -190,6 +190,8 @@ rt() {
 		npm test
 	elif [ -f requirements.txt ]; then
 		nosetests --rednose "$@"
+	else
+		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 	fi
 }
 
@@ -201,6 +203,8 @@ cov() {
 		if coverage run -m nose --rednose "$@"; then
 			coverage report
 		fi
+	else
+		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 	fi
 }
 
@@ -209,11 +213,14 @@ covo() {
 	local report_path;
 	if [ -f package.json ]; then
 		report_path=./coverage/index.html
+		open -a 'Google Chrome' "$report_path"
 	elif [ -f requirements.txt ]; then
 		coverage html
 		report_path./htmlcov/index.html
+		open -a 'Google Chrome' "$report_path"
+	else
+		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 	fi
-	open -a 'Google Chrome' "$report_path"
 }
 
 # Run the executable compiled by the current directory's Makefile
