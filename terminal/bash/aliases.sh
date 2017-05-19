@@ -45,3 +45,5 @@ alias php='/Applications/MAMP/bin/php/php7.0.12/bin/php'
 alias openssl='/usr/local/opt/openssl/bin/openssl'
 # Open phpMyAdmin in web browser
 alias pma='open http://localhost/phpMyAdmin/'
+# Increment major, minor, or patch version of the node package
+alias bump='npm version --no-git-tag-version'
