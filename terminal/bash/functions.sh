@@ -210,14 +210,11 @@ cov() {
 
 # Open HTML coverage report for Node/Python tests
 covo() {
-	local report_path;
 	if [ -f package.json ]; then
-		report_path=./coverage/index.html
-		open -a 'Google Chrome' "$report_path"
+		open -a "$WEB_BROWSER_NAME" ./coverage/index.html
 	elif [ -f requirements.txt ]; then
 		coverage html
-		report_path./htmlcov/index.html
-		open -a 'Google Chrome' "$report_path"
+		open -a "$WEB_BROWSER_NAME" ./htmlcov/index.html
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 	fi

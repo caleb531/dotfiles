@@ -39,6 +39,9 @@ export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
 # Explicitly declare vim as default text editor
 export EDITOR='vim'
 
+# Name of default web browser (useful for `open -a` commands)
+export WEB_BROWSER_NAME='Google Chrome'
+
 # Don't clear man page when exiting less
 export MANPAGER='less -X'
 
