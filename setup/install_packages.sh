@@ -45,9 +45,6 @@ install_brew_pkg trash
 install_brew_pkg librsvg
 # ImageMagick >=7.0.0 will currently break Ruby gems like rmagick
 install_brew_pkg imagemagick@6
-# Pin ImageMagick because upgrading it can break plugins which depend on it
-# (like the rmagick Jekyll plugin I use for my personal website)
-pin_brew_pkg imagemagick
 install_brew_pkg pandoc
 
 install_brew_pkg ruby
