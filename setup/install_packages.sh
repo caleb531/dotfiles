@@ -80,8 +80,12 @@ install_brew_pkg brew-rmtree
 
 # macOS now disguises clang as gcc/g++. Install and link real gcc/g++
 install_brew_pkg gcc
-ln -sf /usr/local/bin/gcc-6 /usr/local/bin/gcc
-ln -sf /usr/local/bin/g++-6 /usr/local/bin/g++
+if [ -f /usr/local/bin/gcc-7 ]; then
+	ln -sf /usr/local/bin/gcc-7 /usr/local/bin/gcc
+	ln -sf /usr/local/bin/g++-7 /usr/local/bin/g++
+else
+	>&2 echo "gcc/g++ not linked; version doesn't exist"
+fi
 
 # Install identity-related packages
 install_brew_pkg gnupg@2.0
