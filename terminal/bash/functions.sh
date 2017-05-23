@@ -252,3 +252,11 @@ transfer() {
 	echo -n "$share_url" | pbcopy
 	rm -f "$share_url_file"
 }
+
+# Clone git repository and immediately cd to it
+clonecd() {
+	git clone "$@"
+	if [ $? == 0 ]; then
+		cd "$(basename "$1" .git)"
+	fi
+}
