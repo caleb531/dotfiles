@@ -42,6 +42,7 @@ install_cask font-montserrat
 install_cask font-source-sans-pro
 install_cask font-ubuntu
 install_cask font-pt-serif
+install_cask font-pt-sans
 
 echo "Installing additional plugins..."
 
