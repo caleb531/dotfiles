@@ -32,15 +32,7 @@ concise, readable, and useful. The prompt displays the name of the current
 working directory, followed by the name of the current branch if the directory
 is a git repository. If the directory contains a `.virtualenv` directory, the
 prompt also displays `py2` or `py3` depending on the virtualenv's Python
-version. The prompt uses colons as separators, and spacing is utilized to
-improve readability.
-
-#### Examples
-
-* `~ : $`
-* `my-dir : $`
-* `my-repo : master : $`
-* `my-python-proj : py3 : master : $`
+version. Each component is displayed in a separate color to improve readability.
 
 ### Completion
 
