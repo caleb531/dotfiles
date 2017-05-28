@@ -17,25 +17,23 @@ __reset_color() {
 __output_ps1() {
 
 	# Define a local constant for the separator between items in the prompt
-	local SEPARATOR=' : '
+	local SEPARATOR='  '
 
 	# Output name of current working directory (with ~ denoting HOME)
-	__set_color $CYAN_BOLD
+	__set_color $CYAN
 	echo -n '\W'
-	__set_color $WHITE_BOLD
 	echo -n "$SEPARATOR"
 
 	# If working directory is a virtualenv
 	if [ -n "$VIRTUAL_ENV" ]; then
 
 		# Output Python version used by virtualenv
-		__set_color $CYAN_BOLD
+		__set_color $BLUE
 		if [ -f "$VIRTUAL_ENV"/bin/python3 ]; then
 			echo -n "py3"
 		elif [ -f "$VIRTUAL_ENV"/bin/python2 ]; then
 			echo -n "py2"
 		fi
-		__set_color $WHITE_BOLD
 		echo -n "$SEPARATOR"
 
 	fi
@@ -44,16 +42,15 @@ __output_ps1() {
 	if git rev-parse --git-dir &> /dev/null; then
 
 		# Output name of current branch
-		__set_color $CYAN_BOLD
+		__set_color $BLACK
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-		__set_color $WHITE_BOLD
 		echo -n "$SEPARATOR"
 
 	fi
 
 	# Output $ for user and # for root
-	__set_color $CYAN_BOLD
-	echo -n '\$ '
+	__set_color $GREEN
+	echo -ne '❯ '
 	__reset_color
 
 }
@@ -77,6 +74,14 @@ __detect_python_virtualenv() {
 
 }
 
+# Output line continuation prompt string
+__output_ps2() {
+	# Use fancy chevron from PS1
+	__set_color $GREEN
+	echo -ne '❯ '
+	__reset_color
+}
+
 # Run the following before each new command
 __update_prompt_command() {
 
@@ -89,3 +94,4 @@ __update_prompt_command() {
 
 }
 PROMPT_COMMAND="__update_prompt_command"
+PS2="$(__output_ps2)"
