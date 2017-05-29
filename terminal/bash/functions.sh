@@ -187,7 +187,7 @@ mre() {
 # Run Node/Python tests with Nose test runner
 rt() {
 	if [ -f package.json ]; then
-		npm test
+		npm test "$@"
 	elif [ -f requirements.txt ]; then
 		nosetests --rednose "$@"
 	else
@@ -198,7 +198,7 @@ rt() {
 # Run Node/Python tests with coverage report
 cov() {
 	if [ -f package.json ]; then
-		npm run coverage
+		npm run coverage "$@"
 	elif [ -f requirements.txt ]; then
 		if coverage run -m nose --rednose "$@"; then
 			coverage report
