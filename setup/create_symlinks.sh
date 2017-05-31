@@ -10,9 +10,6 @@ ln -sf ~/dotfiles/atom/* ~/.atom
 ln -snf ~/dotfiles/terminal/.bashrc ~/.bashrc
 ln -snf ~/dotfiles/terminal/.bashrc ~/.bash_profile
 
-# Symlink custom completions and remove overridden completions
-ln -snf ~/dotfiles/terminal/bash/completions.sh /usr/local/etc/bash_completion.d/dotfiles-completions.sh
-
 # Symlink miscellaneous configuration
 ln -snf ~/dotfiles/terminal/.vimrc ~/.vimrc
 ln -snf ~/dotfiles/git/.gitconfig ~/.gitconfig

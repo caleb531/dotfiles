@@ -6,4 +6,3 @@ echo "Configuring all..."
 ~/dotfiles/setup/setup_prefs.sh
 ~/dotfiles/setup/install_packages.sh
 ~/dotfiles/setup/install_casks.sh
-~/dotfiles/setup/remove_completions.sh

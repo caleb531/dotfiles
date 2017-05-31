@@ -208,7 +208,7 @@ _bundle() {
 	fi
 
 }
-complete -o default -F _bundle bundle
+complete -o default -F _bundle bundle bundler
 
 # Completion function for jekyll, the static site generator
 _jekyll() {
