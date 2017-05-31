@@ -26,6 +26,9 @@ defaults write NSGlobalDomain NSCloseAlwaysConfirmsChanges -bool true
 echo "- Only show scroll bars when scrolling"
 defaults write NSGlobalDomain AppleShowScrollBars -string 'WhenScrolling'
 
+echo "- Jump to spot that's clicked when clicking scrollbar"
+defaults write NSGlobalDomain AppleScrollerPagingBehavior -bool true
+
 echo "- Disable iOS-style natural scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
