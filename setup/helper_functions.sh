@@ -99,3 +99,19 @@ install_apm_pkg() {
 		apm install "$@"
 	fi
 }
+
+install_font() {
+	local font_name="$1"
+	local dest_dir=~/Library/Fonts/"$font_name"
+	if [ ! -d "$dest_dir" ]; then
+		echo "Installing $font_name..."
+		local temp_dir="$(mktemp -d)"
+		local zip_file="$temp_dir"/"$font_name".zip
+		curl \
+			--progress \
+			--output "$zip_file" \
+			"https://google-webfonts-helper.herokuapp.com/api/fonts/$font_name?download=zip&subsets=latin,latin-ext&formats=ttf"
+		unzip -q "$zip_file" -d "$dest_dir"
+		rm -rf "$temp_dir"
+	fi
+}

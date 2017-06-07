@@ -34,16 +34,6 @@ install_cask betterzipql
 install_cask suspicious-package
 qlmanage -r
 
-echo "Installing fonts..."
-
-tap_brew_repo caskroom/fonts
-install_cask font-open-sans
-install_cask font-montserrat
-install_cask font-source-sans-pro
-install_cask font-ubuntu
-install_cask font-pt-serif
-install_cask font-pt-sans
-
 echo "Installing additional plugins..."
 
 install_cask colorpicker-hex
