@@ -102,7 +102,7 @@ install_apm_pkg() {
 
 # Font environment variables
 FONT_BASE_URL='https://google-webfonts-helper.herokuapp.com/api/fonts'
-FONT_SUBSETS='latin,latin-ext'
+FONT_SUBSETS='latin,latin-ext,greek,greek-ext'
 FONT_PARAMS="download=zip&subsets=$FONT_SUBSETS&formats=ttf"
 FONT_DIR=~/Library/Fonts
 
