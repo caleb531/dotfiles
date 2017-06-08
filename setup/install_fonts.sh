@@ -4,9 +4,8 @@ source ~/dotfiles/setup/header.sh
 
 echo "Installing fonts..."
 
-install_font 'Ubuntu'
-install_font 'Montserrat'
-install_font 'Open Sans'
-install_font 'PT Serif'
-install_font 'PT Sans'
-install_font 'Source Sans Pro'
+while read -r font_name; do
+	if [ -n "$font_name" ]; then
+		install_font "$font_name"
+	fi
+done < ~/dotfiles/setup/fonts.txt
