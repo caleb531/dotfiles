@@ -37,9 +37,11 @@
 [diff]
 	indentHeuristic = true
 
-# Set a more human-readable default date format for git log
 [log]
+	# Set a more human-readable default date format for git log
 	date = format:%a %b %-d %Y @ %-I:%M %p
+	# Disable log decoration (enabled by default in Git v2.13.0)
+	decorate = no
 
 [status]
 	# List untracked files in the same directory as individual files instead of
