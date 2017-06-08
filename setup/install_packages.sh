@@ -71,7 +71,6 @@ preload_npm_pkg_list
 install_npm_pkg grunt-cli
 install_npm_pkg brunch
 install_npm_pkg diff-so-fancy
-install_npm_pkg bower
 install_npm_pkg http-server
 
 # Install rmtree command for uninstalling packages and their leaf deps
