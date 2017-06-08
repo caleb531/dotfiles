@@ -100,10 +100,9 @@ install_pip_pkg flake8
 echo "Installing Atom packages..."
 preload_apm_pkg_list
 
-# Install Atom packages by reading each line from packages.cson file
 while read -r pkg_line; do
-	pkg="$(echo "$pkg_line" | grep -Po '(?<=")[a-z0-9\-]+(?=")')"
-	if [ -n "$pkg" ]; then
-		install_apm_pkg "$pkg"
+	pkg_name="$(echo "$pkg_line" | grep -Po '(?<=")[a-z0-9\-]+(?=")')"
+	if [ -n "$pkg_name" ]; then
+		install_apm_pkg "$pkg_name"
 	fi
 done < ~/dotfiles/atom/packages.cson
