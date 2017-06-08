@@ -100,23 +100,19 @@ install_apm_pkg() {
 	fi
 }
 
-# Font environment variables
-FONT_BASE_URL='https://google-webfonts-helper.herokuapp.com/api/fonts'
-FONT_SUBSETS='latin,latin-ext,greek,greek-ext'
-FONT_PARAMS="download=zip&subsets=$FONT_SUBSETS&formats=ttf"
-FONT_DIR=~/Library/Fonts
-
 install_font() {
 	local font_name="$1"
-	local dest_dir="$FONT_DIR"/"$font_name"
+	local dest_dir=~/Library/Fonts/"$font_name"
 	if [ ! -d "$dest_dir" ]; then
 		echo "Installing $font_name..."
 		local temp_dir="$(mktemp -d)"
 		local dest_archive="$temp_dir"/"$font_name".zip
 		curl \
+			--get \
+			--data-urlencode "family=$font_name" \
 			--progress \
-			--output "$dest_archive" \
-			"$FONT_BASE_URL/$font_name?$FONT_PARAMS"
+			'https://fonts.google.com/download' \
+			> "$dest_archive"
 		unzip -q "$dest_archive" -d "$dest_dir"
 		rm -rf "$temp_dir"
 	fi
