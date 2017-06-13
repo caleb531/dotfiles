@@ -3,4 +3,6 @@ Montserrat
 Open Sans
 PT Serif
 PT Sans
+Oxygen Mono
+Ubuntu Mono
 Source Sans Pro
