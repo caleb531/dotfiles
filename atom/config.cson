@@ -114,7 +114,8 @@
     disableWhenNoJshintrcFileInPath: true
   "linter-shellcheck": {}
   "linter-ui-default":
-    panelHeight: 69
+    hidePanelWhenEmpty: true
+    panelHeight: 95
     showPanel: true
     showTooltip: false
   "markdown-preview":
