@@ -31,7 +31,6 @@ packages: [
   "linter-jsonlint"
   "linter-php"
   "linter-ui-default"
-  "merge-conflicts"
   "monokai"
   "package-sync"
   "pigments"
