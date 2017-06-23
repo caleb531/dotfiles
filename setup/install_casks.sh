@@ -37,5 +37,4 @@ qlmanage -r
 echo "Installing additional plugins..."
 
 install_cask colorpicker-hex
-install_cask silverlight
 install_cask java
