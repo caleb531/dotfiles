@@ -78,7 +78,7 @@
     'body': 'for (int ${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i}${4:++}) {\n\t$5\n}'
 
   'function':
-    'prefix': 'f'
+    'prefix': 'fd'
     'body': '${1:void} ${2:fname}($3) {\n\t$4\n}'
 
   'struct':
@@ -424,7 +424,7 @@
     'body': 'print_r( $1 );'
 
   'function':
-    'prefix': 'f'
+    'prefix': 'fd'
     'body': 'function ${1:fname}($2) {\n\t$3\n}'
 
   'class':
@@ -684,7 +684,7 @@
     'body': 'for ${1:f} in ${2:seq}; do\n\t$3\ndone'
 
   'function':
-    'prefix': 'f'
+    'prefix': 'fd'
     'body': '${1:fname}() {\n\t$2\n}'
 
 # AppleScript
