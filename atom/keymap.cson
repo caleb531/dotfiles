@@ -1,5 +1,10 @@
 # Your keymap
 
+'body':
+  
+  # Disable cmd-o because it always gets in the way of typing cmd-i
+  'cmd-o': 'unset!'
+
 '.platform-darwin atom-workspace':
 
   # Create new files using advanced-open-file
