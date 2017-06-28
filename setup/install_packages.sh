@@ -58,7 +58,6 @@ install_gem sass
 install_gem bundler
 install_gem jekyll
 
-# Instll Node via Homebrew but install npm separately to avoid conflicts
 install_brew_pkg node
 if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
 	echo "Setting npm prefix..."
