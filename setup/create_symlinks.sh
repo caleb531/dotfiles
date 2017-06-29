@@ -15,8 +15,8 @@ ln -snf ~/dotfiles/terminal/.vimrc ~/.vimrc
 ln -snf ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 # Symlink pip configuration
-mkdir -p ~/'Library/Application Support/pip'
-ln -snf ~/dotfiles/terminal/pip.conf ~/'Library/Application Support/pip/pip.conf'
+mkdir -p ~/Library/Application\ Support/pip
+ln -snf ~/dotfiles/terminal/pip.conf ~/Library/Application\ Support/pip/pip.conf
 
 # Symlink SSH configuration
 mkdir -p ~/.ssh
