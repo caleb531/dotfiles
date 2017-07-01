@@ -79,6 +79,11 @@ bs() {
 	brunch watch --server "$@"
 }
 
+# Install Bundler gems (has nothing to do with Brunch)
+bi() {
+	bundle install
+}
+
 # Build a Jekyll site, using Bundler if needed
 jb() {
 	if type bundle &> /dev/null; then
