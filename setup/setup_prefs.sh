@@ -106,6 +106,9 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 echo "- Set column view as preferred Finder view"
 defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'
 
+echo "- Disable Finder animations (e.g. for the Get Info panel)"
+defaults write com.apple.finder DisableAllAnimations -bool true
+
 echo "Setting Dock preferences..."
 
 echo "- Minimize windows using scale effect"
