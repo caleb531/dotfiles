@@ -49,6 +49,10 @@ defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true
 
 echo "- Disable auto-correct"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 echo "- Disable smart quotes/dashes"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
