@@ -47,3 +47,5 @@ alias openssl='/usr/local/opt/openssl/bin/openssl'
 alias pma='open http://localhost/phpMyAdmin/'
 # Increment major, minor, or patch version of the node package
 alias bump='npm version --no-git-tag-version'
+# Profile memory usage of Python program
+alias mp='python3 -m memory_profiler'
