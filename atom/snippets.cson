@@ -624,7 +624,7 @@
 '.source.css':
 
   '@media':
-    'prefix': 'med'
+    'prefix': 'media'
     'body': '@media $1 {\n\t$2\n}'
 
 # Sass
