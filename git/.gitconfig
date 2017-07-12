@@ -87,6 +87,7 @@
 	logp = log --graph --pretty=format:'%C(auto)%h%Creset %s %Cblue(%cd)%Creset' --date=format:%-m/%-d/%y
 	logs = log -S
 	mergenff = merge --no-ff
+	pusht = push --tags
 	rmc = rm --cached
 	rpo = remote prune origin
 	rvp = rev-parse
