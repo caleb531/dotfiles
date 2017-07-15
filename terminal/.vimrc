@@ -36,9 +36,9 @@ silent !stty -ixon
 :map <buffer> <C-P> :s/^\(reword\\|squash\\|fixup\\|edit\)/pick/<CR>
 
 " Move line up with ctrl-a
-:map <C-A> :m-2<CR>
+:map <buffer> <C-A> :m-2<CR>
 " Move line down with ctrl-z
-:map <C-Z> :m+1<CR>
+:map <buffer> <C-Z> :m+1<CR>
 
 " Enable syntax highlighting
 syntax enable
