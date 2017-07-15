@@ -20,6 +20,21 @@
 " To run within Vim, type "@r" (case-insensitive) in normal mode
 :let @r='(V)gq'
 
+" Git rebase key bindings
+
+" Allow ctrl-s and ctrl-q to be used as key bindings
+silent !stty -ixon
+" Fixup (ctrl-f)
+:map <buffer> <C-F> :s/^\(pick\\|reword\\|edit\\|squash\)/fixup/<CR>
+" Squash (ctrl-s)
+:map <buffer> <C-S> :s/^\(pick\\|reword\\|edit\\|fixup\)/squash/<CR>
+" Edit (ctrl-e)
+:map <buffer> <C-E> :s/^\(pick\\|reword\\|squash\\|fixup\)/edit/<CR>
+" Reword (ctrl-r)
+:map <buffer> <C-R> :s/^\(pick\\|edit\\|squash\\|fixup\)/reword/<CR>
+" Pick (ctrl-p)
+:map <buffer> <C-P> :s/^\(reword\\|squash\\|fixup\\|edit\)/pick/<CR>
+
 " Enable syntax highlighting
 syntax enable
 syntax reset
