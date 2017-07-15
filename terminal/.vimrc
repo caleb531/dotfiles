@@ -2,43 +2,43 @@
 " Caleb Evans
 
 " Disable highlighting of parens
-:let loaded_matchparen = 1
+let loaded_matchparen = 1
 
 " Set maximum line length (based on recommmended limit for Git commit messages)
 " See http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-:set textwidth=72
+set textwidth=72
 " Automatically wrap words as close as possible without exceeding limit
-:set formatoptions+=t
+set formatoptions+=t
 
 " Enable ruler showing current line and column
-:set ruler
+set ruler
 
 " Enable auto-indent (i.e. hanging indent behavior) for all file types
-:set autoindent
+set autoindent
 
 " Reflow text to fit within the max line length
 " To run within Vim, type "@r" (case-insensitive) in normal mode
-:let @r='(V)gq'
+let @r='(V)gq'
 
 " Git rebase key bindings
 
 " Allow ctrl-s and ctrl-q to be used as key bindings
 silent !stty -ixon
 " Fixup (ctrl-f)
-:map <buffer> <C-F> :s/^\(pick\\|reword\\|edit\\|squash\)/fixup/<CR>
+map <buffer> <C-F> :s/^\(pick\\|reword\\|edit\\|squash\)/fixup/<CR>
 " Squash (ctrl-s)
-:map <buffer> <C-S> :s/^\(pick\\|reword\\|edit\\|fixup\)/squash/<CR>
+map <buffer> <C-S> :s/^\(pick\\|reword\\|edit\\|fixup\)/squash/<CR>
 " Edit (ctrl-e)
-:map <buffer> <C-E> :s/^\(pick\\|reword\\|squash\\|fixup\)/edit/<CR>
+map <buffer> <C-E> :s/^\(pick\\|reword\\|squash\\|fixup\)/edit/<CR>
 " Reword (ctrl-r)
-:map <buffer> <C-R> :s/^\(pick\\|edit\\|squash\\|fixup\)/reword/<CR>
+map <buffer> <C-R> :s/^\(pick\\|edit\\|squash\\|fixup\)/reword/<CR>
 " Pick (ctrl-p)
-:map <buffer> <C-P> :s/^\(reword\\|squash\\|fixup\\|edit\)/pick/<CR>
+map <buffer> <C-P> :s/^\(reword\\|squash\\|fixup\\|edit\)/pick/<CR>
 
 " Move line up with ctrl-a
-:map <buffer> <C-A> :m-2<CR>
+map <buffer> <C-A> :m-2<CR>
 " Move line down with ctrl-z
-:map <buffer> <C-Z> :m+1<CR>
+map <buffer> <C-Z> :m+1<CR>
 
 " Enable syntax highlighting
 syntax enable
