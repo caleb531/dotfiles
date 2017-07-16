@@ -2,7 +2,7 @@
 " Caleb Evans
 
 " Disable highlighting of parens
-let loaded_matchparen = 1
+let loaded_matchparen=1
 
 " Set maximum line length (based on recommmended limit for Git commit messages)
 " See <http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>
