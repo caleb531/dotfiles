@@ -29,8 +29,8 @@ if [ -d /usr/local/lib/npm-packages/bin ]; then
 fi
 
 # Colorize less
-# Color syntax: http://www.termsys.demon.co.uk/vtansi.htm#colors
-# termcap(5) man page: http://linux.die.net/man/5/termcap
+# Color syntax: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
+# termcap(5) man page: <http://linux.die.net/man/5/termcap>
 export LESS_TERMCAP_md=$'\e[1;34m'	# start bold mode
 export LESS_TERMCAP_me=$'\e[1;0m'	# end modes so, us, mb, md, mr
 export LESS_TERMCAP_so=$'\e[1;31m'	# start standout mode
