@@ -13,7 +13,7 @@ __reset_color() {
 }
 
 # Output a succinct and useful interactive prompt
-# Escape sequences: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
+# Escape sequences: <https://ss64.com/bash/syntax-prompt.html>
 __output_ps1() {
 
 	# Define a local constant for the separator between items in the prompt
