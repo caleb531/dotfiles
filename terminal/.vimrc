@@ -16,6 +16,10 @@ set ruler
 " Enable auto-indent (i.e. hanging indent behavior) for all file types
 set autoindent
 
+" Ensure the backspace key always functions as delete in insert mode (strangely,
+" it doesn't by default for brew-installed vim)
+set backspace=indent,eol,start
+
 " Reflow text to fit within the max line length
 " To run within Vim, type "@r" (case-insensitive) in normal mode
 let @r='(V)gq'
