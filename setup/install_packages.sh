@@ -74,15 +74,6 @@ install_npm_pkg http-server
 tap_brew_repo beeftornado/rmtree
 install_brew_pkg brew-rmtree
 
-# macOS now disguises clang as gcc/g++. Install and link real gcc/g++
-install_brew_pkg gcc
-if [ -f /usr/local/bin/gcc-7 ]; then
-	ln -sf /usr/local/bin/gcc-7 /usr/local/bin/gcc
-	ln -sf /usr/local/bin/g++-7 /usr/local/bin/g++
-else
-	>&2 echo "gcc/g++ not linked; version doesn't exist"
-fi
-
 # Install identity-related packages
 install_brew_pkg gnupg@2.0
 install_brew_pkg pinentry-mac
