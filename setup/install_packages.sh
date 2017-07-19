@@ -63,7 +63,6 @@ if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
 	echo "Setting npm prefix..."
 	echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
 fi
-pin_brew_pkg node
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
