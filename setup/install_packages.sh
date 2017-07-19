@@ -27,7 +27,7 @@ install_brew_pkg colordiff
 install_brew_pkg grep --with-default-names
 install_brew_pkg rsync
 # gnu-sed is required by diff-so-fancy
-install_brew_pkg gnu-sed --with-default-names
+install_brew_pkg gnu-sed
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils
 install_brew_pkg findutils
