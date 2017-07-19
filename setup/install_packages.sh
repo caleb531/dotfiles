@@ -26,12 +26,10 @@ install_brew_pkg bash-completion@2
 install_brew_pkg colordiff
 install_brew_pkg grep
 install_brew_pkg rsync
-install_brew_pkg gnu-sed
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils
 install_brew_pkg findutils
 install_brew_pkg tree
-install_brew_pkg gnu-tar
 
 install_brew_pkg git
 
