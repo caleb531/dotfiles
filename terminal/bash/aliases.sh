@@ -9,12 +9,12 @@ alias sudo='sudo '
 alias path='echo -e ${PATH//:/\\n}'
 
 # Colorize directory listings
-alias ls='gls --color=auto'
+alias ls='ls --color=auto'
 
 # Output the octal permissions for a file or directory
-alias octmod='gstat -c "%a"'
+alias octmod='stat -c "%a"'
 # Output the owner/group for a file or directory
-alias owners='gstat -c "%U %G"'
+alias owners='stat -c "%U %G"'
 
 # Colorize grep matches (but not for piped output)
 alias grep='ggrep --color=auto'
