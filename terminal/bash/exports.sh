@@ -11,9 +11,8 @@ export OLDPATH="$PATH"
 # Ensure installed packages are recognized and preferred
 
 # GNU core utilities
-if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
-	export PATH=/usr/local/opt/gnupg@2.0/bin:/usr/local/opt/gpg-agent/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
-	export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+if [ -d /usr/local/opt/gnupg@2.0/bin ]; then
+	export PATH=/usr/local/opt/gnupg@2.0/bin:/usr/local/opt/gpg-agent/bin:$PATH
 fi
 # ImageMagick
 if [ -d /usr/local/opt/imagemagick@6/bin ]; then
