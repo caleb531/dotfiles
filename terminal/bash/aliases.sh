@@ -17,14 +17,9 @@ alias octmod='stat -c "%a"'
 alias owners='stat -c "%U %G"'
 
 # Colorize grep matches (but not for piped output)
-alias grep='ggrep --color=auto'
-alias egrep='gegrep --color=auto'
-alias fgrep='gfgrep --color=auto'
-
-# Alias other utilities to GNU variants
-alias sed='gsed'
-alias tar='gtar'
-alias find='gfind'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
 # Colorize diff output
 if type colordiff &> /dev/null; then
@@ -37,7 +32,7 @@ if type tree &> /dev/null; then
 fi
 
 # Search for running processes easily
-alias psgrep='ps ax | ggrep -v grep | ggrep'
+alias psgrep='ps ax | grep -v grep | grep'
 # Provide quick access to MAMP's Apache server
 alias apachectl='sudo /Applications/MAMP/Library/bin/apachectl'
 # Provide access to MAMP's MySQL utility

@@ -24,7 +24,7 @@ fi
 
 install_brew_pkg bash-completion@2
 install_brew_pkg colordiff
-install_brew_pkg grep
+install_brew_pkg grep --with-default-names
 install_brew_pkg rsync
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils
@@ -55,7 +55,7 @@ install_gem bundler
 install_gem jekyll
 
 install_brew_pkg node
-if ! cat ~/.npmrc | ggrep -q 'prefix=/usr/local/lib/npm-packages'; then
+if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
 	echo "Setting npm prefix..."
 	echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
 fi
@@ -88,7 +88,7 @@ echo "Installing Atom packages..."
 preload_apm_pkg_list
 
 while read -r pkg_line; do
-	pkg_name="$(echo "$pkg_line" | ggrep -Po '(?<=")[a-z0-9\-]+(?=")')"
+	pkg_name="$(echo "$pkg_line" | grep -Po '(?<=")[a-z0-9\-]+(?=")')"
 	if [ -n "$pkg_name" ]; then
 		install_apm_pkg "$pkg_name"
 	fi
