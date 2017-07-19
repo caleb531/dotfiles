@@ -24,7 +24,7 @@ fi
 
 install_brew_pkg bash-completion@2
 install_brew_pkg colordiff
-install_brew_pkg grep --with-default-names
+install_brew_pkg grep
 install_brew_pkg rsync
 # gnu-sed is required by diff-so-fancy
 install_brew_pkg gnu-sed
