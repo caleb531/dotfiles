@@ -37,12 +37,12 @@ __get_installed_brew_casks() {
 
 # Retrieve list of all available Homebrew packages
 __get_all_brew_packages() {
-	find "$BREW_TAPS_DIR"/homebrew/ -type f -name '*.rb' | grep -oP "$BREW_NAME_PATT"
+	find "$BREW_TAPS_DIR"/homebrew/ -type f -name '*.rb' | ggrep -oP "$BREW_NAME_PATT"
 }
 
 # Retrieve list of all available Homebrew casks
 __get_all_brew_casks() {
-	find "$BREW_TAPS_DIR"/caskroom/ -type f -name '*.rb' | grep -oP "$BREW_NAME_PATT"
+	find "$BREW_TAPS_DIR"/caskroom/ -type f -name '*.rb' | ggrep -oP "$BREW_NAME_PATT"
 }
 
 # Completion function for brew, the macOS package manager
@@ -245,7 +245,7 @@ _python() {
 		# Convert current query file path (with /) to module path (with .)
 		local curpath="${cur//./\/}"
 		# Get package names matching current query; exclude hidden directories
-		local packages="$(compgen -d -- $curpath | grep -Po '([a-z_]+/)*([a-z_]+)\b')"
+		local packages="$(compgen -d -- $curpath | ggrep -Po '([a-z_]+/)*([a-z_]+)\b')"
 		# Convert Python file paths to package paths
 		packages="${packages//\//.}"
 		if [ -n "$packages" ]; then
@@ -257,7 +257,7 @@ _python() {
 			compopt -o nospace
 		fi
 		# Get module names matching curent query; include only .py files
-		local modules="$(compgen -f -- $curpath | grep -Po '([a-z_]+/)*([a-z_]+)\.py')"
+		local modules="$(compgen -f -- $curpath | ggrep -Po '([a-z_]+/)*([a-z_]+)\.py')"
 		# Convert Python file paths to module paths
 		modules="${modules//\//.}"
 		# Remove .py extension (all module names omit the .py extension)

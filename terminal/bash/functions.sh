@@ -179,7 +179,7 @@ mon() {
 moff() {
 	# Suppres the annoying "Warning: Using a password on the command line
 	# interface can be insecure." message
-	/Applications/MAMP/bin/stopMysql.sh 2>&1 | grep -v "Warning: Using a pass"
+	/Applications/MAMP/bin/stopMysql.sh 2>&1 | ggrep -v "Warning: Using a pass"
 	aoff
 }
 # Restart MAMP
@@ -227,7 +227,7 @@ covo() {
 
 # Run the executable compiled by the current directory's Makefile
 run() {
-	local executable="$(cat Makefile | grep -Po '[\w\-\./]+\.out')"
+	local executable="$(cat Makefile | ggrep -Po '[\w\-\./]+\.out')"
 	if [ -f "$executable" ]; then
 		"$(readlink -f "$executable")" "$@"
 	fi

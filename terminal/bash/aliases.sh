@@ -36,7 +36,7 @@ if type tree &> /dev/null; then
 fi
 
 # Search for running processes easily
-alias psgrep='ps ax | grep -v grep | grep'
+alias psgrep='ps ax | ggrep -v grep | ggrep'
 # Provide quick access to MAMP's Apache server
 alias apachectl='sudo /Applications/MAMP/Library/bin/apachectl'
 # Provide access to MAMP's MySQL utility

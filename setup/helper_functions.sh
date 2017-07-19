@@ -29,27 +29,27 @@ is_cmd_installed() {
 }
 
 is_brew_pkg_installed() {
-	echo "$BREW_PKG_LIST" | grep --quiet "^$1\$"
+	echo "$BREW_PKG_LIST" | ggrep --quiet "^$1\$"
 }
 
 is_npm_pkg_installed() {
-	echo "$NPM_PKG_LIST" | grep --quiet " $1@"
+	echo "$NPM_PKG_LIST" | ggrep --quiet " $1@"
 }
 
 is_cask_installed() {
-	echo "$CASK_LIST" | grep --quiet "^$1\$"
+	echo "$CASK_LIST" | ggrep --quiet "^$1\$"
 }
 
 is_gem_installed() {
-	echo "$GEM_LIST" | grep --quiet "^$1 "
+	echo "$GEM_LIST" | ggrep --quiet "^$1 "
 }
 
 is_pip_pkg_installed() {
-	echo "$PIP_PKG_LIST" | grep --quiet "^$1 "
+	echo "$PIP_PKG_LIST" | ggrep --quiet "^$1 "
 }
 
 is_apm_pkg_installed() {
-	echo "$APM_PKG_LIST" | grep --quiet "^$1@"
+	echo "$APM_PKG_LIST" | ggrep --quiet "^$1@"
 }
 
 tap_brew_repo() {

@@ -58,7 +58,7 @@ install_gem bundler
 install_gem jekyll
 
 install_brew_pkg node
-if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
+if ! cat ~/.npmrc | ggrep -q 'prefix=/usr/local/lib/npm-packages'; then
 	echo "Setting npm prefix..."
 	echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
 fi
@@ -100,7 +100,7 @@ echo "Installing Atom packages..."
 preload_apm_pkg_list
 
 while read -r pkg_line; do
-	pkg_name="$(echo "$pkg_line" | grep -Po '(?<=")[a-z0-9\-]+(?=")')"
+	pkg_name="$(echo "$pkg_line" | ggrep -Po '(?<=")[a-z0-9\-]+(?=")')"
 	if [ -n "$pkg_name" ]; then
 		install_apm_pkg "$pkg_name"
 	fi
