@@ -17,9 +17,13 @@ alias octmod='stat -c "%a"'
 alias owners='stat -c "%U %G"'
 
 # Colorize grep matches (but not for piped output)
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+alias grep='ggrep --color=auto'
+alias egrep='gegrep --color=auto'
+alias fgrep='gfgrep --color=auto'
+
+# Alias other utilities to GNU variants
+alias sed='gsed'
+alias tar='gtar'
 
 # Colorize diff output
 if type colordiff &> /dev/null; then
