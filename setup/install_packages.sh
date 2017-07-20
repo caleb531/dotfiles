@@ -33,7 +33,6 @@ ln -sf /usr/local/bin/gfgrep /usr/local/bin/fgrep
 install_brew_pkg rsync
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils
-install_brew_pkg findutils
 install_brew_pkg tree
 
 install_brew_pkg git
