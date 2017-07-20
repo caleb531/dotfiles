@@ -24,7 +24,12 @@ fi
 
 install_brew_pkg bash-completion@2
 install_brew_pkg colordiff
-install_brew_pkg grep --with-default-names
+# Installing grep using --with-default-names makes the installation take about
+# 40x longer, so manually symlink non-prefixed names instead
+install_brew_pkg grep
+ln -sf /usr/local/bin/ggrep /usr/local/bin/grep
+ln -sf /usr/local/bin/gegrep /usr/local/bin/egrep
+ln -sf /usr/local/bin/gfgrep /usr/local/bin/fgrep
 install_brew_pkg rsync
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils
