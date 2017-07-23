@@ -11,6 +11,9 @@ defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 
+echo "- Decrease duration of window resize animations"
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.125
+
 echo "- Disable zoom/maximize when double-clicking window title bar"
 defaults write NSGlobalDomain AppleActionOnDoubleClick -string 'None'
 
