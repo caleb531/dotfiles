@@ -51,14 +51,6 @@
       ".Spotlight-V100"
       ".svn"
       ".Trashes"
-      "*.alfredworkflow"
-      "*.docx"
-      "*.jpg"
-      "*.map"
-      "*.out"
-      "*.pages"
-      "*.pdf"
-      "*.png"
       "node_modules"
       "Thumbs.db"
     ]
@@ -103,6 +95,16 @@
   "find-and-replace":
     showSearchWrapIcon: false
   "fuzzy-finder":
+    ignoredNames: [
+      "*.alfredworkflow"
+      "*.docx"
+      "*.jpg"
+      "*.map"
+      "*.out"
+      "*.pages"
+      "*.pdf"
+      "*.png"
+    ]
     preserveLastSearch: true
   linter:
     lintOnChange: false
