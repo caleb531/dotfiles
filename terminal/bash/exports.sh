@@ -11,24 +11,16 @@ export OLDPATH="$PATH"
 # Ensure installed packages are recognized and preferred
 
 # GNU core utilities
-if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
-	export PATH=/usr/local/opt/gnupg@2.0/bin:$PATH
-	export PATH=/usr/local/opt/gpg-agent/bin:$PATH
-	export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-	export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
-fi
+export PATH=/usr/local/opt/gnupg@2.0/bin:$PATH
+export PATH=/usr/local/opt/gpg-agent/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 # ImageMagick
-if [ -d /usr/local/opt/imagemagick@6/bin ]; then
-	export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
-fi
+export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
 # Ruby gems
-if [ -d /usr/local/opt/ruby/bin ]; then
-	export PATH=/usr/local/opt/ruby/bin:$PATH
-fi
+export PATH=/usr/local/opt/ruby/bin:$PATH
 # npm packages
-if [ -d /usr/local/lib/npm-packages/bin ]; then
-	export PATH=/usr/local/lib/npm-packages/bin:$PATH
-fi
+export PATH=/usr/local/lib/npm-packages/bin:$PATH
 
 # Colorize less
 # Color syntax: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
