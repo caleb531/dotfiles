@@ -81,5 +81,3 @@ export WHITE_BOLD='1;37'
 
 # Use green, underlined text for grep matches
 export GREP_COLOR='4;32'
-# Use cyan for directories and green for symlinks in ls output
-export LS_COLORS='di=0;36:ln=0;32'
