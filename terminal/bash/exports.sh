@@ -17,8 +17,6 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 # ImageMagick
 export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
-# Ruby gems
-export PATH=/usr/local/opt/ruby/bin:$PATH
 # npm packages
 export PATH=/usr/local/lib/npm-packages/bin:$PATH
 
