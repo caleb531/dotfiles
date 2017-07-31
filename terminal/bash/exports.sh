@@ -59,7 +59,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export VIRTUAL_ENV_NAME='.virtualenv'
 
 # Colors
-# ANSI color reference: http://www.termsys.demon.co.uk/vtansi.htm#colors
+# ANSI color reference: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
 
 # Standard colors
 export BLACK='0;30'
