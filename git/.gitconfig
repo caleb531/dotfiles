@@ -73,8 +73,8 @@
 	commita = commit --amend
 	diffc = diff --cached
 	# Character-by-character diff
-	diffcw = diff --color-words --word-diff-regex=.
-	diffcwc = diff --color-words --word-diff-regex=. --cached
+	diffcw = diff --color-words --word-diff-regex='[A-Za-z0-9]+|[^[:space:]]'
+	diffcwc = diff --color-words --word-diff-regex='[A-Za-z0-9]+|[^[:space:]]' --cached
 	diffni = diff --no-index
 	diffniw = diff --no-index --ignore-all-space
 	diffno = diff --name-only
