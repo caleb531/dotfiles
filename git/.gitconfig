@@ -72,6 +72,9 @@
 	chp = cherry-pick
 	commita = commit --amend
 	diffc = diff --cached
+	# Character-by-character diff
+	diffcw = diff --color-words --word-diff-regex=.
+	diffcwc = diff --color-words --word-diff-regex=. --cached
 	diffni = diff --no-index
 	diffniw = diff --no-index --ignore-all-space
 	diffno = diff --name-only
