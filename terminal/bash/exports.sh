@@ -15,10 +15,10 @@ export PATH=/usr/local/opt/gnupg@2.0/bin:"$PATH"
 export PATH=/usr/local/opt/gpg-agent/bin:"$PATH"
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:"$PATH"
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:"$MANPATH"
-# ImageMagick
-export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
 # npm packages
 export PATH=/usr/local/lib/npm-packages/bin:"$PATH"
+# ImageMagick
+export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
 
 # Colorize less
 # Color syntax: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
