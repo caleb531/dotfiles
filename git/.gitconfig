@@ -33,9 +33,12 @@
 [pull]
 	default = simple
 
-# Enable more-logical grouping of changes in diffs
 [diff]
+	# Enable more-logical grouping of changes in diffs
 	indentHeuristic = true
+	# Consider a "word" a sequences of alphanumeric characters OR a single
+	# non-space non-alphanumeric character
+	wordRegex = [A-Za-z0-9]+|[^[:space:]]
 
 [log]
 	# Set a more human-readable default date format for git log
@@ -72,9 +75,8 @@
 	chp = cherry-pick
 	commita = commit --amend
 	diffc = diff --cached
-	# Character-by-character diff
-	diffcw = diff --color-words --word-diff-regex='[A-Za-z0-9]+|[^[:space:]]'
-	diffcwc = diff --color-words --word-diff-regex='[A-Za-z0-9]+|[^[:space:]]' --cached
+	diffcw = diff --color-words
+	diffcwc = diff --color-words --cached
 	diffni = diff --no-index
 	diffniw = diff --no-index --ignore-all-space
 	diffno = diff --name-only
