@@ -95,7 +95,7 @@ jb() {
 
 # Watch a Jekyll site, building (and using Bundler) as needed
 jw() {
-	if type bundle &> /dev/null; then
+	if [ -f ./Gemfile ]; then
 		bundle exec jekyll build --watch "$@"
 	else
 		jekyll build --watch "$@"
