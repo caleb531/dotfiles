@@ -46,11 +46,6 @@
 	# Disable log decoration (enabled by default in Git v2.13.0)
 	decorate = no
 
-[status]
-	# List untracked files in the same directory as individual files instead of
-	# as a single directory listing
-	showUntrackedFiles = all
-
 # Set pleasant colors for diffs
 [color "diff-highlight"]
 	oldNormal = red bold
