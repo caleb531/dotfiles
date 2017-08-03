@@ -86,7 +86,7 @@ bi() {
 
 # Build a Jekyll site, using Bundler if needed
 jb() {
-	if type bundle &> /dev/null; then
+	if [ -f ./Gemfile ]; then
 		bundle exec jekyll build "$@"
 	else
 		jekyll build "$@"
