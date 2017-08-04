@@ -67,6 +67,7 @@ echo "Installing npm packages..."
 preload_npm_pkg_list
 
 install_npm_pkg grunt-cli
+install_npm_pkg gulp-cli
 install_npm_pkg brunch
 install_npm_pkg diff-so-fancy
 install_npm_pkg http-server
