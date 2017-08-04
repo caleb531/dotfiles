@@ -239,39 +239,6 @@ makerun() {
 	run "$@"
 }
 
-# Upload file using transfer.sh and get share link (output it to the terminal
-# and copy it to the clipboard, for convenience)
-transfer() {
-	local max_days
-	local max_downloads
-	# Declaring OPTIND is necessary to ensure that getopts runs properly on
-	# successive calls to 'transfer'
-	local OPTIND
-	# Accept options for max days (-d) and max downloads (-D)
-	while getopts "d:D:" OPTION; do
-		case $OPTION in
-			d) max_days=$OPTARG;;
-			D) max_downloads=$OPTARG;;
-		esac
-	done
-	# Temporarily redirect share URL stdout to file so progress bar can be
-	# printed instead (as I understand it, the curl command cannot print
-	# both to stdout)
-	local share_url_file=$(mktemp -t transferXXX)
-	curl \
-		--progress-bar \
-		${max_days:+-H "Max-Days: $max_days"} \
-		${max_downloads:+-H "Max-Downloads: $max_downloads"} \
-		--upload-file \
-		"${@: -1}" \
-		"https://transfer.sh" \
-		> "$share_url_file"
-	local share_url="$(< "$share_url_file")"
-	echo "$share_url"
-	echo -n "$share_url" | pbcopy
-	rm -f "$share_url_file"
-}
-
 # Clone git repository and immediately cd to it
 clonecd() {
 	git clone "$@"
