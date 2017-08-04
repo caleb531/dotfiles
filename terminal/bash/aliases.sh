@@ -39,8 +39,6 @@ alias apachectl='sudo /Applications/MAMP/Library/bin/apachectl'
 alias mysql='/Applications/MAMP/Library/bin/mysql'
 # Provide access to MAMP's MySQL export utility
 alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
-# Provides access to MAMP's PHP 7 utility
-alias php='/Applications/MAMP/bin/php/php7.0.12/bin/php'
 # Use recommended version of OpenSSL over deprecated OpenSSL from system
 alias openssl='/usr/local/opt/openssl/bin/openssl'
 # Open phpMyAdmin in web browser
