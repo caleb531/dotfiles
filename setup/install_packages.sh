@@ -23,7 +23,6 @@ if [ -f /usr/local/bin/bash -a "$SHELL" != /usr/local/bin/bash ]; then
 fi
 
 install_brew_pkg bash-completion@2
-install_brew_pkg colordiff
 # Installing grep using --with-default-names makes the installation take about
 # 40x longer, so manually symlink non-prefixed names instead
 install_brew_pkg grep

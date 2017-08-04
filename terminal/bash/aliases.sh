@@ -21,11 +21,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# Colorize diff output
-if type colordiff &> /dev/null; then
-	alias diff='colordiff'
-fi
-
 # Colorize tree output
 if type tree &> /dev/null; then
 	alias tree='tree -C'
