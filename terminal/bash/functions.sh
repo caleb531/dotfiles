@@ -17,9 +17,7 @@ pbcopy() {
 
 # Remove last n commands from Bash history (n defaults to 1)
 rmlastcmd() {
-	local n="$([ -n "$1" ] && echo "$1" || echo 1)"
-	local i
-	for ((i=0; i<$n; i++)); do
+	for ((i=0; i<${1:-1}; i++)); do
 		history -d "$((HISTCMD-1))"
 	done
 }
