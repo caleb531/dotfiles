@@ -24,8 +24,7 @@ rmlastcmd() {
 
 # Copy last command to clipboard
 cplastcmd() {
-	local last_cmd="$(fc -ln -1)"
-	echo -n "$last_cmd" | pbcopy
+	echo -n "$(fc -ln -1)" | pbcopy
 }
 
 # Copy last command and remove it from Bash history
