@@ -134,7 +134,7 @@
       "\\.string"
       "\\.source\\.gfm"
     ]
-    markerType: "dot"
+    markerType: "native-dot"
   "svg-preview": {}
   tabs:
     enableMruTabSwitching: false
