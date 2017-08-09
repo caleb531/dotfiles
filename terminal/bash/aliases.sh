@@ -5,9 +5,6 @@
 # Enable aliases to be run as root
 alias sudo='sudo '
 
-# Print PATH entries, one entry per line
-alias path='echo -e ${PATH//:/\\n}'
-
 # Colorize directory listings
 alias ls='ls --color=auto'
 

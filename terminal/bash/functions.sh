@@ -8,6 +8,11 @@ reload() {
 	exec $SHELL -l
 }
 
+# Print PATH entries, one entry per line
+path() {
+	echo -e "${PATH//:/\\n}"
+}
+
 # Make pbcopy trim surrounding whitespace from copied input, for convenience
 pbcopy() {
 	local contents="$(< /dev/stdin)"
