@@ -22,9 +22,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # Colorize tree output
-if type tree &> /dev/null; then
-	alias tree='tree -C'
-fi
+alias tree='tree -C'
 
 # Search for running processes easily
 alias psgrep='ps ax | grep -v grep | grep'
