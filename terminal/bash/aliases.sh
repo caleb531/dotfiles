@@ -38,3 +38,31 @@ alias openssl='/usr/local/opt/openssl/bin/openssl'
 alias pma='open http://localhost/phpMyAdmin/'
 # Increment major, minor, or patch version of the node package
 alias bump='npm version --no-git-tag-version'
+
+# Build/serve aliases
+
+# Build a Brunch project
+alias bb='brunch build "$@"'
+# Watch a Brunch project for changes and build as needed
+alias bw='brunch watch "$@"'
+# Serve a Brunch site
+alias bs='bw --server "$@"'
+# Build a Jekyll site, using Bundler if needed
+alias jb='bundle exec jekyll build "$@"'
+# Watch a Jekyll site, building (and using Bundler) as needed
+alias jw='jb --watch "$@"'
+# Serve a Jekyll site, building (and using Bundler) as needed
+alias js='bundle exec jekyll serve "$@"'
+# Serve Jekyll site and open site in browser
+alias jso='js -o "$@"'
+# Serve a directory via a Node HTTP server
+alias hs='http-server -a localhost -c-1 "$@"'
+# Serve a directory and open it in web browser
+alias hso='hs -o "$@"'
+
+# Dependency installation packages
+
+# Install Bundler gems (has nothing to do with Brunch)
+alias bi='bundle install'
+# Install Python packages into virtualenv
+alias pi='pip install -r requirements.txt'

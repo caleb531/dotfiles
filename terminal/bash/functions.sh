@@ -61,68 +61,6 @@ rmvirtualenv() {
 	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
 
-# Build a Brunch project
-bb() {
-	brunch build "$@"
-}
-
-# Watch a Brunch project for changes and build as needed
-bw() {
-	brunch watch "$@"
-}
-
-# Serve a Brunch site
-bs() {
-	brunch watch --server "$@"
-}
-
-# Install Bundler gems (has nothing to do with Brunch)
-bi() {
-	bundle install
-}
-
-# Build a Jekyll site, using Bundler if needed
-jb() {
-	if [ -f ./Gemfile ]; then
-		bundle exec jekyll build "$@"
-	else
-		jekyll build "$@"
-	fi
-}
-
-# Watch a Jekyll site, building (and using Bundler) as needed
-jw() {
-	if [ -f ./Gemfile ]; then
-		bundle exec jekyll build --watch "$@"
-	else
-		jekyll build --watch "$@"
-	fi
-}
-
-# Serve a Jekyll site, building (and using Bundler) as needed
-js() {
-	if [ -f ./Gemfile ]; then
-		bundle exec jekyll serve "$@"
-	else
-		jekyll serve "$@"
-	fi
-}
-
-# Serve Jekyll site and open site in browser
-jso() {
-	js -o "$@"
-}
-
-# Serve a directory via a Node HTTP server
-hs() {
-	http-server -a localhost -c-1 "$@"
-}
-
-# Serve a directory and open it in web browser
-hso() {
-	hs -o "$@"
-}
-
 # Provide convenient access to common PyPI commands
 pypi() {
 	if [ "$1" == 'test' ]; then
