@@ -31,8 +31,6 @@ alias mysql='/Applications/MAMP/Library/bin/mysql'
 alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
 # Use recommended version of OpenSSL over deprecated OpenSSL from system
 alias openssl='/usr/local/opt/openssl/bin/openssl'
-# Open phpMyAdmin in web browser
-alias pma='open http://localhost/phpMyAdmin/'
 # Increment major, minor, or patch version of the node package
 alias bump='npm version --no-git-tag-version'
 
