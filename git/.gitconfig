@@ -88,6 +88,7 @@
 	logs = log -S
 	mergenff = merge --no-ff
 	pusht = push --tags
+	pushu = push -u
 	rmc = rm --cached
 	rpo = remote prune origin
 	rvp = rev-parse
