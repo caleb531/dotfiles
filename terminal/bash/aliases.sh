@@ -8,6 +8,8 @@ alias sudo='sudo '
 # Colorize directory listings
 alias ls='ls --color=auto'
 
+# Mark a file as executable
+alias x='chmod +x'
 # Output the octal permissions for a file or directory
 alias octmod='stat -c "%a"'
 # Output the owner/group for a file or directory
