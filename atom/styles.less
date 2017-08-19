@@ -17,6 +17,15 @@ atom-panel.header {
 .title-bar {
   background-color: @app-background-color;
 }
+.tab-bar .tab {
+  border-top: solid 1px transparent;
+  &.active {
+    border-top-color: @base-border-color;
+    &[data-type="TreeView"] {
+      border-width: 0;
+    }
+  }
+}
 
 atom-text-editor:not([mini]) {
   // De-italicize all syntax components which Monokai italicizes
