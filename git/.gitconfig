@@ -89,6 +89,7 @@
 	mergenff = merge --no-ff
 	pusht = push --tags
 	pushu = push -u
+	pushuo = push -u origin
 	rmc = rm --cached
 	rpo = remote prune origin
 	rvp = rev-parse
