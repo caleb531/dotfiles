@@ -67,9 +67,9 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 echo "- Disable cursor magnification on shake"
 defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool true
 
-echo "- Require password 5 minutes after sleep"
+echo "- Require password 1 minute after sleep"
 defaults write com.apple.screensaver askForPassword -bool true
-defaults write com.apple.screensaver askForPasswordDelay -int 300
+defaults write com.apple.screensaver askForPasswordDelay -int 60
 
 echo "- Disable .DS_Store creation on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
