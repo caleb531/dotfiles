@@ -17,7 +17,7 @@ __reset_color() {
 __output_ps1() {
 
 	# Define a local constant for the separator between items in the prompt
-	local SEPARATOR='  '
+	local SEPARATOR=' '
 
 	# Output name of current working directory (with ~ denoting HOME)
 	__set_color $CYAN
