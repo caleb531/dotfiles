@@ -88,6 +88,7 @@
 	logs = log -S
 	mergenff = merge --no-ff
 	pusht = push --tags
+	pushd = !git push origin :"$(git rev-parse --abbrev-ref HEAD)"
 	pushu = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
 	rmc = rm --cached
 	rpo = remote prune origin
