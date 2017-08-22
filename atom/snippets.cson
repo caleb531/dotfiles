@@ -235,7 +235,7 @@
 
   'require':
     'prefix': 're'
-    'body': '${1:var} ${2:vname} = require(\'${3:mname}\');$4'
+    'body': 'require(\'${1:mname}\');$4'
 
   'module.exports':
     'prefix': 'moduleexports'
