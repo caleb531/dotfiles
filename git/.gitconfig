@@ -68,6 +68,9 @@
 [alias]
 	addp = add -p
 	chp = cherry-pick
+	co = checkout
+	cob = checkout -b
+	cof = checkout --
 	commita = commit --amend
 	diffc = diff --cached
 	diffcw = diff --color-words
