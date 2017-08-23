@@ -1,6 +1,7 @@
 packages: [
   "advanced-open-file"
   "atom-alignment"
+  "atom-handlebars"
   "auto-update-packages"
   "docblockr"
   "editorconfig"

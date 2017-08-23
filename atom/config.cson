@@ -16,6 +16,10 @@
   core:
     allowPendingPaneItems: false
     closeEmptyWindows: false
+    customFileTypes:
+      "text.html.handlebars": [
+        "tpl"
+      ]
     disabledPackages: [
       "archive-view"
       "autocomplete"
