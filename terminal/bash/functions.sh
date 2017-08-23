@@ -186,3 +186,12 @@ clonecd() {
 		cd "$(basename "$1" .git)"
 	fi
 }
+
+# Pat on the back
+pat() {
+	cowsay 'You did a good job!'
+}
+# Motivate
+mot() {
+	cowsay 'You got this!'
+}
