@@ -41,6 +41,7 @@ install_brew_pkg python
 install_brew_pkg python3
 
 install_brew_pkg ssh-copy-id
+install_brew_pkg cowsay
 
 install_brew_pkg librsvg
 # ImageMagick >=7.0.0 will currently break Ruby gems like rmagick
