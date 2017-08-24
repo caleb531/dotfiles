@@ -1020,7 +1020,7 @@
 
   'endif':
     'prefix': 'endif'
-    'body': '{{/endif}}'
+    'body': '{{/if}}'
 
   'each':
     'prefix': 'each'
