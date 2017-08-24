@@ -59,7 +59,10 @@ install_gem sass
 install_gem bundler
 install_gem jekyll
 
-install_brew_pkg node
+install_brew_pkg n
+if ! is_cmd_installed node; then
+	sudo n latest
+fi
 if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
 	echo "Setting npm prefix..."
 	echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
