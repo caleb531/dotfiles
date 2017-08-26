@@ -63,10 +63,7 @@ install_brew_pkg n
 if ! is_cmd_installed node; then
 	sudo n latest
 fi
-if ! cat ~/.npmrc | grep -q 'prefix=/usr/local/lib/npm-packages'; then
-	echo "Setting npm prefix..."
-	echo prefix=/usr/local/lib/npm-packages >> ~/.npmrc
-fi
+export NPM_CONFIG_PREFIX=/usr/local/lib/npm-packages
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
