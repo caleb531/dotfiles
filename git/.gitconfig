@@ -5,7 +5,6 @@
 [user]
 	name = Caleb Evans
 	email = caleb@calebevans.me
-	signingkey = A324810138AFD374
 
 # Store user credentials in macOS Keychain
 [credential]
