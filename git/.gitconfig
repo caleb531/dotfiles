@@ -84,7 +84,6 @@
 	gcpn = gc --prune=now
 	lasttag = describe --tags --abbrev=0
 	logg = log --fixed-strings --regexp-ignore-case --grep
-	logp = log --graph --pretty=format:'%C(auto)%h%Creset %s %Cblue(%cd)%Creset' --date=format:%-m/%-d/%y
 	logs = log -S
 	mergenff = merge --no-ff
 	pusht = push --tags
