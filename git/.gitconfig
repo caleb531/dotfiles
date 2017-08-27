@@ -94,6 +94,7 @@
 	rpo = remote prune origin
 	rvp = rev-parse
 	short = !git rev-parse --short $@ | xargs echo -n | pbcopy
+	showcw = show --color-words
 	showno = show --name-only
 	showns = show --name-status
 	stashki = stash --keep-index
