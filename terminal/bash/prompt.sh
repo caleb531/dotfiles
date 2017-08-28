@@ -38,6 +38,16 @@ __output_ps1() {
 
 	fi
 
+	# If working directory is a Node-based project
+	if [ -f package.json ] && type node &> /dev/null; then
+
+		# Output version of global Node
+		__set_color $BLUE
+		echo -n "node$(node --version | grep -Po '(?<=v)\d+')"
+		echo -n "$SEPARATOR"
+
+	fi
+
 	# If working directory is (or resides in) a git repository
 	if git rev-parse --git-dir &> /dev/null; then
 
