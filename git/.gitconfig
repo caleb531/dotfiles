@@ -68,6 +68,7 @@
 	addp = add -p
 	chp = cherry-pick
 	commita = commit --amend
+	delete-merged-branches = !git branch --merged | grep -Pv '(^\\*|master|develop)' | xargs git branch -d
 	diffc = diff --cached
 	diffcw = diff --color-words
 	diffcwc = diff --color-words --cached
