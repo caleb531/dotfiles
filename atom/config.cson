@@ -29,7 +29,6 @@
       "deprecation-cop"
       "dev-live-reload"
       "git-diff"
-      "image-view"
       "language-perl"
       "metrics"
       "open-on-github"
