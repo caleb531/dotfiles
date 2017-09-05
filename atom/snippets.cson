@@ -238,7 +238,7 @@
     'body': 'require(\'${1:mname}\');$4'
 
   'module.exports':
-    'prefix': 'moduleexports'
+    'prefix': 'modexp'
     'body': 'module.exports = ${1:object};'
 
   # Mocha
