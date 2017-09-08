@@ -117,6 +117,7 @@
   "linter-shellcheck": {}
   "linter-ui-default":
     hidePanelWhenEmpty: true
+    panelHeight: 69
     showPanel: true
     showTooltip: false
   "markdown-preview":
