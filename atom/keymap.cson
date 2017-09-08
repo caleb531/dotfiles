@@ -83,6 +83,9 @@
   # Opens inline URL in default web browser if cursor is within URL
   'alt-cmd-o': 'link:open'
 
+  # Open the active document in Finder
+  'shift-cmd-r': 'tree-view:show-current-file-in-file-manager'
+
 # Toggle match by whole word in Find and Replace / Project Find panels
 '.platform-darwin .find-and-replace':
   'alt-cmd-b': 'find-and-replace:toggle-whole-word-option'
