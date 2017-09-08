@@ -8,6 +8,9 @@ alias sudo='sudo '
 # Colorize directory listings
 alias ls='ls --color=auto'
 
+# Always enable case-insensitive searches in less (for lowercase queries)
+alias less='less -i'
+
 # Mark a file as executable
 alias x='chmod +x'
 # Output the octal permissions for a file or directory
