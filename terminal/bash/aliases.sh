@@ -29,6 +29,9 @@ alias fgrep='fgrep --color=auto'
 # Colorize tree output
 alias tree='tree -C'
 
+# Display command history without line numbers
+alias historyl='history | cut -c 8-'
+
 # Search for running processes easily
 alias psgrep='ps ax | grep -v grep | grep'
 # Provide quick access to MAMP's Apache server
