@@ -4,6 +4,8 @@
 
 # Expand multiple subdirectories using the globstar (**) option
 shopt -s globstar 2> /dev/null
+# Enable extended glob syntax (like [!])
+shopt -s extglob
 # Ensure that command history is appended to and not overwritten
 shopt -s histappend
 
