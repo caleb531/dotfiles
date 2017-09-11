@@ -249,11 +249,11 @@
 
   'constructor':
     'prefix': 'ctor'
-    'body': 'constructor() {\n\t$2\n}$3'
+    'body': 'constructor($2) {\n\t$3\n}$4'
 
   'function method':
     'prefix': 'fm'
-    'body': '${1:fname}() {\n\t$2\n}$3'
+    'body': '${1:fname}($2) {\n\t$3\n}$4'
 
   'static keyword':
     'prefix': 'static'
