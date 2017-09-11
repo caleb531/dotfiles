@@ -241,6 +241,36 @@
     'prefix': 'modexp'
     'body': 'module.exports = ${1:object};'
 
+  # ES6
+
+  'class':
+    'prefix': 'class'
+    'body': 'class ${1:ClassName} {\n\t$2\n}$3'
+
+  'constructor':
+    'prefix': 'ctor'
+    'body': 'constructor() {\n\t$2\n}$3'
+
+  'function method':
+    'prefix': 'fm'
+    'body': '${1:fname}() {\n\t$2\n}$3'
+
+  'static keyword':
+    'prefix': 'static'
+    'body': 'static'
+
+  'static method':
+    'prefix': 'staticf'
+    'body': 'static ${1:fname}() {\n\t$2\n}$3'
+
+  'import':
+    'prefix': 'import'
+    'body': 'import ${1:mname} from \'${2:path}\';$3'
+
+  'export default':
+    'prefix': 'exportdefault'
+    'body': 'export default ${1:mname};'
+
   # Mocha
 
   'it':
