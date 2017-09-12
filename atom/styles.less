@@ -36,6 +36,14 @@ atom-text-editor:not([mini]) {
   .syntax--support.syntax--class {
     font-style: normal;
   }
+  // Use white as default color for ES6 template literal interpolation
+  .syntax--source.syntax--js.syntax--embedded {
+    color: #fff;
+  }
+  // Still color ${} wrappers like strings
+  .syntax--punctuation.syntax--section.syntax--embedded.syntax--js {
+    color: @yellow;
+  }
   // Make selected line more prominent
   .line.cursor-line {
     background-color: rgba(255, 255, 255, 0.05);
