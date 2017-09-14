@@ -1155,3 +1155,18 @@
   'www to apex':
     'prefix': 'apex'
     'body': 'RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]\nRewriteRule ^(.*)$ http$1://%1/\\$1 [L,R=301]'
+
+# CoffeeScript / CSON snippets
+
+'.source.coffee':
+
+  # The default snipns and keyns key bindings bundled with Atom do not seem to
+  # work; recreate them here
+
+  'Snippet (no selector)':
+    'prefix': 'snipns'
+    'body': '\'${1:name}\':\n\t\'prefix\': \'${2:prefix}\'\n\t\'body\': \'${3:body}\''
+
+  'Key Binding (no selector)':
+    'prefix': 'keyns'
+    'body': '\'${1:keystroke}\': \'${2:command}\''
