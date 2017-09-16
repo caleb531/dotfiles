@@ -333,6 +333,16 @@
     'prefix': 'nottohaveprop'
     'body': 'not.to.have.property($1);$2'
 
+  # Miscellaneous
+
+  'toLowerCase':
+    'prefix': 'tlc'
+    'body': 'toLowerCase()'
+
+  'toUpperCase':
+    'prefix': 'tuc'
+    'body': 'toUpperCase()'
+
 # Awk
 
 '.source.awk':
