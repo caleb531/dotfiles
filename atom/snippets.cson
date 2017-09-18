@@ -195,7 +195,7 @@
 
   'arrow function (inline)':
     'prefix': 'afi'
-    'body': '($1) => ${2:returnvalue}'
+    'body': '($1) => $2'
 
   'immediately-invoked function expression':
     'prefix': 'iife'
