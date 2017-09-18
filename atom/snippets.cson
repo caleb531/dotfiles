@@ -193,6 +193,10 @@
     'prefix': 'af'
     'body': '($1) => {\n\t$2\n}$3'
 
+  'arrow function (inline)':
+    'prefix': 'afi'
+    'body': '($1) => ${2:returnvalue}'
+
   'immediately-invoked function expression':
     'prefix': 'iife'
     'body': '(function($1) {\n$2\n}($3));'
