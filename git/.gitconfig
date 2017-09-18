@@ -68,8 +68,8 @@
 	addp = add -p
 	chp = cherry-pick
 	commita = commit --amend
-	delete-local-merged-branches = !git branch --merged | grep -Pv '(^\\*|master|develop)' | xargs git branch -d
-	delete-remote-merged-branches = !git branch --remote --merged | sed 's|origin/||g' | grep -Pv '(master|develop)' | xargs git push -d origin
+	delete-merged-local-branches = !git branch --merged | grep -Pv '(^\\*|master|develop)' | xargs git branch -d
+	delete-merged-remote-branches = !git branch --remote --merged | sed 's|origin/||g' | grep -Pv '(master|develop)' | xargs git push -d origin
 	diffc = diff --cached
 	diffcw = diff --color-words
 	diffcwc = diff --color-words --cached
