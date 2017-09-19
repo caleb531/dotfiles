@@ -72,3 +72,6 @@ alias hso='hs -o'
 alias bi='bundle install'
 # Install Python packages into virtualenv
 alias pi='pip install -r requirements.txt'
+
+# Switch node versions more easily
+alias n='sudo n'
