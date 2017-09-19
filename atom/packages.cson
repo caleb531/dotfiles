@@ -29,7 +29,6 @@ packages: [
   "linter-coffeescript"
   "linter-eslint"
   "linter-flake8"
-  "linter-jshint"
   "linter-jsonlint"
   "linter-php"
   "linter-ui-default"
