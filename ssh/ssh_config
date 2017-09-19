@@ -6,9 +6,6 @@ Host *
 	# connect, even if id_rsa is your only key; explicitly declaring id_rsa as
 	# the sole IdentityFile eliminates the redundant checks
 	IdentityFile ~/.ssh/id_rsa
-	# Reuse existing connections if possible
-	ControlMaster auto
-	ControlPath ~/.ssh/sockets/%h:%p:%r
 	# Fix OpenSSH vulnerabilities CVE-2016-0777 and CVE-2016-0778
 	UseRoaming no
 	# Disable GSSAPI auth since SSH keys are preferred for authentication

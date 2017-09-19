@@ -22,7 +22,6 @@ ln -snf ~/dotfiles/terminal/pip.conf ~/Library/Application\ Support/pip/pip.conf
 
 # Symlink SSH configuration
 mkdir -p ~/.ssh
-mkdir -p ~/.ssh/sockets
 ln -snf ~/dotfiles/ssh/ssh_config ~/.ssh/config
 
 # Symlink GPG configuration
