@@ -1044,7 +1044,7 @@
     'prefix': 'endfor'
     'body': '{% endfor %}'
 
-'.text.html.handlebars':
+'.text.html.mustache':
 
   'expression':
     'prefix': 'exp'
