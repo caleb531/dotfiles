@@ -337,6 +337,20 @@
     'prefix': 'nottohaveprop'
     'body': 'not.to.have.property($1);$2'
 
+  # Debugging
+
+  'console.log':
+    'prefix': 'log'
+    'body': 'console.log($1);'
+
+  'console.error':
+    'prefix': 'error'
+    'body': 'console.error($1);'
+
+  'debugger':
+    'prefix': 'debugger'
+    'body': 'debugger;'
+
   # Miscellaneous
 
   'toLowerCase':
