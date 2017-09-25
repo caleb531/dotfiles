@@ -1,7 +1,7 @@
 # Your keymap
 
 'body':
-  
+
   # Disable cmd-o because it always gets in the way of typing cmd-i
   'cmd-o': 'unset!'
 
@@ -10,6 +10,14 @@
   # Create new files using advanced-open-file
   'alt-cmd-n': 'advanced-open-file:toggle'
 
+# Any text field (code editors and inputs)
+'.platform-darwin atom-text-editor':
+
+    # Expands/contracts selection to next outermost/innermost set of tokens
+    'alt-up': 'expand-region:expand'
+    'alt-down': 'expand-region:shrink'
+
+# Code editors only
 '.platform-darwin atom-text-editor:not([mini])':
 
   # Breaks current selection/paragraph into lines no longer than 80 chars
@@ -63,10 +71,6 @@
 
   # Advances to next Linter error in document
   'alt-cmd-l': 'linter-ui-default:next'
-
-  # Expands/contracts selection to next outermost/innermost set of tokens
-  'alt-up': 'expand-region:expand'
-  'alt-down': 'expand-region:shrink'
 
   # Aligns values to same column if list of key-value pairs is selected
   # 'ctrl-cmd-a': 'unset!'
