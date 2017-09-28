@@ -87,6 +87,7 @@
 	logg = log --fixed-strings --regexp-ignore-case --grep
 	logs = log -S
 	mergenff = merge --no-ff
+	pullr = pull --rebase
 	pusht = push --tags
 	pushd = !git push -d origin "$(git rev-parse --abbrev-ref HEAD)"
 	pushu = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
