@@ -100,3 +100,5 @@
 	showns = show --name-status
 	stashki = stash --keep-index
 	stashp = stash pop
+	suri = submodule update --recursive --init
+	surr = submodule update --recursive --remote
