@@ -65,40 +65,73 @@
 
 # Useful Git aliases
 [alias]
+	# Stage interactively
 	addp = add -p
+	# Apply a commit to the working directory
 	chp = cherry-pick
+	# Modify the previous commit
 	commita = commit --amend
+	# Delete branches that have been merged in
 	delete-merged-local-branches = !git branch --merged | grep -Pv '(^\\*|master|develop)' | xargs git branch -d
 	delete-merged-remote-branches = !git branch --remote --merged | sed 's|origin/||g' | grep -Pv '(master|develop)' | xargs git push -d origin
+	# Diff staged changes
 	diffc = diff --cached
+	# Diff files, highlighting only the changes within each line
 	diffcw = diff --color-words
 	diffcwc = diff --color-words --cached
+	# Diff two files outside of a git repository
 	diffni = diff --no-index
 	diffniw = diff --no-index --ignore-all-space
+	# List the paths of changed files
 	diffno = diff --name-only
 	diffnoc = diff --name-only --cached
+	# List the statuses of changed files (added, modified, etc.)
 	diffns = diff --name-status
 	diffnsc = diff --name-status --cached
+	# Show the diff of the current working directory since the last Git tag
 	difflasttag = !git diff $(git lasttag)
+	# Diff files, ignoring all whitespace changes
 	diffw = diff --ignore-all-space
 	diffwc = diff --ignore-all-space --cached
+	# Run Git's garbage collection, removing all loose objects
 	gcpn = gc --prune=now
+	# Get the name of the last tag
 	lasttag = describe --tags --abbrev=0
+	# List commits with descriptions containing the given string
 	logg = log --fixed-strings --regexp-ignore-case --grep
+	# List commits with code changes containing the given string
 	logs = log -S
+	# Merge branches without fast-forwards, always ensuring a merge commit
 	mergenff = merge --no-ff
+	# Pull from remote, recommitting unpushed changes atop the pulled commits
 	pullr = pull --rebase
+	# Push any unpushed tags (this will *not* push unpushed commits)
 	pusht = push --tags
+	# Delete the remote branch with the current branch name
 	pushd = !git push -d origin "$(git rev-parse --abbrev-ref HEAD)"
+	# Push the current branch to a new remote branch of the same name
 	pushu = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
+	# Stage a file for removal without actually deleting it
 	rmc = rm --cached
+	# Remove local copies of remote branches that have been deleted
 	rpo = remote prune origin
+	# Do useful and mysterious things
 	rvp = rev-parse
+	# Copy to the clipboard the truncated form of the given commit SHA
 	short = !git rev-parse --short $@ | xargs echo -n | pbcopy
+	# Show the info and changes for the given/current commit, highlighting only
+	# the changes within each line
 	showcw = show --color-words
+	# List the info and file paths for the given/current commit
 	showno = show --name-only
+	# List the info and file statuses for the given/current commit
 	showns = show --name-status
+	# Stash files in the current working directory, leaving staged files alone
 	stashki = stash --keep-index
+	# Unstash the last stash entry and apply its changes to the current working
+	# directory
 	stashp = stash pop
+	# Clone submodule repositories into their respective directories if empty
 	suri = submodule update --recursive --init
+	# Pull from remote for all existing submodules
 	surr = submodule update --recursive --remote
