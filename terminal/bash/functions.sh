@@ -39,7 +39,7 @@ cprmlastcmd() {
 }
 
 # Create a new directory and switch to it
-mkdircd() {
+mkcd() {
 	mkdir "$@"
 	cd "${@: -1}"
 }
