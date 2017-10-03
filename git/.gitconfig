@@ -81,6 +81,7 @@
 	diffcwc = diff --color-words --cached
 	# Diff two files outside of a git repository
 	diffni = diff --no-index
+	diffnicw = diff --no-index --color-words
 	diffniw = diff --no-index --ignore-all-space
 	# List the paths of changed files
 	diffno = diff --name-only
