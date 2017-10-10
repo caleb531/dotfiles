@@ -132,7 +132,11 @@ mre() {
 # Run Node/Python tests with Nose test runner
 rt() {
 	if [ -f package.json ]; then
-		npm test "$@"
+		if cat package.json | grep -q '\"atom\"'; then
+			apm test "$@"
+		else
+			npm test "$@"
+		fi
 	elif [ -f requirements.txt ]; then
 		nosetests --rednose "$@"
 	else
