@@ -73,7 +73,7 @@
 	commita = commit --amend
 	# Delete branches that have been merged in
 	delete-merged-local-branches = !git branch --merged | grep -Pv '(^\\*|master|develop)' | xargs git branch -d
-	delete-merged-remote-branches = !git branch --remote --merged | sed 's|origin/||g' | grep -Pv '(master|develop)' | xargs git push -d origin
+	delete-merged-remote-branches = !git branch --remote --merged | sed 's|origin/||g' | grep -Pv '(master|develop)' | grep -Fv $(git rev-parse --abbrev-ref HEAD) | xargs git push -d origin
 	# Diff staged changes
 	diffc = diff --cached
 	# Diff files, highlighting only the changes within each line
