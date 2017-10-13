@@ -34,7 +34,6 @@ packages: [
   "linter-ui-default"
   "monokai"
   "package-sync"
-  "pigments"
   "resize-indent"
   "sort-lines"
   "ssh-config"
