@@ -132,7 +132,6 @@
     lintPreviewTabs: false
   "linter-ui-default":
     hidePanelWhenEmpty: true
-    panelHeight: 145
     showPanel: true
     showTooltip: false
     statusBarRepresents: "Current File"

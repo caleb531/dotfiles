@@ -1,0 +1,2 @@
+# Ignore linter-ui-default's panelHeight setting in Atom config
+config.cson filter=strip-panel-height
