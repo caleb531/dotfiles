@@ -39,6 +39,10 @@
 	# non-space non-alphanumeric character
 	wordRegex = [A-Za-z0-9]+|[^[:space:]]
 
+# Ignore linter-ui-default's panelHeight setting in Atom config
+[filter "strip-panel-height"]
+	clean = sed '/[[:<:]]panelHeight:/d'
+
 [log]
 	# Set a more human-readable default date format for git log
 	date = format:%a %b %-d %Y @ %-I:%M %p
