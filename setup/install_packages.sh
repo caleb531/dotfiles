@@ -63,7 +63,7 @@ install_brew_pkg n
 if ! is_cmd_installed node; then
 	sudo n latest
 fi
-export NPM_CONFIG_PREFIX=/usr/local/lib/npm-packages
+source ~/dotfiles/terminal/bash/exports.sh
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
