@@ -35,6 +35,7 @@ install_brew_pkg coreutils
 install_brew_pkg tree
 
 install_brew_pkg git
+install_brew_pkg diff-so-fancy
 
 install_brew_pkg openssl
 install_brew_pkg python
@@ -79,7 +80,6 @@ preload_npm_pkg_list
 install_npm_pkg grunt-cli
 install_npm_pkg gulp-cli
 install_npm_pkg brunch
-install_npm_pkg diff-so-fancy
 install_npm_pkg http-server
 
 echo "Installing pip packages..."
