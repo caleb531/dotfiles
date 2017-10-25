@@ -198,7 +198,7 @@
     'body': '($1) => $2'
 
   'prototype method':
-    'prefix': 'fp'
+    'prefix': 'pm'
     'body': '${1:ClassName}.prototype.${2:methodName} = function($3) {\n\t$4\n};'
 
   'immediately-invoked function expression':
