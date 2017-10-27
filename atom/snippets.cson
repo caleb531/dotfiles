@@ -1088,6 +1088,14 @@
     'prefix': 'endif'
     'body': '{{/if}}'
 
+  'unless':
+    'prefix': 'unless'
+    'body': '{{#unless ${1:condition}}}$2'
+
+  'endunless':
+    'prefix': 'endunless'
+    'body': '{{/unless}}'
+
   'each':
     'prefix': 'each'
     'body': '{{#each ${1:object}}}$2'
