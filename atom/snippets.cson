@@ -115,15 +115,15 @@
 
   'constructor definition':
     'prefix': 'ctor'
-    'body': '${1:Class}::${1:Class}($2) {\n\t$3\n}'
+    'body': '${1:ClassName}::${1:ClassName}($2) {\n\t$3\n}'
 
   'destructor definition':
     'prefix': 'dtor'
-    'body': '${1:Class}::~${1:Class}() {\n\t$3\n}'
+    'body': '${1:ClassName}::~${1:ClassName}() {\n\t$3\n}'
 
   'class':
     'prefix': 'class'
-    'body': 'class ${1:Class} {\n\t$2\n};'
+    'body': 'class ${1:ClassName} {\n\t$2\n};'
 
   'public blocks':
     'prefix': 'public'
@@ -139,7 +139,7 @@
 
   'function method':
     'prefix': 'fm'
-    'body': '${1:void} ${2:Class}::${3:fname}($4) {\n\t$5\n}'
+    'body': '${1:void} ${2:ClassName}::${3:fname}($4) {\n\t$5\n}'
 
   'this pointer access':
     'prefix': 'this'
@@ -495,7 +495,7 @@
 
   'class':
     'prefix': 'class'
-    'body': 'class ${1:Class} {\n\t$2\n}'
+    'body': 'class ${1:ClassName} {\n\t$2\n}'
 
   'constructor':
     'prefix': 'ctor'
