@@ -29,6 +29,14 @@
     'prefix': 'dowhile'
     'body': 'do {\n\t$1\n} while (${2:condition});'
 
+  'break':
+    'prefix': 'break'
+    'body': 'break;'
+
+  'continue':
+    'prefix': 'continue'
+    'body': 'continue;'
+
   # Switch constructs
 
   'switch':
