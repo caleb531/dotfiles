@@ -419,7 +419,7 @@
 
   'name import':
     'prefix': 'from'
-    'body': 'from ${1:module} import ${2:name}'
+    'body': 'from ${1:mname} import ${2:name}'
 
   'docstring':
     'prefix': 'docstring'
