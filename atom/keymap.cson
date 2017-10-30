@@ -90,6 +90,9 @@
   # Open the active document in Finder
   'shift-cmd-r': 'tree-view:show-current-file-in-file-manager'
 
+  # Swap selections
+  'alt-cmd-t': 'atom-transpose:transpose'
+
 # Toggle match by whole word in Find and Replace / Project Find panels
 '.platform-darwin .find-and-replace':
   'alt-cmd-b': 'find-and-replace:toggle-whole-word-option'

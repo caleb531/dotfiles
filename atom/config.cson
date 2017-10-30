@@ -49,6 +49,7 @@
     ]
     packagesWithKeymapsDisabled: [
       "atom-alignment"
+      "atom-transpose"
       "autoflow"
       "emmet"
       "encoding-selector"
