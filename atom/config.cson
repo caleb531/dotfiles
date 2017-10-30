@@ -60,7 +60,6 @@
       "linter"
       "merge-conflicts"
       "resize-indent"
-      "script"
     ]
     projectHome: "~/Repositories"
     telemetryConsent: "limited"
