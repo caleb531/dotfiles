@@ -51,6 +51,7 @@
       "atom-alignment"
       "atom-transpose"
       "autoflow"
+      "bracket-matcher"
       "emmet"
       "encoding-selector"
       "go-to-line"
