@@ -415,7 +415,7 @@
 
   'module import':
     'prefix': 'import'
-    'body': 'import '
+    'body': 'import ${1:mname}'
 
   'name import':
     'prefix': 'from'
