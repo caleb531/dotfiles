@@ -41,6 +41,8 @@
 
   # Selects all text between outer matching pair of parens/brackets
   'alt-cmd-b': 'bracket-matcher:select-inside-brackets'
+  # Place cursor at at the matching bracket for the current bracket
+  'alt-cmd-m': 'bracket-matcher:go-to-matching-bracket'
 
   # Resizes spaces-per-indent amount for entire document
   'ctrl-cmd-[': 'resize-indent:halve'
