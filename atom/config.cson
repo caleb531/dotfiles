@@ -1,12 +1,10 @@
 "*":
   "advanced-open-file":
     createDirectories: true
-  "atom-alignment": {}
   "atom-package-deps":
     ignored: [
       "linter-ui-default"
     ]
-  "auto-update-packages": {}
   "autocomplete-plus":
     fileBlacklist: [
       ".env"
@@ -75,7 +73,6 @@
     autoIndentOnPaste: false
     fontFamily: "Monaco"
     fontSize: 16
-    invisibles: {}
     showCursorOnSelection: false
     softTabs: false
     softWrap: true
@@ -85,7 +82,6 @@
     useEmmetComments: false
   "exception-reporting":
     userId: "f12f97d7-4abc-ae8e-e993-bf2f40749e71"
-  "expand-region": {}
   "find-and-replace":
     showSearchWrapIcon: false
   "fuzzy-finder":
@@ -108,14 +104,12 @@
     preset: "jquery"
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
-  "linter-shellcheck": {}
   "linter-ui-default":
     hidePanelWhenEmpty: true
     showPanel: true
     showTooltip: false
   "markdown-preview":
     useGitHubStyle: true
-  "merge-conflicts": {}
   "one-dark-ui":
     tabSizing: "Even"
   "package-sync":
@@ -128,7 +122,6 @@
       "\\.source\\.gfm"
     ]
     markerType: "native-dot"
-  "svg-preview": {}
   tabs:
     enableMruTabSwitching: false
   "tree-view":
