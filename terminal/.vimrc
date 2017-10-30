@@ -60,7 +60,7 @@ highlight Normal ctermfg=LightGray
 highlight gitcommitSummary ctermfg=LightGray
 
 " Git commit errors
-highlight Error ctermfg=Red
+highlight Error ctermfg=DarkRed
 highlight gitcommitBlank ctermfg=DarkRed
 
 " Git commit overflowing summary
