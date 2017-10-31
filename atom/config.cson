@@ -11,6 +11,8 @@
     ]
     includeCompletionsFromAllBuffers: false
     maxVisibleSuggestions: 5
+  "command-palette":
+    preserveLastSearch: true
   core:
     allowPendingPaneItems: false
     closeEmptyWindows: false
