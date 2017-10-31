@@ -104,6 +104,8 @@
 	gcpn = gc --prune=now
 	# Get the name of the last tag
 	lasttag = describe --tags --abbrev=0
+	# Show all commits that touched a given file
+	logf = log --follow
 	# List commits with descriptions containing the given string
 	logg = log --fixed-strings --regexp-ignore-case --grep
 	# List commits with code changes containing the given string
