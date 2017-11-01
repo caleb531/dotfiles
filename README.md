@@ -19,11 +19,9 @@ v3.2 shell.
 
 ### Theme
 
-For my work in the Terminal, I created Material Colors, a minimalist theme which
-utilizes Google's Material Design color palette. While the theme's
-characteristics are largely founded in my personal tastes, I have chosen to
-include the theme in this repository for your convenience at
-`terminal/themes/Material Colors.terminal`.
+For my work in the Terminal, I created Monokai, a minimalist theme which
+utilizes the Monokai color scheme. You may find the theme in this repository at
+`terminal/themes/Monokai.terminal`.
 
 ### Interactive prompt
 
