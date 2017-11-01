@@ -118,6 +118,9 @@
 	pusht = push --tags
 	# Delete the remote branch with the current branch name
 	pushd = !git push -d origin $(git rev-parse --abbrev-ref HEAD)
+	# Force push only if the current branch's local origin matches the actual
+	# remote
+	pushf = push --force-with-lease
 	# Push the current branch to a new remote branch of the same name
 	pushu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
 	# Stage a file for removal without actually deleting it
