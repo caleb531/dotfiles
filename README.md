@@ -78,13 +78,6 @@ Path* within the Emmet package preferences, because this directory is where my
 Atom configuration expects to find user configuration for Emmet. Executing the
 `setup/create_symlinks.sh` script will create the `~/dotfiles` directory.
 
-### Python virtualenv activation
-
-When you open in Atom a project directory containing a Python virtualenv, Atom
-will automatically activate that virtualenv. This ensures that Atom packages
-like [linter-flake8](https://atom.io/packages/linter-flake8) can use any
-available Python packages in your project's virtualenv.
-
 ## Setup scripts
 
 I have also created a series of scripts which automatically configure my shell,
