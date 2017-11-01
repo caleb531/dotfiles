@@ -39,16 +39,16 @@
   # Selects all occurences of current selection (complements cmd-d)
   'alt-cmd-d': 'find-and-replace:select-all'
 
-  # Selects all text between outer matching pair of parens/brackets
+  # Selects all text between matching parens/brackets
   'alt-cmd-b': 'bracket-matcher:select-inside-brackets'
-  # Place cursor at at the matching bracket for the current bracket
+  # Places cursor at the matching bracket for the current bracket
   'alt-cmd-m': 'bracket-matcher:go-to-matching-bracket'
 
   # Resizes spaces-per-indent amount for entire document
   'ctrl-cmd-[': 'resize-indent:halve'
   'ctrl-cmd-]': 'resize-indent:double'
 
-  # Convert between tabs and spaces used for indentation
+  # Converts between tabs and spaces
   'ctrl-alt-cmd-]': 'tabs-to-spaces:tabify'
   'ctrl-alt-cmd-[': 'tabs-to-spaces:untabify'
 
@@ -61,7 +61,7 @@
   'alt-h': 'unset!'
   'alt-shift-S': 'unset!'
 
-  # Toggles invisible characters and guides
+  # Toggles invisible characters and indent guide
   'cmd-i': 'window:toggle-invisibles'
   'shift-cmd-I': 'editor:toggle-indent-guide'
 
@@ -83,19 +83,19 @@
 
   # Expands Emmet HTML abbreviations
   'cmd-e': 'emmet:expand-abbreviation'
-  # Wrap selection in Emmet HTML abbreviation
+  # Wraps selection in Emmet HTML abbreviation
   'shift-cmd-e': 'emmet:wrap-with-abbreviation'
 
   # Opens inline URL in default web browser if cursor is within URL
   'alt-cmd-o': 'link:open'
 
-  # Open the active document in Finder
+  # Opens the active document in Finder
   'shift-cmd-r': 'tree-view:show-current-file-in-file-manager'
 
-  # Swap selections
+  # Swaps selections
   'alt-cmd-t': 'atom-transpose:transpose'
 
-# Toggle match by whole word in Find and Replace / Project Find panels
+# Toggles match by whole word in Find and Replace / Project Find panels
 '.platform-darwin .find-and-replace':
   'alt-cmd-b': 'find-and-replace:toggle-whole-word-option'
 '.platform-darwin .project-find':
