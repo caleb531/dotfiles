@@ -9,6 +9,8 @@
 
   # Create new files using advanced-open-file
   'alt-cmd-n': 'advanced-open-file:toggle'
+  #
+  'shift-cmd-r': 'application:show-current-project-folder-in-file-manager'
 
 # Any text field (code editors and inputs)
 '.platform-darwin atom-text-editor':
