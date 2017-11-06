@@ -43,6 +43,7 @@
       ".sass-cache"
       ".Spotlight-V100"
       ".svn"
+      ".virtualenv"
       ".Trashes"
       "node_modules"
       "Thumbs.db"
