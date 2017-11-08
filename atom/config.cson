@@ -45,6 +45,8 @@
       ".svn"
       ".virtualenv"
       ".Trashes"
+      "DeployDistribution"
+      "LocalDistribution"
       "node_modules"
       "Thumbs.db"
     ]
