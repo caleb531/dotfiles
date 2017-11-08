@@ -95,6 +95,9 @@
   # Swaps selections
   'alt-cmd-t': 'atom-transpose:transpose'
 
+  # Reformat a file according to the applicable editorconfig settings
+  'alt-cmd-e alt-cmd-f': 'EditorConfig:fix-file'
+
 # Toggles match by whole word in Find and Replace / Project Find panels
 '.platform-darwin .find-and-replace':
   'alt-cmd-b': 'find-and-replace:toggle-whole-word-option'
