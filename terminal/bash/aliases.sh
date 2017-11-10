@@ -75,3 +75,5 @@ alias pi='pip install -r requirements.txt'
 
 # Switch node versions more easily
 alias n='sudo n'
+# Rebuild sass package (typically necessary after switching node versions)
+alias resass='npm rebuild node-sass'
