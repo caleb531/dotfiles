@@ -67,27 +67,6 @@ atom-text-editor:not([mini]) {
   to { background-color: null; }
 }
 
-// Make labels for Merge Conflicts (e.g. "// Our changes") more prominent
-atom-text-editor:not([mini]).conflicted .text-subtle {
-  color: #fff;
-}
-
-// Selected tab highlight
-atom-pane.active .tab.active:before {
-  background: @green;
-}
-
-// Remove ugly fuzzy outline from buttons when focused
-.btn {
-  outline-width: 0 !important;
-}
-
-// Use prettier border for hovered/active/focused buttons
-.btn-default,
-.btn-info {
-  border-color: @button-border-color !important;
-}
-
 // Hide Linter counts for error/warning/info messages in status bar
 .linter-status-count {
   display: none;
@@ -132,11 +111,6 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
       display: none;
     }
   }
-}
-
-// "Lines modified" status bar indicator
-.status-modified {
-  color: @orange;
 }
 
 // Make search panel character matches white instead of blue
