@@ -1074,7 +1074,8 @@
     'prefix': 'endfor'
     'body': '{% endfor %}'
 
-'.text.html.mustache':
+'.text.html.mustache,
+ .text.html.sca.tpl':
 
   'expression':
     'prefix': 'exp'
