@@ -18,7 +18,6 @@ packages: [
   "language-latex"
   "language-liquid"
   "language-lisp"
-  "language-patch"
   "language-pegjs"
   "language-prolog"
   "language-sca"
