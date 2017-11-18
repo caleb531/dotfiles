@@ -693,12 +693,15 @@
     'prefix': 'endwhile'
     'body': '<?php endwhile; ?>$1'
 
-# CSS, Sass, and Less
 
 '.source.css':
 
-  '@media':
+  '@media (w/o @)':
     'prefix': 'media'
+    'body': '@media $1 {\n\t$2\n}'
+
+  '@media (w/ @)':
+    'prefix': '@media'
     'body': '@media $1 {\n\t$2\n}'
 
 # Sass
