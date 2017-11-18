@@ -10,6 +10,9 @@
   # Create new files using advanced-open-file
   'alt-cmd-n': 'advanced-open-file:toggle'
 
+  # Reveal the current project folder at the workspace level
+  'shift-cmd-r': 'application:show-project-folder-in-file-manager'
+
 # Any text field (code editors and inputs)
 '.platform-darwin atom-text-editor':
 

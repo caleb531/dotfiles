@@ -4,6 +4,7 @@
 # after packages are loaded/activated and after the previous editor state
 # has been restored.
 
+exec = require('child_process').exec
 fs = require('fs')
 path = require('path')
 
@@ -22,6 +23,13 @@ setPreferredWindowDimensions = ->
     x: originalWindowDimensions.x,
     y: originalWindowDimensions.y
   })
+
+# Add command for revealing the project folder at the workspace level
+atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', ->
+  projectPaths = atom.project.getPaths()
+  if projectPaths.length isnt 0
+    exec("open #{projectPaths[0]}")
+)
 
 setPreferredWindowDimensions()
 syncPackages()
