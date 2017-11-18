@@ -1223,3 +1223,11 @@
   'Key Binding (no selector)':
     'prefix': 'keyns'
     'body': '\'${1:keystroke}\': \'${2:command}\''
+
+# JSON
+
+'.source.json':
+
+  'key-value pair':
+    'prefix': 'kv'
+    'body': '\"${1:key}\": ${2:null},$3'
