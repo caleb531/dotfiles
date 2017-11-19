@@ -39,4 +39,5 @@ packages: [
   "ssh-config"
   "svg-preview"
   "tabs-to-spaces"
+  "teletype"
 ]
