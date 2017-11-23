@@ -37,7 +37,7 @@
 	indentHeuristic = true
 	# Consider a "word" a string of uppercase letters OR a string of lowercase
 	# letters OR a single non-space character
-	wordRegex = [A-Z0-9]+ ?|[A-Z0-9]?[a-z0-9]+ ?|[^[:space:]]
+	wordRegex = [A-Z0-9]+|[A-Z0-9]?[a-z0-9]+|[^[:space:]]
 
 # Ignore linter-ui-default's panelHeight setting in Atom config
 [filter "strip-panel-height"]
