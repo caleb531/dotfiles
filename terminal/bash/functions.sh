@@ -151,6 +151,7 @@ cov() {
 	elif [ -f requirements.txt ]; then
 		if coverage run -m nose --rednose "$@"; then
 			coverage report
+			coverage html
 		fi
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
@@ -162,7 +163,6 @@ covo() {
 	if [ -f package.json ]; then
 		open -a "$WEB_BROWSER_NAME" ./coverage/index.html
 	elif [ -f requirements.txt ]; then
-		coverage html
 		open -a "$WEB_BROWSER_NAME" ./htmlcov/index.html
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
