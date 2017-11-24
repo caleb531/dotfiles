@@ -104,6 +104,8 @@
 	gcpn = gc --prune=now
 	# Get the name of the last tag
 	lasttag = describe --tags --abbrev=0
+    # Show the very first commit to the repository
+	log0 = log --max-parents=0
 	# Show all commits that touched a given file
 	logf = log --follow
 	# Show all commits since the last tag
