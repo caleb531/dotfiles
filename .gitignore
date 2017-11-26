@@ -4,3 +4,6 @@
 # Private configuration which should not be tracked; the trailing slash must be
 # omitted to support symlinks
 private
+
+# Log files
+*.log
