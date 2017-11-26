@@ -70,21 +70,21 @@ install_gem jekyll
 
 echo "Installing node..."
 
-DEFAULT_NODE_VERSION=9.1.0
-if ! is_cmd_installed n && ! is_node_version_installed "$DEFAULT_NODE_VERSION"; then
+if ! is_cmd_installed n; then
 	curl -L \
 		https://git.io/n-install \
-		| bash -s -- -y -n "$DEFAULT_NODE_VERSION"
+		| bash -s -- -y -n -
 fi
+# Load in environment variables for n and node
 source ~/dotfiles/terminal/bash/exports.sh
 
+install_node_version "$DEFAULT_NODE_VERSION"
 install_node_version 6.10.3
 install_node_version 0.12.8
+n "$DEFAULT_NODE_VERSION"
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
-
-n "$DEFAULT_NODE_VERSION"
 
 install_npm_pkg grunt-cli
 install_npm_pkg gulp-cli

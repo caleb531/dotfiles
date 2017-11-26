@@ -16,8 +16,8 @@ export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:"$MANPATH"
 export PATH=/usr/local/opt/gnupg@2.0/bin:"$PATH"
 export PATH=/usr/local/opt/gpg-agent/bin:"$PATH"
 # Node
-export PREFIX="$HOME"/n
-export N_PREFIX="$PREFIX"
+export DEFAULT_NODE_VERSION=9.1.0
+export N_PREFIX="$HOME"/n
 export PATH="$N_PREFIX"/bin:"$PATH"
 export NPM_CONFIG_PREFIX=/usr/local/lib/npm-packages
 export PATH="$NPM_CONFIG_PREFIX"/bin:"$PATH"
