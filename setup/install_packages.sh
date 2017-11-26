@@ -86,10 +86,10 @@ preload_npm_pkg_list
 
 n "$DEFAULT_NODE_VERSION"
 
-# install_npm_pkg grunt-cli
-# install_npm_pkg gulp-cli
-# install_npm_pkg brunch
-# install_npm_pkg http-server
+install_npm_pkg grunt-cli
+install_npm_pkg gulp-cli
+install_npm_pkg brunch
+install_npm_pkg http-server
 
 echo "Installing pip packages..."
 preload_pip_pkg_list
