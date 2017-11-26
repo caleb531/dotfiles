@@ -15,7 +15,10 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:"$PATH"
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:"$MANPATH"
 export PATH=/usr/local/opt/gnupg@2.0/bin:"$PATH"
 export PATH=/usr/local/opt/gpg-agent/bin:"$PATH"
-# npm packages
+# Node
+export PREFIX="$HOME"/n
+export N_PREFIX="$PREFIX"
+export PATH="$N_PREFIX"/bin:"$PATH"
 export NPM_CONFIG_PREFIX=/usr/local/lib/npm-packages
 export PATH="$NPM_CONFIG_PREFIX"/bin:"$PATH"
 # ImageMagick

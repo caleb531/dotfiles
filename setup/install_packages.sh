@@ -68,19 +68,28 @@ install_gem sass
 install_gem bundler
 install_gem jekyll
 
-install_brew_pkg n
-if ! is_cmd_installed node; then
-	sudo n latest
+echo "Installing node..."
+
+DEFAULT_NODE_VERSION=9.1.0
+if ! is_cmd_installed n && ! is_node_version_installed "$DEFAULT_NODE_VERSION"; then
+	curl -L \
+		https://git.io/n-install \
+		| bash -s -- -y -n "$DEFAULT_NODE_VERSION"
 fi
 source ~/dotfiles/terminal/bash/exports.sh
+
+install_node_version 6.10.3
+install_node_version 0.12.8
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
 
-install_npm_pkg grunt-cli
-install_npm_pkg gulp-cli
-install_npm_pkg brunch
-install_npm_pkg http-server
+n "$DEFAULT_NODE_VERSION"
+
+# install_npm_pkg grunt-cli
+# install_npm_pkg gulp-cli
+# install_npm_pkg brunch
+# install_npm_pkg http-server
 
 echo "Installing pip packages..."
 preload_pip_pkg_list

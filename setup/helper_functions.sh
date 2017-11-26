@@ -32,6 +32,10 @@ is_brew_pkg_installed() {
 	echo "$BREW_PKG_LIST" | grep --quiet "^$1\$"
 }
 
+is_node_version_installed() {
+	[ -d "$N_PREFIX"/n/versions/node/"$1" ]
+}
+
 is_npm_pkg_installed() {
 	echo "$NPM_PKG_LIST" | grep --quiet " $1@"
 }
@@ -64,6 +68,12 @@ install_brew_pkg() {
 
 pin_brew_pkg() {
 	brew pin "$@" 2> /dev/null
+}
+
+install_node_version() {
+	if ! is_node_version_installed "$1"; then
+		n "$1"
+	fi
 }
 
 install_npm_pkg() {
