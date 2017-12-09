@@ -98,6 +98,9 @@
   # Swaps selections
   'alt-cmd-t': 'atom-transpose:transpose'
 
+  # Copy the current file's project-relative path to the clipboard
+  'alt-cmd-c': 'editor:copy-project-path'
+
   # Reformat a file according to the applicable editorconfig settings
   'alt-cmd-e alt-cmd-f': 'EditorConfig:fix-file'
 
