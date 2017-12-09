@@ -1118,6 +1118,14 @@
     'prefix': 'endeach'
     'body': '{{/each}}'
 
+  'for':
+    'prefix': 'each'
+    'body': '{{#each ${1:object}}}$2'
+
+  'endfor':
+    'prefix': 'endeach'
+    'body': '{{/each}}'
+
   'with':
     'prefix': 'with'
     'body': '{{#with ${1:object}}}$2'
