@@ -32,6 +32,7 @@
       "update-package-dependencies"
       "welcome"
       "whitespace"
+      "teletype"
     ]
     followSymlinks: false
     ignoredNames: [
