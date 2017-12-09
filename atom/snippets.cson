@@ -1080,7 +1080,7 @@
 # Handlebars-based templates
 
 '.text.html.mustache,
- .text.html.sca.tpl':
+ .text.html.mustache.sca.tpl':
 
   'expression':
     'prefix': 'exp'
