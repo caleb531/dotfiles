@@ -149,9 +149,6 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 echo "- Make Help Viewer windows non-floating"
 defaults write com.apple.helpviewer DevMode -bool true
 
-echo "- Force Chrome to use system print dialog"
-defaults write com.google.Chrome DisablePrintPreview -bool true
-
 echo "Updating menu bar..."
 
 echo "- Adding preferred menu extras..."
