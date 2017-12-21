@@ -31,6 +31,7 @@
       "timecop"
       "update-package-dependencies"
       "welcome"
+      "whitespace"
       "teletype"
     ]
     followSymlinks: false
@@ -134,9 +135,7 @@
   welcome:
     showOnStartup: false
   whitespace:
-    ensureSingleTrailingNewline: false
     ignoreWhitespaceOnCurrentLine: false
-    removeTrailingWhitespace: false
 ".basic.html.text":
   editor:
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-"
