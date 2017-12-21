@@ -100,6 +100,9 @@
 	diffwc = diff --ignore-all-space --cached
 	diffwcw = diff --ignore-all-space --color-words
 	diffwcwc = diff --ignore-all-space --color-words --cached
+    # Exports a patchfile
+	fp = format-patch
+	fps = format-patch --stdout
 	# Run Git's garbage collection, removing all loose objects
 	gcpn = gc --prune=now
 	# Get the name of the last tag
