@@ -73,6 +73,8 @@
 	addp = add -p
 	# Apply a commit to the working directory
 	chp = cherry-pick
+    # Discard untracked files and directories
+	cleanfd = clean -fd
 	# Modify the previous commit
 	commita = commit --amend
 	# Delete branches that have been merged in
