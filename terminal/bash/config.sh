@@ -15,7 +15,7 @@ bind '"\e[B": history-search-forward' 2> /dev/null
 # Automatically add trailing slash to autocompleted directory symlinks
 bind 'set mark-symlinked-directories on' 2> /dev/null
 # Make autocompletion case-insensitive
-# bind 'set completion-ignore-case on' 2> /dev/null
+bind 'set completion-ignore-case on' 2> /dev/null
 
 # If shell is Bash 4 or newer
 if [ $BASH_VERSINFO -ge 4 ]; then
