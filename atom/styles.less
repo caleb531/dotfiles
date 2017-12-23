@@ -53,10 +53,12 @@ atom-text-editor:not([mini]) {
     border-bottom-style: solid;
   }
   // Color Apache Directory/Location paths like all other strings
-  .syntax--meta.syntax--toc-list.syntax--directory.syntax--apache-config,
-  .syntax--meta.syntax--toc-list.syntax--location.syntax--apache-config,
-  .syntax--meta.syntax--toc-list.syntax--files.syntax--apache-config {
-    color: @yellow;
+  .syntax--meta.syntax--toc-list.syntax--apache-config {
+    &.syntax--directory,
+    &.syntax--location,
+    &.syntax--files {
+      color: @yellow;
+    }
   }
 }
 
