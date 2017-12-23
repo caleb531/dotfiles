@@ -101,6 +101,9 @@
   # Copy the current file's project-relative path to the clipboard
   'alt-cmd-c': 'editor:copy-project-path'
 
+  # View all editorconfig information for the current file
+  'alt-cmd-e alt-cmd-e': 'EditorConfig:show-state'
+
   # Reformat a file according to the applicable editorconfig settings
   'alt-cmd-e alt-cmd-f': 'EditorConfig:fix-file'
 
