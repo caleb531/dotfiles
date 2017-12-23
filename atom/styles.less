@@ -60,6 +60,22 @@ atom-text-editor:not([mini]) {
       color: @yellow;
     }
   }
+  // Diffs and patches
+  .syntax--diff {
+    &.syntax--inserted {
+      color: @green;
+    }
+    &.syntax--deleted {
+      color: @pink;
+    }
+    &.syntax--range {
+      color: @blue;
+    }
+    &.syntax--header,
+    &.syntax--index {
+      color: @gray;
+    }
+  }
 }
 
 // Use a prettier color for the find-and-replace current result "flash'"

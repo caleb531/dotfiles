@@ -10,6 +10,7 @@ packages: [
   "language-apache"
   "language-applescript"
   "language-awk"
+  "language-diff"
   "language-env"
   "language-gitattributes"
   "language-gitignore"
