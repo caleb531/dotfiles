@@ -134,6 +134,11 @@
 	pushf = push --force-with-lease
 	# Push the current branch to a new remote branch of the same name
 	pushu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+	# Rebasing!
+	reb = rebase
+	reba = rebase --abort
+	rebc = rebase --continue
+	rebi = rebase --interactive
 	# Stage a file for removal without actually deleting it
 	rmc = rm --cached
 	# Remove local copies of remote branches that have been deleted
