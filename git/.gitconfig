@@ -73,7 +73,10 @@
 	addp = add -p
 	# Apply a commit to the working directory
 	chp = cherry-pick
-    # Discard untracked files and directories
+	chpa = cherry-pick --abort
+	chpc = cherry-pick --continue
+	chpm = cherry-pick --allow-empty -m 1
+	# Discard untracked files and directories
 	cleanfd = clean -fd
 	# Modify the previous commit
 	commita = commit --amend
