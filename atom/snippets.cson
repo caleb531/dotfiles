@@ -697,7 +697,7 @@
 '.source.css':
 
   '@media':
-    'prefix': 'mediaquery'
+    'prefix': 'mediaq'
     'body': '@media $1 {\n\t$2\n}$3'
 
   '@media screen':
