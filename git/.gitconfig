@@ -157,6 +157,8 @@
 	# Unstash the last stash entry and apply its changes to the current working
 	# directory
 	stashp = stash pop
+	# Stash changes, including untracked files
+	stashu = stash -u
 	# Clone submodule repositories into their respective directories if empty
 	suri = submodule update --recursive --init
 	# Pull from remote for all existing submodules
