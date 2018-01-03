@@ -79,5 +79,7 @@ alias bi='bundle install'
 # Install Python packages into virtualenv
 alias pi='pip install -r requirements.txt'
 
-# Rebuild sass package (typically necessary after switching node versions)
-alias resass='npm rebuild node-sass'
+# Recompile C++ for all relevant npm packages
+alias nr='npm rebuild'
+# Recompile node-sass specifically
+alias nrs='npm rebuild node-sass'
