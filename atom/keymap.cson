@@ -118,3 +118,9 @@
   'alt-cmd-b': 'find-and-replace:toggle-whole-word-option'
 '.platform-darwin .project-find':
   'alt-cmd-b': 'project-find:toggle-whole-word-option'
+
+# Tree View sidebar (when focused)
+'.tree-view':
+
+  # Rename the selected file or directory
+  'cmd-e': 'tree-view:rename'
