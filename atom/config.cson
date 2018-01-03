@@ -1,6 +1,9 @@
 "*":
   "advanced-open-file":
     createDirectories: true
+  "atom-beautify":
+    general:
+      _analyticsUserId: "0683b024-340d-45d0-9b02-e509ab6476f0"
   "atom-package-deps":
     ignored: [
       "linter-ui-default"
@@ -64,6 +67,7 @@
       "linter"
       "merge-conflicts"
       "resize-indent"
+      "atom-beautify"
     ]
     projectHome: "~/Repositories"
     telemetryConsent: "limited"

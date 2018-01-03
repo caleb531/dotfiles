@@ -107,6 +107,9 @@
   # Reformat a file according to the applicable editorconfig settings
   'alt-cmd-e alt-cmd-f': 'EditorConfig:fix-file'
 
+  # Prettify the code in the active editor
+  'ctrl-cmd-p': 'atom-beautify:beautify-editor'
+
 # Toggles match by whole word in Find and Replace / Project Find panels
 '.platform-darwin .find-and-replace':
   'alt-cmd-b': 'find-and-replace:toggle-whole-word-option'
