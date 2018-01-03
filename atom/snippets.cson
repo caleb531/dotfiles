@@ -363,6 +363,52 @@
     'prefix': 'debugger'
     'body': 'debugger;'
 
+  # SuiteScript
+
+  'log execution':
+    'prefix': 'nlapiLogExecution'
+    'body': 'nlapiLogExecution(\'DEBUG\', \'${1:title}\', \'${2:message}\');'
+
+  'create error':
+    'prefix': 'nlapiCreateError'
+    'body': 'nlapiCreateError(\'${1:title}\', \'${2:message}\');'
+
+  'search record':
+    'prefix': 'nlapiSearchRecord'
+    'body': 'nlapiSearchRecord(${1:recordtype}, ${2:null}, ${3:filters});'
+
+  'search filter':
+    'prefix': 'nlobjSearchFilter'
+    'body': 'nlobjSearchFilter(${1:fieldname}, ${2:null}, \'${3:is}\', ${4:value});'
+
+  'search column':
+    'prefix': 'nlobjSearchColumn'
+    'body': 'nlobjSearchColumn(${1:fieldname});'
+
+  'get value':
+    'prefix': 'getValue'
+    'body': 'getValue(${1:fieldname});'
+
+  'get text':
+    'prefix': 'getText'
+    'body': 'getText(${1:fieldname});'
+
+  'get field value':
+    'prefix': 'getFieldValue'
+    'body': 'getFieldValue(${1:fieldname});'
+
+  'get field text':
+    'prefix': 'getFieldText'
+    'body': 'getFieldText(${1:fieldname});'
+
+  'set field value':
+    'prefix': 'setFieldValue'
+    'body': 'setFieldValue(${1:fieldname}, ${2:value});'
+
+  'set field text':
+    'prefix': 'setFieldText'
+    'body': 'setFieldText(${1:fieldname}, ${2:text});'
+
   # Miscellaneous
 
   'prototype':
