@@ -105,7 +105,7 @@
 	diffwc = diff --ignore-all-space --cached
 	diffwcw = diff --ignore-all-space --color-words
 	diffwcwc = diff --ignore-all-space --color-words --cached
-    # Exports a patchfile
+	# Exports a patchfile
 	fp = format-patch
 	fps = format-patch --stdout
 	fps1 = format-patch -1 --stdout
@@ -113,7 +113,7 @@
 	gcpn = gc --prune=now
 	# Get the name of the last tag
 	lasttag = describe --tags --abbrev=0
-    # Show the very first commit to the repository
+	# Show the very first commit to the repository
 	log0 = log --max-parents=0
 	# Show all commits that touched a given file
 	logf = log --follow
@@ -121,7 +121,7 @@
 	loglasttag = !git log $(git lasttag)..HEAD
 	# List commits with descriptions containing the given string
 	logg = log --fixed-strings --regexp-ignore-case --grep
-    # Log all commits under a merge
+	# Log all commits under a merge
 	logm = "!logm() { git log ${1:-HEAD}^1..${1:-HEAD}; }; logm"
 	# List commits with code changes containing the given string
 	logs = log -S
@@ -155,7 +155,7 @@
 	# Show the info and changes for the given/current commit, highlighting only
 	# the changes within each line
 	showcw = show --color-words
-    # Show a commit-by-commit diff of changes for a merge
+	# Show a commit-by-commit diff of changes for a merge
 	showm = "!showm() { git show ${1:-HEAD}^1..${1:-HEAD}; }; showm"
 	# List the info and file paths for the given/current commit
 	showno = show --name-only
