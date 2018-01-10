@@ -108,6 +108,7 @@
     # Exports a patchfile
 	fp = format-patch
 	fps = format-patch --stdout
+	fps1 = format-patch -1 --stdout
 	# Run Git's garbage collection, removing all loose objects
 	gcpn = gc --prune=now
 	# Get the name of the last tag
