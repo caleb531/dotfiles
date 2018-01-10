@@ -125,6 +125,8 @@
 	logm = "!logm() { git log ${1:-HEAD}^1..${1:-HEAD}; }; logm"
 	# List commits with code changes containing the given string
 	logs = log -S
+	# List all tracked files, relative to the current directory
+	ls = ls-tree -r --name-only HEAD
 	# Merge branches without fast-forwards, always ensuring a merge commit
 	mergenff = merge --no-ff
 	# Pull from remote, recommitting unpushed changes atop the pulled commits
