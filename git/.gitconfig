@@ -127,6 +127,9 @@
 	logs = log -S
 	# List all tracked files, relative to the current directory
 	ls = ls-tree -r --name-only HEAD
+	# Managing merges
+	mergea = merge --abort
+	mergec = merge --continue
 	# Merge branches without fast-forwards, always ensuring a merge commit
 	mergenff = merge --no-ff
 	# Pull from remote, recommitting unpushed changes atop the pulled commits
