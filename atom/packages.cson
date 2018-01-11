@@ -4,6 +4,7 @@ packages: [
   "atom-beautify"
   "atom-transpose"
   "auto-update-packages"
+  "color-picker"
   "docblockr"
   "editorconfig"
   "emmet"
