@@ -71,6 +71,8 @@
 [alias]
 	# Stage interactively
 	addp = add -p
+    # Abort applying a mailbox patch
+	ama = am --abort
     # Apply patch, storing conflicts in .rej files
 	applyr = apply --reject
 	# Apply a commit to the working directory
