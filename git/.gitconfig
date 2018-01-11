@@ -71,6 +71,8 @@
 [alias]
 	# Stage interactively
 	addp = add -p
+    # Apply patch, storing conflicts in .rej files
+	applyr = apply --reject
 	# Apply a commit to the working directory
 	chp = cherry-pick
 	chpa = cherry-pick --abort
