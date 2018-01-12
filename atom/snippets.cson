@@ -373,6 +373,10 @@
     'prefix': 'nlapiCreateError'
     'body': 'nlapiCreateError(\'${1:title}\', \'${2:message}\');'
 
+  'load record':
+    'prefix': 'nlapiLoadRecord'
+    'body': 'nlapiLoadRecord(${1:recordtype}, ${2:internalid});'
+
   'search record':
     'prefix': 'nlapiSearchRecord'
     'body': 'nlapiSearchRecord(${1:recordtype}, ${2:null}, ${3:filters});'
