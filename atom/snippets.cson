@@ -379,11 +379,11 @@
 
   'search filter':
     'prefix': 'nlobjSearchFilter'
-    'body': 'nlobjSearchFilter(${1:fieldname}, ${2:null}, \'${3:is}\', ${4:value});'
+    'body': 'nlobjSearchFilter(${1:fieldname}, ${2:null}, \'${3:is}\', ${4:value})$5'
 
   'search column':
     'prefix': 'nlobjSearchColumn'
-    'body': 'nlobjSearchColumn(${1:fieldname});'
+    'body': 'nlobjSearchColumn(${1:fieldname})$2'
 
   'get value':
     'prefix': 'getValue'
