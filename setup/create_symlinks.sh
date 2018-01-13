@@ -5,8 +5,7 @@ echo "Creating symlinks..."
 # Symlink Atom configuration
 mkdir -p ~/.atom
 ln -sf ~/dotfiles/atom/* ~/.atom
-# Also symlink hidden files (like .editorconfig)
-ln -sf ~/dotfiles/atom/.[!.]* ~/.atom
+ln -sf ~/dotfiles/atom/.editorconfig ~/.atom
 
 # Symlink Bash configuration
 ln -snf ~/dotfiles/terminal/.bashrc ~/.bashrc
