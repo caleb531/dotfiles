@@ -170,6 +170,8 @@
 	showno = show --name-only
 	# List the info and file statuses for the given/current commit
 	showns = show --name-status
+    # Squash commits and apply to working directory without committing
+	squash = merge --squash
 	# Stash files in the current working directory, leaving staged files alone
 	stashki = stash --keep-index
 	# Unstash the last stash entry and apply its changes to the current working
