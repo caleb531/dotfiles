@@ -79,7 +79,7 @@ fi
 source ~/dotfiles/terminal/bash/exports.sh
 
 install_node_version "$DEFAULT_NODE_VERSION"
-install_node_version 6.11.5
+install_node_version 6.12.3
 n "$DEFAULT_NODE_VERSION"
 
 echo "Installing npm packages..."
