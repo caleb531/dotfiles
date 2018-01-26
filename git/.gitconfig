@@ -119,6 +119,8 @@
 	lasttag = describe --tags --abbrev=0
 	# Show the very first commit to the repository
 	log0 = log --max-parents=0
+    # Display any branch and tag pointers next to each commit
+	logd = log --decorate
 	# Show all commits that touched a given file
 	logf = log --follow
 	# Show all commits since the last tag
