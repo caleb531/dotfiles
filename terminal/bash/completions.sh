@@ -94,7 +94,7 @@ _brew() {
 		# Complete all available casks for `brew cask info`
 		COMPREPLY=( $(compgen -W "$(__get_all_brew_casks)" -- $cur) )
 	elif [ "$second" == 'cask' -a "$third" == 'install' ]; then
-		# Complete options and installed casks for `brew cask install`
+		# Complete options and all casks for `brew cask install`
 		COMPREPLY=( $(compgen -W "--force $(__get_all_brew_casks)" -- $cur) )
 	elif [ "$second" == 'cask' -a "$third" == 'reinstall' ]; then
 		# Complete installed casks for `brew cask reinstall`
