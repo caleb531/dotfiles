@@ -107,6 +107,9 @@
   # Reformat a file according to the applicable editorconfig settings
   'ctrl-cmd-e ctrl-cmd-f': 'EditorConfig:fix-file'
 
+  # Attempt to modify file to comply with applicable Eslint rules
+  'ctrl-cmd-l ctrl-cmd-f': 'linter-eslint:fix-file'
+
   # Prettify the code in the active editor
   'ctrl-cmd-p': 'atom-beautify:beautify-editor'
 
