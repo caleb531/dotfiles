@@ -181,13 +181,7 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
 .atom-dock-inner.bottom.atom-dock-open {
   // Hide Linter title bar
   .tab-bar {
-    display: none;
-  }
-  // Constrain height of Linter panel
-  .atom-dock-mask,
-  .atom-dock-content-wrapper {
-    @tree-view-height: 100px;
-    min-height: @tree-view-height;
-    max-height: @tree-view-height;
+    visibility: hidden;
+    height: 0;
   }
 }

@@ -118,7 +118,9 @@
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "linter-ui-default":
+    alwaysTakeMinimumSpace: true
     hidePanelWhenEmpty: true
+    panelHeight: 200
     showPanel: true
     showTooltip: false
   "markdown-preview":
