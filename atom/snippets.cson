@@ -754,6 +754,14 @@
     'prefix': 'screen'
     'body': '@media screen and ($1) {\n\t$2\n}$3'
 
+  'screen min width':
+    'prefix': 'smin'
+    'body': '@media screen and (min-width: $1) {\n\t$2\n}$3'
+
+  'screen max width':
+    'prefix': 'smax'
+    'body': '@media screen and (max-width: $1) {\n\t$2\n}$3'
+
   '@media print':
     'prefix': 'print'
     'body': '@media print {\n\t$1\n}$2'
