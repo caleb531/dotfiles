@@ -207,15 +207,15 @@
 
   'prototype method':
     'prefix': 'pm'
-    'body': '${1:ClassName}.prototype.${2:methodName} = function($3) {\n\t$4\n};'
+    'body': '${1:ClassName}.prototype.${2:methodName} = function ($3) {\n\t$4\n};'
 
   'immediately-invoked function expression':
     'prefix': 'iife'
-    'body': '(function($1) {\n$2\n}($3));'
+    'body': '(function ($1) {\n$2\n}($3));'
 
   'jquery document.ready':
     'prefix': 'docready'
-    'body': '$(document).ready(function() {\n$2\n});'
+    'body': '$(document).ready(function () {\n$2\n});'
 
   # DOM
 
