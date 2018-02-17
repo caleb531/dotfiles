@@ -223,17 +223,17 @@
     'prefix': 'doc'
     'body': 'document'
 
-  'getElementById':
-    'prefix': 'getid'
-    'body': 'getElementById($1)$2'
-
-  'getElementsByClassName':
-    'prefix': 'getclass'
-    'body': 'getElementsByClassName($1)$2'
-
-  'getElementsByTagName':
-    'prefix': 'gettag'
-    'body': 'getElementsByTagName($1)$2'
+  # 'getElementById':
+  #   'prefix': 'getid'
+  #   'body': 'getElementById($1)$2'
+  #
+  # 'getElementsByClassName':
+  #   'prefix': 'getclass'
+  #   'body': 'getElementsByClassName($1)$2'
+  #
+  # 'getElementsByTagName':
+  #   'prefix': 'gettag'
+  #   'body': 'getElementsByTagName($1)$2'
 
   'querySelector':
     'prefix': 'qs'
@@ -412,6 +412,28 @@
   'set field text':
     'prefix': 'setFieldText'
     'body': 'setFieldText(${1:fieldname}, ${2:text});'
+
+  # SuiteCommerce Advanced
+
+  'AMD module':
+    'prefix': 'define'
+    'body': 'define(\'${1:Extension.Module}\', [\n\t\'$2\'$3\n], function (\n\t$4\n) {\n\t\'use strict\';\n\n\treturn ${5:exported};\n\n});'
+
+  'mountToApp':
+    'prefix': 'mountToApp'
+    'body': '{\n\tmountToApp: function ($1) {\n\n\t\t $2\n\n\t}\n}'
+
+  'wrap prototype method':
+    'prefix': 'wrapptm'
+    'body': '${1:Module}.prototype.${2:methodName} = _.wrap(${1:Module}.prototype.${2:methodName}, function (fn) {\n\t$3\n});'
+
+  'wrap getContext':
+    'prefix': 'getcontext'
+    'body': '${1:Module}.prototype.getContext = _.wrap(${1:Module}.prototype.getContext, function (fn) {\n\tvar context = fn.apply(this, _.toArray(arguments).slice(1));\n\t${3:// additional context variables here}\n\treturn context;\n});'
+
+  'call parent method':
+    'prefix': 'fnapply'
+    'body': 'fn.apply(this, _.toArray(arguments).slice(1));'
 
   # Miscellaneous
 
