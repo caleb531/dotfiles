@@ -425,7 +425,7 @@
 
   'wrap prototype method':
     'prefix': 'wrapptm'
-    'body': '${1:Module}.prototype.${2:methodName} = _.wrap(${1:Module}.prototype.${2:methodName}, function (fn) {\n\t$3\n});'
+    'body': '${1:Module}.prototype.${2:methodName} = _.wrap(${1:Module}.prototype.${2:methodName}, function (fn) {\n\tfn.apply(this, _.toArray(arguments).slice(1));$3\n});'
 
   'wrap getContext':
     'prefix': 'getcontext'
