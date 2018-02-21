@@ -173,6 +173,9 @@
 	squash = merge --squash
 	# Stash files in the current working directory, leaving staged files alone
 	stashki = stash --keep-index
+	# Apply its changes to the current working directory without removing it
+	# from the stash
+	stasha = stash apply
 	# Unstash the last stash entry and apply its changes to the current working
 	# directory
 	stashp = stash pop
