@@ -76,6 +76,7 @@
 	chpa = cherry-pick --abort
 	chpc = cherry-pick --continue
 	chpm = cherry-pick --allow-empty -m 1
+	chpn = cherry-pick --no-commit
 	# Discard untracked files and directories
 	cleanfd = clean -fd
 	# Modify the previous commit
