@@ -777,11 +777,11 @@
     'body': '@media screen and ($1) {\n\t$2\n}$3'
 
   'screen min width':
-    'prefix': 'smin'
+    'prefix': 'screenmin'
     'body': '@media screen and (min-width: $1) {\n\t$2\n}$3'
 
   'screen max width':
-    'prefix': 'smax'
+    'prefix': 'screennmax'
     'body': '@media screen and (max-width: $1) {\n\t$2\n}$3'
 
   '@media print':
