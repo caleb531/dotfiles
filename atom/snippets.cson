@@ -778,11 +778,11 @@
 
   'screen min width':
     'prefix': 'screenmin'
-    'body': '@media screen and (min-width: $1) {\n\t$2\n}$3'
+    'body': '@media screen and (min-width: ${1:$screen-md-min}) {\n\t$2\n}$3'
 
   'screen max width':
     'prefix': 'screennmax'
-    'body': '@media screen and (max-width: $1) {\n\t$2\n}$3'
+    'body': '@media screen and (max-width: ${1:$screen-md-max}) {\n\t$2\n}$3'
 
   '@media print':
     'prefix': 'print'
