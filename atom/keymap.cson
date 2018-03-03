@@ -127,3 +127,6 @@
 
   # Rename the selected file or directory
   'cmd-e': 'tree-view:rename'
+
+  # Remove the selected file or directory
+  'cmd-backspace': 'tree-view:remove'
