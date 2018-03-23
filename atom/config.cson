@@ -123,6 +123,7 @@
     panelHeight: 200
     showPanel: true
     showTooltip: false
+    statusBarRepresents: "Current File"
   "markdown-preview":
     useGitHubStyle: true
   "one-dark-ui":
