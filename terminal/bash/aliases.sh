@@ -55,6 +55,8 @@ alias bw='brunch watch'
 alias bs='bw --server'
 # Build a Jekyll site, using Bundler if needed
 alias jb='bundle exec jekyll build'
+# Build a Jekyll site for production
+alias jbp='JEKYLL_ENV=production jb'
 # Watch a Jekyll site, building (and using Bundler) as needed
 alias jw='jb --watch'
 # Serve a Jekyll site, building (and using Bundler) as needed
