@@ -80,6 +80,8 @@ alias gsf='grunt serve:force'
 alias bi='bundle install'
 # Install Python packages into virtualenv
 alias pi='pip install -r requirements.txt'
+# Record installed Python packages
+alias pfr='pip freeze > requirements.txt'
 
 # Recompile C++ for all relevant npm packages
 alias nr='npm rebuild'
