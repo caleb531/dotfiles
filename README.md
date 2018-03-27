@@ -1,5 +1,5 @@
 # dotfiles
-*Copyright 2014-2017, Caleb Evans*  
+*Copyright 2014-2018, Caleb Evans*  
 *Released under the MIT license*
 
 This repository describes and features the configuration files for my Terminal,
