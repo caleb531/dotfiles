@@ -169,6 +169,24 @@ covo() {
 	fi
 }
 
+# Check Node/Python code style
+cs() {
+	if [[ -f requirements.txt ]]; then
+		pycodestyle "$@" **/!(setup).py
+	else
+		>&2 echo "${FUNCNAME[0]}: not a node/python project"
+	fi
+}
+
+# Check Node/Python cyclomatic complexity
+cc() {
+	if [ -f requirements.txt ]; then
+		radon cc --show-complexity --average "$@" **/!(setup).py
+	else
+		>&2 echo "${FUNCNAME[0]}: not a node/python project"
+	fi
+}
+
 # Run the executable compiled by the current directory's Makefile
 run() {
 	local executable="$(cat Makefile | grep -Po '[\w\-\./]+\.out')"
