@@ -5,6 +5,9 @@
   # Disable cmd-o because it always gets in the way of typing cmd-i
   'cmd-o': 'unset!'
 
+  # Disable cmd-\ for toggling tree view because I always accidentally hit it
+  'cmd-\\': 'unset!'
+
 '.platform-darwin atom-workspace':
 
   # Create new files using advanced-open-file
