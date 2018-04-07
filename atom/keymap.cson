@@ -1,6 +1,6 @@
 # Your keymap
 
-'body':
+'.platform-darwin':
 
   # Disable cmd-o because it always gets in the way of typing cmd-i
   'cmd-o': 'unset!'
