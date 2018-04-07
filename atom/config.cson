@@ -77,6 +77,7 @@
       "monokai"
     ]
     titleBar: "custom"
+    uriHandlerRegistration: "always"
   docblockr:
     align_tags: "shallow"
     extend_double_slash: false
