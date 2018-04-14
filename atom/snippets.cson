@@ -431,6 +431,10 @@
     'prefix': 'wrap'
     'body': '${1:Module}.prototype.${2:methodName} = _.wrap(${1:Module}.prototype.${2:methodName}, function (fn) {\n\tfn.apply(this, _.toArray(arguments).slice(1));$3\n});'
 
+  'add child view':
+    'prefix': 'childview'
+    'body': '${1:Module}.prototype.childViews[\'$2\'] = function () {\n\treturn new ${3:ChildView}({\n\t\tmodel: this.model$4\n\t});\n};$5'
+
   'wrap getContext':
     'prefix': 'getcontext'
     'body': '${1:Module}.prototype.getContext = _.wrap(${1:Module}.prototype.getContext, function (fn) {\n\tvar context = fn.apply(this, _.toArray(arguments).slice(1));\n\t${3:// additional context variables here}\n\treturn context;\n});'
