@@ -424,7 +424,7 @@
     'body': 'define(\'${1:Extension.Module}\', [\n\t\'$2\'$3\n], function (\n\t$4\n) {\n\t\'use strict\';\n\n\treturn ${5:exported};\n\n});'
 
   'mountToApp':
-    'prefix': 'mountToApp'
+    'prefix': 'mta'
     'body': '{\n\tmountToApp: function ($1) {\n\n\t\t $2\n\n\t}\n}'
 
   'wrap prototype method':
