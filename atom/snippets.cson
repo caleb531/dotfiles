@@ -558,7 +558,7 @@
     'body': 'def ${1:fname}($2):\n\t${3:pass}'
 
   'magic method':
-    'prefix': 'mdef'
+    'prefix': 'defm'
     'body': 'def __${1:fname}__(self$2):\n\t${3:pass}'
 
   'class':
