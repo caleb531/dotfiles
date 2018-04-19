@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/setup/header.sh
-
-if is_brew_pkg_installed node; then
-	brew uninstall node
-fi
-if is_brew_pkg_installed n; then
-	brew uninstall n
-fi
+brew uninstall node
+brew uninstall n
 
 sudo rm -rfv \
 	/usr/local/bin/npm \
