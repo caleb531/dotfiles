@@ -62,6 +62,9 @@ export PYTHONDONTWRITEBYTECODE=1
 # The name of the virtualenv directory (within the respective project directory)
 export VIRTUAL_ENV_NAME='.virtualenv'
 
+# Disable notices for npm updates
+export NO_UPDATE_NOTIFIER=1
+
 # Colors
 # ANSI color reference: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
 
