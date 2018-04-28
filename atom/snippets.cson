@@ -417,6 +417,10 @@
     'prefix': 'setFieldText'
     'body': 'setFieldText(${1:fieldname}, ${2:text});'
 
+  'submit record':
+    'prefix': 'nlapiSubmitRecord'
+    'body': 'nlapiSubmitRecord(${1:record});'
+
   # SuiteCommerce Advanced
 
   'AMD module':
