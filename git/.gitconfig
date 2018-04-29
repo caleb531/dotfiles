@@ -67,9 +67,9 @@
 [alias]
 	# Stage interactively
 	addp = add -p
-    # Abort applying a mailbox patch
+	# Abort applying a mailbox patch
 	ama = am --abort
-    # Apply patch, storing conflicts in .rej files
+	# Apply patch, storing conflicts in .rej files
 	applyr = apply --reject
 	# Apply a commit to the working directory
 	chp = cherry-pick
@@ -117,7 +117,7 @@
 	lasttag = describe --tags --abbrev=0
 	# Show the very first commit to the repository
 	log0 = log --max-parents=0
-    # Display any branch and tag pointers next to each commit
+	# Display any branch and tag pointers next to each commit
 	logd = log --decorate
 	# Show all commits that touched a given file
 	logf = log --follow
@@ -170,7 +170,7 @@
 	showno = show --name-only
 	# List the info and file statuses for the given/current commit
 	showns = show --name-status
-    # Squash commits and apply to working directory without committing
+	# Squash commits and apply to working directory without committing
 	squash = merge --squash
 	# Stash files in the current working directory, leaving staged files alone
 	stashki = stash --keep-index
