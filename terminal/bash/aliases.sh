@@ -7,9 +7,9 @@ alias sudo='sudo '
 
 # Colorize directory listings
 alias ls='ls --color=auto'
-alias lsa='la -a'
-alias lsl='la -l'
-alias lsla='la -la'
+alias lsa='ls -a'
+alias lsl='ls -l'
+alias lsla='ls -la'
 
 # Always enable case-insensitive searches in less (for lowercase queries)
 alias less='less -i'
