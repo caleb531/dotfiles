@@ -69,10 +69,7 @@ rmvirtualenv() {
 # Provide convenient access to common PyPI commands
 pypi() {
 	if [ "$1" == 'test' ]; then
-		python setup.py register -r pypitest
 		python setup.py sdist upload -r pypitest
-	elif [ "$1" == 'register' ]; then
-		python setup.py register -r pypi
 	elif [ "$1" == 'upload' ]; then
 		python setup.py sdist upload -r pypi
 	else
