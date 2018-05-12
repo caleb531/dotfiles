@@ -82,7 +82,8 @@ alias bi='bundle install'
 alias pi='pip install -r requirements.txt'
 alias pir='pi'
 # Record installed Python packages
-alias pfr='pip freeze > requirements.txt'
+alias pf='pip freeze > requirements.txt'
+alias pfr='pf'
 
 # Recompile C++ for all relevant npm packages
 alias nr='npm rebuild'
