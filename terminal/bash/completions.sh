@@ -83,7 +83,7 @@ _brew() {
 		COMPREPLY=( $(compgen -W "$(__get_all_brew_packages)" -- $cur) )
 	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
 		# Complete options and all available packages for `brew deps` and `brew uses`
-		COMPREPLY=( $(compgen -W "--include-optional --installed $(__get_all_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "--installed $(__get_all_brew_packages)" -- $cur) )
 	elif [ "$prev" == 'switch' ]; then
 		# Complete installed package names for first argument of `brew switch`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
