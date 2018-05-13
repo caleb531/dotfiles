@@ -78,6 +78,8 @@ alias gsf='grunt serve:force'
 
 # Install Bundler gems (has nothing to do with Brunch)
 alias bi='bundle install'
+# Execute an arbitrary command in a project's Bundler environment
+alias be='bundle exec'
 # Install Python packages into virtualenv
 alias pi='pip install -r requirements.txt'
 alias pir='pi'
