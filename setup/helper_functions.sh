@@ -49,7 +49,7 @@ is_gem_installed() {
 }
 
 is_pip_pkg_installed() {
-	echo "$PIP_PKG_LIST" | grep --quiet "^$1 "
+	echo "$PIP_PKG_LIST" | grep --quiet "^$1=="
 }
 
 is_apm_pkg_installed() {
