@@ -23,8 +23,6 @@ export NPM_CONFIG_PREFIX=/usr/local/lib/npm-packages
 export PATH="$NPM_CONFIG_PREFIX"/bin:"$PATH"
 # ImageMagick
 export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
-# Python
-export PATH=/usr/local/opt/python@2/bin:"$PATH"
 
 # Colorize less
 # Color syntax: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
