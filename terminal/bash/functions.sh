@@ -75,6 +75,7 @@ pypi() {
 	else
 		>&2 echo "usage: ${FUNCNAME[0]} <command>"
 		>&2 echo "Available commands: test, register, upload"
+		return 1
 	fi
 }
 
@@ -138,6 +139,7 @@ rt() {
 		nosetests --rednose "$@"
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
+		return 1
 	fi
 }
 
@@ -152,6 +154,7 @@ cov() {
 		fi
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
+		return 1
 	fi
 }
 
@@ -163,6 +166,7 @@ covo() {
 		open -a "$WEB_BROWSER_NAME" ./htmlcov/index.html
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
+		return 1
 	fi
 }
 
@@ -172,6 +176,7 @@ cs() {
 		pycodestyle "$@" **/!(setup).py
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
+		return 1
 	fi
 }
 
@@ -181,6 +186,7 @@ cc() {
 		radon cc --show-complexity --average "$@" **/!(setup).py
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
+		return 1
 	fi
 }
 
