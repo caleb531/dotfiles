@@ -1227,11 +1227,11 @@
     'body': '{{/each}}'
 
   'for':
-    'prefix': 'each'
+    'prefix': 'for'
     'body': '{{#each ${1:object}}}$2'
 
   'endfor':
-    'prefix': 'endeach'
+    'prefix': 'endfor'
     'body': '{{/each}}'
 
   'with':
