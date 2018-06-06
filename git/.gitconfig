@@ -17,11 +17,6 @@
 	# Highlight line-specific changes and use diff-so-fancy to format diff
 	pager = diff-so-fancy | less --tabs=4 -R
 
-# Interactive staging
-[interactive]
-	# Use same diff highlighting for interactive staging
-	diffFilter = diff-so-fancy
-
 # Always sign commits using GPG
 [commit]
 	gpgsign = true
