@@ -84,6 +84,7 @@
 	# Diff files, highlighting only the changes within each line
 	diffcw = diff --color-words
 	diffcwc = diff --color-words --cached
+	diffcwlasttag = !git diff --color-words $(git lasttag)
 	# Diff two files outside of a git repository
 	diffni = diff --no-index
 	diffnicw = diff --no-index --color-words
