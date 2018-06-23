@@ -67,14 +67,12 @@ alias jso='js -o'
 alias hs='http-server -a localhost -c-1'
 # Serve a directory and open it in web browser
 alias hso='hs -o'
-# Build a Grunt project
-alias gb='[ -f gulpfile.js ] && gulp build || grunt build'
-alias gbf='grunt build:force'
-# Watch a Grunt project, building as needed
-alias gs='[ -f gulpfile.js ] && gulp serve || grunt serve'
-alias gsf='grunt serve:force'
+# Build a Gulp project
+alias gb='gulp build'
 # Watch a Gulp project, building as needed
 alias gw='gulp build:watch'
+# Watch a grunt project, building as needed
+alias gs='grunt serve'
 
 # Dependency installation packages
 
