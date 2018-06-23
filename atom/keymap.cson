@@ -5,8 +5,9 @@
   # Disable cmd-o because it always gets in the way of typing cmd-i
   'cmd-o': 'unset!'
 
-  # Disable cmd-\ for toggling tree view because I always accidentally hit it
+  # Rebind key binding for toggling tree view to something not so easily pressed
   'cmd-\\': 'unset!'
+  'ctrl-alt-cmd-\\': 'tree-view:toggle'
 
 '.platform-darwin atom-workspace':
 
