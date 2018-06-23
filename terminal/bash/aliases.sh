@@ -69,6 +69,8 @@ alias hs='http-server -a localhost -c-1'
 alias hso='hs -o'
 # Build a Gulp project
 alias gb='gulp build'
+# Build a Gulp project's scripts with Rollup
+alias gr='gulp rollup'
 # Watch a Gulp project, building as needed
 alias gw='gulp build:watch'
 # Watch a grunt project, building as needed
