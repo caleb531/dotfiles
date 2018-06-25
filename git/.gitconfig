@@ -132,6 +132,8 @@
 	mergec = merge --continue
 	# Merge branches without fast-forwards, always ensuring a merge commit
 	mergenff = merge --no-ff
+	# Pull master into the current branch
+	pom = pull origin master
 	# Pull from remote, recommitting unpushed changes atop the pulled commits
 	pullr = pull --rebase
 	# Push any unpushed tags (this will *not* push unpushed commits)
