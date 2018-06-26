@@ -11,6 +11,9 @@ alias lsa='ls -a'
 alias lsl='ls -l'
 alias lsla='ls -la'
 
+# Remove directory
+alias rmrf='rm -rf'
+
 # Always enable case-insensitive searches in less (for lowercase queries)
 alias less='less -i'
 
