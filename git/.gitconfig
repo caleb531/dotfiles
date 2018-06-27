@@ -150,6 +150,9 @@
 	reba = rebase --abort
 	rebc = rebase --continue
 	rebi = rebase --interactive
+	# Reverting
+	reverta = revert --abort
+	revertc = revert --continue
 	# Stage a file for removal without actually deleting it
 	rmc = rm --cached
 	# Remove local copies of remote branches that have been deleted
