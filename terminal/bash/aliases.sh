@@ -76,8 +76,6 @@ alias gb='gulp build'
 alias gr='gulp rollup'
 # Watch a Gulp project, building as needed
 alias gw='gulp build:watch'
-# Watch a grunt project, building as needed
-alias gs='grunt serve'
 
 # Dependency installation packages
 
