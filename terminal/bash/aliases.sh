@@ -83,6 +83,9 @@ alias gw='gulp build:watch'
 alias bi='bundle install'
 # Execute an arbitrary command in a project's Bundler environment
 alias be='bundle exec'
+# Install Ruby gem
+alias gi='gem install'
+alias gu='gem uninstall'
 # Install Python packages into virtualenv
 alias pi='pip install -r requirements.txt'
 alias pir='pi'
