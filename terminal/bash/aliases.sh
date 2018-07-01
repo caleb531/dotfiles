@@ -90,6 +90,14 @@ alias pir='pi'
 alias pf='pip freeze > requirements.txt'
 alias pfr='pf'
 
+# Install or uninstall npm packages
+alias ni='npm install'
+alias nig='npm install --global'
+alias nis='npm install --save'
+alias nid='npm install --save-dev'
+alias nu='npm uninstall'
+alias nus='npm uninstall --save'
+alias nud='npm uninstall --save-dev'
 # Recompile C++ for all relevant npm packages
 alias nr='npm rebuild'
 # Recompile node-sass specifically
