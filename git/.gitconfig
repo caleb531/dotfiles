@@ -133,6 +133,7 @@
 	# Merge branches without fast-forwards, always ensuring a merge commit
 	mergenff = merge --no-ff
 	# Pull master into the current branch
+	pom = pull origin master
 	pullom = pull origin master
 	# Pull from remote, recommitting unpushed changes atop the pulled commits
 	pullr = pull --rebase
