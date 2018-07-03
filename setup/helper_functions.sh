@@ -113,7 +113,7 @@ install_apm_pkg() {
 install_font() {
 	local font_name="$1"
 	local dest_dir=~/Library/Fonts/"$font_name"
-	if [ ! -d "$dest_dir" ]; then
+	if [[ ! -d "$dest_dir" || -z "$(ls "$dest_dir"/*.ttf 2> /dev/null)" ]]; then
 		echo "Installing $font_name..."
 		local temp_dir="$(mktemp -d)"
 		local dest_archive="$temp_dir"/"$font_name".zip
