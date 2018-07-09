@@ -23,6 +23,7 @@ install_cask the-unarchiver
 install_cask mamp
 rm -rf '/Applications/MAMP PRO'
 install_cask keybase
+install_cask postman
 
 echo "Installing Quick Look plugins..."
 
