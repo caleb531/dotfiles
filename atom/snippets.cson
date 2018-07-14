@@ -247,6 +247,10 @@
     'prefix': 'qsa'
     'body': 'querySelectorAll($1)$2'
 
+  'requestAnimationFrame':
+    'prefix': 'raf'
+    'body': 'requestAnimationFrame($1);$2'
+
   # ES5/Node
 
   'use strict':
