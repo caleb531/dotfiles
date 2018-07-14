@@ -6,3 +6,6 @@ PT Sans
 Oxygen Mono
 Ubuntu Mono
 Source Sans Pro
+Lato
+Raleway
+Roboto Slab
