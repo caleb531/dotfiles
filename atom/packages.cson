@@ -16,6 +16,7 @@ packages: [
   "language-env"
   "language-gitattributes"
   "language-gitignore"
+  "language-har"
   "language-hosts"
   "language-ini"
   "language-latex"
