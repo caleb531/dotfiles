@@ -108,3 +108,6 @@ alias nrs='npm rebuild node-sass'
 # Build and watch project
 alias nb='npm run build'
 alias nw='npm run watch'
+
+# View DNS records for the given domain
+alias dns='host -a'
