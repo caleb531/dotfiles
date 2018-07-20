@@ -109,5 +109,10 @@ alias nrs='npm rebuild node-sass'
 alias nb='npm run build'
 alias nw='npm run watch'
 
+# Git
+alias gp='git pull'
+alias gpom='git pull origin master'
+alias gpr='git pull --rebase'
+
 # View DNS records for the given domain
 alias dns='host -a'
