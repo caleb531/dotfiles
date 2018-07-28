@@ -247,6 +247,10 @@
     'prefix': 'qsa'
     'body': 'querySelectorAll($1)$2'
 
+  'addEventListener':
+    'prefix': 'addeventlistener'
+    'body': 'addEventListener($1, $2);$3'
+
   'requestAnimationFrame':
     'prefix': 'raf'
     'body': 'requestAnimationFrame($1);$2'
