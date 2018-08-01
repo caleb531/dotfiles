@@ -181,7 +181,7 @@
 
   'for':
     'prefix': 'for'
-    'body': 'for (var ${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i} += ${4:1}) {\n\t$5\n}'
+    'body': 'for (${1:var} ${2:i} = ${3:0}; ${2:i} < ${4:end}; ${2:i} += ${5:1}) {\n\t$6\n}'
 
   'for..in':
     'prefix': 'forin'
