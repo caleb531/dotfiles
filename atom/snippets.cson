@@ -385,6 +385,10 @@
     'prefix': 'nlapiCreateError'
     'body': 'nlapiCreateError(\'${1:title}\', \'${2:message}\');'
 
+  'create record':
+    'prefix': 'nlapiCreateRecord'
+    'body': 'nlapiCreateRecord(\'${1:recordtype}\');'
+
   'load record':
     'prefix': 'nlapiLoadRecord'
     'body': 'nlapiLoadRecord(${1:recordtype}, ${2:internalid});'
