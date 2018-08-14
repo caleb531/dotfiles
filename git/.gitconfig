@@ -126,7 +126,7 @@
 	# List commits with code changes containing the given string
 	logs = log -S
 	# List all tracked files, relative to the current directory
-	ls = ls-tree -r --name-only HEAD
+	ls = ls-tree -r --name-status HEAD
 	# Managing merges
 	mergea = merge --abort
 	mergec = merge --continue
