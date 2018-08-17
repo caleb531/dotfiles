@@ -32,7 +32,7 @@ export PATH=~/dotfiles/private/setup:"$PATH"
 # termcap(5) man page: <http://linux.die.net/man/5/termcap>
 export LESS_TERMCAP_md=$'\e[1;34m'	# start bold mode
 export LESS_TERMCAP_me=$'\e[1;0m'	# end modes so, us, mb, md, mr
-export LESS_TERMCAP_so=$'\e[1;31m'	# start standout mode
+export LESS_TERMCAP_so=$'\e[1;36m'	# start standout mode
 export LESS_TERMCAP_se=$'\e[1;0m'	# end standout mode
 export LESS_TERMCAP_us=$'\e[1;32m'	# start underlining
 export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
