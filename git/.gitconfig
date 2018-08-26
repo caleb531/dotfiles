@@ -123,6 +123,8 @@
 	logg = log --fixed-strings --regexp-ignore-case --grep
 	# Log all commits under a merge
 	logm = "!logm() { git log ${1:-HEAD}^1..${1:-HEAD}; }; logm"
+	# Display commits in a flat, pretty, one-line format
+	logo = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(green)(%cr)'
 	# List commits with code changes containing the given string
 	logs = log -S
 	# List all tracked files, relative to the current directory
