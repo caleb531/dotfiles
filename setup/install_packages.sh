@@ -39,7 +39,9 @@ install_brew_pkg diff-so-fancy
 
 install_brew_pkg openssl
 install_brew_pkg python
+pin_brew_pkg python
 install_brew_pkg python@2
+pin_brew_pkg python@2
 
 install_brew_pkg ssh-copy-id
 install_brew_pkg cowsay
