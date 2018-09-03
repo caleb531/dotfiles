@@ -133,6 +133,9 @@ echo "- Set bottom right hot corner to show/hide desktop"
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
 
+echo "- Enable spring loading for all Dock items"
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+
 echo "Setting miscellaneous preferences..."
 
 echo "- Enable Safari Develop menu and Web Inspector"
