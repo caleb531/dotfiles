@@ -15,7 +15,7 @@ alias lsla='ls -la'
 alias rmrf='rm -rf'
 
 # Always enable case-insensitive searches in less (for lowercase queries)
-alias less='less -i'
+alias less='less -iX'
 
 # Mark a file as executable
 alias x='chmod +x'
