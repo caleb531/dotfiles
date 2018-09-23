@@ -24,8 +24,8 @@
     allowPendingPaneItems: false
     closeEmptyWindows: false
     customFileTypes:
-      'source.js': [
-        'js'
+      "source.js": [
+        "js"
       ]
     disabledPackages: [
       "archive-view"
@@ -164,6 +164,9 @@
   editor:
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-"
 ".css.source":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-"
+".css.source.styled":
   editor:
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-"
 ".html.liquid.text":
