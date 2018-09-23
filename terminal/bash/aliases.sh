@@ -10,6 +10,8 @@ alias ls='ls --color=auto'
 alias lsa='ls -a'
 alias lsl='ls -l'
 alias lsla='ls -la'
+# Colorize tree output
+alias tree='tree -C'
 
 # Remove directory
 alias rmrf='rm -rf'
@@ -28,9 +30,6 @@ alias owners='stat -c "%U %G"'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-
-# Colorize tree output
-alias tree='tree -C'
 
 # Display command history without line numbers
 alias historyl='history | cut -c 8-'
