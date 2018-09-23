@@ -23,6 +23,10 @@
   core:
     allowPendingPaneItems: false
     closeEmptyWindows: false
+    customFileTypes:
+      'source.js': [
+        'js'
+      ]
     disabledPackages: [
       "archive-view"
       "autocomplete"

@@ -12,6 +12,7 @@ packages: [
   "language-apache"
   "language-applescript"
   "language-awk"
+  "language-babel"
   "language-diff"
   "language-env"
   "language-gitattributes"
