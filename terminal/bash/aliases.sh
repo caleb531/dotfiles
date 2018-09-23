@@ -67,7 +67,7 @@ alias js='bundle exec jekyll serve'
 # Serve Jekyll site and open site in browser
 alias jso='js -o'
 # Serve a directory via a Node HTTP server
-alias hs='http-server -a localhost -c-1'
+alias hs='http-server -c-1'
 # Serve a directory and open it in web browser
 alias hso='hs -o'
 # Build a Gulp project
