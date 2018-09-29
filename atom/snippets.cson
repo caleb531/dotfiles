@@ -347,11 +347,11 @@
 
   'to have length':
     'prefix': 'tohavelen'
-    'body': 'to.have.length($1);$2'
+    'body': 'to.have.lengthOf($1);$2'
 
   'not to have length':
     'prefix': 'nottohavelen'
-    'body': 'not.to.have.length($1);$2'
+    'body': 'not.to.have.lengthOf($1);$2'
 
   'to have property':
     'prefix': 'tohaveprop'
