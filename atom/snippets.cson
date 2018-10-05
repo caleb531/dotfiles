@@ -361,6 +361,14 @@
     'prefix': 'nottohaveprop'
     'body': 'not.to.have.property($1);$2'
 
+  'to be instance of':
+    'prefix': 'tobeinstanceof'
+    'body': 'to.be.instanceOf($1);$2'
+
+  'not to be instance of':
+    'prefix': 'nottobeinstanceof'
+    'body': 'not.to.be.instanceOf($1);$2'
+
   # Debugging
 
   'console.log':
