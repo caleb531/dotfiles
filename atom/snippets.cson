@@ -375,6 +375,16 @@
     'prefix': 'debugger'
     'body': 'debugger;'
 
+  # SCA
+
+  'getAbsoluteUrl':
+    'prefix': 'getabsoluteurl'
+    'body': 'getAbsoluteUrl($1)$2'
+
+  'getThemeAbsoluteUrl':
+    'prefix': 'getthemeabsoluteurl'
+    'body': 'getThemeAbsoluteUrlOfNonManagedResources($1)$2'
+
   # SuiteScript
 
   'log execution':
