@@ -172,7 +172,9 @@ covo() {
 
 # Check Node/Python code style
 cs() {
-	if [[ -f requirements.txt ]]; then
+	if [ -f package.json ]; then
+		npm run lint
+	elif [ -f requirements.txt ]; then
 		pycodestyle "$@" **/!(setup).py
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
