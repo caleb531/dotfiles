@@ -141,8 +141,6 @@
 	pullr = pull --rebase
 	# Push any unpushed tags (this will *not* push unpushed commits)
 	pusht = push --tags
-	# Delete the remote branch with the current branch name
-	pushd = !git push -d origin $(git rev-parse --abbrev-ref HEAD)
 	# Force push only if the current branch's local origin matches the actual
 	# remote
 	pushf = push --force-with-lease
