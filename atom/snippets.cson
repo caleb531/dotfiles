@@ -1356,8 +1356,8 @@
     'prefix': 'https'
     'body': 'RewriteCond %{HTTPS} off\nRewriteRule ^(.*)$ https://%{HTTP_HOST}/\\$1 [L,R=301]'
 
-  'www to apex':
-    'prefix': 'apex'
+  'www to non-www':
+    'prefix': 'nonwww'
     'body': 'RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]\nRewriteRule ^(.*)$ http$1://%1/\\$1 [L,R=301]'
 
 # CoffeeScript / CSON
