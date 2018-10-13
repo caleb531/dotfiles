@@ -1322,7 +1322,7 @@
 
   'HSTS':
     'prefix': 'hsts'
-    'body': 'Header always set Strict-Transport-Security "max-age=${1:86400}; includeSubDomains" env=HTTPS'
+    'body': 'Header always set Strict-Transport-Security "max-age=${1:31536000}; includeSubDomains" env=HTTPS'
 
   'Referrer-Policy':
     'prefix': 'refpolicy'
