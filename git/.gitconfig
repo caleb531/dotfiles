@@ -172,6 +172,9 @@
 	showno = show --name-only
 	# List the info and file statuses for the given/current commit
 	showns = show --name-status
+	# Show the info and changes for the given/current commit, ignoring all
+	# whitespace changes
+	showw = show --ignore-all-space
 	# Squash commits and apply to working directory without committing
 	squash = merge --squash
 	# Stash files in the current working directory, leaving staged files alone
