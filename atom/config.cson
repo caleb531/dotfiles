@@ -82,6 +82,7 @@
     ]
     titleBar: "custom"
     uriHandlerRegistration: "always"
+    useTreeSitterParsers: false
   docblockr:
     align_tags: "shallow"
     extend_double_slash: false
