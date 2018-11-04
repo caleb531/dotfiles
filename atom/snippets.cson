@@ -451,18 +451,6 @@
     'prefix': 'nlapiSubmitRecord'
     'body': 'nlapiSubmitRecord(${1:record});'
 
-  'load file':
-    'prefix': 'nlapiLoadFile'
-    'body': 'nlapiLoadFile(${1:fileid});'
-
-  'create file':
-    'prefix': 'nlapiCreateFile'
-    'body': 'nlapiCreateFile(${1:filename}, ${2:filetype}, ${3:contents});'
-
-  'submit file':
-    'prefix': 'nlapiSubmitFile'
-    'body': 'nlapiSubmitFile(${1:file});'
-
   # SuiteCommerce Advanced
 
   'AMD module':
