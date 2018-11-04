@@ -17,7 +17,7 @@ alias tree='tree -C'
 alias rmrf='rm -rf'
 
 # Always enable case-insensitive searches in less (for lowercase queries)
-alias less='less -iX'
+alias less='less --quit-if-one-screen -iX'
 
 # Mark a file as executable
 alias x='chmod +x'
