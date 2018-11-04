@@ -50,6 +50,9 @@ defaults write -globalDomain NSUserKeyEquivalents -dict-add 'Save As...' '@$S'
 echo "- Automatically quit printer app when print jobs complete"
 defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true
 
+echo "- Re-enable subpixel antialiasing for fonts in macOS Mojave"
+defaults write -globalDomain CGFontRenderingFontSmoothingDisabled -bool false
+
 echo "- Disable auto-correct"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
