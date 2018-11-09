@@ -121,8 +121,6 @@
 	loglasttag = !git log $(git lasttag)..HEAD
 	# List commits with descriptions containing the given string
 	logg = log --fixed-strings --regexp-ignore-case --grep
-	# Log all commits under a merge
-	logm = "!logm() { git log ${1:-HEAD}^1..${1:-HEAD}; }; logm"
 	# Display commits in a flat, pretty, one-line format
 	logo = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(green)(%cr)'
 	# List commits with code changes containing the given string
@@ -166,8 +164,6 @@
 	# Show the info and changes for the given/current commit, highlighting only
 	# the changes within each line
 	showcw = show --color-words
-	# Show a commit-by-commit diff of changes for a merge
-	showm = "!showm() { git show ${1:-HEAD}^1..${1:-HEAD}; }; showm"
 	# List the info and file paths for the given/current commit
 	showno = show --name-only
 	# List the info and file statuses for the given/current commit
