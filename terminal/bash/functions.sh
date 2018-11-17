@@ -170,8 +170,8 @@ covo() {
 	fi
 }
 
-# Check Node/Python code style
-cs() {
+# Lint JavaScript/Python project files
+lint() {
 	if [ -f package.json ]; then
 		npm run lint
 	elif [ -f requirements.txt ]; then
