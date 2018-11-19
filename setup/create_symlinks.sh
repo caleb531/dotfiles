@@ -12,6 +12,7 @@ ln -snf ~/dotfiles/terminal/.bashrc ~/.bashrc
 ln -snf ~/dotfiles/terminal/.bashrc ~/.bash_profile
 
 # Symlink miscellaneous configuration
+ln -snf ~/dotfiles/terminal/.hyper.js ~/.hyper.js
 ln -snf ~/dotfiles/terminal/.vimrc ~/.vimrc
 ln -snf ~/dotfiles/git/.gitconfig ~/.gitconfig
 
