@@ -59,7 +59,7 @@ _brew() {
 		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove rmtree search switch tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
 	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
 		# Complete common cask commands for `brew cask`
-		COMPREPLY=( $(compgen -W 'cleanup doctor help info install list reinstall search uninstall update' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cleanup doctor help info install list reinstall search uninstall upgrade' -- $cur) )
 	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
 		# Complete list options for `brew list` and `brew ls`
 		COMPREPLY=( $(compgen -W "--full-name --pinned --multiple --versions $(__get_installed_brew_packages)" -- $cur) )
