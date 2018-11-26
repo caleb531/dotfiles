@@ -894,6 +894,10 @@
     'prefix': 'fd'
     'body': '${1:fname}() {\n\t$2\n}'
 
+  'verbose mode':
+    'prefix': 'verbose'
+    'body': 'set -o verbose'
+
 # AppleScript
 
 '.source.applescript':
