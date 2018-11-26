@@ -99,6 +99,9 @@ _brew() {
 	elif [ "$second" == 'cask' -a "$third" == 'reinstall' ]; then
 		# Complete installed casks for `brew cask reinstall`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
+	elif [ "$second" == 'cask' -a "$third" == 'upgrade' ]; then
+		# Complete installed casks for `brew cask upgrade`
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
 	elif [ "$second" == 'cask' -a "$third" == 'uninstall' ]; then
 		# Complete installed casks for `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
