@@ -42,7 +42,7 @@ __get_all_brew_packages() {
 
 # Retrieve list of all available Homebrew casks
 __get_all_brew_casks() {
-	find "$BREW_TAPS_DIR"/caskroom/ -type f -name '*.rb' | grep -oP "$BREW_NAME_PATT"
+	ls "$BREW_TAPS_DIR"/homebrew/*/Casks | grep -oP "$BREW_NAME_PATT"
 }
 
 # Completion function for brew, the macOS package manager
