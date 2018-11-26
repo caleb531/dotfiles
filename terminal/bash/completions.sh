@@ -37,7 +37,7 @@ __get_installed_brew_casks() {
 
 # Retrieve list of all available Homebrew packages
 __get_all_brew_packages() {
-	find "$BREW_TAPS_DIR"/homebrew/ -type f -name '*.rb' | grep -oP "$BREW_NAME_PATT"
+	ls "$BREW_TAPS_DIR"/homebrew/*/Formula | grep -oP "$BREW_NAME_PATT"
 }
 
 # Retrieve list of all available Homebrew casks
