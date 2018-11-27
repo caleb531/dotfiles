@@ -275,20 +275,6 @@ _python() {
 complete -o default -F _python python
 complete -o default -F _python python3
 
-# Completion function for MAMP, the Apache-MySQL-PHP stack app
-_mamp() {
-
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-
-	if [ "$prev" == 'mamp' ]; then
-		# Complete common MAMP commands for `mamp`
-		COMPREPLY=( $(compgen -W 'restart start stop' -- $cur) )
-	fi
-
-}
-complete -o default -F _mamp mamp
-
 # Completion function for apachectl, Apache's HTTP server utility
 _apachectl() {
 
