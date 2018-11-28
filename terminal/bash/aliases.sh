@@ -113,6 +113,3 @@ alias gp='git pull'
 alias gpom='git pull origin master'
 alias gpr='git pull --rebase'
 alias gs='git status'
-
-# View DNS records for the given domain
-alias dns='host -a'
