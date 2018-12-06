@@ -20,10 +20,13 @@ atom-panel.header {
 .title-bar {
   background-color: @app-background-color;
 }
-.tab-bar .tab {
+atom-pane-container > atom-pane.pane .tab {
   border-top: solid 1px transparent;
   &.active {
     border-top-color: @base-border-color;
+    &:before {
+      background: @green;
+    }
     &[data-type="TreeView"] {
       border-width: 0;
     }
