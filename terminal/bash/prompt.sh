@@ -96,6 +96,7 @@ __output_ps2() {
 __update_prompt_command() {
 
 	__detect_python_virtualenv
+	PS1="$(__output_ps1)"
 	# Append in-memory command history to file
 	history -a
 	# Ensure current working directory carries to new tabs
@@ -103,5 +104,4 @@ __update_prompt_command() {
 
 }
 PROMPT_COMMAND="__update_prompt_command"
-PS1="$(__output_ps1)"
 PS2="$(__output_ps2)"
