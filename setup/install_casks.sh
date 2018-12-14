@@ -35,7 +35,3 @@ install_cask quicklook-json
 install_cask betterzipql
 install_cask suspicious-package
 qlmanage -r
-
-echo "Installing additional plugins..."
-
-install_cask colorpicker-hex
