@@ -194,6 +194,8 @@
 	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
+	<key>ShowActiveProcessArgumentsInTabTitle</key>
+	<false/>
 	<key>ShowActiveProcessInTitle</key>
 	<false/>
 	<key>ShowDimensionsInTitle</key>
