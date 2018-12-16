@@ -17,7 +17,6 @@ install_cask flux
 # Install additional apps
 install_cask appcleaner
 install_cask namechanger
-install_cask cyberduck
 install_cask the-unarchiver
 install_cask mamp
 rm -rf '/Applications/MAMP PRO'
