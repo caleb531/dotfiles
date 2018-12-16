@@ -46,7 +46,7 @@ export EDITOR='vim'
 export WEB_BROWSER_NAME='Google Chrome'
 
 # Don't clear man page when exiting less
-export MANPAGER='less -X'
+export MANPAGER='less --no-init --quit-if-one-screen --ignore-case'
 
 # Number of lines of command history to keep in memory
 export HISTSIZE=250
