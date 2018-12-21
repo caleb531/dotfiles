@@ -13,6 +13,10 @@
 
 @import 'ui-variables';
 
+
+// ********** Atom header & tabs **********
+
+
 // Make window title bar blend in with rest of window
 atom-panel.header {
   border-bottom-width: 0;
@@ -32,6 +36,10 @@ atom-pane-container > atom-pane.pane .tab {
     }
   }
 }
+
+
+// ********** Syntax highlighting **********
+
 
 atom-text-editor:not([mini]) {
   // De-italicize all syntax components which Monokai italicizes
@@ -91,10 +99,8 @@ atom-text-editor:not([mini]) {
   to { background-color: null; }
 }
 
-// Make Linter gutter blend into the line number gutter
-atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
-  background-color: @syntax-gutter-background-color;
-}
+// ********** Linter **********
+
 
 .sb-table.linter {
   border-width: 0;
@@ -132,16 +138,23 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
   }
 }
 
-// Hide "GitHub" and "Fetch" links in status bar
-.github-StatusBarTile,
-.github-PushPull {
-  display: none;
+// Linter panel dock (Atom >= 1.7)
+.atom-dock-inner.bottom.atom-dock-open {
+  // Hide Linter title bar
+  .tab-bar {
+    visibility: hidden;
+    height: 0;
+  }
 }
 
-// Make Fuzzy Finder / Command Palette character matches white instead of blue
-.select-list .list-group .character-match {
-  color: #fff;
+// Make Linter gutter blend into the line number gutter
+atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
+  background-color: @syntax-gutter-background-color;
 }
+
+
+// ********** Settings **********
+
 
 .settings-view {
   // Individual setting checkboxes
@@ -165,18 +178,8 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
 }
 
 
-// SVG Preview pane
-.svg-preview {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .image-canvas {
-    max-width: 100%;
-    height: auto;
-    text-align: center;
-  }
-}
+// ********** Tree View **********
+
 
 // Tree View dock (Atom >=1.7)
 .atom-dock-inner.left.atom-dock-open {
@@ -189,16 +192,35 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
   }
 }
 
-// Linter panel dock (Atom >= 1.7)
-.atom-dock-inner.bottom.atom-dock-open {
-  // Hide Linter title bar
-  .tab-bar {
-    visibility: hidden;
-    height: 0;
-  }
-}
-
 // Increase prominence of item text color for focused tree view
 .tree-view:focus li.selected {
   color: #fff;
+}
+
+
+// ********** Miscellaneous **********
+
+
+// Hide "GitHub" and "Fetch" links in status bar
+.github-StatusBarTile,
+.github-PushPull {
+  display: none;
+}
+
+// Make Fuzzy Finder / Command Palette character matches white instead of blue
+.select-list .list-group .character-match {
+  color: #fff;
+}
+
+// SVG Preview pane
+.svg-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .image-canvas {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+  }
 }
