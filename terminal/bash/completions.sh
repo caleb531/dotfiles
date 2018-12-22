@@ -238,6 +238,19 @@ _jekyll() {
 }
 complete -o default -F _jekyll jekyll
 
+# Completion functions for Ruby's Make system, Rake
+_rake() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'rake' ]; then
+		COMPREPLY=( $(compgen -W "$(rake --tasks --all | grep -Po '(?<=rake )\S+')" -- $cur) )
+	fi
+
+}
+complete -o default -F _rake rake
+
 # Completion function for python/python3 binaries
 _python() {
 
