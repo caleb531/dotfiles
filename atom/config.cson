@@ -43,6 +43,7 @@
       "welcome"
       "whitespace"
       "teletype"
+      "auto-update-packages"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -83,6 +84,9 @@
     titleBar: "custom"
     uriHandlerRegistration: "always"
     useTreeSitterParsers: false
+    versionPinnedPackages: [
+      "linter"
+    ]
   docblockr:
     align_tags: "shallow"
     extend_double_slash: false
