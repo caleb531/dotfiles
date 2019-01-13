@@ -86,6 +86,7 @@
     useTreeSitterParsers: false
     versionPinnedPackages: [
       "linter"
+      "linter-ui-default"
     ]
   docblockr:
     align_tags: "shallow"
