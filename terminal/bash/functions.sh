@@ -222,3 +222,19 @@ pat() {
 mot() {
 	cowsay 'You got this!'
 }
+
+# Generate SRI hash
+sri() {
+	local url="$1"
+	local ext="${url##*.}"
+	local hash="$(curl -s "$url" | openssl dgst -sha384 -binary | openssl base64 -A)"
+	if [ "$ext" == js ]; then
+		echo "<script src=\"$url\" integrity=\"sha384-$hash\" crossorigin=\"anonymous\"></script>" | pbcopy
+		echo "Copied <script> tag!"
+	elif [ "$ext" == css ]; then
+		echo "<link rel=\"stylesheet\" href=\"$url\" integrity=\"sha384-$hash\" crossorigin=\"anonymous\" />" | pbcopy
+		echo "Copied <link> tag!"
+	else
+		>&2 echo "file is not a JS or CSS file"
+	fi
+}
