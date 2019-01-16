@@ -43,7 +43,6 @@
       "welcome"
       "whitespace"
       "teletype"
-      "auto-update-packages"
     ]
     followSymlinks: false
     ignoredNames: [
