@@ -18,7 +18,7 @@ bind 'set mark-symlinked-directories on' 2> /dev/null
 bind 'set completion-ignore-case on' 2> /dev/null
 
 # If shell is Bash 4 or newer
-if [ $BASH_VERSINFO -ge 4 ]; then
+if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 	# If Bash Completion is installed
 	if [ -f /usr/local/share/bash-completion/bash_completion ]; then

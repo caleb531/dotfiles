@@ -22,9 +22,7 @@ pbcopy() {
 
 # Remove last n commands from Bash history (n defaults to 1)
 rmlastcmd() {
-	for ((i=0; i<${1:-1}; i++)); do
-		history -d "$((HISTCMD-1))"
-	done
+	history -d "$((HISTCMD-1))"
 }
 
 # Copy last command to clipboard
@@ -41,7 +39,7 @@ cprmlastcmd() {
 # Create a new directory and switch to it
 mkcd() {
 	mkdir "$@"
-	cd "${@: -1}"
+	cd "${@: -1}" || return
 }
 
 # Make new Python virtualenv for current directory
@@ -210,7 +208,7 @@ makerun() {
 clonecd() {
 	git clone "$@"
 	if [ $? == 0 ]; then
-		cd "$(basename "$1" .git)"
+		cd "$(basename "$1" .git)" || return
 	fi
 }
 
