@@ -17,7 +17,7 @@ preload_brew_pkg_list
 
 install_brew_pkg bash
 
-if [ -f /usr/local/bin/bash -a "$SHELL" != /usr/local/bin/bash ]; then
+if [ -f /usr/local/bin/bash ] && [ "$SHELL" != /usr/local/bin/bash ]; then
 	echo "Changing login shell to Bash 4..."
 	sudo chsh -s /usr/local/bin/bash "$USER"
 fi

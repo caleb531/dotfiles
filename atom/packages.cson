@@ -35,6 +35,7 @@ packages: [
   "linter-flake8"
   "linter-jsonlint"
   "linter-php"
+  "linter-shellcheck"
   "linter-ui-default"
   "monokai"
   "package-sync"

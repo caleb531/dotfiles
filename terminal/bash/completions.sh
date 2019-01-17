@@ -54,22 +54,22 @@ _brew() {
 	second=${COMP_WORDS[1]}
 	third=${COMP_WORDS[2]}
 
-	if [ "$prev" == 'brew' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'brew' ] || [ "$prev" == 'help' ]; then
 		# Complete common brew commands for `brew`
 		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove rmtree search switch tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
-	elif [ "$first" == 'brew' -a "$prev" == 'cask' ]; then
+	elif [ "$first" == 'brew' ] && [ "$prev" == 'cask' ]; then
 		# Complete common cask commands for `brew cask`
 		COMPREPLY=( $(compgen -W 'cleanup doctor help info install list reinstall search uninstall upgrade' -- $cur) )
-	elif [ "$second" == 'list' -o "$second" == 'ls' ]; then
+	elif [ "$second" == 'list' ] || [ "$second" == 'ls' ]; then
 		# Complete list options for `brew list` and `brew ls`
 		COMPREPLY=( $(compgen -W "--full-name --pinned --multiple --versions $(__get_installed_brew_packages)" -- $cur) )
-	elif [ "$second" == 'reinstall' -o "$second" == 'remove' -o "$second" == 'rm' -o "$second" == 'rmtree' -o "$second" == 'uninstall' ]; then
+	elif [ "$second" == 'reinstall' ] || [ "$second" == 'remove' ] || [ "$second" == 'rm' ] || [ "$second" == 'rmtree' ] || [ "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew package removal commands
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'cleanup' ]; then
 		# Complete options and installed packages for `brew cleanup`
 		COMPREPLY=( $(compgen -W "--dry-run $(__get_installed_brew_packages)" -- $cur) )
-	elif [ "$second" == 'pin' -o "$second" == 'unpin' ]; then
+	elif [ "$second" == 'pin' ] || [ "$second" == 'unpin' ]; then
 		# Complete installed packages for brew pin commands
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
 	elif [ "$second" == 'untap' ]; then
@@ -78,10 +78,10 @@ _brew() {
 	elif [ "$second" == 'upgrade' ]; then
 		# Complete options and installed packages for `brew upgrade`
 		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- $cur) )
-	elif [ "$second" == 'install' -o "$second" == 'info' ]; then
+	elif [ "$second" == 'install' ] || [ "$second" == 'info' ]; then
 		# Complete all available packages for `brew install`
 		COMPREPLY=( $(compgen -W "$(__get_all_brew_packages)" -- $cur) )
-	elif [ "$second" == 'deps' -o "$second" == 'uses' ]; then
+	elif [ "$second" == 'deps' ] || [ "$second" == 'uses' ]; then
 		# Complete options and all available packages for `brew deps` and `brew uses`
 		COMPREPLY=( $(compgen -W "--installed $(__get_all_brew_packages)" -- $cur) )
 	elif [ "$prev" == 'switch' ]; then
@@ -90,19 +90,19 @@ _brew() {
 	elif [ "$second" == 'switch' ]; then
 		# Complete package versions for second argument of `brew switch`
 		COMPREPLY=( $(compgen -W "$(__get_brew_package_versions "$prev")" -- $cur) )
-	elif [ "$second" == 'cask' -a "$third" == 'info' ]; then
+	elif [ "$second" == 'cask' ] && [ "$third" == 'info' ]; then
 		# Complete all available casks for `brew cask info`
 		COMPREPLY=( $(compgen -W "$(__get_all_brew_casks)" -- $cur) )
-	elif [ "$second" == 'cask' -a "$third" == 'install' ]; then
+	elif [ "$second" == 'cask' ] && [ "$third" == 'install' ]; then
 		# Complete options and all casks for `brew cask install`
 		COMPREPLY=( $(compgen -W "--force $(__get_all_brew_casks)" -- $cur) )
-	elif [ "$second" == 'cask' -a "$third" == 'reinstall' ]; then
+	elif [ "$second" == 'cask' ] && [ "$third" == 'reinstall' ]; then
 		# Complete installed casks for `brew cask reinstall`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
-	elif [ "$second" == 'cask' -a "$third" == 'upgrade' ]; then
+	elif [ "$second" == 'cask' ] && [ "$third" == 'upgrade' ]; then
 		# Complete installed casks for `brew cask upgrade`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
-	elif [ "$second" == 'cask' -a "$third" == 'uninstall' ]; then
+	elif [ "$second" == 'cask' ] && [ "$third" == 'uninstall' ]; then
 		# Complete installed casks for `brew cask uninstall`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
 	fi
@@ -116,10 +116,10 @@ _npm() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'npm' -o "$prev" == 'bower' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'npm' ] || [ "$prev" == 'bower' ] || [ "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
 		COMPREPLY=( $(compgen -W 'cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
-	elif [ "$prev" == 'install' -o "$prev" == 'uninstall' ]; then
+	elif [ "$prev" == 'install' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete common options for `npm install` and `npm uninstall`
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- $cur) )
 	elif [ "$prev" == 'cache' ]; then
@@ -153,18 +153,18 @@ _pip() {
 	second=${COMP_WORDS[1]}
 	third=${COMP_WORDS[2]}
 
-	if [ "$prev" == 'pip' -o "$prev" == 'pip2' -o "$prev" == 'pip3' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'pip' ] || [ "$prev" == 'pip2' ] || [ "$prev" == 'pip3' ] || [ "$prev" == 'help' ]; then
 		# Complete common pip commands for `pip`
 		COMPREPLY=( $(compgen -W 'freeze help install list search show uninstall' -- $cur) )
-	elif [ "$prev" == '>' -o "$prev" == '-r' ]; then
+	elif [ "$prev" == '>' ] || [ "$prev" == '-r' ]; then
 		# Complete filenames when output is being redirected or for `pip install -r`
 		COMPREPLY=()
 	elif [ "$prev" == 'list'  ]; then
 		# Complete options for `pip list`
 		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
-	elif [ "$prev" == 'show' -o "$second" == 'uninstall' -o "$third" == '-U' ]; then
+	elif [ "$prev" == 'show' ] || [ "$second" == 'uninstall' ] || [ "$third" == '-U' ]; then
 		# Complete installed packages for `pip show` and `pip uninstall`
-		if [ -z "$PIP_PKG_LIST" -o "$PWD" != "$PIP_PKG_PWD" ]; then
+		if [ -z "$PIP_PKG_LIST" ] || [ "$PWD" != "$PIP_PKG_PWD" ]; then
 			# Cache package list for the current PWD
 			PIP_PKG_LIST="$($first list '[a-z0-9\-]+(?= )' 2> /dev/null)"
 			PIP_PKG_PWD="$PWD"
@@ -181,13 +181,13 @@ _apm() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'apm' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'apm' ] || [ "$prev" == 'help' ]; then
 		# Complete common apm commands for `apm`
 		COMPREPLY=( $(compgen -W 'clean develop help install list link login publish pull push search show star stars uninstall unstar update upgrade' -- $cur) )
-	elif [ "$prev" == 'update' -o "$prev" == 'upgrade' ]; then
+	elif [ "$prev" == 'update' ] || [ "$prev" == 'upgrade' ]; then
 		# Complete options for `apm update` and `apm upgrade`
 		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
-	elif [ "$prev" == 'show' -o "$prev" == 'uninstall' ]; then
+	elif [ "$prev" == 'show' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete installed packages for `apm show` and `apm uninstall`
 		local pkg_list="$(ls ~/.atom/packages 2> /dev/null)"
 		COMPREPLY=( $(compgen -W "$pkg_list" -- $cur) )
@@ -204,7 +204,7 @@ _bundle() {
 	first=${COMP_WORDS[0]}
 	second=${COMP_WORDS[1]}
 
-	if [ "$prev" == 'bundle' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'bundle' ] || [ "$prev" == 'help' ]; then
 		# Complete common bundle commands for `bundle`
 		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
 	elif [ "$second" == 'exec' ]; then
@@ -224,13 +224,13 @@ _jekyll() {
 	first=${COMP_WORDS[0]}
 	second=${COMP_WORDS[1]}
 
-	if [ "$prev" == 'jekyll' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'jekyll' ] || [ "$prev" == 'help' ]; then
 		# Complete common jekyll commands for `jekyll`
 		COMPREPLY=( $(compgen -W 'build clean doctor help new serve' -- $cur) )
 	elif [ "$second" == 'build' ]; then
 		# Complete options for `jekyll build`
 		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- $cur) )
-	elif [ "$prev" == '--source' -o "$prev" == '--destination' ]; then
+	elif [ "$prev" == '--source' ] || [ "$prev" == '--destination' ]; then
 		# Complete filenames for `--source` and `--destination`
 		COMPREPLY=()
 	fi
@@ -294,7 +294,7 @@ _apachectl() {
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'apachectl' -o "$prev" == 'help' ]; then
+	if [ "$prev" == 'apachectl' ] || [ "$prev" == 'help' ]; then
 		# Complete common apachectl commands for `apachectl`
 		COMPREPLY=( $(compgen -W 'configtest restart start stop' -- $cur) )
 	fi

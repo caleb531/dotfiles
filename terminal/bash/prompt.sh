@@ -70,9 +70,9 @@ __detect_python_virtualenv() {
 
 	local virtualenv=./"$VIRTUAL_ENV_NAME"
 	# If current directory has a virtualenv that is not itself
-	if [ -f "$virtualenv"/bin/activate -a "$virtualenv" != "$PWD" ]; then
+	if [ -f "$virtualenv"/bin/activate ] && [ "$virtualenv" != "$PWD" ]; then
 		# Activate virtualenv if it is not already active
-		if [ -z "$VIRTUAL_ENV" -o "$VIRTUAL_ENV" != "$virtualenv" ]; then
+		if [ -z "$VIRTUAL_ENV" ] || [ "$VIRTUAL_ENV" != "$virtualenv" ]; then
 			source "$virtualenv"/bin/activate
 		fi
 	else
