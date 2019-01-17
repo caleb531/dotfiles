@@ -67,7 +67,7 @@ export VIRTUAL_ENV_NAME='.virtualenv'
 export NO_UPDATE_NOTIFIER=1
 
 # Ignore select Shellcheck errors/warnings
-export SHELLCHECK_OPTS='-e SC1090 -e SC2010 -e SC2155 -e SC2207'
+export SHELLCHECK_OPTS='-e SC1090 -e SC2010 -e SC2120 -e SC2155 -e SC2207'
 
 # Colors
 # ANSI color reference: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
