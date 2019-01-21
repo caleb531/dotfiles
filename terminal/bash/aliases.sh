@@ -90,8 +90,8 @@ alias pi='pip install'
 alias piu='pip install --upgrade'
 alias pir='pip install -r requirements.txt'
 # Record installed Python packages
-alias pf='pip freeze > requirements.txt'
-alias pfr='pf'
+alias pf='pip freeze'
+alias pfr='pip freeze > requirements.txt'
 
 # Install or uninstall npm packages
 alias ni='npm install'
