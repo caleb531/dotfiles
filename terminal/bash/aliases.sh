@@ -86,8 +86,9 @@ alias be='bundle exec'
 alias gi='gem install'
 alias gu='gem uninstall'
 # Install Python packages into virtualenv
-alias pi='pip install -r requirements.txt'
-alias pir='pi'
+alias pi='pip install'
+alias piu='pip install --upgrade'
+alias pir='pip install -r requirements.txt'
 # Record installed Python packages
 alias pf='pip freeze > requirements.txt'
 alias pfr='pf'
