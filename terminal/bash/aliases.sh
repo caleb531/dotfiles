@@ -13,7 +13,8 @@ alias lsla='ls -la'
 # Colorize tree output
 alias tree='tree -C'
 
-# Remove directory
+# Remove files and directories
+alias rmf='rm -f'
 alias rmrf='rm -rf'
 
 # Always enable case-insensitive searches in less (for lowercase queries)
