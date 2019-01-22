@@ -89,6 +89,7 @@ alias gu='gem uninstall'
 alias pi='pip install'
 alias piu='pip install --upgrade'
 alias pir='pip install -r requirements.txt'
+alias pu='pip uninstall'
 # Record installed Python packages
 alias pf='pip freeze'
 alias pfr='pip freeze > requirements.txt'
