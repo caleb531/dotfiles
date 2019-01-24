@@ -113,6 +113,8 @@
 	lasttag = describe --tags --abbrev=0
 	# Show the very first commit to the repository
 	log0 = log --max-parents=0
+	# Show only merge commits
+	log2 = log --min-parents=2
 	# Display any branch and tag pointers next to each commit
 	logd = log --decorate
 	# Show all commits that touched a given file
