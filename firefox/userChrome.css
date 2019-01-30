@@ -1,22 +1,12 @@
 /* Increase the breathing room above and below the bookmarks toolbar */
 #PlacesToolbarItems {
   padding: 0px 0px !important;
-  padding-bottom: 2px !important;
+  padding-bottom: 1px !important;
 }
 #PlacesToolbarItems .bookmark-item {
   padding: 5px 6px !important;
 }
 
-/* Hide 'i' info icon on sites where the HTTPS lock icon already shows */
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #identity-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #identity-icon {
-    display: none !important;
-}
-/* Even out padding on both sides of HTTPS lock icon */
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain,
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
-    padding: 0 4px !important;
-}
 /* Change the color of the lock icon to a prettier green */
 #urlbar[pageproxystate="valid"] #connection-icon {
 	fill: #6c3 !important;
