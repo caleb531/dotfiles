@@ -29,6 +29,8 @@ install_brew_pkg grep
 ln -sf /usr/local/bin/ggrep /usr/local/bin/grep
 ln -sf /usr/local/bin/gegrep /usr/local/bin/egrep
 ln -sf /usr/local/bin/gfgrep /usr/local/bin/fgrep
+install_brew_pkg gnu-sed
+ln -sf /usr/local/bin/gsed /usr/local/bin/sed
 install_brew_pkg rsync
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils
