@@ -190,7 +190,12 @@
 	stashu = stash -u
 	# Clone submodule repositories into their respective directories if empty
 	suri = submodule update --recursive --init
-	# Pull from remote for all existing submodules
+	# Pull from remote for all existing submodules based on the superproject's
+	# recorded SHA
+	sur = submodule update --recursive
+	# Pull from remote for all existing submodules; the --remote flag disregards
+	# the superproject's recorded SHA and uses the latest from the
+	# submodule's designated remote branch (master by default)
 	surr = submodule update --recursive --remote
 	# Verify commit by GPG signature
 	vc = verify-commit
