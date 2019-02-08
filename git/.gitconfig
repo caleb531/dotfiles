@@ -159,8 +159,8 @@
 	# Remove local copies of remote branches that have been deleted
 	rpo = remote prune origin
 	# Do useful and mysterious things
-	rvl = rev-list
-	rvp = rev-parse
+	revl = rev-list
+	revp = rev-parse
 	# Copy to the clipboard the truncated form of the given commit SHA
 	short = !git rev-parse --short $@ | xargs echo -n | pbcopy
 	# Show the info and changes for the given/current commit, highlighting only
