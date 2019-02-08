@@ -112,6 +112,7 @@ alias nb='npm run build'
 alias nw='npm run watch'
 
 # Git
+alias gti='git'
 alias gp='git pull'
 alias gpom='git pull origin master'
 alias gpr='git pull --rebase'
