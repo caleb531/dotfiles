@@ -1,12 +1,12 @@
-Ubuntu
+Lato
 Montserrat
 Open Sans
-PT Serif
-PT Sans
 Oxygen Mono
-Ubuntu Mono
-Source Sans Pro
-Lato
+PT Sans
+PT Serif
 Raleway
 Roboto
 Roboto Slab
+Source Sans Pro
+Ubuntu
+Ubuntu Mono
