@@ -351,3 +351,22 @@ _awp() {
 
 }
 complete -o default -F _awp awp
+
+# My personal bump utility, available via pip as bump-anything
+_bump() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+	first=${COMP_WORDS[0]}
+	second=${COMP_WORDS[1]}
+
+	if [ "$prev" == 'bump' ]; then
+		# Complete increment types for `bump`
+		COMPREPLY=( $(compgen -W 'major minor patch' -- $cur) )
+	elif [ "$second" == 'major' ] || [ "$second" == 'minor' ] || [ "$second" == 'patch' ]; then
+		# Complete file/directory paths for any argument after first
+		COMPREPLY=()
+	fi
+
+}
+complete -o default -F _bump bump
