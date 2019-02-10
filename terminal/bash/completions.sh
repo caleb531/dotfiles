@@ -311,7 +311,7 @@ _pypi() {
 
 	if [ "$prev" == 'pypi' ]; then
 		# Complete shortcuts to common pypi operations for `pypi`
-		COMPREPLY=( $(compgen -W 'register test upload' -- $cur) )
+		COMPREPLY=( $(compgen -W 'test upload' -- $cur) )
 	fi
 
 }
