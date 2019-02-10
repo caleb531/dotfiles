@@ -341,12 +341,12 @@ _awp() {
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 	first=${COMP_WORDS[0]}
 
-	if [ "$first" == 'awp' ]; then
-		# Complete common commands for `awp`
-		COMPREPLY=( $(compgen -W '--export --help --validate --version' -- $cur) )
-	elif [ "$prev" == '--export' ]; then
+	if [ "$prev" == '--export' ] || [ "$prev" == '-e' ]; then
 		# Complete file/directory paths whenever `--export` option is supplied
 		COMPREPLY=()
+	elif [ "$first" == 'awp' ]; then
+		# Complete common commands for `awp`
+		COMPREPLY=( $(compgen -W '--export --help --validate --version' -- $cur) )
 	fi
 
 }
