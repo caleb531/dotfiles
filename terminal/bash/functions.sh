@@ -67,12 +67,16 @@ rmvirtualenv() {
 # Provide convenient access to common PyPI commands
 pypi() {
 	if [ "$1" == 'test' ]; then
-		python setup.py sdist upload -r pypitest
+		rm -rf dist
+		python setup.py sdist bdist_wheel
+		twine upload --repository testpypi dist/*
 	elif [ "$1" == 'upload' ]; then
-		python setup.py sdist upload -r pypi
+		rm -rf dist
+		python setup.py sdist bdist_wheel
+		twine upload dist/*
 	else
 		>&2 echo "usage: ${FUNCNAME[0]} <command>"
-		>&2 echo "Available commands: test, register, upload"
+		>&2 echo "Available commands: test, upload"
 		return 1
 	fi
 }
