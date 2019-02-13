@@ -14,3 +14,9 @@ Host *
 	# See https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain
 	AddKeysToAgent yes
 	UseKeychain yes
+
+# Use SSH (and a separate key) for all job-related Git work
+Host github.com
+	IdentityFile ~/.ssh/suitecentric_rsa
+Host bitbucket.org
+	IdentityFile ~/.ssh/suitecentric_rsa
