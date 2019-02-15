@@ -34,5 +34,8 @@ mkdir -p chrome
 ln -sf ~/dotfiles/firefox/userChrome.css "$PWD"/chrome/userChrome.css
 popd > /dev/null || exit
 
+# Create PyPI configuration if it doesn't already exist
+ln -snf ~/dotfiles/terminal/.pypirc ~/.pypirc
+
 # Disable Bash Sessions feature in macOS El Capitan
 touch ~/.bash_sessions_disable
