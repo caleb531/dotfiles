@@ -212,6 +212,11 @@ atom-text-editor.editor .gutter[gutter-name="linter-ui-default"] {
   color: #fff;
 }
 
+// Allow text selection on notification messages to be visible
+atom-notifications .message li::selection {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 // SVG Preview pane
 .svg-preview {
   display: flex;
