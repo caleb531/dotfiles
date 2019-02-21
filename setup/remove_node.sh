@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-brew uninstall node
-brew uninstall n
+if type brew &> /dev/null; then
+	brew uninstall node
+	brew uninstall n
+fi
 
 sudo rm -rfv \
 	/usr/local/bin/npm \
@@ -19,4 +21,6 @@ sudo rm -rfv \
 	/usr/local/n \
 	~/n
 
-brew prune
+if type brew &> /dev/null; then
+	brew prune
+fi
