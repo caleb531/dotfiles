@@ -68,6 +68,10 @@
   'alt-h': 'unset!'
   'alt-shift-S': 'unset!'
 
+  # Disable key bindings for code folding
+  'alt-cmd-[': 'unset!'
+  'alt-cmd-]': 'unset!'
+
   # Toggles invisible characters and indent guide
   'cmd-i': 'window:toggle-invisibles'
   'shift-cmd-I': 'editor:toggle-indent-guide'
