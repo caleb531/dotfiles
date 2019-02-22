@@ -890,6 +890,10 @@
     'prefix': 'for'
     'body': 'for ${1:f} in ${2:seq}; do\n\t$3\ndone'
 
+  'alias':
+    'prefix': 'alias'
+    'body': 'alias ${1:name}=\'${2:cmd}\''
+
   'function':
     'prefix': 'fd'
     'body': '${1:fname}() {\n\t$2\n}'
