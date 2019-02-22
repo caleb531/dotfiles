@@ -17,6 +17,9 @@ alias tree='tree -C'
 alias rmf='rm -f'
 alias rmrf='rm -rf'
 
+# Create a directory and all of its specified intermediate directories
+alias mkdirp='mkdir -p'
+
 # Always enable case-insensitive searches in less (for lowercase queries)
 alias less='less --no-init --quit-if-one-screen --ignore-case'
 
