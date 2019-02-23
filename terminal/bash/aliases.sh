@@ -118,3 +118,6 @@ alias gp='git pull'
 alias gpom='git pull origin master'
 alias gpr='git pull --rebase'
 alias gs='git status'
+
+# Restart GPG to fix occasional signing issues
+alias restart-gpg='gpgconf --kill gpg-agent'
