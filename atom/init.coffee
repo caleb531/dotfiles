@@ -31,5 +31,26 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
     exec("open #{projectPaths[0]}")
 )
 
+# Add command to copy to clipboard an array of the editor's current cursor
+# scopes
+atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ->
+  editor = atom.workspace.getActiveTextEditor()
+  scopes = editor.getCursorScope()?.scopes
+  if scopes
+    scopeString = JSON.stringify(scopes)
+      .replace(/,/g, ', ')
+      .replace(/"/g, '\'')
+    atom.clipboard.write(scopeString)
+    list = scopes.map (item) -> "* #{item}"
+    content = "Copied Scopes at Cursor\n#{list.join('\n')}"
+    atom.notifications.addInfo(content, {
+      dismissable: true
+    })
+  else
+    atom.notifications.addError('Scopes at Cursor', {
+      detail: "Could not write scopes to clipboard"
+    })
+)
+
 setPreferredWindowDimensions()
 syncPackages()
