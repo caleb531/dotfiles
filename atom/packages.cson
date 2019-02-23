@@ -23,6 +23,7 @@ packages: [
   "language-liquid"
   "language-lisp"
   "language-pegjs"
+  "language-pip"
   "language-prolog"
   "language-sca"
   "language-svg"
