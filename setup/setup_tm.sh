@@ -21,6 +21,7 @@ done
 # Exclude large directories under user home directory
 exclude_dir ~/Library
 exclude_dir ~/n
+exclude_dir ~/.atom
 
 # Clone Asimov for excluding development directories
 if [ ! -d "$ASIMOV_PATH" ]; then
