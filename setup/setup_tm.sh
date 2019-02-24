@@ -8,6 +8,7 @@ export ASIMOV_PATH=~/asimov
 # Exclude the given directory path from Time Machine
 exclude_dir() {
 	local dir_path="$1"
+	echo "Excluding $dir_path"
 	sudo tmutil addexclusion -p "${dir_path%/}"
 }
 
