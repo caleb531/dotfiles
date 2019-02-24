@@ -23,6 +23,7 @@ done
 exclude_dir ~/Library
 exclude_dir ~/n
 exclude_dir ~/.atom
+exclude_dir ~/Music/iTunes/Album\ Artwork/Cache
 
 # Clone Asimov for excluding development directories
 if [ ! -d "$ASIMOV_PATH" ]; then
