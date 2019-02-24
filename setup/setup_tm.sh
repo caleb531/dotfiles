@@ -14,7 +14,7 @@ exclude_dir() {
 # Only back up /Users
 for dir_path in ls -d /*/; do
 	if [[ "$dir_path" != '/Users/' ]]; then
-		echo "$dir_path"
+		exclude_dir "$dir_path"
 	fi
 done
 
