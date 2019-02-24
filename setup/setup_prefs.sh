@@ -129,6 +129,9 @@ defaults write com.apple.dock mru-spaces -bool false
 echo "- Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
+echo "- Don't show recent applications in Dock"
+defaults write com.apple.dock show-recents -bool true
+
 echo "- Remove all applications from Dock"
 defaults write com.apple.dock persistent-apps -array
 
