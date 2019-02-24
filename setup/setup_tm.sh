@@ -18,6 +18,10 @@ for dir_path in ls -d /*/; do
 	fi
 done
 
+# Exclude large directories under user home directory
+exclude_dir ~/Library
+exclude_dir ~/n
+
 # Clone Asimov for excluding development directories
 if [ ! -d "$ASIMOV_PATH" ]; then
 	mkdir -p "$ASIMOV_PATH"
