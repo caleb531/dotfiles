@@ -14,7 +14,7 @@ exclude_dir() {
 
 # Only back up /Users
 for dir_path in /*/ /.*/; do
-	if [[ "$dir_path" != '/Users/' ]]; then
+	if [[ "$dir_path" != '/Users/' && "$dir_path" != '/./' && "$dir_path" != '/../' ]]; then
 		exclude_dir "$dir_path"
 	fi
 done
