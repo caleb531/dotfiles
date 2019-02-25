@@ -24,6 +24,9 @@
     allowPendingPaneItems: false
     closeEmptyWindows: false
     customFileTypes:
+      "source.js": [
+        "js"
+      ]
       "text.pip.pip-conf": [
         "coveragerc"
       ]
