@@ -134,6 +134,8 @@
 	mergec = merge --continue
 	# Merge branches without fast-forwards, always ensuring a merge commit
 	mergenff = merge --no-ff
+	# Copy to the clipboard the commit message of the given commit
+	msg = !git log --format=%B -n 1 $@ | pbcopy
 	# Pull master into the current branch
 	pom = pull origin master
 	pullom = pull origin master
