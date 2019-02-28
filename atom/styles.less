@@ -42,12 +42,14 @@ atom-pane-container > atom-pane.pane .tab {
 
 
 atom-text-editor:not([mini]) {
+
   // De-italicize all syntax components which Monokai italicizes
   .syntax--storage.syntax--type,
   .syntax--entity.syntax--other.syntax--inherited-class,
   .syntax--variable.syntax--parameter,
   .syntax--support.syntax--type,
-  .syntax--support.syntax--class {
+  .syntax--support.syntax--class,
+  .syntax--source.syntax--js.syntax--jsx .syntax--jsx .syntax--entity.syntax--other.syntax--attribute-name {
     font-style: normal;
   }
   // Use white as default color for ES6 template literal interpolation
