@@ -76,6 +76,7 @@
       "merge-conflicts"
       "resize-indent"
       "atom-beautify"
+      "change-case"
     ]
     projectHome: "~/Repositories"
     telemetryConsent: "limited"

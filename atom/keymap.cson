@@ -124,6 +124,22 @@
   # Sort the selected lines (or the whole file) in alphabetical order
   'ctrl-cmd-a': 'sort-lines:sort'
 
+  # Capitalize the selected text
+  'cmd-k shift-cmd-c': 'change-case:upperFirst'
+
+  # Convert the selected text to camelCase
+  'cmd-k cmd-c': 'change-case:camel'
+
+  # Convert the selected text to PascalCase
+  'cmd-k cmd-p': 'change-case:pascal'
+
+  # Convert the selected text to lowercase with underscores (called snake_case)
+  'cmd-k cmd-_': 'change-case:snake'
+
+  # Convert the selected text to lowercase with dashes (called param-case, or
+  # kebab-case)
+  'cmd-k cmd--': 'change-case:param'
+
   # Copy to the clipboard an array of the editor's current cursor scopes
   'ctrl-alt-cmd-p': 'editor:copy-cursor-scope'
 

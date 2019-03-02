@@ -3,6 +3,7 @@ packages: [
   "atom-alignment"
   "atom-beautify"
   "atom-transpose"
+  "change-case"
   "color-picker"
   "docblockr"
   "editorconfig"
