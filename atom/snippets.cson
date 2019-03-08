@@ -1228,7 +1228,7 @@
 
   'else':
     'prefix': 'else'
-    'body': '{{else}}$2'
+    'body': '{{else}}'
 
   'endif':
     'prefix': 'endif'
