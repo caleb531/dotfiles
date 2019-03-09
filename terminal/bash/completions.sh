@@ -370,3 +370,9 @@ _bump() {
 
 }
 complete -o default -F _bump bump
+
+# Enable completions for gti and gut aliases for 'git'
+if type __git_complete &> /dev/null; then
+	__git_complete gti __git_main
+	__git_complete gut __git_main
+fi
