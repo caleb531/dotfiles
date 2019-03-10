@@ -15,7 +15,7 @@
   'alt-cmd-n': 'advanced-open-file:toggle'
 
   # Reveal the current project folder at the workspace level
-  'shift-cmd-r': 'application:show-project-folder-in-file-manager'
+  'shift-cmd-R': 'application:show-project-folder-in-file-manager'
 
 # Any text field (code editors and inputs)
 '.platform-darwin atom-text-editor':
@@ -95,13 +95,13 @@
   # Expands Emmet HTML abbreviations
   'cmd-e': 'emmet:expand-abbreviation'
   # Wraps selection in Emmet HTML abbreviation
-  'shift-cmd-e': 'emmet:wrap-with-abbreviation'
+  'shift-cmd-E': 'emmet:wrap-with-abbreviation'
 
   # Opens inline URL in default web browser if cursor is within URL
   'alt-cmd-o': 'link:open'
 
   # Opens the active document in Finder
-  'shift-cmd-r': 'tree-view:show-current-file-in-file-manager'
+  'shift-cmd-R': 'tree-view:show-current-file-in-file-manager'
 
   # Swaps selections
   'alt-cmd-t': 'atom-transpose:transpose'
@@ -125,7 +125,7 @@
   'ctrl-cmd-a': 'sort-lines:sort'
 
   # Capitalize the selected text
-  'cmd-k shift-cmd-c': 'change-case:upperFirst'
+  'cmd-k shift-cmd-C': 'change-case:upperFirst'
 
   # Convert the selected text to camelCase
   'cmd-k cmd-c': 'change-case:camel'
@@ -159,7 +159,7 @@
   # Add a new file or folder (these are commands already invocable via the 'a'
   # and 'shift-a' keys, respectively, but these are alternative key bindings)
   'n': 'tree-view:add-file'
-  'shift-n': 'tree-view:add-folder'
+  'shift-N': 'tree-view:add-folder'
 
   # Remove the selected file or directory
   'cmd-backspace': 'tree-view:remove'
