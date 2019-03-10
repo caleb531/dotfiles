@@ -13,7 +13,7 @@ sudo rm -rfv \
 	~/.npm \
 	~/.node-gyp \
 	/opt/local/bin/node \
-	opt/local/include/node \
+	/opt/local/include/node \
 	/opt/local/lib/node_modules\
 	/usr/local/lib/node_modules \
 	/usr/local/lib/npm-packages \
