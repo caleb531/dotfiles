@@ -153,6 +153,7 @@
 '.tree-view':
 
   # Rename the selected file or directory
+  'e': 'tree-view:rename'
   'cmd-e': 'tree-view:rename'
 
   # Remove the selected file or directory
