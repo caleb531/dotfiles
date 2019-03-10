@@ -93,7 +93,7 @@ install_cask() {
 install_gem() {
 	if ! is_gem_installed "$1"; then
 		echo "Installing $1..."
-		sudo gem install "$@"
+		gem install "$@"
 	fi
 }
 
