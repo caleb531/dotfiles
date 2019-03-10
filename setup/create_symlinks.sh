@@ -5,6 +5,8 @@ echo "Creating symlinks..."
 # Symlink Atom configuration
 mkdir -p ~/.atom
 ln -sf ~/dotfiles/atom/* ~/.atom
+# Prevent conflicts between init.js and an existing init.coffee symlink
+rm -f ~/.atom/init.coffee
 ln -sf ~/dotfiles/atom/.editorconfig ~/.atom
 
 # Symlink Bash configuration
