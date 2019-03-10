@@ -56,6 +56,9 @@ install_brew_pkg pandoc
 install_brew_pkg gnupg
 install_brew_pkg pinentry-mac
 
+# Install Mac App Store command-line utility
+install_brew_pkg mas
+
 # Install rmtree command for uninstalling packages and their leaf deps
 tap_brew_repo beeftornado/rmtree
 install_brew_pkg brew-rmtree

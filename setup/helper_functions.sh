@@ -44,6 +44,10 @@ is_cask_installed() {
 	echo "$CASK_LIST" | grep --quiet "^$1\$"
 }
 
+is_mac_app_installed() {
+	ls /Applications | grep --quiet "^$*"
+}
+
 is_gem_installed() {
 	echo "$GEM_LIST" | grep --quiet "^$1 "
 }
@@ -87,6 +91,20 @@ install_cask() {
 	if ! is_cask_installed "$1"; then
 		echo "Installing $1..."
 		brew cask install "$@"
+	fi
+}
+
+install_mac_app() {
+	if ! is_mac_app_installed "$1"; then
+		echo "Installing $*..."
+		local search_result="$(mas search "$*" | head -n 1)"
+		local app_id="$(echo "$search_result" | awk '{ print $1 }')"
+		local app_name="$(echo "$search_result" | awk '{ $1=""; print $0 }' | xargs)"
+		if [[ "$app_name" == "$*"* ]]; then
+			mas install "$app_id"
+		else
+			>&2 echo "App name mismatch: requested $*, but found $app_name"
+		fi
 	fi
 }
 
