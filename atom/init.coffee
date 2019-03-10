@@ -31,6 +31,17 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
     exec("open #{projectPaths[0]}")
 )
 
+# Override getGrammars to work around bug with tree-sitter grammars never
+# applying; see
+# (https://github.com/atom/atom/issues/17029#issuecomment-457084440)
+atom.grammars.getGrammars = ->
+  allGrammars = atom.grammars.textmateRegistry.getGrammars()
+  tsGrammars = Object.values(atom.grammars.treeSitterGrammarsById)
+  combinedGrammars = tsGrammars.concat(allGrammars)
+  combinedGrammarNames = combinedGrammars.map (grammar) -> grammar.name
+  return combinedGrammars.filter (grammar, g) ->
+    return (grammar.constructor.name is 'TreeSitterGrammar') or (grammar.constructor.name isnt 'TreeSitterGrammar' and combinedGrammarNames.indexOf(grammar.name) is g)
+
 # Add command to copy to clipboard an array of the editor's current cursor
 # scopes
 atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ->
