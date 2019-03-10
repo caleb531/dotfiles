@@ -29,7 +29,7 @@ function setPreferredWindowDimensions() {
 // Add command for revealing the project folder at the workspace level
 atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
   const projectPaths = atom.project.getPaths();
-  if (projectPaths.length !== 0) {
+  if (projectPaths.length > 0) {
     exec(`open ${projectPaths[0]}`);
   }
 });
