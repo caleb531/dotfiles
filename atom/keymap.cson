@@ -156,5 +156,10 @@
   'e': 'tree-view:rename'
   'cmd-e': 'tree-view:rename'
 
+  # Add a new file or folder (these are commands already invocable via the 'a'
+  # and 'shift-a' keys, respectively, but these are alternative key bindings)
+  'n': 'tree-view:add-file'
+  'shift-n': 'tree-view:add-folder'
+
   # Remove the selected file or directory
   'cmd-backspace': 'tree-view:remove'
