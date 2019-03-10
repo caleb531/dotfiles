@@ -9,14 +9,14 @@ const fs = require('fs');
 const path = require('path');
 
 // Sync Atom packages via package-sync package
-const syncPackages = () => {
+function syncPackages() {
   const workspaceView = atom.views.getView(atom.workspace);
   return atom.commands.dispatch(workspaceView, 'package-sync:sync');
 };
 
 // Set preferred size of current Atom window while preserving window position;
 // assumes Tree View is open
-const setPreferredWindowDimensions = () => {
+function setPreferredWindowDimensions() {
   const originalWindowDimensions = atom.getWindowDimensions();
   atom.setWindowDimensions({
     width: 1080,
