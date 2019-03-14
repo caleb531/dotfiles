@@ -52,13 +52,20 @@ atom-text-editor:not([mini]) {
   .syntax--source.syntax--js.syntax--jsx .syntax--jsx .syntax--entity.syntax--other.syntax--attribute-name {
     font-style: normal;
   }
-  // Use white as default color for ES6 template literal interpolation
-  .syntax--source.syntax--js.syntax--embedded {
-    color: #fff;
-  }
-  // Also color ${} wrappers distinctly
-  .syntax--punctuation.syntax--section.syntax--embedded.syntax--js {
-    color: @pink;
+  .syntax--source.syntax--js {
+    .syntax--string.syntax--quoted.syntax--template {
+      // Use white as default color for ES6 template literal interpolation
+      .syntax--embedded.syntax--source {
+        color: #fff;
+      }
+      // Also color ${} wrappers distinctly
+      .syntax--punctuation.syntax--section.syntax--embedded {
+        color: @pink;
+      }
+    }
+    .syntax--meta.syntax--class {
+      color: @blue;
+    }
   }
   // Make selected line more prominent
   .line.cursor-line {
