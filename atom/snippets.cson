@@ -423,27 +423,27 @@
 
   'get value':
     'prefix': 'getValue'
-    'body': 'getValue(${1:fieldname});'
+    'body': 'getValue(${1:fieldname})$2'
 
   'get text':
     'prefix': 'getText'
-    'body': 'getText(${1:fieldname});'
+    'body': 'getText(${1:fieldname})$2'
 
   'get field value':
     'prefix': 'getFieldValue'
-    'body': 'getFieldValue(${1:fieldname});'
+    'body': 'getFieldValue(${1:fieldname})$2'
 
   'get field text':
     'prefix': 'getFieldText'
-    'body': 'getFieldText(${1:fieldname});'
+    'body': 'getFieldText(${1:fieldname})$2'
 
   'set field value':
     'prefix': 'setFieldValue'
-    'body': 'setFieldValue(${1:fieldname}, ${2:value});'
+    'body': 'setFieldValue(${1:fieldname}, ${2:value})$3'
 
   'set field text':
     'prefix': 'setFieldText'
-    'body': 'setFieldText(${1:fieldname}, ${2:text});'
+    'body': 'setFieldText(${1:fieldname}, ${2:text})$3'
 
   'submit record':
     'prefix': 'nlapiSubmitRecord'
