@@ -395,7 +395,7 @@
 
   'log execution':
     'prefix': 'nlapiLogExecution'
-    'body': 'nlapiLogExecution(\'DEBUG\', \'${1:title}\', ${2:object});'
+    'body': 'nlapiLogExecution(\'${1:DEBUG}\', \'${2:title}\', ${3:object});'
 
   'create error':
     'prefix': 'nlapiCreateError'
