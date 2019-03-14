@@ -441,10 +441,6 @@
     'prefix': 'setFieldValue'
     'body': 'setFieldValue(${1:fieldname}, ${2:value})$3'
 
-  'set field text':
-    'prefix': 'setFieldText'
-    'body': 'setFieldText(${1:fieldname}, ${2:text})$3'
-
   'submit record':
     'prefix': 'nlapiSubmitRecord'
     'body': 'nlapiSubmitRecord(${1:record});'
