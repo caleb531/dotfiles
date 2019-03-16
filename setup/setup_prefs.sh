@@ -2,9 +2,9 @@
 
 echo "Setting global macOS preferences..."
 
-echo "- Disable Gatekeeper permanently"
-sudo spctl --master-disable
-sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool false
+# echo "- Disable Gatekeeper permanently"
+# sudo spctl --master-disable
+# sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool false
 
 echo "- Disable window animations"
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
