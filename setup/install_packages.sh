@@ -50,7 +50,6 @@ install_brew_pkg cowsay
 install_brew_pkg librsvg
 # ImageMagick >=7.0.0 will currently break Ruby gems like rmagick
 install_brew_pkg imagemagick@6
-install_brew_pkg pandoc
 
 # Install identity-related packages
 install_brew_pkg gnupg
