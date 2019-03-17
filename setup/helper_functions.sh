@@ -95,7 +95,7 @@ install_cask() {
 }
 
 install_mas_app() {
-	if ! is_mas_app_installed "$1"; then
+	if ! is_mas_app_installed "$*"; then
 		echo "Installing $*..."
 		local search_result="$(mas search "$*" | head -n 1)"
 		local app_id="$(echo "$search_result" | awk '{ print $1 }')"
