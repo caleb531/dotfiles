@@ -445,6 +445,10 @@
     'prefix': 'nlapiSubmitRecord'
     'body': 'nlapiSubmitRecord(${1:record});'
 
+  'script parameter':
+    'prefix': 'getscriptparameter'
+    'body': 'getSetting(\'SCRIPT\', \'custscript_xml_fields_customer\')'
+
   # SuiteCommerce Advanced
 
   'AMD module':
