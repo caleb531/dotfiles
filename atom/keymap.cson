@@ -140,6 +140,9 @@
   # kebab-case)
   'cmd-k cmd--': 'change-case:param'
 
+  # Convert the selected text to Title Case
+  'cmd-k cmd-t': 'change-case:title'
+
   # Copy to the clipboard an array of the editor's current cursor scopes
   'ctrl-alt-cmd-p': 'editor:copy-cursor-scope'
 
