@@ -100,6 +100,7 @@ alias nw='npm run watch'
 
 # Git
 alias gi='git'
+alias got='git'
 alias gti='git'
 alias gut='git'
 alias gf='git fetch'
