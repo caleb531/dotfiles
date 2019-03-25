@@ -114,3 +114,6 @@ alias restart-gpg='gpgconf --kill gpg-agent'
 
 # Switch to built-in Xcode tools from separate command line tools
 alias xcode-switch='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
+
+# Alias misspelled 'atoml' alias to 'atom'
+alias atoml='atom'
