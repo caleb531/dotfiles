@@ -33,7 +33,7 @@ function extendJavaScriptTSGrammar() {
   // ensure that the JS grammar is only modified when it has fully loaded
   setImmediate(() => {
     const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
-    if (jsGrammar) {
+    if (jsGrammar && jsGrammar.scopeMap) {
       // Colorize `this` and `arguments` in red like other language keywords
       jsGrammar.scopeMap.namedScopeTable.this = {result: 'variable.language.js'};
       jsGrammar.scopeMap.namedScopeTable.identifier.result.unshift({
