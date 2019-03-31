@@ -34,6 +34,15 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
   }
 });
 
+// Extend the JavaScript tree-sitter grammar with additional highlighting
+function extendJavaScriptTSGrammar(tsGrammars) {
+  const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
+  if (jsGrammar && jsGrammar.scopeMap) {
+    // Colorize `this` in red like other language keywords
+    jsGrammar.scopeMap.namedScopeTable.this = {result: 'variable.language.js'};
+  }
+}
+
 // Override getGrammars to work around bug with tree-sitter grammars never
 // applying; see
 // <https://github.com/atom/atom/issues/17029#issuecomment-457084440>
@@ -75,5 +84,6 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ()
   }
 });
 
+extendJavaScriptTSGrammar();
 setPreferredWindowDimensions();
 syncPackages();
