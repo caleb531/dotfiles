@@ -3,16 +3,15 @@
 // Atom will evaluate this file each time a new window is opened. It is run
 // after packages are loaded/activated and after the previous editor state
 // has been restored.
+'use strict';
 
-const { exec } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+const {exec} = require('child_process');
 
 // Sync Atom packages via package-sync package
 function syncPackages() {
   const workspaceView = atom.views.getView(atom.workspace);
   return atom.commands.dispatch(workspaceView, 'package-sync:sync');
-};
+}
 
 // Set preferred size of current Atom window while preserving window position;
 // assumes Tree View is open
@@ -24,7 +23,7 @@ function setPreferredWindowDimensions() {
     x: originalWindowDimensions.x,
     y: originalWindowDimensions.y
   });
-};
+}
 
 // Add command for revealing the project folder at the workspace level
 atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
@@ -35,7 +34,7 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
 });
 
 // Extend the JavaScript tree-sitter grammar with additional highlighting
-function extendJavaScriptTSGrammar(tsGrammars) {
+function extendJavaScriptTSGrammar() {
   // All Atom grammars are loaded asynchronously, so use setImmediate() to
   // ensure that the JS grammar is fully modified when it has fully loaded
   setImmediate(() => {
@@ -70,20 +69,20 @@ atom.grammars.getGrammars = () => {
 // scopes
 atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', () => {
   const editor = atom.workspace.getActiveTextEditor();
-  const scopes = editor.getCursorScope().scopes
+  const scopes = editor.getCursorScope().scopes;
   if (scopes) {
     const scopeString = JSON.stringify(scopes)
       .replace(/,/g, ', ')
       .replace(/"/g, '\'');
     atom.clipboard.write(scopeString);
-    const list = scopes.map(item => `* ${item}`);
+    const list = scopes.map((item) => `* ${item}`);
     const content = `Copied Scopes at Cursor\n${list.join('\n')}`;
     atom.notifications.addInfo(content, {
       dismissable: true
     });
   } else {
     atom.notifications.addError('Scopes at Cursor', {
-      detail: "Could not write scopes to clipboard"
+      detail: 'Could not write scopes to clipboard'
     });
   }
 });
