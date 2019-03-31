@@ -7,13 +7,6 @@
 
 const {exec} = require('child_process');
 
-// Sync Atom packages via package-sync package
-function syncPackages() {
-  const workspaceView = atom.views.getView(atom.workspace);
-  return atom.commands.dispatch(workspaceView, 'package-sync:sync');
-}
-syncPackages();
-
 // Set preferred size of current Atom window while preserving window position;
 // assumes Tree View is open
 function setPreferredWindowDimensions() {
@@ -26,6 +19,13 @@ function setPreferredWindowDimensions() {
   });
 }
 setPreferredWindowDimensions();
+
+// Sync Atom packages via package-sync package
+function syncPackages() {
+  const workspaceView = atom.views.getView(atom.workspace);
+  return atom.commands.dispatch(workspaceView, 'package-sync:sync');
+}
+syncPackages();
 
 // Extend the JavaScript tree-sitter grammar with additional highlighting
 function extendJavaScriptTSGrammar() {
