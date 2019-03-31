@@ -38,7 +38,7 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
 // Extend the JavaScript tree-sitter grammar with additional highlighting
 function extendJavaScriptTSGrammar() {
   // All Atom grammars are loaded asynchronously, so use setImmediate() to
-  // ensure that the JS grammar is fully modified when it has fully loaded
+  // ensure that the JS grammar is only modified when it has fully loaded
   setImmediate(() => {
     const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
     if (jsGrammar) {
