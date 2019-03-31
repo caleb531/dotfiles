@@ -65,14 +65,6 @@ atom.grammars.getGrammars = () => {
   });
 };
 
-// Add command for revealing the project folder at the workspace level
-atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
-  const projectPaths = atom.project.getPaths();
-  if (projectPaths.length > 0) {
-    exec(`open ${projectPaths[0]}`);
-  }
-});
-
 // Add command to copy to clipboard an array of the editor's current cursor
 // scopes
 atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', () => {
@@ -92,5 +84,13 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ()
     atom.notifications.addError('Scopes at Cursor', {
       detail: 'Could not write scopes to clipboard'
     });
+  }
+});
+
+// Add command for revealing the project folder at the workspace level
+atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
+  const projectPaths = atom.project.getPaths();
+  if (projectPaths.length > 0) {
+    exec(`open ${projectPaths[0]}`);
   }
 });
