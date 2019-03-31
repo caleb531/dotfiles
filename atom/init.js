@@ -27,14 +27,6 @@ function setPreferredWindowDimensions() {
 }
 setPreferredWindowDimensions();
 
-// Add command for revealing the project folder at the workspace level
-atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
-  const projectPaths = atom.project.getPaths();
-  if (projectPaths.length > 0) {
-    exec(`open ${projectPaths[0]}`);
-  }
-});
-
 // Extend the JavaScript tree-sitter grammar with additional highlighting
 function extendJavaScriptTSGrammar() {
   // All Atom grammars are loaded asynchronously, so use setImmediate() to
@@ -67,6 +59,14 @@ atom.grammars.getGrammars = () => {
     );
   });
 };
+
+// Add command for revealing the project folder at the workspace level
+atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
+  const projectPaths = atom.project.getPaths();
+  if (projectPaths.length > 0) {
+    exec(`open ${projectPaths[0]}`);
+  }
+});
 
 // Add command to copy to clipboard an array of the editor's current cursor
 // scopes
