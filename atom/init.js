@@ -54,7 +54,7 @@ atom.grammars.getGrammars = () => {
   const allGrammars = atom.grammars.textmateRegistry.getGrammars();
   const tsGrammars = Object.values(atom.grammars.treeSitterGrammarsById);
   const combinedGrammars = tsGrammars.concat(allGrammars);
-  const combinedGrammarNames = combinedGrammars.map(grammar => grammar.name);
+  const combinedGrammarNames = combinedGrammars.map((grammar) => grammar.name);
   return combinedGrammars.filter((grammar, g) => {
     return (
       // Prefer tree-sitter grammars whenever possible
