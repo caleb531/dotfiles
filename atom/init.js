@@ -42,9 +42,8 @@ function extendJavaScriptTSGrammar() {
   setImmediate(() => {
     const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
     if (jsGrammar) {
-      // Colorize `this` and `super` in red (like other language keywords)
+      // Colorize `this` in red like other language keywords
       jsGrammar.scopeMap.namedScopeTable.this = {result: 'variable.language.js'};
-      jsGrammar.scopeMap.namedScopeTable.super = {result: 'variable.language.js'};
     }
   });
 }
