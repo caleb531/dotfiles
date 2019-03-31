@@ -36,6 +36,11 @@ function extendJavaScriptTSGrammar() {
     if (jsGrammar) {
       // Colorize `this` in red like other language keywords
       jsGrammar.scopeMap.namedScopeTable.this = {result: 'variable.language.js'};
+      // Colorize JSON built-in object
+      jsGrammar.scopeMap.namedScopeTable.identifier.result.unshift({
+        match: /^JSON$/,
+        scopes: 'meta.class'
+      });
     }
   });
 }
