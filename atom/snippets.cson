@@ -1266,6 +1266,14 @@
     'prefix': 'endwith'
     'body': '{{/with}}'
 
+  'ifEquals':
+    'prefix': 'ifequals'
+    'body': '{{#ifEquals ${1:object} ${2:value}}}$3'
+
+  'end ifEquals':
+    'prefix': 'endifequals'
+    'body': '{{/ifEquals}}'
+
 # Apache configuration
 
 '.source.apache-config':
