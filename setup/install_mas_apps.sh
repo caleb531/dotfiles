@@ -12,5 +12,4 @@ install_mas_app Day One Classic
 install_mas_app Numbers
 install_mas_app Pages
 install_mas_app Keynote
-install_mas_app Xcode
 install_mas_app iMovie
