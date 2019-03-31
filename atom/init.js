@@ -12,6 +12,7 @@ function syncPackages() {
   const workspaceView = atom.views.getView(atom.workspace);
   return atom.commands.dispatch(workspaceView, 'package-sync:sync');
 }
+syncPackages();
 
 // Set preferred size of current Atom window while preserving window position;
 // assumes Tree View is open
@@ -24,6 +25,7 @@ function setPreferredWindowDimensions() {
     y: originalWindowDimensions.y
   });
 }
+setPreferredWindowDimensions();
 
 // Add command for revealing the project folder at the workspace level
 atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
@@ -45,6 +47,7 @@ function extendJavaScriptTSGrammar() {
     }
   });
 }
+extendJavaScriptTSGrammar();
 
 // Override getGrammars to work around bug with tree-sitter grammars never
 // applying; see
@@ -86,7 +89,3 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ()
     });
   }
 });
-
-extendJavaScriptTSGrammar();
-setPreferredWindowDimensions();
-syncPackages();
