@@ -1,5 +1,6 @@
 # Your keymap
 
+# Atom window
 '.platform-darwin':
 
   # Disable cmd-o because it always gets in the way of typing cmd-i
@@ -9,6 +10,7 @@
   'cmd-\\': 'unset!'
   'ctrl-alt-cmd-\\': 'tree-view:toggle'
 
+# Atom workspace
 '.platform-darwin atom-workspace':
 
   # Create new files using advanced-open-file
