@@ -207,10 +207,6 @@
     'prefix': 'noop'
     'body': 'function () {}'
 
-  'prototype method':
-    'prefix': 'pm'
-    'body': '${1:ClassName}.prototype.${2:methodName} = function ($3) {\n\t$4\n};'
-
   'immediately-invoked function expression':
     'prefix': 'iife'
     'body': '(function ($1) {\n$2\n}($3));'
