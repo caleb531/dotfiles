@@ -11,11 +11,11 @@
 
   'if':
     'prefix': 'if'
-    'body': 'if (${1:condition}) {\n\t$2\n}$3'
+    'body': 'if (${1:condition}) {\n\t$2\n} $3'
 
   'else if':
     'prefix': 'elseif'
-    'body': 'else if (${1:condition}) {\n\t$2\n}$3'
+    'body': 'else if (${1:condition}) {\n\t$2\n} $3'
 
   'else':
     'prefix': 'else'
@@ -56,11 +56,11 @@
 
   'try':
     'prefix': 'try'
-    'body': 'try {\n\t$1\n}$2'
+    'body': 'try {\n\t$1\n} $2'
 
   'catch':
     'prefix': 'catch'
-    'body': 'catch ($1) {\n\t$2\n}$3'
+    'body': 'catch ($1) {\n\t$2\n} $3'
 
   'finally':
     'prefix': 'finally'
@@ -643,11 +643,11 @@
 
   'if':
     'prefix': 'if'
-    'body': 'if ( ${1:condition} ) {\n\t$2\n}$3'
+    'body': 'if ( ${1:condition} ) {\n\t$2\n} $3'
 
   'else if':
     'prefix': 'elseif'
-    'body': 'else if ( ${1:condition} ) {\n\t$2\n}$3'
+    'body': 'else if ( ${1:condition} ) {\n\t$2\n} $3'
 
   'else':
     'prefix': 'else'
@@ -687,7 +687,7 @@
 
   'try':
     'prefix': 'try'
-    'body': 'try {\n\t$1\n}$2'
+    'body': 'try {\n\t$1\n} $2'
 
   'catch':
     'prefix': 'catch'
@@ -830,11 +830,11 @@
 
   '@if':
     'prefix': 'if'
-    'body': '@if ${1:condition} {\n\t$2\n}$3'
+    'body': '@if ${1:condition} {\n\t$2\n} $3'
 
   '@elseif':
     'prefix': 'elseif'
-    'body': '@else if ${1:condition} {\n\t$2\n}$3'
+    'body': '@else if ${1:condition} {\n\t$2\n} $3'
 
   '@else':
     'prefix': 'else'
