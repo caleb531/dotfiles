@@ -60,7 +60,7 @@
 
   'catch':
     'prefix': 'catch'
-    'body': 'catch ($1) {\n\t$2\n} $3'
+    'body': 'catch (${1:error}) {\n\t$2\n} $3'
 
   'finally':
     'prefix': 'finally'
