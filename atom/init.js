@@ -35,13 +35,13 @@ function extendJavaScriptTSGrammar() {
     const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
     if (jsGrammar && jsGrammar.scopeMap) {
       // Colorize `this` and `arguments` in red like other language keywords
-      jsGrammar.scopeMap.namedScopeTable.this = {result: 'variable.language.js'};
-      jsGrammar.scopeMap.namedScopeTable.identifier.result.unshift({
+      jsGrammar.scopeMap.addSelector('this', 'variable.language.js');
+      jsGrammar.scopeMap.addSelector('identifier', {
         match: /^arguments$/,
         scopes: 'variable.language.js'
       });
       // Colorize JSON built-in object
-      jsGrammar.scopeMap.namedScopeTable.identifier.result.unshift({
+      jsGrammar.scopeMap.addSelector('identifier', {
         match: /^JSON$/,
         scopes: 'meta.class'
       });
@@ -60,15 +60,15 @@ function extendPythonTSGrammar() {
     }
     if (pyGrammar && pyGrammar.scopeMap) {
       // Colorize function parameter names
-      pyGrammar.scopeMap.namedScopeTable.identifier.parents.parameters = {result: 'variable.parameter.function'};
-      pyGrammar.scopeMap.namedScopeTable.identifier.indices[0].parents.default_parameter = {result: 'variable.parameter.function'};
+      pyGrammar.scopeMap.addSelector('parameters > identifier', 'variable.parameter.function');
+      pyGrammar.scopeMap.addSelector('default_parameter > identifier:nth-child(0)', 'variable.parameter.function');
       // Colorize variable and class names within class argument lists
-      pyGrammar.scopeMap.namedScopeTable.identifier.parents.argument_list = {parents: {class_definition: {result: 'entity.other.inherited-class.python'}}};
-      pyGrammar.scopeMap.namedScopeTable.attribute = {parents: {argument_list: {parents: {class_definition: {result: 'entity.other.inherited-class.python'}}}}};
+      pyGrammar.scopeMap.addSelector('class_definition > argument_list > attribute', 'entity.other.inherited-class.python');
+      pyGrammar.scopeMap.addSelector('class_definition > argument_list > identifier', 'entity.other.inherited-class.python');
       // Colorize variable and class names as values of keyword arguments within
       // class argument lists
-      pyGrammar.scopeMap.namedScopeTable.identifier.indices[2].parents.keyword_argument = {parents: {argument_list: {parents: {class_definition: {result: 'entity.other.inherited-class.python'}}}}};
-      pyGrammar.scopeMap.namedScopeTable.attribute.parents.keyword_argument = {parents: {argument_list: {parents: {class_definition: {result: 'entity.other.inherited-class.python'}}}}};
+      pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > attribute', 'entity.other.inherited-class.python');
+      pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > identifier:nth-child(2)', 'entity.other.inherited-class.python');
     }
     // Re-apply Python tree-sitter grammar to all open Python files
     atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
