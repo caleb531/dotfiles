@@ -63,10 +63,12 @@ function extendPythonTSGrammar() {
       pyGrammar.scopeMap.addSelector('parameters > identifier', 'variable.parameter.function');
       pyGrammar.scopeMap.addSelector('default_parameter > identifier:nth-child(0)', 'variable.parameter.function');
       // Colorize variable and class names within class argument lists
-      pyGrammar.scopeMap.addSelector('class_definition > argument_list > attribute, identifier', 'entity.other.inherited-class.python');
+      pyGrammar.scopeMap.addSelector('class_definition > argument_list > attribute', 'entity.other.inherited-class.python');
+      pyGrammar.scopeMap.addSelector('class_definition > argument_list > identifier', 'entity.other.inherited-class.python');
       // Colorize variable and class names as values of keyword arguments within
       // class argument lists
-      pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > attribute, identifier:nth-child(2)', 'entity.other.inherited-class.python');
+      pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > attribute', 'entity.other.inherited-class.python');
+      pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > identifier:nth-child(2)', 'entity.other.inherited-class.python');
     }
     // Re-apply Python tree-sitter grammar to all open Python files
     atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
