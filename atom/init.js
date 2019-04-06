@@ -75,6 +75,11 @@ function extendPythonTreeSitterGrammar() {
     // class argument lists
     pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > attribute', 'entity.other.inherited-class.python');
     pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > identifier:nth-child(2)', 'entity.other.inherited-class.python');
+    // Colorize `self` and `cls`
+    pyGrammar.scopeMap.addSelector('identifier:nth-child(0)', {
+      match: /^(self|cls)$/,
+      scopes: 'variable.language.self.python'
+    });
   }
   // Re-apply Python tree-sitter grammar to all open Python files
   atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
