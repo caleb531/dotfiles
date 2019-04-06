@@ -50,6 +50,24 @@ function extendJavaScriptTSGrammar() {
 }
 extendJavaScriptTSGrammar();
 
+// Extend the Python tree-sitter grammar with additional highlighting
+function extendPythonTSGrammar() {
+  setImmediate(() => {
+    // Force tree-sitter grammar to override first-mate grammar
+    const pyGrammar = atom.grammars.treeSitterGrammarsById['source.python'];
+    if (pyGrammar && pyGrammar.firstLineRegex) {
+      pyGrammar.firstLineRegex = atom.grammars.textmateRegistry.grammarsByScopeName['source.python'].firstLineRegex;
+    }
+    // Re-apply Python tree-sitter grammar to all open Python files
+    atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
+      if (buffer.getLanguageMode().grammar.scopeName === 'source.python' && !atom.grammars.languageOverridesByBufferId.has(buffer.id)) {
+        atom.grammars.autoAssignLanguageMode(buffer);
+      }
+    });
+  });
+}
+extendPythonTSGrammar();
+
 // Override getGrammars to work around bug with tree-sitter grammars never
 // applying; see
 // <https://github.com/atom/atom/issues/17029#issuecomment-457084440>
