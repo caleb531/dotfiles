@@ -7,6 +7,7 @@
 
 const {exec} = require('child_process');
 
+
 // Set preferred size of current Atom window while preserving window position;
 // assumes Tree View is open
 function setPreferredWindowDimensions() {
@@ -20,12 +21,14 @@ function setPreferredWindowDimensions() {
 }
 setPreferredWindowDimensions();
 
+
 // Sync Atom packages via package-sync package
 function syncPackages() {
   const workspaceView = atom.views.getView(atom.workspace);
   return atom.commands.dispatch(workspaceView, 'package-sync:sync');
 }
 syncPackages();
+
 
 // Extend the JavaScript tree-sitter grammar with additional highlighting
 function extendJavaScriptTSGrammar() {
@@ -52,6 +55,7 @@ setImmediate(() => {
     extendJavaScriptTSGrammar();
   });
 });
+
 
 // Extend the Python tree-sitter grammar with additional highlighting
 function extendPythonTSGrammar() {
@@ -87,6 +91,7 @@ setImmediate(() => {
   });
 });
 
+
 // Override getGrammars to work around bug with tree-sitter grammars never
 // applying; see
 // <https://github.com/atom/atom/issues/17029#issuecomment-457084440>
@@ -105,6 +110,7 @@ atom.grammars.getGrammars = () => {
     );
   });
 };
+
 
 // Add command to copy to clipboard an array of the editor's current cursor
 // scopes
@@ -127,6 +133,7 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ()
     });
   }
 });
+
 
 // Add command for revealing the project folder at the workspace level
 atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
