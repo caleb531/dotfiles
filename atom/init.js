@@ -29,56 +29,63 @@ syncPackages();
 
 // Extend the JavaScript tree-sitter grammar with additional highlighting
 function extendJavaScriptTSGrammar() {
-  // All Atom grammars are loaded asynchronously, so use setImmediate() to
-  // ensure that the JS grammar is only modified when it has fully loaded
-  setImmediate(() => {
-    const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
-    if (jsGrammar && jsGrammar.scopeMap) {
-      // Colorize `this` and `arguments` in red like other language keywords
-      jsGrammar.scopeMap.addSelector('this', 'variable.language.js');
-      jsGrammar.scopeMap.addSelector('identifier', {
-        match: /^arguments$/,
-        scopes: 'variable.language.js'
-      });
-      // Colorize JSON built-in object
-      jsGrammar.scopeMap.addSelector('identifier', {
-        match: /^JSON$/,
-        scopes: 'meta.class'
-      });
-    }
-  });
+  const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
+  if (jsGrammar && jsGrammar.scopeMap) {
+    // Colorize `this` and `arguments` in red like other language keywords
+    jsGrammar.scopeMap.addSelector('this', 'variable.language.js');
+    jsGrammar.scopeMap.addSelector('identifier', {
+      match: /^arguments$/,
+      scopes: 'variable.language.js'
+    });
+    // Colorize JSON built-in object
+    jsGrammar.scopeMap.addSelector('identifier', {
+      match: /^JSON$/,
+      scopes: 'meta.class'
+    });
+  }
 }
-extendJavaScriptTSGrammar();
+// All Atom grammars are loaded asynchronously, so use nested setImmediate()
+// calls to wait for the first-mate JavaScript grammar to load before modifying
+// the tree-sitter grammar
+setImmediate(() => {
+  setImmediate(() => {
+    extendJavaScriptTSGrammar();
+  });
+});
 
 // Extend the Python tree-sitter grammar with additional highlighting
 function extendPythonTSGrammar() {
-  setImmediate(() => {
-    // Force tree-sitter grammar to override first-mate grammar
-    const pyGrammar = atom.grammars.treeSitterGrammarsById['source.python'];
-    if (pyGrammar && pyGrammar.firstLineRegex) {
-      pyGrammar.firstLineRegex = atom.grammars.textmateRegistry.grammarsByScopeName['source.python'].firstLineRegex;
+  // Force tree-sitter grammar to override first-mate grammar
+  const pyGrammar = atom.grammars.treeSitterGrammarsById['source.python'];
+  if (pyGrammar && pyGrammar.firstLineRegex) {
+    pyGrammar.firstLineRegex = atom.grammars.textmateRegistry.grammarsByScopeName['source.python'].firstLineRegex;
+  }
+  if (pyGrammar && pyGrammar.scopeMap) {
+    // Colorize function parameter names
+    pyGrammar.scopeMap.addSelector('parameters > identifier', 'variable.parameter.function');
+    pyGrammar.scopeMap.addSelector('default_parameter > identifier:nth-child(0)', 'variable.parameter.function');
+    // Colorize variable and class names within class argument lists
+    pyGrammar.scopeMap.addSelector('class_definition > argument_list > attribute', 'entity.other.inherited-class.python');
+    pyGrammar.scopeMap.addSelector('class_definition > argument_list > identifier', 'entity.other.inherited-class.python');
+    // Colorize variable and class names as values of keyword arguments within
+    // class argument lists
+    pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > attribute', 'entity.other.inherited-class.python');
+    pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > identifier:nth-child(2)', 'entity.other.inherited-class.python');
+  }
+  // Re-apply Python tree-sitter grammar to all open Python files
+  atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
+    if (buffer.getLanguageMode().grammar.scopeName === 'source.python' && !atom.grammars.languageOverridesByBufferId.has(buffer.id)) {
+      atom.grammars.autoAssignLanguageMode(buffer);
     }
-    if (pyGrammar && pyGrammar.scopeMap) {
-      // Colorize function parameter names
-      pyGrammar.scopeMap.addSelector('parameters > identifier', 'variable.parameter.function');
-      pyGrammar.scopeMap.addSelector('default_parameter > identifier:nth-child(0)', 'variable.parameter.function');
-      // Colorize variable and class names within class argument lists
-      pyGrammar.scopeMap.addSelector('class_definition > argument_list > attribute', 'entity.other.inherited-class.python');
-      pyGrammar.scopeMap.addSelector('class_definition > argument_list > identifier', 'entity.other.inherited-class.python');
-      // Colorize variable and class names as values of keyword arguments within
-      // class argument lists
-      pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > attribute', 'entity.other.inherited-class.python');
-      pyGrammar.scopeMap.addSelector('class_definition > argument_list > keyword_argument > identifier:nth-child(2)', 'entity.other.inherited-class.python');
-    }
-    // Re-apply Python tree-sitter grammar to all open Python files
-    atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
-      if (buffer.getLanguageMode().grammar.scopeName === 'source.python' && !atom.grammars.languageOverridesByBufferId.has(buffer.id)) {
-        atom.grammars.autoAssignLanguageMode(buffer);
-      }
-    });
   });
 }
-extendPythonTSGrammar();
+// Wait for the Python first-mate grammar to load before modifying the
+// tree-sitter grammar
+setImmediate(() => {
+  setImmediate(() => {
+    extendPythonTSGrammar();
+  });
+});
 
 // Override getGrammars to work around bug with tree-sitter grammars never
 // applying; see
