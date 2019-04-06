@@ -31,7 +31,7 @@ syncPackages();
 
 
 // Extend the JavaScript tree-sitter grammar with additional highlighting
-function extendJavaScriptTSGrammar() {
+function extendJavaScriptTreeSitterGrammar() {
   const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
   if (jsGrammar && jsGrammar.scopeMap) {
     // Colorize `this` and `arguments` in red like other language keywords
@@ -52,13 +52,13 @@ function extendJavaScriptTSGrammar() {
 // the tree-sitter grammar
 setImmediate(() => {
   setImmediate(() => {
-    extendJavaScriptTSGrammar();
+    extendJavaScriptTreeSitterGrammar();
   });
 });
 
 
 // Extend the Python tree-sitter grammar with additional highlighting
-function extendPythonTSGrammar() {
+function extendPythonTreeSitterGrammar() {
   // Force tree-sitter grammar to override first-mate grammar
   const pyGrammar = atom.grammars.treeSitterGrammarsById['source.python'];
   if (pyGrammar && pyGrammar.firstLineRegex) {
@@ -87,7 +87,7 @@ function extendPythonTSGrammar() {
 // tree-sitter grammar
 setImmediate(() => {
   setImmediate(() => {
-    extendPythonTSGrammar();
+    extendPythonTreeSitterGrammar();
   });
 });
 
