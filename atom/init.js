@@ -58,6 +58,11 @@ function extendPythonTSGrammar() {
     if (pyGrammar && pyGrammar.firstLineRegex) {
       pyGrammar.firstLineRegex = atom.grammars.textmateRegistry.grammarsByScopeName['source.python'].firstLineRegex;
     }
+    if (pyGrammar && pyGrammar.scopeMap) {
+      // Colorize function parameter names
+      pyGrammar.scopeMap.namedScopeTable.identifier.parents.parameters = {result: 'variable.parameter.function'};
+      pyGrammar.scopeMap.namedScopeTable.identifier.indices[0].parents.default_parameter = {result: 'variable.parameter.function'};
+    }
     // Re-apply Python tree-sitter grammar to all open Python files
     atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
       if (buffer.getLanguageMode().grammar.scopeName === 'source.python' && !atom.grammars.languageOverridesByBufferId.has(buffer.id)) {
