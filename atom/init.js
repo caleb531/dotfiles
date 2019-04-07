@@ -97,7 +97,7 @@ function extendPythonTreeSitterGrammar() {
       'entity.other.inherited-class.python'
     );
     // Colorize `self` and `cls`
-    pyGrammar.scopeMap.addSelector('identifier:nth-child(0)', {
+    pyGrammar.scopeMap.addSelector('identifier, identifier:nth-child(0)', {
       match: /^(self|cls)$/,
       scopes: 'variable.language.self.python'
     });
