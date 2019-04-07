@@ -46,6 +46,10 @@ function extendJavaScriptTreeSitterGrammar() {
       {
         match: /^JSON$/,
         scopes: 'meta.class'
+      },
+      {
+        match: /^[\$A-Z_]{2,}$/,
+        scopes: 'constant.other'
       }
     ]);
   }
