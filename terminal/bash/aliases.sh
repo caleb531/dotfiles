@@ -112,8 +112,10 @@ alias gs='git status'
 # Restart GPG to fix occasional signing issues
 alias restart-gpg='gpgconf --kill gpg-agent'
 
-# Switch to built-in Xcode tools from separate command line tools
-alias xcode-switch='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
+# Switch to built-in Xcode tools from standalone command line tools (or
+# vice-versa)
+alias xcode-switch-xcode='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
+alias xcode-switch-clt='sudo xcode-select --switch /Library/Developer/CommandLineTools'
 
 # Alias misspelled 'atoml' alias to 'atom'
 alias atoml='atom'
