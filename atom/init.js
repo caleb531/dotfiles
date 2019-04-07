@@ -36,15 +36,18 @@ function extendJavaScriptTreeSitterGrammar() {
   if (jsGrammar && jsGrammar.scopeMap) {
     // Colorize `this` and `arguments` in red like other language keywords
     jsGrammar.scopeMap.addSelector('this', 'variable.language.js');
-    jsGrammar.scopeMap.addSelector('identifier', {
-      match: /^arguments$/,
-      scopes: 'variable.language.js'
-    });
-    // Colorize JSON built-in object
-    jsGrammar.scopeMap.addSelector('identifier', {
-      match: /^JSON$/,
-      scopes: 'meta.class'
-    });
+    jsGrammar.scopeMap.addSelector('identifier', [
+      {
+        match: /^arguments$/,
+        scopes: 'variable.language.js'
+      },
+      // Colorize JSON built-in object like other class names (instead of like an
+      // object)
+      {
+        match: /^JSON$/,
+        scopes: 'meta.class'
+      }
+    ]);
   }
 }
 // All Atom grammars are loaded asynchronously, so use nested setImmediate()
