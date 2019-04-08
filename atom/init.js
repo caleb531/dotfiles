@@ -47,12 +47,8 @@ function extendJavaScriptTreeSitterGrammar() {
         match: /^JSON$/,
         scopes: 'meta.class'
       },
-      // Restore coloring for constants, which is lost when we run
-      // addSelector('identifier') here
-      {
-        match: /^[\$A-Z_]{2,}$/,
-        scopes: 'constant.other'
-      }
+      // Preserve existing identifier grammar rules
+      ...jsGrammar.scopeMap.namedScopeTable.identifier.result
     ]);
   }
 }
