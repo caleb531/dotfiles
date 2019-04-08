@@ -46,7 +46,6 @@ packages: [
   "sort-lines"
   "ssh-config"
   "svg-preview"
-  "swap-selection"
   "tabs-to-spaces"
   "teletype"
 ]
