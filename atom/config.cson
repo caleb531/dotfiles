@@ -121,11 +121,6 @@
   linter:
     lintOnChange: false
     lintPreviewTabs: false
-  "linter-jscs":
-    onlyConfig: true
-    preset: "jquery"
-  "linter-jshint":
-    disableWhenNoJshintrcFileInPath: true
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
     hidePanelWhenEmpty: true
