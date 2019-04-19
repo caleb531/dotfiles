@@ -176,3 +176,9 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
     exec(`open ${projectPaths[0]}`);
   }
 });
+
+// Change the base font size to 16 so that pressing cmd-0 will reset the font
+// size to my preferred
+atom.commands.add('body', 'window:reset-font-size', () => {
+  atom.config.set('editor.fontSize', 16);
+});
