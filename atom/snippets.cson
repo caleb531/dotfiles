@@ -443,7 +443,7 @@
 
   'script parameter':
     'prefix': 'getscriptparameter'
-    'body': 'getSetting(\'SCRIPT\', \'custscript_xml_fields_customer\')'
+    'body': 'getSetting(\'SCRIPT\', \'custscript_${1:paramname}\')'
 
   # SuiteCommerce Advanced
 
