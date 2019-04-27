@@ -34,7 +34,7 @@
     'body': 'break;'
 
   'continue':
-    'prefix': 'cont'
+    'prefix': 'continue'
     'body': 'continue;'
 
   # Switch constructs
