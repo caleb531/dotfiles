@@ -73,7 +73,8 @@ atom-text-editor:not([mini]) {
     }
   }
   // Remove underline from links in tree-sitter JSON files
-  .syntax--source.syntax--json {
+  .syntax--source.syntax--json,
+  .syntax--source.syntax--gfm {
     .syntax--markup.syntax--underline.syntax--link {
       text-decoration: none;
     }
