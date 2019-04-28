@@ -72,6 +72,12 @@ atom-text-editor:not([mini]) {
       color: @orange;
     }
   }
+  // Remove underline from links in tree-sitter JSON files
+  .syntax--source.syntax--json {
+    .syntax--markup.syntax--underline.syntax--link {
+      text-decoration: none;
+    }
+  }
   // Make selected line more prominent
   .line.cursor-line {
     background-color: rgba(255, 255, 255, 0.05);
