@@ -409,6 +409,18 @@
     'prefix': 'nlapiSearchRecord'
     'body': 'nlapiSearchRecord(${1:recordtype}, ${2:null}, ${3:filters});'
 
+  'get new record':
+    'prefix': 'nlapiGetNewRecord'
+    'body': 'nlapiGetNewRecord();'
+
+  'get record id':
+    'prefix': 'nlapiGetRecordId'
+    'body': 'nlapiGetRecordId();'
+
+  'get record type':
+    'prefix': 'nlapiGetRecordType'
+    'body': 'nlapiGetRecordType();'
+
   'search filter':
     'prefix': 'nlobjSearchFilter'
     'body': 'nlobjSearchFilter(${1:fieldname}, ${2:null}, \'${3:is}\', ${4:value})$5'
