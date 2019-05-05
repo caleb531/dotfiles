@@ -187,20 +187,20 @@ atom.commands.add('.platform-darwin atom-text-editor:not([mini])', 'editor:toggl
   const editor = atom.workspace.getActiveTextEditor();
   editor.mutateSelectedText((selection) => {
     if (selection.isEmpty()) {
-      const screenRange = selection.getScreenRange();
+      const bufferRange = selection.getBufferRange();
       const bufferRowRange = selection.getBufferRowRange();
       const commentStrings = editor.languageMode.commentStringsForPosition(bufferRowRange);
       // If both start and end command tags are defined, and if the line where
       // the selection lies is blank
-      if (commentStrings.commentStartString && commentStrings.commentEndString && editor.buffer.lineForRow(screenRange.start.row).trim() === '') {
+      if (commentStrings.commentStartString && commentStrings.commentEndString && editor.buffer.lineForRow(bufferRange.start.row).trim() === '') {
         selection.toggleLineComments();
         // After inserting the comment tags, place the cursor exactly between
         // the tags
         const newRange = {
-          row: screenRange.start.row,
-          column: screenRange.start.column + commentStrings.commentStartString.length + 1
+          row: bufferRange.start.row,
+          column: bufferRange.start.column + commentStrings.commentStartString.length + 1
         };
-        selection.setScreenRange({
+        selection.setBufferRange({
           start: newRange,
           end: newRange
         });
