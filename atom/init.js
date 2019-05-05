@@ -182,3 +182,31 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
 atom.commands.add('body', 'window:reset-font-size', () => {
   atom.config.set('editor.fontSize', 16);
 });
+
+atom.commands.add('.platform-darwin atom-text-editor:not([mini])', 'editor:toggle-line-comments-properly', () => {
+  const editor = atom.workspace.getActiveTextEditor();
+  editor.mutateSelectedText((selection) => {
+    if (selection.isEmpty()) {
+      const screenRange = selection.getScreenRange();
+      const bufferRowRange = selection.getBufferRowRange();
+      const commentStrings = editor.languageMode.commentStringsForPosition(bufferRowRange);
+      // If both start and end command tags are defined, and if the line where
+      // the selection lies is blank
+      if (commentStrings.commentStartString && commentStrings.commentEndString && editor.buffer.lineForRow(screenRange.start.row).trim() === '') {
+        selection.toggleLineComments();
+        // After inserting the comment tags, place the cursor exactly between
+        // the tags
+        const newRange = {
+          row: screenRange.start.row,
+          column: screenRange.start.column + commentStrings.commentStartString.length + 1
+        };
+        selection.setScreenRange({
+          start: newRange,
+          end: newRange
+        });
+        return;
+      }
+    }
+    selection.toggleLineComments();
+  });
+});

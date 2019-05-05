@@ -153,6 +153,9 @@
   # Log tree-sitter syntax node hierarchy at the editor's cursor
   'alt-shift-cmd-p': 'editor:log-cursor-syntax-tree-scope'
 
+  # Override comment-toggling with custom function
+  'cmd-/': 'editor:toggle-line-comments-properly'
+
 # Toggles match by whole word in Find and Replace / Project Find panels
 '.platform-darwin .find-and-replace':
   'alt-cmd-b': 'find-and-replace:toggle-whole-word-option'
