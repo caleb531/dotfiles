@@ -183,7 +183,7 @@ atom.commands.add('body', 'window:reset-font-size', () => {
   atom.config.set('editor.fontSize', 16);
 });
 
-atom.commands.add('.platform-darwin atom-text-editor:not([mini])', 'editor:toggle-line-comments-properly', () => {
+atom.commands.add('atom-workspace atom-text-editor:not([mini])', 'editor:toggle-line-comments-properly', () => {
   const editor = atom.workspace.getActiveTextEditor();
   editor.mutateSelectedText((selection) => {
     if (selection.isEmpty()) {
