@@ -198,7 +198,7 @@ atom.commands.add('atom-workspace atom-text-editor:not([mini])', 'editor:toggle-
         // the tags
         const newRange = {
           row: bufferRange.start.row,
-          column: bufferRange.start.column + commentStrings.commentStartString.length + 1
+          column: bufferRange.start.column + commentStrings.commentStartString.trim().length + 1
         };
         selection.setBufferRange({
           start: newRange,
