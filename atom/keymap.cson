@@ -153,6 +153,10 @@
   # Log tree-sitter syntax node hierarchy at the editor's cursor
   'alt-shift-cmd-p': 'editor:log-cursor-syntax-tree-scope'
 
+  # Toggle Git Blame sidebar
+  'ctrl-b': 'git-blame:toggle'
+  'shift-cmd-b': 'git-blame:toggle'
+
   # Override comment-toggling with custom function
   'cmd-/': 'editor:toggle-line-comments-properly'
 

@@ -231,6 +231,14 @@ atom-text-editor .gutter .line-number.git-line-modified {
 
 // ********** Miscellaneous **********
 
+// Disable per-line info tooltips within blame file
+.blame-line-marker {
+  pointer-events: none;
+}
+// Remove background highlighting on lines in blame sidebar
+.blame-line {
+  background: none !important;
+}
 
 // Hide "GitHub" and "Fetch" links in status bar
 .github-StatusBarTile,

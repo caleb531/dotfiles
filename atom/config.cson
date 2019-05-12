@@ -77,6 +77,7 @@
       "resize-indent"
       "atom-beautify"
       "change-case"
+      "git-blame"
     ]
     projectHome: "~/Repositories"
     telemetryConsent: "limited"
@@ -118,6 +119,11 @@
       "LocalDistribution"
     ]
     preserveLastSearch: true
+  "git-blame":
+    colorCommitAuthors: true
+    columnWidth: 275
+    ignoreWhiteSpaceDiffs: true
+    showLastNames: false
   linter:
     lintOnChange: false
     lintPreviewTabs: false
