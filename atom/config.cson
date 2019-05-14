@@ -46,6 +46,7 @@
       "welcome"
       "whitespace"
       "teletype"
+      "expand-region"
     ]
     followSymlinks: false
     ignoredNames: [
