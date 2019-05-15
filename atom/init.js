@@ -66,9 +66,6 @@ setImmediate(() => {
 function extendPythonTreeSitterGrammar() {
   // Force tree-sitter grammar to override first-mate grammar
   const pyGrammar = atom.grammars.treeSitterGrammarsById['source.python'];
-  if (pyGrammar && pyGrammar.firstLineRegex) {
-    pyGrammar.firstLineRegex = atom.grammars.textmateRegistry.grammarsByScopeName['source.python'].firstLineRegex;
-  }
   if (pyGrammar && pyGrammar.scopeMap) {
     // Colorize function parameter names
     pyGrammar.scopeMap.addSelector(
