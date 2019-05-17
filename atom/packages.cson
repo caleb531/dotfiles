@@ -9,6 +9,7 @@ packages: [
   "editorconfig"
   "emmet"
   "expand-region"
+  "git-blame"
   "language-apache"
   "language-applescript"
   "language-awk"
