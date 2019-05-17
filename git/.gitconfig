@@ -84,6 +84,7 @@
 	# Diff files, highlighting only the changes within each line
 	diffcw = diff --color-words
 	diffcwc = diff --color-words --cached
+	diffcwcw = diff --ignore-all-space --color-words --cached
 	diffcwlasttag = !git diff --color-words $(git lasttag)
 	# Diff two files outside of a git repository
 	diffni = diff --no-index
@@ -103,7 +104,7 @@
 	diffwc = diff --ignore-all-space --cached
 	diffwcw = diff --ignore-all-space --color-words
 	diffwcwc = diff --ignore-all-space --color-words --cached
-	# Exports a patchfile
+	# Exports a patch file
 	fp = format-patch
 	fps = format-patch --stdout
 	fps1 = format-patch -1 --stdout
