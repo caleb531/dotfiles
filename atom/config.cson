@@ -27,6 +27,9 @@
       "source.js": [
         "js"
       ]
+      "source.js.jsx": [
+        "jsx"
+      ]
       "text.pip.pip-conf": [
         "coveragerc"
       ]
