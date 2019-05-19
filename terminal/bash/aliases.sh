@@ -119,3 +119,6 @@ alias xcode-switch-clt='sudo xcode-select --switch /Library/Developer/CommandLin
 
 # Alias misspelled 'atoml' alias to 'atom'
 alias atoml='atom'
+
+# Remap 'killall' to 'ka'
+alias ka='killall'
