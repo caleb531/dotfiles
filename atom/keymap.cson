@@ -22,9 +22,28 @@
 # Any text field (code editors and inputs)
 '.platform-darwin atom-text-editor':
 
-    # Expands/contracts selection to next outermost/innermost set of tokens
-    'alt-up': 'expand-region:expand'
-    'alt-down': 'expand-region:shrink'
+  # Expands/contracts selection to next outermost/innermost set of tokens
+  'alt-up': 'expand-region:expand'
+  'alt-down': 'expand-region:shrink'
+
+  # Capitalize the selected text
+  'cmd-k shift-cmd-C': 'change-case:upperFirst'
+
+  # Convert the selected text to camelCase
+  'cmd-k cmd-c': 'change-case:camel'
+
+  # Convert the selected text to PascalCase
+  'cmd-k cmd-p': 'change-case:pascal'
+
+  # Convert the selected text to lowercase with underscores (called snake_case)
+  'cmd-k cmd-_': 'change-case:snake'
+
+  # Convert the selected text to lowercase with dashes (called param-case, or
+  # kebab-case)
+  'cmd-k cmd--': 'change-case:param'
+
+  # Convert the selected text to Title Case
+  'cmd-k cmd-t': 'change-case:title'
 
 # Code editors only
 '.platform-darwin atom-text-editor:not([mini])':
@@ -127,25 +146,6 @@
 
   # Sort the selected lines (or the whole file) in alphabetical order
   'ctrl-cmd-a': 'sort-lines:sort'
-
-  # Capitalize the selected text
-  'cmd-k shift-cmd-C': 'change-case:upperFirst'
-
-  # Convert the selected text to camelCase
-  'cmd-k cmd-c': 'change-case:camel'
-
-  # Convert the selected text to PascalCase
-  'cmd-k cmd-p': 'change-case:pascal'
-
-  # Convert the selected text to lowercase with underscores (called snake_case)
-  'cmd-k cmd-_': 'change-case:snake'
-
-  # Convert the selected text to lowercase with dashes (called param-case, or
-  # kebab-case)
-  'cmd-k cmd--': 'change-case:param'
-
-  # Convert the selected text to Title Case
-  'cmd-k cmd-t': 'change-case:title'
 
   # Copy to the clipboard an array of the editor's current cursor scopes
   'ctrl-alt-cmd-p': 'editor:copy-cursor-scope'
