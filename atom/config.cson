@@ -100,7 +100,6 @@
     showCursorOnSelection: false
     softTabs: false
     softWrap: true
-    softWrapHangingIndent: 2
     tabLength: 4
   emmet:
     extensionsPath: "~/dotfiles/emmet"
