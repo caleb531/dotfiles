@@ -131,9 +131,8 @@
     lintOnChange: false
     lintPreviewTabs: false
   "linter-ui-default":
-    alwaysTakeMinimumSpace: true
     hidePanelWhenEmpty: true
-    panelHeight: 200
+    panelHeight: 145
     showPanel: true
     showTooltip: false
     statusBarRepresents: "Current File"
