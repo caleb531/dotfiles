@@ -5,9 +5,9 @@
 # Expand multiple subdirectories using the globstar (**) option
 shopt -s globstar 2> /dev/null
 # Enable extended glob syntax (like [!])
-shopt -s extglob
+shopt -s extglob 2> /dev/null
 # Ensure that command history is appended to and not overwritten
-shopt -s histappend
+shopt -s histappend 2> /dev/null
 
 # Navigate command history matching typed input using up/down arrow keys
 bind '"\e[A": history-search-backward' 2> /dev/null

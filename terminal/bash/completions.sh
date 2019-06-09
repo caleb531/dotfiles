@@ -108,7 +108,7 @@ _brew() {
 	fi
 
 }
-complete -o default -F _brew brew
+complete -o default -F _brew brew 2> /dev/null
 
 # Completion function for npm and bower, the Node-based package managers
 _npm() {
@@ -128,7 +128,7 @@ _npm() {
 	fi
 
 }
-complete -o default -F _npm npm bower
+complete -o default -F _npm npm bower 2> /dev/null
 
 # Completion function for Grunt, the JavaScript task runner
 _grunt() {
@@ -142,7 +142,7 @@ _grunt() {
 	fi
 
 }
-complete -o default -F _grunt grunt
+complete -o default -F _grunt grunt 2> /dev/null
 
 # Completion function for pip, Python's package manager
 _pip() {
@@ -173,7 +173,7 @@ _pip() {
 	fi
 
 }
-complete -o default -F _pip pip pip2 pip3
+complete -o default -F _pip pip pip2 pip3 2> /dev/null
 
 # Completion function for apm, Atom's package manager
 _apm() {
@@ -194,7 +194,7 @@ _apm() {
 	fi
 
 }
-complete -o default -F _apm apm
+complete -o default -F _apm apm 2> /dev/null
 
 # Completion function for Bundler, the Ruby package manager
 _bundle() {
@@ -214,7 +214,7 @@ _bundle() {
 	fi
 
 }
-complete -o default -F _bundle bundle bundler
+complete -o default -F _bundle bundle bundler 2> /dev/null
 
 # Completion function for jekyll, the static site generator
 _jekyll() {
@@ -236,7 +236,7 @@ _jekyll() {
 	fi
 
 }
-complete -o default -F _jekyll jekyll
+complete -o default -F _jekyll jekyll 2> /dev/null
 
 # Completion functions for Ruby's Make system, Rake
 _rake() {
@@ -249,7 +249,7 @@ _rake() {
 	fi
 
 }
-complete -o default -F _rake rake
+complete -o default -F _rake rake 2> /dev/null
 
 # Completion function for python/python3 binaries
 _python() {
@@ -285,8 +285,8 @@ _python() {
 	fi
 
 }
-complete -o default -F _python python
-complete -o default -F _python python3
+complete -o default -F _python python 2> /dev/null
+complete -o default -F _python python3 2> /dev/null
 
 # Completion function for apachectl, Apache's HTTP server utility
 _apachectl() {
@@ -300,7 +300,7 @@ _apachectl() {
 	fi
 
 }
-complete -o default -F _apachectl apachectl
+complete -o default -F _apachectl apachectl 2> /dev/null
 
 
 # Completion function for pypi, a custom function for interacting with PyPI
@@ -315,7 +315,7 @@ _pypi() {
 	fi
 
 }
-complete -o default -F _pypi pypi
+complete -o default -F _pypi pypi 2> /dev/null
 
 
 # Completion function for mkvirtualenv, a function for creating new Python
@@ -331,7 +331,7 @@ _mkvirtualenv() {
 	fi
 
 }
-complete -o default -F _mkvirtualenv mkvirtualenv
+complete -o default -F _mkvirtualenv mkvirtualenv 2> /dev/null
 
 
 # Completion function for awp, my Alfred Workflow Packager utility
@@ -350,7 +350,7 @@ _awp() {
 	fi
 
 }
-complete -o default -F _awp awp
+complete -o default -F _awp awp 2> /dev/null
 
 # My personal bump utility, available via pip as bump-anything
 _bump() {
@@ -369,7 +369,7 @@ _bump() {
 	fi
 
 }
-complete -o default -F _bump bump
+complete -o default -F _bump bump 2> /dev/null
 
 # Enable completions for aliases for 'git'
 if type __git_complete &> /dev/null; then
