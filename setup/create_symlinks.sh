@@ -13,6 +13,9 @@ ln -sf ~/dotfiles/atom/.editorconfig ~/.atom
 ln -sf ~/dotfiles/terminal/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/terminal/.bashrc ~/.bash_profile
 
+# Symlink Zsh configuration
+ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
+
 # Symlink miscellaneous configuration
 ln -sf ~/dotfiles/terminal/.hyper.js ~/.hyper.js
 ln -sf ~/dotfiles/terminal/.vimrc ~/.vimrc
