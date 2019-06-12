@@ -122,6 +122,7 @@
       "LocalDistribution"
     ]
     preserveLastSearch: true
+    useRipGrep: true
   "git-blame":
     colorCommitAuthors: true
     columnWidth: 275
