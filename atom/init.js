@@ -34,6 +34,11 @@ syncPackages();
 function extendJavaScriptTreeSitterGrammar() {
   const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
   if (jsGrammar && jsGrammar.scopeMap) {
+    // Colorize rest parameters (e.g. ...args) like other function parameters
+    jsGrammar.scopeMap.addSelector(
+      'formal_parameters > rest_parameter > identifier',
+      'formal-parameter.identifier'
+    );
     // Colorize `this` and `arguments` in red like other language keywords
     jsGrammar.scopeMap.addSelector('this', 'variable.language.js');
     jsGrammar.scopeMap.addSelector('identifier', [
