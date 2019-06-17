@@ -194,6 +194,8 @@
 	# Unstash the last stash entry and apply its changes to the current working
 	# directory
 	stashp = stash pop
+	# List all stashes
+	stashl = stash list
 	# Stash changes, including untracked files
 	stashu = stash -u
 	# Clone submodule repositories into their respective directories if empty
