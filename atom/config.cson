@@ -132,6 +132,16 @@
   linter:
     lintOnChange: false
     lintPreviewTabs: false
+  "linter-eslint":
+    scopes: [
+      "source.js"
+      "source.jsx"
+      "source.js.jsx"
+      "source.flow"
+      "source.babel"
+      "source.js-semantic"
+      "source.js.sca.ss"
+    ]
   "linter-ui-default":
     hidePanelWhenEmpty: true
     showPanel: true
