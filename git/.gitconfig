@@ -141,6 +141,8 @@
 	mergenff = merge --no-ff
 	# Copy to the clipboard the commit message of the given commit
 	msg = !git log --format=%B -n 1 $@ | pbcopy
+	# Misspellings of `git push`
+	oush = push
 	# Pull master into the current branch
 	pom = pull origin master
 	pullom = pull origin master
