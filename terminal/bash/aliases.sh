@@ -124,5 +124,8 @@ alias xcode-switch-clt='sudo xcode-select --switch /Library/Developer/CommandLin
 alias atoml='atom'
 alias aton='atom'
 
+# apm aliases
+alias apmre='apm rebuild'
+
 # Remap 'killall' to 'ka'
 alias ka='killall'
