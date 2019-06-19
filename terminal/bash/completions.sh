@@ -183,7 +183,7 @@ _apm() {
 
 	if [ "$prev" == 'apm' ] || [ "$prev" == 'help' ]; then
 		# Complete common apm commands for `apm`
-		COMPREPLY=( $(compgen -W 'clean develop help install list link login publish pull push search show star stars uninstall unstar update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'clean develop help install list link login publish pull push rebuild search show star stars uninstall unstar update upgrade' -- $cur) )
 	elif [ "$prev" == 'update' ] || [ "$prev" == 'upgrade' ]; then
 		# Complete options for `apm update` and `apm upgrade`
 		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
