@@ -196,12 +196,6 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
   }
 });
 
-// Change the base font size to 16 so that pressing cmd-0 will reset the font
-// size to my preferred
-atom.commands.add('body', 'window:reset-font-size', () => {
-  atom.config.set('editor.fontSize', 16);
-});
-
 atom.commands.add('atom-workspace atom-text-editor:not([mini])', 'editor:toggle-line-comments-properly', () => {
   const editor = atom.workspace.getActiveTextEditor();
   editor.mutateSelectedText((selection) => {
