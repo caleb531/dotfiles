@@ -152,6 +152,7 @@
 	pullom = pull origin master
 	# Pull from remote, recommitting unpushed changes atop the pulled commits
 	pullr = pull --rebase
+	pushh = !git push && git push --tags
 	# Push any unpushed tags (this will *not* push unpushed commits)
 	pusht = push --tags
 	# Force push only if the current branch's local origin matches the actual
