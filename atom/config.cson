@@ -94,6 +94,7 @@
     align_tags: "shallow"
     extend_double_slash: false
   editor:
+    autoIndentOnPaste: false
     fontFamily: "Monaco"
     fontSize: 16
     showCursorOnSelection: false
