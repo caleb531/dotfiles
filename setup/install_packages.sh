@@ -78,9 +78,7 @@ install_gem jekyll
 echo "Installing node..."
 
 if ! is_cmd_installed n; then
-	curl -L \
-		https://git.io/n-install \
-		| bash -s -- -y -n -
+	curl -L https://git.io/n-install | bash -s -- -y -n -
 fi
 # Load in environment variables for n and node
 source ~/dotfiles/terminal/bash/exports.sh
