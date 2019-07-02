@@ -44,6 +44,9 @@ install_brew_pkg python
 install_brew_pkg python@2
 
 install_brew_pkg ssh-copy-id
+tap_brew_repo heroku/brew
+install_brew_pkg heroku
+
 install_brew_pkg shellcheck
 install_brew_pkg cowsay
 
