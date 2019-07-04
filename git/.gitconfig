@@ -118,6 +118,8 @@
 	fps1 = format-patch -1 --stdout
 	# Run Git's garbage collection, removing all loose objects
 	gcpn = gc --prune=now
+	# Push to Heroku remote
+	heroku = !git push heroku $(git rev-parse --abbrev-ref HEAD)
 	# Get the name of the last tag
 	lasttag = describe --tags --abbrev=0
 	# Show the very first commit to the repository
