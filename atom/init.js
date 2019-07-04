@@ -195,31 +195,3 @@ atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-man
     exec(`open ${projectPaths[0]}`);
   }
 });
-
-atom.commands.add('atom-workspace atom-text-editor:not([mini])', 'editor:toggle-line-comments-properly', () => {
-  const editor = atom.workspace.getActiveTextEditor();
-  editor.mutateSelectedText((selection) => {
-    if (selection.isEmpty()) {
-      const bufferRange = selection.getBufferRange();
-      const bufferRowRange = selection.getBufferRowRange();
-      const commentStrings = editor.languageMode.commentStringsForPosition(bufferRowRange);
-      // If both start and end command tags are defined, and if the line where
-      // the selection lies is blank
-      if (commentStrings.commentStartString && commentStrings.commentEndString && editor.buffer.lineForRow(bufferRange.start.row).trim() === '') {
-        selection.toggleLineComments();
-        // After inserting the comment tags, place the cursor exactly between
-        // the tags
-        const newRange = {
-          row: bufferRange.start.row,
-          column: bufferRange.start.column + commentStrings.commentStartString.trim().length + 1
-        };
-        selection.setBufferRange({
-          start: newRange,
-          end: newRange
-        });
-        return;
-      }
-    }
-    selection.toggleLineComments();
-  });
-});
