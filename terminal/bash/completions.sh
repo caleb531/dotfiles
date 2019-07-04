@@ -113,18 +113,25 @@ complete -o default -F _brew brew 2> /dev/null
 # Completion function for npm and bower, the Node-based package managers
 _npm() {
 
+	second=${COMP_WORDS[1]}
 	cur=${COMP_WORDS[COMP_CWORD]}
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	if [ "$prev" == 'npm' ] || [ "$prev" == 'bower' ] || [ "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
-		COMPREPLY=( $(compgen -W 'cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'audit cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
 	elif [ "$prev" == 'install' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete common options for `npm install` and `npm uninstall`
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- $cur) )
 	elif [ "$prev" == 'cache' ]; then
 		# Complete subcommands for `npm cache`
 		COMPREPLY=( $(compgen -W 'clean' -- $cur) )
+	elif [ "$prev" == 'audit' ]; then
+		# Complete subcommands for `npm audit`
+		COMPREPLY=( $(compgen -W 'fix' -- $cur) )
+	elif [ "$second" == 'audit' ] && [ "$prev" == 'fix' ]; then
+		# Complete subcommands for `npm audit fix`
+		COMPREPLY=( $(compgen -W '--dry-run --force' -- $cur) )
 	fi
 
 }
