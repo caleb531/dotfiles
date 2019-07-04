@@ -45,6 +45,9 @@
   # Convert the selected text to Title Case
   'cmd-k cmd-t': 'change-case:title'
 
+  # Disable find-and-replace:replace-next key binding
+  'alt-cmd-e': 'unset!'
+
 # Code editors only
 '.platform-darwin atom-text-editor:not([mini])':
 
