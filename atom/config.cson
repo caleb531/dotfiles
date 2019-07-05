@@ -93,6 +93,7 @@
   docblockr:
     align_tags: "shallow"
     extend_double_slash: false
+    simple_mode: true
   editor:
     autoIndentOnPaste: false
     fontFamily: "Monaco"
