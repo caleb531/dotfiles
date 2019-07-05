@@ -67,23 +67,6 @@ setImmediate(() => {
 });
 
 
-// Extend the JSON tree-sitter grammar with additional highlighting
-function extendJSONTreeSitterGrammar() {
-  const jsonGrammar = atom.grammars.treeSitterGrammarsById['source.json'];
-  if (jsonGrammar && jsonGrammar.scopeMap) {
-    // Colorize invalid syntax in red
-    jsonGrammar.scopeMap.addSelector('ERROR', 'invalid.illegal');
-  }
-}
-// Wait for the JSON first-mate grammar to load before modifying the tree-sitter
-// grammar
-setImmediate(() => {
-  setImmediate(() => {
-    extendJSONTreeSitterGrammar();
-  });
-});
-
-
 // Extend the Python tree-sitter grammar with additional highlighting
 function extendPythonTreeSitterGrammar() {
   // Force tree-sitter grammar to override first-mate grammar
