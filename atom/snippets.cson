@@ -836,6 +836,14 @@
     'prefix': 'print'
     'body': '@media print {\n\t$1\n}$2'
 
+  '@keyframes':
+    'prefix': '@keyframes'
+    'body': '@keyframes {\n\t$1\n}'
+
+  'keyframes':
+    'prefix': 'keyframes'
+    'body': '@keyframes {\n\t$1\n}'
+
 # Sass
 
 '.source.css.scss':
