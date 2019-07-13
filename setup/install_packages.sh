@@ -75,16 +75,11 @@ install_gem sass
 install_gem bundler
 install_gem jekyll
 
-echo "Installing node..."
+echo "Installing nvm..."
 
-if ! is_cmd_installed n; then
-	curl -L https://git.io/n-install | bash -s -- -y -n -
-fi
-# Load in environment variables for n and node
-source ~/dotfiles/terminal/bash/exports.sh
-
-install_node_version "$DEFAULT_NODE_VERSION"
-n "$DEFAULT_NODE_VERSION"
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+nvm install 12.5.0
 
 echo "Installing npm packages..."
 preload_npm_pkg_list

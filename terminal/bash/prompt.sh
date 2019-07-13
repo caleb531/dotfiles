@@ -85,6 +85,16 @@ __detect_python_virtualenv() {
 
 }
 
+# Load nvm if the current directory is a Node project
+__load_nvm() {
+	local node_version="$(cat .nvmrc 2> /dev/null)"
+	# echo "$node_version"
+	if [ -f package.json ] && [ "$PWD" != "$NVM_PWD" ]; then
+		nvm use "${node_version:-default}" > /dev/null
+		NVM_PWD="$PWD"
+	fi
+}
+
 # Output line continuation prompt string
 __output_ps2() {
 	# Use fancy chevron from PS1
@@ -97,6 +107,7 @@ __output_ps2() {
 __update_prompt_command() {
 
 	__detect_python_virtualenv
+	__load_nvm
 	PS1="$(__output_ps1)"
 	# Append in-memory command history to file
 	history -a

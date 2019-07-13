@@ -28,6 +28,11 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 fi
 
+# Load nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 # Set limitations on system resources (uncomment if you experience issues)
 
 # Increase open files limit
