@@ -79,7 +79,6 @@ echo "Installing nvm..."
 
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-nvm install 12.5.0
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
