@@ -39,11 +39,6 @@ function extendJavaScriptTreeSitterGrammar() {
       'formal_parameters > rest_parameter > identifier',
       'formal-parameter.identifier'
     );
-    // Colorize single (paren-less) arrow function parameters as orange
-    jsGrammar.scopeMap.addSelector(
-      'arrow_function > identifier:nth-child(0)',
-      'formal-parameter.identifier'
-    );
     // Colorize `this` and `arguments` in red like other language keywords
     jsGrammar.scopeMap.addSelector('this', 'variable.language.js');
     jsGrammar.scopeMap.addSelector('identifier', [
