@@ -28,16 +28,16 @@ let @r='(V)gq'
 
 " Allow ctrl-s and ctrl-q to be used as key bindings
 silent !stty -ixon
-" Fixup (ctrl-f)
-map <buffer> <C-F> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/fixup/<CR>
-" Squash (ctrl-s)
-map <buffer> <C-S> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/squash/<CR>
-" Edit (ctrl-e)
-map <buffer> <C-E> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/edit/<CR>
-" Reword (ctrl-r)
-map <buffer> <C-R> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/reword/<CR>
 " Pick (ctrl-p)
 map <buffer> <C-P> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/pick/<CR>
+" Reword (ctrl-r)
+map <buffer> <C-R> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/reword/<CR>
+" Edit (ctrl-e)
+map <buffer> <C-E> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/edit/<CR>
+" Squash (ctrl-s)
+map <buffer> <C-S> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/squash/<CR>
+" Fixup (ctrl-f)
+map <buffer> <C-F> :s/^\(pick\\|reword\\|edit\\|squash\\|fixup\)/fixup/<CR>
 
 " Move line up with ctrl-a
 map <buffer> <C-A> :m-2<CR>
