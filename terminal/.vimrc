@@ -29,15 +29,15 @@ let @r='(V)gq'
 " Allow ctrl-s and ctrl-q to be used as key bindings
 silent !stty -ixon
 " Pick (ctrl-p)
-map <buffer> <C-P> :s/^[[:alpha:]]\+/pick/<CR>
+map <buffer> <C-p> :s/^[[:alpha:]]\+/pick/<CR>
 " Reword (ctrl-r)
-map <buffer> <C-R> :s/^[[:alpha:]]\+/reword/<CR>
+map <buffer> <C-r> :s/^[[:alpha:]]\+/reword/<CR>
 " Edit (ctrl-e)
-map <buffer> <C-E> :s/^[[:alpha:]]\+/edit/<CR>
+map <buffer> <C-e> :s/^[[:alpha:]]\+/edit/<CR>
 " Squash (ctrl-s)
-map <buffer> <C-S> :s/^[[:alpha:]]\+/squash/<CR>
+map <buffer> <C-s> :s/^[[:alpha:]]\+/squash/<CR>
 " Fixup (ctrl-f)
-map <buffer> <C-F> :s/^[[:alpha:]]\+/fixup/<CR>
+map <buffer> <C-f> :s/^[[:alpha:]]\+/fixup/<CR>
 
 " Move line up with ctrl-a
 map <buffer> <C-A> :m-2<CR>
