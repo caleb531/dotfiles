@@ -109,6 +109,7 @@
     userId: "f12f97d7-4abc-ae8e-e993-bf2f40749e71"
   "find-and-replace":
     showSearchWrapIcon: false
+    useRipgrep: true
   "fuzzy-finder":
     ignoredNames: [
       "*.alfredworkflow"
