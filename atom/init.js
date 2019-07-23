@@ -72,15 +72,6 @@ function extendPythonTreeSitterGrammar() {
   // Force tree-sitter grammar to override first-mate grammar
   const pyGrammar = atom.grammars.treeSitterGrammarsById['source.python'];
   if (pyGrammar && pyGrammar.scopeMap) {
-    // Colorize function parameter names
-    pyGrammar.scopeMap.addSelector(
-      'parameters > identifier',
-      'variable.parameter.function'
-    );
-    pyGrammar.scopeMap.addSelector(
-      'default_parameter > identifier:nth-child(0)',
-      'variable.parameter.function'
-    );
     // Colorize variable and class names within class argument lists
     pyGrammar.scopeMap.addSelector(
       'class_definition > argument_list > attribute',
