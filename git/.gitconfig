@@ -158,6 +158,8 @@
 	pushh = !git push heroku $(git rev-parse --abbrev-ref HEAD)
 	# Push any unpushed tags (this will *not* push unpushed commits)
 	pusht = push --tags
+	# Push commits and push tags in succession
+	pushtt = !git push && git push --tags
 	# Force push only if the current branch's local origin matches the actual
 	# remote
 	pushf = push --force-with-lease
