@@ -124,7 +124,7 @@
       "LocalDistribution"
     ]
     preserveLastSearch: true
-    scoringSystem: "fast"
+    scoringSystem: "standard"
     useRipGrep: true
   "git-blame":
     colorCommitAuthors: true
