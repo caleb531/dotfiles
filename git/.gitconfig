@@ -84,6 +84,8 @@
 	cleanfd = clean -fd
 	# Modify the previous commit
 	commita = commit --amend
+	# convenient alias for misspellings of 'commit'
+	commiy = commit
 	# Delete branches that have been merged in
 	delete-merged-local-branches = !git branch --merged | grep -Pv '(^\\*|master|develop)' | xargs git branch -d
 	delete-merged-remote-branches = !git view-merged-remote-branches | xargs git push -d origin
