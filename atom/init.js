@@ -119,26 +119,6 @@ setImmediate(() => {
 });
 
 
-// Override getGrammars to work around bug with tree-sitter grammars never
-// applying; see
-// <https://github.com/atom/atom/issues/17029#issuecomment-457084440>
-atom.grammars.getGrammars = () => {
-  const allGrammars = atom.grammars.textmateRegistry.getGrammars();
-  const tsGrammars = Object.values(atom.grammars.treeSitterGrammarsById);
-  const combinedGrammars = tsGrammars.concat(allGrammars);
-  const combinedGrammarNames = combinedGrammars.map((grammar) => grammar.name);
-  return combinedGrammars.filter((grammar, g) => {
-    return (
-      // Prefer tree-sitter grammars whenever possible
-      grammar.constructor.name === 'TreeSitterGrammar'
-      // OR, if this is a first-mate grammar without a corresponding tree-sitter
-      // grammar, add it to the list
-      || combinedGrammarNames.indexOf(grammar.name) === g
-    );
-  });
-};
-
-
 // Add command to copy to clipboard an array of the editor's current cursor
 // scopes
 atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', () => {
