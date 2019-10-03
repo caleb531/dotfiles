@@ -68,6 +68,8 @@
 
 # Useful Git aliases
 [alias]
+	# Stage all
+	adda = add -A
 	# Stage interactively
 	addp = add -p
 	# Abort applying a mailbox patch
