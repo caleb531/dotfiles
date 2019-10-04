@@ -385,4 +385,5 @@ if type __git_complete &> /dev/null; then
 	__git_complete got __git_main
 	__git_complete gti __git_main
 	__git_complete gut __git_main
+	__git_complete igt __git_main
 fi
