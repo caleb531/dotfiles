@@ -212,3 +212,6 @@
 ".python.source":
   editor:
     preferredLineLength: 79
+".applescript.source":
+  editor:
+    commentStart: "--"
