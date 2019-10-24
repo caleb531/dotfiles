@@ -172,6 +172,9 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+".applescript.source":
+  editor:
+    commentStart: "--"
 ".basic.html.text":
   editor:
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-"
@@ -212,6 +215,3 @@
 ".python.source":
   editor:
     preferredLineLength: 79
-".applescript.source":
-  editor:
-    commentStart: "--"
