@@ -19,6 +19,7 @@ ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
 # Symlink miscellaneous configuration
 ln -sf ~/dotfiles/terminal/.hyper.js ~/.hyper.js
 ln -sf ~/dotfiles/terminal/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/terminal/.sqliterc ~/.sqliterc
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 # Symlink pip configuration
