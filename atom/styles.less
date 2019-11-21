@@ -51,6 +51,23 @@ atom-text-editor:not([mini]) {
   .syntax--source.syntax--js.syntax--jsx .syntax--jsx .syntax--entity.syntax--other.syntax--attribute-name {
     font-style: normal;
   }
+  // Group all Python color changes together
+  .syntax--source.syntax--python {
+    .syntax--string.syntax--quoted {
+      // Use white as default color for f-string interpolations
+      .syntax--embedded.syntax--meta {
+        color: #fff;
+      }
+      // Also colorize {} wrappers distinctly within f-strings
+      .syntax--punctuation.syntax--section.syntax--embedded {
+        color: @pink;
+      }
+      // Colorize f-string format specifiers
+      .syntax--format-specifier.syntax--meta {
+        color: @orange;
+      }
+    }
+  }
   // Group all JS color changes together
   .syntax--source.syntax--js {
     .syntax--string.syntax--quoted.syntax--template {

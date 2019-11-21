@@ -102,6 +102,11 @@ function extendPythonTreeSitterGrammar() {
         scopes: 'variable.language.cls.python'
       }
     ]);
+    // Colorize format specifiers for f-strings
+    pyGrammar.scopeMap.addSelector(
+      'string > interpolation > format_specifier',
+      'meta.format-specifier'
+    );
   }
   // Re-apply Python tree-sitter grammar to all open Python files
   atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
