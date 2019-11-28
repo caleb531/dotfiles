@@ -139,6 +139,8 @@ rt() {
 		fi
 	elif [ -f requirements.txt ]; then
 		nosetests --rednose "$@"
+	elif [ -x tests.py ]; then
+		./tests.py
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 		return 1
