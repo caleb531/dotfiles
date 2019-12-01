@@ -49,7 +49,6 @@
       "welcome"
       "whitespace"
       "teletype"
-      "language-c"
     ]
     followSymlinks: false
     ignoredNames: [
