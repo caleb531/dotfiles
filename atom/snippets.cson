@@ -1290,6 +1290,14 @@
     'prefix': 'endifequals'
     'body': '{{/ifEquals}}'
 
+  'unlessEquals':
+    'prefix': 'unlessequals'
+    'body': '{{#unlessEquals ${1:object} ${2:value}}}$3'
+
+  'end unlessEquals':
+    'prefix': 'endunlessequals'
+    'body': '{{/unlessEquals}}'
+
 # Apache configuration
 
 '.source.apache-config':
