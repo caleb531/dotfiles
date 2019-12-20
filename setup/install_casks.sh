@@ -23,6 +23,7 @@ rm -rf '/Applications/MAMP PRO'
 install_cask keybase
 install_cask postman
 install_cask slack
+install_cask vlc
 
 echo "Installing Quick Look plugins..."
 
