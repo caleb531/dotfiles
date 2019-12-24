@@ -44,6 +44,7 @@ packages: [
   "linter-ui-default"
   "monokai"
   "package-sync"
+  "pdf-view"
   "plist-converter"
   "resize-indent"
   "sort-lines"
