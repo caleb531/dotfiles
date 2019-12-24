@@ -21,6 +21,7 @@ packages: [
   "language-har"
   "language-hosts"
   "language-ini"
+  "language-javascript-jsx"
   "language-latex"
   "language-liquid"
   "language-lisp"
