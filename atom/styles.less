@@ -96,6 +96,15 @@ atom-text-editor:not([mini]) {
       text-decoration: none;
     }
   }
+  // Colorize JSON key names
+  .syntax--json {
+    .syntax--key {
+      .syntax--string,
+      &.syntax--string.syntax--quoted.syntax--double.syntax--dictionary {
+        color: @green;
+      }
+    }
+  }
   // Make selected line more prominent
   .line.cursor-line {
     background-color: rgba(255, 255, 255, 0.05);
