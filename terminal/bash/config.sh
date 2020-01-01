@@ -20,9 +20,10 @@ bind 'set completion-ignore-case on' 2> /dev/null
 # If shell is Bash 4 or newer
 if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
-	# If Bash Completion is installed
+	# If Bash Completion is installed, load completions
 	if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-		# Load all completions
+		# Re-enable v1 completions
+		export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 		source /usr/local/share/bash-completion/bash_completion
 	fi
 
