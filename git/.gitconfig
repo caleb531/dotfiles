@@ -228,4 +228,4 @@
 	vc = verify-commit
 	vch = verify-commit HEAD
 	# View all remote branches that have not been merged into the current branch
-	view-merged-remote-branches = !git branch --remote --merged master | sed 's|origin/||g' | grep -Pv '(master|develop)' | grep -Fv $(git rev-parse --abbrev-ref HEAD) | less -X
+	view-merged-remote-branches = !git branch --remote --merged origin/master | sed 's|origin/||g' | grep -Pv '(master|develop)' | grep -Fv $(git rev-parse --abbrev-ref HEAD) | less -X
