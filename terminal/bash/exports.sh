@@ -21,8 +21,12 @@ export N_PREFIX="$HOME"/n
 export PATH="$N_PREFIX"/bin:"$PATH"
 export NPM_CONFIG_PREFIX=/usr/local/lib/npm-packages
 export PATH="$NPM_CONFIG_PREFIX"/bin:"$PATH"
+# Ruby
+export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:"$PATH"
+export PATH=/usr/local/opt/ruby/bin:"$PATH"
+export PKG_CONFIG_PATH=/usr/local/opt/ruby/lib/pkgconfig
 # ImageMagick
-export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig
+export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig:"$PKG_CONFIG_PATH"
 # Setup scripts
 export PATH=~/dotfiles/setup:"$PATH"
 export PATH=~/dotfiles/private/setup:"$PATH"
