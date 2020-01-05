@@ -233,6 +233,9 @@ _bundle() {
 	if [ "$prev" == 'bundle' ] || [ "$prev" == 'help' ]; then
 		# Complete common bundle commands for `bundle`
 		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
+	elif [ "$second" == 'update' ]; then
+		local gem_list="$(cat Gemfile 2> /dev/null | grep -Po '(?<=gem .)[a-z0-9_\-]+(?=.\s*$)')"
+		COMPREPLY=( $(compgen -W "$gem_list" -- $cur) )
 	elif [ "$second" == 'exec' ]; then
 		# Complete any shell command for `bundle exec`
 		# This makes `bundle exec` behave like `command` and `exec` completion
