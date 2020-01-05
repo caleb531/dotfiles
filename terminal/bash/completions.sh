@@ -204,6 +204,24 @@ _apm() {
 }
 complete -o default -F _apm apm 2> /dev/null
 
+# Completion function for gem, Ruby's built-in package manager
+_gem() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'gem' ] || [ "$prev" == 'help' ]; then
+		# Complete common gem commands for `gem`
+		COMPREPLY=( $(compgen -W 'cleanup dependency info install list uninstall update' -- $cur) )
+	elif [ "$prev" == 'dependency' ] || [ "$prev" == 'install' ] || [ "$prev" == 'show' ] || [ "$prev" == 'update' ] || [ "$prev" == 'uninstall' ]; then
+		# Complete installed packages for `gem dependency`, `gem install`, `gem show`, `gem update`, and `gem uninstall`
+		local gem_list="$(ls -1 /usr/local/lib/ruby/gems/2.6.0/gems 2> /dev/null | grep -Po '[a-z0-9_\-]+(?=\-\d+(\.\d+)+.*?)')"
+		COMPREPLY=( $(compgen -W "$gem_list" -- $cur) )
+	fi
+
+}
+complete -o default -F _gem gem 2> /dev/null
+
 # Completion function for Bundler, the Ruby package manager
 _bundle() {
 
