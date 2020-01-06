@@ -68,6 +68,19 @@ atom-text-editor:not([mini]) {
       }
     }
   }
+  // Group all Ruby color changes together
+  .syntax--source.syntax--ruby {
+    .syntax--string.syntax--quoted {
+      // Use white as default color for string interpolations
+      .syntax--embedded.syntax--source {
+        color: #fff;
+      }
+      // Also colorize #{} wrappers distinctly within strings
+      .syntax--punctuation.syntax--section.syntax--embedded {
+        color: @pink;
+      }
+    }
+  }
   // Group all JS color changes together
   .syntax--source.syntax--js {
     .syntax--string.syntax--quoted.syntax--template {
