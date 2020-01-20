@@ -21,7 +21,7 @@ alias rmrf='rm -rf'
 alias mkdirp='mkdir -p'
 
 # Always enable case-insensitive searches in less (for lowercase queries)
-alias less='less --no-init --quit-if-one-screen --ignore-case'
+alias less='less --no-init --quit-if-one-screen --IGNORE-CASE'
 
 # Mark a file as executable
 alias x='chmod +x'
