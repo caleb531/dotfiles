@@ -52,6 +52,8 @@ export WEB_BROWSER_NAME='Google Chrome'
 
 # Don't clear man page when exiting less
 export MANPAGER='less --no-init --quit-if-one-screen --IGNORE-CASE'
+# Use a case-insensitive pager for Git
+export GIT_PAGER='less --no-init --quit-if-one-screen --IGNORE-CASE'
 
 # Number of lines of command history to keep in memory
 export HISTSIZE=250
