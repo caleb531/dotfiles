@@ -90,7 +90,7 @@
 	commiy = commit
 	# Delete branches that have been merged in
 	delete-merged-local-branches = !git branch --merged | grep -Pv '(^\\*|master|develop)' | xargs git branch -d
-	delete-merged-remote-branches = !git view-merged-remote-branches | xargs git push -d origin
+	delete-merged-remote-branches = !git remote prune origin && git view-merged-remote-branches | xargs git push -d origin
 	# Diff staged changes
 	diffc = diff --cached
 	# Diff files, highlighting only the changes within each line
