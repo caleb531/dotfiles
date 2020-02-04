@@ -81,8 +81,9 @@ atom-text-editor:not([mini]) {
       }
     }
   }
-  // Group all JS color changes together
-  .syntax--source.syntax--js {
+  // Group all JS and TypeScript color changes together
+  .syntax--source.syntax--js,
+  .syntax--source.syntax--ts {
     .syntax--string.syntax--quoted.syntax--template {
       // Use white as default color for ES6 template literal interpolation
       .syntax--embedded.syntax--source {

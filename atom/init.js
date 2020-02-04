@@ -31,8 +31,8 @@ syncPackages();
 
 
 // Extend the JavaScript tree-sitter grammar with additional highlighting
-function extendJavaScriptTreeSitterGrammar() {
-  const jsGrammar = atom.grammars.treeSitterGrammarsById['source.js'];
+function extendJavaScriptTreeSitterGrammar(scopeName) {
+  const jsGrammar = atom.grammars.treeSitterGrammarsById[scopeName];
   if (jsGrammar && jsGrammar.scopeMap) {
     // Colorize `this` and `arguments` in red like other language keywords
     jsGrammar.scopeMap.addSelector('this', 'variable.language.js');
@@ -57,7 +57,8 @@ function extendJavaScriptTreeSitterGrammar() {
 // the tree-sitter grammar
 setImmediate(() => {
   setImmediate(() => {
-    extendJavaScriptTreeSitterGrammar();
+    extendJavaScriptTreeSitterGrammar('source.js');
+    extendJavaScriptTreeSitterGrammar('source.ts');
   });
 });
 
