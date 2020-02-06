@@ -5,6 +5,7 @@
 '.source.c,
  .source.cpp,
  .source.js,
+ .source.ts,
  .source.awk':
 
   # Conditional blocks
@@ -50,7 +51,8 @@
 # C++ and JavaScript
 
 '.source.cpp,
- .source.js':
+ .source.js,
+ .source.ts':
 
   # Error handling
 
@@ -173,7 +175,8 @@
 
 # JavaScript
 
-'.source.js':
+'.source.js,
+ .source.ts':
 
   # Control structures
 
