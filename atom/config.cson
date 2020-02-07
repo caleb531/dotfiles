@@ -143,6 +143,7 @@
       "source.babel"
       "source.js-semantic"
       "source.js.sca.ss"
+      "source.ts"
     ]
   "linter-ui-default":
     hidePanelWhenEmpty: true
