@@ -122,6 +122,8 @@
 	fps1 = format-patch -1 --stdout
 	# Run Git's garbage collection, removing all loose objects
 	gcpn = gc --prune=now
+	# Convenience alias for when I typo `gs`
+	gs = status
 	# Push to Heroku remote
 	heroku = !git push heroku $(git rev-parse --abbrev-ref HEAD)
 	# Get the name of the last tag
