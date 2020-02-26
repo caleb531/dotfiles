@@ -35,9 +35,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# Display command history without line numbers
-alias historyl='history | cut -c 8-'
-
 # Search for running processes easily
 alias psgrep='ps ax | grep -v grep | grep'
 # Provide quick access to MAMP's Apache server
