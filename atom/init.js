@@ -104,12 +104,6 @@ function extendPythonTreeSitterGrammar() {
       'meta.format-specifier'
     );
   }
-  // Re-apply Python tree-sitter grammar to all open Python files
-  atom.grammars.grammarScoresByBuffer.forEach((score, buffer) => {
-    if (buffer.getLanguageMode().grammar.scopeName === 'source.python' && !atom.grammars.languageOverridesByBufferId.has(buffer.id)) {
-      atom.grammars.autoAssignLanguageMode(buffer);
-    }
-  });
 }
 // Wait for the Python first-mate grammar to load before modifying the
 // tree-sitter grammar
