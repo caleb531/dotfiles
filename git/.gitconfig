@@ -14,8 +14,6 @@
 [core]
 	# Use a global .gitignore for project-independent files
 	excludesfile = ~/dotfiles/git/gitignore_global
-	# Highlight line-specific changes and use diff-so-fancy to format diff
-	pager = diff-so-fancy | less --tabs=4 -R
 
 # Always sign commits using GPG
 [commit]
