@@ -248,6 +248,18 @@
     'prefix': 'addeventlistener'
     'body': 'addEventListener($1, $2);$3'
 
+  'preventDefault':
+    'prefix': 'preventdefault'
+    'body': 'preventDefault();'
+
+  'stopPropagation':
+    'prefix': 'stoppropagation'
+    'body': 'stopPropagation();'
+
+  'stopImmediatePropagation':
+    'prefix': 'stopimmediatepropagation'
+    'body': 'stopImmediatePropagation();'
+
   'requestAnimationFrame':
     'prefix': 'raf'
     'body': 'requestAnimationFrame($1);$2'
