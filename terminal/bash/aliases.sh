@@ -72,8 +72,6 @@ alias hs='http-server -c-1'
 alias hso='hs -o'
 # Build a Gulp project
 alias gb='gulp build'
-# Build a Gulp project's scripts with Rollup
-alias gr='gulp rollup'
 # Watch a Gulp project, building as needed
 alias gw='gulp build:watch'
 # Run a Gulp project's local server
@@ -107,12 +105,24 @@ alias got='git'
 alias gti='git'
 alias gut='git'
 alias igt='git'
+alias gcm='git commit'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdcw='git diffcw'
+alias gdcwc='git diffcwc'
+alias gdcwcw='git diffcwcw'
+alias gdw='git diffw'
+alias gdwcw='git diffwcw'
+alias gdwcwc='git diffwcwc'
 alias gf='git fetch'
 alias gm='git merge'
 alias gp='git pull'
 alias gps='git push'
+alias gpsu='git pushu'
+alias gpsf='git pushf'
 alias gpom='git pull origin master'
 alias gpr='git pull --rebase'
+alias gr='git reset'
 alias gs='git status'
 
 # Restart GPG to fix occasional signing issues

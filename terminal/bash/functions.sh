@@ -242,3 +242,8 @@ sri() {
 		>&2 echo "file is not a JS or CSS file"
 	fi
 }
+
+# Shortcut for `git add`
+ga() {
+	git add "${@:-.}"
+}
