@@ -512,6 +512,14 @@
     'prefix': 'tuc'
     'body': 'toUpperCase()'
 
+  'encodeURIComponent':
+    'prefix': 'encodeuricomponent'
+    'body': 'encodeURIComponent($1)$2'
+
+  'encodeURI':
+    'prefix': 'encodeuri'
+    'body': 'encodeURI($1)$2'
+
 # Awk
 
 '.source.awk':
