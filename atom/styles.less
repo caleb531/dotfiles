@@ -151,6 +151,16 @@ atom-text-editor:not([mini]) {
       color: @gray;
     }
   }
+  // CSS
+  .syntax--css {
+    // Property names (valid or not)
+    .syntax--support.syntax--property-name {
+      color: @blue;
+    }
+    .syntax--punctuation.syntax--definition.syntax--entity {
+      color: @green;
+    }
+  }
 }
 
 // Use a prettier color for the find-and-replace current result "flash'"
