@@ -132,7 +132,7 @@
     ignoreWhiteSpaceDiffs: true
     showLastNames: false
   linter:
-    lintOnChangeInterval: 500
+    lintOnChangeInterval: 1000
     lintPreviewTabs: false
   "linter-eslint":
     scopes: [
