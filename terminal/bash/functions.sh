@@ -243,7 +243,10 @@ sri() {
 	fi
 }
 
-# Shortcut for `git add`
+# Shortcuts for `git add`
 ga() {
 	git add "${@:-.}"
+}
+gap() {
+	ga -p "${@:-.}"
 }
