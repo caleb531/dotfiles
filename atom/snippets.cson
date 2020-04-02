@@ -402,7 +402,7 @@
     'prefix': 'getthemeabsoluteurl'
     'body': 'getThemeAbsoluteUrlOfNonManagedResources($1)$2'
 
-  # SuiteScript
+  # SuiteScript 1.0
 
   'log execution':
     'prefix': 'nlapiLogExecution'
@@ -471,6 +471,24 @@
   'script parameter':
     'prefix': 'getscriptparameter'
     'body': 'getSetting(\'SCRIPT\', \'custscript_${1:paramname}\')'
+
+  # SuiteScript 2.0
+
+  'log.debug':
+    'prefix': 'logdebug'
+    'body': 'log.debug({title: ${1:title}, details: ${2:details}});'
+
+  'search.create':
+    'prefix': 'searchcreate'
+    'body': 'search.create({\n\ttype: \'${1:type}\'$2\n})$3'
+
+  'getValue':
+    'prefix': 'getvalue'
+    'body': 'getValue({name: \'$1\'$2})'
+
+  'getText':
+    'prefix': 'gettext'
+    'body': 'getText({name: \'$1\'$2})'
 
   # SuiteCommerce Advanced
 
