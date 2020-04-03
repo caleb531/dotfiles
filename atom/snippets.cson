@@ -476,7 +476,7 @@
 
   'log.debug':
     'prefix': 'logdebug'
-    'body': 'log.debug({title: ${1:title}, details: ${2:details}});'
+    'body': 'log.debug({title: \'${1:title}\', details: ${2:details}});'
 
   'search.create':
     'prefix': 'searchcreate'
