@@ -176,6 +176,7 @@
   # Add a new file or folder (these are commands already invocable via the 'a'
   # and 'shift-a' keys, respectively, but these are alternative key bindings)
   'n': 'tree-view:add-file'
+  'alt-cmd-n': 'tree-view:add-file'
   'shift-N': 'tree-view:add-folder'
 
   # Remove the selected file or directory
