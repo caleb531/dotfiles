@@ -118,6 +118,9 @@
 	fp = format-patch
 	fps = format-patch --stdout
 	fps1 = format-patch -1 --stdout
+	# Convenience alias for when I typo `ga`
+	ga = add
+	gap = add -p
 	# Run Git's garbage collection, removing all loose objects
 	gcpn = gc --prune=now
 	# Convenience alias for when I typo `gs`
