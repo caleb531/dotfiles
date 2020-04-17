@@ -64,6 +64,7 @@
       ".Trashes"
       "node_modules"
       "Thumbs.db"
+      "*.d.ts"
     ]
     packagesWithKeymapsDisabled: [
       "atom-alignment"
