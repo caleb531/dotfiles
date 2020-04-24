@@ -278,6 +278,14 @@
     'prefix': 'modexp'
     'body': 'module.exports = ${1:object};'
 
+  'JSON.stringify':
+    'prefix': 'jsonstringify'
+    'body': 'JSON.stringify($1)$2'
+
+  'JSON.parse':
+    'prefix': 'jsonparse'
+    'body': 'JSON.parse($1)$2'
+
   # ES6
 
   'class':
