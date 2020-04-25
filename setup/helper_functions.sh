@@ -24,6 +24,10 @@ preload_apm_pkg_list() {
 	APM_PKG_LIST="$(apm list --installed --bare)"
 }
 
+preload_mas_app_list() {
+	MAS_APP_LIST="$(mas list)"
+}
+
 is_cmd_installed() {
 	type "$1" &> /dev/null
 }
@@ -45,7 +49,7 @@ is_cask_installed() {
 }
 
 is_mas_app_installed() {
-	ls /Applications | grep --quiet "^$*"
+	echo "$MAS_APP_LIST" | grep --quiet "^$1 "
 }
 
 is_gem_installed() {
@@ -95,16 +99,11 @@ install_cask() {
 }
 
 install_mas_app() {
-	if ! is_mas_app_installed "$*"; then
-		echo "Installing $*..."
-		local search_result="$(mas search "$*" | head -n 1)"
-		local app_id="$(echo "$search_result" | awk '{ print $1 }')"
-		local app_name="$(echo "$search_result" | awk '{ $1=""; print $0 }' | xargs)"
-		if [[ "$app_name" == "$*"* ]]; then
-			mas install "$app_id"
-		else
-			>&2 echo "App name mismatch: requested $*, but found $app_name"
-		fi
+	local app_id="$1"
+	local app_name="$2"
+	if ! is_mas_app_installed "$app_id"; then
+		echo "Installing $app_name..."
+		mas install "$app_id"
 	fi
 }
 
