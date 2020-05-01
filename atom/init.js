@@ -50,6 +50,8 @@ function extendJavaScriptTreeSitterGrammar(scopeName) {
       // Preserve existing identifier grammar rules
       ...jsGrammar.scopeMap.namedScopeTable.identifier.result
     ]);
+    // Colorize `new a.b` syntax (when constructor is a property of an object)
+    jsGrammar.scopeMap.addSelector('new_expression > member_expression', 'meta.class');
   }
 }
 // All Atom grammars are loaded asynchronously, so use nested setImmediate()
