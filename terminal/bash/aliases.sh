@@ -146,3 +146,6 @@ alias apmre='apm rebuild'
 
 # Remap 'killall' to 'ka'
 alias ka='killall'
+
+# Preferred caffeinate setting
+alias caffeinate='caffeinate -ut 86400'
