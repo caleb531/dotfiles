@@ -49,6 +49,7 @@
       "welcome"
       "whitespace"
       "teletype"
+      "spell-check"
     ]
     followSymlinks: false
     ignoredNames: [
