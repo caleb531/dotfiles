@@ -16,7 +16,6 @@ packages: [
   "language-babel"
   "language-diff"
   "language-env"
-  "language-generic-config"
   "language-gitattributes"
   "language-gitignore"
   "language-har"
