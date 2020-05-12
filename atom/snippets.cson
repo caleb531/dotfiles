@@ -486,6 +486,10 @@
     'prefix': 'logdebug'
     'body': 'log.debug({title: \'${1:title}\', details: ${2:details}});'
 
+  'log.error':
+    'prefix': 'logerror'
+    'body': 'log.error({title: \'${1:title}\', details: ${2:details}});'
+
   'search.create':
     'prefix': 'searchcreate'
     'body': 'search.create({\n\ttype: \'${1:type}\'$2\n})$3'
