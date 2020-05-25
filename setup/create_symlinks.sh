@@ -21,6 +21,7 @@ ln -sf ~/dotfiles/terminal/.hyper.js ~/.hyper.js
 ln -sf ~/dotfiles/terminal/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/terminal/.sqliterc ~/.sqliterc
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -sf ~/Library/Containers/com.pixelresearchlabs.osx.ringer/Data/Documents/Ringer ~/Music/Ringer
 
 # Symlink pip configuration
 mkdir -p ~/Library/Application\ Support/pip
