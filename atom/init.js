@@ -6,6 +6,8 @@
 'use strict';
 
 const {exec} = require('child_process');
+const path = require('path');
+const util = require('util');
 
 
 // Set preferred size of current Atom window while preserving window position;
@@ -138,6 +140,24 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ()
       detail: 'Could not write scopes to clipboard'
     });
   }
+});
+
+
+function findGitDir(path) {
+
+}
+
+
+// Add command for copying commit hash of current line
+atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-blame-commit-hash-for-current-line', () => {
+  // const editor = atom.workspace.getActiveTextEditor();
+  // const absFilePath = editor.getPath();
+  // const execPromise = util.promisify(exec);
+  // const relFilePath = path.relative(repoPath, editor.getPath());
+  // // console.log(relFilePath);
+  // // exec(`git blame ${}`, (err, stdout) => {
+  // //   console.log(stdout);
+  // // });
 });
 
 
