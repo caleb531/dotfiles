@@ -5,9 +5,9 @@
 // has been restored.
 'use strict';
 
-const {exec} = require('child_process');
+const {execSync} = require('child_process');
+const fs = require('fs');
 const path = require('path');
-const util = require('util');
 
 
 // Set preferred size of current Atom window while preserving window position;
@@ -143,21 +143,42 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ()
 });
 
 
-function findGitDir(path) {
-
-}
-
-
 // Add command for copying commit hash of current line
-atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-blame-commit-hash-for-current-line', () => {
-  // const editor = atom.workspace.getActiveTextEditor();
-  // const absFilePath = editor.getPath();
-  // const execPromise = util.promisify(exec);
-  // const relFilePath = path.relative(repoPath, editor.getPath());
-  // // console.log(relFilePath);
-  // // exec(`git blame ${}`, (err, stdout) => {
-  // //   console.log(stdout);
-  // // });
+atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-blame-commit-for-current-line', () => {
+  try {
+    const editor = atom.workspace.getActiveTextEditor();
+    const currentFilePath = editor.getPath().trim();
+    const currentLine = editor.getSelectedBufferRange().start.row + 1;
+    const gitRepoPath = String(execSync('git rev-parse --show-toplevel', {
+      cwd: path.dirname(currentFilePath)
+    })).trim();
+    const relFilePath = path.relative(gitRepoPath, currentFilePath);
+    // The existence check is to ensure that currentFilePath is a valid directory
+    // path, so that this code isn't susceptible to an injection attack
+    if (!fs.existsSync(currentFilePath)) {
+      throw new TypeError('Current file path does not exist');
+    }
+    const blameLines = String(execSync(`git blame ${relFilePath}`, {
+      cwd: gitRepoPath
+    })).split('\n');
+    const currentBlameLine = blameLines[currentLine - 1];
+    if (!(currentBlameLine && currentBlameLine.trim())) {
+      throw new TypeError('This line has not been committed yet');
+    }
+    const commitId = currentBlameLine.match(/^[0-9a-f]+/)[0];
+    if (!commitId || commitId === '00000000') {
+      throw new TypeError('This line has not been committed yet');
+    }
+    atom.clipboard.write(currentBlameLine.match(/^[0-9a-f]+/)[0]);
+    atom.notifications.addInfo('Commit copied to clipboard!', {
+      detail: commitId,
+      dismissable: true
+    });
+  } catch (error) {
+    atom.notifications.addError('Error copying blame commit!', {
+      detail: error
+    });
+  }
 });
 
 
@@ -165,6 +186,6 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-blame-commit-hash
 atom.commands.add('atom-workspace', 'application:show-project-folder-in-file-manager', () => {
   const projectPaths = atom.project.getPaths();
   if (projectPaths.length > 0) {
-    exec(`open ${projectPaths[0]}`);
+    execSync(`open ${projectPaths[0]}`);
   }
 });

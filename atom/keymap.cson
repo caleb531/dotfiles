@@ -160,7 +160,7 @@
   'ctrl-b': 'git-blame:toggle'
 
   # Copy git commit hash for current line
-  'shift-ctrl-b': 'editor:copy-blame-commit-hash-for-current-line'
+  'shift-ctrl-b': 'editor:copy-blame-commit-for-current-line'
 
 # Toggles match by whole word in Find and Replace / Project Find panels
 '.platform-darwin .find-and-replace':
