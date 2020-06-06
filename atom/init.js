@@ -137,7 +137,8 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-cursor-scope', ()
     });
   } else {
     atom.notifications.addError('Scopes at Cursor', {
-      detail: 'Could not write scopes to clipboard'
+      detail: 'Could not write scopes to clipboard',
+      dismissable: true
     });
   }
 });
@@ -176,7 +177,8 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-blame-commit-for-
     });
   } catch (error) {
     atom.notifications.addError('Error copying blame commit!', {
-      detail: error
+      detail: error,
+      dismissable: true
     });
   }
 });
