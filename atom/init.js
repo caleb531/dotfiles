@@ -177,7 +177,7 @@ atom.commands.add('atom-text-editor:not([mini])', 'editor:copy-blame-commit-for-
     });
   } catch (error) {
     atom.notifications.addError('Error copying blame commit!', {
-      detail: error,
+      detail: error.message,
       dismissable: true
     });
   }
