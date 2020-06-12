@@ -390,7 +390,7 @@
 
   'console.log':
     'prefix': 'log'
-    'body': 'console.log($1);'
+    'body': 'console.log(\'$1\', ${2:this});'
 
   'console.error':
     'prefix': 'error'
