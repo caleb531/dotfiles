@@ -140,6 +140,7 @@ install_font() {
 			--progress \
 			'https://fonts.google.com/download' \
 			> "$dest_archive"
+		rm -rf "$dest_dir"
 		unzip -q "$dest_archive" -d "$dest_dir"
 		rm -rf "$temp_dir"
 	fi
