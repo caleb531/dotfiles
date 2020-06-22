@@ -149,6 +149,8 @@
       "source.js.sca.ss"
       "source.ts"
     ]
+  "linter-flake8":
+    maxLineLength: 90
   "linter-ui-default":
     hidePanelWhenEmpty: true
     showPanel: true
