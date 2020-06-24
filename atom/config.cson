@@ -149,10 +149,6 @@
       "source.js.sca.ss"
       "source.ts"
     ]
-  "linter-flake8":
-    ignoreErrorCodes: [
-      "E501"
-    ]
   "linter-ui-default":
     hidePanelWhenEmpty: true
     showPanel: true
