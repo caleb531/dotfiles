@@ -54,6 +54,8 @@ function extendJavaScriptTreeSitterGrammar(scopeName) {
     ]);
     // Colorize `new a.b` syntax (when constructor is a property of an object)
     jsGrammar.scopeMap.addSelector('new_expression > member_expression', 'meta.class');
+    // Colorize function declaration names in TypeScript code
+    jsGrammar.scopeMap.addSelector('function_declaration > identifier', 'entity.name.function');
     // Colorize formal function parameters in TypeScript code
     jsGrammar.scopeMap.addSelector('formal_parameters > required_parameter > identifier', 'variable.parameter.function');
   }
