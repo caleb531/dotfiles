@@ -316,6 +316,24 @@
     'prefix': 'exportdefault'
     'body': 'export default ${1:mname};'
 
+  # ESLint
+
+  'eslint disable':
+    'prefix': 'eslintdisable'
+    'body': '/* eslint-disable */'
+
+  'eslint disable rule':
+    'prefix': 'eslintdisablerule'
+    'body': '/* eslint-disable $1 */$2'
+
+  'eslint disable next':
+    'prefix': 'eslintdisablenext'
+    'body': '/* eslint-disable-next-line */'
+
+  'eslint disable next rule':
+    'prefix': 'eslintdisablenextrule'
+    'body': '/* eslint-disable-next-line $1 */$2'
+
   # Mocha
 
   'it':
