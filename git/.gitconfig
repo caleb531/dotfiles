@@ -180,6 +180,7 @@
 	# Reverting
 	reverta = revert --abort
 	revertc = revert --continue
+	revertn = revert --no-commit
 	# Stage a file for removal without actually deleting it
 	rmc = rm --cached
 	# Remove local copies of remote branches that have been deleted
