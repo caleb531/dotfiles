@@ -71,7 +71,6 @@ pin_brew_pkg ruby
 echo "Installing gems..."
 preload_gem_list
 
-install_gem sass
 install_gem bundler
 install_gem jekyll
 
