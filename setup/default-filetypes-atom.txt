@@ -1,0 +1,8 @@
+css
+js
+md
+py
+scss
+sh
+ts
+txt
