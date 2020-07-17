@@ -12,15 +12,23 @@
 
   'if':
     'prefix': 'if'
-    'body': 'if (${1:condition}) {\n\t$2\n} $3'
+    'body': 'if (${1:condition}) {\n\t$2\n}$3'
 
   'else if':
     'prefix': 'elseif'
-    'body': 'else if (${1:condition}) {\n\t$2\n} $3'
+    'body': ' else if (${1:condition}) {\n\t$2\n} $3'
+
+  'else if (bracket)':
+    'prefix': '} elseif'
+    'body': '} else if (${1:condition}) {\n\t$2\n} $3'
 
   'else':
     'prefix': 'else'
-    'body': 'else {\n\t$1\n}'
+    'body': ' else {\n\t$1\n}'
+
+  'else (bracket)':
+    'prefix': '} else'
+    'body': '} else {\n\t$1\n}'
 
   'while':
     'prefix': 'while'
@@ -58,15 +66,23 @@
 
   'try':
     'prefix': 'try'
-    'body': 'try {\n\t$1\n} $2'
+    'body': 'try {\n\t$1\n}$2'
 
   'catch':
     'prefix': 'catch'
-    'body': 'catch (${1:error}) {\n\t$2\n} $3'
+    'body': ' catch (${1:error}) {\n\t$2\n}$3'
+
+  'catch (bracket)':
+    'prefix': '} catch'
+    'body': '} catch (${1:error}) {\n\t$2\n}$3'
 
   'finally':
     'prefix': 'finally'
-    'body': 'finally {\n\t$1\n}'
+    'body': ' finally {\n\t$1\n}'
+
+  'finally (bracket)':
+    'prefix': '} finally'
+    'body': '} finally {\n\t$1\n}'
 
 # C and C++
 
