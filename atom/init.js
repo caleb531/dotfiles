@@ -58,6 +58,8 @@ function extendJavaScriptTreeSitterGrammar(scopeName) {
     jsGrammar.scopeMap.addSelector('function_declaration > identifier', 'entity.name.function');
     // Colorize formal function parameters in TypeScript code
     jsGrammar.scopeMap.addSelector('formal_parameters > required_parameter > identifier', 'variable.parameter.function');
+    // Colorize `require` calls for TypeScript files
+    jsGrammar.scopeMap.addSelector('import_require_clause > "require"', 'support.function');
   }
 }
 // All Atom grammars are loaded asynchronously, so use nested setImmediate()
