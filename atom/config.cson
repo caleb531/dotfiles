@@ -51,8 +51,6 @@
       "teletype"
       "spell-check"
     ]
-    editor:
-      multiCursorOnClick: true
     followSymlinks: false
     ignoredNames: [
       "._*"
