@@ -350,6 +350,10 @@
     'prefix': 'eslintdisablenextrule'
     'body': '/* eslint-disable-next-line $1 */$2'
 
+  'eslint no unused vars':
+    'prefix': 'eslintnounusedvars'
+    'body': '/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "${1:main}" }] */$2'
+
   # Mocha
 
   'it':
