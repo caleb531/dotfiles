@@ -532,13 +532,45 @@
     'prefix': 'searchcreate'
     'body': 'search.create({\n\ttype: \'${1:type}\'$2\n})$3'
 
+  'record.create':
+    'prefix': 'recordcreate'
+    'body': 'record.create({\n\ttype: \'${1:type}\'$2\n})$3'
+
+  'record.load':
+    'prefix': 'recordload'
+    'body': 'record.load({\n\ttype: \'${1:type}\'\n\tid: ${2:id}\n})$4'
+
   'getValue':
     'prefix': 'getvalue'
-    'body': 'getValue({name: \'$1\'$2})'
+    'body': 'getValue({fieldId: \'$1\'$2})'
 
   'getText':
     'prefix': 'gettext'
-    'body': 'getText({name: \'$1\'$2})'
+    'body': 'getText({fieldId: \'$1\'$2})'
+
+  'setValue':
+    'prefix': 'setvalue'
+    'body': 'setValue({fieldId: \'$1\'$2})'
+
+  'setText':
+    'prefix': 'settext'
+    'body': 'setText({fieldId: \'$1\'$2})'
+
+  'getSublistValue':
+    'prefix': 'getsublistvalue'
+    'body': 'getSublistValue({\n\tsublistId: \'$1\',\n\tline: ${2:0},\n\tfieldId: \'$3\'\n})$4'
+
+  'getSublistText':
+    'prefix': 'getsublisttext'
+    'body': 'getSublistText({\n\tsublistId: \'$1\',\n\tline: ${2:0},\n\tfieldId: \'$3\'\n})$4'
+
+  'setSublistValue':
+    'prefix': 'setsublistvalue'
+    'body': 'setSublistValue({\n\tsublistId: \'$1\',\n\tline: ${2:0},\n\tfieldId: \'$3\',\n\tvalue: ${4:val}\n})$5'
+
+  'setSublistText':
+    'prefix': 'setsublisttext'
+    'body': 'setSublistText({\n\tsublistId: \'$1\',\n\tline: ${2:0},\n\tfieldId: \'$3\',\n\tvalue: ${4:val}\n})$5'
 
   # SuiteCommerce Advanced
 

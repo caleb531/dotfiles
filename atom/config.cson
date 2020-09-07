@@ -97,7 +97,6 @@
     extend_double_slash: false
     simple_mode: true
   editor:
-    autoIndentOnPaste: false
     fontFamily: "Monaco"
     fontSize: 16
     showCursorOnSelection: false
