@@ -542,19 +542,19 @@
 
   'getValue':
     'prefix': 'getvalue'
-    'body': 'getValue({fieldId: \'$1\'$2})$3'
+    'body': 'getValue({name: \'$1\'$2})$3'
 
   'getText':
     'prefix': 'gettext'
-    'body': 'getText({fieldId: \'$1\'$2})$3'
+    'body': 'getText({name: \'$1\'$2})$3'
 
   'setValue':
     'prefix': 'setvalue'
-    'body': 'setValue({\n\tfieldId: \'$1\',\n\tvalue: ${2:val}\n})$3'
+    'body': 'setValue({\n\tname: \'$1\',\n\tvalue: ${2:val}\n})$3'
 
   'setText':
     'prefix': 'settext'
-    'body': 'setText({\n\tfieldId: \'$1\',\n\tvalue: ${2:val}\n})$3'
+    'body': 'setText({\n\tname: \'$1\',\n\ttext: ${2:val}\n})$3'
 
   'getSublistValue':
     'prefix': 'getsublistvalue'
@@ -570,7 +570,7 @@
 
   'setSublistText':
     'prefix': 'setsublisttext'
-    'body': 'setSublistText({\n\tsublistId: \'$1\',\n\tline: ${2:0},\n\tfieldId: \'$3\',\n\tvalue: ${4:val}\n})$5'
+    'body': 'setSublistText({\n\tsublistId: \'$1\',\n\tline: ${2:0},\n\tfieldId: \'$3\',\n\ttext: ${4:val}\n})$5'
 
   # SuiteCommerce Advanced
 
