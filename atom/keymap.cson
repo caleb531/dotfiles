@@ -19,6 +19,9 @@
   # Reveal the current project folder at the workspace level
   'shift-cmd-R': 'application:show-project-folder-in-file-manager'
 
+  # Remap SVG Preview toggle
+  'ctrl-alt-cmd-v': 'svg-preview:toggle'
+
 # Any text field (code editors and inputs)
 '.platform-darwin atom-text-editor':
 
