@@ -139,6 +139,10 @@
 	loglasttag = !git log $(git lasttag)..HEAD
 	# List commits with descriptions containing the given string
 	logg = log --fixed-strings --regexp-ignore-case --grep
+	# Display commits with a list of the files in each commit
+	logno = log --name-only
+	# Display commits with a list of the files/statuses in each commit
+	logns = log --name-status
 	# Display commits in a flat, pretty, one-line format
 	logo = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(green)(%cr)'
 	# List commits with code changes containing the given string
