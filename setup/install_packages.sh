@@ -42,6 +42,7 @@ install_brew_pkg diff-so-fancy
 install_brew_pkg openssl
 install_brew_pkg python
 install_brew_pkg python@2
+install_brew_pkg ical-buddy
 
 install_brew_pkg ssh-copy-id
 tap_brew_repo heroku/brew
@@ -96,7 +97,6 @@ preload_pip_pkg_list
 install_pip_pkg virtualenv
 install_pip_pkg flake8
 install_pip_pkg bump-anything
-install_pip_pkg icalendar
 
 echo "Installing Atom packages..."
 preload_apm_pkg_list
