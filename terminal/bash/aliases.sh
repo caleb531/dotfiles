@@ -89,6 +89,8 @@ alias pir='pip install -r requirements.txt'
 alias pf='pip freeze'
 alias pfr='pip freeze > requirements.txt'
 
+# Allow m typo to point to n node switcher
+alias m='n'
 # Recompile C++ for all relevant npm packages
 alias nr='npm rebuild'
 # Recompile node-sass specifically
