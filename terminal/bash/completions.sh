@@ -315,6 +315,7 @@ _python() {
 
 }
 complete -o default -F _python python 2> /dev/null
+complete -o default -F _python python2 2> /dev/null
 complete -o default -F _python python3 2> /dev/null
 
 # Completion function for apachectl, Apache's HTTP server utility
