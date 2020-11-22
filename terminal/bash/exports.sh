@@ -21,13 +21,13 @@ export N_PREFIX="$HOME"/n
 export PATH="$N_PREFIX"/bin:"$PATH"
 export NPM_CONFIG_PREFIX=/usr/local/lib/npm-packages
 export PATH="$NPM_CONFIG_PREFIX"/bin:"$PATH"
-# Ruby
+# Jekyll
 RUBY_GEMS_DIR="$(ls -d -1 /usr/local/lib/ruby/gems/* | tail -n 1)"
 export PATH="$RUBY_GEMS_DIR"/bin:"$PATH"
 export PATH=/usr/local/opt/ruby/bin:"$PATH"
 export PKG_CONFIG_PATH=/usr/local/opt/ruby/lib/pkgconfig
-# ImageMagick
 export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig:"$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig:"$PKG_CONFIG_PATH"
 # Setup scripts
 export PATH=~/dotfiles/setup:"$PATH"
 export PATH=~/dotfiles/private/setup:"$PATH"
