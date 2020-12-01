@@ -137,10 +137,10 @@ rt() {
 		else
 			npm test "$@"
 		fi
-	elif [ -f requirements.txt ]; then
-		nosetests --rednose "$@"
 	elif [ -x tests.py ]; then
 		./tests.py
+	elif [ -f requirements.txt ]; then
+		nosetests --rednose "$@"
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 		return 1
