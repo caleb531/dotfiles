@@ -9,7 +9,7 @@ preload_npm_pkg_list() {
 }
 
 preload_cask_list() {
-	CASK_LIST="$(brew cask list -1)"
+	CASK_LIST="$(brew list --cask -1)"
 }
 
 preload_gem_list() {
@@ -94,7 +94,7 @@ install_npm_pkg() {
 install_cask() {
 	if ! is_cask_installed "$1"; then
 		echo "Installing $1..."
-		brew cask install "$@"
+		brew install --cask "$@"
 	fi
 }
 
