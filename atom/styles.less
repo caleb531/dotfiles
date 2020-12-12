@@ -152,6 +152,15 @@ atom-text-editor:not([mini]) {
       color: @green;
     }
   }
+  // PHP
+  .syntax--php {
+    .syntax--punctuation.syntax--section.syntax--embedded {
+      &.syntax--begin,
+      &.syntax--end {
+        color: @orange;
+      }
+    }
+  }
 }
 
 // Use a prettier color for the find-and-replace current result "flash'"
