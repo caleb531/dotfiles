@@ -20,7 +20,7 @@ BREW_TAPS_DIR=/usr/local/Homebrew/Library/Taps
 
 # Retrieve list of installed Homebrew packages
 __get_installed_brew_packages() {
-	ls -1 /usr/local/Cellar
+	ls -1 /usr/local/Cellar /usr/local/Caskroom
 }
 
 # Retrieve list of versions for the given package
@@ -30,19 +30,9 @@ __get_brew_package_versions() {
 	fi
 }
 
-# Retrieve list of installed Homebrew casks
-__get_installed_brew_casks() {
-	ls -1 /usr/local/Caskroom
-}
-
 # Retrieve list of all available Homebrew packages
 __get_all_brew_packages() {
-	ls "$BREW_TAPS_DIR"/homebrew/*/Formula | grep -oP "$BREW_NAME_PATT"
-}
-
-# Retrieve list of all available Homebrew casks
-__get_all_brew_casks() {
-	ls "$BREW_TAPS_DIR"/homebrew/*/Casks | grep -oP "$BREW_NAME_PATT"
+	ls "$BREW_TAPS_DIR"/homebrew/*/Formula "$BREW_TAPS_DIR"/homebrew/*/Casks | grep -oP "$BREW_NAME_PATT"
 }
 
 # Completion function for brew, the macOS package manager
@@ -56,10 +46,7 @@ _brew() {
 
 	if [ "$prev" == 'brew' ] || [ "$prev" == 'help' ]; then
 		# Complete common brew commands for `brew`
-		COMPREPLY=( $(compgen -W 'cask cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove search switch tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
-	elif [ "$first" == 'brew' ] && [ "$prev" == 'cask' ]; then
-		# Complete common cask commands for `brew cask`
-		COMPREPLY=( $(compgen -W 'cleanup doctor help info install list reinstall search uninstall upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove search switch tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
 	elif [ "$second" == 'list' ] || [ "$second" == 'ls' ]; then
 		# Complete list options for `brew list` and `brew ls`
 		COMPREPLY=( $(compgen -W "--full-name --pinned --multiple --versions $(__get_installed_brew_packages)" -- $cur) )
@@ -90,21 +77,6 @@ _brew() {
 	elif [ "$second" == 'switch' ]; then
 		# Complete package versions for second argument of `brew switch`
 		COMPREPLY=( $(compgen -W "$(__get_brew_package_versions "$prev")" -- $cur) )
-	elif [ "$second" == 'cask' ] && [ "$third" == 'info' ]; then
-		# Complete all available casks for `brew cask info`
-		COMPREPLY=( $(compgen -W "$(__get_all_brew_casks)" -- $cur) )
-	elif [ "$second" == 'cask' ] && [ "$third" == 'install' ]; then
-		# Complete options and all casks for `brew cask install`
-		COMPREPLY=( $(compgen -W "--force $(__get_all_brew_casks)" -- $cur) )
-	elif [ "$second" == 'cask' ] && [ "$third" == 'reinstall' ]; then
-		# Complete installed casks for `brew cask reinstall`
-		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
-	elif [ "$second" == 'cask' ] && [ "$third" == 'upgrade' ]; then
-		# Complete installed casks for `brew cask upgrade`
-		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
-	elif [ "$second" == 'cask' ] && [ "$third" == 'uninstall' ]; then
-		# Complete installed casks for `brew cask uninstall`
-		COMPREPLY=( $(compgen -W "$(__get_installed_brew_casks)" -- $cur) )
 	fi
 
 }
