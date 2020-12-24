@@ -49,7 +49,7 @@ is_cask_installed() {
 }
 
 is_mas_app_installed() {
-	echo "$MAS_APP_LIST" | grep --quiet "^$1 "
+	echo "$MAS_APP_LIST" | grep --quiet "^$1 " || [ -e "/Applications/$2.app" ]
 }
 
 is_gem_installed() {
@@ -101,7 +101,7 @@ install_cask() {
 install_mas_app() {
 	local app_id="$1"
 	local app_name="$2"
-	if ! is_mas_app_installed "$app_id"; then
+	if ! is_mas_app_installed "$app_id" "$app_name"; then
 		echo "Installing $app_name..."
 		mas install "$app_id"
 	fi
