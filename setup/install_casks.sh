@@ -23,7 +23,6 @@ install_cask keybase
 install_cask postman
 install_cask slack
 install_cask zoom
-install_cask vlc
 
 echo "Installing Quick Look plugins..."
 
