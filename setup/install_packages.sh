@@ -89,7 +89,6 @@ preload_npm_pkg_list
 install_npm_pkg gulp-cli
 install_npm_pkg http-server
 install_npm_pkg grunt-cli
-install_npm_pkg brunch
 
 echo "Installing pip packages..."
 preload_pip_pkg_list
