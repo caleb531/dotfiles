@@ -11,7 +11,6 @@ install_cask dropbox
 install_cask alfred
 install_cask atom
 install_cask authy
-install_cask evernote
 install_cask keyboard-maestro
 install_cask flux
 # Install additional apps
