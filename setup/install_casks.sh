@@ -25,7 +25,6 @@ install_cask postman
 install_cask slack
 install_cask zoomus
 install_cask vlc
-install_cask basictex
 
 echo "Installing Quick Look plugins..."
 
