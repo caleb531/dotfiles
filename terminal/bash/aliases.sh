@@ -13,6 +13,9 @@ alias lsla='ls -la'
 # Colorize tree output
 alias tree='tree -C'
 
+# Displays information related to the system's ability to sleep
+alias whyunosleep='pmset -g assertions | grep --color=never Sleep'
+
 # Remove files and directories
 alias rmf='rm -f'
 alias rmrf='rm -rf'
