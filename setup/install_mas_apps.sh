@@ -8,7 +8,7 @@ preload_mas_app_list
 install_mas_app 1274495053 'Microsoft To Do'
 install_mas_app 1176895641 'Spark'
 install_mas_app 1091189122 'Bear'
-install_mas_app 451640037  'Classic Color Meter'
+install_mas_app 451640037 'Classic Color Meter'
 install_mas_app 407963104 'Pixelmator'
 install_mas_app 422304217 'Day One Classic'
 install_mas_app 409203825 'Numbers'
