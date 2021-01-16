@@ -10,6 +10,8 @@ export OLDPATH="$PATH"
 
 # Ensure installed packages are recognized and preferred
 
+# Homebrew
+export PATH=/opt/homebrew/bin:"$PATH"
 # Guile (used for GPG)
 export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
