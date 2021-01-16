@@ -11,7 +11,9 @@ if ! is_cmd_installed brew; then
 
 	echo "Installing Homebrew..."
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	export PATH=/usr/local/bin:"$PATH"
 	export PATH=/opt/homebrew/bin:"$PATH"
+	export BREW_PREFIX="$(brew --prefix)"
 
 fi
 
@@ -20,20 +22,20 @@ preload_brew_pkg_list
 
 install_brew_pkg bash
 
-if [ -f /usr/local/bin/bash ] && [ "$SHELL" != /usr/local/bin/bash ]; then
+if [ -f "$BREW_PREFIX"/bin/bash ] && [ "$SHELL" != "$BREW_PREFIX"/bin/bash ]; then
 	echo "Changing login shell to Bash 4..."
-	sudo chsh -s /usr/local/bin/bash "$USER"
+	sudo chsh -s "$BREW_PREFIX"/bin/bash "$USER"
 fi
 
 install_brew_pkg bash-completion@2
 # Installing grep using --with-default-names makes the installation take about
 # 40x longer, so manually symlink non-prefixed names instead
 install_brew_pkg grep
-ln -sf /usr/local/bin/ggrep /usr/local/bin/grep
-ln -sf /usr/local/bin/gegrep /usr/local/bin/egrep
-ln -sf /usr/local/bin/gfgrep /usr/local/bin/fgrep
+ln -sf "$BREW_PREFIX"/bin/ggrep "$BREW_PREFIX"/bin/grep
+ln -sf "$BREW_PREFIX"/bin/gegrep "$BREW_PREFIX"/bin/egrep
+ln -sf "$BREW_PREFIX"/bin/gfgrep "$BREW_PREFIX"/bin/fgrep
 install_brew_pkg gnu-sed
-ln -sf /usr/local/bin/gsed /usr/local/bin/sed
+ln -sf "$BREW_PREFIX"/bin/gsed "$BREW_PREFIX"/bin/sed
 install_brew_pkg rsync
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils

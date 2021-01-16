@@ -16,17 +16,17 @@ __get_brew_taps() {
 # The pattern used for matching Homebrew package/cask names
 BREW_NAME_PATT='[a-z0-9\-]+(?=\.rb)'
 # The directory containing all Homebrew taps
-BREW_TAPS_DIR=/usr/local/Homebrew/Library/Taps
+BREW_TAPS_DIR="$BREW_PREFIX"/Library/Taps
 
 # Retrieve list of installed Homebrew packages
 __get_installed_brew_packages() {
-	ls -1 /usr/local/Cellar /usr/local/Caskroom
+	ls -1 "$BREW_PREFIX"/Cellar "$BREW_PREFIX"/Caskroom
 }
 
 # Retrieve list of versions for the given package
 __get_brew_package_versions() {
-	if [ -d /usr/local/Cellar/"$1" ]; then
-		ls -1 /usr/local/Cellar/"$1"
+	if [ -d "$BREW_PREFIX"/Cellar/"$1" ]; then
+		ls -1 "$BREW_PREFIX"/Cellar/"$1"
 	fi
 }
 
@@ -187,7 +187,7 @@ _gem() {
 		COMPREPLY=( $(compgen -W 'cleanup dependency info install list uninstall update' -- $cur) )
 	elif [ "$prev" == 'dependency' ] || [ "$prev" == 'install' ] || [ "$prev" == 'show' ] || [ "$prev" == 'update' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete installed packages for `gem dependency`, `gem install`, `gem show`, `gem update`, and `gem uninstall`
-		local gem_list="$(ls -1 /usr/local/lib/ruby/gems/2.6.0/gems 2> /dev/null | grep -Po '[a-z0-9_\-]+(?=\-\d+(\.\d+)+.*?)')"
+		local gem_list="$(ls -1 "$BREW_PREFIX"/lib/ruby/gems/2.6.0/gems 2> /dev/null | grep -Po '[a-z0-9_\-]+(?=\-\d+(\.\d+)+.*?)')"
 		COMPREPLY=( $(compgen -W "$gem_list" -- $cur) )
 	fi
 

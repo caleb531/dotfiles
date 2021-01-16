@@ -12,28 +12,29 @@ export OLDPATH="$PATH"
 
 # Homebrew
 export PATH=/opt/homebrew/bin:"$PATH"
+export BREW_PREFIX="$(brew --prefix)"
 # Guile (used for GPG)
-export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
-export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
-export GUILE_SYSTEM_EXTENSIONS_PATH="/opt/homebrew/lib/guile/3.0/extensions"
+export GUILE_LOAD_PATH="$BREW_PREFIX"/share/guile/site/3.0
+export GUILE_LOAD_COMPILED_PATH="$BREW_PREFIX"/lib/guile/3.0/site-ccache
+export GUILE_SYSTEM_EXTENSIONS_PATH="$BREW_PREFIX"/lib/guile/3.0/extensions
 # GNU core utilities
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:"$PATH"
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:"$MANPATH"
-export PATH=/usr/local/opt/gnupg@2.0/bin:"$PATH"
-export PATH=/usr/local/opt/gpg-agent/bin:"$PATH"
+export PATH="$BREW_PREFIX"/opt/coreutils/libexec/gnubin:"$PATH"
+export MANPATH="$BREW_PREFIX"/opt/coreutils/libexec/gnuman:"$MANPATH"
+export PATH="$BREW_PREFIX"/opt/gnupg@2.0/bin:"$PATH"
+export PATH="$BREW_PREFIX"/opt/gpg-agent/bin:"$PATH"
 # Node
 export DEFAULT_NODE_VERSION=12.14.1
 export N_PREFIX="$HOME"/n
 export PATH="$N_PREFIX"/bin:"$PATH"
-export NPM_CONFIG_PREFIX=/usr/local/lib/npm-packages
+export NPM_CONFIG_PREFIX="$BREW_PREFIX"/lib/npm-packages
 export PATH="$NPM_CONFIG_PREFIX"/bin:"$PATH"
 # Jekyll
-RUBY_GEMS_DIR="$(ls -d -1 /usr/local/lib/ruby/gems/* | tail -n 1)"
+RUBY_GEMS_DIR="$(ls -d -1 "$BREW_PREFIX"/lib/ruby/gems/* | tail -n 1)"
 export PATH="$RUBY_GEMS_DIR"/bin:"$PATH"
-export PATH=/usr/local/opt/ruby/bin:"$PATH"
-export PKG_CONFIG_PATH=/usr/local/opt/ruby/lib/pkgconfig
-export PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig:"$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig:"$PKG_CONFIG_PATH"
+export PATH="$BREW_PREFIX"/opt/ruby/bin:"$PATH"
+export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/ruby/lib/pkgconfig
+export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/imagemagick@6/lib/pkgconfig:"$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/libffi/lib/pkgconfig:"$PKG_CONFIG_PATH"
 # Setup scripts
 export PATH=~/dotfiles/setup:"$PATH"
 export PATH=~/dotfiles/private/setup:"$PATH"
