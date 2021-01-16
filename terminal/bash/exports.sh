@@ -10,6 +10,10 @@ export OLDPATH="$PATH"
 
 # Ensure installed packages are recognized and preferred
 
+# Guile (used for GPG)
+export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
+export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
+export GUILE_SYSTEM_EXTENSIONS_PATH="/opt/homebrew/lib/guile/3.0/extensions"
 # GNU core utilities
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:"$PATH"
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:"$MANPATH"
