@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 preload_brew_pkg_list() {
-	BREW_PKG_LIST="$(brew list -1)"
+	BREW_PKG_LIST="$(brew list --formula -1)"
 }
 
 preload_npm_pkg_list() {
