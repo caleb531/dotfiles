@@ -50,6 +50,7 @@
       "whitespace"
       "teletype"
       "spell-check"
+      "linter-shellcheck"
     ]
     followSymlinks: false
     ignoredNames: [
