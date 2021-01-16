@@ -33,7 +33,7 @@ is_cmd_installed() {
 }
 
 is_brew_pkg_installed() {
-	echo "$BREW_PKG_LIST" | grep --quiet "^$1\$"
+	echo "$BREW_PKG_LIST" | grep --extended-regexp --quiet "^$1(@|\$)"
 }
 
 is_node_version_installed() {
