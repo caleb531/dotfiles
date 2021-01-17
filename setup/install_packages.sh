@@ -53,8 +53,7 @@ install_brew_pkg pinentry-mac
 # Install Mac App Store command-line utility
 install_brew_pkg mas
 
-install_brew_pkg ruby
-pin_brew_pkg ruby
+install_brew_pkg ruby@2
 
 echo "Installing gems..."
 preload_gem_list
