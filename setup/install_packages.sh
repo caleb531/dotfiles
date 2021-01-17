@@ -49,6 +49,17 @@ install_brew_pkg imagemagick@6
 # Install identity-related packages
 install_brew_pkg gnupg
 install_brew_pkg pinentry-mac
+# Because the Homebrew prefix directory differs between Intel and ARM Macs, the
+# path to the pinentry-mac program will also differ between the two
+# architectures; this creates a problem because the gpg-agent.conf expects only
+# a single path, and if that path ios not architecture-agnostic, then it will
+# break GPG signing for Git commits; to solve this, create a symlink whose path
+# will be the same across all architectures, then simply reference that symlink
+# in my gpg-agent.conf
+sudo mkdir -p "$GPG_BIN_DIR"
+sudo chown "$USER":admin "$GPG_BIN_DIR"
+mkdir -p "$GPG_BIN_DIR"
+ln -s "$BREW_PREFIX"/bin/pinentry-mac "$GPG_BIN_DIR"/pinentry-mac
 
 # Install Mac App Store command-line utility
 install_brew_pkg mas
