@@ -1,21 +1,8 @@
 #!/usr/bin/env bash
 
 source ~/dotfiles/setup/header.sh
-
-if ! is_cmd_installed brew; then
-
-	echo "Installing Command Line Tools..."
-	xcode-select --install
-	echo "Installing Rosetta..."
-	sudo softwareupdate --install-rosetta 2> /dev/null
-
-	echo "Installing Homebrew..."
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	export PATH=/usr/local/bin:"$PATH"
-	export PATH=/opt/homebrew/bin:"$PATH"
-	export BREW_PREFIX="$(brew --prefix)"
-
-fi
+# Load in environment variables for brew, n, node, etc.
+source ~/dotfiles/terminal/bash/exports.sh
 
 echo "Installing Homebrew packages..."
 preload_brew_pkg_list
@@ -80,8 +67,6 @@ echo "Installing node..."
 if ! is_cmd_installed n; then
 	curl -L https://git.io/n-install | bash -s -- -y -n -
 fi
-# Load in environment variables for n and node
-source ~/dotfiles/terminal/bash/exports.sh
 
 install_node_version "$DEFAULT_NODE_VERSION"
 n "$DEFAULT_NODE_VERSION"
