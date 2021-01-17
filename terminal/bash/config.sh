@@ -23,7 +23,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 	# If Bash Completion is installed, load completions
 	if [ -f "$BREW_PREFIX"/etc/profile.d/bash_completion.sh ]; then
 		# Re-enable v1 completions
-		export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+		export BASH_COMPLETION_COMPAT_DIR="$BREW_PREFIX/etc/bash_completion.d"
 		source "$BREW_PREFIX"/etc/profile.d/bash_completion.sh
 	fi
 
