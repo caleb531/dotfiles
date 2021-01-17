@@ -47,7 +47,7 @@ alias mysql='/Applications/MAMP/Library/bin/mysql'
 # Provide access to MAMP's MySQL export utility
 alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
 # Use recommended version of OpenSSL over deprecated OpenSSL from system
-alias openssl='/usr/local/opt/openssl/bin/openssl'
+alias openssl='$BREW_PREFIX/opt/openssl/bin/openssl'
 
 # Build/serve aliases
 
