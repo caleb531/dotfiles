@@ -36,7 +36,7 @@ mkdir -p ~/.gnupg
 ln -sf ~/dotfiles/gpg/* ~/.gnupg
 
 # Symlink Firefox browser styles
-pushd ~/Library/Application\ Support/Firefox/Profiles/*.default > /dev/null || exit
+pushd ~/Library/Application\ Support/Firefox/Profiles/*.default 2> /dev/null || exit
 mkdir -p chrome
 ln -sf ~/dotfiles/firefox/userChrome.css "$PWD"/chrome/userChrome.css
 popd > /dev/null || exit
