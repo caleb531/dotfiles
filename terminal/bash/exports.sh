@@ -31,8 +31,8 @@ export PATH="$NPM_CONFIG_PREFIX"/bin:"$PATH"
 # Jekyll
 RUBY_GEMS_DIR="$(ls -d -1 "$BREW_PREFIX"/lib/ruby/gems/* | tail -n 1)"
 export PATH="$RUBY_GEMS_DIR"/bin:"$PATH"
-export PATH="$BREW_PREFIX"/opt/ruby/bin:"$PATH"
-export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/ruby/lib/pkgconfig
+export PATH="$BREW_PREFIX"/opt/ruby*/bin:"$PATH"
+export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/ruby*/lib/pkgconfig
 export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/imagemagick@6/lib/pkgconfig:"$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/libffi/lib/pkgconfig:"$PKG_CONFIG_PATH"
 # Setup scripts
