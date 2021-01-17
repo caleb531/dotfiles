@@ -21,10 +21,10 @@ bind 'set completion-ignore-case on' 2> /dev/null
 if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 	# If Bash Completion is installed, load completions
-	if [ -f "$BREW_PREFIX"/share/bash-completion/bash_completion ]; then
+	if [ -f "$BREW_PREFIX"/etc/profile.d/bash_completion.sh ]; then
 		# Re-enable v1 completions
 		export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-		source "$BREW_PREFIX"/share/bash-completion/bash_completion
+		source "$BREW_PREFIX"/etc/profile.d/bash_completion.sh
 	fi
 
 fi
