@@ -24,8 +24,8 @@
 	default = simple
 [pull]
 	default = simple
-	# Only allow for fast-forward pulls by default
-	ff = only
+	# Rebase and pull by default
+	rebase = true
 
 [diff]
 	# Enable more-logical grouping of changes in diffs
