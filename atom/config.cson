@@ -86,6 +86,9 @@
       "change-case"
       "git-blame"
     ]
+    packagesWithSnippetsDisabled: [
+      "language-svg"
+    ]
     projectHome: "~/Repositories"
     telemetryConsent: "limited"
     themes: [

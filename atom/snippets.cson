@@ -1421,6 +1421,38 @@
     'prefix': 'endunlessequals'
     'body': '{{/unlessEquals}}'
 
+# SVG
+
+'.text.xml.svg':
+
+  'fill':
+    'prefix': 'fill'
+    'body': 'fill="$1"$2'
+
+  'stroke':
+    'prefix': 'stroke'
+    'body': 'stroke="$1"$2'
+
+  'stroke-linecap':
+    'prefix': 'strokelinecap'
+    'body': 'stroke-linecap="$1"$2'
+
+  'stroke-linejoin':
+    'prefix': 'strokelinejoin'
+    'body': 'stroke-linejoin="$1"$2'
+
+  'width':
+    'prefix': 'width'
+    'body': 'width="$1"$2'
+
+  'height':
+    'prefix': 'height'
+    'body': 'height="$1"$2'
+
+  'points':
+    'prefix': 'points'
+    'body': 'points="$1"$2'
+
 # Apache configuration
 
 '.source.apache-config':
