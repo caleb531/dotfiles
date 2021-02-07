@@ -154,6 +154,8 @@
   "linter-flake8":
     ignoreErrorCodes: [
       "E501"
+      "W503"
+      "W504"
     ]
   "linter-ui-default":
     hidePanelWhenEmpty: true
