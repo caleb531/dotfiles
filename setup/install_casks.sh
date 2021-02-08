@@ -27,7 +27,6 @@ install_cask zoom
 
 echo "Installing Quick Look plugins..."
 
-install_cask qlmarkdown
 install_cask scriptql
 install_cask quicklook-json
 install_cask betterzip
