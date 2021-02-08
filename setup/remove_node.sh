@@ -17,6 +17,7 @@ sudo rm -rfv \
 	/opt/local/lib/node_modules\
 	/usr/local/lib/node_modules \
 	/usr/local/lib/npm-packages \
+	/opt/homebrew/lib/npm-packages \
 	/usr/local/include/node \
 	/usr/local/n \
 	~/n
