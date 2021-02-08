@@ -10,4 +10,3 @@ echo "Configuring all..."
 ~/dotfiles/setup/install_mas_apps.sh
 ~/dotfiles/setup/install_fonts.sh
 ~/dotfiles/setup/set_default_apps.sh
-~/dotfiles/setup/setup_tm.sh
