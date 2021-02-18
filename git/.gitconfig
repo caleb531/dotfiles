@@ -24,8 +24,8 @@
 	default = simple
 [pull]
 	default = simple
-	# Rebase and pull by default
-	rebase = true
+	# Merge and pull by default
+	rebase = false
 
 [diff]
 	# Enable more-logical grouping of changes in diffs
