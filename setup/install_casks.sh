@@ -14,16 +14,17 @@ install_cask authy
 install_cask keyboard-maestro
 install_cask flux
 # Install additional apps
+install_cask keybase
+install_cask zoom
+install_cask slack
+install_cask microsoft-teams
+install_cask postman
+# Least-essential apps
 install_cask appcleaner
 install_cask namechanger
 install_cask the-unarchiver
 install_cask mamp
 rm -rf '/Applications/MAMP PRO'
-install_cask keybase
-install_cask postman
-install_cask slack
-install_cask microsoft-teams
-install_cask zoom
 
 echo "Installing Quick Look plugins..."
 
