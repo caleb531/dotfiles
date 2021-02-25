@@ -258,3 +258,12 @@ xcode-fix-node-gyp() {
 	sudo rm -rf "$(xcode-select -print-path)"
 	xcode-select --install
 }
+
+# Get bundle identifier of any app
+appid() {
+	# The full app name, including the .app extension
+	local app_name_full="$(basename "$*")"
+	# The app name minus the .app extension
+	local app_name_short="${app_name_full%.*}"
+	osascript -e "id of app \"$app_name_short\""
+}
