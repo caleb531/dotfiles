@@ -81,6 +81,7 @@ nvm install 6.15.1
 nvm install 8.9.4
 nvm install 10.16.3
 nvm install 12.14.1
+nvm alias default 12.14.1
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
