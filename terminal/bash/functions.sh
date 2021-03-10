@@ -42,6 +42,15 @@ mkcd() {
 	cd "${@: -1}" || return
 }
 
+# Ease transition from n to nvm
+n() {
+	if [ -n "$1" ]; then
+		nvm use "$1" 2> /dev/null || nvm install "$1"
+	else
+		nvm list
+	fi
+}
+
 # Make new Python virtualenv for current directory
 # PYTHONVER is a major Python version (i.e. 2 or 3)
 mkvirtualenv() {
