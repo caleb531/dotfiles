@@ -29,6 +29,8 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 fi
 
+source ~/dotfiles/terminal/bash/load_nvm.sh
+
 # Set limitations on system resources (uncomment if you experience issues)
 
 # Increase open files limit

@@ -22,12 +22,6 @@ export PATH="$BREW_PREFIX"/opt/coreutils/libexec/gnubin:"$PATH"
 export MANPATH="$BREW_PREFIX"/opt/coreutils/libexec/gnuman:"$MANPATH"
 export PATH="$BREW_PREFIX"/opt/gnupg@2.0/bin:"$PATH"
 export PATH="$BREW_PREFIX"/opt/gpg-agent/bin:"$PATH"
-# Node
-export DEFAULT_NODE_VERSION=12.14.1
-export N_PREFIX="$HOME"/n
-export PATH="$N_PREFIX"/bin:"$PATH"
-export NPM_CONFIG_PREFIX="$BREW_PREFIX"/lib/npm-packages
-export PATH="$NPM_CONFIG_PREFIX"/bin:"$PATH"
 # Jekyll
 RUBY_GEMS_DIR="$(ls -d -1 "$BREW_PREFIX"/lib/ruby/gems/* | tail -n 1)"
 export PATH="$RUBY_GEMS_DIR"/bin:"$PATH"

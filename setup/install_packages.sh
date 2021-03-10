@@ -74,12 +74,13 @@ install_gem jekyll
 
 echo "Installing node..."
 
-if ! is_cmd_installed n; then
-	curl -L https://git.io/n-install | bash -s -- -y -n -
-fi
-
-install_node_version "$DEFAULT_NODE_VERSION"
-n "$DEFAULT_NODE_VERSION"
+install_brew_pkg nvm
+mkdir -p ~/.nvm
+source ~/dotfiles/terminal/bash/load_nvm.sh
+nvm install 6.15.1
+nvm install 8.9.4
+nvm install 10.16.3
+nvm install 12.14.1
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
