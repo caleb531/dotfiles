@@ -7,7 +7,7 @@ __detect_node_version() {
 	# If an .nvmrc exists in the current directory, switch to that node version
 	# if it's not already in use
 	if [[ -f .nvmrc && "$(node -v | cut -c2-)" != "$(cat .nvmrc)" ]]; then
-		nvm use
+		nvm use 2> /dev/null || nvm install "$(cat .nvmrc)"
 	fi
 }
 
