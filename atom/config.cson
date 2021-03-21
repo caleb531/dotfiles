@@ -51,6 +51,7 @@
       "teletype"
       "spell-check"
       "linter-shellcheck"
+      "linter-flake8"
     ]
     followSymlinks: false
     ignoredNames: [
