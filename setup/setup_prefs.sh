@@ -176,5 +176,10 @@ defaults write com.apple.systemuiserver menuExtras -array \
 echo "- Update clock to show current date and current day of the week"
 defaults write com.apple.menuextra.clock DateFormat 'EEE MMM d  h:mm a'
 
+# Prevent Terminal from restoring previous windows/state when launching
+terminal_saved_state_dir="$HOME/Library/Saved Application State/com.apple.Terminal.savedState"
+rm -rf "${terminal_saved_state_dir:?}"/*
+chmod 444 "${terminal_saved_state_dir:?}"
+
 echo "Restarting affected processes..."
 killall Dock Finder SystemUIServer
