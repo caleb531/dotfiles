@@ -51,7 +51,6 @@
       "teletype"
       "spell-check"
       "linter-shellcheck"
-      "linter-flake8"
       "github"
     ]
     followSymlinks: false
