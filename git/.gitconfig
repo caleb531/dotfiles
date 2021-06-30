@@ -185,6 +185,8 @@
 	rebasea = rebase --abort
 	rebasec = rebase --continue
 	rebasei = rebase --interactive
+	# Rename a branch locally and on remote
+	rename-branch = "!f() { local old_branch=$(git rev-parse --abbrev-ref head); local new_branch=$1; git branch -m $new_branch; git push -u origin $new_branch; git push -d origin $old_branch; }; f"
 	# Reverting
 	reverta = revert --abort
 	revertc = revert --continue
