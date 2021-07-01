@@ -159,6 +159,7 @@
       "W504"
     ]
   "linter-ui-default":
+    alwaysTakeMinimumSpace: true
     hidePanelWhenEmpty: true
     showPanel: true
     showTooltip: false
