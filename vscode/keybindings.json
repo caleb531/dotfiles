@@ -1,0 +1,66 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+      "key": "ctrl+shift+tab",
+      "command": "workbench.action.previousEditor"
+  },
+  {
+      "key": "ctrl+tab",
+      "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "cmd+i",
+    "command": "editor.action.toggleRenderWhitespace"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "-rerunSearchEditorSearch",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "revealFileInOS"
+  },
+  {
+    "key": "cmd+k cmd+m",
+    "command": "-workbench.extensions.action.showRecommendedKeymapExtensions"
+  },
+  {
+    "key": "cmd+k cmd+r",
+    "command": "-workbench.action.keybindingsReference"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "-workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "cmd+k cmd+l",
+    "command": "editor.action.transformToLowercase"
+  },
+  {
+    "key": "cmd+k cmd+u",
+    "command": "editor.action.transformtouppercase"
+  },
+  {
+    "key": "cmd+o",
+    "command": "-workbench.action.files.openFileFolder"
+  },
+  {
+    "key": "ctrl+alt+cmd+[",
+    "command": "editor.action.indentationToSpaces"
+  },
+  {
+    "key": "ctrl+alt+cmd+]",
+    "command": "editor.action.indentationToTabs"
+  },
+  {
+    "key": "alt+cmd+d",
+    "command": "editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-editor.action.selectHighlights",
+    "when": "editorFocus"
+  }
+]

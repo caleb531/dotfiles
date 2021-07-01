@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.iconTheme": null,
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Monokai",
+    "editor.fontFamily": "Monaco, 'Courier New', monospace",
+    "editor.minimap.enabled": false,
+    "editor.scrollBeyondLastLine": false,
+    "editor.renderWhitespace": "none",
+    "security.workspace.trust.enabled": false,
+    "editor.renderIndentGuides": false,
+    "editor.occurrencesHighlight": false
+}
