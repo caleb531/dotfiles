@@ -163,5 +163,50 @@
     "key": "shift+cmd+k",
     "command": "-editor.action.deleteLines",
     "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+cmd+tab",
+    "command": "editor.action.reindentselectedlines"
+  },
+  {
+    "key": "alt+cmd+tab",
+    "command": "-workbench.action.showAllEditors"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-togglePreserveCase",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-toggleSearchPreserveCase",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "editor.action.inspectTMScopes"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-keybindings.editor.toggleSortByPrecedence",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "-workbench.view.debug",
+    "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "editor.action.duplicateSelection"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "ctrl+alt+cmd+l",
+    "command": "workbench.action.reloadWindow"
   }
 ]

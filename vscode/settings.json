@@ -11,5 +11,26 @@
     "editor.renderIndentGuides": false,
     "editor.occurrencesHighlight": false,
     "workbench.startupEditor": "none",
-    "editor.fontSize": 13
+    "editor.fontSize": 13,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "support.type.property-name.json"
+                ],
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#A6E22E"
+                }
+            },
+            {
+                "scope": [
+                    "string.quoted.double.json.comments"
+                ],
+                "settings": {
+                    // inherit default "string" syntax highlighting
+                }
+            }
+        ]
+    }
 }
