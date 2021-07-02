@@ -66,5 +66,19 @@
   {
     "key": "ctrl+alt+cmd+,",
     "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "shift+cmd+\\",
+    "command": "-editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+m",
+    "command": "editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "editor.action.selectToBracket"
   }
 ]
