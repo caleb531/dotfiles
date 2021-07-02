@@ -103,6 +103,7 @@
     extend_double_slash: false
     simple_mode: true
   editor:
+    defaultFontSize: 16
     fontFamily: "Monaco"
     fontSize: 16
     showCursorOnSelection: false
