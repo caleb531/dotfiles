@@ -143,5 +143,10 @@
     "key": "shift+alt+cmd+c",
     "command": "-copyRelativeFilePath",
     "when": "!editorFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
   }
 ]
