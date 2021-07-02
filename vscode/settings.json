@@ -25,8 +25,7 @@
             },
             {
                 "scope": [
-                    "meta.structure.dictionary.json string.quoted.double.json",
-                    "string.quoted.double.json.comments"
+                    "meta.structure.dictionary.json string.quoted.double.json"
                 ],
                 "settings": {
                     "foreground": "#E6DB74"
