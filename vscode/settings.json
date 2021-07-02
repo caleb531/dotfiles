@@ -25,10 +25,11 @@
             },
             {
                 "scope": [
+                    "meta.structure.dictionary.json string.quoted.double.json",
                     "string.quoted.double.json.comments"
                 ],
                 "settings": {
-                    // inherit default "string" syntax highlighting
+                    "foreground": "#E6DB74"
                 }
             }
         ]
