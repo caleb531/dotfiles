@@ -10,12 +10,12 @@ rm -f ~/.atom/init.coffee
 ln -sf ~/dotfiles/atom/.editorconfig ~/.atom
 
 # Symlink VSCode configuration
-pushd ~/Library/Application\ Support/Code/User > /dev/null || exit
+pushd ~/Library/Application\ Support/Code/User &> /dev/null || exit
 rm -rf snippets
 ln -sf ~/dotfiles/vscode/settings.json settings.json
 ln -sf ~/dotfiles/vscode/keybindings.json keybindings.json
 ln -snf ~/dotfiles/vscode/snippets snippets
-popd > /dev/null || exit
+popd &> /dev/null || exit
 
 # Symlink Bash configuration
 ln -sf ~/dotfiles/terminal/.bashrc ~/.bashrc
@@ -44,10 +44,10 @@ mkdir -p ~/.gnupg
 ln -sf ~/dotfiles/gpg/* ~/.gnupg
 
 # Symlink Firefox browser styles
-pushd ~/Library/Application\ Support/Firefox/Profiles/*.default > /dev/null || exit
+pushd ~/Library/Application\ Support/Firefox/Profiles/*.default &> /dev/null || exit
 mkdir -p chrome
 ln -sf ~/dotfiles/firefox/userChrome.css "$PWD"/chrome/userChrome.css
-popd > /dev/null || exit
+popd &> /dev/null || exit
 
 # Create PyPI configuration if it doesn't already exist
 ln -sf ~/dotfiles/terminal/.pypirc ~/.pypirc
