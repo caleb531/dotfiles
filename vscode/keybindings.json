@@ -326,5 +326,28 @@
   {
     "key": "shift+cmd+f",
     "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "shift+cmd+\\",
+    "command": "git.revealInExplorer"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-cursorLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+e",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "alt+cmd+o",
+    "command": "editor.action.openLink"
   }
 ]
