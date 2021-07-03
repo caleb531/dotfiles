@@ -349,5 +349,15 @@
   {
     "key": "alt+cmd+o",
     "command": "editor.action.openLink"
+  },
+  {
+    "key": "ctrl+alt+cmd+i",
+    "command": "workbench.action.debug.start",
+    "when": "debuggersAvailable && debugState == 'inactive'"
+  },
+  {
+    "key": "f5",
+    "command": "-workbench.action.debug.start",
+    "when": "debuggersAvailable && debugState == 'inactive'"
   }
 ]
