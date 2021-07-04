@@ -24,6 +24,10 @@ preload_apm_pkg_list() {
 	APM_PKG_LIST="$(apm list --installed --bare)"
 }
 
+preload_vscode_pkg_list() {
+	VSCODE_PKG_LIST="$(code --list-extensions)"
+}
+
 preload_mas_app_list() {
 	MAS_APP_LIST="$(mas list)"
 }
@@ -62,6 +66,10 @@ is_pip_pkg_installed() {
 
 is_apm_pkg_installed() {
 	echo "$APM_PKG_LIST" | grep --quiet "^$1@"
+}
+
+is_vscode_pkg_installed() {
+	echo "$VSCODE_PKG_LIST" | grep --quiet "^$1@"
 }
 
 tap_brew_repo() {
@@ -124,6 +132,12 @@ install_pip_pkg() {
 install_apm_pkg() {
 	if ! is_apm_pkg_installed "$1"; then
 		apm install "$@"
+	fi
+}
+
+install_vscode_pkg() {
+	if ! is_vscode_pkg_installed "$1"; then
+		code --install-extension "$@"
 	fi
 }
 

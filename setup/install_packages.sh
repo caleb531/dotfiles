@@ -106,3 +106,13 @@ while read -r pkg_line; do
 		install_apm_pkg "$pkg_name"
 	fi
 done < ~/dotfiles/atom/packages.cson
+
+echo "Installing VS Code packages..."
+preload_vscode_pkg_list
+
+while read -r pkg_line; do
+	pkg_name="$(echo "$pkg_line" | grep -Po '(?<=")[A-Za-z0-9\-\.]+(?=")')"
+	if [ -n "$pkg_name" ]; then
+		install_vscode_pkg "$pkg_name"
+	fi
+done < ~/dotfiles/vscode/packages.json
