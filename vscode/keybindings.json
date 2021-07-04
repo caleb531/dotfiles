@@ -383,5 +383,14 @@
   {
     "key": "cmd+f",
     "command": "actions.find"
+  },
+  {
+    "key": "alt+cmd+i",
+    "command": "workbench.action.toggleDevTools"
+  },
+  {
+    "key": "alt+cmd+i",
+    "command": "-workbench.action.toggleDevTools",
+    "when": "isDevelopment"
   }
 ]
