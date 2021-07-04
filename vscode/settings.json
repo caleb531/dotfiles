@@ -32,5 +32,8 @@
         ]
     },
     "workbench.list.openMode": "doubleClick",
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "files.associations": {
+        "*.json": "jsonc"
+    }
 }
