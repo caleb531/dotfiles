@@ -306,11 +306,6 @@
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "cmd+f",
-    "command": "editor.action.startFindReplaceAction",
-    "when": "editorFocus || editorIsOpen"
-  },
-  {
     "key": "alt+cmd+f",
     "command": "-editor.action.startFindReplaceAction",
     "when": "editorFocus || editorIsOpen"
@@ -384,5 +379,9 @@
     "key": "cmd+k v",
     "command": "-markdown.showPreviewToSide",
     "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+f",
+    "command": "actions.find"
   }
 ]
