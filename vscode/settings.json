@@ -14,6 +14,14 @@
         "textMateRules": [
             {
                 "scope": [
+                    "storage.type.js"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
                     "support.type.property-name.json"
                 ],
                 "settings": {
