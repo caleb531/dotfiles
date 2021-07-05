@@ -392,5 +392,19 @@
     "key": "alt+cmd+i",
     "command": "-workbench.action.toggleDevTools",
     "when": "isDevelopment"
+  },
+  {
+    "key": "cmd+e",
+    "command": "editor.emmet.action.expandAbbreviation",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.emmet.action.expandAbbreviation",
+    "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+  },
+  {
+    "key": "cmd+e",
+    "command": "-actions.findWithSelection"
   }
 ]
