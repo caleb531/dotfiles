@@ -1,4 +1,6 @@
 [
   "EditorConfig.EditorConfig",
-  "jedmao.tabsanity"
+  "jedmao.tabsanity",
+  "idleberg.applescript",
+  "ms-vscode-remote.remote-ssh-edit"
 ]
