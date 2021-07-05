@@ -44,5 +44,6 @@
     "files.associations": {
         "*.json": "jsonc"
     },
-    "editor.snippetSuggestions": "top"
+    "editor.snippetSuggestions": "top",
+    "editor.wordWrap": "wordWrapColumn"
 }
