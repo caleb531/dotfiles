@@ -1,0 +1,9 @@
+{
+  "key-value pair": {
+    "scope": "json,jsonc",
+    "prefix": "kv",
+    "body": [
+      "\"${1:key}\": $2,$3"
+    ]
+  }
+}

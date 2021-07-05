@@ -1,0 +1,47 @@
+{
+  "try": {
+    "scope": "cpp,javascript,typescript",
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t$1",
+      "}$2"
+    ]
+  },
+  "catch": {
+    "scope": "cpp,javascript,typescript",
+    "prefix": "catch",
+    "body": [
+      " catch (${1:error}) {",
+      "\t$2",
+      "}$3"
+    ]
+  },
+  "catch (bracket)": {
+    "scope": "cpp,javascript,typescript",
+    "prefix": "} catch",
+    "body": [
+      "} catch (${1:error}) {",
+      "\t$2",
+      "}$3"
+    ]
+  },
+  "finally": {
+    "scope": "cpp,javascript,typescript",
+    "prefix": "finally",
+    "body": [
+      " finally {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "finally (bracket)": {
+    "scope": "cpp,javascript,typescript",
+    "prefix": "} finally",
+    "body": [
+      "} finally {",
+      "\t$1",
+      "}"
+    ]
+  }
+}

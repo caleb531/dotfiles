@@ -1,0 +1,197 @@
+{
+  "property": {
+    "scope": "applescript",
+    "prefix": "prop",
+    "body": [
+      "property ${1:pname} : ${2:value}"
+    ]
+  },
+  "set": {
+    "scope": "applescript",
+    "prefix": "set",
+    "body": [
+      "set ${1:vname} to ${2:value}"
+    ]
+  },
+  "if": {
+    "scope": "applescript",
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} then",
+      "\t$2",
+      "end if"
+    ]
+  },
+  "if (one-line)": {
+    "scope": "applescript",
+    "prefix": "ifthen",
+    "body": [
+      "if ${1:condition} then $2"
+    ]
+  },
+  "elseif": {
+    "scope": "applescript",
+    "prefix": "elseif",
+    "body": [
+      "else if ${1:condition} then",
+      "\t$2"
+    ]
+  },
+  "else": {
+    "scope": "applescript",
+    "prefix": "else",
+    "body": [
+      "else",
+      "\t$2"
+    ]
+  },
+  "repeat": {
+    "scope": "applescript",
+    "prefix": "repeat",
+    "body": [
+      "repeat",
+      "\t$1",
+      "end repeat"
+    ]
+  },
+  "repeat from..to": {
+    "scope": "applescript",
+    "prefix": "repeatfromto",
+    "body": [
+      "repeat with ${1:i} from ${2:1} to ${3:end}",
+      "\t$4",
+      "end repeat"
+    ]
+  },
+  "repeat in": {
+    "scope": "applescript",
+    "prefix": "repeatin",
+    "body": [
+      "repeat with ${1:theItem} in ${2:object}",
+      "\t$3",
+      "end repeat"
+    ]
+  },
+  "repeat while": {
+    "scope": "applescript",
+    "prefix": "repeatwhile",
+    "body": [
+      "repeat while ${1:condition}",
+      "\t$2",
+      "end repeat"
+    ]
+  },
+  "repeat until": {
+    "scope": "applescript",
+    "prefix": "repeatuntil",
+    "body": [
+      "repeat until ${1:condition}",
+      "\t$2",
+      "end repeat"
+    ]
+  },
+  "repeat times": {
+    "scope": "applescript",
+    "prefix": "repeattimes",
+    "body": [
+      "repeat ${1:n} times",
+      "\t$2",
+      "end repeat"
+    ]
+  },
+  "exit repeat": {
+    "scope": "applescript",
+    "prefix": "exitrepeat",
+    "body": [
+      "exit repeat"
+    ]
+  },
+  "tell": {
+    "scope": "applescript",
+    "prefix": "tell",
+    "body": [
+      "tell ${1:object}",
+      "\t$2",
+      "end tell"
+    ]
+  },
+  "tell app": {
+    "scope": "applescript",
+    "prefix": "tellapp",
+    "body": [
+      "tell application \"${1:App Name}\"",
+      "\t$2",
+      "end tell"
+    ]
+  },
+  "try": {
+    "scope": "applescript",
+    "prefix": "try",
+    "body": [
+      "try",
+      "\t$1",
+      "end try"
+    ]
+  },
+  "on error": {
+    "scope": "applescript",
+    "prefix": "onerror",
+    "body": [
+      "on error number ${1:-128}",
+      "\t$2"
+    ]
+  },
+  "display alert": {
+    "scope": "applescript",
+    "prefix": "displayalert",
+    "body": [
+      "display alert ${1:theText} message ${2:theMessage}"
+    ]
+  },
+  "display dialog": {
+    "scope": "applescript",
+    "prefix": "displaydialog",
+    "body": [
+      "display dialog ${1:theText} with title ${2:theTitle}"
+    ]
+  },
+  "display prompt": {
+    "scope": "applescript",
+    "prefix": "displayprompt",
+    "body": [
+      "display dialog ${1:theText} with title ${2:theTitle} default answer ${3:theAnswer}"
+    ]
+  },
+  "choose file": {
+    "scope": "applescript",
+    "prefix": "choosefile",
+    "body": [
+      "choose file default location ${2:alias textPath} with prompt ${3:thePrompt}"
+    ]
+  },
+  "choose folder": {
+    "scope": "applescript",
+    "prefix": "choosefolder",
+    "body": [
+      "choose folder default location ${2:alias textPath} with prompt ${3:thePrompt}"
+    ]
+  },
+  "handler": {
+    "scope": "applescript",
+    "prefix": "on",
+    "body": [
+      "on ${1:hname}($2)",
+      "\t$3",
+      "end ${1:hname}"
+    ]
+  },
+  "on run": {
+    "scope": "applescript",
+    "prefix": "onrun",
+    "body": [
+      "on run ${1:argv}",
+      "\t$3",
+      "end run"
+    ]
+  }
+}

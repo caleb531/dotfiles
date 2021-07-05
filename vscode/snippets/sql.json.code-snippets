@@ -1,0 +1,278 @@
+{
+  "create database": {
+    "scope": "sql",
+    "prefix": "createdatabase",
+    "body": [
+      "CREATE DATABASE ${1:dbname} COLLATE ${2:utf8_general_ci};"
+    ]
+  },
+  "create table": {
+    "scope": "sql",
+    "prefix": "createtable",
+    "body": [
+      "CREATE TABLE ${1:tname}(",
+      "\t$2",
+      ");"
+    ]
+  },
+  "alter table": {
+    "scope": "sql",
+    "prefix": "altertable",
+    "body": [
+      "ALTER TABLE ${1:tname}",
+      "\t${2:actions};"
+    ]
+  },
+  "drop table": {
+    "scope": "sql",
+    "prefix": "droptable",
+    "body": [
+      "DROP TABLE ${1:tname};"
+    ]
+  },
+  "number": {
+    "scope": "sql",
+    "prefix": "number",
+    "body": [
+      "NUMBER(${1:total}, ${2:decimal})$3"
+    ]
+  },
+  "integer": {
+    "scope": "sql",
+    "prefix": "integer",
+    "body": [
+      "INTEGER"
+    ]
+  },
+  "char": {
+    "scope": "sql",
+    "prefix": "char",
+    "body": [
+      "CHAR(${1:len})$2"
+    ]
+  },
+  "varchar": {
+    "scope": "sql",
+    "prefix": "varchar",
+    "body": [
+      "VARCHAR(${1:maxlen})$2"
+    ]
+  },
+  "varchar2": {
+    "scope": "sql",
+    "prefix": "varchar2",
+    "body": [
+      "VARCHAR2(${1:maxlen})$2"
+    ]
+  },
+  "date": {
+    "scope": "sql",
+    "prefix": "date",
+    "body": [
+      "DATE"
+    ]
+  },
+  "constraint": {
+    "scope": "sql",
+    "prefix": "constraint",
+    "body": [
+      "CONSTRAINT ${1:cname} ${2:ctype}"
+    ]
+  },
+  "add constraint": {
+    "scope": "sql",
+    "prefix": "addconstraint",
+    "body": [
+      "ADD CONSTRAINT ${1:cname} ${2:ctype}"
+    ]
+  },
+  "drop constraint": {
+    "scope": "sql",
+    "prefix": "dropconstraint",
+    "body": [
+      "DROP CONSTRAINT ${1:cname}"
+    ]
+  },
+  "enable constraint": {
+    "scope": "sql",
+    "prefix": "enableconstraint",
+    "body": [
+      "ENABLE CONSTRAINT ${1:cname}"
+    ]
+  },
+  "disable constraint": {
+    "scope": "sql",
+    "prefix": "disableconstraint",
+    "body": [
+      "DISABLE CONSTRAINT ${1:cname}"
+    ]
+  },
+  "primary key": {
+    "scope": "sql",
+    "prefix": "primarykey",
+    "body": [
+      "PRIMARY KEY(${1:columns})$2"
+    ]
+  },
+  "foreign key": {
+    "scope": "sql",
+    "prefix": "foreignkey",
+    "body": [
+      "FOREIGN KEY(${1:column}) REFERENCES ${2:tname}(${3:column})$4"
+    ]
+  },
+  "on delete cascade": {
+    "scope": "sql",
+    "prefix": "ondeletecascade",
+    "body": [
+      "ON DELETE CASCADE"
+    ]
+  },
+  "not null": {
+    "scope": "sql",
+    "prefix": "notnull",
+    "body": [
+      "NOT NULL"
+    ]
+  },
+  "unique": {
+    "scope": "sql",
+    "prefix": "unique",
+    "body": [
+      "UNIQUE"
+    ]
+  },
+  "auto increment": {
+    "scope": "sql",
+    "prefix": "autoincrement",
+    "body": [
+      "AUTO_INCREMENT"
+    ]
+  },
+  "check": {
+    "scope": "sql",
+    "prefix": "check",
+    "body": [
+      "CHECK(${1:condition})$2"
+    ]
+  },
+  "select": {
+    "scope": "sql",
+    "prefix": "select",
+    "body": [
+      "SELECT ${1:*} FROM ${2:tname};"
+    ]
+  },
+  "select distinct": {
+    "scope": "sql",
+    "prefix": "selectdistinct",
+    "body": [
+      "SELECT DISTINCT ${1:*} FROM ${2:tname};"
+    ]
+  },
+  "where": {
+    "scope": "sql",
+    "prefix": "where",
+    "body": [
+      "WHERE "
+    ]
+  },
+  "and": {
+    "scope": "sql",
+    "prefix": "and",
+    "body": [
+      "AND "
+    ]
+  },
+  "or": {
+    "scope": "sql",
+    "prefix": "or",
+    "body": [
+      "OR "
+    ]
+  },
+  "between": {
+    "scope": "sql",
+    "prefix": "between",
+    "body": [
+      "BETWEEN "
+    ]
+  },
+  "like": {
+    "scope": "sql",
+    "prefix": "like",
+    "body": [
+      "LIKE "
+    ]
+  },
+  "rlike": {
+    "scope": "sql",
+    "prefix": "rlike",
+    "body": [
+      "RLIKE "
+    ]
+  },
+  "regexp": {
+    "scope": "sql",
+    "prefix": "regexp",
+    "body": [
+      "REGEXP "
+    ]
+  },
+  "order by": {
+    "scope": "sql",
+    "prefix": "orderby",
+    "body": [
+      "ORDER BY "
+    ]
+  },
+  "asc": {
+    "scope": "sql",
+    "prefix": "asc",
+    "body": [
+      "ASC"
+    ]
+  },
+  "desc": {
+    "scope": "sql",
+    "prefix": "desc",
+    "body": [
+      "DESC"
+    ]
+  },
+  "default": {
+    "scope": "sql",
+    "prefix": "default",
+    "body": [
+      "DEFAULT "
+    ]
+  },
+  "insert": {
+    "scope": "sql",
+    "prefix": "insert",
+    "body": [
+      "INSERT INTO ${1:tname} (${2:columns}) VALUES (${3:values});"
+    ]
+  },
+  "update": {
+    "scope": "sql",
+    "prefix": "update",
+    "body": [
+      "UPDATE ${1:tname} SET ${2:column = value};"
+    ]
+  },
+  "delete": {
+    "scope": "sql",
+    "prefix": "delete",
+    "body": [
+      "DELETE FROM ${1:tname};"
+    ]
+  },
+  "inner join": {
+    "scope": "sql",
+    "prefix": "innerjoin",
+    "body": [
+      "INNER JOIN ${1:tname} ON ${2:condition}"
+    ]
+  }
+}

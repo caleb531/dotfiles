@@ -1,0 +1,51 @@
+{
+  "env awk": {
+    "scope": "awk",
+    "prefix": "env",
+    "body": [
+      "#!/usr/bin/env awk -f",
+      ""
+    ]
+  },
+  "BEGIN": {
+    "scope": "awk",
+    "prefix": "begin",
+    "body": [
+      "BEGIN {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "END": {
+    "scope": "awk",
+    "prefix": "end",
+    "body": [
+      "END {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "for": {
+    "scope": "awk",
+    "prefix": "for",
+    "body": [
+      "for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i}${4:++}) {",
+      "\t$5",
+      "}"
+    ]
+  },
+  "print": {
+    "scope": "awk",
+    "prefix": "print",
+    "body": [
+      "print($1);"
+    ]
+  },
+  "printf": {
+    "scope": "awk",
+    "prefix": "printf",
+    "body": [
+      "printf($1);"
+    ]
+  }
+}

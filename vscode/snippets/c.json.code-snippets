@@ -1,0 +1,26 @@
+{
+  "include stdio": {
+    "scope": "c",
+    "prefix": "incstdio",
+    "body": [
+      "#include <stdio.h>",
+      ""
+    ]
+  },
+  "printf": {
+    "scope": "c",
+    "prefix": "printf",
+    "body": [
+      "printf($1);"
+    ]
+  },
+  "for": {
+    "scope": "c",
+    "prefix": "for",
+    "body": [
+      "for (${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i}${4:++}) {",
+      "\t$5",
+      "}"
+    ]
+  }
+}

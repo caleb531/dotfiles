@@ -1,0 +1,65 @@
+{
+  "@media": {
+    "scope": "css",
+    "prefix": "mediaq",
+    "body": [
+      "@media $1 {",
+      "\t$2",
+      "}$3"
+    ]
+  },
+  "@media screen": {
+    "scope": "css",
+    "prefix": "screen",
+    "body": [
+      "@media screen and ($1) {",
+      "\t$2",
+      "}$3"
+    ]
+  },
+  "screen min width": {
+    "scope": "css",
+    "prefix": "screenmin",
+    "body": [
+      "@media screen and (min-width: ${1:$screen-md-min}) {",
+      "\t$2",
+      "}$3"
+    ]
+  },
+  "screen max width": {
+    "scope": "css",
+    "prefix": "screennmax",
+    "body": [
+      "@media screen and (max-width: ${1:$screen-md-max}) {",
+      "\t$2",
+      "}$3"
+    ]
+  },
+  "@media print": {
+    "scope": "css",
+    "prefix": "print",
+    "body": [
+      "@media print {",
+      "\t$1",
+      "}$2"
+    ]
+  },
+  "@keyframes": {
+    "scope": "css",
+    "prefix": "@keyframes",
+    "body": [
+      "@keyframes {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "keyframes": {
+    "scope": "css",
+    "prefix": "keyframes",
+    "body": [
+      "@keyframes {",
+      "\t$1",
+      "}"
+    ]
+  }
+}

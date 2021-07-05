@@ -1,0 +1,44 @@
+{
+  "include guard": {
+    "scope": "c,cpp",
+    "prefix": "once",
+    "body": [
+      "#pragma once",
+      ""
+    ]
+  },
+  "include": {
+    "scope": "c,cpp",
+    "prefix": "inc",
+    "body": [
+      "#include $1"
+    ]
+  },
+  "for": {
+    "scope": "c,cpp",
+    "prefix": "for",
+    "body": [
+      "for (int ${1:i} = ${2:0}; ${1:i} < ${3:end}; ${1:i}${4:++}) {",
+      "\t$5",
+      "}"
+    ]
+  },
+  "function": {
+    "scope": "c,cpp",
+    "prefix": "fd",
+    "body": [
+      "${1:void} ${2:fname}($3) {",
+      "\t$4",
+      "}"
+    ]
+  },
+  "struct": {
+    "scope": "c,cpp",
+    "prefix": "struct",
+    "body": [
+      "struct ${1:Struct} {",
+      "\t$2",
+      "};"
+    ]
+  }
+}

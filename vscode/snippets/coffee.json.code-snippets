@@ -1,0 +1,18 @@
+{
+  "snippet (no selector)": {
+    "scope": "coffeescript",
+    "prefix": "snipns",
+    "body": [
+      "'${1:name}':",
+      "\t'prefix': '${2:prefix}'",
+      "\t'body': '${3:body}'"
+    ]
+  },
+  "key binding (no selector)": {
+    "scope": "coffeescript",
+    "prefix": "keyns",
+    "body": [
+      "'${1:keystroke}': '${2:command}'"
+    ]
+  }
+}

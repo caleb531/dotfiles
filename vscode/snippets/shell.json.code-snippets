@@ -1,0 +1,80 @@
+{
+  "echo": {
+    "scope": "shellscript",
+    "prefix": "echo",
+    "body": [
+      "echo "
+    ]
+  },
+  "echo (stderr)": {
+    "scope": "shellscript",
+    "prefix": "echoerr",
+    "body": [
+      ">&2 echo "
+    ]
+  },
+  "local variable": {
+    "scope": "shellscript",
+    "prefix": "local",
+    "body": [
+      "local ${1:vname}=${2:value}"
+    ]
+  },
+  "if": {
+    "scope": "shellscript",
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}; then",
+      "\t$2",
+      "fi"
+    ]
+  },
+  "elif": {
+    "scope": "shellscript",
+    "prefix": "elif",
+    "body": [
+      "elif ${1:condition}; then",
+      "\t$2"
+    ]
+  },
+  "else": {
+    "scope": "shellscript",
+    "prefix": "else",
+    "body": [
+      "else",
+      "\t$2"
+    ]
+  },
+  "for..in": {
+    "scope": "shellscript",
+    "prefix": "for",
+    "body": [
+      "for ${1:f} in ${2:seq}; do",
+      "\t$3",
+      "done"
+    ]
+  },
+  "alias": {
+    "scope": "shellscript",
+    "prefix": "alias",
+    "body": [
+      "alias ${1:name}='${2:cmd}'"
+    ]
+  },
+  "function": {
+    "scope": "shellscript",
+    "prefix": "fd",
+    "body": [
+      "${1:fname}() {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "verbose mode": {
+    "scope": "shellscript",
+    "prefix": "verbose",
+    "body": [
+      "set -o verbose"
+    ]
+  }
+}

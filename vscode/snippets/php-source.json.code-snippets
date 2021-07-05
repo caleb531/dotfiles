@@ -1,0 +1,284 @@
+{
+  "echo": {
+    "scope": "php",
+    "prefix": "echo",
+    "body": [
+      "echo $1;"
+    ]
+  },
+  "print_r": {
+    "scope": "php",
+    "prefix": "pr",
+    "body": [
+      "print_r( $1 );"
+    ]
+  },
+  "function": {
+    "scope": "php",
+    "prefix": "fd",
+    "body": [
+      "function ${1:fname}($2) {",
+      "\t$3",
+      "}"
+    ]
+  },
+  "class": {
+    "scope": "php",
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "constructor": {
+    "scope": "php",
+    "prefix": "ctor",
+    "body": [
+      "function __construct($1) {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "parent constructor": {
+    "scope": "php",
+    "prefix": "pctor",
+    "body": [
+      "parent::__construct($1);"
+    ]
+  },
+  "public": {
+    "scope": "php",
+    "prefix": "public",
+    "body": [
+      "public "
+    ]
+  },
+  "private": {
+    "scope": "php",
+    "prefix": "private",
+    "body": [
+      "private "
+    ]
+  },
+  "protected": {
+    "scope": "php",
+    "prefix": "protected",
+    "body": [
+      "protected "
+    ]
+  },
+  "this member access": {
+    "scope": "php",
+    "prefix": "this",
+    "body": [
+      "this->"
+    ]
+  },
+  "this member access (with $)": {
+    "scope": "php",
+    "prefix": "$this",
+    "body": [
+      "$this->"
+    ]
+  },
+  "if": {
+    "scope": "php",
+    "prefix": "if",
+    "body": [
+      "if ( ${1:condition} ) {",
+      "\t$2",
+      "} $3"
+    ]
+  },
+  "else if": {
+    "scope": "php",
+    "prefix": "elseif",
+    "body": [
+      "else if ( ${1:condition} ) {",
+      "\t$2",
+      "} $3"
+    ]
+  },
+  "else": {
+    "scope": "php",
+    "prefix": "else",
+    "body": [
+      "else {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "isset": {
+    "scope": "php",
+    "prefix": "iss",
+    "body": [
+      "isset( $1 )"
+    ]
+  },
+  "not isset": {
+    "scope": "php",
+    "prefix": "niss",
+    "body": [
+      "! isset( $1 )"
+    ]
+  },
+  "empty": {
+    "scope": "php",
+    "prefix": "em",
+    "body": [
+      "empty( $1 )"
+    ]
+  },
+  "not empty": {
+    "scope": "php",
+    "prefix": "nem",
+    "body": [
+      "! empty( $1 )"
+    ]
+  },
+  "for": {
+    "scope": "php",
+    "prefix": "for",
+    "body": [
+      "for ( ${1:$i} = ${2:0}; ${1:$i} < ${3:end}; ${1:$i} += ${4:1} ) {",
+      "\t$5",
+      "}"
+    ]
+  },
+  "foreach": {
+    "scope": "php",
+    "prefix": "foreach",
+    "body": [
+      "foreach ( ${1:$object} as ${2:$value} ) {",
+      "\t$3",
+      "}"
+    ]
+  },
+  "while": {
+    "scope": "php",
+    "prefix": "while",
+    "body": [
+      "while ( ${1:condition} ) {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "do..while": {
+    "scope": "php",
+    "prefix": "dowhile",
+    "body": [
+      "do {",
+      "\t$1",
+      "} while ( ${2:condition} );"
+    ]
+  },
+  "try": {
+    "scope": "php",
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t$1",
+      "} $2"
+    ]
+  },
+  "catch": {
+    "scope": "php",
+    "prefix": "catch",
+    "body": [
+      "catch ( ${1:Exception} \\$${2:e} ) {",
+      "\t$3",
+      "} $4"
+    ]
+  },
+  "array (one-line)": {
+    "scope": "php",
+    "prefix": "ar",
+    "body": [
+      "array( $1 )$2"
+    ]
+  },
+  "array (one-line; space-padded)": {
+    "scope": "php",
+    "prefix": "ars",
+    "body": [
+      " array( $1 ) "
+    ]
+  },
+  "array (empty)": {
+    "scope": "php",
+    "prefix": "are",
+    "body": [
+      "array()"
+    ]
+  },
+  "array (empty; space-padded)": {
+    "scope": "php",
+    "prefix": "ares",
+    "body": [
+      " array() "
+    ]
+  },
+  "array (multiline)": {
+    "scope": "php",
+    "prefix": "arn",
+    "body": [
+      "array(",
+      "\t$1",
+      ")$2"
+    ]
+  },
+  "array (multiline; space-padded)": {
+    "scope": "php",
+    "prefix": "arns",
+    "body": [
+      " array(",
+      "\t$1",
+      ") "
+    ]
+  },
+  "array (this)": {
+    "scope": "php",
+    "prefix": "arthis",
+    "body": [
+      "array( $this, '${1:fname}' )"
+    ]
+  },
+  "key-value pair": {
+    "scope": "php",
+    "prefix": "kv",
+    "body": [
+      "'${1:key}' => ${2:value}$3"
+    ]
+  },
+  "define constant": {
+    "scope": "php",
+    "prefix": "def",
+    "body": [
+      "define( '$1', ${2:false} );"
+    ]
+  },
+  "define constant conditionally": {
+    "scope": "php",
+    "prefix": "ifndef",
+    "body": [
+      "if ( ! defined( '$1' ) ) {",
+      "\tdefine( '$1', ${2:false} );",
+      "}"
+    ]
+  },
+  "display errors": {
+    "scope": "php",
+    "prefix": "derr",
+    "body": [
+      "ini_set( 'display_errors', '1' );"
+    ]
+  },
+  "var_dump": {
+    "scope": "php",
+    "prefix": "vd",
+    "body": [
+      "var_dump( $1 );"
+    ]
+  }
+}

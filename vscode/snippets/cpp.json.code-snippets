@@ -1,0 +1,120 @@
+{
+  "include iostream": {
+    "scope": "cpp",
+    "prefix": "inciostream",
+    "body": [
+      "#include <iostream>",
+      ""
+    ]
+  },
+  "using namespace std": {
+    "scope": "cpp",
+    "prefix": "using",
+    "body": [
+      "using namespace std;",
+      ""
+    ]
+  },
+  "constructor definition": {
+    "scope": "cpp",
+    "prefix": "ctor",
+    "body": [
+      "${1:ClassName}::${1:ClassName}($2) {",
+      "\t$3",
+      "}"
+    ]
+  },
+  "destructor definition": {
+    "scope": "cpp",
+    "prefix": "dtor",
+    "body": [
+      "${1:ClassName}::~${1:ClassName}() {",
+      "\t$3",
+      "}"
+    ]
+  },
+  "class": {
+    "scope": "cpp",
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "\t$2",
+      "};"
+    ]
+  },
+  "public blocks": {
+    "scope": "cpp",
+    "prefix": "public",
+    "body": [
+      "public:",
+      "\t$1"
+    ]
+  },
+  "private blocks": {
+    "scope": "cpp",
+    "prefix": "private",
+    "body": [
+      "private:",
+      "\t$1"
+    ]
+  },
+  "protected blocks": {
+    "scope": "cpp",
+    "prefix": "protected",
+    "body": [
+      "protected:",
+      "\t$1"
+    ]
+  },
+  "function method": {
+    "scope": "cpp",
+    "prefix": "fm",
+    "body": [
+      "${1:void} ${2:ClassName}::${3:fname}($4) {",
+      "\t$5",
+      "}"
+    ]
+  },
+  "this pointer access": {
+    "scope": "cpp",
+    "prefix": "this",
+    "body": [
+      "this->"
+    ]
+  },
+  "cin": {
+    "scope": "cpp",
+    "prefix": "cin",
+    "body": [
+      "cin >> $1;"
+    ]
+  },
+  "cout": {
+    "scope": "cpp",
+    "prefix": "cout",
+    "body": [
+      "cout << $1;"
+    ]
+  },
+  "cout endl": {
+    "scope": "cpp",
+    "prefix": "coutendl",
+    "body": [
+      "cout << $1 << endl;$2"
+    ]
+  },
+  "cerr": {
+    "scope": "cpp",
+    "prefix": "cerr",
+    "body": [
+      "cerr << $1;"
+    ]
+  },
+  "cerr endl": {
+    "scope": "cpp",
+    "prefix": "cerrendl",
+    "body": [
+      "cerr << $1 << endl;$2"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "if": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "\t$2",
+      "}$3"
+    ]
+  },
+  "else if": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "elseif",
+    "body": [
+      " else if (${1:condition}) {",
+      "\t$2",
+      "} $3"
+    ]
+  },
+  "else if (bracket)": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "} elseif",
+    "body": [
+      "} else if (${1:condition}) {",
+      "\t$2",
+      "} $3"
+    ]
+  },
+  "else": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "else",
+    "body": [
+      " else {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "else (bracket)": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "} else",
+    "body": [
+      "} else {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "while": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "do..while": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "dowhile",
+    "body": [
+      "do {",
+      "\t$1",
+      "} while (${2:condition});"
+    ]
+  },
+  "break": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "break",
+    "body": [
+      "break;"
+    ]
+  },
+  "continue": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "continue",
+    "body": [
+      "continue;"
+    ]
+  },
+  "switch": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "switch",
+    "body": [
+      "switch (${1:variable}) {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "case": {
+    "scope": "c,cpp,javascript,typescript,awk",
+    "prefix": "case",
+    "body": [
+      "case ${1:value}:",
+      "\t$2"
+    ]
+  }
+}

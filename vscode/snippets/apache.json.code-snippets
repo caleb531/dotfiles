@@ -1,0 +1,161 @@
+{
+  "disable indexes": {
+    "scope": "apacheconf",
+    "prefix": "noindexes",
+    "body": [
+      "Options -Indexes"
+    ]
+  },
+  "ErrorDocument": {
+    "scope": "apacheconf",
+    "prefix": "errordocument",
+    "body": [
+      "ErrorDocument ${1:404} ${2:url}"
+    ]
+  },
+  "IfModule": {
+    "scope": "apacheconf",
+    "prefix": "ifmodule",
+    "body": [
+      "<IfModule ${1:modname}.c>",
+      "\t$2",
+      "</IfModule>"
+    ]
+  },
+  "FilesMatch": {
+    "scope": "apacheconf",
+    "prefix": "filesmatch",
+    "body": [
+      "<FilesMatch \"${1:pattern}\">",
+      "\t$2",
+      "</FilesMatch>"
+    ]
+  },
+  "UTF-8": {
+    "scope": "apacheconf",
+    "prefix": "utf8",
+    "body": [
+      "AddDefaultCharset utf-8",
+      "<IfModule mod_mime.c>",
+      "\tAddCharset utf-8 ${1:extensions}",
+      "</IfModule>"
+    ]
+  },
+  "gzip": {
+    "scope": "apacheconf",
+    "prefix": "gzip",
+    "body": [
+      "AddOutputFilterByType DEFLATE ${1:mimetypes}"
+    ]
+  },
+  "Header": {
+    "scope": "apacheconf",
+    "prefix": "header",
+    "body": [
+      "Header ${1:set} ${2:name} ${3:value}"
+    ]
+  },
+  "Cache-Control": {
+    "scope": "apacheconf",
+    "prefix": "cachecontrol",
+    "body": [
+      "Header set Cache-Control \"${1:max-age=}\""
+    ]
+  },
+  "Content-Security-Policy": {
+    "scope": "apacheconf",
+    "prefix": "contentsecuritypolicy",
+    "body": [
+      "Header always set Content-Security-Policy \"${1:default-src 'none'; }\""
+    ]
+  },
+  "X-Frame-Options": {
+    "scope": "apacheconf",
+    "prefix": "frameoptions",
+    "body": [
+      "Header always set X-Frame-Options ${1:SAMEORIGIN}"
+    ]
+  },
+  "X-Content-Type-Options": {
+    "scope": "apacheconf",
+    "prefix": "contenttypeoptions",
+    "body": [
+      "Header always set X-Content-Type-Options ${1:nosniff}"
+    ]
+  },
+  "HSTS": {
+    "scope": "apacheconf",
+    "prefix": "hsts",
+    "body": [
+      "Header always set Strict-Transport-Security \"max-age=${1:31536000}; includeSubDomains\" env=HTTPS"
+    ]
+  },
+  "Referrer-Policy": {
+    "scope": "apacheconf",
+    "prefix": "refpolicy",
+    "body": [
+      "Header always set Referrer-Policy \"${1:no-referrer}\""
+    ]
+  },
+  "secure cookies": {
+    "scope": "apacheconf",
+    "prefix": "cookiesecure",
+    "body": [
+      "Header always edit Set-Cookie ^(.*)$ \"$1; HTTPOnly; Secure\""
+    ]
+  },
+  "Vary: Accept-Encoding": {
+    "scope": "apacheconf",
+    "prefix": "varyae",
+    "body": [
+      "<FilesMatch \"\\\\.(html|css|js|gz)$\">",
+      "\tHeader append Vary: Accept-Encoding",
+      "</FilesMatch>"
+    ]
+  },
+  "RewriteEngine": {
+    "scope": "apacheconf",
+    "prefix": "rewriteengine",
+    "body": [
+      "RewriteEngine On",
+      ""
+    ]
+  },
+  "RewriteBase": {
+    "scope": "apacheconf",
+    "prefix": "rewritebase",
+    "body": [
+      "RewriteBase ${1:/}"
+    ]
+  },
+  "RewriteCond": {
+    "scope": "apacheconf",
+    "prefix": "rewritecond",
+    "body": [
+      "RewriteCond %{${1:HTTP_HOST}} ${2:pattern}"
+    ]
+  },
+  "RewriteRule": {
+    "scope": "apacheconf",
+    "prefix": "rewriterule",
+    "body": [
+      "RewriteRule ${1:pattern} ${2:url}"
+    ]
+  },
+  "HTTP to HTTPS": {
+    "scope": "apacheconf",
+    "prefix": "https",
+    "body": [
+      "RewriteCond %{HTTPS} off",
+      "RewriteRule ^(.*)$ https://%{HTTP_HOST}/\\$1 [L,R=301]"
+    ]
+  },
+  "www to non-www": {
+    "scope": "apacheconf",
+    "prefix": "nonwww",
+    "body": [
+      "RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]",
+      "RewriteRule ^(.*)$ https$1://%1/\\$1 [L,R=301]"
+    ]
+  }
+}

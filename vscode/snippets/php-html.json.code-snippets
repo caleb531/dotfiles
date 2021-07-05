@@ -1,0 +1,104 @@
+{
+  "PHP Block (inline)": {
+    "scope": "html",
+    "prefix": "php",
+    "body": [
+      "<?php $1 ?>$2"
+    ]
+  },
+  "PHP Block (multiline)": {
+    "scope": "html",
+    "prefix": "phpblock",
+    "body": [
+      "<?php",
+      "\t$1",
+      "?>$2"
+    ]
+  },
+  "PHP Block (HTML)": {
+    "scope": "html",
+    "prefix": "phphtml",
+    "body": [
+      "?>",
+      "\t$1",
+      "<?php$2"
+    ]
+  },
+  "echo (inline)": {
+    "scope": "html",
+    "prefix": "echo",
+    "body": [
+      "<?php echo $1; ?>$2"
+    ]
+  },
+  "if (inline)": {
+    "scope": "html",
+    "prefix": "if",
+    "body": [
+      "<?php if ( ${1:condition} ): ?>$2"
+    ]
+  },
+  "else (inline)": {
+    "scope": "html",
+    "prefix": "else",
+    "body": [
+      "<?php else: ?>$2"
+    ]
+  },
+  "else if (inline)": {
+    "scope": "html",
+    "prefix": "elseif",
+    "body": [
+      "<?php elseif ( ${1:condition} ): ?>$2"
+    ]
+  },
+  "for (inline)": {
+    "scope": "html",
+    "prefix": "for",
+    "body": [
+      "<?php for ( ${1:$i} = ${2:0}; ${1:$i} < ${3:end}; ${1:$i} += ${4:1} ): ?>$5"
+    ]
+  },
+  "foreach (inline)": {
+    "scope": "html",
+    "prefix": "foreach",
+    "body": [
+      "<?php foreach ( ${1:$object} as ${2:$value} ): ?>$3"
+    ]
+  },
+  "while (inline)": {
+    "scope": "html",
+    "prefix": "while",
+    "body": [
+      "<?php while ( ${1:condition} ): ?>$2"
+    ]
+  },
+  "endif (inline)": {
+    "scope": "html",
+    "prefix": "endif",
+    "body": [
+      "<?php endif; ?>$1"
+    ]
+  },
+  "endfor (inline)": {
+    "scope": "html",
+    "prefix": "endfor",
+    "body": [
+      "<?php endfor; ?>$1"
+    ]
+  },
+  "endforeach (inline)": {
+    "scope": "html",
+    "prefix": "endforeach",
+    "body": [
+      "<?php endforeach; ?>$1"
+    ]
+  },
+  "endwhile (inline)": {
+    "scope": "html",
+    "prefix": "endwhile",
+    "body": [
+      "<?php endwhile; ?>$1"
+    ]
+  }
+}
