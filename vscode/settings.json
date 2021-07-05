@@ -42,7 +42,8 @@
     "workbench.list.openMode": "doubleClick",
     "editor.fontSize": 16,
     "files.associations": {
-        "*.json": "jsonc"
+        "*.json": "jsonc",
+        "ssh_config": "ssh_config"
     },
     "editor.snippetSuggestions": "top",
     "editor.wordWrap": "wordWrapColumn"
