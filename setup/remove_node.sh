@@ -27,5 +27,5 @@ sudo rm -rfv \
 	~/.nvm \
 
 if type brew &> /dev/null; then
-	brew prune
+	brew cleanup
 fi
