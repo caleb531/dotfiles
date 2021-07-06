@@ -1,0 +1,9 @@
+EditorConfig.EditorConfig
+caleb531.sca-for-vscode
+dbaeumer.vscode-eslint
+idleberg.applescript
+jedmao.tabsanity
+jock.svg
+luggage66.AWK
+ms-vscode-remote.remote-ssh-edit
+stkb.rewrap
