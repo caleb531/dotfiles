@@ -441,5 +441,25 @@
     "key": "alt+cmd+r",
     "command": "-toggleSearchRegex",
     "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+cmd+l",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+cmd+l",
+    "command": "-toggleFindInSelection",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+cmd+l",
+    "command": "-toggleSearchEditorContextLines",
+    "when": "inSearchEditor"
   }
 ]
