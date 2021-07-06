@@ -1,7 +1,7 @@
 export NVM_DIR="$HOME/.nvm"
-if [ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ]; then
-	source "$BREW_PREFIX/opt/nvm/nvm.sh"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+	source "$NVM_DIR/nvm.sh"
 fi
-if [ -s "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ]; then
-	source "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
+if [ -s "$NVM_DIR/bash_completion" ]; then
+	source "$NVM_DIR/bash_completion"
 fi
