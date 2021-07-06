@@ -47,5 +47,10 @@
     },
     "editor.snippetSuggestions": "top",
     "editor.wordWrap": "wordWrapColumn",
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    }
 }
