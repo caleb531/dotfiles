@@ -46,5 +46,6 @@
         "ssh_config": "ssh_config"
     },
     "editor.snippetSuggestions": "top",
-    "editor.wordWrap": "wordWrapColumn"
+    "editor.wordWrap": "wordWrapColumn",
+    "extensions.ignoreRecommendations": true
 }
