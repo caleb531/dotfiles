@@ -311,7 +311,7 @@
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "shift+cmd+f",
+    "key": "shift+alt+cmd+f",
     "command": "workbench.action.replaceInFiles"
   },
   {
@@ -461,5 +461,9 @@
     "key": "alt+cmd+l",
     "command": "-toggleSearchEditorContextLines",
     "when": "inSearchEditor"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "workbench.action.findInFiles"
   }
 ]
