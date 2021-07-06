@@ -74,7 +74,7 @@ install_gem jekyll
 
 echo "Installing node..."
 
-install_brew_pkg nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 mkdir -p ~/.nvm
 source ~/dotfiles/terminal/bash/load_nvm.sh
 nvm install 6.15.1
