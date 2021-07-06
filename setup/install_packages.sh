@@ -73,30 +73,6 @@ install_gem bundler
 install_gem jekyll
 
 ~/dotfiles/setup/install_node.sh
-
-echo "Installing pip packages..."
-preload_pip_pkg_list
-
-install_pip_pkg virtualenv
-install_pip_pkg flake8
-install_pip_pkg bump-anything
-
-echo "Installing Atom packages..."
-preload_apm_pkg_list
-
-while read -r pkg_line; do
-	pkg_name="$(echo "$pkg_line" | grep -Po '(?<=")[a-z0-9\-]+(?=")')"
-	if [ -n "$pkg_name" ]; then
-		install_apm_pkg "$pkg_name"
-	fi
-done < ~/dotfiles/atom/packages.cson
-
-echo "Installing VS Code packages..."
-preload_vscode_pkg_list
-
-while read -r pkg_line; do
-	pkg_name="$(echo "$pkg_line" | grep -Po '(?<=")[A-Za-z0-9\-\.]+(?=")')"
-	if [ -n "$pkg_name" ]; then
-		install_vscode_pkg "$pkg_name"
-	fi
-done < ~/dotfiles/vscode/packages.json
+~/dotfiles/setup/install_pip_packages.sh
+~/dotfiles/setup/install_atom_packages.sh
+~/dotfiles/setup/install_vscode_packages.sh
