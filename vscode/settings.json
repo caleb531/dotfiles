@@ -53,5 +53,6 @@
         "comments": true,
         "strings": true
     },
-    "editor.suggest.snippetsPreventQuickSuggestions": false
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.multiCursorModifier": "ctrlCmd"
 }
