@@ -306,11 +306,6 @@
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "alt+cmd+f",
-    "command": "-editor.action.startFindReplaceAction",
-    "when": "editorFocus || editorIsOpen"
-  },
-  {
     "key": "shift+alt+cmd+f",
     "command": "workbench.action.replaceInFiles"
   },
