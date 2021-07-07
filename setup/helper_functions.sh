@@ -69,7 +69,7 @@ is_apm_pkg_installed() {
 }
 
 is_vscode_pkg_installed() {
-	echo "$VSCODE_PKG_LIST" | grep --quiet "^$1@"
+	echo "$VSCODE_PKG_LIST" | grep --quiet "^$1$"
 }
 
 tap_brew_repo() {
