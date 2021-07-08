@@ -54,5 +54,12 @@
         "strings": true
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.multiCursorModifier": "ctrlCmd"
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.exclude": {
+        "**/DeployDistribution": true,
+        "**/DeployDistributionAdvanced": true,
+        "**/DeployDistributionAdvancedSS2": true,
+        "**/LocalDistribution": true,
+        "**/LocalDistributionAdvanced": true
+    }
 }
