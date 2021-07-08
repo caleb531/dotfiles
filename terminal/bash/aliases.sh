@@ -48,6 +48,8 @@ alias mysql='/Applications/MAMP/Library/bin/mysql'
 alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
 # Use recommended version of OpenSSL over deprecated OpenSSL from system
 alias openssl='$BREW_PREFIX/opt/openssl/bin/openssl'
+# Check DNS records for the given domain
+alias dns='dig'
 
 # Build/serve aliases
 
