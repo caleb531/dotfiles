@@ -8,7 +8,6 @@
     "editor.renderWhitespace": "none",
     "security.workspace.trust.enabled": false,
     "editor.renderIndentGuides": false,
-    "editor.occurrencesHighlight": false,
     "workbench.startupEditor": "none",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -61,5 +60,7 @@
         "**/DeployDistributionAdvancedSS2": true,
         "**/LocalDistribution": true,
         "**/LocalDistributionAdvanced": true
-    }
+    },
+    "editor.occurrencesHighlight": false,
+    "editor.selectionHighlight": false
 }
