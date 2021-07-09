@@ -5,6 +5,7 @@ dbaeumer.vscode-eslint
 idleberg.applescript
 jedmao.tabsanity
 jock.svg
+kevinglasson.cornflakes-linter
 luggage66.AWK
 ms-vscode-remote.remote-ssh-edit
 stkb.rewrap
