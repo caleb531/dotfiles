@@ -62,5 +62,6 @@
         "**/LocalDistributionAdvanced": true
     },
     "editor.occurrencesHighlight": false,
-    "editor.selectionHighlight": false
+    "editor.selectionHighlight": false,
+    "explorer.autoReveal": "focusNoScroll"
 }
