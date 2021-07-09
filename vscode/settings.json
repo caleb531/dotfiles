@@ -63,5 +63,13 @@
     },
     "editor.occurrencesHighlight": false,
     "editor.selectionHighlight": false,
-    "explorer.autoReveal": "focusNoScroll"
+    "explorer.autoReveal": "focusNoScroll",
+    "workbench.colorCustomizations": {
+        "[Monokai]": {
+            "tab.inactiveBackground": "#1E1F1C",
+            "tab.inactiveForeground": "#90908a",
+            "tab.activeBackground": "#34352f",
+            "tab.activeForeground": "#f8f8f2",
+        }
+    }
 }
