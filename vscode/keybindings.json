@@ -476,5 +476,13 @@
   {
     "key": "ctrl+alt+cmd+p",
     "command": "HookyQR.beautifyFile"
+  },
+  {
+    "key": "cmd+3",
+    "command": "-workbench.action.focusThirdEditorGroup"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.view.extensions"
   }
 ]
