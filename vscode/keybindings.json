@@ -472,5 +472,9 @@
   {
     "key": "ctrl+g",
     "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "ctrl+alt+cmd+p",
+    "command": "HookyQR.beautifyFile"
   }
 ]

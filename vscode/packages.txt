@@ -1,4 +1,5 @@
 EditorConfig.EditorConfig
+HookyQR.beautify
 caleb531.sca-for-vscode
 dbaeumer.vscode-eslint
 idleberg.applescript
