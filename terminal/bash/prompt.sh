@@ -6,7 +6,7 @@
 __detect_node_version() {
 	# If an .nvmrc exists in the current directory (that we just entered),
 	# switch to that node version if it's not already
-	if [[ -f .nvmrc && "$(node -v 2> /dev/null | cut -c2-)" != "$(cat .nvmrc)" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
+	if [[ -f .nvmrc && "$(node -v | cut -c2-)" != "$(cat .nvmrc)" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
 		nvm use --silent &> /dev/null || nvm install "$(cat .nvmrc)"
 		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
 	fi
