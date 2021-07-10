@@ -318,10 +318,6 @@
     "command": "-workbench.action.findInFiles"
   },
   {
-    "key": "shift+cmd+\\",
-    "command": "git.revealInExplorer"
-  },
-  {
     "key": "ctrl+b",
     "command": "-cursorLeft",
     "when": "textInputFocus"
@@ -484,5 +480,14 @@
   {
     "key": "cmd+3",
     "command": "workbench.view.extensions"
+  },
+  {
+    "key": "shift+cmd+\\",
+    "command": "-workbench.action.terminal.focusTabs",
+    "when": "terminalFocus && terminalProcessSupported || terminalProcessSupported && terminalTabsFocus"
+  },
+  {
+    "key": "shift+cmd+\\",
+    "command": "workbench.files.action.showActiveFileInExplorer"
   }
 ]
