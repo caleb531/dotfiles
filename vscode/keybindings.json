@@ -529,5 +529,14 @@
   {
     "key": "cmd+numpad0",
     "command": "-workbench.action.zoomReset"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.view.search",
+    "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.findInFiles"
   }
 ]
