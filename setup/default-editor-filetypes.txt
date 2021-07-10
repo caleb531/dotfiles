@@ -1,0 +1,16 @@
+css
+js
+json
+md
+py
+scss
+sh
+ts
+txt
+tpl
+ssp
+ss
+applescript
+c
+cpp
+md
