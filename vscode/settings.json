@@ -77,7 +77,7 @@
             "tab.inactiveBackground": "#1E1F1C",
             "tab.inactiveForeground": "#90908a",
             "tab.activeBackground": "#34352f",
-            "tab.activeForeground": "#f8f8f2",
+            "tab.activeForeground": "#f8f8f2"
         }
     }
 }
