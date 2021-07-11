@@ -79,5 +79,6 @@
             "tab.activeBackground": "#34352f",
             "tab.activeForeground": "#f8f8f2"
         }
-    }
+    },
+    "editor.rulers": [ 80 ]
 }
