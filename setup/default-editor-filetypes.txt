@@ -7,6 +7,7 @@ json
 md
 md
 py
+rb
 scss
 sh
 ss
