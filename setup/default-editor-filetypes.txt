@@ -2,6 +2,7 @@ applescript
 c
 cpp
 css
+java
 js
 json
 less
