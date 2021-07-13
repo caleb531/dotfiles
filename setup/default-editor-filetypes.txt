@@ -2,7 +2,6 @@ applescript
 c
 cpp
 css
-el
 java
 js
 json
@@ -13,6 +12,7 @@ py
 rb
 scss
 sh
+sql
 ss
 ssp
 svg
