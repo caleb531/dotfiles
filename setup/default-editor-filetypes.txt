@@ -4,6 +4,7 @@ cpp
 css
 js
 json
+less
 md
 md
 py
