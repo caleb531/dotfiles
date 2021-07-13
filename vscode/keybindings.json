@@ -538,5 +538,9 @@
   {
     "key": "cmd+2",
     "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+cmd+a",
+    "command": "editor.action.sortLinesAscending"
   }
 ]
