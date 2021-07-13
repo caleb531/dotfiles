@@ -8,6 +8,7 @@ jeremyljackson.vs-docblock
 jock.svg
 kevinglasson.cornflakes-linter
 luggage66.AWK
+mattn.Lisp
 ms-vscode-remote.remote-ssh-edit
 patbenatar.advanced-new-file
 stkb.rewrap
