@@ -15,3 +15,5 @@ svg
 tpl
 ts
 txt
+yaml
+yml
