@@ -542,5 +542,10 @@
   {
     "key": "ctrl+cmd+a",
     "command": "editor.action.sortLinesAscending"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
   }
 ]
