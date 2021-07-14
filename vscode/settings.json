@@ -74,7 +74,6 @@
     "explorer.autoReveal": "focusNoScroll",
     "workbench.colorCustomizations": {
         "[Monokai]": {
-            "editor.background": "#282828",
             "tab.inactiveBackground": "#1E1F1C",
             "tab.inactiveForeground": "#90908a",
             "tab.activeBackground": "#34352f",
