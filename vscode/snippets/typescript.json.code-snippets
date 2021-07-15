@@ -1,0 +1,11 @@
+{
+  "mountToApp (TypeScript)": {
+    "scope": "typescript",
+    "prefix": "mta",
+    "body": [
+      "export function mountToApp($1): void {",
+      "\t$2",
+      "}"
+    ]
+  }
+}

@@ -580,7 +580,7 @@
 
   'mountToApp':
     'prefix': 'mta'
-    'body': '{\n\tmountToApp: function ($1) {\n\n\t\t$2\n\n\t}\n}'
+    'body': '{\n\tmountToApp: function (${1:application}) {\n\n\t\t$2\n\n\t}\n}'
 
   'wrap prototype method':
     'prefix': 'wrap'
@@ -619,6 +619,14 @@
   'encodeURI':
     'prefix': 'encodeuri'
     'body': 'encodeURI($1)$2'
+
+# TypeScript
+
+'.source.ts':
+
+  'mountToApp (TypeScript)':
+    'prefix': 'mta'
+    'body': 'export function mountToApp(${1:application}): void {\n\t$2\n}'
 
 # Awk
 
