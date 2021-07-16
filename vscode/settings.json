@@ -53,7 +53,7 @@
         "ssh_config": "ssh_config"
     },
     "editor.snippetSuggestions": "top",
-    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrap": "bounded",
     "extensions.ignoreRecommendations": true,
     "editor.quickSuggestions": {
         "other": true,
@@ -80,5 +80,7 @@
             "tab.activeForeground": "#f8f8f2"
         }
     },
-    "editor.rulers": [ 79 ]
+    "editor.rulers": [
+      79
+    ]
 }
