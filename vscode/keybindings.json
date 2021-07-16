@@ -547,5 +547,13 @@
     "key": "shift+cmd+c",
     "command": "-workbench.action.terminal.openNativeConsole",
     "when": "!terminalFocus"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "workbench.action.addRootFolder"
   }
 ]
