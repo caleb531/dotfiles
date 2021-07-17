@@ -3,7 +3,7 @@
     "scope": "typescript",
     "prefix": "mta",
     "body": [
-      "export function mountToApp($1): void {",
+      "export function mountToApp(${1:application}): void {",
       "\t$2",
       "}"
     ]

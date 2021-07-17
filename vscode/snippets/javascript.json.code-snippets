@@ -686,7 +686,7 @@
     "prefix": "mta",
     "body": [
       "{",
-      "\tmountToApp: function ($1) {",
+      "\tmountToApp: function (${1:application}) {",
       "",
       "\t\t$2",
       "",
