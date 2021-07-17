@@ -82,5 +82,6 @@
     },
     "editor.rulers": [
       79
-    ]
+    ],
+    "editor.fastScrollSensitivity": 3
 }
