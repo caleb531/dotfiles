@@ -83,5 +83,6 @@
     "editor.rulers": [
       79
     ],
-    "editor.fastScrollSensitivity": 3
+    "editor.fastScrollSensitivity": 3,
+    "problems.showCurrentInStatus": true
 }
