@@ -1,5 +1,6 @@
 applescript
 c
+conf
 cpp
 css
 java
