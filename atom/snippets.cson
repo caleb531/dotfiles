@@ -672,6 +672,10 @@
     'prefix': 'env3'
     'body': '#!/usr/bin/env python3\n'
 
+  'utf8 encoding':
+    'prefix': 'enc'
+    'body': '# coding=utf-8'
+
   'module import':
     'prefix': 'import'
     'body': 'import ${1:mname}'

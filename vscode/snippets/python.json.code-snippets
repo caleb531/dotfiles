@@ -23,6 +23,13 @@
       ""
     ]
   },
+  "utf8 encoding": {
+    "scope": "python",
+    "prefix": "enc",
+    "body": [
+      "# coding=utf-8"
+    ]
+  },
   "module import": {
     "scope": "python",
     "prefix": "import",
