@@ -9,6 +9,8 @@ jock.svg
 kevinglasson.cornflakes-linter
 luggage66.AWK
 mattn.Lisp
+ms-python.python
+ms-python.vscode-pylance
 ms-vscode-remote.remote-ssh-edit
 patbenatar.advanced-new-file
 stkb.rewrap
