@@ -285,10 +285,6 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "cmd+r",
-    "command": "workbench.action.showAllSymbols"
-  },
-  {
     "key": "cmd+t",
     "command": "-workbench.action.showAllSymbols"
   },
@@ -550,10 +546,14 @@
   },
   {
     "key": "shift+cmd+o",
-    "command": "-workbench.action.gotoSymbol"
+    "command": "workbench.action.addRootFolder"
   },
   {
     "key": "shift+cmd+o",
-    "command": "workbench.action.addRootFolder"
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.showAllSymbols"
   }
 ]
