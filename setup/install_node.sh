@@ -14,7 +14,8 @@ source ~/dotfiles/terminal/bash/load_nvm.sh
 nvm install 8.9.4
 nvm install 10.16.3
 nvm install 12.16.3
-nvm alias default 12.16.3
+nvm install 16.5.0
+nvm alias default 16.5.0
 
 echo "Installing npm packages..."
 preload_npm_pkg_list
