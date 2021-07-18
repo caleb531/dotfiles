@@ -64,7 +64,7 @@ ln -s "$BREW_PREFIX"/bin/pinentry-mac "$GPG_BIN_DIR"/pinentry-mac
 # Install Mac App Store command-line utility
 install_brew_pkg mas
 
-install_brew_pkg ruby@2
+install_brew_pkg ruby
 
 echo "Installing gems..."
 preload_gem_list
