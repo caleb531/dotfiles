@@ -13,7 +13,9 @@
         "textMateRules": [
             {
                 "scope": [
-                    "storage.type.js"
+                    "storage.type",
+                    "support.class",
+                    "variable.parameter"
                 ],
                 "settings": {
                     "fontStyle": ""
