@@ -949,7 +949,8 @@
     'body': '<?php endwhile; ?>$1'
 
 
-'.source.css':
+'.source.css,
+ .source.css.scss':
 
   '@media':
     'prefix': 'mediaq'

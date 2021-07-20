@@ -1,6 +1,6 @@
 {
   "@media": {
-    "scope": "css",
+    "scope": "css,scss",
     "prefix": "mediaq",
     "body": [
       "@media $1 {",
@@ -9,7 +9,7 @@
     ]
   },
   "@media screen": {
-    "scope": "css",
+    "scope": "css,scss",
     "prefix": "screen",
     "body": [
       "@media screen and ($1) {",
@@ -18,7 +18,7 @@
     ]
   },
   "screen min width": {
-    "scope": "css",
+    "scope": "css,scss",
     "prefix": "screenmin",
     "body": [
       "@media screen and (min-width: ${1:$screen-md-min}) {",
@@ -27,7 +27,7 @@
     ]
   },
   "screen max width": {
-    "scope": "css",
+    "scope": "css,scss",
     "prefix": "screennmax",
     "body": [
       "@media screen and (max-width: ${1:$screen-md-max}) {",
@@ -36,7 +36,7 @@
     ]
   },
   "@media print": {
-    "scope": "css",
+    "scope": "css,scss",
     "prefix": "print",
     "body": [
       "@media print {",
@@ -45,7 +45,7 @@
     ]
   },
   "@keyframes": {
-    "scope": "css",
+    "scope": "css,scss",
     "prefix": "@keyframes",
     "body": [
       "@keyframes {",
@@ -54,7 +54,7 @@
     ]
   },
   "keyframes": {
-    "scope": "css",
+    "scope": "css,scss",
     "prefix": "keyframes",
     "body": [
       "@keyframes {",
