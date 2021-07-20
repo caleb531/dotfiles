@@ -30,7 +30,7 @@
     "scope": "scss",
     "prefix": "for",
     "body": [
-      "@for ${1:$i} from ${2:1} ${3:through} ${4:$n} {",
+      "@for ${1:\\$i} from ${2:1} ${3:through} ${4:\\$n} {",
       "\t$5",
       "}"
     ]
@@ -39,7 +39,7 @@
     "scope": "scss",
     "prefix": "each",
     "body": [
-      "@each ${1:$item} in ${2:$obj} {",
+      "@each ${1:\\$item} in ${2:\\$obj} {",
       "\t$3",
       "}"
     ]

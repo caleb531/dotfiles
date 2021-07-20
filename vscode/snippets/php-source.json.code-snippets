@@ -79,7 +79,7 @@
     "scope": "php",
     "prefix": "$this",
     "body": [
-      "$this->"
+      "\\$this->"
     ]
   },
   "if": {
@@ -141,7 +141,7 @@
     "scope": "php",
     "prefix": "for",
     "body": [
-      "for ( ${1:$i} = ${2:0}; ${1:$i} < ${3:end}; ${1:$i} += ${4:1} ) {",
+      "for ( ${1:\\$i} = ${2:0}; ${1:\\$i} < ${3:end}; ${1:\\$i} += ${4:1} ) {",
       "\t$5",
       "}"
     ]
@@ -150,7 +150,7 @@
     "scope": "php",
     "prefix": "foreach",
     "body": [
-      "foreach ( ${1:$object} as ${2:$value} ) {",
+      "foreach ( ${1:\\$object} as ${2:\\$value} ) {",
       "\t$3",
       "}"
     ]
@@ -186,7 +186,7 @@
     "scope": "php",
     "prefix": "catch",
     "body": [
-      "catch ( ${1:Exception} \\$${2:e} ) {",
+      "catch ( ${1:Exception} \\\\$${2:e} ) {",
       "\t$3",
       "} $4"
     ]
@@ -241,7 +241,7 @@
     "scope": "php",
     "prefix": "arthis",
     "body": [
-      "array( $this, '${1:fname}' )"
+      "array( \\$this, '${1:fname}' )"
     ]
   },
   "key-value pair": {

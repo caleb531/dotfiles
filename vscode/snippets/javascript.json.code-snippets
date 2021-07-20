@@ -73,7 +73,7 @@
     "scope": "javascript,typescript",
     "prefix": "docready",
     "body": [
-      "$(document).ready(function () {",
+      "\\$(document).ready(function () {",
       "$2",
       "});"
     ]

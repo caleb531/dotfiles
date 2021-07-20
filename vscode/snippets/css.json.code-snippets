@@ -21,7 +21,7 @@
     "scope": "css,scss",
     "prefix": "screenmin",
     "body": [
-      "@media screen and (min-width: ${1:$screen-md-min}) {",
+      "@media screen and (min-width: ${1:\\$screen-md-min}) {",
       "\t$2",
       "}$3"
     ]
@@ -30,7 +30,7 @@
     "scope": "css,scss",
     "prefix": "screennmax",
     "body": [
-      "@media screen and (max-width: ${1:$screen-md-max}) {",
+      "@media screen and (max-width: ${1:\\$screen-md-max}) {",
       "\t$2",
       "}$3"
     ]

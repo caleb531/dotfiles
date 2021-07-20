@@ -101,14 +101,14 @@
     "scope": "apacheconf",
     "prefix": "cookiesecure",
     "body": [
-      "Header always edit Set-Cookie ^(.*)$ \"$1; HTTPOnly; Secure\""
+      "Header always edit Set-Cookie ^(.*)\\$ \"$1; HTTPOnly; Secure\""
     ]
   },
   "Vary: Accept-Encoding": {
     "scope": "apacheconf",
     "prefix": "varyae",
     "body": [
-      "<FilesMatch \"\\\\.(html|css|js|gz)$\">",
+      "<FilesMatch \"\\\\.(html|css|js|gz)\\$\">",
       "\tHeader append Vary: Accept-Encoding",
       "</FilesMatch>"
     ]
@@ -147,15 +147,15 @@
     "prefix": "https",
     "body": [
       "RewriteCond %{HTTPS} off",
-      "RewriteRule ^(.*)$ https://%{HTTP_HOST}/\\$1 [L,R=301]"
+      "RewriteRule ^(.*)\\$ https://%{HTTP_HOST}/\\$1 [L,R=301]"
     ]
   },
   "www to non-www": {
     "scope": "apacheconf",
     "prefix": "nonwww",
     "body": [
-      "RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]",
-      "RewriteRule ^(.*)$ https$1://%1/\\$1 [L,R=301]"
+      "RewriteCond %{HTTP_HOST} ^www\\\\.(.+)\\$ [NC]",
+      "RewriteRule ^(.*)\\$ https$1://%1/\\$1 [L,R=301]"
     ]
   }
 }
