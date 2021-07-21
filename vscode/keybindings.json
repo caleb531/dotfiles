@@ -561,5 +561,9 @@
     "key": "shift+cmd+f",
     "command": "-workbench.action.terminal.searchWorkspace",
     "when": "terminalFocus && terminalProcessSupported && terminalProcessSupported && terminalTextSelected"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.closePanel"
   }
 ]
