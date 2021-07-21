@@ -87,6 +87,5 @@
     ],
     "editor.fastScrollSensitivity": 3,
     "problems.showCurrentInStatus": true,
-    "editor.roundedSelection": false,
-    "workbench.list.horizontalScrolling": true
+    "editor.roundedSelection": false
 }
