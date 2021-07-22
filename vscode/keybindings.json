@@ -563,7 +563,7 @@
     "when": "terminalFocus && terminalProcessSupported && terminalProcessSupported && terminalTextSelected"
   },
   {
-    "key": "escape",
-    "command": "workbench.action.closePanel"
+    "key": "shift+cmd+e",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
   }
 ]
