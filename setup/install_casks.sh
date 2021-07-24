@@ -7,7 +7,7 @@ preload_cask_list
 
 # Install essential macOS apps via Cask (in order of essentiality)
 install_cask google-chrome
-install_cask dropbox
+install_cask sync
 install_cask alfred
 install_cask atom
 install_cask visual-studio-code
