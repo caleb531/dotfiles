@@ -91,5 +91,6 @@
     "emmet.excludeLanguages": [
         "css",
         "scss"
-    ]
+    ],
+    "window.newWindowDimensions": "inherit"
 }
