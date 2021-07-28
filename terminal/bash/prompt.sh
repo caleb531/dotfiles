@@ -4,9 +4,13 @@
 
 # Detect the node version for this project and switch to it
 __detect_node_version() {
+	local nvmrc_contents="$(cat .nvmrc 2> /dev/null)"
+	if [ -z "$nvmrc_contents" ]; then
+		nvmrc_contents="$(cat ../.nvmrc 2> /dev/null)"
+	fi
 	# If an .nvmrc exists in the current directory (that we just entered),
 	# switch to that node version if it's not already
-	if [[ -f .nvmrc && "$(node -v | cut -c2-)" != "$(cat .nvmrc)" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
+	if [[ -n "$nvmrc_contents" && "$(node -v | cut -c2-)" != "$nvmrc_contents" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
 		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
 		nvm use --silent &> /dev/null || nvm install "$(cat .nvmrc)"
 	fi
