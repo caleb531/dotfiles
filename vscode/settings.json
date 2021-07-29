@@ -92,5 +92,6 @@
         "css",
         "scss"
     ],
-    "window.newWindowDimensions": "inherit"
+    "window.newWindowDimensions": "inherit",
+    "editor.stickyTabStops": true
 }
