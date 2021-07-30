@@ -93,5 +93,6 @@
         "scss"
     ],
     "window.newWindowDimensions": "inherit",
-    "editor.stickyTabStops": true
+    "editor.stickyTabStops": true,
+    "workbench.editor.decorations.colors": false
 }
