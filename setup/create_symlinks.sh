@@ -43,7 +43,9 @@ ln -sf ~/dotfiles/ssh/ssh_config ~/.ssh/config
 mkdir -p ~/.gnupg
 ln -sf ~/dotfiles/gpg/* ~/.gnupg
 
-# Symlink Firefox browser styles
+# Symlink Firefox browser styles (these custom styles will only take effect
+# when the 'toolkit.legacyUserProfileCustomizations.stylesheets' about:config
+# setting has been enabled)
 pushd ~/Library/Application\ Support/Firefox/Profiles/*.default &> /dev/null || exit
 mkdir -p chrome
 ln -sf ~/dotfiles/firefox/userChrome.css "$PWD"/chrome/userChrome.css
