@@ -76,6 +76,11 @@
 	color: rgba(255, 255, 255, 0.5) !important;
 }
 
+/* Hide Tracking Protection icon in URL bar */
+#tracking-protection-icon-container {
+    display: none !important;
+}
+
 /* Hide giant thumbnail and favicon within Bookmark Panel */
 #editBookmarkPanelInfoArea,
 #editBookmarkPanelImage,
