@@ -76,3 +76,11 @@
 	color: rgba(255, 255, 255, 0.5) !important;
 }
 
+/* Hide giant thumbnail and favicon within Bookmark Panel */
+#editBookmarkPanelInfoArea,
+#editBookmarkPanelImage,
+#editBookmarkPanelFaviconContainer,
+#editBookmarkHeaderSeparator,
+#editBookmarkSeparator {
+  display: none !important;
+}
