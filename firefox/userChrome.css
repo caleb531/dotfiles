@@ -40,6 +40,11 @@
 	opacity: 0.75 !important;
 }
 
+/* Increase font size of tab labels */
+.tab-label {
+	font-size: 12px !important;
+}
+
 /* Style URL bar focus color to match main background color of URL bar */
 :root {
 	--lwt-toolbar-field-focus: var(--lwt-toolbar-field-background-color) !important;
@@ -55,6 +60,13 @@
   background: rgba(255, 255, 255, 0.15) !important;
 }
 
+/* Hide "Firefox Suggest" label (the way we must do this is a little hacky) */
+.urlbarView-row {
+	font-size: 0 !important;
+}
+.urlbarView-row-inner {
+	font-size: 13.75px !important;
+}
 
 /* Make result URLs within URL bar results less prominent */
 .urlbarView-url {
@@ -63,3 +75,4 @@
 [lwt-default-theme-in-dark-mode] .urlbarView-url {
 	color: rgba(255, 255, 255, 0.5) !important;
 }
+
