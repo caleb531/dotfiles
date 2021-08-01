@@ -89,3 +89,8 @@
 #editBookmarkSeparator {
   display: none !important;
 }
+
+/* Eliminate annoying info bubble for fullscreen video */
+#fullscreen-warning {
+	display: none !important;
+}
