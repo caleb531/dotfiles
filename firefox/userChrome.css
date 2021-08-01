@@ -5,9 +5,54 @@
 }
 #PlacesToolbarItems .bookmark-item {
   padding: 5px 6px !important;
+  margin-bottom: 4px !important;
 }
 
 /* Change the color of the lock icon to a prettier green */
 #urlbar[pageproxystate="valid"] #connection-icon {
 	fill: #6c3 !important;
+}
+
+/* Style browser tabs to appear connect to main toolbar */
+.tabbrowser-tab,
+#TabsToolbar #tabs-newtab-button {
+	margin-top: 4px !important;
+	margin-bottom: -4px !important;
+}
+.tab-background,
+#TabsToolbar #tabs-newtab-button .toolbarbutton-icon {
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+/* Make hover color of "New Tab" toolbar button match main toolbar */
+#TabsToolbar #tabs-newtab-button:hover .toolbarbutton-icon {
+	background: var(--toolbar-bgcolor) !important;
+}
+
+/* Style highlight color of selected tabs to match main toolbar */
+.tab-background[selected="true"] {
+	background: var(--toolbar-bgcolor) !important;
+}
+/* Make unselected tabs less prominent */
+.tabbrowser-tab:not([selected="true"]) .tab-content {
+	opacity: 0.75 !important;
+}
+
+/* Style URL bar focus color to match main background color of URL bar */
+:root {
+	--lwt-toolbar-field-focus: var(--lwt-toolbar-field-background-color) !important;
+}
+
+/* Make background color of selected URL bar result row less prominent */
+.urlbarView-row[selected] .urlbarView-row-inner,
+.urlbarView-row:hover .urlbarView-row-inner {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+
+/* Make result URLs within URL bar results less prominent */
+.urlbarView-url {
+	color: rgba(255, 255, 255, 0.5) !important;
 }
