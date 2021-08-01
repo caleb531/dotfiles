@@ -48,11 +48,18 @@
 /* Make background color of selected URL bar result row less prominent */
 .urlbarView-row[selected] .urlbarView-row-inner,
 .urlbarView-row:hover .urlbarView-row-inner {
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+[lwt-default-theme-in-dark-mode] .urlbarView-row[selected] .urlbarView-row-inner,
+[lwt-default-theme-in-dark-mode] .urlbarView-row:hover .urlbarView-row-inner {
   background: rgba(255, 255, 255, 0.15) !important;
 }
 
 
 /* Make result URLs within URL bar results less prominent */
 .urlbarView-url {
+	color: rgba(0, 0, 0, 0.5) !important;
+}
+[lwt-default-theme-in-dark-mode] .urlbarView-url {
 	color: rgba(255, 255, 255, 0.5) !important;
 }
