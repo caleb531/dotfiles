@@ -1,11 +1,11 @@
 /* Increase the breathing room above and below the bookmarks toolbar */
 #PlacesToolbarItems {
-  padding: 0px 0px !important;
-  padding-bottom: 1px !important;
+	padding: 0px 0px !important;
+	padding-bottom: 1px !important;
 }
 #PlacesToolbarItems .bookmark-item {
-  padding: 5px 6px !important;
-  margin-bottom: 4px !important;
+	padding: 5px 6px !important;
+	margin-bottom: 4px !important;
 }
 
 /* Change the color of the lock icon to a prettier green */
@@ -53,11 +53,11 @@
 /* Make background color of selected URL bar result row less prominent */
 .urlbarView-row[selected] .urlbarView-row-inner,
 .urlbarView-row:hover .urlbarView-row-inner {
-  background: rgba(0, 0, 0, 0.15) !important;
+	background: rgba(0, 0, 0, 0.15) !important;
 }
 [lwt-default-theme-in-dark-mode] .urlbarView-row[selected] .urlbarView-row-inner,
 [lwt-default-theme-in-dark-mode] .urlbarView-row:hover .urlbarView-row-inner {
-  background: rgba(255, 255, 255, 0.15) !important;
+	background: rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Hide "Firefox Suggest" label (the way we must do this is a little hacky) */
@@ -78,7 +78,7 @@
 
 /* Hide Tracking Protection icon in URL bar */
 #tracking-protection-icon-container {
-    display: none !important;
+	display: none !important;
 }
 
 /* Hide giant thumbnail and favicon within Bookmark Panel */
@@ -87,7 +87,7 @@
 #editBookmarkPanelFaviconContainer,
 #editBookmarkHeaderSeparator,
 #editBookmarkSeparator {
-  display: none !important;
+	display: none !important;
 }
 
 /* Eliminate annoying info bubble for fullscreen video */
