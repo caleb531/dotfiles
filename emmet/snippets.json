@@ -3,9 +3,7 @@
     "profile": "html",
     "snippets": {
       "!": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\" />\n\t<title>${1:Document}</title>\n</head>\n<body>\n\t$2\n</body>\n</html>",
-      "link:fonts": "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=$1\" />"
-    },
-    "abbreviations": {
+      "link:fonts": "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=$1\" />",
       "link:favicon": "<link rel=\"shortcut icon\" href=\"\" />",
       "meta:utf": "<meta charset=\"UTF-8\" />",
       "meta:desc": "<meta name=\"description\" content=\"$1\" />",
@@ -25,7 +23,7 @@
   "svg": {
     "profile": "xml",
     "extends": "xml",
-    "abbreviations": {
+    "snippets": {
       "circle": "<circle cx=\"\" cy=\"\" r=\"\" />",
       "clipPath": "<clipPath id=\"\"></clipPath>",
       "ellipse": "<ellipse cx=\"\" cy=\"\" width=\"\" height=\"\" />",
