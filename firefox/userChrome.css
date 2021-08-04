@@ -45,6 +45,11 @@
 	font-size: 12px !important;
 }
 
+/* Hide tab close button until hovering over tab */
+.tabbrowser-tab:not(:hover) .tab-close-button {
+	display: none !important;
+}
+
 /* Style URL bar focus color to match main background color of URL bar */
 :root {
 	--lwt-toolbar-field-focus: var(--lwt-toolbar-field-background-color) !important;
