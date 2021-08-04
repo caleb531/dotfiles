@@ -95,5 +95,9 @@
     "window.newWindowDimensions": "inherit",
     "editor.stickyTabStops": true,
     "workbench.editor.decorations.colors": false,
-    "window.restoreWindows": "none"
+    "window.restoreWindows": "none",
+    "emmet.extensionsPath": [
+        "/Users/Caleb/dotfiles/emmet",
+        "/Users/caleb/dotfiles/emmet"
+    ]
 }
