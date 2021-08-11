@@ -58,6 +58,7 @@ export GIT_PAGER='diff-so-fancy | less --tabs=4 -R --no-init --quit-if-one-scree
 # Architecture-agnostic path to pinentry-mac; if you change this value, remember
 # to change the hardcoded reference in gpg/gpg-agent.conf
 export GPG_BIN_DIR=/opt/gnupg/bin
+export GPG_TTY=$(tty)
 
 # Number of lines of command history to keep in memory
 export HISTSIZE=250
