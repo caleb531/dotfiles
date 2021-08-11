@@ -129,6 +129,9 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 echo "- Don't automatically rearrange Spaces"
 defaults write com.apple.dock mru-spaces -bool false
 
+echo "- Group windows by application in Mission Control"
+defaults write com.apple.dock expose-group-by-app -bool true
+
 echo "- Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
