@@ -11,8 +11,6 @@ if [ ! -e ~/.nvm ]; then
 	mkdir -p ~/.nvm
 fi
 source ~/dotfiles/terminal/bash/load_nvm.sh
-nvm install 8.17.0
-nvm install 10.16.3
 nvm install 12.16.3
 nvm install 16.5.0
 nvm alias default 16.5.0
