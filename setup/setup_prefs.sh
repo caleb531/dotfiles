@@ -133,7 +133,7 @@ echo "- Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
 echo "- Don't show recent applications in Dock"
-defaults write com.apple.dock show-recents -bool true
+defaults write com.apple.dock show-recents -bool false
 
 echo "- Remove all applications from Dock"
 defaults write com.apple.dock persistent-apps -array
