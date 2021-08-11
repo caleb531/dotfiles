@@ -43,6 +43,7 @@ touch ~/.bash_sessions_disable
 
 # Symlink VSCode configuration
 symlink_vscode() {
+	mkdir -p ~/Library/Application\ Support/Code/User
 	pushd ~/Library/Application\ Support/Code/User &> /dev/null || return
 	rm -rf snippets
 	ln -sf ~/dotfiles/vscode/settings.json settings.json
