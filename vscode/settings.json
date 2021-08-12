@@ -99,5 +99,8 @@
     "emmet.extensionsPath": [
         "/Users/Caleb/dotfiles/emmet",
         "/Users/caleb/dotfiles/emmet"
-    ]
+    ],
+    "css.completion.completePropertyWithSemicolon": false,
+    "less.completion.completePropertyWithSemicolon": false,
+    "scss.completion.completePropertyWithSemicolon": false
 }
