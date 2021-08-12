@@ -17,8 +17,8 @@ defaults write com.apple.Mail DisableSendAnimations -bool true
 echo "- Decrease duration of window resize animations"
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.125
 
-echo "- Disable zoom/maximize when double-clicking window title bar"
-defaults write NSGlobalDomain AppleActionOnDoubleClick -string 'None'
+echo "- Zoom/maximize when double-clicking window title bar"
+defaults write NSGlobalDomain AppleActionOnDoubleClick -string 'Maximize'
 
 echo "- Prevent apps from saving new documents to iCloud"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
