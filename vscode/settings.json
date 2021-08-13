@@ -105,5 +105,6 @@
     "scss.completion.completePropertyWithSemicolon": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.suggestSelection": "first",
-    "editor.wordBasedSuggestionsMode": "currentDocument"
+    "editor.wordBasedSuggestionsMode": "currentDocument",
+    "editor.tabCompletion": "onlySnippets"
 }
