@@ -41,6 +41,10 @@ ln -sf ~/dotfiles/terminal/.pypirc ~/.pypirc
 # Disable Bash Sessions feature in macOS El Capitan
 touch ~/.bash_sessions_disable
 
+# Create Sync directory ahead of time so it can be chosen during the Sync app
+# setup process
+mkdir -p ~/Sync
+
 # Symlink VSCode configuration
 symlink_vscode() {
 	mkdir -p ~/Library/Application\ Support/Code/User
