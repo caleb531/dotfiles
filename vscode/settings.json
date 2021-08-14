@@ -106,5 +106,9 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.suggestSelection": "first",
     "editor.wordBasedSuggestionsMode": "currentDocument",
-    "editor.tabCompletion": "onlySnippets"
+    "editor.tabCompletion": "onlySnippets",
+    "typescript.disableAutomaticTypeAcquisition": true,
+    "editor.suggest.showInterfaces": false,
+    "javascript.suggest.autoImports": false,
+    "javascript.suggest.paths": false
 }
