@@ -110,6 +110,5 @@
     "typescript.disableAutomaticTypeAcquisition": true,
     "editor.suggest.showInterfaces": false,
     "javascript.suggest.autoImports": false,
-    "javascript.suggest.paths": false,
-    "breadcrumbs.enabled": false
+    "javascript.suggest.paths": false
 }
