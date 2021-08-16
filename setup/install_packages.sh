@@ -43,8 +43,7 @@ install_brew_pkg duti
 install_brew_pkg cowsay
 
 install_brew_pkg librsvg
-# ImageMagick >=7.0.0 will currently break Ruby gems like rmagick
-install_brew_pkg imagemagick@6
+install_brew_pkg imagemagick
 # Allow pydot to render visualizations for Python projects
 install_brew_pkg gprof2dot
 
