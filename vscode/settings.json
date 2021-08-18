@@ -111,5 +111,6 @@
     "typescript.disableAutomaticTypeAcquisition": true,
     "editor.suggest.showInterfaces": false,
     "javascript.suggest.autoImports": false,
-    "javascript.suggest.paths": false
+    "javascript.suggest.paths": false,
+    "workbench.editor.splitOnDragAndDrop": false
 }
