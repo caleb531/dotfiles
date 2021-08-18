@@ -565,5 +565,13 @@
   {
     "key": "shift+cmd+e",
     "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "alt+cmd+t",
+    "command": "extension.transpose"
+  },
+  {
+    "key": "alt+cmd+t",
+    "command": "-workbench.action.closeOtherEditors"
   }
 ]
