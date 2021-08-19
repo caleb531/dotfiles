@@ -952,6 +952,7 @@
 '.source.css,
  .source.css.scss':
 
+
   '@media':
     'prefix': 'mediaq'
     'body': '@media $1 {\n\t$2\n}$3'
@@ -979,6 +980,10 @@
   'keyframes':
     'prefix': 'keyframes'
     'body': '@keyframes {\n\t$1\n}'
+
+  'padding':
+    'prefix': 'pad'
+    'body': 'padding: '
 
 # Sass
 

@@ -61,5 +61,12 @@
       "\t$1",
       "}"
     ]
+  },
+  "padding": {
+    "scope": "css,scss",
+    "prefix": "pad",
+    "body": [
+      "padding: "
+    ]
   }
 }
