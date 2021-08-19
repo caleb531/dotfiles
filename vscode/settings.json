@@ -113,5 +113,6 @@
     "javascript.suggest.autoImports": false,
     "javascript.suggest.paths": false,
     "workbench.editor.splitOnDragAndDrop": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "search.quickOpen.includeHistory": false
 }
