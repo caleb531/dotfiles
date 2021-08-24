@@ -740,6 +740,10 @@
     'prefix': 'class'
     'body': 'class ${1:ClassName}(${2:object}):\n\t${3:pass}'
 
+  'if main':
+    'prefix': 'ifmain'
+    'body': 'if __name__ == \'__main__\':\n\t${1:pass}'
+
 # PHP code (within PHP blocks)
 
 '.source.php':

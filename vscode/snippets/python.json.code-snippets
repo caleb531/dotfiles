@@ -154,5 +154,13 @@
       "class ${1:ClassName}(${2:object}):",
       "\t${3:pass}"
     ]
+  },
+  "if main": {
+    "scope": "python",
+    "prefix": "ifmain",
+    "body": [
+      "if __name__ == '__main__':",
+      "\t${1:pass}"
+    ]
   }
 }
