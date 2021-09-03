@@ -39,7 +39,7 @@
   },
   {
     "key": "cmd+k cmd+u",
-    "command": "editor.action.transformtouppercase"
+    "command": "editor.action.transformToUppercase"
   },
   {
     "key": "cmd+o",
