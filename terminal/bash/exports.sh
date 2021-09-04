@@ -48,7 +48,7 @@ export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
 export EDITOR='vim'
 
 # Name of default web browser (useful for `open -a` commands)
-export WEB_BROWSER_NAME='Google Chrome'
+export WEB_BROWSER_NAME='Brave Browser'
 
 # Don't clear man page when exiting less
 export MANPAGER='less --no-init --quit-if-one-screen --IGNORE-CASE'
