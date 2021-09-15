@@ -67,7 +67,6 @@
       ".Trashes"
       "node_modules"
       "Thumbs.db"
-      "*.d.ts"
       "__pycache__"
     ]
     packagesWithKeymapsDisabled: [
