@@ -184,5 +184,8 @@ terminal_saved_state_dir="$HOME/Library/Saved Application State/com.apple.Termin
 rm -rf "${terminal_saved_state_dir:?}"/*
 chmod 444 "${terminal_saved_state_dir:?}"
 
+echo "- Disable Keyboard Maestro clipboard history"
+defaults write com.stairways.keyboardmaestro.engine MaxClipboardHistory -int 0
+
 echo "Restarting affected processes..."
 killall Dock Finder SystemUIServer
