@@ -328,6 +328,10 @@
     'prefix': 'import'
     'body': 'import ${1:mname} from \'${2:path}\';$3'
 
+  'export':
+    'prefix': 'export'
+    'body': 'export ${1:mname};'
+
   'export default':
     'prefix': 'exportdefault'
     'body': 'export default ${1:mname};'
