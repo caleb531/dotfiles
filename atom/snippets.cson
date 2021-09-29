@@ -579,8 +579,8 @@
     'body': 'define(\'${1:Extension.Module}\', [\n\t\'$2\'$3\n], function (\n\t$4\n) {\n\t\'use strict\';\n\n\treturn ${5:exported};\n\n});'
 
   'mountToApp':
-    'prefix': 'mta'
-    'body': '{\n\tmountToApp: function (${1:application}) {\n\n\t\t$2\n\n\t}\n}'
+    'prefix': 'return mta'
+    'body': '{\n\tmountToApp: function (${1:application}) {\n\n\t\t$2\n\n\t}\n}$3'
 
   'wrap prototype method':
     'prefix': 'wrap'
@@ -624,7 +624,7 @@
 
 '.source.ts':
 
-  'mountToApp (TypeScript)':
+  'mountToApp':
     'prefix': 'mta'
     'body': 'export function mountToApp(${1:application}): void {\n\t$2\n}'
 
