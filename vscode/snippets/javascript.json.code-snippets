@@ -220,6 +220,13 @@
       "import ${1:mname} from '${2:path}';$3"
     ]
   },
+  "export": {
+    "scope": "javascript,typescript",
+    "prefix": "export",
+    "body": [
+      "export ${1:mname};"
+    ]
+  },
   "export default": {
     "scope": "javascript,typescript",
     "prefix": "exportdefault",
@@ -683,7 +690,7 @@
   },
   "mountToApp": {
     "scope": "javascript,typescript",
-    "prefix": "mta",
+    "prefix": "return mta",
     "body": [
       "{",
       "\tmountToApp: function (${1:application}) {",
@@ -691,7 +698,7 @@
       "\t\t$2",
       "",
       "\t}",
-      "}"
+      "}$3"
     ]
   },
   "wrap prototype method": {

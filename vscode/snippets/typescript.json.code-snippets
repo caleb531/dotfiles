@@ -1,5 +1,5 @@
 {
-  "mountToApp (TypeScript)": {
+  "mountToApp": {
     "scope": "typescript",
     "prefix": "mta",
     "body": [
