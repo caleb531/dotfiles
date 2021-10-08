@@ -573,5 +573,15 @@
   {
     "key": "alt+cmd+t",
     "command": "-workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "highlight-matching-tag.selectPairContents",
+    "when": "editorLangId == 'handlebars' || editorLangId == 'html' || editorLangId == 'sca-template'"
+  },
+  {
+    "key": "alt+cmd+m",
+    "command": "highlight-matching-tag.jumpToMatchingTag",
+    "when": "editorLangId == 'handlebars' || editorLangId == 'html' || editorLangId == 'sca-template'"
   }
 ]
