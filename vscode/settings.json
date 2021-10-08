@@ -115,5 +115,6 @@
     "workbench.editor.splitOnDragAndDrop": false,
     "workbench.editor.enablePreview": false,
     "search.quickOpen.includeHistory": false,
-    "workbench.quickOpen.preserveInput": true
+    "workbench.quickOpen.preserveInput": true,
+    "editor.autoIndent": "advanced"
 }
