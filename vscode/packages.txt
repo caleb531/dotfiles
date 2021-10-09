@@ -17,6 +17,7 @@ ms-python.vscode-pylance
 ms-vscode-remote.remote-ssh-edit
 patbenatar.advanced-new-file
 rebornix.prolog
+sissel.shopify-liquid
 stkb.rewrap
 v4run.transpose
 vincaslt.highlight-matching-tag
