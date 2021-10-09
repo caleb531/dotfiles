@@ -19,4 +19,5 @@ patbenatar.advanced-new-file
 rebornix.prolog
 stkb.rewrap
 v4run.transpose
+vincaslt.highlight-matching-tag
 waderyan.gitblame
