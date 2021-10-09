@@ -116,5 +116,6 @@
     "workbench.editor.enablePreview": false,
     "search.quickOpen.includeHistory": false,
     "workbench.quickOpen.preserveInput": true,
-    "editor.autoIndent": "advanced"
+    "editor.autoIndent": "advanced",
+    "editor.semanticHighlighting.enabled": false
 }
