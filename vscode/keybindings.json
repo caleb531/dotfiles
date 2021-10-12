@@ -583,5 +583,13 @@
     "key": "alt+cmd+m",
     "command": "highlight-matching-tag.jumpToMatchingTag",
     "when": "editorLangId == 'handlebars' || editorLangId == 'html' || editorLangId == 'sca-template'"
+  },
+  {
+    "key": "cmd+k shift+cmd+-",
+    "command": "editor.action.transformToSnakecase"
+  },
+  {
+    "key": "cmd+k cmd+t",
+    "command": "editor.action.transformToTitlecase"
   }
 ]
