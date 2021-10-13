@@ -591,5 +591,9 @@
   {
     "key": "cmd+k cmd+t",
     "command": "editor.action.transformToTitlecase"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
   }
 ]
