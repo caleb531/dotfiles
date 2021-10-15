@@ -118,6 +118,9 @@ defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'
 echo "- Disable Finder animations (e.g. for the Get Info panel)"
 defaults write com.apple.finder DisableAllAnimations -bool true
 
+echo "- Disable video/PDF controls on file thumbnails"
+defaults write com.apple.finder QLInlinePreviewMinimumSupportedSize -int 514
+
 echo "Setting Dock preferences..."
 
 echo "- Minimize windows using scale effect"
