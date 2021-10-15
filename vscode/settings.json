@@ -69,7 +69,8 @@
         "**/DeployDistributionAdvanced": true,
         "**/DeployDistributionAdvancedSS2": true,
         "**/LocalDistribution": true,
-        "**/LocalDistributionAdvanced": true
+        "**/LocalDistributionAdvanced": true,
+        "**/node_modules": true
     },
     "editor.occurrencesHighlight": false,
     "editor.selectionHighlight": false,
