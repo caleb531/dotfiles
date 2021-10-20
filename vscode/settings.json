@@ -160,5 +160,6 @@
     },
     "editor.renderLineHighlight": "all",
     "editor.cursorSurroundingLines": 2,
-    "workbench.commandPalette.preserveInput": true
+    "workbench.commandPalette.preserveInput": true,
+    "workbench.editor.untitled.hint": "hidden"
 }
