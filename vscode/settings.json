@@ -159,5 +159,6 @@
       ]
     },
     "editor.renderLineHighlight": "all",
-    "editor.cursorSurroundingLines": 2
+    "editor.cursorSurroundingLines": 2,
+    "workbench.commandPalette.preserveInput": true
 }
