@@ -162,5 +162,6 @@
     "editor.cursorSurroundingLines": 2,
     "workbench.commandPalette.preserveInput": true,
     "workbench.editor.untitled.hint": "hidden",
-    "workbench.editor.untitled.labelFormat": "name"
+    "workbench.editor.untitled.labelFormat": "name",
+    "typescript.workspaceSymbols.scope": "currentProject"
 }
