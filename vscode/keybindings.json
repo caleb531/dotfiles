@@ -545,10 +545,6 @@
     "command": "-workbench.action.gotoSymbol"
   },
   {
-    "key": "cmd+r",
-    "command": "workbench.action.showAllSymbols"
-  },
-  {
     "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
@@ -595,5 +591,9 @@
   {
     "key": "cmd+b",
     "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.gotoSymbol"
   }
 ]
