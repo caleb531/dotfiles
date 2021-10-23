@@ -276,3 +276,11 @@ appid() {
 	local app_name_short="${app_name_full%.*}"
 	osascript -e "id of app \"$app_name_short\""
 }
+
+# Check drive usage and wear statistics for SSD
+ssd() {
+	if ! type smartctl &> /dev/null; then
+		brew install smartmontools
+	fi
+	sudo smartctl --all /dev/disk0
+}
