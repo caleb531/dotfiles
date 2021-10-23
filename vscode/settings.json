@@ -166,5 +166,6 @@
     "editor.linkedEditing": true,
     "emmet.includeLanguages": {
         "svg": "xml"
-    }
+    },
+    "workbench.editor.wrapTabs": true
 }
