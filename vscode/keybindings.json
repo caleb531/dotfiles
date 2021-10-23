@@ -603,5 +603,9 @@
   {
     "key": "shift+alt+s o",
     "command": "-svgviewer.open"
+  },
+  {
+    "key": "ctrl+alt+cmd+\\",
+    "command": "workbench.action.toggleSidebarVisibility"
   }
 ]
