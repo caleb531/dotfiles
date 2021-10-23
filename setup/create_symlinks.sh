@@ -51,6 +51,7 @@ symlink_vscode() {
 	pushd ~/Library/Application\ Support/Code/User &> /dev/null || return
 	rm -rf snippets
 	ln -sf ~/dotfiles/vscode/settings.json settings.json
+	ln -sf ~/dotfiles/vscode/init.ts init.ts
 	ln -sf ~/dotfiles/vscode/keybindings.json keybindings.json
 	ln -snf ~/dotfiles/vscode/snippets snippets
 	popd &> /dev/null || return
