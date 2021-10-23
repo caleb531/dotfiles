@@ -12,4 +12,4 @@ while read -r pkg_line; do
 	if [ -n "$pkg_name" ]; then
 		install_vscode_pkg "$pkg_name"
 	fi
-done < ~/dotfiles/vscode/packages.txt
+done < ~/dotfiles/vscode/extensions.txt
