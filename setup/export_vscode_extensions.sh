@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-code --list-extensions | sort > ~/dotfiles/vscode/extensions.txt
+code --list-extensions > ~/dotfiles/vscode/extensions.txt
