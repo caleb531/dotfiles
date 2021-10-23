@@ -1,118 +1,118 @@
 {
   "expression": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "exp",
     "body": [
       "{{$1}}$2"
     ]
   },
   "if": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "if",
     "body": [
       "{{#if ${1:condition}}}$2"
     ]
   },
   "elseif": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "elseif",
     "body": [
       "{{else if ${1:condition}}}$2"
     ]
   },
   "else": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "else",
     "body": [
       "{{else}}"
     ]
   },
   "endif": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "endif",
     "body": [
       "{{/if}}"
     ]
   },
   "unless": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "unless",
     "body": [
       "{{#unless ${1:condition}}}$2"
     ]
   },
   "endunless": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "endunless",
     "body": [
       "{{/unless}}"
     ]
   },
   "each": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "each",
     "body": [
       "{{#each ${1:object}}}$2"
     ]
   },
   "endeach": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "endeach",
     "body": [
       "{{/each}}"
     ]
   },
   "for": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "for",
     "body": [
       "{{#each ${1:object}}}$2"
     ]
   },
   "endfor": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "endfor",
     "body": [
       "{{/each}}"
     ]
   },
   "with": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "with",
     "body": [
       "{{#with ${1:object}}}$2"
     ]
   },
   "endwith": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "endwith",
     "body": [
       "{{/with}}"
     ]
   },
   "ifEquals": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "ifequals",
     "body": [
       "{{#ifEquals ${1:object} ${2:value}}}$3"
     ]
   },
   "end ifEquals": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "endifequals",
     "body": [
       "{{/ifEquals}}"
     ]
   },
   "unlessEquals": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "unlessequals",
     "body": [
       "{{#unlessEquals ${1:object} ${2:value}}}$3"
     ]
   },
   "end unlessEquals": {
-    "scope": "handlebars,sca-template",
+    "scope": "handlebars",
     "prefix": "endunlessequals",
     "body": [
       "{{/unlessEquals}}"
