@@ -12,6 +12,7 @@ jock.svg
 kevinglasson.cornflakes-linter
 luggage66.AWK
 mattn.Lisp
+mrmlnc.vscode-apache
 ms-python.python
 ms-python.vscode-pylance
 ms-vscode-remote.remote-ssh-edit
