@@ -7,23 +7,29 @@ import { Buffer } from 'buffer';
 
 // The designated path of the file where the list of installed user extensions
 // should be kept
-const EXTENSIONS_LIST_PATH = path.join('Users', 'Caleb', 'dotfiles', 'vscode', 'extensions.txt');
+const EXTENSIONS_DUMP_PATH = Uri.parse(path.join('Users', 'Caleb', 'dotfiles', 'vscode', 'extensions.txt'));
+const EXTENSIONS_DIR_PATH = Uri.parse(path.join('Users', 'Caleb', '.vscode', 'extensions'));
 
 // Return a line-by-line string of extension IDs from the given extensions list
-function getExtensionIds(extensionList: Array<Extension>) {
-	return extensionList.map((extension) => {
-		return extension.id;
-	}).join('\n');
+async function getExtensionIds() {
+	// List all files/directories within ~/.vscode/extensions
+	const fileList = await workspace.fs.readDirectory(EXTENSIONS_DIR_PATH);
+	return fileList
+		// Filter to only those entries named as {extension ID}-{version}
+		.filter(([fileName, fileType]: [string, number]) => {
+			return /^(\w[\w\.]+)/.test(fileName);
+		})
+		// Return only the extension ID for each entry (i.e. strip the version)
+		.map(([fileName, fileType]: [string, number]) => {
+			return fileName.replace(/(.*?)-(\d+(\.\d+)+)/, '$1');
+		});
 }
 
 // Export the given list of extensions to the designated file
-function exportExtensionList(extensionList: Array<Extension>) {
-	extensionList.forEach((extension: any) => {
-		window.showInformationMessage('hey');
-	});
-	workspace.fs.writeFile(
-		Uri.parse(EXTENSIONS_LIST_PATH),
-		Buffer.from(getExtensionIds(extensionList))
+async function exportExtensionList() {
+	return workspace.fs.writeFile(
+		EXTENSIONS_DUMP_PATH,
+		Buffer.from((await getExtensionIds()).join('\n'))
 	);
 }
 
@@ -38,25 +44,27 @@ function getUserExtensions(extensionList: Array<Extension>) {
 }
 
 // Export newly-installed extensions to the designated file
-function exportNewExtensions() {
+async function exportNewExtensions() {
     let currentExtensionCount = extensions.all.length;
     // Detect when an extension is installed, uninstalled, enabled, or disabled
-    extensions.onDidChange(() => {
-		const newExtensionsCount = extensions.all.length;
-        if (newExtensionsCount > currentExtensionCount) {
-            window.showInformationMessage('Installed or enabled extension');
-			exportExtensionList(getUserExtensions(extensions.all));
-        } else if (newExtensionsCount < currentExtensionCount) {
-            window.showInformationMessage('Uninstalled or disabled extension');
-			exportExtensionList(getUserExtensions(extensions.all));
+    extensions.onDidChange(async function () {
+		const newExtensions = await getExtensionIds();
+        if (newExtensions.length > currentExtensionCount) {
+			exportExtensionList().then(() => {
+	            window.showInformationMessage('Installed extension has been exported');
+			});
+        } else if (newExtensions.length < currentExtensionCount) {
+			exportExtensionList().then(() => {
+            	window.showInformationMessage('Uninstalled extension has been exported');
+			});
 		} else {
             window.showInformationMessage('Extension updated');
         }
-        currentExtensionCount = newExtensionsCount;
+        currentExtensionCount = newExtensions.length;
     });
 }
 
-export function init(context: ExtensionContext) {
-    // window.showInformationMessage('Welcome! Love, Your Init Script');
-    exportNewExtensions();
+export async function init(context: ExtensionContext) {
+    window.showInformationMessage('Welcome! Love, Your Init Script');
+    await exportNewExtensions();
 }
