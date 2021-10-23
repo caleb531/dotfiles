@@ -166,6 +166,5 @@
     "editor.linkedEditing": true,
     "emmet.includeLanguages": {
         "svg": "xml"
-    },
-    "workbench.iconTheme": "vs-minimal"
+    }
 }
