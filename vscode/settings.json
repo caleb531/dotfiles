@@ -167,5 +167,6 @@
     "emmet.includeLanguages": {
         "svg": "xml"
     },
-    "workbench.editor.wrapTabs": true
+    "workbench.editor.wrapTabs": true,
+    "svg.preview.mode": "svg"
 }

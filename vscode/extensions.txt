@@ -4,6 +4,7 @@ HookyQR.beautify
 SirTobi.pegjs-language
 XadillaX.viml
 caleb531.sca-for-vscode
+cssho.vscode-svgviewer
 dbaeumer.vscode-eslint
 idleberg.applescript
 jedmao.tabsanity

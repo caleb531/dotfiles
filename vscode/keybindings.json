@@ -595,5 +595,13 @@
   {
     "key": "cmd+r",
     "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+alt+cmd+v",
+    "command": "svgviewer.open"
+  },
+  {
+    "key": "shift+alt+s o",
+    "command": "-svgviewer.open"
   }
 ]
