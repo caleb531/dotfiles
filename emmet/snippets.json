@@ -2,12 +2,11 @@
   "html": {
     "profile": "html",
     "snippets": {
-      "!": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\" />\n\t<title>${1:Document}</title>\n</head>\n<body>\n\t$2\n</body>\n</html>",
-      "link:fonts": "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=$1\" />",
-      "link:favicon": "<link rel=\"shortcut icon\" href=\"\" />",
-      "meta:utf": "<meta charset=\"UTF-8\" />",
-      "meta:desc": "<meta name=\"description\" content=\"$1\" />",
-      "meta:viewport": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />"
+      "!": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\" />\n\t<title>${1:Document}</title>\n</head>\n<body>\n\t${2}\n</body>\n</html>",
+      "link:favicon": "link[rel='shortcut icon'][href]",
+      "meta:utf": "meta[charset='UTF-8']",
+      "meta:desc": "meta[name=description][content]",
+      "meta:viewport": "meta[name=viewport][content='width=device-width, initial-scale=1, user-scalable=no']"
     }
   },
   "php": {
@@ -18,26 +17,26 @@
     "profile": "xml",
     "snippets": {
       "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>",
-      "circle": "<circle cx=\"\" cy=\"\" r=\"\" />",
-      "clipPath": "<clipPath id=\"\"></clipPath>",
-      "ellipse": "<ellipse cx=\"\" cy=\"\" width=\"\" height=\"\" />",
-      "image": "<image xlink:href=\"\" x=\"\" y=\"\" width=\"\" height=\"\" />",
-      "line": "<line x1=\"\" y1=\"\" x2=\"\" y2=\"\" />",
-      "linearGradient": "<linearGradient id=\"\"></linearGradient>",
-      "marker": "<marker id=\"\" markerWidth=\"\" markerHeight=\"\" refX=\"\" refY=\"\" orient=\"\"></marker>",
-      "mask": "<mask id=\"\"></mask>",
-      "path": "<path d=\"\" />",
-      "pattern": "<pattern id=\"\" x=\"\" y=\"\" width=\"\" height=\"\" patternUnits=\"userSpaceOnUse\"></pattern>",
-      "polygon": "<polygon points=\"\" />",
-      "polyline": "<polyline points=\"\" />",
-      "radialGradient": "<radialGradient id=\"\"></radialGradient>",
-      "rect": "<rect x=\"\" y=\"\" width=\"\" height=\"\" />",
-      "stop": "<stop offset=\"\" stop-color=\"\"/>",
-      "svg": "<svg viewBox=\"\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></svg>",
-      "symbol": "<symbol id=\"\" viewBox=\"\"></symbol>",
-      "text": "<text x=\"\" y=\"\"></text>",
-      "textPath": "<textPath xlink:href=\"\"></textPath>",
-      "use": "<use xlink:href=\"\" x=\"\" y=\"\" />"
+      "circle": "circle[cx][cy][r]/",
+      "clipPath": "clipPath[id]",
+      "ellipse": "ellipse[cx][cy][width][height]/",
+      "image": "image [xlink:href][x][y][width][height]/",
+      "line": "line[x1][y1][x2][y2]/",
+      "linearGradient": "linearGradient[id]",
+      "marker": "marker[id][markerWidth][markerHeight][refX][refY][orient]",
+      "mask": "mask[id]",
+      "path": "path[d]/",
+      "pattern": "pattern[id][x][y][width][height][patternUnits=userSpaceOnUse]",
+      "polygon": "polygon[points]/",
+      "polyline": "polyline[points]/",
+      "radialGradient": "radialGradient[id]",
+      "rect": "rect[x][y][width][height]/",
+      "stop": "stop[offset][stop-color]/",
+      "svg": "svg[viewBox][version='1.1'][xmlns='http://www.w3.org/2000/svg'][xmlns:xlink='http://www.w3.org/1999/xlink']",
+      "symbol": "symbol[id][viewBox]",
+      "text": "text[x][y]",
+      "textPath": "textPath[xlink:href]",
+      "use": "use[xlink:href][x][y]/"
     }
   }
 }
