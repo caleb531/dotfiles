@@ -10,6 +10,11 @@ import { exec } from 'child_process';
 const EXTENSIONS_EXPORT_SCRIPT_PATH = path.join(
   '~', 'dotfiles', 'setup', 'export_vscode_extensions.sh'
 );
+// The designated path of the shell script that installs all extensions not
+// already installed on this machine
+const EXTENSIONS_INSTALL_SCRIPT_PATH = path.join(
+  '~', 'dotfiles', 'setup', 'install_vscode_extensions.sh'
+);
 
 // Export newly-installed extensions to the designated file
 function exportNewExtensions() {
@@ -19,7 +24,14 @@ function exportNewExtensions() {
   });
 }
 
+
+// Install synced extensions not already installed on this machine
+function installLatestExtensions() {
+    exec(EXTENSIONS_INSTALL_SCRIPT_PATH);
+}
+
 export function init(context: ExtensionContext) {
   // window.showInformationMessage('Welcome! Love, Your Init Script');
   exportNewExtensions();
+  installLatestExtensions();
 }
