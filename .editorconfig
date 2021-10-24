@@ -12,7 +12,7 @@ indent_style = tab
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{json,cson,coffee,less}]
+[*.{js,ts,json,cson,coffee,less}]
 indent_style = space
 indent_size = 2
 

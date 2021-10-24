@@ -13,8 +13,8 @@ const EXTENSIONS_DIR_PATH = Uri.parse(path.join('Users', 'Caleb', '.vscode', 'ex
 // Return a line-by-line string of extension IDs from the given extensions list
 async function getExtensionIds() {
 	// List all files/directories within ~/.vscode/extensions
-	const fileList = await workspace.fs.readDirectory(EXTENSIONS_DIR_PATH);
-	return fileList
+	const fileList =await workspace.fs.readDirectory(EXTENSIONS_DIR_PATH);
+  return fileList
 		// Filter to only those entries named as {extension ID}-{version}
 		.filter(([fileName, fileType]: [string, number]) => {
 			return /^(\w[\w\.]+)/.test(fileName);
@@ -33,38 +33,30 @@ async function exportExtensionList() {
 	);
 }
 
-// Filter the given extensions list to only those installed by the user (i.e.
-// exclude any extension that is bundled with VS Code)
-function getUserExtensions(extensionList: Array<Extension>) {
-	return extensionList.filter((extension) => {
-		// All bundled extensions are assumed to be under /Applications/;
-		// exclude those
-		return !extension.extensionPath.startsWith('/Applications/');
-	});
-}
-
 // Export newly-installed extensions to the designated file
 async function exportNewExtensions() {
-    let currentExtensionCount = extensions.all.length;
-    // Detect when an extension is installed, uninstalled, enabled, or disabled
-    extensions.onDidChange(async function () {
-		const newExtensions = await getExtensionIds();
-        if (newExtensions.length > currentExtensionCount) {
-			exportExtensionList().then(() => {
-	            window.showInformationMessage('Installed extension has been exported');
-			});
-        } else if (newExtensions.length < currentExtensionCount) {
-			exportExtensionList().then(() => {
-            	window.showInformationMessage('Uninstalled extension has been exported');
-			});
-		} else {
-            window.showInformationMessage('Extension updated');
-        }
-        currentExtensionCount = newExtensions.length;
-    });
+  let currentExtensionCount = (await getExtensionIds()).length;
+  window.showInformationMessage(`Current: ${currentExtensionCount}`);
+  // Detect when an extension is installed, uninstalled, enabled, or disabled
+  extensions.onDidChange(async function () {
+    const newExtensions = await getExtensionIds();
+    window.showInformationMessage(`New: ${newExtensions.length}`);
+    if (newExtensions.length > currentExtensionCount) {
+      exportExtensionList().then(() => {
+        window.showInformationMessage('Installed extension has been exported');
+      });
+    } else if (newExtensions.length < currentExtensionCount) {
+      exportExtensionList().then(() => {
+        window.showInformationMessage('Uninstalled extension has been exported');
+      });
+    } else {
+      window.showInformationMessage('Extension updated');
+    }
+    currentExtensionCount = newExtensions.length;
+  });
 }
 
 export async function init(context: ExtensionContext) {
-    window.showInformationMessage('Welcome! Love, Your Init Script');
-    await exportNewExtensions();
+  // window.showInformationMessage('Welcome! Love, Your Init Script');
+  await exportNewExtensions();
 }
