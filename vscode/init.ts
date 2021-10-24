@@ -16,22 +16,19 @@ const EXTENSIONS_INSTALL_SCRIPT_PATH = path.join(
   '~', 'dotfiles', 'setup', 'install_vscode_extensions.sh'
 );
 
-// Export newly-installed extensions to the designated file
-function exportNewExtensions() {
-  // Detect when an extension is installed, uninstalled, enabled, or disabled
-  extensions.onDidChange(() => {
-    exec(EXTENSIONS_EXPORT_SCRIPT_PATH);
-  });
+// Export full list of installed extensions
+function exportExtensions() {
+  exec(EXTENSIONS_EXPORT_SCRIPT_PATH);
 }
 
 
 // Install synced extensions not already installed on this machine
 function installLatestExtensions() {
-    exec(EXTENSIONS_INSTALL_SCRIPT_PATH);
+  exec(EXTENSIONS_INSTALL_SCRIPT_PATH);
 }
 
 export function init(context: ExtensionContext) {
-  // window.showInformationMessage('Welcome! Love, Your Init Script');
-  exportNewExtensions();
+  // Detect when an extension is installed, uninstalled, enabled, or disabled
+  extensions.onDidChange(() => exportExtensions());
   installLatestExtensions();
 }
