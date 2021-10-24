@@ -1,9 +1,7 @@
 // @ts-ignore: ignore vscode module import
-import { window, workspace, extensions, Extension, ExtensionContext, Uri } from 'vscode';
+import { extensions, ExtensionContext } from 'vscode';
 // @ts-ignore: ignore Path module import
 import * as path from 'path';
-// @ts-ignore: ignore Buffer module import
-import { Buffer } from 'buffer';
 // @ts-ignore: ignore child_process module import
 import { exec } from 'child_process';
 
