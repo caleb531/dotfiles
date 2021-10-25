@@ -44,6 +44,68 @@
                 "settings": {
                   "foreground": "#A6E22E"
                 }
+            },
+            {
+                "scope": [
+                    "entity.tag.apacheconf"
+                ],
+                "settings": {
+                    "foreground": "#F92672"
+                }
+            },
+            {
+                "scope": [
+                    "keyword.core.apacheconf",
+                    "keyword.mpm.apacheconf",
+                    "keyword.access.apacheconf",
+                    "keyword.actions.apacheconf",
+                    "keyword.alias.apacheconf",
+                    "keyword.auth.apacheconf",
+                    "keyword.auth_anon.apacheconf",
+                    "keyword.auth_dbm.apacheconf",
+                    "keyword.auth_digest.apacheconf",
+                    "keyword.auth_ldap.apacheconf",
+                    "keyword.autoindex.apacheconf",
+                    "keyword.filter.apacheconf",
+                    "keyword.cache.apacheconf",
+                    "keyword.cern_meta.apacheconf",
+                    "keyword.cgi.apacheconf",
+                    "keyword.cgid.apacheconf",
+                    "keyword.charset_lite.apacheconf",
+                    "keyword.dav.apacheconf",
+                    "keyword.deflate.apacheconf",
+                    "keyword.dir.apacheconf",
+                    "keyword.disk_cache.apacheconf",
+                    "keyword.dumpio.apacheconf",
+                    "keyword.env.apacheconf",
+                    "keyword.expires.apacheconf",
+                    "keyword.ext_filter.apacheconf",
+                    "keyword.file_cache.apacheconf",
+                    "keyword.filter.apacheconf",
+                    "keyword.headers.apacheconf",
+                    "keyword.imap.apacheconf",
+                    "keyword.include.apacheconf",
+                    "keyword.isapi.apacheconf",
+                    "keyword.ldap.apacheconf",
+                    "keyword.log.apacheconf",
+                    "keyword.mem_cache.apacheconf",
+                    "keyword.mime.apacheconf",
+                    "keyword.misc.apacheconf",
+                    "keyword.negotiation.apacheconf",
+                    "keyword.nw_ssl.apacheconf",
+                    "keyword.proxy.apacheconf",
+                    "keyword.rewrite.apacheconf",
+                    "keyword.setenvif.apacheconf",
+                    "keyword.so.apacheconf",
+                    "keyword.ssl.apacheconf",
+                    "keyword.substitute.apacheconf",
+                    "keyword.usertrack.apacheconf",
+                    "keyword.vhost_alias.apacheconf",
+                    "keyword.php.apacheconf"
+                ],
+                "settings": {
+                    "foreground": "#66D9EF"
+                }
             }
         ]
     },
