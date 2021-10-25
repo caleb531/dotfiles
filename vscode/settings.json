@@ -113,7 +113,8 @@
     "editor.fontSize": 16,
     "files.associations": {
         "*.json": "jsonc",
-        "ssh_config": "ssh_config"
+        "ssh_config": "ssh_config",
+        "*.toc": "latex"
     },
     "editor.snippetSuggestions": "top",
     "editor.wordWrap": "bounded",
@@ -229,5 +230,6 @@
     "emmet.includeLanguages": {
         "svg": "xml"
     },
-    "svg.preview.mode": "svg"
+    "svg.preview.mode": "svg",
+    "latex.linter.enabled": false
 }
