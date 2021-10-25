@@ -19,6 +19,7 @@ patbenatar.advanced-new-file
 rebornix.prolog
 SirTobi.pegjs-language
 stkb.rewrap
+tommasov.hosts
 v4run.transpose
 vincaslt.highlight-matching-tag
 waderyan.gitblame
