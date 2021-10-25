@@ -611,5 +611,9 @@
   {
     "key": "cmd+\\",
     "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "cmd+b",
+    "command": "workbench.action.showAllEditors"
   }
 ]
