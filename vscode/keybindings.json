@@ -607,5 +607,9 @@
   {
     "key": "ctrl+alt+cmd+\\",
     "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+\\",
+    "command": "-workbench.action.splitEditor"
   }
 ]
