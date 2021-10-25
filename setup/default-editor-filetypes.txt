@@ -1,4 +1,5 @@
 applescript
+asm
 c
 conf
 cpp
@@ -7,7 +8,7 @@ java
 js
 json
 less
-md
+lisp
 md
 py
 rb
@@ -20,5 +21,6 @@ svg
 tpl
 ts
 txt
+xml
 yaml
 yml
