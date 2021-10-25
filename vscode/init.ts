@@ -5,26 +5,15 @@ import * as path from 'path';
 // @ts-ignore: ignore child_process module import
 import { exec } from 'child_process';
 
-// The designated path of the shell script that exports all installed user
-// extensions
-const EXTENSIONS_EXPORT_SCRIPT_PATH = path.join(
-  '~', 'dotfiles', 'setup', 'export_vscode_extensions.sh'
-);
-// The designated path of the shell script that installs all extensions not
-// already installed on this machine
-const EXTENSIONS_INSTALL_SCRIPT_PATH = path.join(
-  '~', 'dotfiles', 'setup', 'install_vscode_extensions.sh'
-);
-
 // Export full list of installed extensions
 function exportExtensions() {
-  exec(EXTENSIONS_EXPORT_SCRIPT_PATH);
+  exec(path.join('~', 'dotfiles', 'setup', 'export_vscode_extensions.sh'));
 }
 
 
 // Install synced extensions not already installed on this machine
 function installLatestExtensions() {
-  exec(EXTENSIONS_INSTALL_SCRIPT_PATH);
+  exec(path.join('~', 'dotfiles', 'setup', 'install_vscode_extensions.sh'));
 }
 
 export function init(context: ExtensionContext) {
