@@ -19,5 +19,5 @@ function installLatestExtensions(): void {
 export function init(context: ExtensionContext): void {
   // Detect when an extension is installed, uninstalled, enabled, or disabled
   extensions.onDidChange(() => exportExtensions());
-  installLatestExtensions();
+  // installLatestExtensions();
 }
