@@ -1,0 +1,236 @@
+{
+  "create error": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiCreateError",
+    "body": [
+      "nlapiCreateError('${1:title}', '${2:message}');"
+    ]
+  },
+  "create record": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiCreateRecord",
+    "body": [
+      "nlapiCreateRecord('${1:recordtype}');"
+    ]
+  },
+  "load record": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiLoadRecord",
+    "body": [
+      "nlapiLoadRecord(${1:recordtype}, ${2:internalid});"
+    ]
+  },
+  "search record": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiSearchRecord",
+    "body": [
+      "nlapiSearchRecord(${1:recordtype}, ${2:null}, ${3:filters});"
+    ]
+  },
+  "get new record": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiGetNewRecord",
+    "body": [
+      "nlapiGetNewRecord();"
+    ]
+  },
+  "get record id": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiGetRecordId",
+    "body": [
+      "nlapiGetRecordId();"
+    ]
+  },
+  "get record type": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiGetRecordType",
+    "body": [
+      "nlapiGetRecordType();"
+    ]
+  },
+  "search filter": {
+    "scope": "javascript,typescript",
+    "prefix": "nlobjSearchFilter",
+    "body": [
+      "nlobjSearchFilter('${1:fieldname}', ${2:null}, '${3:is}', ${4:value})$5"
+    ]
+  },
+  "search column": {
+    "scope": "javascript,typescript",
+    "prefix": "nlobjSearchColumn",
+    "body": [
+      "nlobjSearchColumn('${1:fieldname}'$2)$3"
+    ]
+  },
+  "get value": {
+    "scope": "javascript,typescript",
+    "prefix": "getValue",
+    "body": [
+      "getValue(${1:fieldname})$2"
+    ]
+  },
+  "get text": {
+    "scope": "javascript,typescript",
+    "prefix": "getText",
+    "body": [
+      "getText(${1:fieldname})$2"
+    ]
+  },
+  "get field value": {
+    "scope": "javascript,typescript",
+    "prefix": "getFieldValue",
+    "body": [
+      "getFieldValue(${1:fieldname})$2"
+    ]
+  },
+  "get field text": {
+    "scope": "javascript,typescript",
+    "prefix": "getFieldText",
+    "body": [
+      "getFieldText(${1:fieldname})$2"
+    ]
+  },
+  "set field value": {
+    "scope": "javascript,typescript",
+    "prefix": "setFieldValue",
+    "body": [
+      "setFieldValue(${1:fieldname}, ${2:value})$3"
+    ]
+  },
+  "submit record": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiSubmitRecord",
+    "body": [
+      "nlapiSubmitRecord(${1:record});"
+    ]
+  },
+  "script parameter": {
+    "scope": "javascript,typescript",
+    "prefix": "getscriptparameter",
+    "body": [
+      "getSetting('SCRIPT', 'custscript_${1:paramname}')"
+    ]
+  },
+  "log.debug": {
+    "scope": "javascript,typescript",
+    "prefix": "logdebug",
+    "body": [
+      "log.debug({title: '${1:title}', details: ${2:details}});"
+    ]
+  },
+  "log.error": {
+    "scope": "javascript,typescript",
+    "prefix": "logerror",
+    "body": [
+      "log.error({title: '${1:title}', details: ${2:details}});"
+    ]
+  },
+  "search.create": {
+    "scope": "javascript,typescript",
+    "prefix": "searchcreate",
+    "body": [
+      "search.create({",
+      "\ttype: '${1:type}'$2",
+      "})$3"
+    ]
+  },
+  "record.create": {
+    "scope": "javascript,typescript",
+    "prefix": "recordcreate",
+    "body": [
+      "record.create({",
+      "\ttype: '${1:type}'$2",
+      "})$3"
+    ]
+  },
+  "record.load": {
+    "scope": "javascript,typescript",
+    "prefix": "recordload",
+    "body": [
+      "record.load({",
+      "\ttype: '${1:type}'",
+      "\tid: ${2:id}",
+      "})$4"
+    ]
+  },
+  "getValue": {
+    "scope": "javascript,typescript",
+    "prefix": "getvalue",
+    "body": [
+      "getValue({name: '$1'$2})$3"
+    ]
+  },
+  "getText": {
+    "scope": "javascript,typescript",
+    "prefix": "gettext",
+    "body": [
+      "getText({name: '$1'$2})$3"
+    ]
+  },
+  "setValue": {
+    "scope": "javascript,typescript",
+    "prefix": "setvalue",
+    "body": [
+      "setValue({",
+      "\tname: '$1',",
+      "\tvalue: ${2:val}",
+      "})$3"
+    ]
+  },
+  "setText": {
+    "scope": "javascript,typescript",
+    "prefix": "settext",
+    "body": [
+      "setText({",
+      "\tname: '$1',",
+      "\ttext: ${2:val}",
+      "})$3"
+    ]
+  },
+  "getSublistValue": {
+    "scope": "javascript,typescript",
+    "prefix": "getsublistvalue",
+    "body": [
+      "getSublistValue({",
+      "\tsublistId: '$1',",
+      "\tline: ${2:0},",
+      "\tfieldId: '$3'",
+      "})$4"
+    ]
+  },
+  "getSublistText": {
+    "scope": "javascript,typescript",
+    "prefix": "getsublisttext",
+    "body": [
+      "getSublistText({",
+      "\tsublistId: '$1',",
+      "\tline: ${2:0},",
+      "\tfieldId: '$3'",
+      "})$4"
+    ]
+  },
+  "setSublistValue": {
+    "scope": "javascript,typescript",
+    "prefix": "setsublistvalue",
+    "body": [
+      "setSublistValue({",
+      "\tsublistId: '$1',",
+      "\tline: ${2:0},",
+      "\tfieldId: '$3',",
+      "\tvalue: ${4:val}",
+      "})$5"
+    ]
+  },
+  "setSublistText": {
+    "scope": "javascript,typescript",
+    "prefix": "setsublisttext",
+    "body": [
+      "setSublistText({",
+      "\tsublistId: '$1',",
+      "\tline: ${2:0},",
+      "\tfieldId: '$3',",
+      "\ttext: ${4:val}",
+      "})$5"
+    ]
+  }
+}

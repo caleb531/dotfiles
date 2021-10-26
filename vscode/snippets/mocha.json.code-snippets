@@ -1,0 +1,129 @@
+{
+  "it": {
+    "scope": "javascript,typescript",
+    "prefix": "it",
+    "body": [
+      "it('$1', function ($2) {",
+      "\t$3",
+      "});"
+    ]
+  },
+  "describe": {
+    "scope": "javascript,typescript",
+    "prefix": "describe",
+    "body": [
+      "describe('$1', function ($2) {",
+      "\t$3",
+      "});"
+    ]
+  },
+  "expect": {
+    "scope": "javascript,typescript",
+    "prefix": "expect",
+    "body": [
+      "expect($1).$2"
+    ]
+  },
+  "beforeEach": {
+    "scope": "javascript,typescript",
+    "prefix": "beforeeach",
+    "body": [
+      "beforeEach(function ($1) {",
+      "\t$2",
+      "});"
+    ]
+  },
+  "afterEach": {
+    "scope": "javascript,typescript",
+    "prefix": "aftereach",
+    "body": [
+      "afterEach(function ($1) {",
+      "\t$2",
+      "});"
+    ]
+  },
+  "to be": {
+    "scope": "javascript,typescript",
+    "prefix": "tobe",
+    "body": [
+      "to.be."
+    ]
+  },
+  "not to be": {
+    "scope": "javascript,typescript",
+    "prefix": "nottobe",
+    "body": [
+      "not.to.be."
+    ]
+  },
+  "to equal": {
+    "scope": "javascript,typescript",
+    "prefix": "toequal",
+    "body": [
+      "to.equal($1);$2"
+    ]
+  },
+  "not to equal": {
+    "scope": "javascript,typescript",
+    "prefix": "nottoequal",
+    "body": [
+      "not.to.equal($1);$2"
+    ]
+  },
+  "to deep equal": {
+    "scope": "javascript,typescript",
+    "prefix": "todeepequal",
+    "body": [
+      "to.deep.equal($1);$2"
+    ]
+  },
+  "not to deep equal": {
+    "scope": "javascript,typescript",
+    "prefix": "nottodeepequal",
+    "body": [
+      "not.to.deep.equal($1);$2"
+    ]
+  },
+  "to have length": {
+    "scope": "javascript,typescript",
+    "prefix": "tohavelen",
+    "body": [
+      "to.have.lengthOf($1);$2"
+    ]
+  },
+  "not to have length": {
+    "scope": "javascript,typescript",
+    "prefix": "nottohavelen",
+    "body": [
+      "not.to.have.lengthOf($1);$2"
+    ]
+  },
+  "to have property": {
+    "scope": "javascript,typescript",
+    "prefix": "tohaveprop",
+    "body": [
+      "to.have.property($1);$2"
+    ]
+  },
+  "not to have property": {
+    "scope": "javascript,typescript",
+    "prefix": "nottohaveprop",
+    "body": [
+      "not.to.have.property($1);$2"
+    ]
+  },
+  "to be instance of": {
+    "scope": "javascript,typescript",
+    "prefix": "tobeinstanceof",
+    "body": [
+      "to.be.instanceOf($1);$2"
+    ]
+  },
+  "not to be instance of": {
+    "scope": "javascript,typescript",
+    "prefix": "nottobeinstanceof",
+    "body": [
+      "not.to.be.instanceOf($1);$2"
+    ]
+  },
+}
