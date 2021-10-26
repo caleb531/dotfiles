@@ -1,6 +1,7 @@
 applescript
 asm
 c
+code-snippets
 coffee
 conf
 cpp
