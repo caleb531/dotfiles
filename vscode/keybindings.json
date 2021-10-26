@@ -615,5 +615,9 @@
   {
     "key": "cmd+b",
     "command": "workbench.action.showAllEditors"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "gitblame.addCommitHashToClipboard"
   }
 ]
