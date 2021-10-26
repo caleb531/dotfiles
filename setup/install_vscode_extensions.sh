@@ -5,7 +5,7 @@ source ~/dotfiles/setup/header.sh
 source ~/dotfiles/terminal/bash/exports.sh
 
 echo "Installing VS Code packages..."
-git pull --ff-only
+git pull --ff-only 2> /dev/null
 preload_vscode_pkg_list
 
 while read -r pkg_line; do
