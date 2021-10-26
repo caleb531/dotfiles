@@ -16,6 +16,7 @@ less
 lisp
 md
 patch
+pegjs
 php
 plist
 py
