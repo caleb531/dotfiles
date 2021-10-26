@@ -37,8 +37,8 @@
     ]
   },
   "mountToApp": {
-    "scope": "javascript,typescript",
-    "prefix": "return mta",
+    "scope": "javascript",
+    "prefix": "mta",
     "body": [
       "{",
       "\tmountToApp: function (${1:application}) {",
@@ -47,6 +47,15 @@
       "",
       "\t}",
       "}$3"
+    ]
+  },
+  "mountToApp (TypeScript)": {
+    "scope": "typescript",
+    "prefix": "mta",
+    "body": [
+      "export function mountToApp(${1:application}): void {",
+      "\t$2",
+      "}"
     ]
   },
   "wrap prototype method": {
@@ -86,5 +95,5 @@
     "body": [
       "fn.apply(this, _.toArray(arguments).slice(1));"
     ]
-  },
+  }
 }
