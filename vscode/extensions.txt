@@ -13,8 +13,6 @@ luggage66.AWK
 mathematic.vscode-latex
 mattn.Lisp
 mrmlnc.vscode-apache
-ms-python.python
-ms-python.vscode-pylance
 ms-vscode-remote.remote-ssh-edit
 patbenatar.advanced-new-file
 rebornix.prolog
