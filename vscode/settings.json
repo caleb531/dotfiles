@@ -231,5 +231,6 @@
         "svg": "xml"
     },
     "svg.preview.mode": "svg",
-    "latex.linter.enabled": false
+    "latex.linter.enabled": false,
+    "javascript.validate.enable": false
 }
