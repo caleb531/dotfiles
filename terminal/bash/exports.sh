@@ -7,6 +7,8 @@ if [ -n "$OLDPATH" ]; then
 	export PATH="$OLDPATH"
 fi
 export OLDPATH="$PATH"
+# Re-read .nvmrc when reloading shell
+export CURRENT_NODE_AUTO_SWITCH_PWD=
 
 # Ensure installed packages are recognized and preferred
 
