@@ -103,8 +103,6 @@ alias nrs='npm rebuild node-sass'
 # Build and watch project
 alias nb='npm run build'
 alias nw='npm run watch'
-# Convenient shortcut to the eslint binary
-alias eslint='./node_modules/.bin/eslint'
 
 # Git
 alias gi='git'
