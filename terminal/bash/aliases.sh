@@ -150,6 +150,11 @@ alias xcode-switch-clt='sudo xcode-select --switch /Library/Developer/CommandLin
 alias atoml='atom'
 alias aton='atom'
 
+# Create several aliases for 'code' misspellings
+alias code='code'
+alias codel='code'
+alias cide='code'
+
 # apm aliases
 alias apmre='apm rebuild'
 
