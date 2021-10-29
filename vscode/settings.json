@@ -114,7 +114,8 @@
     "files.associations": {
         "*.json": "jsonc",
         "ssh_config": "ssh_config",
-        "*.toc": "latex"
+        "*.toc": "latex",
+        "*.sublime-project": "json"
     },
     "editor.snippetSuggestions": "top",
     "editor.wordWrap": "bounded",
