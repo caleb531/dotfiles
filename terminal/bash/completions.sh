@@ -12,19 +12,19 @@ _npm() {
 
 	if [ "$prev" == 'npm' ] || [ "$prev" == 'bower' ] || [ "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
-		COMPREPLY=( $(compgen -W 'audit cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'audit cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- "$cur") )
 	elif [ "$prev" == 'install' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete common options for `npm install` and `npm uninstall`
-		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- $cur) )
+		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- "$cur") )
 	elif [ "$prev" == 'cache' ]; then
 		# Complete subcommands for `npm cache`
-		COMPREPLY=( $(compgen -W 'clean' -- $cur) )
+		COMPREPLY=( $(compgen -W 'clean' -- "$cur") )
 	elif [ "$prev" == 'audit' ]; then
 		# Complete subcommands for `npm audit`
-		COMPREPLY=( $(compgen -W 'fix' -- $cur) )
+		COMPREPLY=( $(compgen -W 'fix' -- "$cur") )
 	elif [ "$second" == 'audit' ] && [ "$third" == 'fix' ]; then
 		# Complete subcommands for `npm audit fix`
-		COMPREPLY=( $(compgen -W '--dry-run --force' -- $cur) )
+		COMPREPLY=( $(compgen -W '--dry-run --force' -- "$cur") )
 	fi
 
 }
@@ -38,7 +38,7 @@ _grunt() {
 
 	if [ "$prev" == 'grunt' ]; then
 		# Complete Grunt tasks standard to all of my Grunt-based projects
-		COMPREPLY=( $(compgen -W 'build serve watch --help' -- $cur) )
+		COMPREPLY=( $(compgen -W 'build serve watch --help' -- "$cur") )
 	fi
 
 }
@@ -55,13 +55,13 @@ _pip() {
 
 	if [ "$prev" == 'pip' ] || [ "$prev" == 'pip2' ] || [ "$prev" == 'pip3' ] || [ "$prev" == 'help' ]; then
 		# Complete common pip commands for `pip`
-		COMPREPLY=( $(compgen -W 'freeze help install list search show uninstall' -- $cur) )
+		COMPREPLY=( $(compgen -W 'freeze help install list search show uninstall' -- "$cur") )
 	elif [ "$prev" == '>' ] || [ "$prev" == '-r' ]; then
 		# Complete filenames when output is being redirected or for `pip install -r`
 		COMPREPLY=()
 	elif [ "$prev" == 'list'  ]; then
 		# Complete options for `pip list`
-		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- $cur) )
+		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- "$cur") )
 	elif [ "$prev" == 'show' ] || [ "$second" == 'uninstall' ] || [ "$third" == '-U' ]; then
 		# Complete installed packages for `pip show` and `pip uninstall`
 		if [ -z "$PIP_PKG_LIST" ] || [ "$PWD" != "$PIP_PKG_PWD" ]; then
@@ -69,7 +69,7 @@ _pip() {
 			PIP_PKG_LIST="$($first list | grep -Po '[a-z0-9\-]+(?=\=)' 2> /dev/null)"
 			PIP_PKG_PWD="$PWD"
 		fi
-		COMPREPLY=( $(compgen -W "$PIP_PKG_LIST" -- $cur) )
+		COMPREPLY=( $(compgen -W "$PIP_PKG_LIST" -- "$cur") )
 	fi
 
 }
@@ -83,14 +83,14 @@ _apm() {
 
 	if [ "$prev" == 'apm' ] || [ "$prev" == 'help' ]; then
 		# Complete common apm commands for `apm`
-		COMPREPLY=( $(compgen -W 'clean develop help install list link login publish pull push rebuild search show star stars uninstall unstar update upgrade' -- $cur) )
+		COMPREPLY=( $(compgen -W 'clean develop help install list link login publish pull push rebuild search show star stars uninstall unstar update upgrade' -- "$cur") )
 	elif [ "$prev" == 'update' ] || [ "$prev" == 'upgrade' ]; then
 		# Complete options for `apm update` and `apm upgrade`
-		COMPREPLY=( $(compgen -W '--list --no-confirm' -- $cur) )
+		COMPREPLY=( $(compgen -W '--list --no-confirm' -- "$cur") )
 	elif [ "$prev" == 'show' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete installed packages for `apm show` and `apm uninstall`
 		local pkg_list="$(ls ~/.atom/packages 2> /dev/null)"
-		COMPREPLY=( $(compgen -W "$pkg_list" -- $cur) )
+		COMPREPLY=( $(compgen -W "$pkg_list" -- "$cur") )
 	fi
 
 }
@@ -104,11 +104,11 @@ _gem() {
 
 	if [ "$prev" == 'gem' ] || [ "$prev" == 'help' ]; then
 		# Complete common gem commands for `gem`
-		COMPREPLY=( $(compgen -W 'cleanup dependency info install list uninstall update' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cleanup dependency info install list uninstall update' -- "$cur") )
 	elif [ "$prev" == 'dependency' ] || [ "$prev" == 'install' ] || [ "$prev" == 'show' ] || [ "$prev" == 'update' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete installed packages for `gem dependency`, `gem install`, `gem show`, `gem update`, and `gem uninstall`
 		local gem_list="$(ls -1 "$BREW_PREFIX"/lib/ruby/gems/2.6.0/gems 2> /dev/null | grep -Po '[a-z0-9_\-]+(?=\-\d+(\.\d+)+.*?)')"
-		COMPREPLY=( $(compgen -W "$gem_list" -- $cur) )
+		COMPREPLY=( $(compgen -W "$gem_list" -- "$cur") )
 	fi
 
 }
@@ -124,10 +124,10 @@ _bundle() {
 
 	if [ "$prev" == 'bundle' ] || [ "$prev" == 'help' ]; then
 		# Complete common bundle commands for `bundle`
-		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- $cur) )
+		COMPREPLY=( $(compgen -W 'check clean exec help init install list lock outdated package show update' -- "$cur") )
 	elif [ "$second" == 'update' ]; then
 		local gem_list="$(cat Gemfile 2> /dev/null | grep -Po '(?<=gem .)[a-z0-9_\-]+(?=.\s*$)')"
-		COMPREPLY=( $(compgen -W "$gem_list" -- $cur) )
+		COMPREPLY=( $(compgen -W "$gem_list" -- "$cur") )
 	elif [ "$second" == 'exec' ]; then
 		# Complete any shell command for `bundle exec`
 		# This makes `bundle exec` behave like `command` and `exec` completion
@@ -147,10 +147,10 @@ _jekyll() {
 
 	if [ "$prev" == 'jekyll' ] || [ "$prev" == 'help' ]; then
 		# Complete common jekyll commands for `jekyll`
-		COMPREPLY=( $(compgen -W 'build clean doctor help new serve' -- $cur) )
+		COMPREPLY=( $(compgen -W 'build clean doctor help new serve' -- "$cur") )
 	elif [ "$second" == 'build' ]; then
 		# Complete options for `jekyll build`
-		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- $cur) )
+		COMPREPLY=( $(compgen -W '--destination --source --trace --watch' -- "$cur") )
 	elif [ "$prev" == '--source' ] || [ "$prev" == '--destination' ]; then
 		# Complete filenames for `--source` and `--destination`
 		COMPREPLY=()
@@ -166,7 +166,7 @@ _rake() {
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	if [ "$prev" == 'rake' ]; then
-		COMPREPLY=( $(compgen -W "$(rake --tasks --all | grep -Po '(?<=rake )\S+')" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(rake --tasks --all | grep -Po '(?<=rake )\S+')" -- "$cur") )
 	fi
 
 }
@@ -185,7 +185,7 @@ _python() {
 		# Convert current query file path (with /) to module path (with .)
 		local curpath="${cur//./\/}"
 		# Get package names matching current query; exclude hidden directories
-		local packages="$(compgen -d -- $curpath | grep -Po '([a-z_]+/)*([a-z_]+)\b')"
+		local packages="$(compgen -d -- "$curpath" | grep -Po '([a-z_]+/)*([a-z_]+)\b')"
 		# Convert Python file paths to package paths
 		packages="${packages//\//.}"
 		if [ -n "$packages" ]; then
@@ -197,12 +197,12 @@ _python() {
 			compopt -o nospace
 		fi
 		# Get module names matching curent query; include only .py files
-		local modules="$(compgen -f -- $curpath | grep -Po '([a-z_]+/)*([a-z_]+)\.py')"
+		local modules="$(compgen -f -- "$curpath" | grep -Po '([a-z_]+/)*([a-z_]+)\.py')"
 		# Convert Python file paths to module paths
 		modules="${modules//\//.}"
 		# Remove .py extension (all module names omit the .py extension)
 		modules="${modules//.py/}"
-		COMPREPLY=( $(compgen -W "$packages $modules" -- $cur) )
+		COMPREPLY=( $(compgen -W "$packages $modules" -- "$cur") )
 	fi
 
 }
@@ -218,7 +218,7 @@ _apachectl() {
 
 	if [ "$prev" == 'apachectl' ] || [ "$prev" == 'help' ]; then
 		# Complete common apachectl commands for `apachectl`
-		COMPREPLY=( $(compgen -W 'configtest restart start stop' -- $cur) )
+		COMPREPLY=( $(compgen -W 'configtest restart start stop' -- "$cur") )
 	fi
 
 }
@@ -233,7 +233,7 @@ _pypi() {
 
 	if [ "$prev" == 'pypi' ]; then
 		# Complete shortcuts to common pypi operations for `pypi`
-		COMPREPLY=( $(compgen -W 'test upload' -- $cur) )
+		COMPREPLY=( $(compgen -W 'test upload' -- "$cur") )
 	fi
 
 }
@@ -249,7 +249,7 @@ _mkvirtualenv() {
 
 	if [ "$prev" == 'mkvirtualenv' ]; then
 		# Complete shortcuts to common mkvirtualenv operations for `mkvirtualenv`
-		COMPREPLY=( $(compgen -W 'python python3' -- $cur) )
+		COMPREPLY=( $(compgen -W 'python python3' -- "$cur") )
 	fi
 
 }
@@ -268,7 +268,7 @@ _awp() {
 		COMPREPLY=()
 	elif [ "$first" == 'awp' ]; then
 		# Complete common commands for `awp`
-		COMPREPLY=( $(compgen -W '--export --help --validate --version' -- $cur) )
+		COMPREPLY=( $(compgen -W '--export --help --validate --version' -- "$cur") )
 	fi
 
 }
@@ -284,7 +284,7 @@ _bump() {
 
 	if [ "$prev" == 'bump' ]; then
 		# Complete increment types for `bump`
-		COMPREPLY=( $(compgen -W 'major minor patch' -- $cur) )
+		COMPREPLY=( $(compgen -W 'major minor patch' -- "$cur") )
 	elif [ "$second" == 'major' ] || [ "$second" == 'minor' ] || [ "$second" == 'patch' ]; then
 		# Complete file/directory paths for any argument after first
 		COMPREPLY=()

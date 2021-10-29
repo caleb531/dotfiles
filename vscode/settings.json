@@ -234,5 +234,10 @@
     "svg.preview.mode": "svg",
     "latex.linter.enabled": false,
     "javascript.validate.enable": false,
-    "editor.quickSuggestionsDelay": 0
+    "editor.quickSuggestionsDelay": 0,
+    "shellcheck.exclude": [
+        "SC1091",
+        "SC2002",
+        "SC2012"
+    ]
 }

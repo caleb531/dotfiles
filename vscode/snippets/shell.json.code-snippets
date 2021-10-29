@@ -1,4 +1,11 @@
 {
+  "shebang": {
+    "scope": "shellscript",
+    "prefix": "env",
+    "body": [
+      "#!/usr/bin/env $1\n"
+    ]
+  },
   "echo": {
     "scope": "shellscript",
     "prefix": "echo",
