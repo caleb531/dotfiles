@@ -188,7 +188,7 @@ lint() {
 	if [ -f package.json ]; then
 		npm run lint
 	elif [ -f requirements.txt ]; then
-		pycodestyle "$@" **/!(setup).py
+		pycodestyle "$@" ./**/!(setup).py
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 		return 1
@@ -198,7 +198,7 @@ lint() {
 # Check Node/Python cyclomatic complexity
 cc() {
 	if [ -f requirements.txt ]; then
-		radon cc --show-complexity --average "$@" **/!(setup).py
+		radon cc --show-complexity --average "$@" ./**/!(setup).py
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 		return 1
