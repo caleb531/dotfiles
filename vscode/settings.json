@@ -233,5 +233,6 @@
     },
     "svg.preview.mode": "svg",
     "latex.linter.enabled": false,
-    "javascript.validate.enable": false
+    "javascript.validate.enable": false,
+    "editor.quickSuggestionsDelay": 0
 }
