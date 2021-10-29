@@ -152,6 +152,7 @@ alias aton='atom'
 alias code='code'
 alias codel='code'
 alias cide='code'
+alias cod='code'
 
 # apm aliases
 alias apmre='apm rebuild'
