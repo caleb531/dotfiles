@@ -34,7 +34,7 @@ __output_ps1() {
 	local SEPARATOR=' '
 
 	# Output name of current working directory (with ~ denoting HOME)
-	__set_color $CYAN
+	__set_color "$CYAN"
 	echo -n '\W'
 	echo -n "$SEPARATOR"
 
@@ -42,7 +42,7 @@ __output_ps1() {
 	if [ -n "$VIRTUAL_ENV" ]; then
 
 		# Output Python version used by virtualenv
-		__set_color $BLUE
+		__set_color "$BLUE"
 		if [ -f "$VIRTUAL_ENV"/bin/python3 ]; then
 			echo -n "py3"
 			echo -n "$SEPARATOR"
@@ -57,7 +57,7 @@ __output_ps1() {
 	if [ -f package.json ] && type node &> /dev/null; then
 
 		# Output version of global Node
-		__set_color $BLUE
+		__set_color "$BLUE"
 		echo -n "node$(node --version | grep -Po '(?<=v)\d+\.\d+')"
 		echo -n "$SEPARATOR"
 
@@ -67,14 +67,14 @@ __output_ps1() {
 	if git rev-parse --git-dir &> /dev/null; then
 
 		# Output name of current branch
-		__set_color $BLACK
+		__set_color "$BLACK"
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 		echo -n "$SEPARATOR"
 
 	fi
 
 	# Output $ for user and # for root
-	__set_color $GREEN
+	__set_color "$GREEN"
 	echo -ne '❯ '
 	__reset_color
 
@@ -102,7 +102,7 @@ __detect_python_virtualenv() {
 # Output line continuation prompt string
 __output_ps2() {
 	# Use fancy chevron from PS1
-	__set_color $GREEN
+	__set_color "$GREEN"
 	echo -ne '❯ '
 	__reset_color
 }
