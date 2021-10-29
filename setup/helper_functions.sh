@@ -41,7 +41,7 @@ is_brew_pkg_installed() {
 }
 
 is_node_version_installed() {
-	[ -d "$N_PREFIX"/n/versions/node/"$1" ]
+	[ -d ~/.nvm/versions/node/v"$1" ]
 }
 
 is_npm_pkg_installed() {
@@ -88,7 +88,7 @@ pin_brew_pkg() {
 
 install_node_version() {
 	if ! is_node_version_installed "$1"; then
-		n "$1"
+		nvm install "$1"
 	fi
 }
 

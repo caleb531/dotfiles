@@ -12,7 +12,7 @@ __detect_node_version() {
 	# switch to that node version if it's not already
 	if [[ -n "$nvmrc_contents" && "$(node -v | cut -c2-)" != "$nvmrc_contents" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
 		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
-		nvm use --silent &> /dev/null || nvm install "$(cat .nvmrc)"
+		nvm use --silent &> /dev/null || nvm install "$(cat .nvmrc)" --reinstall-packages-from=default
 	fi
 }
 
