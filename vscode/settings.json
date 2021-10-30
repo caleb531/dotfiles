@@ -238,6 +238,7 @@
     "shellcheck.exclude": [
         "SC1091",
         "SC2002",
-        "SC2012"
+        "SC2012",
+        "SC2181"
     ]
 }
