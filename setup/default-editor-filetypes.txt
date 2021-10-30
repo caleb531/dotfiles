@@ -28,6 +28,7 @@ sql
 ss
 ssp
 svg
+tex
 tpl
 ts
 tsx
