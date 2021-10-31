@@ -115,7 +115,8 @@
         "*.json": "jsonc",
         "ssh_config": "ssh_config",
         "*.toc": "latex",
-        "*.sublime-project": "json"
+        "*.sublime-project": "json",
+        "pip.conf": "properties"
     },
     "editor.snippetSuggestions": "top",
     "editor.wordWrap": "bounded",
