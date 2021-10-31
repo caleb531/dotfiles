@@ -116,7 +116,9 @@
         "ssh_config": "ssh_config",
         "*.toc": "latex",
         "*.sublime-project": "json",
-        "pip.conf": "properties"
+        "*.conf": "properties",
+        "httpd.conf": "apacheconf",
+        "httpd-*.conf": "apacheconf"
     },
     "editor.snippetSuggestions": "top",
     "editor.wordWrap": "bounded",
