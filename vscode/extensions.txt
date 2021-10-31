@@ -14,6 +14,7 @@ mattn.Lisp
 mrmlnc.vscode-apache
 ms-vscode-remote.remote-ssh-edit
 patbenatar.advanced-new-file
+rashwell.tcl
 rebornix.prolog
 SirTobi.pegjs-language
 stkb.rewrap
