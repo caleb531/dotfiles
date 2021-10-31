@@ -118,7 +118,8 @@
         "*.sublime-project": "json",
         "*.conf": "properties",
         "httpd.conf": "apacheconf",
-        "httpd-*.conf": "apacheconf"
+        "httpd-*.conf": "apacheconf",
+        "requirements.txt": "properties"
     },
     "editor.snippetSuggestions": "top",
     "editor.wordWrap": "bounded",
