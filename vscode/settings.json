@@ -244,5 +244,11 @@
         "SC2002",
         "SC2012",
         "SC2181"
+    ],
+    "css.lint.validProperties": [
+        "alignment-baseline"
+    ],
+    "scss.lint.validProperties": [
+        "alignment-baseline"
     ]
 }
