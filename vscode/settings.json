@@ -155,7 +155,6 @@
       79
     ],
     "editor.fastScrollSensitivity": 3,
-    "problems.showCurrentInStatus": true,
     "editor.roundedSelection": false,
     "emmet.excludeLanguages": [
         "css",
