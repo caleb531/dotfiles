@@ -249,5 +249,7 @@
     ],
     "scss.lint.validProperties": [
         "alignment-baseline"
-    ]
+    ],
+    "editor.guides.indentation": false,
+    "editor.guides.highlightActiveIndentation": false
 }
