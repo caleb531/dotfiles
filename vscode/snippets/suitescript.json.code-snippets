@@ -111,6 +111,19 @@
       "getSetting('SCRIPT', 'custscript_${1:paramname}')"
     ]
   },
+  "suitescript 2 header": {
+    "scope": "javascript,typescript",
+    "prefix": "suitescript2header",
+    "body": [
+      "/**",
+      " * @NApiVersion ${1|2.x,2.1,2.0|}",
+      " * @NScriptType ${2|UserEventScript,Restlet,Suitelet,MapReduceScript,ScheduledScript,ClientScript,WorkflowActionScript,MassUpdateScript,Portlet,BundleInstallationScript,ConsolidatedRateAdjustorPlugin,CustomGLPlugin,EmailCapturePlugin,PaymentGatewayPlugin,PluginTypeImpl,PromotionsPlugin,ShippingPartnersPlugin,TaxCalculationPlugin|}",
+      " * @NModuleScope ${3|SameAccount,TargetAccount,Public|}",
+      " * @author ${4:SuiteCentric LLC <caleb.evans@suitecentric.com>}",
+      " */",
+      ""
+    ]
+  },
   "log.debug": {
     "scope": "javascript,typescript",
     "prefix": "logdebug",
