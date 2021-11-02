@@ -24,7 +24,7 @@
     "scope": "javascript,typescript",
     "prefix": "define",
     "body": [
-      "define('${1:${TM_FILENAME/\\.js//}}', [",
+      "define('${1:$TM_FILENAME_BASE}', [",
       "\t'$2'$3",
       "], function (",
       "\t$4",
@@ -40,7 +40,7 @@
     "scope": "typescript",
     "prefix": "amdmodulename",
     "body": [
-      "/// <amd-module name=\"${1:${TM_FILENAME/\\.js//}}\"/>"
+      "/// <amd-module name=\"${1:$TM_FILENAME_BASE}\"/>"
     ]
   },
   "mountToApp": {
