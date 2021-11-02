@@ -119,7 +119,8 @@
         "*.conf": "properties",
         "httpd.conf": "apacheconf",
         "httpd-*.conf": "apacheconf",
-        "requirements.txt": "properties"
+        "requirements.txt": "properties",
+        "gitignore_global": "ignore"
     },
     "editor.snippetSuggestions": "top",
     "editor.wordWrap": "bounded",
