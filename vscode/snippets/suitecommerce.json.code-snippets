@@ -36,6 +36,13 @@
       "});"
     ]
   },
+  "AMD module name": {
+    "scope": "typescript",
+    "prefix": "amdmodulename",
+    "body": [
+      "/// <amd-module name=\"${1:${TM_FILENAME/\\.js//}}\"/>"
+    ]
+  },
   "mountToApp": {
     "scope": "javascript",
     "prefix": "mta",
