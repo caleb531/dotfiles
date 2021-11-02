@@ -24,7 +24,7 @@
     "scope": "javascript,typescript",
     "prefix": "define",
     "body": [
-      "define('${1:Extension.Module}', [",
+      "define('${1:${TM_FILENAME/\\.js//}}', [",
       "\t'$2'$3",
       "], function (",
       "\t$4",
