@@ -264,7 +264,7 @@ gap() {
 xcode-fix-node-gyp() {
 	sudo xcode-select --reset
 	xcode-select -print-path
-	sudo rm -rf "$(xcode-select -print-path)"
+	sudo rm -rf "$(xcode-select --print-path)"
 	xcode-select --install
 }
 
