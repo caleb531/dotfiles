@@ -5,5 +5,18 @@
     "body": [
       "\"${1:key}\": ${2:true},$3"
     ]
+  },
+  "VS Code snippet": {
+    "scope": "json,jsonc",
+    "prefix": "snipns",
+    "body": [
+      "\"${1:snippet name}\": {",
+      "\t\"scope\": \"${2:languagemodes}\",",
+      "\t\"prefix\": \"${3:prefix}\",",
+      "\t\"body\": [",
+      "\t\t\"$4\"$5",
+      "\t]",
+      "}$6"
+    ]
   }
 }
