@@ -20,7 +20,7 @@
       "circle": "circle[cx][cy][r]/",
       "clipPath": "clipPath[id]",
       "ellipse": "ellipse[cx][cy][width][height]/",
-      "image": "image [xlink:href][x][y][width][height]/",
+      "image": "image[xlink:href][x][y][width][height]/",
       "line": "line[x1][y1][x2][y2]/",
       "linearGradient": "linearGradient[id]",
       "marker": "marker[id][markerWidth][markerHeight][refX][refY][orient]",
