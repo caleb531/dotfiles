@@ -25,7 +25,7 @@
     "body": [
       "function ${1:fname}($2) {",
       "\t$3",
-      "}$4"
+      "}"
     ]
   },
   "function expression": {
@@ -34,7 +34,7 @@
     "body": [
       "function ($1) {",
       "\t$2",
-      "}$3"
+      "}"
     ]
   },
   "arrow function": {
@@ -43,14 +43,14 @@
     "body": [
       "($1) => {",
       "\t$2",
-      "}$3"
+      "}"
     ]
   },
   "arrow function (inline)": {
     "scope": "javascript,typescript",
     "prefix": "afi",
     "body": [
-      "($1) => $2"
+      "($1) => "
     ]
   },
   "empty function": {
@@ -89,21 +89,21 @@
     "scope": "javascript,typescript",
     "prefix": "qs",
     "body": [
-      "querySelector($1)$2"
+      "querySelector($1)"
     ]
   },
   "querySelectorAll": {
     "scope": "javascript,typescript",
     "prefix": "qsa",
     "body": [
-      "querySelectorAll($1)$2"
+      "querySelectorAll($1)"
     ]
   },
   "addEventListener": {
     "scope": "javascript,typescript",
     "prefix": "addeventlistener",
     "body": [
-      "addEventListener($1, $2);$3"
+      "addEventListener($1, $2);"
     ]
   },
   "preventDefault": {
@@ -131,7 +131,7 @@
     "scope": "javascript,typescript",
     "prefix": "raf",
     "body": [
-      "requestAnimationFrame($1);$2"
+      "requestAnimationFrame($1);"
     ]
   },
   "use strict": {
@@ -146,7 +146,7 @@
     "scope": "javascript,typescript",
     "prefix": "re",
     "body": [
-      "require('${1:mname}');$4"
+      "require('${1:mname}');"
     ]
   },
   "module.exports": {
@@ -160,14 +160,14 @@
     "scope": "javascript,typescript",
     "prefix": "jsonstringify",
     "body": [
-      "JSON.stringify($1)$2"
+      "JSON.stringify($1)"
     ]
   },
   "JSON.parse": {
     "scope": "javascript,typescript",
     "prefix": "jsonparse",
     "body": [
-      "JSON.parse($1)$2"
+      "JSON.parse($1)"
     ]
   },
   "class": {
@@ -176,7 +176,7 @@
     "body": [
       "class ${1:ClassName} {",
       "\t$2",
-      "}$3"
+      "}"
     ]
   },
   "constructor": {
@@ -185,7 +185,7 @@
     "body": [
       "constructor($2) {",
       "\t$3",
-      "}$4"
+      "}"
     ]
   },
   "function method": {
@@ -194,7 +194,7 @@
     "body": [
       "${1:fname}($2) {",
       "\t$3",
-      "}$4"
+      "}"
     ]
   },
   "static keyword": {
@@ -210,14 +210,14 @@
     "body": [
       "static ${1:fname}() {",
       "\t$2",
-      "}$3"
+      "}"
     ]
   },
   "import": {
     "scope": "javascript,typescript",
     "prefix": "import",
     "body": [
-      "import ${1:mname} from '${2:path}';$3"
+      "import ${1:mname} from '${2:path}';"
     ]
   },
   "export": {
@@ -245,7 +245,7 @@
     "scope": "javascript,typescript",
     "prefix": "eslintdisablerule",
     "body": [
-      "/* eslint-disable $1 */$2"
+      "/* eslint-disable $1 */"
     ]
   },
   "eslint disable next": {
@@ -259,14 +259,14 @@
     "scope": "javascript,typescript",
     "prefix": "eslintdisablenextrule",
     "body": [
-      "/* eslint-disable-next-line $1 */$2"
+      "/* eslint-disable-next-line $1 */"
     ]
   },
   "eslint no unused vars": {
     "scope": "javascript,typescript",
     "prefix": "eslintnounusedvars",
     "body": [
-      "/* eslint no-unused-vars: [\"error\", { \"varsIgnorePattern\": \"${1:main}\" }] */$2"
+      "/* eslint no-unused-vars: [\"error\", { \"varsIgnorePattern\": \"${1:main}\" }] */"
     ]
   },
   "console.log": {
@@ -315,14 +315,14 @@
     "scope": "javascript,typescript",
     "prefix": "encodeuricomponent",
     "body": [
-      "encodeURIComponent($1)$2"
+      "encodeURIComponent($1)"
     ]
   },
   "encodeURI": {
     "scope": "javascript,typescript",
     "prefix": "encodeuri",
     "body": [
-      "encodeURI($1)$2"
+      "encodeURI($1)"
     ]
   }
 }

@@ -48,7 +48,7 @@
     "scope": "python",
     "prefix": "docstring",
     "body": [
-      "\"\"\"$1\"\"\"$2"
+      "\"\"\"$1\"\"\""
     ]
   },
   "if": {

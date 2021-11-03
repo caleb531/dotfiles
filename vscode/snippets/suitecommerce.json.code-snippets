@@ -3,14 +3,14 @@
     "scope": "javascript,typescript",
     "prefix": "getabsoluteurl",
     "body": [
-      "getAbsoluteUrl($1)$2"
+      "getAbsoluteUrl($1)"
     ]
   },
   "getThemeAbsoluteUrl": {
     "scope": "javascript,typescript",
     "prefix": "getthemeabsoluteurl",
     "body": [
-      "getThemeAbsoluteUrlOfNonManagedResources($1)$2"
+      "getThemeAbsoluteUrlOfNonManagedResources($1)"
     ]
   },
   "log execution": {
@@ -53,7 +53,7 @@
       "\t\t$2",
       "",
       "\t}",
-      "}$3"
+      "}"
     ]
   },
   "mountToApp (TypeScript)": {
@@ -82,7 +82,7 @@
       "\treturn new ${3:ChildView}({",
       "\t\tmodel: this.model$4",
       "\t});",
-      "};$5"
+      "};"
     ]
   },
   "wrap getContext": {

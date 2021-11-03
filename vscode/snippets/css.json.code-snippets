@@ -5,7 +5,7 @@
     "body": [
       "@media $1 {",
       "\t$2",
-      "}$3"
+      "}"
     ]
   },
   "@media screen": {
@@ -14,7 +14,7 @@
     "body": [
       "@media screen and ($1) {",
       "\t$2",
-      "}$3"
+      "}"
     ]
   },
   "screen min width": {
@@ -23,7 +23,7 @@
     "body": [
       "@media screen and (min-width: ${1:\\$screen-md-min}) {",
       "\t$2",
-      "}$3"
+      "}"
     ]
   },
   "screen max width": {
@@ -32,7 +32,7 @@
     "body": [
       "@media screen and (max-width: ${1:\\$screen-md-max}) {",
       "\t$2",
-      "}$3"
+      "}"
     ]
   },
   "@media print": {
@@ -41,7 +41,7 @@
     "body": [
       "@media print {",
       "\t$1",
-      "}$2"
+      "}"
     ]
   },
   "@keyframes": {

@@ -41,7 +41,7 @@
     "prefix": "elif",
     "body": [
       "elif ${1:condition}; then",
-      "\t$2"
+      "\t"
     ]
   },
   "else": {
@@ -49,7 +49,7 @@
     "prefix": "else",
     "body": [
       "else",
-      "\t$2"
+      "\t"
     ]
   },
   "for..in": {

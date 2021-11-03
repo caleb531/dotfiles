@@ -12,42 +12,42 @@
     "scope": "html,markdown",
     "prefix": "exp",
     "body": [
-      "{{ $1 }}$2"
+      "{{ $1 }}"
     ]
   },
   "liquid": {
     "scope": "html,markdown",
     "prefix": "liquid",
     "body": [
-      "{% $1 %}$2"
+      "{% $1 %}"
     ]
   },
   "assign": {
     "scope": "html,markdown",
     "prefix": "assign",
     "body": [
-      "{% assign ${1:name} = ${2:value} %}$3"
+      "{% assign ${1:name} = ${2:value} %}"
     ]
   },
   "include": {
     "scope": "html,markdown",
     "prefix": "include",
     "body": [
-      "{% include ${1:filename.html} %}$3"
+      "{% include ${1:filename.html} %}"
     ]
   },
   "if": {
     "scope": "html,markdown",
     "prefix": "if",
     "body": [
-      "{% if ${1:condition} %}$2"
+      "{% if ${1:condition} %}"
     ]
   },
   "elsif": {
     "scope": "html,markdown",
     "prefix": "elseif",
     "body": [
-      "{% elsif ${1:condition} %}$2"
+      "{% elsif ${1:condition} %}"
     ]
   },
   "else": {
@@ -68,7 +68,7 @@
     "scope": "html,markdown",
     "prefix": "for",
     "body": [
-      "{% for ${1:item} in ${2:object} %}$3"
+      "{% for ${1:item} in ${2:object} %}"
     ]
   },
   "endfor": {

@@ -52,49 +52,49 @@
     "scope": "javascript,typescript",
     "prefix": "nlobjSearchFilter",
     "body": [
-      "nlobjSearchFilter('${1:fieldname}', ${2:null}, '${3:is}', ${4:value})$5"
+      "nlobjSearchFilter('${1:fieldname}', ${2:null}, '${3:is}', ${4:value})"
     ]
   },
   "search column": {
     "scope": "javascript,typescript",
     "prefix": "nlobjSearchColumn",
     "body": [
-      "nlobjSearchColumn('${1:fieldname}'$2)$3"
+      "nlobjSearchColumn('${1:fieldname}'$2)"
     ]
   },
   "get value": {
     "scope": "javascript,typescript",
     "prefix": "getValue",
     "body": [
-      "getValue(${1:fieldname})$2"
+      "getValue(${1:fieldname})"
     ]
   },
   "get text": {
     "scope": "javascript,typescript",
     "prefix": "getText",
     "body": [
-      "getText(${1:fieldname})$2"
+      "getText(${1:fieldname})"
     ]
   },
   "get field value": {
     "scope": "javascript,typescript",
     "prefix": "getFieldValue",
     "body": [
-      "getFieldValue(${1:fieldname})$2"
+      "getFieldValue(${1:fieldname})"
     ]
   },
   "get field text": {
     "scope": "javascript,typescript",
     "prefix": "getFieldText",
     "body": [
-      "getFieldText(${1:fieldname})$2"
+      "getFieldText(${1:fieldname})"
     ]
   },
   "set field value": {
     "scope": "javascript,typescript",
     "prefix": "setFieldValue",
     "body": [
-      "setFieldValue(${1:fieldname}, ${2:value})$3"
+      "setFieldValue(${1:fieldname}, ${2:value})"
     ]
   },
   "submit record": {
@@ -165,7 +165,7 @@
     "body": [
       "search.create({",
       "\ttype: '${1:type}'$2",
-      "})$3"
+      "})"
     ]
   },
   "record.create": {
@@ -174,7 +174,7 @@
     "body": [
       "record.create({",
       "\ttype: '${1:type}'$2",
-      "})$3"
+      "})"
     ]
   },
   "record.load": {
@@ -184,21 +184,21 @@
       "record.load({",
       "\ttype: '${1:type}'",
       "\tid: ${2:id}",
-      "})$4"
+      "})"
     ]
   },
   "getValue": {
     "scope": "javascript,typescript",
     "prefix": "getvalue",
     "body": [
-      "getValue({name: '$1'$2})$3"
+      "getValue({name: '$1'$2})"
     ]
   },
   "getText": {
     "scope": "javascript,typescript",
     "prefix": "gettext",
     "body": [
-      "getText({name: '$1'$2})$3"
+      "getText({name: '$1'$2})"
     ]
   },
   "setValue": {
@@ -208,7 +208,7 @@
       "setValue({",
       "\tname: '$1',",
       "\tvalue: ${2:val}",
-      "})$3"
+      "})"
     ]
   },
   "setText": {
@@ -218,7 +218,7 @@
       "setText({",
       "\tname: '$1',",
       "\ttext: ${2:val}",
-      "})$3"
+      "})"
     ]
   },
   "getSublistValue": {
@@ -229,7 +229,7 @@
       "\tsublistId: '$1',",
       "\tline: ${2:0},",
       "\tfieldId: '$3'",
-      "})$4"
+      "})"
     ]
   },
   "getSublistText": {
@@ -240,7 +240,7 @@
       "\tsublistId: '$1',",
       "\tline: ${2:0},",
       "\tfieldId: '$3'",
-      "})$4"
+      "})"
     ]
   },
   "setSublistValue": {
@@ -252,7 +252,7 @@
       "\tline: ${2:0},",
       "\tfieldId: '$3',",
       "\tvalue: ${4:val}",
-      "})$5"
+      "})"
     ]
   },
   "setSublistText": {
@@ -264,7 +264,7 @@
       "\tline: ${2:0},",
       "\tfieldId: '$3',",
       "\ttext: ${4:val}",
-      "})$5"
+      "})"
     ]
   }
 }

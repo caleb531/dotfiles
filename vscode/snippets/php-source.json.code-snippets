@@ -88,7 +88,7 @@
     "body": [
       "if ( ${1:condition} ) {",
       "\t$2",
-      "} $3"
+      "} "
     ]
   },
   "else if": {
@@ -97,7 +97,7 @@
     "body": [
       "else if ( ${1:condition} ) {",
       "\t$2",
-      "} $3"
+      "} "
     ]
   },
   "else": {
@@ -179,7 +179,7 @@
     "body": [
       "try {",
       "\t$1",
-      "} $2"
+      "} "
     ]
   },
   "catch": {
@@ -188,14 +188,14 @@
     "body": [
       "catch ( ${1:Exception} \\\\$${2:e} ) {",
       "\t$3",
-      "} $4"
+      "} "
     ]
   },
   "array (one-line)": {
     "scope": "php",
     "prefix": "ar",
     "body": [
-      "array( $1 )$2"
+      "array( $1 )"
     ]
   },
   "array (one-line; space-padded)": {
@@ -225,7 +225,7 @@
     "body": [
       "array(",
       "\t$1",
-      ")$2"
+      ")"
     ]
   },
   "array (multiline; space-padded)": {
@@ -248,7 +248,7 @@
     "scope": "php",
     "prefix": "kv",
     "body": [
-      "'${1:key}' => ${2:value}$3"
+      "'${1:key}' => ${2:value}"
     ]
   },
   "define constant": {

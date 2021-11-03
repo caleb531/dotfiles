@@ -3,49 +3,49 @@
     "scope": "svg",
     "prefix": "fill",
     "body": [
-      "fill=\"$1\"$2"
+      "fill=\"$1\""
     ]
   },
   "stroke": {
     "scope": "svg",
     "prefix": "stroke",
     "body": [
-      "stroke=\"$1\"$2"
+      "stroke=\"$1\""
     ]
   },
   "stroke-linecap": {
     "scope": "svg",
     "prefix": "strokelinecap",
     "body": [
-      "stroke-linecap=\"$1\"$2"
+      "stroke-linecap=\"$1\""
     ]
   },
   "stroke-linejoin": {
     "scope": "svg",
     "prefix": "strokelinejoin",
     "body": [
-      "stroke-linejoin=\"$1\"$2"
+      "stroke-linejoin=\"$1\""
     ]
   },
   "width": {
     "scope": "svg",
     "prefix": "width",
     "body": [
-      "width=\"$1\"$2"
+      "width=\"$1\""
     ]
   },
   "height": {
     "scope": "svg",
     "prefix": "height",
     "body": [
-      "height=\"$1\"$2"
+      "height=\"$1\""
     ]
   },
   "points": {
     "scope": "svg",
     "prefix": "points",
     "body": [
-      "points=\"$1\"$2"
+      "points=\"$1\""
     ]
   }
 }

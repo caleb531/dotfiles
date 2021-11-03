@@ -47,7 +47,7 @@
     "prefix": "public",
     "body": [
       "public:",
-      "\t$1"
+      "\t"
     ]
   },
   "private blocks": {
@@ -55,7 +55,7 @@
     "prefix": "private",
     "body": [
       "private:",
-      "\t$1"
+      "\t"
     ]
   },
   "protected blocks": {
@@ -63,7 +63,7 @@
     "prefix": "protected",
     "body": [
       "protected:",
-      "\t$1"
+      "\t"
     ]
   },
   "function method": {
@@ -100,7 +100,7 @@
     "scope": "cpp",
     "prefix": "coutendl",
     "body": [
-      "cout << $1 << endl;$2"
+      "cout << $1 << endl;"
     ]
   },
   "cerr": {
@@ -114,7 +114,7 @@
     "scope": "cpp",
     "prefix": "cerrendl",
     "body": [
-      "cerr << $1 << endl;$2"
+      "cerr << $1 << endl;"
     ]
   }
 }

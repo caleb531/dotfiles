@@ -11,7 +11,7 @@
     "scope": "c,cpp",
     "prefix": "inc",
     "body": [
-      "#include $1"
+      "#include "
     ]
   },
   "for": {
