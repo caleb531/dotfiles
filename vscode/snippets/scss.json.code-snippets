@@ -46,7 +46,7 @@
   },
   "@include": {
     "scope": "scss",
-    "prefix": "inc",
+    "prefix": "include",
     "body": [
       "@include "
     ]
