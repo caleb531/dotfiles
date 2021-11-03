@@ -1,4 +1,40 @@
 {
+  "Backbone.Model.extend": {
+    "scope": "javascript,typescript",
+    "prefix": "backbonemodelextend",
+    "body": [
+      "Backbone.Model.extend({",
+      "\t$1",
+      "});"
+    ]
+  },
+  "Backbone.View.extend": {
+    "scope": "javascript,typescript",
+    "prefix": "backboneviewextend",
+    "body": [
+      "Backbone.View.extend({",
+      "\t$1",
+      "});"
+    ]
+  },
+  "Backbone.Collection.extend": {
+    "scope": "javascript,typescript",
+    "prefix": "backbonecollectionextend",
+    "body": [
+      "Backbone.Collection.extend({",
+      "\t$1",
+      "});"
+    ]
+  },
+  "Backbone.Router.extend": {
+    "scope": "javascript,typescript",
+    "prefix": "backbonerouterextend",
+    "body": [
+      "Backbone.Router.extend({",
+      "\t$1",
+      "});"
+    ]
+  },
   "getAbsoluteUrl": {
     "scope": "javascript,typescript",
     "prefix": "getabsoluteurl",
