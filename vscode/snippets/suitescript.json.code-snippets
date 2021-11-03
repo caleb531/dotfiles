@@ -104,6 +104,27 @@
       "nlapiSubmitRecord(${1:record});"
     ]
   },
+  "get user": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiGetUser",
+    "body": [
+      "nlapiGetUser()"
+    ]
+  },
+  "lookup field": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiLookupField",
+    "body": [
+      "nlapiLookupField(${1:recordtype}, ${2:recordid}, ${3:fieldid})"
+    ]
+  },
+  "submit field": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiSubmitField",
+    "body": [
+      "nlapiSubmitField(${1:recordtype}, ${2:recordid}, ${3:fieldid}, ${4:fieldvalue});"
+    ]
+  },
   "script parameter": {
     "scope": "javascript,typescript",
     "prefix": "getscriptparameter",
