@@ -50,5 +50,12 @@
     "body": [
       "@include "
     ]
+  },
+  "@extend": {
+    "scope": "scss",
+    "prefix": "extend",
+    "body": [
+      "@extend "
+    ]
   }
 }
