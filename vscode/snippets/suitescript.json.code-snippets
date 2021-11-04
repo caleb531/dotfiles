@@ -1,4 +1,11 @@
 {
+  "log execution": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiLogExecution",
+    "body": [
+      "nlapiLogExecution('${1|DEBUG,AUDIT,ERROR,EMERGENCY|}', '${2:title}', ${3:object});"
+    ]
+  },
   "create error": {
     "scope": "javascript,typescript",
     "prefix": "nlapiCreateError",
