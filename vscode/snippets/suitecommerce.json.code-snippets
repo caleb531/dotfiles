@@ -138,5 +138,16 @@
     "body": [
       "fn.apply(this, _.toArray(arguments).slice(1));"
     ]
+  },
+  "config modifications": {
+    "scope": "json,jsonc",
+    "prefix": "modifications",
+    "body": [
+      "\"modifications\": {",
+      "\t\"target\": \"$.properties$1\",",
+      "\t\"action\": \"${2|add,replace,remove|}\",",
+      "\t\"value\": ${3:true}",
+      "}"
+    ]
   }
 }
