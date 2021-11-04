@@ -3,7 +3,7 @@
     "scope": "javascript,typescript",
     "prefix": "for",
     "body": [
-      "for (${1:var} ${2:i} = ${3:0}; ${2:i} < ${4:end}; ${2:i} += ${5:1}) {",
+      "for (${1|var,let|} ${2:i} = ${3:0}; ${2:i} < ${4:end}; ${2:i} += ${5:1}) {",
       "\t$6",
       "}"
     ]
@@ -12,8 +12,8 @@
     "scope": "javascript,typescript",
     "prefix": "forin",
     "body": [
-      "for (var ${1:key} in ${2:object}) {",
-      "\tif Object.prototype.hasOwnProperty.call(${2:object}, ${1:key})) {",
+      "for (${1|var,let|} ${2:key} in ${3:object}) {",
+      "\tif Object.prototype.hasOwnProperty.call(${4:object}, ${2:key})) {",
       "\t\t$3",
       "\t}",
       "}"

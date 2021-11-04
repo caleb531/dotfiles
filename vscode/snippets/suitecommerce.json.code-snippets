@@ -53,7 +53,7 @@
     "scope": "javascript,typescript",
     "prefix": "nlapiLogExecution",
     "body": [
-      "nlapiLogExecution('${1:DEBUG}', '${2:title}', ${3:object});"
+      "nlapiLogExecution('${1|DEBUG,AUDIT,ERROR,EMERGENCY|}', '${2:title}', ${3:object});"
     ]
   },
   "AMD module": {
@@ -126,8 +126,8 @@
     "prefix": "getcontext",
     "body": [
       "${1:Module}.prototype.getContext = _.wrap(${1:Module}.prototype.getContext, function (fn) {",
-      "\tvar context = fn.apply(this, _.toArray(arguments).slice(1));",
-      "\t${3:// additional context variables here}",
+      "\t${3|var,let,const|} context = fn.apply(this, _.toArray(arguments).slice(1));",
+      "\t${4:// additional context variables here}",
       "\treturn context;",
       "});"
     ]
