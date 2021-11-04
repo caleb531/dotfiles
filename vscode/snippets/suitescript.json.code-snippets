@@ -17,7 +17,7 @@
     "scope": "javascript,typescript",
     "prefix": "nlapiCreateRecord",
     "body": [
-      "nlapiCreateRecord('${1:recordtype}');"
+      "nlapiCreateRecord(${1:recordtype});"
     ]
   },
   "load record": {
