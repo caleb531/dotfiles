@@ -112,7 +112,6 @@
     "workbench.list.openMode": "doubleClick",
     "editor.fontSize": 16,
     "files.associations": {
-        "*.json": "jsonc",
         "ssh_config": "ssh_config",
         "*.toc": "latex",
         "*.sublime-project": "json",
