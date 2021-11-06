@@ -46,6 +46,7 @@ install_brew_pkg librsvg
 install_brew_pkg imagemagick
 # Allow pydot to render visualizations for Python projects
 install_brew_pkg gprof2dot
+install_brew_pkg smartmontools
 
 # Install identity-related packages
 install_brew_pkg gnupg
