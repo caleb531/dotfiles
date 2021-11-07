@@ -1,6 +1,6 @@
 {
   "for": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "for",
     "body": [
       "for (${1|var,let|} ${2:i} = ${3:0}; ${2:i} < ${4:end}; ${2:i} += ${5:1}) {",
@@ -9,7 +9,7 @@
     ]
   },
   "for..in": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "forin",
     "body": [
       "for (${1|var,let|} ${2:key} in ${3:object}) {",
@@ -20,7 +20,7 @@
     ]
   },
   "function declaration": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "fd",
     "body": [
       "function ${1:fname}($2) {",
@@ -29,7 +29,7 @@
     ]
   },
   "function expression": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "fe",
     "body": [
       "function ($1) {",
@@ -38,7 +38,7 @@
     ]
   },
   "arrow function": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "af",
     "body": [
       "($1) => {",
@@ -47,21 +47,21 @@
     ]
   },
   "arrow function (inline)": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "afi",
     "body": [
       "($1) => "
     ]
   },
   "empty function": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "noop",
     "body": [
       "function () {}"
     ]
   },
   "immediately-invoked function expression": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "iife",
     "body": [
       "(function ($1) {",
@@ -70,7 +70,7 @@
     ]
   },
   "jquery document.ready": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "docready",
     "body": [
       "\\$(document).ready(function () {",
@@ -79,63 +79,63 @@
     ]
   },
   "document": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "doc",
     "body": [
       "document"
     ]
   },
   "querySelector": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "qs",
     "body": [
       "querySelector($1)"
     ]
   },
   "querySelectorAll": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "qsa",
     "body": [
       "querySelectorAll($1)"
     ]
   },
   "addEventListener": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "addeventlistener",
     "body": [
       "addEventListener($1, $2);"
     ]
   },
   "preventDefault": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "preventdefault",
     "body": [
       "preventDefault();"
     ]
   },
   "stopPropagation": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "stoppropagation",
     "body": [
       "stopPropagation();"
     ]
   },
   "stopImmediatePropagation": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "stopimmediatepropagation",
     "body": [
       "stopImmediatePropagation();"
     ]
   },
   "requestAnimationFrame": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "raf",
     "body": [
       "requestAnimationFrame($1);"
     ]
   },
   "use strict": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "usestrict",
     "body": [
       "'use strict';",
@@ -143,35 +143,35 @@
     ]
   },
   "require": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "re",
     "body": [
       "require('${1:mname}');"
     ]
   },
   "module.exports": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "modexp",
     "body": [
       "module.exports = ${1:object};"
     ]
   },
   "JSON.stringify": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "jsonstringify",
     "body": [
       "JSON.stringify($1)"
     ]
   },
   "JSON.parse": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "jsonparse",
     "body": [
       "JSON.parse($1)"
     ]
   },
   "class": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "class",
     "body": [
       "class ${1:ClassName} {",
@@ -180,7 +180,7 @@
     ]
   },
   "constructor": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "ctor",
     "body": [
       "constructor($2) {",
@@ -189,7 +189,7 @@
     ]
   },
   "function method": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "fm",
     "body": [
       "${1:fname}($2) {",
@@ -198,14 +198,14 @@
     ]
   },
   "static keyword": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "static",
     "body": [
       "static"
     ]
   },
   "static method": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "staticf",
     "body": [
       "static ${1:fname}() {",
@@ -214,112 +214,112 @@
     ]
   },
   "import": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "import",
     "body": [
       "import ${1:mname} from '${2:path}';"
     ]
   },
   "export": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "export",
     "body": [
       "export ${1:mname};"
     ]
   },
   "export default": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "exportdefault",
     "body": [
       "export default ${1:mname};"
     ]
   },
   "eslint disable": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "eslintdisable",
     "body": [
       "/* eslint-disable */"
     ]
   },
   "eslint disable rule": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "eslintdisablerule",
     "body": [
       "/* eslint-disable $1 */"
     ]
   },
   "eslint disable next": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "eslintdisablenext",
     "body": [
       "/* eslint-disable-next-line */"
     ]
   },
   "eslint disable next rule": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "eslintdisablenextrule",
     "body": [
       "/* eslint-disable-next-line $1 */"
     ]
   },
   "eslint no unused vars": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "eslintnounusedvars",
     "body": [
       "/* eslint no-unused-vars: [\"error\", { \"varsIgnorePattern\": \"${1:main}\" }] */"
     ]
   },
   "console.log": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "log",
     "body": [
       "console.log('$1', ${2:this});"
     ]
   },
   "console.error": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "error",
     "body": [
       "console.error($1);"
     ]
   },
   "debugger": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "debugger",
     "body": [
       "debugger;"
     ]
   },
   "prototype": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "proto",
     "body": [
       "prototype"
     ]
   },
   "toLowerCase": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "tlc",
     "body": [
       "toLowerCase()"
     ]
   },
   "toUpperCase": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "tuc",
     "body": [
       "toUpperCase()"
     ]
   },
   "encodeURIComponent": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "encodeuricomponent",
     "body": [
       "encodeURIComponent($1)"
     ]
   },
   "encodeURI": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "encodeuri",
     "body": [
       "encodeURI($1)"
