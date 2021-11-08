@@ -573,12 +573,12 @@
   {
     "key": "alt+cmd+b",
     "command": "highlight-matching-tag.selectPairContents",
-    "when": "editorLangId == 'handlebars' || editorLangId == 'html'"
+    "when": "editorLangId == 'handlebars' || editorLangId == 'html' || editorLangId == 'jsx-tags'"
   },
   {
     "key": "alt+cmd+m",
     "command": "highlight-matching-tag.jumpToMatchingTag",
-    "when": "editorLangId == 'handlebars' || editorLangId == 'html'"
+    "when": "editorLangId == 'handlebars' || editorLangId == 'html' || editorLangId == 'jsx-tags'"
   },
   {
     "key": "cmd+k shift+cmd+-",
