@@ -6,7 +6,6 @@
     "editor.scrollBeyondLastLine": false,
     "editor.renderWhitespace": "none",
     "security.workspace.trust.enabled": false,
-    "editor.renderIndentGuides": false,
     "workbench.startupEditor": "none",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
