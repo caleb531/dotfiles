@@ -59,6 +59,7 @@ alias bb='brunch build'
 alias bw='brunch watch'
 # Serve a Brunch site
 alias bs='bw --server'
+
 # Build a Jekyll site, using Bundler if needed
 alias jb='bundle exec jekyll build'
 # Build a Jekyll site and enable tracebacks
@@ -71,16 +72,26 @@ alias jw='jb --watch'
 alias js='bundle exec jekyll serve'
 # Serve Jekyll site and open site in browser
 alias jso='js -o'
+
 # Serve a directory via a Node HTTP server
 alias hs='http-server -c-1'
 # Serve a directory and open it in web browser
 alias hso='hs -o'
+
 # Build a Gulp project
 alias gb='gulp build'
 # Watch a Gulp project, building as needed
 alias gw='gulp build:watch'
 # Run a Gulp project's local server
 alias gse='gulp serve'
+
+# Build webpack
+alias wb='webpack build'
+# Watch a Webpack project, building as needed
+alias ww='webpack watch'
+# Run a Webpack project's local server
+alias wse='webpack serve'
+
 
 # Dependency installation packages
 
