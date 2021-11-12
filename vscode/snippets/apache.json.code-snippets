@@ -108,7 +108,7 @@
     "scope": "apacheconf",
     "prefix": "varyae",
     "body": [
-      "<FilesMatch \"\\\\.(html|css|js|gz)\\$\">",
+      "<FilesMatch \"\\.(html|css|js|gz)\\$\">",
       "\tHeader append Vary: Accept-Encoding",
       "</FilesMatch>"
     ]
@@ -154,7 +154,7 @@
     "scope": "apacheconf",
     "prefix": "nonwww",
     "body": [
-      "RewriteCond %{HTTP_HOST} ^www\\\\.(.+)\\$ [NC]",
+      "RewriteCond %{HTTP_HOST} ^www\\.(.+)\\$ [NC]",
       "RewriteRule ^(.*)\\$ https://%1/\\$1 [L,R=301]"
     ]
   }

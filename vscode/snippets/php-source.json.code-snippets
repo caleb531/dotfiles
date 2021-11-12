@@ -186,7 +186,7 @@
     "scope": "php",
     "prefix": "catch",
     "body": [
-      "catch ( ${1:Exception} \\\\$${2:e} ) {",
+      "catch ( ${1:Exception} \\$${2:e} ) {",
       "\t$3",
       "} "
     ]

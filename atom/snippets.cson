@@ -1541,7 +1541,7 @@
 
   'Vary: Accept-Encoding':
     'prefix': 'varyae'
-    'body': '<FilesMatch "\\\\.(html|css|js|gz)$">\n\tHeader append Vary: Accept-Encoding\n</FilesMatch>'
+    'body': '<FilesMatch "\\.(html|css|js|gz)$">\n\tHeader append Vary: Accept-Encoding\n</FilesMatch>'
 
   'RewriteEngine':
     'prefix': 'rewriteengine'
@@ -1565,7 +1565,7 @@
 
   'www to non-www':
     'prefix': 'nonwww'
-    'body': 'RewriteCond %{HTTP_HOST} ^www\\\\.(.+)$ [NC]\nRewriteRule ^(.*)$ https$1://%1/\\$1 [L,R=301]'
+    'body': 'RewriteCond %{HTTP_HOST} ^www\\.(.+)$ [NC]\nRewriteRule ^(.*)$ https$1://%1/\\$1 [L,R=301]'
 
 # CoffeeScript / CSON
 
