@@ -1,0 +1,20 @@
+{
+  "interface": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "interface",
+    "body": [
+      "interface ${1:InterfaceName} {",
+      "\t${2:keyname}: ${3:TypeName};$4",
+      "}"
+    ]
+  },
+  "enum": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "enum",
+    "body": [
+      "enum EnumName {",
+      "\t${1:keyname},$2\t",
+      "}"
+    ]
+  }
+}
