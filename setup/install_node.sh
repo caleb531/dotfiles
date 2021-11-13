@@ -19,7 +19,6 @@ preload_npm_pkg_list
 
 install_npm_pkg gulp-cli
 install_npm_pkg eslint
-install_npm_pkg typescript
 install_npm_pkg http-server
 install_npm_pkg grunt-cli
 install_npm_pkg vsce
