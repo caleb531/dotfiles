@@ -96,10 +96,9 @@
     "body": [
       "switch (${1:variable}) {",
       "\tcase ${2:value}:",
-      "\t\t$3",
-      "\t\treturn ${4:retvalue};$5",
+      "\t\treturn ${3:retvalue};$4",
       "\tdefault:",
-      "\t\treturn ${6:defvalue};",
+      "\t\treturn ${5:defvalue};",
       "}"
     ]
   },
@@ -117,8 +116,7 @@
     "prefix": "casereturn",
     "body": [
       "case ${1:value}:",
-      "\t$2",
-      "\treturn ${3:retvalue};"
+      "\treturn ${2:retvalue};"
     ]
   },
   "defaultbreak": {
