@@ -1,6 +1,6 @@
 {
   "if": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "if",
     "body": [
       "if (${1:condition}) {",
@@ -9,7 +9,7 @@
     ]
   },
   "else if": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "elseif",
     "body": [
       " else if (${1:condition}) {",
@@ -18,7 +18,7 @@
     ]
   },
   "else if (bracket)": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "} elseif",
     "body": [
       "} else if (${1:condition}) {",
@@ -27,7 +27,7 @@
     ]
   },
   "else": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "else",
     "body": [
       " else {",
@@ -36,7 +36,7 @@
     ]
   },
   "else (bracket)": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "} else",
     "body": [
       "} else {",
@@ -45,7 +45,7 @@
     ]
   },
   "while": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "while",
     "body": [
       "while (${1:condition}) {",
@@ -54,7 +54,7 @@
     ]
   },
   "do..while": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "dowhile",
     "body": [
       "do {",
@@ -63,21 +63,21 @@
     ]
   },
   "break": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "break",
     "body": [
       "break;"
     ]
   },
   "continue": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "continue",
     "body": [
       "continue;"
     ]
   },
   "switch (break)": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "switchbreak",
     "body": [
       "switch (${1:variable}) {",
@@ -91,7 +91,7 @@
     ]
   },
   "switch (return)": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "switchreturn",
     "body": [
       "switch (${1:variable}) {",
@@ -104,7 +104,7 @@
     ]
   },
   "casebreak": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "casebreak",
     "body": [
       "case ${1:value}:",
@@ -113,7 +113,7 @@
     ]
   },
   "casereturn": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "casereturn",
     "body": [
       "case ${1:value}:",
@@ -122,7 +122,7 @@
     ]
   },
   "defaultbreak": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "defaultbreak",
     "body": [
       "default ${1:value}:",
@@ -131,7 +131,7 @@
     ]
   },
   "defaultreturn": {
-    "scope": "c,cpp,javascript,typescript,awk",
+    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
     "prefix": "defaultreturn",
     "body": [
       "default ${1:value}:",
