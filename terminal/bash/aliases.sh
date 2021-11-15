@@ -164,6 +164,7 @@ alias code='code'
 alias codel='code'
 alias cide='code'
 alias cod='code'
+alias coe='code'
 
 # apm aliases
 alias apmre='apm rebuild'
