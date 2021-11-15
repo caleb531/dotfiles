@@ -68,5 +68,12 @@
     "body": [
       "padding: "
     ]
+  },
+  "absolute": {
+    "scope": "css,scss",
+    "prefix": "abs",
+    "body": [
+      "absolute"
+    ]
   }
 }
