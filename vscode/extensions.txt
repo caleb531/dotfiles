@@ -2,6 +2,7 @@
 caleb531.sca-for-vscode
 cssho.vscode-svgviewer
 dbaeumer.vscode-eslint
+dcortes92.FreeMarker
 EditorConfig.EditorConfig
 HookyQR.beautify
 idleberg.applescript
