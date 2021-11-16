@@ -250,5 +250,9 @@
         "alignment-baseline"
     ],
     "editor.guides.indentation": false,
-    "editor.guides.highlightActiveIndentation": false
+    "editor.guides.highlightActiveIndentation": false,
+    "advancedNewFile.convenienceOptions": [
+        "current",
+        "root"
+    ]
 }
