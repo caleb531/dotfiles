@@ -224,14 +224,14 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "export",
     "body": [
-      "export ${1:mname};"
+      "export ${1:mname}"
     ]
   },
   "export default": {
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "exportdefault",
     "body": [
-      "export default ${1:mname};"
+      "export default ${1:mname}"
     ]
   },
   "eslint disable": {
