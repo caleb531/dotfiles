@@ -6,7 +6,6 @@ dcortes92.FreeMarker
 EditorConfig.EditorConfig
 HookyQR.beautify
 idleberg.applescript
-jeremyljackson.vs-docblock
 jock.svg
 kevinglasson.cornflakes-linter
 luggage66.AWK
