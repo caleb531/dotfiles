@@ -22,6 +22,7 @@ php
 plist
 py
 rb
+rss
 scss
 sh
 sql
