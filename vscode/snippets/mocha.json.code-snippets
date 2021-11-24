@@ -17,6 +17,13 @@
       "});"
     ]
   },
+  "expect": {
+    "scope": "javascript,typescript",
+    "prefix": "expect",
+    "body": [
+      "expect($1)."
+    ]
+  },
   "beforeEach": {
     "scope": "javascript,typescript",
     "prefix": "beforeeach",
