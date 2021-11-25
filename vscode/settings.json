@@ -253,5 +253,6 @@
     "advancedNewFile.convenienceOptions": [
         "current",
         "root"
-    ]
+    ],
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true
 }
