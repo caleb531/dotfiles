@@ -22,5 +22,6 @@ install_npm_pkg eslint
 install_npm_pkg http-server
 install_npm_pkg grunt-cli
 install_npm_pkg vsce
+install_npm_pkg typescript
 
 install_node_version 12.16.3 --reinstall-packages-from=default
