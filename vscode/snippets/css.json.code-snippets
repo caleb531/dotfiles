@@ -48,8 +48,8 @@
     "scope": "css,scss",
     "prefix": "@keyframes",
     "body": [
-      "@keyframes {",
-      "\t$1",
+      "@keyframes ${1:name} {",
+      "\t$2",
       "}"
     ]
   },
@@ -57,8 +57,8 @@
     "scope": "css,scss",
     "prefix": "keyframes",
     "body": [
-      "@keyframes {",
-      "\t$1",
+      "@keyframes ${1:name} {",
+      "\t$2",
       "}"
     ]
   },
