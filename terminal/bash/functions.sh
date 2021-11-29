@@ -143,6 +143,8 @@ rt() {
 	if [ -f package.json ]; then
 		if cat package.json | grep -q '\"atom\"'; then
 			apm test "$@"
+		elif [ -f jest.config.js ] || [ -f jest.config.ts ]; then
+			./node_modules/.bin/jest
 		else
 			npm test "$@"
 		fi
