@@ -1,6 +1,6 @@
 {
   "try": {
-    "scope": "cpp,javascript,typescript",
+    "scope": "cpp,javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "try",
     "body": [
       "try {",
@@ -9,7 +9,7 @@
     ]
   },
   "catch": {
-    "scope": "cpp,javascript,typescript",
+    "scope": "cpp,javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "catch",
     "body": [
       " catch (${1:error}) {",
@@ -18,7 +18,7 @@
     ]
   },
   "catch (bracket)": {
-    "scope": "cpp,javascript,typescript",
+    "scope": "cpp,javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "} catch",
     "body": [
       "} catch (${1:error}) {",
@@ -27,7 +27,7 @@
     ]
   },
   "finally": {
-    "scope": "cpp,javascript,typescript",
+    "scope": "cpp,javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "finally",
     "body": [
       " finally {",
@@ -36,7 +36,7 @@
     ]
   },
   "finally (bracket)": {
-    "scope": "cpp,javascript,typescript",
+    "scope": "cpp,javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "} finally",
     "body": [
       "} finally {",
