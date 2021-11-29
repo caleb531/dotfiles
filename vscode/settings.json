@@ -254,5 +254,6 @@
         "current",
         "root"
     ],
-    "typescript.tsserver.experimental.enableProjectDiagnostics": true
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+    "editor.hover.delay": 500
 }
