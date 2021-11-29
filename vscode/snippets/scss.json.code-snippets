@@ -57,5 +57,19 @@
     "body": [
       "@extend "
     ]
+  },
+  "@use": {
+    "scope": "scss",
+    "prefix": "use",
+    "body": [
+      "@use '$1';"
+    ]
+  },
+  "@use math": {
+    "scope": "scss",
+    "prefix": "usemath",
+    "body": [
+      "@use 'sass:math';\n"
+    ]
   }
 }
