@@ -92,6 +92,9 @@ alias ww='webpack watch'
 # Run a Webpack project's local server
 alias wse='webpack serve'
 
+# Stop me from accidentally generating *.js / *.jsx files every time I run the
+# `tsc` command for linting
+alias tsc='tsc --noEmit'
 
 # Dependency installation packages
 
