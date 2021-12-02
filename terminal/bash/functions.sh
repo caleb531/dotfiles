@@ -256,10 +256,10 @@ sri() {
 
 # Shortcuts for `git add`
 ga() {
-	git add "${@:-.}"
+	git add "${@:--A}"
 }
 gap() {
-	ga -p "${@:-.}"
+	ga -p "${@:--A}"
 }
 
 # Fix node-gyp Xcode installation error
