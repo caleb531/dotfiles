@@ -120,7 +120,6 @@
         "requirements.txt": "properties",
         "gitignore_global": "ignore"
     },
-    "editor.snippetSuggestions": "top",
     "editor.wordWrap": "bounded",
     "extensions.ignoreRecommendations": true,
     "editor.quickSuggestions": {
@@ -235,7 +234,6 @@
     "svg.preview.mode": "svg",
     "latex.linter.enabled": false,
     "javascript.validate.enable": false,
-    "editor.quickSuggestionsDelay": 0,
     "shellcheck.exclude": [
         "SC1091",
         "SC2002",
@@ -254,5 +252,7 @@
         "current",
         "root"
     ],
-    "editor.hover.delay": 500
+    "editor.hover.delay": 500,
+    "editor.quickSuggestionsDelay": 0,
+    "editor.snippetSuggestions": "top"
 }
