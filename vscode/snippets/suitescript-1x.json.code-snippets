@@ -147,7 +147,7 @@
       "\t'Content-Type': 'application/json',",
       "\t'Accept': 'application/json',",
       "\t'User-Agent': 'Mozilla/5.0'$3",
-      "}, '${4|POST,GET,PUT,DELETE|}');"
+      "}, '${4|GET,POST,PUT,DELETE|}');"
     ]
   },
   "script parameter": {
