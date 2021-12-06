@@ -132,6 +132,24 @@
       "nlapiSubmitField(${1:recordtype}, ${2:recordid}, ${3:fieldid}, ${4:fieldvalue});"
     ]
   },
+  "resolve url": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiResolveURL",
+    "body": [
+      "nlapiResolveURL('${1|SUITELET,RESTLET,RECORD,TASKLINK|}', ${2:scriptId}, ${3:deploymentId}, '${4|external,internal|}')"
+    ]
+  },
+  "request url": {
+    "scope": "javascript,typescript",
+    "prefix": "nlapiRequestUrl",
+    "body": [
+      "nlapiRequestURL(${1:url}, ${2:postbody}, {",
+      "\t'Content-Type': 'application/json',",
+      "\t'Accept': 'application/json',",
+      "\t'User-Agent': 'Mozilla/5.0'$3",
+      "}, '${4|POST,GET,PUT,DELETE|}');"
+    ]
+  },
   "script parameter": {
     "scope": "javascript,typescript",
     "prefix": "getscriptparameter",
