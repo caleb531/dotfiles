@@ -254,5 +254,6 @@
     ],
     "editor.hover.delay": 500,
     "editor.quickSuggestionsDelay": 0,
-    "editor.snippetSuggestions": "top"
+    "editor.snippetSuggestions": "top",
+    "typescript.updateImportsOnFileMove.enabled": "never"
 }
