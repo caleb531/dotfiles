@@ -21,6 +21,14 @@
             },
             {
                 "scope": [
+                    "punctuation.accessor.optional.tsx"
+                ],
+                "settings": {
+                    "foreground": "#F92672"
+                }
+            },
+            {
+                "scope": [
                     "support.type.property-name.json"
                 ],
                 "settings": {
