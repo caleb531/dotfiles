@@ -268,5 +268,7 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
-    }
+    },
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single"
 }
