@@ -252,7 +252,7 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "eslintdisablenextline",
     "body": [
-      "/* eslint-disable-next-line */"
+      "/* eslint-disable-next-line $1 */"
     ]
   },
   "eslint no unused vars": {
