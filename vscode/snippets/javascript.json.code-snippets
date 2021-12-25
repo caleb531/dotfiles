@@ -241,25 +241,11 @@
       "/* eslint-disable */"
     ]
   },
-  "eslint disable rule": {
+  "eslint disable next line": {
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
-    "prefix": "eslintdisablerule",
-    "body": [
-      "/* eslint-disable $1 */"
-    ]
-  },
-  "eslint disable next": {
-    "scope": "javascript,typescript,javascriptreact,typescriptreact",
-    "prefix": "eslintdisablenext",
+    "prefix": "eslintdisablenextline",
     "body": [
       "/* eslint-disable-next-line */"
-    ]
-  },
-  "eslint disable next rule": {
-    "scope": "javascript,typescript,javascriptreact,typescriptreact",
-    "prefix": "eslintdisablenextrule",
-    "body": [
-      "/* eslint-disable-next-line $1 */"
     ]
   },
   "eslint no unused vars": {
