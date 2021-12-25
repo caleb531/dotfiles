@@ -238,7 +238,14 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "eslintdisable",
     "body": [
-      "/* eslint-disable */"
+      "/* eslint-disable $1 */"
+    ]
+  },
+  "eslint enable": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "eslintenable",
+    "body": [
+      "/* eslint-enable $1 */"
     ]
   },
   "eslint disable next line": {
