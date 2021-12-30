@@ -3,6 +3,7 @@ caleb531.sca-for-vscode
 dbaeumer.vscode-eslint
 dcortes92.FreeMarker
 EditorConfig.EditorConfig
+gurumukhi.selected-lines-count
 HookyQR.beautify
 idleberg.applescript
 jock.svg
