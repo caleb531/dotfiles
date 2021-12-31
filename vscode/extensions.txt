@@ -16,6 +16,7 @@ ms-vscode-remote.remote-ssh-edit
 patbenatar.advanced-new-file
 rashwell.tcl
 rebornix.prolog
+silvenon.mdx
 SirTobi.pegjs-language
 stkb.rewrap
 timonwong.shellcheck
