@@ -118,22 +118,5 @@
       "case ${1:value}:",
       "\treturn ${2:retvalue};"
     ]
-  },
-  "defaultbreak": {
-    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
-    "prefix": "defaultbreak",
-    "body": [
-      "default ${1:value}:",
-      "\t$2",
-      "\tbreak;"
-    ]
-  },
-  "defaultreturn": {
-    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
-    "prefix": "defaultreturn",
-    "body": [
-      "default ${1:value}:",
-      "\treturn ${2:retvalue};"
-    ]
   }
 }
