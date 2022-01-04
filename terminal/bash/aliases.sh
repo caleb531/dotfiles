@@ -92,6 +92,13 @@ alias ww='webpack watch'
 # Run a Webpack project's local server
 alias wse='webpack serve'
 
+# Gatsby
+alias gab='gatsby build'
+alias gac='gatsby clean'
+alias gacb='gatsby clean && gatsby build'
+alias gad='gatsby develop'
+alias gacd='gatsby clean && gatsby develop'
+
 # Stop me from accidentally generating *.js / *.jsx files every time I run the
 # `tsc` command for linting
 alias tsc='tsc --noEmit'
