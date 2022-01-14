@@ -8,32 +8,54 @@ build_cmd_map=(
 	['gulp:clean']='clean'
 	['gulp:develop']='serve'
 	['gulp:watch']='watch'
+
 	['gatsby:build']='build'
 	['gatsby:clean']='clean'
 	['gatsby:develop']='develop'
 
+	['webpack:build']='build'
+	['webpack:develop']='serve'
+	['webpack:watch']='serve'
+
+	['jekyll:build']='build'
+	['jekyll:develop']='serve'
+	['jekyll:watch']='build --watch'
+
+	['brunch:build']='build'
+	['brunch:develop']='watch --server'
+	['brunch:watch']='watch'
 )
 
 # Run the given build tool command name and subcommand
 __b() {
-	local subcmd="${build_cmd_map["$1:$2"]}"
+	local cmd="$1"
+	local action="$2"
+	local subcmd="${build_cmd_map["$cmd:$action"]}"
+	local args="${*:3}"
 	if [ -n "$subcmd" ]; then
-		"$1" "$subcmd" "${@:3}"
+		# shellcheck disable=2086,2068
+		"$cmd" $subcmd $args
 	else
-		>&2 echo "Command not found for $1:$2"
+		>&2 echo "$action command not found for $cmd"
 	fi
 }
 
 # Run the given subcommand
 __b_sub() {
+	local action="$1"
+	local args="${*:2}"
 	if [ -f gulpfile.js ]; then
-		__b gulp "$1" "${@:2}"
-	elif [ -f webpack.config.js ]; then
-		__b webpack "$1" "${@:2}"
+		__b gulp "$action" "$args"
 	elif [ -f gatsby-config.js ]; then
-		__b gatsby "$1" "${@:2}"
+		__b gatsby "$action" "$args"
+	elif [ -f webpack.config.js ]; then
+		__b webpack "$action" "$args"
+	elif [ -f _config.yml ]; then
+		__b jekyll "$action" "$args"
+	elif [ -f brunch-config.js ]; then
+		__b brunch "$action" "$args"
 	else
-		>&2 echo "Project type not recognized"
+		>&2 echo "project type not recognized"
 	fi
 }
 
