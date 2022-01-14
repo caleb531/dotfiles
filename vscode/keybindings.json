@@ -515,10 +515,6 @@
     "command": "-workbench.action.focusSideBar"
   },
   {
-    "key": "cmd+0",
-    "command": "workbench.action.zoomReset"
-  },
-  {
     "key": "cmd+numpad0",
     "command": "-workbench.action.zoomReset"
   },
@@ -639,5 +635,65 @@
   {
     "key": "shift+alt+cmd+.",
     "command": "eslint.executeAutofix"
+  },
+  {
+    "key": "shift+cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "cmd+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "cmd+=",
+    "command": "editor.action.fontZoomIn"
+  },
+  {
+    "key": "cmd+0",
+    "command": "editor.action.fontZoomReset"
+  },
+  {
+    "key": "shift+cmd+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "cmd+-",
+    "command": "editor.action.fontZoomOut"
+  },
+  {
+    "key": "shift+alt+cmd+=",
+    "command": "workbench.action.zoomIn"
+  },
+  {
+    "key": "cmd+numpad_add",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "shift+alt+cmd+-",
+    "command": "workbench.action.zoomOut"
+  },
+  {
+    "key": "cmd+numpad_subtract",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "shift+alt+cmd+0",
+    "command": "workbench.action.zoomReset"
+  },
+  {
+    "key": "shift+cmd+=",
+    "command": "editor.action.fontZoomIn"
+  },
+  {
+    "key": "shift+cmd+-",
+    "command": "editor.action.fontZoomOut"
+  },
+  {
+    "key": "shift+cmd+0",
+    "command": "editor.action.fontZoomReset"
   }
 ]
