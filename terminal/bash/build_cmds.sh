@@ -4,39 +4,40 @@
 
 declare -A build_cmd_map
 build_cmd_map=(
-	['gulp:build']='build'
-	['gulp:clean']='clean'
-	['gulp:develop']='serve'
-	['gulp:watch']='watch'
+	['gulp:build']='gulp build'
+	['gulp:clean']='gulp clean'
+	['gulp:develop']='gulp serve'
+	['gulp:watch']='gulp watch'
 
-	['gatsby:build']='build'
-	['gatsby:clean']='clean'
-	['gatsby:develop']='develop'
+	['gatsby:build']='gatsby build'
+	['gatsby:clean']='gatsby clean'
+	['gatsby:develop']='gatsby develop'
 
-	['webpack:build']='build'
-	['webpack:develop']='serve'
-	['webpack:watch']='serve'
+	['webpack:build']='webpack build'
+	['webpack:develop']='webpack serve'
+	['webpack:watch']='webpack serve'
 
-	['jekyll:build']='build'
-	['jekyll:develop']='serve'
-	['jekyll:watch']='build --watch'
+	['jekyll:build']='jekyll build'
+	['jekyll:develop']='jekyll serve'
+	['jekyll:watch']='jekyll build --watch'
 
-	['brunch:build']='build'
-	['brunch:develop']='watch --server'
-	['brunch:watch']='watch'
+	['brunch:build']='brunch build'
+	['brunch:develop']='brunch watch --server'
+	['brunch:watch']='brunch watch'
 )
 
 # Run the given build tool command name and subcommand
 __b() {
-	local cmd="$1"
+	local project_type="$1"
 	local action="$2"
-	local subcmd="${build_cmd_map["$cmd:$action"]}"
+	local subcmd="${build_cmd_map["$project_type:$action"]}"
 	local args="${*:3}"
 	if [ -n "$subcmd" ]; then
-		# shellcheck disable=2086,2068
-		"$cmd" $subcmd $args
+		echo "Running $subcmd $args"
+		# shellcheck disable=2086
+		$subcmd $args
 	else
-		>&2 echo "$action command not found for $cmd"
+		>&2 echo "$action command not found for $project_type"
 	fi
 }
 
