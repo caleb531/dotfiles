@@ -286,3 +286,4 @@ ssd() {
 	fi
 	sudo smartctl --all /dev/disk0
 }
+

@@ -53,51 +53,10 @@ alias dns='dig'
 
 # Build/serve aliases
 
-# Build a Brunch project
-alias bb='brunch build'
-# Watch a Brunch project for changes and build as needed
-alias bw='brunch watch'
-# Serve a Brunch site
-alias bs='bw --server'
-
-# Build a Jekyll site, using Bundler if needed
-alias jb='bundle exec jekyll build'
-# Build a Jekyll site and enable tracebacks
-alias jbt='jb --trace'
-# Build a Jekyll site for production
-alias jbp='JEKYLL_ENV=production jb'
-# Watch a Jekyll site, building (and using Bundler) as needed
-alias jw='jb --watch'
-# Serve a Jekyll site, building (and using Bundler) as needed
-alias js='bundle exec jekyll serve'
-# Serve Jekyll site and open site in browser
-alias jso='js -o'
-
 # Serve a directory via a Node HTTP server
 alias hs='http-server -c-1'
 # Serve a directory and open it in web browser
 alias hso='hs -o'
-
-# Build a Gulp project
-alias gb='gulp build'
-# Watch a Gulp project, building as needed
-alias gw='gulp build:watch'
-# Run a Gulp project's local server
-alias gse='gulp serve'
-
-# Build webpack
-alias wb='webpack build'
-# Watch a Webpack project, building as needed
-alias ww='webpack watch'
-# Run a Webpack project's local server
-alias wse='webpack serve'
-
-# Gatsby
-alias gab='gatsby build'
-alias gac='gatsby clean'
-alias gacb='gatsby clean && gatsby build'
-alias gad='gatsby develop'
-alias gacd='gatsby clean && gatsby develop'
 
 # Stop me from accidentally generating *.js / *.jsx files every time I run the
 # `tsc` command for linting
@@ -105,10 +64,6 @@ alias tsc='tsc --noEmit'
 
 # Dependency installation packages
 
-# Install Bundler gems (has nothing to do with Brunch)
-alias bi='bundle install'
-# Execute an arbitrary command in a project's Bundler environment
-alias be='bundle exec'
 # Install Python packages into virtualenv
 alias pir='pip install -r requirements.txt'
 # Record installed Python packages
