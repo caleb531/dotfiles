@@ -4,6 +4,9 @@
 
 declare -A build_cmd_map
 build_cmd_map=(
+	['next:build']='npx next build'
+	['next:develop']='npx next dev'
+
 	['gulp:build']='gulp build'
 	['gulp:clean']='gulp clean'
 	['gulp:develop']='gulp serve'
@@ -45,7 +48,9 @@ __b() {
 __b_sub() {
 	local action="$1"
 	local args="${*:2}"
-	if [ -f gulpfile.js ]; then
+	if [ -f next.config.js ]; then
+		__b next "$action" "$args"
+	elif [ -f gulpfile.js ]; then
 		__b gulp "$action" "$args"
 	elif [ -f gatsby-config.js ]; then
 		__b gatsby "$action" "$args"
