@@ -6,6 +6,7 @@ declare -A build_cmd_map
 build_cmd_map=(
 	['next:build']='npx next build'
 	['next:develop']='npx next dev'
+	['next:start']='npx next start'
 
 	['gulp:build']='gulp build'
 	['gulp:clean']='gulp clean'
@@ -76,4 +77,7 @@ bw() {
 }
 bd() {
 	__b_sub develop "$@"
+}
+bs() {
+	__b_sub start "$@"
 }
