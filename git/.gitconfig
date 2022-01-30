@@ -153,6 +153,8 @@
 	logs = log -S
 	# List all tracked files, relative to the current directory
 	ls = ls-tree -r --name-status HEAD
+	# Workflow for renaming master branch to main
+	main = !git pull origin main && git branch -m main && git pushu && git rpo
 	# Managing merges
 	mergea = merge --abort
 	mergec = merge --continue
