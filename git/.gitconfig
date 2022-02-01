@@ -19,9 +19,9 @@
 [commit]
 	gpgsign = true
 
-# Designate master as the default branch name
+# Designate main as the default branch name
 [init]
-	defaultBranch = master
+	defaultBranch = main
 
 # Push/pull current branch by default (when no arguments are given)
 [push]
