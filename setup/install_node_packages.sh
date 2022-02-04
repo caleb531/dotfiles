@@ -29,5 +29,6 @@ install_npm_pkg typescript
 install_npm_pkg ts-node
 install_npm_pkg esbuild
 install_npm_pkg jest
+install_npm_pkg npm-check-updates
 
 install_node_version 12.16.3 --reinstall-packages-from=default
