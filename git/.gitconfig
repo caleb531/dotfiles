@@ -243,8 +243,8 @@
 	vc = verify-commit
 	vch = verify-commit HEAD
 	# View all local branches that have not been merged into master
-	view-merged-local-branches = !git branch --merged master | grep -Pv '(^\\*|master|develop)' | less -X
+	view-merged-local-branches = "!f() { git branch --merged ${1:-main} | grep -Pv '(^\\*|main|master|develop)' | less -X; }; f"
 	# View all remote branches that have not been merged into origin/master
-	view-merged-remote-branches = !git branch --remote --merged origin/master | sed 's|origin/||g' | grep -Pv '(master|develop)' | grep -Fv $(git rev-parse --abbrev-ref HEAD) | less -X
+	view-merged-remote-branches = "!f() { git branch --remote --merged origin/${1:-main} | sed 's|origin/||g' | grep -Pv '(main|master|develop)' | grep -Fv $(git rev-parse --abbrev-ref HEAD) | less -X; }; f"
 	# Zip a WordPress plugin or theme
 	zip-wordpress = !zip -r $1 * -x node_modules/ -x node_modules/**\\*
