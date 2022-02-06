@@ -23,6 +23,7 @@ install_cask microsoft-teams
 install_cask postman
 # Least-essential apps
 install_cask appcleaner
+install_cask imageoptim
 install_cask namechanger
 install_cask the-unarchiver
 install_cask mamp
