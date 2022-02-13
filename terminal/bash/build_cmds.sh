@@ -72,6 +72,9 @@ bc() {
 bb() {
 	__b_sub build "$@"
 }
+bp() {
+	NODE_ENV=production __b_sub build "$@"
+}
 bw() {
 	__b_sub watch "$@"
 }
