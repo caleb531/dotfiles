@@ -11,7 +11,7 @@ build_cmd_map=(
 	['gulp:build']='gulp build'
 	['gulp:clean']='gulp clean'
 	['gulp:develop']='gulp serve'
-	['gulp:watch']='gulp watch'
+	['gulp:watch']='gulp build:watch'
 
 	['gatsby:build']='gatsby build'
 	['gatsby:clean']='gatsby clean'
