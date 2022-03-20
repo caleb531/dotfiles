@@ -75,5 +75,14 @@
     "body": [
       "absolute"
     ]
+  },
+  "@supports": {
+    "scope": "css,scss",
+    "prefix": "supports",
+    "body": [
+      "@supports (${1:(-webkit-backdrop-filter: none) or (backdrop-filter: none)}) {",
+      "\t$2",
+      "}"
+    ]
   }
 }
