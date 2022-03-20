@@ -1,7 +1,16 @@
 {
   "@media": {
     "scope": "css,scss",
-    "prefix": "mediaq",
+    "prefix": "@media",
+    "body": [
+      "@media $1 {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "media": {
+    "scope": "css,scss",
+    "prefix": "media",
     "body": [
       "@media $1 {",
       "\t$2",
@@ -46,7 +55,7 @@
   },
   "@keyframes": {
     "scope": "css,scss",
-    "prefix": "keyframes",
+    "prefix": "@keyframes",
     "body": [
       "@keyframes ${1:name} {",
       "\t$2",
@@ -77,6 +86,15 @@
     ]
   },
   "@supports": {
+    "scope": "css,scss",
+    "prefix": "@supports",
+    "body": [
+      "@supports (${1:(-webkit-backdrop-filter: none) or (backdrop-filter: none)}) {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "supports": {
     "scope": "css,scss",
     "prefix": "supports",
     "body": [
