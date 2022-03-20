@@ -46,7 +46,7 @@
   },
   "@keyframes": {
     "scope": "css,scss",
-    "prefix": "@keyframes",
+    "prefix": "keyframes",
     "body": [
       "@keyframes ${1:name} {",
       "\t$2",
