@@ -197,10 +197,6 @@
     "when": "viewContainer.workbench.view.debug.enabled"
   },
   {
-    "key": "shift+cmd+d",
-    "command": "editor.action.duplicateSelection"
-  },
-  {
     "key": "cmd+r",
     "command": "-workbench.action.reloadWindow",
     "when": "isDevelopment"
@@ -695,5 +691,9 @@
   {
     "key": "shift+cmd+0",
     "command": "editor.action.fontZoomReset"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "editor.action.copyLinesDownAction"
   }
 ]
