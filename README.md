@@ -59,24 +59,24 @@ automatically activate that virtualenv. When you `cd` to another directory, that
 currently-active virtualenv will be automatically deactivated (and of course,
 any virtualenv present in the new directory will be activated).
 
-## Atom configuration
+## VS Code configuration
 
-I use [Atom](https://atom.io/) as my editor of choice for editing text files and
-writing code. My Atom configuration, included in this repository, features my
-main configuration, preferred keymaps and snippets, as well as my initialization
-script and custom styles.
+I use [VS Code](https://code.visualstudio.com/) as my editor of choice for
+editing text files and writing code. My VS Code configuration, included in this
+repository, features my main configuration, as well as preferred keymaps and
+snippets.
 
 ### Emmet configuration
 
 I have also included my configuration for [Emmet](http://emmet.io/), an
-invaluable package which enables quick HTML expansion within Atom. This
+invaluable package which enables quick HTML expansion within VS Code. This
 configuration is located under the `emmet/` directory, and consists of both
 preferences and snippets for HTML expansion.
 
 Please ensure that the `~/dotfiles/emmet` directory is set as your *Extensions
 Path* within the Emmet package preferences, because this directory is where my
-Atom configuration expects to find user configuration for Emmet. Executing the
-`setup/create_symlinks.sh` script will create the `~/dotfiles` directory.
+VS Code configuration expects to find user configuration for Emmet. Executing
+the `setup/create_symlinks.sh` script will create the `~/dotfiles` directory.
 
 ## Setup scripts
 
