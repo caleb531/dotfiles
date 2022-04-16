@@ -5,6 +5,9 @@
 # Enable aliases to be run as root
 alias sudo='sudo '
 
+# Make Python 3 the default Python
+alias python='python3'
+
 # Colorize directory listings
 alias ls='ls --color=auto'
 alias lsa='ls -a'
