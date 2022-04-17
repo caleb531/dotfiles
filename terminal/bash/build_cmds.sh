@@ -6,6 +6,7 @@ declare -A build_cmd_map
 build_cmd_map=(
 	['next:build']='npx next build'
 	['next:develop']='npx next dev'
+	['next:watch']='npx next dev'
 	['next:start']='npx next start'
 
 	['gulp:build']='gulp build'
