@@ -16,5 +16,12 @@
       "\t${1:keyname},$2\t",
       "}"
     ]
+  },
+  "@ts-ignore": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "tsignore",
+    "body": [
+      "// @ts-ignore"
+    ]
   }
 }
