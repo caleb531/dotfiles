@@ -271,5 +271,6 @@
     },
     "typescript.preferences.quoteStyle": "single",
     "javascript.preferences.quoteStyle": "single",
-    "workbench.layoutControl.enabled": false
+    "workbench.layoutControl.enabled": false,
+    "editor.bracketPairColorization.enabled": false
 }
