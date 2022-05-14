@@ -13,6 +13,13 @@
       "stroke=\"$1\""
     ]
   },
+  "stroke-width": {
+    "scope": "svg",
+    "prefix": "stroke-width",
+    "body": [
+      "stroke-width=\"$1\""
+    ]
+  },
   "stroke-linecap": {
     "scope": "svg",
     "prefix": "strokelinecap",
