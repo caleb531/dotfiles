@@ -64,6 +64,10 @@ sudo chown "$USER":admin "$GPG_BIN_DIR"
 mkdir -p "$GPG_BIN_DIR"
 ln -s "$BREW_PREFIX"/bin/pinentry-mac "$GPG_BIN_DIR"/pinentry-mac
 
+# Install Supabase CLI and its dependencies
+install_cask docker
+install_brew_pkg supabase/tap/supabase
+
 # Install Mac App Store command-line utility
 install_brew_pkg mas
 
