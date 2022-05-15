@@ -126,7 +126,8 @@
         "httpd.conf": "apacheconf",
         "httpd-*.conf": "apacheconf",
         "requirements.txt": "properties",
-        "gitignore_global": "ignore"
+        "gitignore_global": "ignore",
+        "*.toml": "ini"
     },
     "editor.wordWrap": "bounded",
     "extensions.ignoreRecommendations": true,
