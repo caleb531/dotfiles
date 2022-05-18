@@ -91,8 +91,8 @@
 	# convenient alias for misspellings of 'commit'
 	commiy = commit
 	# Delete branches that have been merged in
-	delete-merged-local-branches = !git view-merged-local-branches | xargs git branch -d
-	delete-merged-remote-branches = !git remote prune origin && git view-merged-remote-branches | xargs git push -d origin
+	delete-merged-local-branches = "!f() { git view-merged-local-branches ${1:-main} | xargs git branch -d; }; f"
+	delete-merged-remote-branches = "!f() { git remote prune origin && git view-merged-remote-branches ${1:-main} | xargs git push -d origin; }; f"
 	# Diff staged changes
 	diffc = diff --cached
 	# Diff files, highlighting only the changes within each line
