@@ -102,5 +102,12 @@
       "\t$2",
       "}"
     ]
+  },
+  "!important;": {
+    "scope": "css,scss",
+    "prefix": "!important;",
+    "body": [
+      "!important;"
+    ]
   }
 }
