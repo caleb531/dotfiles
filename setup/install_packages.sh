@@ -54,7 +54,7 @@ install_brew_pkg pinentry-mac
 # Because the Homebrew prefix directory differs between Intel and ARM Macs, the
 # path to the pinentry-mac program will also differ between the two
 # architectures; this creates a problem because the gpg-agent.conf expects only
-# a single path, and if that path ios not architecture-agnostic, then it will
+# a single path, and if that path is not architecture-agnostic, then it will
 # break GPG signing for Git commits; to solve this, create a symlink whose path
 # will be the same across all architectures, then simply reference that symlink
 # in my gpg-agent.conf
