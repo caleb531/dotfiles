@@ -33,7 +33,6 @@ install_brew_pkg diff-so-fancy
 
 install_brew_pkg openssl
 install_brew_pkg python-tk
-install_brew_pkg ical-buddy
 
 install_brew_pkg ssh-copy-id
 tap_brew_repo heroku/brew
