@@ -123,19 +123,12 @@ alias restart-gpg='gpgconf --kill gpg-agent'
 alias xcode-switch-xcode='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
 alias xcode-switch-clt='sudo xcode-select --switch /Library/Developer/CommandLineTools'
 
-# Create several aliases for 'atom' misspellings
-alias atoml='atom'
-alias aton='atom'
-
 # Create several aliases for 'code' misspellings
 alias code='code'
 alias codel='code'
 alias cide='code'
 alias cod='code'
 alias coe='code'
-
-# apm aliases
-alias apmre='apm rebuild'
 
 # Remap 'killall' to 'ka'
 alias ka='killall'

@@ -10,7 +10,6 @@ install_cask google-chrome
 install_cask brave-browser
 install_cask sync
 install_cask alfred
-install_cask atom
 install_cask visual-studio-code
 install_cask 1password
 install_cask keyboard-maestro

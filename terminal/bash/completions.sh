@@ -75,27 +75,6 @@ _pip() {
 }
 complete -o default -F _pip pip pip2 pip3 2> /dev/null
 
-# Completion function for apm, Atom's package manager
-_apm() {
-
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-
-	if [ "$prev" == 'apm' ] || [ "$prev" == 'help' ]; then
-		# Complete common apm commands for `apm`
-		COMPREPLY=( $(compgen -W 'clean develop help install list link login publish pull push rebuild search show star stars uninstall unstar update upgrade' -- "$cur") )
-	elif [ "$prev" == 'update' ] || [ "$prev" == 'upgrade' ]; then
-		# Complete options for `apm update` and `apm upgrade`
-		COMPREPLY=( $(compgen -W '--list --no-confirm' -- "$cur") )
-	elif [ "$prev" == 'show' ] || [ "$prev" == 'uninstall' ]; then
-		# Complete installed packages for `apm show` and `apm uninstall`
-		local pkg_list="$(ls ~/.atom/packages 2> /dev/null)"
-		COMPREPLY=( $(compgen -W "$pkg_list" -- "$cur") )
-	fi
-
-}
-complete -o default -F _apm apm 2> /dev/null
-
 # Completion function for gem, Ruby's built-in package manager
 _gem() {
 

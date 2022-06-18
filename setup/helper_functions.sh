@@ -20,10 +20,6 @@ preload_pip_pkg_list() {
 	PIP_PKG_LIST="$(pip3 list)"
 }
 
-preload_apm_pkg_list() {
-	APM_PKG_LIST="$(apm list --installed --bare)"
-}
-
 preload_vscode_pkg_list() {
 	VSCODE_PKG_LIST="$(code --list-extensions)"
 }
@@ -62,10 +58,6 @@ is_gem_installed() {
 
 is_pip_pkg_installed() {
 	echo "$PIP_PKG_LIST" | grep --quiet "^$1=="
-}
-
-is_apm_pkg_installed() {
-	echo "$APM_PKG_LIST" | grep --quiet "^$1@"
 }
 
 is_vscode_pkg_installed() {
@@ -126,12 +118,6 @@ install_pip_pkg() {
 	if ! is_pip_pkg_installed "$1"; then
 		echo "Installing $1..."
 		pip3 install "$@"
-	fi
-}
-
-install_apm_pkg() {
-	if ! is_apm_pkg_installed "$1"; then
-		apm install "$@"
 	fi
 }
 

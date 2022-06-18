@@ -141,9 +141,7 @@ mre() {
 # Run Node/Python tests with Nose test runner
 rt() {
 	if [ -f package.json ]; then
-		if cat package.json | grep -q '\"atom\"'; then
-			apm test "$@"
-		elif [ -f jest.config.js ] || [ -f jest.config.ts ]; then
+		if [ -f jest.config.js ] || [ -f jest.config.ts ]; then
 			./node_modules/.bin/jest
 		else
 			npm test "$@"

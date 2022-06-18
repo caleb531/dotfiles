@@ -22,7 +22,6 @@ done
 # Exclude large directories under user home directory
 exclude_dir ~/Library
 exclude_dir ~/n
-exclude_dir ~/.atom
 exclude_dir ~/Music/iTunes/Album\ Artwork/Cache
 exclude_dir ~/.Trash
 

@@ -80,5 +80,4 @@ install_gem jekyll
 
 ~/dotfiles/setup/install_node_packages.sh
 ~/dotfiles/setup/install_pip_packages.sh
-~/dotfiles/setup/install_atom_packages.sh
 ~/dotfiles/setup/install_vscode_packages.sh
