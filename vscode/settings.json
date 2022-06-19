@@ -274,5 +274,6 @@
     "typescript.preferences.quoteStyle": "single",
     "javascript.preferences.quoteStyle": "single",
     "workbench.layoutControl.enabled": false,
-    "editor.bracketPairColorization.enabled": false
+    "editor.bracketPairColorization.enabled": false,
+    "editor.formatOnSave": true
 }
