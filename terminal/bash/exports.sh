@@ -13,7 +13,7 @@ export CURRENT_NODE_AUTO_SWITCH_PWD=
 # Ensure installed packages are recognized and preferred
 
 # Homebrew
-export PATH=/opt/homebrew/bin:"$PATH"
+export PATH=~/homebrew/bin:/opt/homebrew/bin:"$PATH"
 if type brew &> /dev/null; then
 	export BREW_PREFIX="$(brew --prefix)"
 fi
