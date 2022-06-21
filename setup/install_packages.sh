@@ -78,6 +78,7 @@ preload_gem_list
 install_gem bundler
 install_gem jekyll
 
-~/dotfiles/setup/install_node_packages.sh
+~/dotfiles/setup/install_node.sh
+~/dotfiles/setup/install_npm_packages.sh
 ~/dotfiles/setup/install_pip_packages.sh
 ~/dotfiles/setup/install_vscode_packages.sh
