@@ -9,7 +9,9 @@ alias sudo='sudo '
 alias python='python3'
 
 # Colorize directory listings
-alias ls='ls --color=auto'
+if ls ~ --color=auto &> /dev/null; then
+	alias ls='ls --color=auto'
+fi
 alias lsa='ls -a'
 alias lsl='ls -l'
 alias lsla='ls -la'
