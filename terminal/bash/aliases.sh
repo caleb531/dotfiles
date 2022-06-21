@@ -11,6 +11,8 @@ alias python='python3'
 # Colorize directory listings
 if ls --color=auto ~ &> /dev/null; then
 	alias ls='ls --color=auto'
+elif /bin/ls -G ~ &> /dev/null; then
+	alias ls='/bin/ls -G'
 fi
 alias lsa='ls -a'
 alias lsl='ls -l'
