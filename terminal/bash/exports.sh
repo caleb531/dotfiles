@@ -14,7 +14,9 @@ export CURRENT_NODE_AUTO_SWITCH_PWD=
 
 # Homebrew
 export PATH=/opt/homebrew/bin:"$PATH"
-export BREW_PREFIX="$(brew --prefix)"
+if type brew &> /dev/null; then
+	export BREW_PREFIX="$(brew --prefix)"
+fi
 # Guile (used for GPG)
 export GUILE_LOAD_PATH="$BREW_PREFIX"/share/guile/site/3.0
 export GUILE_LOAD_COMPILED_PATH="$BREW_PREFIX"/lib/guile/3.0/site-ccache
@@ -26,7 +28,9 @@ export PATH="$BREW_PREFIX"/opt/gnupg@2.0/bin:"$PATH"
 export PATH="$BREW_PREFIX"/opt/gpg-agent/bin:"$PATH"
 # Jekyll
 export PATH="$BREW_PREFIX"/opt/ruby/bin:"$PATH"
-RUBY_GEMS_DIR="$(ls -d -1 "$BREW_PREFIX"/lib/ruby/gems/3.0.0 | tail -n 1)"
+if [ -d "$BREW_PREFIX"/lib/ruby/gems/3.0.0 ]; then
+	RUBY_GEMS_DIR="$(ls -d -1 "$BREW_PREFIX"/lib/ruby/gems/3.0.0 | tail -n 1)"
+fi
 export PATH="$RUBY_GEMS_DIR"/bin:"$PATH"
 export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/imagemagick@6/lib/pkgconfig:"$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/libffi/lib/pkgconfig:"$PKG_CONFIG_PATH"
