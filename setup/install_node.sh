@@ -13,5 +13,3 @@ fi
 source ~/dotfiles/terminal/bash/load_nvm.sh
 install_node_version 16.5.0
 nvm alias default 16.5.0
-
-install_node_version 12.16.3 --reinstall-packages-from=default
