@@ -59,7 +59,6 @@ install_brew_pkg pinentry-mac
 # will be the same across all architectures, then simply reference that symlink
 # in my gpg-agent.conf
 sudo mkdir -p "$GPG_BIN_DIR"
-sudo chown "$USER":admin "$GPG_BIN_DIR"
 mkdir -p "$GPG_BIN_DIR"
 ln -s "$BREW_PREFIX"/bin/pinentry-mac "$GPG_BIN_DIR"/pinentry-mac
 

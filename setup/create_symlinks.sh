@@ -27,7 +27,11 @@ ln -sf ~/dotfiles/ssh/ssh_config ~/.ssh/config
 
 # Symlink GPG configuration
 mkdir -p ~/.gnupg
-ln -sf ~/dotfiles/gpg/* ~/.gnupg
+ln -sf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
+# gpg-agent.conf can't resolve ~ to my home folder, so we must use sed to
+# evaluate the path
+rm ~/.gnupg/gpg-agent.conf
+cat ~/dotfiles/gpg/gpg-agent.conf | sed "s|~|$HOME|g" > ~/.gnupg/gpg-agent.conf
 
 # Create PyPI configuration if it doesn't already exist
 ln -sf ~/dotfiles/terminal/.pypirc ~/.pypirc
