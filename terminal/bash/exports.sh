@@ -58,8 +58,10 @@ export WEB_BROWSER_NAME='Brave Browser'
 
 # Don't clear man page when exiting less
 export MANPAGER='less --no-init --quit-if-one-screen --IGNORE-CASE'
-# Use a case-insensitive pager for Git
-export GIT_PAGER='diff-so-fancy | less --tabs=4 -R --no-init --quit-if-one-screen --IGNORE-CASE'
+# Use a case-insensitive pager and diff-so-fancy for Git (if available)
+if type diff-so-fancy &> /dev/null; then
+	export GIT_PAGER='diff-so-fancy | less --tabs=4 -R --no-init --quit-if-one-screen --IGNORE-CASE'
+fi
 
 # Architecture-agnostic path to pinentry-mac; if you change this value, remember
 # to change the hardcoded reference in gpg/gpg-agent.conf
