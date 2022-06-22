@@ -17,6 +17,6 @@ Host *
 
 # Use SSH (and a separate key) for all job-related Git work
 Host github.com
-	IdentityFile ~/.ssh/suitecentric_rsa
+	IdentityFile ~/.ssh/modeln_rsa
 Host bitbucket.org
-	IdentityFile ~/.ssh/suitecentric_rsa
+	IdentityFile ~/.ssh/modeln_rsa
