@@ -58,7 +58,7 @@ __output_ps1() {
 
 		# Output version of global Node
 		__set_color "$BLUE"
-		echo -n "node$(node --version | grep -Po '(?<=v)\d+\.\d+')"
+		echo -n "node$(node --version | grep -Eo 'v[0-9]+\.[0-9]+' | cut -c 2-)"
 		echo -n "$SEPARATOR"
 
 	fi
