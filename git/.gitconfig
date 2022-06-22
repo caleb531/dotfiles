@@ -1,11 +1,6 @@
 # .gitconfig
 # Caleb Evans
 
-# User information
-[user]
-	name = Caleb Evans
-	email = caleb@calebevans.me
-
 # Store user credentials in macOS Keychain
 [credential]
 	helper = osxkeychain
@@ -14,10 +9,6 @@
 [core]
 	# Use a global .gitignore for project-independent files
 	excludesfile = ~/dotfiles/git/gitignore_global
-
-# Always sign commits using GPG
-[commit]
-	gpgsign = true
 
 # Designate main as the default branch name
 [init]
@@ -244,3 +235,7 @@
 	view-merged-remote-branches = "!f() { git branch --remote --merged origin/${1:-main} | sed 's|origin/||g' | grep -Pv '(main|master|develop)' | grep -Fv $(git rev-parse --abbrev-ref HEAD) | less -X; }; f"
 	# Zip a WordPress plugin or theme
 	zip-wordpress = !zip -r $1 * -x node_modules/ -x node_modules/**\\*
+
+# Include user-specific git config specific to the current machine
+[include]
+	path = ~/user.inc.gitconfig

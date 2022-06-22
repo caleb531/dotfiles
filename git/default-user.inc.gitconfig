@@ -1,0 +1,8 @@
+# User information
+[user]
+	name = Caleb Evans
+	email = caleb@calebevans.me
+
+# Decide whether or not commits are signed using the user's GPG keypair
+[commit]
+	gpgsign = true
