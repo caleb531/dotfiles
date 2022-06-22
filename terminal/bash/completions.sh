@@ -2,7 +2,7 @@
 # completions.sh
 # Caleb Evans
 
-# Completion function for npm and bower, the Node-based package managers
+# Completion function for npm, the Node-based package manager
 _npm() {
 
 	cur=${COMP_WORDS[COMP_CWORD]}
@@ -10,7 +10,7 @@ _npm() {
 	second=${COMP_WORDS[1]}
 	third=${COMP_WORDS[2]}
 
-	if [ "$prev" == 'npm' ] || [ "$prev" == 'bower' ] || [ "$prev" == 'help' ]; then
+	if [ "$prev" == 'npm' ] || [ "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
 		COMPREPLY=( $(compgen -W 'audit cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- "$cur") )
 	elif [ "$prev" == 'install' ] || [ "$prev" == 'uninstall' ]; then
@@ -28,7 +28,7 @@ _npm() {
 	fi
 
 }
-complete -o default -F _npm npm bower 2> /dev/null
+complete -o default -F _npm npm 2> /dev/null
 
 # Completion function for Grunt, the JavaScript task runner
 _grunt() {
