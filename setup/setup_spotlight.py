@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import contextlib
 import functools
 import glob
@@ -11,7 +12,7 @@ import subprocess
 import sys
 
 
-EXCLUSIONS_LIST_PATH = os.path.expanduser(os.path.join(
+DEFAULT_EXCLUSIONS_LIST_PATH = os.path.expanduser(os.path.join(
     '~', 'dotfiles', 'private', 'setup', 'spotlight-exclusions.txt'))
 EXCLUSIONS_SYMLINK_DIR = os.path.expanduser(os.path.join(
     '~', 'spotlight-exclusions'))
@@ -75,9 +76,21 @@ def process_exclusions(exclusion_globs):
             process_exclusion(exclusion_glob.strip().rstrip('/'))
 
 
+def parse_cli_args():
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        'exclusions_list_path',
+        nargs='?',
+        default=DEFAULT_EXCLUSIONS_LIST_PATH)
+    return parser.parse_args()
+
+
 def main():
 
-    with open(EXCLUSIONS_LIST_PATH, 'r') as exclusions_list_file:
+    cli_args = parse_cli_args()
+
+    with open(cli_args.exclusions_list_path, 'r') as exclusions_list_file:
         process_exclusions(exclusions_list_file.readlines())
     if os.listdir(EXCLUSIONS_SYMLINK_DIR):
         subprocess.call(['open', EXCLUSIONS_SYMLINK_DIR])
