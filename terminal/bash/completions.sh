@@ -30,6 +30,27 @@ _npm() {
 }
 complete -o default -F _npm npm 2> /dev/null
 
+# Completion function for npx, the Node-based package manager
+_npx() {
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+	second=${COMP_WORDS[1]}
+	third=${COMP_WORDS[2]}
+
+	if [ "$prev" == 'npx' ] || [ "$prev" == 'help' ]; then
+		# Complete common npx commands for `npx`
+		local bin_list="$(ls node_modules/.bin)"
+		COMPREPLY=( $(compgen -W "$bin_list create-react-app@latest create-next-app@latest" -- "$cur") )
+	elif [ "$prev" == 'create-react-app' ] || [ "$prev" == 'create-next-app' ]; then
+		COMPREPLY=( $(compgen -W '--template' -- "$cur") )
+	elif [ "$prev" == '--template' ]; then
+		COMPREPLY=( $(compgen -W typescript -- "$cur") )
+	fi
+
+}
+complete -o default -F _npx npx 2> /dev/null
+
 # Completion function for Grunt, the JavaScript task runner
 _grunt() {
 
