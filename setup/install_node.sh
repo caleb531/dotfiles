@@ -7,7 +7,7 @@ source ~/dotfiles/terminal/bash/exports.sh
 echo "Installing node..."
 
 if [ ! -e ~/.nvm ]; then
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 	mkdir -p ~/.nvm
 fi
 source ~/dotfiles/terminal/bash/load_nvm.sh
