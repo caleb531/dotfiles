@@ -5,10 +5,10 @@
 # Completion function for npm, the Node-based package manager
 _npm() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-	second=${COMP_WORDS[1]}
-	third=${COMP_WORDS[2]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local second=${COMP_WORDS[1]}
+	local third=${COMP_WORDS[2]}
 
 	if [ "$prev" == 'npm' ] || [ "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
@@ -33,10 +33,10 @@ complete -o default -F _npm npm 2> /dev/null
 # Completion function for npx, the Node-based package manager
 _npx() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-	second=${COMP_WORDS[1]}
-	third=${COMP_WORDS[2]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local second=${COMP_WORDS[1]}
+	local third=${COMP_WORDS[2]}
 
 	if [ "$prev" == 'npx' ] || [ "$prev" == 'help' ]; then
 		# Complete common npx commands for `npx`
@@ -54,8 +54,8 @@ complete -o default -F _npx npx 2> /dev/null
 # Completion function for Grunt, the JavaScript task runner
 _grunt() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	if [ "$prev" == 'grunt' ]; then
 		# Complete Grunt tasks standard to all of my Grunt-based projects
@@ -68,11 +68,11 @@ complete -o default -F _grunt grunt 2> /dev/null
 # Completion function for pip, Python's package manager
 _pip() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
-	third=${COMP_WORDS[2]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local first=${COMP_WORDS[0]}
+	local second=${COMP_WORDS[1]}
+	local third=${COMP_WORDS[2]}
 
 	if [ "$prev" == 'pip' ] || [ "$prev" == 'pip2' ] || [ "$prev" == 'pip3' ] || [ "$prev" == 'help' ]; then
 		# Complete common pip commands for `pip`
@@ -99,8 +99,8 @@ complete -o default -F _pip pip pip2 pip3 2> /dev/null
 # Completion function for gem, Ruby's built-in package manager
 _gem() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	if [ "$prev" == 'gem' ] || [ "$prev" == 'help' ]; then
 		# Complete common gem commands for `gem`
@@ -117,10 +117,10 @@ complete -o default -F _gem gem 2> /dev/null
 # Completion function for Bundler, the Ruby package manager
 _bundle() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local first=${COMP_WORDS[0]}
+	local second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'bundle' ] || [ "$prev" == 'help' ]; then
 		# Complete common bundle commands for `bundle`
@@ -140,10 +140,10 @@ complete -o default -F _bundle bundle bundler 2> /dev/null
 # Completion function for jekyll, the static site generator
 _jekyll() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local first=${COMP_WORDS[0]}
+	local second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'jekyll' ] || [ "$prev" == 'help' ]; then
 		# Complete common jekyll commands for `jekyll`
@@ -162,8 +162,8 @@ complete -o default -F _jekyll jekyll 2> /dev/null
 # Completion functions for Ruby's Make system, Rake
 _rake() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	if [ "$prev" == 'rake' ]; then
 		COMPREPLY=( $(compgen -W "$(rake --tasks --all | grep -Po '(?<=rake )\S+')" -- "$cur") )
@@ -175,10 +175,10 @@ complete -o default -F _rake rake 2> /dev/null
 # Completion function for python/python3 binaries
 _python() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local first=${COMP_WORDS[0]}
+	local second=${COMP_WORDS[1]}
 
 	# Complete package and module paths
 	if [ "$second" == '-m' ]; then
@@ -213,8 +213,8 @@ complete -o default -F _python python3 2> /dev/null
 # Completion function for apachectl, Apache's HTTP server utility
 _apachectl() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	if [ "$prev" == 'apachectl' ] || [ "$prev" == 'help' ]; then
 		# Complete common apachectl commands for `apachectl`
@@ -228,8 +228,8 @@ complete -o default -F _apachectl apachectl 2> /dev/null
 # Completion function for pypi, a custom function for interacting with PyPI
 _pypi() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	if [ "$prev" == 'pypi' ]; then
 		# Complete shortcuts to common pypi operations for `pypi`
@@ -244,8 +244,8 @@ complete -o default -F _pypi pypi 2> /dev/null
 # virtualenvs
 _mkvirtualenv() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	if [ "$prev" == 'mkvirtualenv' ]; then
 		# Complete shortcuts to common mkvirtualenv operations for `mkvirtualenv`
@@ -259,9 +259,9 @@ complete -o default -F _mkvirtualenv mkvirtualenv 2> /dev/null
 # Completion function for awp, my Alfred Workflow Packager utility
 _awp() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local first=${COMP_WORDS[0]}
 
 	if [ "$prev" == '--export' ] || [ "$prev" == '-e' ]; then
 		# Complete file/directory paths whenever `--export` option is supplied
@@ -277,10 +277,10 @@ complete -o default -F _awp awp 2> /dev/null
 # My personal bump utility, available via pip as bump-anything
 _bump() {
 
-	cur=${COMP_WORDS[COMP_CWORD]}
-	prev=${COMP_WORDS[COMP_CWORD-1]}
-	first=${COMP_WORDS[0]}
-	second=${COMP_WORDS[1]}
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local first=${COMP_WORDS[0]}
+	local second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'bump' ]; then
 		# Complete increment types for `bump`
