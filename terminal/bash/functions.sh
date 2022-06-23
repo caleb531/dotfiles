@@ -285,3 +285,28 @@ ssd() {
 	sudo smartctl --all /dev/disk0
 }
 
+# Create a pull request on Bitbucket or GitHub
+pr() {
+	git push
+	if [ $? != 0 ]; then
+		return
+	fi
+	local branch_name="$(git rev-parse --abbrev-ref HEAD)"
+	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
+	if echo "$repo_url" | grep -Fq 'bitbucket.org'; then
+		# Bitbucket
+		local repo_url="${repo_url//git@bitbucket.org:/https:\/\/bitbucket.org\/}"
+		local pr_url="${repo_url}/pull-requests/new?source=${branch_name}&t=1"
+	elif echo "$repo_url" | grep -Fq 'github.com'; then
+		# GitHub
+		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
+		local default_branch="$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')"
+		local pr_url="${repo_url}/compare/${default_branch}...${branch_name}"
+	fi
+	if [ -n "$pr_url" ]; then
+		echo "$pr_url"
+		open "$pr_url"
+	else
+		>&2 echo "PR URL is empty"
+	fi
+}
