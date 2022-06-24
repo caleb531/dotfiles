@@ -237,7 +237,6 @@
     "workbench.editor.untitled.hint": "hidden",
     "workbench.editor.untitled.labelFormat": "name",
     "typescript.workspaceSymbols.scope": "currentProject",
-    "editor.linkedEditing": true,
     "emmet.includeLanguages": {
         "svg": "xml"
     },
