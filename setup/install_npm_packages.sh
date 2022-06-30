@@ -18,7 +18,6 @@ install_npm_pkg vsce
 install_npm_pkg typescript
 install_npm_pkg ts-node
 install_npm_pkg esbuild
-install_npm_pkg jest
 install_npm_pkg npm-check-updates
 install_npm_pkg netlify-cli
 
