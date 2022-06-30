@@ -16,6 +16,10 @@ _npm() {
 	elif [ "$prev" == 'install' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete common options for `npm install` and `npm uninstall`
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- "$cur") )
+	elif [ "$prev" == 'run' ]; then
+		# Complete subcommands for `npm run`
+		local NPM_SCRIPT_NAMES="$(npm run | grep -P '(?<=^\s{2})([a-z0-9\-_]+)' | xargs)"
+		COMPREPLY=( $(compgen -W "$NPM_SCRIPT_NAMES" -- "$cur") )
 	elif [ "$prev" == 'cache' ]; then
 		# Complete subcommands for `npm cache`
 		COMPREPLY=( $(compgen -W 'clean' -- "$cur") )
