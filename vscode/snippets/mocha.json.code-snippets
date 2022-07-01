@@ -3,7 +3,7 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "it",
     "body": [
-      "it('$1', function ($2) {",
+      "it('$1', ($2) => {",
       "\t$3",
       "});"
     ]
@@ -12,7 +12,7 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "describe",
     "body": [
-      "describe('$1', function ($2) {",
+      "describe('$1', ($2) => {",
       "\t$3",
       "});"
     ]
@@ -28,7 +28,7 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "beforeeach",
     "body": [
-      "beforeEach(function ($1) {",
+      "beforeEach(($1) => {",
       "\t$2",
       "});"
     ]
@@ -37,7 +37,7 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "aftereach",
     "body": [
-      "afterEach(function ($1) {",
+      "afterEach(($1) => {",
       "\t$2",
       "});"
     ]
