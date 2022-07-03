@@ -310,3 +310,12 @@ pr() {
 		>&2 echo "PR URL is empty"
 	fi
 }
+
+# Output/copy the markdown for the current repository's GitHub Actions badge;
+# it accepts an optional name of the workflow as input (defaults to 'tests')
+badge() {
+	local remote_url="$(git remote get-url origin)"
+	local badge_code="![Test Suite Status](${remote_url%.*}/actions/workflows/${1:-tests}.yml/badge.svg)"
+	echo "$badge_code"
+	echo "$badge_code" | pbcopy
+}
