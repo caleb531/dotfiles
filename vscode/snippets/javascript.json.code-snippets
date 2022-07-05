@@ -317,5 +317,12 @@
     "body": [
       "encodeURI($1)"
     ]
+  },
+  "istanbul ignore": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "istanbulignore",
+    "body": [
+      "/* istanbul ignore next */"
+    ]
   }
 }
