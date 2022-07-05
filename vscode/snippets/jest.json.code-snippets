@@ -1,0 +1,87 @@
+{
+  "it": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "it",
+    "body": [
+      "it('$1', ($2) => {",
+      "\t$3",
+      "});"
+    ]
+  },
+  "describe": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "describe",
+    "body": [
+      "describe('$1', ($2) => {",
+      "\t$3",
+      "});"
+    ]
+  },
+  "expect": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "expect",
+    "body": [
+      "expect($1)."
+    ]
+  },
+  "beforeEach": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "beforeeach",
+    "body": [
+      "beforeEach(($1) => {",
+      "\t$2",
+      "});"
+    ]
+  },
+  "afterEach": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "aftereach",
+    "body": [
+      "afterEach(($1) => {",
+      "\t$2",
+      "});"
+    ]
+  },
+  "screen": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "screen.",
+    "body": [
+      "screen."
+    ]
+  },
+  "getByRole": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "getbyrole",
+    "body": [
+      "getByRole('${1|alert,alertdialog,application,article,banner,blockquote,button,caption,cell,checkbox,code,columnheader,combobox,complementary,contentinfo,definition,deletion,dialog,directory,document,emphasis,feed,figure,form,generic,grid,gridcell,group,heading,img,insertion,link,list,listbox,listitem,log,main,marquee,math,menu,menubar,menuitem,menuitemcheckbox,menuitemradio,meter,navigation,none,note,option,paragraph,presentation,progressbar,radio,radiogroup,region,row,rowgroup,rowheader,scrollbar,search,searchbox,separator,slider,spinbutton,status,strong,subscript,superscript,switch,tab,table,tablist,tabpanel,term,textbox,time,timer,toolbar,tooltip,tree,treegrid,treeitem|}', { name: '$2' })"
+    ]
+  },
+  "getByText": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "getbytext",
+    "body": [
+      "getByText('$1')"
+    ]
+  },
+  "getByLabelText": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "getbylabeltext",
+    "body": [
+      "getByLabelText('$1')"
+    ]
+  },
+  "import jest-preview": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "importpreview",
+    "body": [
+      "import preview from 'jest-preview';"
+    ]
+  },
+  "jest-preview debug()": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "previewdebug",
+    "body": [
+      "preview.debug();"
+    ]
+  }
+}
