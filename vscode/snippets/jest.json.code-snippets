@@ -53,21 +53,21 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "getbyrole",
     "body": [
-      "getByRole('${1|alert,alertdialog,application,article,banner,blockquote,button,caption,cell,checkbox,code,columnheader,combobox,complementary,contentinfo,definition,deletion,dialog,directory,document,emphasis,feed,figure,form,generic,grid,gridcell,group,heading,img,insertion,link,list,listbox,listitem,log,main,marquee,math,menu,menubar,menuitem,menuitemcheckbox,menuitemradio,meter,navigation,none,note,option,paragraph,presentation,progressbar,radio,radiogroup,region,row,rowgroup,rowheader,scrollbar,search,searchbox,separator,slider,spinbutton,status,strong,subscript,superscript,switch,tab,table,tablist,tabpanel,term,textbox,time,timer,toolbar,tooltip,tree,treegrid,treeitem|}', { name: ${2:'My Name'} })"
+      "getByRole('${1|alert,alertdialog,application,article,banner,blockquote,button,caption,cell,checkbox,code,columnheader,combobox,complementary,contentinfo,definition,deletion,dialog,directory,document,emphasis,feed,figure,form,generic,grid,gridcell,group,heading,img,insertion,link,list,listbox,listitem,log,main,marquee,math,menu,menubar,menuitem,menuitemcheckbox,menuitemradio,meter,navigation,none,note,option,paragraph,presentation,progressbar,radio,radiogroup,region,row,rowgroup,rowheader,scrollbar,search,searchbox,separator,slider,spinbutton,status,strong,subscript,superscript,switch,tab,table,tablist,tabpanel,term,textbox,time,timer,toolbar,tooltip,tree,treegrid,treeitem|}', { name: '${2:My Name}' })"
     ]
   },
   "getByText": {
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "getbytext",
     "body": [
-      "getByText(${1:'My Text'})"
+      "getByText('${1:My Text}')"
     ]
   },
   "getByLabelText": {
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "getbylabeltext",
     "body": [
-      "getByLabelText(${1:'My Label Text'})"
+      "getByLabelText('${1:My Label Text}')"
     ]
   },
   "import jest-preview": {
