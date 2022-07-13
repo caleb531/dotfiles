@@ -1,33 +1,10 @@
 {
-  "env python": {
-    "scope": "python",
-    "prefix": "env",
-    "body": [
-      "#!/usr/bin/env python",
-      ""
-    ]
-  },
-  "env python2": {
-    "scope": "python",
-    "prefix": "env2",
-    "body": [
-      "#!/usr/bin/env python2",
-      ""
-    ]
-  },
   "env python3": {
     "scope": "python",
     "prefix": "env3",
     "body": [
       "#!/usr/bin/env python3",
       ""
-    ]
-  },
-  "utf8 encoding": {
-    "scope": "python",
-    "prefix": "enc",
-    "body": [
-      "# coding=utf-8"
     ]
   },
   "module import": {
