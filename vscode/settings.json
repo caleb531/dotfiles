@@ -274,5 +274,10 @@
     "javascript.preferences.quoteStyle": "single",
     "workbench.layoutControl.enabled": false,
     "editor.bracketPairColorization.enabled": false,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "java.autobuild.enabled": false,
+    "java.format.enabled": false,
+    "java.format.onType.enabled": false,
+    "java.import.maven.enabled": false,
+    "java.server.launchMode": "LightWeight"
 }
