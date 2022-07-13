@@ -146,12 +146,12 @@ rt() {
 		else
 			npm test "$@"
 		fi
-	elif [ -x tests.py ]; then
-		./tests.py
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
 		nose2 "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 		nosetests --rednose "$@"
+	elif [ -d tests ] && [ -f requirements.txt ]; then
+		python -m unittest discover "$@"
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 		return 1
@@ -162,13 +162,15 @@ rt() {
 cov() {
 	if [ -f package.json ]; then
 		npm run coverage "$@"
-	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
-		if coverage run -m nose2 "$@"; then
-			coverage report
-			coverage html
+	elif [ -f .python-version ]; then
+		if [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
+			coverage run -m nose2 "$@"
+		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
+			coverage run -m nose --rednose "$@"
+		elif [ -d tests ] && [ -f requirements.txt ]; then
+			coverage run -m unittest "$@"
 		fi
-	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
-		if coverage run -m nose --rednose "$@"; then
+		if [ $? == 0 ]; then
 			coverage report
 			coverage html
 		fi
