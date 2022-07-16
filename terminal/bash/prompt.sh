@@ -110,15 +110,16 @@ __output_ps2() {
 # Run the following before each new command
 __update_prompt_command() {
 
+	# Ensure current working directory carries to new tabs
+	update_terminal_cwd 2> /dev/null
+	# Append in-memory command history to file
+	history -a
+
 	if [ -z "$DISABLE_NODE_AUTO_SWITCH" ]; then
 		__detect_node_version
 	fi
 	__detect_python_virtualenv
 	PS1="$(__output_ps1)"
-	# Append in-memory command history to file
-	history -a
-	# Ensure current working directory carries to new tabs
-	update_terminal_cwd 2> /dev/null
 
 }
 PROMPT_COMMAND="__update_prompt_command"
