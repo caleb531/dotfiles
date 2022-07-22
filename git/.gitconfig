@@ -17,6 +17,7 @@
 # Push/pull current branch by default (when no arguments are given)
 [push]
 	default = simple
+	autoSetupRemote = true
 [pull]
 	default = simple
 	# Merge and pull by default
