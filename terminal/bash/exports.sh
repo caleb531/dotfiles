@@ -34,6 +34,8 @@ fi
 export PATH="$RUBY_GEMS_DIR"/bin:"$PATH"
 export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/imagemagick@6/lib/pkgconfig:"$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/libffi/lib/pkgconfig:"$PKG_CONFIG_PATH"
+# MAMP/PHP
+export PATH=/Applications/MAMP/bin/php/php8.0.8/bin/:"$PATH"
 # Setup scripts
 export PATH=~/dotfiles/setup:"$PATH"
 export PATH=~/dotfiles/private/setup:"$PATH"
