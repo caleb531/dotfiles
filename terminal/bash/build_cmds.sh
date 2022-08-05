@@ -20,6 +20,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 		['node:build']='npm run build'
 		['node:watch']='npm run watch'
+		['node:develop']='npm run dev'
 
 		['gatsby:build']='gatsby build'
 		['gatsby:clean']='gatsby clean'
