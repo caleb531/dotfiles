@@ -18,6 +18,9 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['gulp:develop']='gulp serve'
 		['gulp:watch']='gulp build:watch'
 
+		['node:build']='npm run build'
+		['node:watch']='npm run watch'
+
 		['gatsby:build']='gatsby build'
 		['gatsby:clean']='gatsby clean'
 		['gatsby:develop']='gatsby develop'
@@ -66,6 +69,8 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 			__b jekyll "$action" "$args"
 		elif [ -f brunch-config.js ]; then
 			__b brunch "$action" "$args"
+		elif [ -f package.json ]; then
+			__b node "$action" "$args"
 		else
 			>&2 echo "project type not recognized"
 		fi
