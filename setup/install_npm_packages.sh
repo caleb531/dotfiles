@@ -21,5 +21,3 @@ install_npm_pkg ts-node
 install_npm_pkg esbuild
 install_npm_pkg npm-check-updates
 install_npm_pkg netlify-cli
-
-install_node_version 12.16.3 --reinstall-packages-from=default
