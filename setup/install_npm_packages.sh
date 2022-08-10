@@ -14,7 +14,6 @@ install_npm_pkg eslint
 install_npm_pkg @typescript-eslint/parser
 install_npm_pkg @typescript-eslint/eslint-plugin
 install_npm_pkg http-server
-install_npm_pkg gatsby-cli
 install_npm_pkg grunt-cli
 install_npm_pkg vsce
 install_npm_pkg typescript
