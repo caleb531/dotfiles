@@ -458,10 +458,6 @@
     "command": "-workbench.action.gotoLine"
   },
   {
-    "key": "ctrl+cmd+p",
-    "command": "HookyQR.beautifyFile"
-  },
-  {
     "key": "cmd+3",
     "command": "-workbench.action.focusThirdEditorGroup"
   },
@@ -695,5 +691,9 @@
   {
     "key": "shift+cmd+d",
     "command": "editor.action.copyLinesDownAction"
+  },
+  {
+    "key": "ctrl+cmd+p",
+    "command": "extension.prettifyJSON"
   }
 ]
