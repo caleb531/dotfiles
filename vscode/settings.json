@@ -278,5 +278,6 @@
     "java.format.enabled": false,
     "java.format.onType.enabled": false,
     "java.import.maven.enabled": false,
-    "java.server.launchMode": "LightWeight"
+    "java.server.launchMode": "LightWeight",
+    "git.mergeEditor": false
 }
