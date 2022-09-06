@@ -154,8 +154,8 @@
 	oush = push
 	puhs = push
 	# Pull master into the current branch
-	pom = pull origin master
-	pullom = pull origin master
+	pom = pull origin main
+	pullom = pull origin main
 	# Pull from remote, recommitting unpushed changes atop the pulled commits
 	pullr = pull --rebase
 	# Push to Heroku remote
