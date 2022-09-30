@@ -6,9 +6,6 @@ echo "Setting global macOS preferences..."
 # sudo spctl --master-disable
 # sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool false
 
-echo "- Disable Auto-Boot"
-sudo nvram AutoBoot=%00
-
 echo "- Disable window animations"
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 defaults write com.apple.Mail DisableReplyAnimations -bool true
