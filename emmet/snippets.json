@@ -6,7 +6,7 @@
       "link:favicon": "link[rel='shortcut icon'][href]",
       "meta:utf": "meta[charset='UTF-8']",
       "meta:desc": "meta[name=description][content]",
-      "meta:viewport": "meta[name=viewport][content='width=device-width, initial-scale=1, user-scalable=no']",
+      "meta:viewport": "meta[name=viewport][content='width=device-width']",
       "meta:csp": "meta[http-equiv='Content-Security-Policy'][content]",
       "button:button": "button[type=button]"
     }
