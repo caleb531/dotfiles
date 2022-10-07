@@ -158,8 +158,6 @@
 	pullom = pull origin main
 	# Pull from remote, recommitting unpushed changes atop the pulled commits
 	pullr = pull --rebase
-	# Push to Heroku remote
-	pushh = !git push heroku $(git rev-parse --abbrev-ref HEAD)
 	# Push any unpushed tags (this will *not* push unpushed commits)
 	pusht = push --tags
 	# Push commits and push tags in succession

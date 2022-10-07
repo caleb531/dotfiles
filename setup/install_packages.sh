@@ -35,8 +35,6 @@ install_brew_pkg openssl
 install_brew_pkg python-tk
 
 install_brew_pkg ssh-copy-id
-tap_brew_repo heroku/brew
-install_brew_pkg heroku
 
 install_brew_pkg duti
 install_brew_pkg shellcheck
