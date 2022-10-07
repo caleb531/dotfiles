@@ -278,5 +278,6 @@
     "java.format.onType.enabled": false,
     "java.import.maven.enabled": false,
     "java.server.launchMode": "LightWeight",
-    "git.mergeEditor": false
+    "git.mergeEditor": false,
+    "markdown.validate.enabled": true
 }
