@@ -6,6 +6,7 @@ echo "Installing Mac App Store apps..."
 preload_mas_app_list
 
 install_mas_app 1274495053 'Microsoft To Do'
+install_mas_app 1176895641 'Spark'
 install_mas_app 1091189122 'Bear'
 install_mas_app 451640037 'Classic Color Meter'
 install_mas_app 1289583905 'Pixelmator Pro'

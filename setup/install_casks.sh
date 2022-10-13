@@ -17,7 +17,6 @@ install_cask flux
 # Install additional apps
 install_cask keybase
 install_cask zoom
-install_cask readdle-spark
 install_cask microsoft-teams
 install_cask postman
 # Least-essential apps
