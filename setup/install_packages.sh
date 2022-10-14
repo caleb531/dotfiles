@@ -67,10 +67,6 @@ install_brew_pkg supabase/tap/supabase
 # Install Mac App Store command-line utility
 install_brew_pkg mas
 
-# Install rmtree command for uninstalling packages and their leaf deps
-tap_brew_repo beeftornado/rmtree
-install_brew_pkg brew-rmtree
-
 install_brew_pkg ruby
 
 echo "Installing gems..."
