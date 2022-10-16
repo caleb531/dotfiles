@@ -21,7 +21,10 @@
             },
             {
                 "scope": [
-                    "punctuation.accessor.optional.tsx"
+                    "punctuation.accessor.optional.tsx",
+                    "punctuation.accessor.optional.ts",
+                    "punctuation.accessor.optional.js",
+                    "punctuation.accessor.optional.jsx"
                 ],
                 "settings": {
                     "foreground": "#F92672"
