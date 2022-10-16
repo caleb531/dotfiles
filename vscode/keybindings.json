@@ -569,14 +569,6 @@
     "when": "editorLangId == 'handlebars' || editorLangId == 'html' || editorLangId == 'jsx-tags' || editorLangId == 'xml'"
   },
   {
-    "key": "cmd+k shift+cmd+-",
-    "command": "editor.action.transformToSnakecase"
-  },
-  {
-    "key": "cmd+k cmd+t",
-    "command": "editor.action.transformToTitlecase"
-  },
-  {
     "key": "cmd+b",
     "command": "-workbench.action.toggleSidebarVisibility"
   },
@@ -700,5 +692,58 @@
     "key": "shift+enter",
     "command": "-python.execSelectionInTerminal",
     "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "cmd+k cmd+c",
+    "command": "extension.changeCase.camel"
+  },
+  {
+    "key": "cmd+k cmd+-",
+    "command": "extension.changeCase.kebab"
+  },
+  {
+    "key": "cmd+k cmd+-",
+    "command": "-editor.foldAllExcept",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "cmd+k cmd+t",
+    "command": "extension.changeCase.title"
+  },
+  {
+    "key": "cmd+k cmd+t",
+    "command": "-workbench.action.selectTheme"
+  },
+  {
+    "key": "cmd+k cmd+.",
+    "command": "-editor.removeManualFoldingRanges",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "cmd+k cmd+.",
+    "command": "extension.changeCase.dot"
+  },
+  {
+    "key": "cmd+k shift+cmd+-",
+    "command": "extension.changeCase.snake"
+  },
+  {
+    "key": "cmd+k cmd+c",
+    "command": "-notebook.cell.collapseCellInput",
+    "when": "notebookCellListFocused && !inputFocus && !notebookCellInputIsCollapsed"
+  },
+  {
+    "key": "cmd+k cmd+c",
+    "command": "-notebook.cell.expandCellInput",
+    "when": "notebookCellInputIsCollapsed && notebookCellListFocused"
+  },
+  {
+    "key": "cmd+k cmd+c",
+    "command": "-editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k shift+cmd+c",
+    "command": "extension.changeCase.upperFirst"
   }
 ]
