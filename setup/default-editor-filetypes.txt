@@ -1,6 +1,9 @@
 applescript
 asm
+bash_profile
+bashrc
 c
+cfg
 code-snippets
 coffee
 conf
@@ -8,6 +11,7 @@ cpp
 cs
 css
 diff
+editorconfig
 h
 java
 js
