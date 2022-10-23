@@ -282,5 +282,8 @@
     "java.import.maven.enabled": false,
     "java.server.launchMode": "LightWeight",
     "git.mergeEditor": false,
-    "markdown.validate.enabled": true
+    "markdown.validate.enabled": true,
+    "python.experiments.enabled": false,
+    "python.pylanceLspNotebooksEnabled": false,
+    "python.testing.autoTestDiscoverOnSaveEnabled": false
 }
