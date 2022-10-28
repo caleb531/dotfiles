@@ -28,7 +28,7 @@ export PATH="$BREW_PREFIX"/opt/gnupg@2.0/bin:"$PATH"
 export PATH="$BREW_PREFIX"/opt/gpg-agent/bin:"$PATH"
 # Jekyll
 export PATH="$BREW_PREFIX"/opt/ruby/bin:"$PATH"
-if [ -d "$BREW_PREFIX"/lib/ruby/gems/3.0.0 ]; then
+if [ -d "$BREW_PREFIX"/lib/ruby/gems/3.1.0 ]; then
 	RUBY_GEMS_DIR="$(ls -d -1 "$BREW_PREFIX"/lib/ruby/gems/3.0.0 | tail -n 1)"
 fi
 export PATH="$RUBY_GEMS_DIR"/bin:"$PATH"
