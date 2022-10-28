@@ -55,15 +55,15 @@ n() {
 # PYTHONVER is a major Python version (i.e. 2 or 3)
 mkvirtualenv() {
 	local python_version="$(cat .python-version 2> /dev/null)"
+	local python_version_major="${python_version%.*}"
 	if [ -n "$1" ]; then
-		local python_version_major="$1"
-	elif [ -n "$python_version" ]; then
-		local python_version_major="${python_version%.*}"
+		local python_path=python"$1"
+	elif type python"$python_version" &> /dev/null; then
+		local python_path=python"$python_version"
 	else
-		>&2 echo "${FUNCNAME[0]}: python version not found"
-		return 1
+		local python_path=python"$python_version_major"
 	fi
-	virtualenv --python=python"$python_version_major" "$VIRTUAL_ENV_NAME"
+	virtualenv --python="$python_path" "$VIRTUAL_ENV_NAME"
 	# Activate virtualenv so packages can be installed
 	source ./"$VIRTUAL_ENV_NAME"/bin/activate
 }
