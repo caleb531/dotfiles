@@ -745,5 +745,45 @@
   {
     "key": "cmd+k shift+cmd+c",
     "command": "extension.changeCase.upperFirst"
+  },
+  {
+    "key": "alt+cmd+c",
+    "command": "toggleFindCaseSensitive",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "toggleFindWholeWord",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "alt+cmd+w",
+    "command": "-toggleFindWholeWord",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "toggleSearchWholeWord",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+cmd+w",
+    "command": "-toggleSearchWholeWord",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+cmd+c",
+    "command": "toggleSearchCaseSensitive",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+cmd+/",
+    "command": "toggleFindRegex",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "alt+cmd+/",
+    "command": "toggleSearchRegex",
+    "when": "searchViewletFocus"
   }
 ]
