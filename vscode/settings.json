@@ -285,5 +285,7 @@
     "markdown.validate.enabled": true,
     "python.experiments.enabled": false,
     "python.pylanceLspNotebooksEnabled": false,
-    "python.testing.autoTestDiscoverOnSaveEnabled": false
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
+    "markdown.updateLinksOnFileMove.enabled": "always",
+    "markdown.preview.markEditorSelection": false
 }
