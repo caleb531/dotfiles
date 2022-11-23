@@ -8,10 +8,10 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 	declare -A build_cmd_map
 	build_cmd_map=(
-		['next:build']='npx next build'
-		['next:develop']='npx next dev'
-		['next:watch']='npx next dev'
-		['next:start']='npx next start'
+		['next:build']='npm exec next build'
+		['next:develop']='npm exec next dev'
+		['next:watch']='npm exec next dev'
+		['next:start']='npm exec next start'
 
 		['gulp:build']='gulp build'
 		['gulp:clean']='gulp clean'

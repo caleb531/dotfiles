@@ -142,7 +142,7 @@ mre() {
 rt() {
 	if [ -f package.json ]; then
 		if [ -f jest.config.js ] || [ -f jest.config.ts ]; then
-			npx jest
+			npm exec jest
 		else
 			npm test "$@"
 		fi
