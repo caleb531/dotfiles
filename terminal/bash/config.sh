@@ -31,6 +31,12 @@ fi
 
 source ~/dotfiles/terminal/bash/load_nvm.sh
 
+# tabtab source for packages (used by pnpm)
+# uninstall by removing these lines
+if [ -f ~/.config/tabtab/bash/__tabtab.bash ]; then
+	source ~/.config/tabtab/bash/__tabtab.bash
+fi
+
 # Set limitations on system resources (uncomment if you experience issues)
 
 # Increase open files limit

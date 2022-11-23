@@ -9,6 +9,10 @@ source ~/dotfiles/terminal/bash/load_nvm.sh
 echo "Installing npm packages..."
 preload_npm_pkg_list
 
+install_npm_pkg pnpm
+if ! type _pnpm_completion &> /dev/null; then
+	pnpm install-completion bash
+fi
 install_npm_pkg gulp-cli
 install_npm_pkg eslint
 install_npm_pkg @typescript-eslint/parser
