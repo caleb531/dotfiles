@@ -70,20 +70,6 @@ _npx() {
 complete -o default -F _npx npx 2> /dev/null
 complete -o default -F _npx pnpx 2> /dev/null
 
-# Completion function for Grunt, the JavaScript task runner
-_grunt() {
-
-	local cur=${COMP_WORDS[COMP_CWORD]}
-	local prev=${COMP_WORDS[COMP_CWORD-1]}
-
-	if [ "$prev" == 'grunt' ]; then
-		# Complete Grunt tasks standard to all of my Grunt-based projects
-		COMPREPLY=( $(compgen -W 'build serve watch --help' -- "$cur") )
-	fi
-
-}
-complete -o default -F _grunt grunt 2> /dev/null
-
 # Completion function for pip, Python's package manager
 _pip() {
 
