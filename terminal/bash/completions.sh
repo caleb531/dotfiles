@@ -7,32 +7,47 @@ _npm() {
 
 	local cur=${COMP_WORDS[COMP_CWORD]}
 	local prev=${COMP_WORDS[COMP_CWORD-1]}
-	local second=${COMP_WORDS[1]}
-	local third=${COMP_WORDS[2]}
 
 	if [ "$prev" == 'npm' ] || [ "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
-		COMPREPLY=( $(compgen -W 'audit cache help info init install link list outdated prune publish search show start stop test uninstall unlink unpublish update upgrade' -- "$cur") )
-	elif [ "$prev" == 'install' ] || [ "$prev" == 'uninstall' ]; then
+		COMPREPLY=( $(compgen -W 'add audit cache exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update' -- "$cur") )
+	elif [ "$prev" == 'install' ] || [ "$prev" == 'i' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete common options for `npm install` and `npm uninstall`
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- "$cur") )
 	elif [ "$prev" == 'run' ]; then
 		# Complete subcommands for `npm run`
-		local NPM_SCRIPT_NAMES="$(npm run | grep -P '(?<=^\s{2})([a-z0-9\-_]+)' | xargs)"
-		COMPREPLY=( $(compgen -W "$NPM_SCRIPT_NAMES" -- "$cur") )
-	elif [ "$prev" == 'cache' ]; then
-		# Complete subcommands for `npm cache`
-		COMPREPLY=( $(compgen -W 'clean' -- "$cur") )
-	elif [ "$prev" == 'audit' ]; then
-		# Complete subcommands for `npm audit`
-		COMPREPLY=( $(compgen -W 'fix' -- "$cur") )
-	elif [ "$second" == 'audit' ] && [ "$third" == 'fix' ]; then
-		# Complete subcommands for `npm audit fix`
-		COMPREPLY=( $(compgen -W '--dry-run --force' -- "$cur") )
+		local npm_script_names="$(npm run | grep -P '(?<=^\s{2})([a-z0-9\-_]+)' | xargs)"
+		COMPREPLY=( $(compgen -W "$npm_script_names" -- "$cur") )
+	elif [ "$prev" == 'exec' ]; then
+		# Complete subcommands for `npm exec`
+		local bin_list="$(ls node_modules/.bin)"
+		COMPREPLY=( $(compgen -W "$bin_list" -- "$cur") )
 	fi
 
 }
 complete -o default -F _npm npm 2> /dev/null
+
+# Completion function for pnpm, a more performant alternative to npm
+_pnpm() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'pnpm' ] || [ "$prev" == 'help' ]; then
+		# Complete common npm commands for `npm`
+		COMPREPLY=( $(compgen -W 'add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update' -- "$cur") )
+	elif [ "$prev" == 'update' ]; then
+		local pnpm_pkg_list="$(pnpm list | grep -Po '^([@\/a-z\-]+)(?= )')"
+		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
+	elif [ "$prev" == 'audit' ]; then
+		COMPREPLY=( $(compgen -W '--fix --prod' -- "$cur") )
+	elif [ "$prev" == 'store' ]; then
+		COMPREPLY=( $(compgen -W 'path prune' -- "$cur") )
+	else
+		_npm "$@"
+	fi
+}
+complete -o default -F _pnpm pnpm 2> /dev/null
 
 # Completion function for npx, the Node-based package manager
 _npx() {
@@ -42,11 +57,10 @@ _npx() {
 	local second=${COMP_WORDS[1]}
 	local third=${COMP_WORDS[2]}
 
-	if [ "$prev" == 'npx' ] || [ "$prev" == 'help' ]; then
+	if [ "$prev" == 'npx' ] || [ "$prev" == 'pnpx' ] || [ "$prev" == 'help' ]; then
 		# Complete common npx commands for `npx`
-		local bin_list="$(ls node_modules/.bin)"
-		COMPREPLY=( $(compgen -W "$bin_list create-react-app@latest create-next-app@latest" -- "$cur") )
-	elif [ "$prev" == 'create-react-app' ] || [ "$prev" == 'create-next-app' ]; then
+		COMPREPLY=( $(compgen -W 'create-react-app@latest create-next-app@latest' -- "$cur") )
+	elif [ "$prev" == 'create-react-app@latest' ] || [ "$prev" == 'create-next-app@latest' ]; then
 		COMPREPLY=( $(compgen -W '--template' -- "$cur") )
 	elif [ "$prev" == '--template' ]; then
 		COMPREPLY=( $(compgen -W typescript -- "$cur") )
@@ -54,6 +68,7 @@ _npx() {
 
 }
 complete -o default -F _npx npx 2> /dev/null
+complete -o default -F _npx pnpx 2> /dev/null
 
 # Completion function for Grunt, the JavaScript task runner
 _grunt() {
