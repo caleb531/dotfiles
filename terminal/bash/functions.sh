@@ -323,7 +323,7 @@ pr() {
 # A convenience function that wraps around `npm version`
 version() {
 	if [ -f package.json ]; then
-		npm version --no-git-tag-version "$@"
+		pnpm version --no-git-tag-version "$@"
 	else
 		>&2 echo "not a node project"
 	fi
