@@ -164,7 +164,7 @@ cov() {
 		npm run coverage "$@"
 	elif [ -f .python-version ]; then
 		if [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
-			coverage run -m nose2 "$@"
+			coverage run -m nose2 --quiet "$@"
 		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 			coverage run -m nose --rednose "$@"
 		elif [ -d tests ] && [ -f requirements.txt ]; then
