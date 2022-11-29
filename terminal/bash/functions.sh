@@ -150,7 +150,7 @@ rt() {
 		nose2 --quiet "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 		nosetests --rednose "$@"
-	elif ls ./*.py &> /dev/null; then
+	elif ls ./*.py &> /dev/null || ls tests/*.py &> /dev/null; then
 		python -m unittest discover "$@"
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
