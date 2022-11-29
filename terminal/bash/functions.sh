@@ -147,7 +147,7 @@ rt() {
 			npm test "$@"
 		fi
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
-		nose2 "$@"
+		nose2 --quiet "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 		nosetests --rednose "$@"
 	elif ls ./*.py &> /dev/null; then
