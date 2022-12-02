@@ -267,11 +267,6 @@
     "editor.hover.delay": 500,
     "editor.quickSuggestionsDelay": 0,
     "editor.snippetSuggestions": "top",
-    "[typescript][typescriptreact]": {
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
     "typescript.preferences.quoteStyle": "single",
     "javascript.preferences.quoteStyle": "single",
     "workbench.layoutControl.enabled": false,
