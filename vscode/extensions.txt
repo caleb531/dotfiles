@@ -14,6 +14,7 @@ mathematic.vscode-latex
 mattn.Lisp
 mohsen1.prettify-json
 mrmlnc.vscode-apache
+ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
 ms-vscode-remote.remote-ssh-edit
@@ -22,13 +23,14 @@ rashwell.tcl
 rebornix.prolog
 redhat.java
 scala-lang.scala
-silvenon.mdx
 SirTobi.pegjs-language
 stkb.rewrap
 timonwong.shellcheck
 tommasov.hosts
+unifiedjs.vscode-mdx
 v4run.transpose
 vincaslt.highlight-matching-tag
 waderyan.gitblame
 wmaurer.change-case
 XadillaX.viml
+yzhang.markdown-all-in-one
