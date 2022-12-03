@@ -805,5 +805,14 @@
     "key": "alt+cmd+enter",
     "command": "-search.action.replaceAll",
     "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
+  },
+  {
+    "key": "cmd+p",
+    "command": "workbench.actions.view.problems"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
   }
 ]
