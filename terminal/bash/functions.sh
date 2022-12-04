@@ -167,7 +167,7 @@ cov() {
 			coverage run -m nose2 --quiet "$@"
 		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 			coverage run -m nose --rednose "$@"
-		elif [ -d tests ] && [ -f requirements.txt ]; then
+		elif [ -f requirements.txt ]; then
 			coverage run -m unittest "$@"
 		fi
 		if [ $? == 0 ]; then
