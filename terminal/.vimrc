@@ -44,6 +44,12 @@ map <buffer> <C-a> :m-2<CR>
 " Move line down with ctrl-z
 map <buffer> <C-z> :m+1<CR>
 
+
+" Comment line with ctrl-c
+map <buffer> <C-c> :norm i#<CR>
+" Uncomment line with ctrl-v
+map <buffer> <C-v> :norm x<CR>
+
 " Enable syntax highlighting
 syntax enable
 syntax reset
