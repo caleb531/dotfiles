@@ -40,9 +40,9 @@ map <buffer> <C-s> :s/^[[:alpha:]]\+/squash/<CR>
 map <buffer> <C-f> :s/^[[:alpha:]]\+/fixup/<CR>
 
 " Move line up with ctrl-a
-map <buffer> <C-A> :m-2<CR>
+map <buffer> <C-a> :m-2<CR>
 " Move line down with ctrl-z
-map <buffer> <C-Z> :m+1<CR>
+map <buffer> <C-z> :m+1<CR>
 
 " Enable syntax highlighting
 syntax enable
