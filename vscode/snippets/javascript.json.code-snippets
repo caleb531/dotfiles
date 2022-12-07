@@ -53,6 +53,29 @@
       "($1) => "
     ]
   },
+  "async": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "async",
+    "body": [
+      "async "
+    ]
+  },
+  "async arrow function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "async af",
+    "body": [
+      "async ($1) => {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "async arrow function (inline)": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "async afi",
+    "body": [
+      "async ($1) => "
+    ]
+  },
   "empty function": {
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "noop",
