@@ -282,5 +282,6 @@
     "python.pylanceLspNotebooksEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "markdown.updateLinksOnFileMove.enabled": "always",
-    "markdown.preview.markEditorSelection": false
+    "markdown.preview.markEditorSelection": false,
+    "search.useReplacePreview": false
 }
