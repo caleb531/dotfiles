@@ -83,9 +83,6 @@ alias m='n'
 alias nr='npm rebuild'
 # Recompile node-sass specifically
 alias nrs='npm rebuild node-sass'
-# Build and watch project
-alias nb='npm run build'
-alias nw='npm run watch'
 
 # Git
 alias gi='git'
