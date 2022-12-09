@@ -141,11 +141,7 @@ mre() {
 # Run Node/Python tests with Nose test runner
 rt() {
 	if [ -f package.json ]; then
-		if [ -f jest.config.js ] || [ -f jest.config.ts ]; then
-			npm exec jest "$@"
-		else
-			npm test "$@"
-		fi
+		npm test "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
 		nose2 --quiet "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
