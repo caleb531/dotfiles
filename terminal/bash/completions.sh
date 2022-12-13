@@ -70,6 +70,21 @@ _npx() {
 complete -o default -F _npx npx 2> /dev/null
 complete -o default -F _npx pnpx 2> /dev/null
 
+# Completion function for npx, the Node-based package manager
+_ncu() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'ncu' ] || [ "$prev" == '-u' ]; then
+		# Complete installed npm packages for `ncu`
+		local pnpm_pkg_list="$(pnpm list | grep -Po '^([@\/a-z\-]+)(?= )')"
+		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
+	fi
+
+}
+complete -o default -F _ncu ncu 2> /dev/null
+
 # Completion function for pip, Python's package manager
 _pip() {
 
