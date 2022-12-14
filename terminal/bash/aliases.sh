@@ -83,6 +83,8 @@ alias m='n'
 alias nr='npm rebuild'
 # Recompile node-sass specifically
 alias nrs='npm rebuild node-sass'
+# Open Vite production build in preview mode
+alias vp='bb && npm run preview'
 
 # Git
 alias gi='git'
