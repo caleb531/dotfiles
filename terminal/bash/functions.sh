@@ -191,7 +191,7 @@ covo() {
 # Lint JavaScript/Python project files
 lint() {
 	if [ -f package.json ]; then
-		npm run lint
+		npm run lint "$@"
 	elif [ -f requirements.txt ]; then
 		pycodestyle "$@" ./**/!(setup).py
 	else
