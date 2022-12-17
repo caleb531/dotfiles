@@ -814,5 +814,13 @@
     "key": "cmd+p",
     "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
     "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.view.extension.test"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.view.debug"
   }
 ]
