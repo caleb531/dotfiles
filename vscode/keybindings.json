@@ -298,7 +298,7 @@
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "shift+cmd+f",
+    "key": "shift+alt+cmd+f",
     "command": "workbench.action.replaceInFiles"
   },
   {
@@ -536,6 +536,10 @@
     "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "workbench.action.findInFiles"
   },
   {
     "key": "shift+cmd+f",
