@@ -171,7 +171,6 @@
         "css",
         "scss"
     ],
-    "window.newWindowDimensions": "inherit",
     "editor.stickyTabStops": true,
     "workbench.editor.decorations.colors": false,
     "window.restoreWindows": "none",
@@ -283,5 +282,6 @@
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "markdown.updateLinksOnFileMove.enabled": "always",
     "markdown.preview.markEditorSelection": false,
-    "search.useReplacePreview": false
+    "search.useReplacePreview": false,
+    "window.newWindowDimensions": "offset"
 }
