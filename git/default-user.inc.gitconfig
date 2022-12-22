@@ -1,3 +1,6 @@
+# This Git configuration file is device-specific and overrides any configuration
+# from the global Git configuration (~/dotfiles/git/.gitconfig)
+
 # User information
 [user]
 	name = Caleb Evans
