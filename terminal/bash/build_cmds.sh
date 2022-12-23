@@ -16,6 +16,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['node:build']='npm run build'
 		['node:watch']='npm run watch'
 		['node:develop']='npm run dev'
+		['node:preview']='npm run preview'
 
 		['jekyll:build']='jekyll build'
 		['jekyll:develop']='jekyll serve'
@@ -61,7 +62,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		__b_sub build "$@"
 	}
 	bp() {
-		NODE_ENV=production JEKYLL_ENV=production __b_sub build "$@"
+		NODE_ENV=production JEKYLL_ENV=production __b_sub preview "$@"
 	}
 	bw() {
 		__b_sub watch "$@"
