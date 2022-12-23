@@ -8,11 +8,6 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 	declare -A build_cmd_map
 	build_cmd_map=(
-		['next:build']='npm exec next build'
-		['next:develop']='npm exec next dev'
-		['next:watch']='npm exec next dev'
-		['next:start']='npm exec next start'
-
 		['gulp:build']='gulp build'
 		['gulp:clean']='gulp clean'
 		['gulp:develop']='gulp serve'
@@ -22,21 +17,9 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['node:watch']='npm run watch'
 		['node:develop']='npm run dev'
 
-		['gatsby:build']='gatsby build'
-		['gatsby:clean']='gatsby clean'
-		['gatsby:develop']='gatsby develop'
-
-		['webpack:build']='webpack build'
-		['webpack:develop']='webpack serve'
-		['webpack:watch']='webpack serve'
-
 		['jekyll:build']='jekyll build'
 		['jekyll:develop']='jekyll serve'
 		['jekyll:watch']='jekyll build --watch'
-
-		['brunch:build']='brunch build'
-		['brunch:develop']='brunch watch --server'
-		['brunch:watch']='brunch watch'
 	)
 
 	# Run the given build tool command name and subcommand
@@ -62,14 +45,8 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 			__b next "$action" "$args"
 		elif [ -f gulpfile.js ]; then
 			__b gulp "$action" "$args"
-		elif [ -f gatsby-config.js ]; then
-			__b gatsby "$action" "$args"
-		elif [ -f webpack.config.js ]; then
-			__b webpack "$action" "$args"
 		elif [ -f _config.yml ]; then
 			__b jekyll "$action" "$args"
-		elif [ -f brunch-config.js ]; then
-			__b brunch "$action" "$args"
 		elif [ -f package.json ]; then
 			__b node "$action" "$args"
 		else
