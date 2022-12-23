@@ -32,11 +32,12 @@ _pnpm() {
 
 	local cur=${COMP_WORDS[COMP_CWORD]}
 	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'pnpm' ] || [ "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
 		COMPREPLY=( $(compgen -W 'add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update' -- "$cur") )
-	elif [ "$prev" == 'update' ]; then
+	elif [ "$second" == 'update' ] || [ "$second" == 'uninstall' ] || [ "$second" == 'remove' ]; then
 		local pnpm_pkg_list="$(pnpm list | grep -Po '^([@\/a-z\-]+)(?= )')"
 		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
 	elif [ "$prev" == 'audit' ]; then
