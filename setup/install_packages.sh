@@ -46,6 +46,7 @@ install_brew_pkg imagemagick
 install_brew_pkg gprof2dot
 install_brew_pkg smartmontools
 install_brew_pkg wget
+install_brew_pkg doctl
 
 # Install identity-related packages
 install_brew_pkg gnupg
