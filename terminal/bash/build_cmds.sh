@@ -42,11 +42,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 	__b_sub() {
 		local action="$1"
 		local args="${*:2}"
-		if [ -f next.config.js ]; then
-			__b next "$action" "$args"
-		elif [ -f gulpfile.js ]; then
-			__b gulp "$action" "$args"
-		elif [ -f _config.yml ]; then
+		if [ -f _config.yml ]; then
 			__b jekyll "$action" "$args"
 		elif [ -f package.json ]; then
 			__b node "$action" "$args"
