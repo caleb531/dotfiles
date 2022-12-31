@@ -1,6 +1,6 @@
 {
   "@media": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "@media",
     "body": [
       "@media $1 {",
@@ -9,7 +9,7 @@
     ]
   },
   "media": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "media",
     "body": [
       "@media $1 {",
@@ -18,7 +18,7 @@
     ]
   },
   "@media screen": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "screen",
     "body": [
       "@media screen and ($1) {",
@@ -27,7 +27,7 @@
     ]
   },
   "screen min width": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "screenmin",
     "body": [
       "@media screen and (min-width: ${1:\\$screen-md-min}) {",
@@ -36,7 +36,7 @@
     ]
   },
   "screen max width": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "screennmax",
     "body": [
       "@media screen and (max-width: ${1:\\$screen-md-max}) {",
@@ -45,7 +45,7 @@
     ]
   },
   "@media print": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "print",
     "body": [
       "@media print {",
@@ -54,7 +54,7 @@
     ]
   },
   "@keyframes": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "@keyframes",
     "body": [
       "@keyframes ${1:name} {",
@@ -63,7 +63,7 @@
     ]
   },
   "keyframes": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "keyframes",
     "body": [
       "@keyframes ${1:name} {",
@@ -72,21 +72,21 @@
     ]
   },
   "padding": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "pad",
     "body": [
       "padding: "
     ]
   },
   "absolute": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "abs",
     "body": [
       "absolute"
     ]
   },
   "@supports": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "@supports",
     "body": [
       "@supports (${1:(-webkit-backdrop-filter: none) or (backdrop-filter: none)}) {",
@@ -95,7 +95,7 @@
     ]
   },
   "supports": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "supports",
     "body": [
       "@supports (${1:(-webkit-backdrop-filter: none) or (backdrop-filter: none)}) {",
@@ -104,7 +104,7 @@
     ]
   },
   "dark mode": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "darkmode",
     "body": [
       "@media (prefers-color-scheme: dark) {",
@@ -113,7 +113,7 @@
     ]
   },
   "!important;": {
-    "scope": "css,scss",
+    "scope": "css,scss,less",
     "prefix": "!important;",
     "body": [
       "!important;"
