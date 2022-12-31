@@ -240,7 +240,8 @@
     "workbench.editor.untitled.labelFormat": "name",
     "typescript.workspaceSymbols.scope": "currentProject",
     "emmet.includeLanguages": {
-        "svg": "xml"
+        "svg": "xml",
+        "svelte": "html"
     },
     "svg.preview.mode": "svg",
     "latex.linter.enabled": false,
