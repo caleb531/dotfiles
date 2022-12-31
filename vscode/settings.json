@@ -57,6 +57,14 @@
             },
             {
                 "scope": [
+                    "punctuation.definition.variable.svelte"
+                ],
+                "settings": {
+                    "foreground": "#A6E22E"
+                }
+            },
+            {
+                "scope": [
                     "entity.tag.apacheconf"
                 ],
                 "settings": {
