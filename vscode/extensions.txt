@@ -27,6 +27,7 @@ redhat.java
 scala-lang.scala
 SirTobi.pegjs-language
 stkb.rewrap
+svelte.svelte-vscode
 timonwong.shellcheck
 tommasov.hosts
 unifiedjs.vscode-mdx

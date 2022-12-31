@@ -284,5 +284,7 @@
     "markdown.updateLinksOnFileMove.enabled": "always",
     "markdown.preview.markEditorSelection": false,
     "search.useReplacePreview": false,
-    "window.newWindowDimensions": "offset"
+    "window.newWindowDimensions": "offset",
+    "svelte.enable-ts-plugin": true,
+    "svelte.plugin.svelte.note-new-transformation": false
 }
