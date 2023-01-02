@@ -1,0 +1,58 @@
+{
+  "if": {
+    "scope": "svelte",
+    "prefix": "if",
+    "body": [
+      "{#if ${1:condition}}"
+    ]
+  },
+  "elseif": {
+    "scope": "svelte",
+    "prefix": "elseif",
+    "body": [
+      "{:else if ${1:condition}}"
+    ]
+  },
+  "else": {
+    "scope": "svelte",
+    "prefix": "else",
+    "body": [
+      "{:else}"
+    ]
+  },
+  "endif": {
+    "scope": "svelte",
+    "prefix": "endif",
+    "body": [
+      "{/if}"
+    ]
+  },
+  "each": {
+    "scope": "svelte",
+    "prefix": "each",
+    "body": [
+      "{#each ${1:object} as ${2:elem}}"
+    ]
+  },
+  "endeach": {
+    "scope": "svelte",
+    "prefix": "endeach",
+    "body": [
+      "{/each}"
+    ]
+  },
+  "for": {
+    "scope": "svelte",
+    "prefix": "for",
+    "body": [
+      "{#each ${1:object}}"
+    ]
+  },
+  "endfor": {
+    "scope": "svelte",
+    "prefix": "endfor",
+    "body": [
+      "{/each}"
+    ]
+  }
+}
