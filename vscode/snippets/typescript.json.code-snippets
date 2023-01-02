@@ -17,11 +17,11 @@
       "}"
     ]
   },
-  "@ts-ignore": {
+  "@ts-expect-error": {
     "scope": "typescript,typescriptreact",
-    "prefix": "tsignore",
+    "prefix": "tsexpecterror",
     "body": [
-      "// @ts-ignore"
+      "// @ts-expect-error"
     ]
   }
 }
