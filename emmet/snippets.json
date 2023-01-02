@@ -9,7 +9,8 @@
       "meta:viewport": "meta[name=viewport][content='width=device-width']",
       "meta:csp": "meta[http-equiv='Content-Security-Policy'][content]",
       "button:button": "button[type=button]",
-      "button:submit": "button[type=submit]"
+      "button:submit": "button[type=submit]",
+      "script:ts": "script[lang=ts]"
     }
   },
   "php": {
