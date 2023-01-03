@@ -1,4 +1,15 @@
 {
+  "component": {
+    "scope": "svelte",
+    "prefix": "component",
+    "body": [
+      "<script lang=\"ts\">",
+      "\t$1",
+      "</script>",
+      "",
+      "$2"
+    ]
+  },
   "if": {
     "scope": "svelte",
     "prefix": "if",
