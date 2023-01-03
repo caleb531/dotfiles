@@ -10,6 +10,13 @@
       "$2"
     ]
   },
+  "import page": {
+    "scope": "typescript",
+    "prefix": "importpage",
+    "body": [
+      "import { page } from '\\$app/stores';"
+    ]
+  },
   "if": {
     "scope": "svelte",
     "prefix": "if",
