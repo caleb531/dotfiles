@@ -72,5 +72,47 @@
     "body": [
       "{/each}"
     ]
+  },
+  "await": {
+    "scope": "svelte",
+    "prefix": "await",
+    "body": [
+      "{#await}"
+    ]
+  },
+  "then": {
+    "scope": "svelte",
+    "prefix": "then",
+    "body": [
+      "{:then}"
+    ]
+  },
+  "catch": {
+    "scope": "svelte",
+    "prefix": "catch",
+    "body": [
+      "{:catch}"
+    ]
+  },
+  "endawait": {
+    "scope": "svelte",
+    "prefix": "endawait",
+    "body": [
+      "{/await}"
+    ]
+  },
+  "debug": {
+    "scope": "svelte",
+    "prefix": "debug",
+    "body": [
+      "{@debug ${1:varnames}}"
+    ]
+  },
+  "const": {
+    "scope": "svelte",
+    "prefix": "const",
+    "body": [
+      "{@const ${1:varname} = ${2:expr}}"
+    ]
   }
 }
