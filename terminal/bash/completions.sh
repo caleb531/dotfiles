@@ -35,14 +35,17 @@ _pnpm() {
 	local second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'pnpm' ] || [ "$prev" == 'help' ]; then
-		# Complete common npm commands for `npm`
+		# Complete common pnpm commands for `pnpm`
 		COMPREPLY=( $(compgen -W 'add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update' -- "$cur") )
 	elif [ "$second" == 'update' ] || [ "$second" == 'uninstall' ] || [ "$second" == 'remove' ]; then
+		# Complete package names for `pnpm update/uninstall/remove`
 		local pnpm_pkg_list="$(pnpm list | grep -Po '^([@\/a-z\-]+)(?= )')"
 		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
 	elif [ "$prev" == 'audit' ]; then
+		# Complete useful flags for `pnpm audit`
 		COMPREPLY=( $(compgen -W '--fix --prod' -- "$cur") )
 	elif [ "$prev" == 'store' ]; then
+		# Complete useful subcommands for `pnpm store`
 		COMPREPLY=( $(compgen -W 'path prune' -- "$cur") )
 	else
 		_npm "$@"
