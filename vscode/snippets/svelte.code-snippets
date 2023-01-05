@@ -10,24 +10,6 @@
       "$2"
     ]
   },
-  "import page": {
-    "scope": "typescript",
-    "prefix": "importpage",
-    "body": [
-      "import { page } from '\\$app/stores';"
-    ]
-  },
-  "load": {
-    "scope": "typescript",
-    "prefix": "load",
-    "body": [
-      "import type { $1 } from './\\$types';",
-      "",
-      "export const load = (async () => {",
-      "\t$2",
-      "}) satisfies ${1|PageLoad,PageServerLoad,LayoutLoad,LayoutServerLoad|};"
-    ]
-  },
   "if": {
     "scope": "svelte",
     "prefix": "if",
