@@ -16,7 +16,8 @@
       "svelte:element": "svelte:element[this]",
       "svelte:fragment": "svelte:fragment",
       "svelte:head": "svelte:head",
-      "svelte:window": "svelte:window"
+      "svelte:window": "svelte:window",
+      "slot": "slot/"
     }
   },
   "php": {
