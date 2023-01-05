@@ -16,7 +16,7 @@ _npm() {
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- "$cur") )
 	elif [ "$prev" == 'run' ]; then
 		# Complete subcommands for `npm run`
-		local npm_script_names="$(npm run | grep -P '(?<=^\s{2})([a-z0-9\-_]+)' | xargs)"
+		local npm_script_names="$(cat package.json | jq '.scripts | keys[] as $k | $k' | xargs)"
 		COMPREPLY=( $(compgen -W "$npm_script_names" -- "$cur") )
 	elif [ "$prev" == 'exec' ]; then
 		# Complete subcommands for `npm exec`
@@ -36,7 +36,8 @@ _pnpm() {
 
 	if [ "$prev" == 'pnpm' ] || [ "$prev" == 'help' ]; then
 		# Complete common pnpm commands for `pnpm`
-		COMPREPLY=( $(compgen -W 'add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update' -- "$cur") )
+		local npm_script_names="$(cat package.json | jq '.scripts | keys[] as $k | $k' | xargs)"
+		COMPREPLY=( $(compgen -W "add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update $npm_script_names" -- "$cur") )
 	elif [ "$second" == 'update' ] || [ "$second" == 'uninstall' ] || [ "$second" == 'remove' ]; then
 		# Complete package names for `pnpm update/uninstall/remove`
 		local pnpm_pkg_list="$(pnpm list | grep -Po '^([@\/a-z\-]+)(?= )')"
