@@ -13,10 +13,13 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['gulp:develop']='gulp serve'
 		['gulp:watch']='gulp build:watch'
 
-		['node:build']='npm run build'
-		['node:watch']='npm run watch'
-		['node:develop']='npm run dev'
-		['node:preview']='npm run preview'
+		# Need to use `pnpm run` instead of `npm run` because the former will
+		# pass the user-supplied command-line arguments to the underlying npm
+		# script code
+		['node:build']='pnpm run build'
+		['node:watch']='pnpm run watch'
+		['node:develop']='pnpm run dev'
+		['node:preview']='pnpm run preview'
 
 		['jekyll:build']='jekyll build'
 		['jekyll:develop']='jekyll serve'
@@ -28,10 +31,10 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		local project_type="$1"
 		local action="$2"
 		local subcmd="${build_cmd_map["$project_type:$action"]}"
-		local args="${*:3}"
+		local args=${*:3}
 		if [ -n "$subcmd" ]; then
 			echo "Running $subcmd $args"
-			# shellcheck disable=2086
+			# shellcheck disable=SC2086
 			$subcmd $args
 		else
 			>&2 echo "$action command not found for $project_type"
@@ -41,11 +44,13 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 	# Run the given subcommand
 	__b_sub() {
 		local action="$1"
-		local args="${*:2}"
+		local args=${*:2}
 		if [ -f _config.yml ]; then
-			__b jekyll "$action" "$args"
+			# shellcheck disable=SC2086
+			__b jekyll "$action" $args
 		elif [ -f package.json ]; then
-			__b node "$action" "$args"
+			# shellcheck disable=SC2086
+			__b node "$action" $args
 		else
 			>&2 echo "project type not recognized"
 		fi
@@ -70,6 +75,9 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 	}
 	bd() {
 		__b_sub develop "$@"
+	}
+	bdo() {
+		__b_sub develop --open "$@"
 	}
 	bs() {
 		__b_sub start "$@"
