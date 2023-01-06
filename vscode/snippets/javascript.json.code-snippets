@@ -47,7 +47,7 @@
     ]
   },
   "arrow function (inline)": {
-    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,svelte",
     "prefix": "afi",
     "body": [
       "($1) => "
