@@ -1,303 +1,275 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "workbench.colorTheme": "Monokai",
-    "editor.fontFamily": "Monaco, 'Courier New', monospace",
-    "editor.minimap.enabled": false,
-    "editor.scrollBeyondLastLine": false,
-    "editor.renderWhitespace": "none",
-    "security.workspace.trust.enabled": false,
-    "workbench.startupEditor": "none",
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": [
-                    "storage.type",
-                    "support.class",
-                    "variable.parameter"
-                ],
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": [
-                    "punctuation.accessor.optional.tsx",
-                    "punctuation.accessor.optional.ts",
-                    "punctuation.accessor.optional.js",
-                    "punctuation.accessor.optional.jsx"
-                ],
-                "settings": {
-                    "foreground": "#F92672"
-                }
-            },
-            {
-                "scope": [
-                    "support.type.property-name.json"
-                ],
-                "settings": {
-                    "fontStyle": "",
-                    "foreground": "#A6E22E"
-                }
-            },
-            {
-                "scope": [
-                    "meta.structure.dictionary.json string.quoted.double.json"
-                ],
-                "settings": {
-                    "foreground": "#E6DB74"
-                }
-            },
-            {
-                "scope": [
-                    "meta.function-call.generic.python"
-                ],
-                "settings": {
-                    "foreground": "#A6E22E"
-                }
-            },
-            {
-                "scope": [
-                    "punctuation.definition.variable.svelte"
-                ],
-                "settings": {
-                    "foreground": "#A6E22E"
-                }
-            },
-            {
-                "scope": [
-                    "entity.tag.apacheconf"
-                ],
-                "settings": {
-                    "foreground": "#F92672"
-                }
-            },
-            {
-                "scope": [
-                    "keyword.core.apacheconf",
-                    "keyword.mpm.apacheconf",
-                    "keyword.access.apacheconf",
-                    "keyword.actions.apacheconf",
-                    "keyword.alias.apacheconf",
-                    "keyword.auth.apacheconf",
-                    "keyword.auth_anon.apacheconf",
-                    "keyword.auth_dbm.apacheconf",
-                    "keyword.auth_digest.apacheconf",
-                    "keyword.auth_ldap.apacheconf",
-                    "keyword.autoindex.apacheconf",
-                    "keyword.filter.apacheconf",
-                    "keyword.cache.apacheconf",
-                    "keyword.cern_meta.apacheconf",
-                    "keyword.cgi.apacheconf",
-                    "keyword.cgid.apacheconf",
-                    "keyword.charset_lite.apacheconf",
-                    "keyword.dav.apacheconf",
-                    "keyword.deflate.apacheconf",
-                    "keyword.dir.apacheconf",
-                    "keyword.disk_cache.apacheconf",
-                    "keyword.dumpio.apacheconf",
-                    "keyword.env.apacheconf",
-                    "keyword.expires.apacheconf",
-                    "keyword.ext_filter.apacheconf",
-                    "keyword.file_cache.apacheconf",
-                    "keyword.filter.apacheconf",
-                    "keyword.headers.apacheconf",
-                    "keyword.imap.apacheconf",
-                    "keyword.include.apacheconf",
-                    "keyword.isapi.apacheconf",
-                    "keyword.ldap.apacheconf",
-                    "keyword.log.apacheconf",
-                    "keyword.mem_cache.apacheconf",
-                    "keyword.mime.apacheconf",
-                    "keyword.misc.apacheconf",
-                    "keyword.negotiation.apacheconf",
-                    "keyword.nw_ssl.apacheconf",
-                    "keyword.proxy.apacheconf",
-                    "keyword.rewrite.apacheconf",
-                    "keyword.setenvif.apacheconf",
-                    "keyword.so.apacheconf",
-                    "keyword.ssl.apacheconf",
-                    "keyword.substitute.apacheconf",
-                    "keyword.usertrack.apacheconf",
-                    "keyword.vhost_alias.apacheconf",
-                    "keyword.php.apacheconf"
-                ],
-                "settings": {
-                    "foreground": "#66D9EF"
-                }
-            }
-        ]
-    },
-    "workbench.list.openMode": "doubleClick",
-    "editor.fontSize": 16,
-    "files.associations": {
-        "ssh_config": "ssh_config",
-        "*.toc": "latex",
-        "*.sublime-project": "json",
-        "*.conf": "properties",
-        "httpd.conf": "apacheconf",
-        "httpd-*.conf": "apacheconf",
-        "requirements.txt": "properties",
-        "gitignore_global": "ignore",
-        "*.toml": "ini",
-        ".env*": "properties"
-    },
-    "editor.wordWrap": "bounded",
-    "extensions.ignoreRecommendations": true,
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true
-    },
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "files.exclude": {
-        "**/DeployDistribution": true,
-        "**/DeployDistributionAdvanced": true,
-        "**/DeployDistributionAdvancedSS2": true,
-        "**/LocalDistribution": true,
-        "**/LocalDistributionAdvanced": true,
-        "**/node_modules": true
-    },
-    "editor.occurrencesHighlight": false,
-    "editor.selectionHighlight": false,
-    "explorer.autoReveal": "focusNoScroll",
-    "workbench.colorCustomizations": {
-        "[Monokai]": {
-            "tab.inactiveBackground": "#1E1F1C",
-            "tab.inactiveForeground": "#90908a",
-            "tab.activeBackground": "#34352f",
-            "tab.activeForeground": "#f8f8f2",
-            "breadcrumb.background": "#34352f"
+  "workbench.colorTheme": "Monokai",
+  "editor.fontFamily": "Monaco, 'Courier New', monospace",
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.renderWhitespace": "none",
+  "security.workspace.trust.enabled": false,
+  "workbench.startupEditor": "none",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": ["storage.type", "support.class", "variable.parameter"],
+        "settings": {
+          "fontStyle": ""
         }
-    },
-    "editor.rulers": [
-        80
-    ],
-    "editor.fastScrollSensitivity": 3,
-    "editor.roundedSelection": false,
-    "emmet.excludeLanguages": [
-        "css",
-        "scss"
-    ],
-    "editor.stickyTabStops": true,
-    "workbench.editor.decorations.colors": false,
-    "window.restoreWindows": "none",
-    "emmet.extensionsPath": [
-        "/Users/Caleb/dotfiles/emmet",
-        "/Users/caleb/dotfiles/emmet"
-    ],
-    "css.completion.completePropertyWithSemicolon": false,
-    "less.completion.completePropertyWithSemicolon": false,
-    "scss.completion.completePropertyWithSemicolon": false,
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.suggestSelection": "first",
-    "editor.wordBasedSuggestionsMode": "currentDocument",
-    "editor.tabCompletion": "onlySnippets",
-    "typescript.disableAutomaticTypeAcquisition": true,
-    "editor.suggest.showInterfaces": false,
-    "javascript.suggest.autoImports": false,
-    "javascript.suggest.paths": false,
-    "workbench.editor.enablePreview": false,
-    "search.quickOpen.includeHistory": false,
-    "workbench.quickOpen.preserveInput": true,
-    "editor.autoIndent": "advanced",
-    "editor.semanticHighlighting.enabled": false,
-    "emmet.preferences": {
-        "format.forceIndentationForTags": [
-            "address",
-            "article",
-            "aside",
-            "body",
-            "clipPath",
-            "defs",
-            "div",
-            "dl",
-            "fieldset",
-            "figure",
-            "footer",
-            "form",
-            "g",
-            "head",
-            "header",
-            "hgroup",
-            "linearGradient",
-            "html",
-            "main",
-            "marker",
-            "mask",
-            "nav",
-            "ol",
-            "pattern",
-            "radialGradient",
-            "script",
-            "section",
-            "style",
-            "svelte:body",
-            "svelte:fragment",
-            "svelte:head",
-            "svelte:window",
-            "svg",
-            "symbol",
-            "table",
-            "tbody",
-            "tfoot",
-            "thead",
-            "tr",
-            "ul"
-        ]
-    },
-    "editor.renderLineHighlight": "all",
-    "editor.cursorSurroundingLines": 2,
-    "workbench.commandPalette.preserveInput": true,
-    "workbench.editor.untitled.hint": "hidden",
-    "workbench.editor.untitled.labelFormat": "name",
-    "typescript.workspaceSymbols.scope": "currentProject",
-    "emmet.includeLanguages": {
-        "svg": "xml",
-        "svelte": "html"
-    },
-    "svg.preview.mode": "svg",
-    "latex.linter.enabled": false,
-    "javascript.validate.enable": false,
-    "shellcheck.exclude": [
-        "SC1091",
-        "SC2002",
-        "SC2012",
-        "SC2181"
-    ],
-    "css.lint.validProperties": [
-        "alignment-baseline"
-    ],
-    "scss.lint.validProperties": [
-        "alignment-baseline"
-    ],
-    "editor.guides.indentation": false,
-    "editor.guides.highlightActiveIndentation": false,
-    "advancedNewFile.convenienceOptions": [
-        "current",
-        "root"
-    ],
-    "editor.hover.delay": 500,
-    "editor.quickSuggestionsDelay": 0,
-    "editor.snippetSuggestions": "top",
-    "typescript.preferences.quoteStyle": "single",
-    "javascript.preferences.quoteStyle": "single",
-    "workbench.layoutControl.enabled": false,
-    "editor.bracketPairColorization.enabled": false,
-    "java.autobuild.enabled": false,
-    "java.format.enabled": false,
-    "java.format.onType.enabled": false,
-    "java.import.maven.enabled": false,
-    "java.server.launchMode": "LightWeight",
-    "git.mergeEditor": false,
-    "markdown.validate.enabled": true,
-    "python.experiments.enabled": false,
-    "python.pylanceLspNotebooksEnabled": false,
-    "python.testing.autoTestDiscoverOnSaveEnabled": false,
-    "markdown.updateLinksOnFileMove.enabled": "always",
-    "markdown.preview.markEditorSelection": false,
-    "search.useReplacePreview": false,
-    "window.newWindowDimensions": "offset",
-    "svelte.enable-ts-plugin": true,
-    "svelte.plugin.svelte.note-new-transformation": false
+      },
+      {
+        "scope": [
+          "punctuation.accessor.optional.tsx",
+          "punctuation.accessor.optional.ts",
+          "punctuation.accessor.optional.js",
+          "punctuation.accessor.optional.jsx"
+        ],
+        "settings": {
+          "foreground": "#F92672"
+        }
+      },
+      {
+        "scope": ["support.type.property-name.json"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#A6E22E"
+        }
+      },
+      {
+        "scope": ["meta.structure.dictionary.json string.quoted.double.json"],
+        "settings": {
+          "foreground": "#E6DB74"
+        }
+      },
+      {
+        "scope": ["meta.function-call.generic.python"],
+        "settings": {
+          "foreground": "#A6E22E"
+        }
+      },
+      {
+        "scope": ["punctuation.definition.variable.svelte"],
+        "settings": {
+          "foreground": "#A6E22E"
+        }
+      },
+      {
+        "scope": ["entity.tag.apacheconf"],
+        "settings": {
+          "foreground": "#F92672"
+        }
+      },
+      {
+        "scope": [
+          "keyword.core.apacheconf",
+          "keyword.mpm.apacheconf",
+          "keyword.access.apacheconf",
+          "keyword.actions.apacheconf",
+          "keyword.alias.apacheconf",
+          "keyword.auth.apacheconf",
+          "keyword.auth_anon.apacheconf",
+          "keyword.auth_dbm.apacheconf",
+          "keyword.auth_digest.apacheconf",
+          "keyword.auth_ldap.apacheconf",
+          "keyword.autoindex.apacheconf",
+          "keyword.filter.apacheconf",
+          "keyword.cache.apacheconf",
+          "keyword.cern_meta.apacheconf",
+          "keyword.cgi.apacheconf",
+          "keyword.cgid.apacheconf",
+          "keyword.charset_lite.apacheconf",
+          "keyword.dav.apacheconf",
+          "keyword.deflate.apacheconf",
+          "keyword.dir.apacheconf",
+          "keyword.disk_cache.apacheconf",
+          "keyword.dumpio.apacheconf",
+          "keyword.env.apacheconf",
+          "keyword.expires.apacheconf",
+          "keyword.ext_filter.apacheconf",
+          "keyword.file_cache.apacheconf",
+          "keyword.filter.apacheconf",
+          "keyword.headers.apacheconf",
+          "keyword.imap.apacheconf",
+          "keyword.include.apacheconf",
+          "keyword.isapi.apacheconf",
+          "keyword.ldap.apacheconf",
+          "keyword.log.apacheconf",
+          "keyword.mem_cache.apacheconf",
+          "keyword.mime.apacheconf",
+          "keyword.misc.apacheconf",
+          "keyword.negotiation.apacheconf",
+          "keyword.nw_ssl.apacheconf",
+          "keyword.proxy.apacheconf",
+          "keyword.rewrite.apacheconf",
+          "keyword.setenvif.apacheconf",
+          "keyword.so.apacheconf",
+          "keyword.ssl.apacheconf",
+          "keyword.substitute.apacheconf",
+          "keyword.usertrack.apacheconf",
+          "keyword.vhost_alias.apacheconf",
+          "keyword.php.apacheconf"
+        ],
+        "settings": {
+          "foreground": "#66D9EF"
+        }
+      }
+    ]
+  },
+  "workbench.list.openMode": "doubleClick",
+  "editor.fontSize": 16,
+  "files.associations": {
+    "ssh_config": "ssh_config",
+    "*.toc": "latex",
+    "*.sublime-project": "json",
+    "*.conf": "properties",
+    "httpd.conf": "apacheconf",
+    "httpd-*.conf": "apacheconf",
+    "requirements.txt": "properties",
+    "gitignore_global": "ignore",
+    "*.toml": "ini",
+    ".env*": "properties"
+  },
+  "editor.wordWrap": "bounded",
+  "extensions.ignoreRecommendations": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "files.exclude": {
+    "**/DeployDistribution": true,
+    "**/DeployDistributionAdvanced": true,
+    "**/DeployDistributionAdvancedSS2": true,
+    "**/LocalDistribution": true,
+    "**/LocalDistributionAdvanced": true,
+    "**/node_modules": true
+  },
+  "editor.occurrencesHighlight": false,
+  "editor.selectionHighlight": false,
+  "explorer.autoReveal": "focusNoScroll",
+  "workbench.colorCustomizations": {
+    "[Monokai]": {
+      "tab.inactiveBackground": "#1E1F1C",
+      "tab.inactiveForeground": "#90908a",
+      "tab.activeBackground": "#34352f",
+      "tab.activeForeground": "#f8f8f2",
+      "breadcrumb.background": "#34352f"
+    }
+  },
+  "editor.rulers": [80],
+  "editor.fastScrollSensitivity": 3,
+  "editor.roundedSelection": false,
+  "emmet.excludeLanguages": ["css", "scss"],
+  "editor.stickyTabStops": true,
+  "workbench.editor.decorations.colors": false,
+  "window.restoreWindows": "none",
+  "emmet.extensionsPath": [
+    "/Users/Caleb/dotfiles/emmet",
+    "/Users/caleb/dotfiles/emmet"
+  ],
+  "css.completion.completePropertyWithSemicolon": false,
+  "less.completion.completePropertyWithSemicolon": false,
+  "scss.completion.completePropertyWithSemicolon": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.suggestSelection": "first",
+  "editor.wordBasedSuggestionsMode": "currentDocument",
+  "editor.tabCompletion": "onlySnippets",
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "editor.suggest.showInterfaces": false,
+  "javascript.suggest.autoImports": false,
+  "javascript.suggest.paths": false,
+  "workbench.editor.enablePreview": false,
+  "search.quickOpen.includeHistory": false,
+  "workbench.quickOpen.preserveInput": true,
+  "editor.autoIndent": "advanced",
+  "editor.semanticHighlighting.enabled": false,
+  "emmet.preferences": {
+    "format.forceIndentationForTags": [
+      "address",
+      "article",
+      "aside",
+      "body",
+      "clipPath",
+      "defs",
+      "div",
+      "dl",
+      "fieldset",
+      "figure",
+      "footer",
+      "form",
+      "g",
+      "head",
+      "header",
+      "hgroup",
+      "linearGradient",
+      "html",
+      "main",
+      "marker",
+      "mask",
+      "nav",
+      "ol",
+      "pattern",
+      "radialGradient",
+      "script",
+      "section",
+      "style",
+      "svelte:body",
+      "svelte:fragment",
+      "svelte:head",
+      "svelte:window",
+      "svg",
+      "symbol",
+      "table",
+      "tbody",
+      "tfoot",
+      "thead",
+      "tr",
+      "ul"
+    ]
+  },
+  "editor.renderLineHighlight": "all",
+  "editor.cursorSurroundingLines": 2,
+  "workbench.commandPalette.preserveInput": true,
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editor.untitled.labelFormat": "name",
+  "typescript.workspaceSymbols.scope": "currentProject",
+  "emmet.includeLanguages": {
+    "svg": "xml",
+    "svelte": "html"
+  },
+  "svg.preview.mode": "svg",
+  "latex.linter.enabled": false,
+  "javascript.validate.enable": false,
+  "shellcheck.exclude": ["SC1091", "SC2002", "SC2012", "SC2181"],
+  "css.lint.validProperties": ["alignment-baseline"],
+  "scss.lint.validProperties": ["alignment-baseline"],
+  "editor.guides.indentation": false,
+  "editor.guides.highlightActiveIndentation": false,
+  "advancedNewFile.convenienceOptions": ["current", "root"],
+  "editor.hover.delay": 500,
+  "editor.quickSuggestionsDelay": 0,
+  "editor.snippetSuggestions": "top",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "workbench.layoutControl.enabled": false,
+  "editor.bracketPairColorization.enabled": false,
+  "java.autobuild.enabled": false,
+  "java.format.enabled": false,
+  "java.format.onType.enabled": false,
+  "java.import.maven.enabled": false,
+  "java.server.launchMode": "LightWeight",
+  "git.mergeEditor": false,
+  "markdown.validate.enabled": true,
+  "python.experiments.enabled": false,
+  "python.pylanceLspNotebooksEnabled": false,
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "markdown.preview.markEditorSelection": false,
+  "search.useReplacePreview": false,
+  "window.newWindowDimensions": "offset",
+  "svelte.enable-ts-plugin": true,
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "search.exclude": {
+    "**/.svelte-kit": true
+  }
 }
