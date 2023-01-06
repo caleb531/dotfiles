@@ -70,7 +70,14 @@
     "scope": "svelte",
     "prefix": "await",
     "body": [
-      "{#await}"
+      "{#await ${1:promise}}"
+    ]
+  },
+  "awaitthen": {
+    "scope": "svelte",
+    "prefix": "awaitthen",
+    "body": [
+      "{#await ${1:promise} then ${1:varname}}"
     ]
   },
   "then": {
