@@ -83,5 +83,12 @@
     "body": [
       "set -o verbose"
     ]
+  },
+  "shellcheck disable": {
+    "scope": "shellscript",
+    "prefix": "shellcheckdisable",
+    "body": [
+      "# shellcheck disable=${1:SC123,SC456}"
+    ]
   }
 }
