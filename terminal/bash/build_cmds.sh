@@ -70,6 +70,9 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		bb
 		bp "$@"
 	}
+	bbpo() {
+		bbp --open
+	}
 	bw() {
 		__b_sub watch "$@"
 	}
