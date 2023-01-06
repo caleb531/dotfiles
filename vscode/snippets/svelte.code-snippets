@@ -94,6 +94,20 @@
       "{/await}"
     ]
   },
+  "key": {
+    "scope": "svelte",
+    "prefix": "key",
+    "body": [
+      "{#key ${1:expr}}"
+    ]
+  },
+  "endkey": {
+    "scope": "svelte",
+    "prefix": "endkey",
+    "body": [
+      "{/key}"
+    ]
+  },
   "debug": {
     "scope": "svelte",
     "prefix": "debug",
