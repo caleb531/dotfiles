@@ -17,6 +17,7 @@ fi
 alias lsa='ls -a'
 alias lsl='ls -l'
 alias lsla='ls -la'
+alias ..='cd ..'
 # Colorize tree output
 alias tree='tree -C'
 
