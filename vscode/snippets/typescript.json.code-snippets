@@ -17,6 +17,13 @@
       "}"
     ]
   },
+  "@ts-ignore": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "tsignore",
+    "body": [
+      "// @ts-ignore"
+    ]
+  },
   "@ts-expect-error": {
     "scope": "typescript,typescriptreact",
     "prefix": "tsexpecterror",
