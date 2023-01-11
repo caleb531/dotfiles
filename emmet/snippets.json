@@ -16,6 +16,7 @@
       "svelte:element": "svelte:element[this]",
       "svelte:fragment": "svelte:fragment",
       "svelte:head": "svelte:head",
+      "svelte:self": "svelte:self",
       "svelte:window": "svelte:window",
       "slot": "slot/"
     }
