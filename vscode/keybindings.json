@@ -822,5 +822,9 @@
   {
     "key": "cmd+4",
     "command": "workbench.view.debug"
+  },
+  {
+    "key": "ctrl+alt+cmd+v",
+    "command": "svg.showSvg"
   }
 ]
