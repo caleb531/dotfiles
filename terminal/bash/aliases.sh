@@ -85,6 +85,9 @@ alias nr='npm rebuild'
 # Recompile node-sass specifically
 alias nrs='npm rebuild node-sass'
 
+# Shortcut to create new Svelte+SvelteKit project
+alias create-svelte='pnpm create svelte@latest'
+
 # Git
 alias gi='git'
 alias got='git'
