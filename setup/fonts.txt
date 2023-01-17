@@ -2,7 +2,6 @@ Lato
 Merriweather
 Merriweather Sans
 Montserrat
-Noto Sans JP
 Open Sans
 Oxygen Mono
 PT Sans
