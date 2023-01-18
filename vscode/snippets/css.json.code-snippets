@@ -118,5 +118,12 @@
     "body": [
       "!important;"
     ]
+  },
+  "OS-native font families": {
+    "scope": "css,scss,less",
+    "prefix": "osnativefontfamilies",
+    "body": [
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"
+    ]
   }
 }
