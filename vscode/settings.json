@@ -119,6 +119,7 @@
     "ssh_config": "ssh_config",
     "*.toc": "latex",
     "*.sublime-project": "json",
+    "*.har": "json",
     "*.conf": "properties",
     "httpd.conf": "apacheconf",
     "httpd-*.conf": "apacheconf",
