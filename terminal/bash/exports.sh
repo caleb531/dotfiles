@@ -26,6 +26,9 @@ export PATH="$BREW_PREFIX"/opt/coreutils/libexec/gnubin:"$PATH"
 export MANPATH="$BREW_PREFIX"/opt/coreutils/libexec/gnuman:"$MANPATH"
 export PATH="$BREW_PREFIX"/opt/gnupg@2.0/bin:"$PATH"
 export PATH="$BREW_PREFIX"/opt/gpg-agent/bin:"$PATH"
+# pnpm global store
+export PNPM_HOME="/Users/caleb/Library/pnpm"
+export PATH="$PNPM_HOME":"$PATH"
 # Jekyll
 export PATH="$BREW_PREFIX"/opt/ruby/bin:"$PATH"
 if [ -d "$BREW_PREFIX"/lib/ruby/gems/3.1.0 ]; then
