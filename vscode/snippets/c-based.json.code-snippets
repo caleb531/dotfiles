@@ -76,23 +76,9 @@
       "continue;"
     ]
   },
-  "switch (break)": {
+  "switch": {
     "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
-    "prefix": "switchbreak",
-    "body": [
-      "switch (${1:variable}) {",
-      "\tcase ${2:value}:",
-      "\t\t$3",
-      "\t\tbreak;$4",
-      "\tdefault:",
-      "\t\t$5",
-      "\t\tbreak;",
-      "}"
-    ]
-  },
-  "switch (return)": {
-    "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
-    "prefix": "switchreturn",
+    "prefix": "switch",
     "body": [
       "switch (${1:variable}) {",
       "\tcase ${2:value}:",
@@ -102,20 +88,19 @@
       "}"
     ]
   },
-  "casebreak": {
+  "case": {
     "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
-    "prefix": "casebreak",
+    "prefix": "case",
     "body": [
       "case ${1:value}:",
-      "\t$2",
-      "\tbreak;"
+      "\treturn ${2:retvalue};"
     ]
   },
-  "casereturn": {
+  "default": {
     "scope": "c,cpp,javascript,typescript,javascriptreact,typescriptreact,awk",
-    "prefix": "casereturn",
+    "prefix": "default",
     "body": [
-      "case ${1:value}:",
+      "default ${1:value}:",
       "\treturn ${2:retvalue};"
     ]
   }
