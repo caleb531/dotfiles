@@ -12,13 +12,13 @@
       "button:submit": "button[type=submit]",
       "script:ts": "script[lang=ts]",
       "style:scss": "style[lang=scss]",
-      "svelte:body": "svelte:body",
-      "svelte:component": "svelte:component[this]",
-      "svelte:element": "svelte:element[this]",
+      "svelte:body": "svelte:body/",
+      "svelte:component": "svelte:component[this]/",
+      "svelte:element": "svelte:element[this]/",
       "svelte:fragment": "svelte:fragment",
       "svelte:head": "svelte:head",
-      "svelte:self": "svelte:self",
-      "svelte:window": "svelte:window",
+      "svelte:self": "svelte:self/",
+      "svelte:window": "svelte:window/",
       "slot": "slot/"
     }
   },
