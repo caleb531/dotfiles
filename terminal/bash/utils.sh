@@ -6,11 +6,12 @@ __is_node_project() {
 	if ! type node &> /dev/null; then
 		return 1
 	fi
-	while [ "$PWD" != / ]; do
-		if [ -f package.json ]; then
+	local path="$PWD"
+	while [[ "$path" != '/' ]]; do
+		if [ -f "$path"/package.json ]; then
 			return 0
 		fi
-		cd ..
+		path="$(dirname "$path")"
 	done
 	return 1
 }
