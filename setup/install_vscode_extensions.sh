@@ -7,8 +7,7 @@ source ~/dotfiles/terminal/bash/exports.sh
 echo "Installing VS Code packages..."
 preload_vscode_pkg_list
 
-while read -r pkg_line; do
-	pkg_name="$(echo "$pkg_line")"
+while read -r pkg_name; do
 	if [ -n "$pkg_name" ]; then
 		install_vscode_pkg "$pkg_name"
 	fi
