@@ -13,6 +13,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['gulp:develop']='gulp serve'
 		['gulp:watch']='gulp build:watch'
 
+		['node:start']='npm start'
 		['node:build']='npm run build'
 		['node:watch']='npm run watch'
 		['node:develop']='npm run dev'
