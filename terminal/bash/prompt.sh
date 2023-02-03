@@ -54,7 +54,7 @@ __output_ps1() {
 	fi
 
 	# If working directory is a Node-based project
-	if [ -f package.json ] && type node &> /dev/null; then
+	if __is_node_project; then
 
 		# Output version of global Node
 		__set_color "$BLUE"

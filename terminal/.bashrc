@@ -2,6 +2,7 @@
 # .bashrc
 # Caleb Evans
 
+source ~/dotfiles/terminal/bash/utils.sh
 source ~/dotfiles/terminal/bash/exports.sh
 source ~/dotfiles/terminal/bash/config.sh
 source ~/dotfiles/terminal/bash/aliases.sh

@@ -48,7 +48,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		if [ -f _config.yml ]; then
 			# shellcheck disable=SC2086
 			__b jekyll "$action" $args
-		elif [ -f package.json ] || [ -f ../package.json ]; then
+		elif __is_node_project; then
 			# shellcheck disable=SC2086
 			__b node "$action" $args
 		else
