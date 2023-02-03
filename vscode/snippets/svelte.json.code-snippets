@@ -56,7 +56,7 @@
     "scope": "svelte",
     "prefix": "for",
     "body": [
-      "{#each ${1:object}}"
+      "{#each ${1:object} as ${2:elem}}"
     ]
   },
   "endfor": {
