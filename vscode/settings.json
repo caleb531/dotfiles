@@ -272,5 +272,6 @@
   "svelte.plugin.svelte.note-new-transformation": false,
   "search.exclude": {
     "**/.svelte-kit": true
-  }
+  },
+  "emmet.showExpandedAbbreviation": "never"
 }
