@@ -128,5 +128,58 @@
     "body": [
       "{@const ${1:varname} = ${2:expr}}"
     ]
+  },
+  "svelte:body": {
+    "scope": "svelte",
+    "prefix": "svelte:body",
+    "body": [
+      "<svelte:body />"
+    ]
+  },
+  "svelte:component": {
+    "scope": "svelte",
+    "prefix": "svelte:component",
+    "body": [
+      "<svelte:component this=\"$1\" />"
+    ]
+  },
+  "svelte:element": {
+    "scope": "svelte",
+    "prefix": "svelte:element",
+    "body": [
+      "<svelte:element this=\"$1\" />"
+    ]
+  },
+  "svelte:fragment": {
+    "scope": "svelte",
+    "prefix": "svelte:fragment",
+    "body": [
+      "<svelte:fragment>",
+      "\t$1",
+      "</svelte:fragment>"
+    ]
+  },
+  "svelte:head": {
+    "scope": "svelte",
+    "prefix": "svelte:head",
+    "body": [
+      "<svelte:head>",
+      "\t$1",
+      "</svelte:head>"
+    ]
+  },
+  "svelte:self": {
+    "scope": "svelte",
+    "prefix": "svelte:self",
+    "body": [
+      "<svelte:self />"
+    ]
+  },
+  "svelte:window": {
+    "scope": "svelte",
+    "prefix": "svelte:window",
+    "body": [
+      "<svelte:window />"
+    ]
   }
 }
