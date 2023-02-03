@@ -18,7 +18,7 @@ __detect_node_version() {
 
 # Outputs ANSI escape sequence for the given color code
 __set_color() {
-	echo -n "\[\e[${1}m\]"
+	printf "\[\e[%sm\]" "$1"
 }
 
 # Reset color escape sequences
