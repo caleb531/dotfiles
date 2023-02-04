@@ -45,8 +45,9 @@ mkdir -p ~/Sync
 
 # Symlink VSCode configuration
 symlink_vscode() {
-	mkdir -p ~/Library/Application\ Support/Code/User
-	pushd ~/Library/Application\ Support/Code/User &> /dev/null || return
+	local config_dir="$1"/User
+	mkdir -p "$config_dir"
+	pushd "$config_dir" &> /dev/null || return
 	rm -rf snippets
 	ln -sf ~/dotfiles/vscode/settings.json settings.json
 	ln -sf ~/dotfiles/vscode/init.ts init.ts
@@ -54,7 +55,8 @@ symlink_vscode() {
 	ln -snf ~/dotfiles/vscode/snippets snippets
 	popd &> /dev/null || return
 }
-symlink_vscode
+symlink_vscode ~/Library/Application\ Support/Code
+symlink_vscode ~/Library/Application\ Support/Code\ -\ Insiders
 
 # Symlink Firefox browser styles (these custom styles will only take effect
 # when the 'toolkit.legacyUserProfileCustomizations.stylesheets' about:config
