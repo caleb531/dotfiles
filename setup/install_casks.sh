@@ -15,10 +15,10 @@ install_cask 1password
 install_cask keyboard-maestro
 install_cask flux
 # Install additional apps
-install_cask keybase
 install_cask zoom
 install_cask microsoft-teams
 install_cask postman
+install_cask signal
 # Least-essential apps
 install_cask appcleaner
 install_cask imageoptim
