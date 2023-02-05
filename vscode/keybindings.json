@@ -826,5 +826,10 @@
   {
     "key": "ctrl+alt+cmd+v",
     "command": "svg.showSvg"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "workbench.action.closePanel",
+    "when": "searchViewletFocus"
   }
 ]
