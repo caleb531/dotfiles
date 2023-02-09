@@ -271,6 +271,5 @@
   "search.exclude": {
     "**/.svelte-kit": true
   },
-  "emmet.showExpandedAbbreviation": "never",
   "git.openRepositoryInParentFolders": "never"
 }
