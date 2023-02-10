@@ -828,7 +828,7 @@
     "command": "svg.showSvg"
   },
   {
-    "key": "shift+cmd+f",
+    "key": "escape",
     "command": "workbench.action.closePanel",
     "when": "searchViewletFocus"
   }
