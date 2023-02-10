@@ -831,5 +831,9 @@
     "key": "escape",
     "command": "workbench.action.closePanel",
     "when": "searchViewletFocus"
+  },
+  {
+    "key": "cmd+k cmd+p",
+    "command": "extension.changeCase.pascal"
   }
 ]
