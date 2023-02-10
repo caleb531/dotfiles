@@ -71,6 +71,20 @@
       "}"
     ]
   },
+  "@import": {
+    "scope": "css,scss,less",
+    "prefix": "@import",
+    "body": [
+      "@import '${1:path}';"
+    ]
+  },
+  "import": {
+    "scope": "css,scss,less",
+    "prefix": "import",
+    "body": [
+      "@import '${1:path}';"
+    ]
+  },
   "padding": {
     "scope": "css,scss,less",
     "prefix": "pad",
