@@ -55,7 +55,8 @@ export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
 
 # Miscellaneous environment variables
 
-# Explicitly declare vim as default text editor
+# Explicitly declare vim as default text editor (Git will fall back to this
+# environment variable unless core.editor is set in your .gitconfig)
 export EDITOR='vim'
 
 # Name of default web browser (useful for `open -a` commands)
