@@ -2,91 +2,129 @@
   "component": {
     "scope": "svelte",
     "prefix": "component",
-    "body": ["<script lang=\"ts\">", "\t$1", "</script>", "", "$2"]
+    "body": [
+      "<script lang=\"ts\">",
+      "\t$1",
+      "</script>", "", "$2"
+    ]
   },
   "if": {
     "scope": "svelte",
     "prefix": "if",
-    "body": ["{#if ${1:condition}}"]
+    "body": [
+      "{#if ${1:condition}}"
+    ]
   },
   "elseif": {
     "scope": "svelte",
     "prefix": "elseif",
-    "body": ["{:else if ${1:condition}}"]
+    "body": [
+      "{:else if ${1:condition}}"
+    ]
   },
   "else": {
     "scope": "svelte",
     "prefix": "else",
-    "body": ["{:else}"]
+    "body": [
+      "{:else}"
+    ]
   },
   "endif": {
     "scope": "svelte",
     "prefix": "endif",
-    "body": ["{/if}"]
+    "body": [
+      "{/if}"
+    ]
   },
   "each": {
     "scope": "svelte",
     "prefix": "each",
-    "body": ["{#each ${1:object} as ${2:elem}}"]
+    "body": [
+      "{#each ${1:object} as ${2:elem}}"
+    ]
   },
   "endeach": {
     "scope": "svelte",
     "prefix": "endeach",
-    "body": ["{/each}"]
+    "body": [
+      "{/each}"
+    ]
   },
   "for": {
     "scope": "svelte",
     "prefix": "for",
-    "body": ["{#each ${1:object} as ${2:elem}}"]
+    "body": [
+      "{#each ${1:object} as ${2:elem}}"
+    ]
   },
   "endfor": {
     "scope": "svelte",
     "prefix": "endfor",
-    "body": ["{/each}"]
+    "body": [
+      "{/each}"
+    ]
   },
   "await": {
     "scope": "svelte",
     "prefix": "await",
-    "body": ["{#await ${1:promise}}"]
+    "body": [
+      "{#await ${1:promise}}"
+    ]
   },
   "awaitthen": {
     "scope": "svelte",
     "prefix": "awaitthen",
-    "body": ["{#await ${1:promise} then ${1:varname}}"]
+    "body": [
+      "{#await ${1:promise} then ${1:varname}}"
+    ]
   },
   "then": {
     "scope": "svelte",
     "prefix": "then",
-    "body": ["{:then}"]
+    "body": [
+      "{:then}"
+    ]
   },
   "catch": {
     "scope": "svelte",
     "prefix": "catch",
-    "body": ["{:catch}"]
+    "body": [
+      "{:catch}"
+    ]
   },
   "endawait": {
     "scope": "svelte",
     "prefix": "endawait",
-    "body": ["{/await}"]
+    "body": [
+      "{/await}"
+    ]
   },
   "key": {
     "scope": "svelte",
     "prefix": "key",
-    "body": ["{#key ${1:expr}}"]
+    "body": [
+      "{#key ${1:expr}}"
+    ]
   },
   "endkey": {
     "scope": "svelte",
     "prefix": "endkey",
-    "body": ["{/key}"]
+    "body": [
+      "{/key}"
+    ]
   },
   "debug": {
     "scope": "svelte",
     "prefix": "debug",
-    "body": ["{@debug ${1:varnames}}"]
+    "body": [
+      "{@debug ${1:varnames}}"
+    ]
   },
   "const": {
     "scope": "svelte",
     "prefix": "const",
-    "body": ["{@const ${1:varname} = ${2:expr}}"]
+    "body": [
+      "{@const ${1:varname} = ${2:expr}}"
+    ]
   }
 }
