@@ -326,3 +326,15 @@ version() {
 		>&2 echo "not a node project"
 	fi
 }
+
+# Kill all Java processes completely
+kajava() {
+	# We may have multiple java processes to kill, but to avoid an infinite
+	# loop, only check up to 10 times
+	for _ in {1..10}; do
+		killall java
+		if [ $? == 0 ]; then
+			break
+		fi
+	done
+}
