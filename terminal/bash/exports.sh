@@ -43,16 +43,6 @@ export PATH=/Applications/MAMP/bin/php/php8.0.8/bin/:"$PATH"
 export PATH=~/dotfiles/setup:"$PATH"
 export PATH=~/dotfiles/private/setup:"$PATH"
 
-# Colorize less
-# Color syntax: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
-# termcap(5) man page: <http://linux.die.net/man/5/termcap>
-export LESS_TERMCAP_md=$'\e[1;34m'	# start bold mode
-export LESS_TERMCAP_me=$'\e[1;0m'	# end modes so, us, mb, md, mr
-export LESS_TERMCAP_so=$'\e[1;36m'	# start standout mode
-export LESS_TERMCAP_se=$'\e[1;0m'	# end standout mode
-export LESS_TERMCAP_us=$'\e[1;32m'	# start underlining
-export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
-
 # Miscellaneous environment variables
 
 # Explicitly declare vim as default text editor (Git will fall back to this
@@ -118,6 +108,17 @@ export BLUE_BOLD=$'\e[1;34m'
 export MAGENTA_BOLD=$'\e[1;35m'
 export CYAN_BOLD=$'\e[1;36m'
 export WHITE_BOLD=$'\e[1;37m'
+export RESET_BOLD=$'\e[1;0m'
 
 # Use green, underlined text for grep matches
 export GREP_COLOR=$'\e[4;32m'
+
+# Colorize less
+# Color syntax: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
+# termcap(5) man page: <http://linux.die.net/man/5/termcap>
+export LESS_TERMCAP_md="$BLUE_BOLD"	 # start bold mode
+export LESS_TERMCAP_me="$RESET_BOLD" # end modes so, us, mb, md, mr
+export LESS_TERMCAP_so="$CYAN_BOLD"	 # start standout mode
+export LESS_TERMCAP_se="$RESET_BOLD" # end standout mode
+export LESS_TERMCAP_us="$GREEN_BOLD" # start underlining
+export LESS_TERMCAP_ue="$RESET_BOLD" # end underlining
