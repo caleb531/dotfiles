@@ -120,7 +120,13 @@ __update_prompt_command() {
 	fi
 	__detect_python_virtualenv
 
+	# Normally, we can declare the PS1 once outside the PROMPT_COMMAND function.
+	# However, because our PS1 includes dynamic pieces (like the current Git
+	# branch name), we must ensure that __output_ps1 is called after every
+	# command to ensure the PS1 always up-to-date
 	PS1="$(__output_ps1)"
 }
 PROMPT_COMMAND="__update_prompt_command"
+# The PS2 output does not need to be context-aware, meaning we can evaluate it
+# once for the lifetime of the shell
 PS2="$(__output_ps2)"
