@@ -18,7 +18,7 @@ __detect_node_version() {
 
 # Outputs the given ANSI color escape sequence
 __set_color() {
-	printf "%s" "$1"
+	printf "\[%s\]" "$1"
 }
 
 # Reset color escape sequences
@@ -120,7 +120,7 @@ __update_prompt_command() {
 	fi
 	__detect_python_virtualenv
 
+	PS1="$(__output_ps1)"
 }
 PROMPT_COMMAND="__update_prompt_command"
-PS1=$(__output_ps1)
-PS2=$(__output_ps2)
+PS2='$(__output_ps2)'
