@@ -123,4 +123,4 @@ __update_prompt_command() {
 	PS1="$(__output_ps1)"
 }
 PROMPT_COMMAND="__update_prompt_command"
-PS2='$(__output_ps2)'
+PS2="$(__output_ps2)"
