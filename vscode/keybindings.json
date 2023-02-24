@@ -835,5 +835,9 @@
   {
     "key": "cmd+k cmd+p",
     "command": "extension.changeCase.pascal"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "changeEditorIndentation"
   }
 ]
