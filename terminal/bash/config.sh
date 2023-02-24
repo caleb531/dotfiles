@@ -29,6 +29,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 fi
 
+# Load nvm for managing multiple Node versions
 source ~/dotfiles/terminal/bash/load_nvm.sh
 
 # tabtab source for packages (used by pnpm)
