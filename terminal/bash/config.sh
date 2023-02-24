@@ -37,10 +37,3 @@ source ~/dotfiles/terminal/bash/load_nvm.sh
 if [ -f ~/.config/tabtab/bash/__tabtab.bash ]; then
 	source ~/.config/tabtab/bash/__tabtab.bash
 fi
-
-# Set limitations on system resources (uncomment if you experience issues)
-
-# Increase open files limit
-# ulimit -n 1024 2> /dev/null
-# Increase available processes limit
-# ulimit -u 1024 2> /dev/null
