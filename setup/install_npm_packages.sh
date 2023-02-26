@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
 source ~/dotfiles/setup/header.sh
-source ~/dotfiles/terminal/bash/exports.sh
-source ~/dotfiles/terminal/bash/load_fnm.sh
+# Only load the exports and fnm if they are not already loaded (which is only
+# the case when this script is run as executable; if the script is sourced, them
+# everything should already be available, and re-loading things will cause the
+# node version to switch back to the default)
+if ! type node &> /dev/null; then
+	source ~/dotfiles/terminal/bash/exports.sh
+	source ~/dotfiles/terminal/bash/load_fnm.sh
+fi
 
 echo "Installing npm packages (node $(node -v))..."
 preload_npm_pkg_list
