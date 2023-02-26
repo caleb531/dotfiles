@@ -80,7 +80,6 @@ alias pfr='pip freeze > requirements.txt'
 
 # Allow nvm to be used as a shortcut for fnm
 alias nvm='fnm'
-complete -o default -F _fnm nvm 2> /dev/null
 # Allow m typo to point to n node switcher
 alias m='n'
 # Recompile C++ for all relevant npm packages

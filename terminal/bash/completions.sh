@@ -299,6 +299,21 @@ _awp() {
 }
 complete -o default -F _awp awp 2> /dev/null
 
+# Completion function for fnm, a faster alternative to nvm
+_fnm() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'fnm' ] || [ "$prev" == 'nvm' ] || [ "$prev" == 'help' ]; then
+		# Complete increment types for `fnm`
+		COMPREPLY=( $(compgen -W 'alias env exec list list-remote ls ls-remote install unalias uninstall use' -- "$cur") )
+	fi
+
+}
+complete -o default -F _fnm fnm 2> /dev/null
+complete -o default -F _fnm nvm 2> /dev/null
+
 # My personal bump utility, available via pip as bump-anything
 _bump() {
 
