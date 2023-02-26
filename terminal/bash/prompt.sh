@@ -12,7 +12,7 @@ __detect_node_version() {
 	# switch to that node version if it's not already
 	if [[ -n "$nvmrc_contents" && "$(node -v | cut -c2-)" != "$nvmrc_contents" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
 		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
-		fnm use --silent &> /dev/null
+		fnm use &> /dev/null
 	fi
 }
 
