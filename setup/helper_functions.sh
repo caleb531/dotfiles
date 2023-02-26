@@ -37,7 +37,7 @@ is_brew_pkg_installed() {
 }
 
 is_node_version_installed() {
-	[ -d ~/.nvm/versions/node/v"$1" ]
+	[ -d ~/.fnm/node-versions/v"$1" ]
 }
 
 is_npm_pkg_installed() {
@@ -80,7 +80,9 @@ pin_brew_pkg() {
 
 install_node_version() {
 	if ! is_node_version_installed "$1"; then
-		nvm install "$1"
+		fnm install "$1"
+		fnm use "$1"
+		source ~/dotfiles/setup/install_npm_packages.sh
 	fi
 }
 

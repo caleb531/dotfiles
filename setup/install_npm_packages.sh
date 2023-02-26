@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 source ~/dotfiles/setup/header.sh
-# Load in environment variables for brew, nvm, node, etc.
 source ~/dotfiles/terminal/bash/exports.sh
-# Load nvm so that the node and npm commands are available
-source ~/dotfiles/terminal/bash/load_nvm.sh
+source ~/dotfiles/terminal/bash/load_fnm.sh
 
-echo "Installing npm packages..."
+echo "Installing npm packages (node $(node -v))..."
 preload_npm_pkg_list
 
 install_npm_pkg pnpm

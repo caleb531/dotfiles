@@ -42,12 +42,12 @@ mkcd() {
 	cd "${@: -1}" || return
 }
 
-# Ease transition from n to nvm
+# Ease transition from n to fnm
 n() {
 	if [ -n "$1" ]; then
-		nvm use "$1" 2> /dev/null || nvm install "$1"
+		fnm use "$1" 2> /dev/null || fnm install "$1"
 	else
-		nvm list
+		fnm list
 	fi
 }
 

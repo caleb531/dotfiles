@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 source ~/dotfiles/setup/header.sh
-# Load in environment variables for brew, nvm, node, etc.
 source ~/dotfiles/terminal/bash/exports.sh
 
 echo "Installing Homebrew packages..."

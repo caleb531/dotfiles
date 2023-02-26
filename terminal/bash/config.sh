@@ -29,8 +29,9 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 fi
 
-# Load nvm for managing multiple Node versions
-source ~/dotfiles/terminal/bash/load_nvm.sh
+# Load fnm (a significantly-faster alternative to nvm) for managing multiple
+# Node versions
+source ~/dotfiles/terminal/bash/load_fnm.sh
 
 # tabtab source for packages (used by pnpm)
 # uninstall by removing these lines
