@@ -2,6 +2,15 @@
 # completions.sh
 # Caleb Evans
 
+# A helper function used for retrieving the list of npm package names used for
+# autocompletion (works for npm, pnpm, and yarn)
+__get_npm_pkg_names() {
+	local package_json="$(cat package.json)"
+	local dep_list="$(echo "$package_json" | jq '.dependencies | keys[] as $k | $k'  2> /dev/null | xargs)"
+	local dev_dep_list="$(echo "$package_json" | jq '.devDependencies | keys[] as $k | $k' 2> /dev/null | xargs)"
+	echo "$dep_list $dev_dep_list" | xargs
+}
+
 # Completion function for npm, the Node-based package manager
 _npm() {
 
@@ -40,7 +49,7 @@ _pnpm() {
 		COMPREPLY=( $(compgen -W "add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update $npm_script_names" -- "$cur") )
 	elif [ "$second" == 'update' ] || [ "$second" == 'uninstall' ] || [ "$second" == 'remove' ]; then
 		# Complete package names for `pnpm update/uninstall/remove`
-		local pnpm_pkg_list="$(pnpm list | grep -Eo '^([@\/a-z\-]+) ' | xargs)"
+		local pnpm_pkg_list="$(__get_npm_pkg_names)"
 		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
 	elif [ "$prev" == 'audit' ]; then
 		# Complete useful flags for `pnpm audit`
@@ -83,7 +92,7 @@ _ncu() {
 
 	if [ "$prev" == 'ncu' ] || [ "$prev" == '-u' ]; then
 		# Complete installed npm packages for `ncu`
-		local pnpm_pkg_list="$(pnpm list | grep -Eo '^([@\/a-z\-]+) ' | xargs)"
+		local pnpm_pkg_list="$(__get_npm_pkg_names)"
 		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
 	fi
 
