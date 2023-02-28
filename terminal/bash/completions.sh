@@ -35,6 +35,10 @@ _npm() {
 	elif [ "$prev" == 'install' ] || [ "$prev" == 'i' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete common options for `npm install` and `npm uninstall`
 		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- "$cur") )
+	elif [ "$second" == 'update' ] || [ "$second" == 'uninstall' ] || [ "$second" == 'remove' ]; then
+		# Complete package names for `npm update/uninstall/remove`
+		local npm_pkg_list="$(__get_npm_pkg_names)"
+		COMPREPLY=( $(compgen -W "$npm_pkg_list" -- "$cur") )
 	elif [ "$prev" == 'run' ]; then
 		# Complete subcommands for `npm run`
 		local npm_script_names="$(__get_npm_script_names)"
@@ -59,10 +63,6 @@ _pnpm() {
 		# Complete common pnpm commands for `pnpm`
 		local npm_script_names="$(__get_npm_script_names)"
 		COMPREPLY=( $(compgen -W "add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update $npm_script_names" -- "$cur") )
-	elif [ "$second" == 'update' ] || [ "$second" == 'uninstall' ] || [ "$second" == 'remove' ]; then
-		# Complete package names for `pnpm update/uninstall/remove`
-		local pnpm_pkg_list="$(__get_npm_pkg_names)"
-		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
 	elif [ "$prev" == 'audit' ]; then
 		# Complete useful flags for `pnpm audit`
 		COMPREPLY=( $(compgen -W '--fix --prod' -- "$cur") )
