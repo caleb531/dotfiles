@@ -76,6 +76,25 @@ _pnpm() {
 complete -o default -F _pnpm pnpm 2> /dev/null
 
 # Completion function for npx, the Node-based package manager
+_yarn() {
+
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local second=${COMP_WORDS[1]}
+
+	if [ "$prev" == 'yarn' ] || [ "$prev" == 'help' ]; then
+		# Complete common pnpm commands for `pnpm`
+		local npm_script_names="$(__get_npm_script_names)"
+		COMPREPLY=( $(compgen -W "add exec help info init install link list publish remove search show start stop test uninstall unlink update $npm_script_names" -- "$cur") )
+	else
+		_npm "$@"
+	fi
+
+}
+complete -o default -F _yarn yarn 2> /dev/null
+
+# Completion function for npx, the Node-based package manager
 _npx() {
 
 	local cur=${COMP_WORDS[COMP_CWORD]}
