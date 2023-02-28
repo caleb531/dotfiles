@@ -40,7 +40,7 @@ _pnpm() {
 		COMPREPLY=( $(compgen -W "add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update $npm_script_names" -- "$cur") )
 	elif [ "$second" == 'update' ] || [ "$second" == 'uninstall' ] || [ "$second" == 'remove' ]; then
 		# Complete package names for `pnpm update/uninstall/remove`
-		local pnpm_pkg_list="$(pnpm list | grep -Po '^([@\/a-z\-]+)(?= )')"
+		local pnpm_pkg_list="$(pnpm list | grep -Eo '^([@\/a-z\-]+) ' | xargs)"
 		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
 	elif [ "$prev" == 'audit' ]; then
 		# Complete useful flags for `pnpm audit`
@@ -83,7 +83,7 @@ _ncu() {
 
 	if [ "$prev" == 'ncu' ] || [ "$prev" == '-u' ]; then
 		# Complete installed npm packages for `ncu`
-		local pnpm_pkg_list="$(pnpm list | grep -Po '^([@\/a-z\-]+)(?= )')"
+		local pnpm_pkg_list="$(pnpm list | grep -Eo '^([@\/a-z\-]+) ' | xargs)"
 		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
 	fi
 
@@ -210,7 +210,7 @@ _python() {
 		# Convert current query file path (with /) to module path (with .)
 		local curpath="${cur//./\/}"
 		# Get package names matching current query; exclude hidden directories
-		local packages="$(compgen -d -- "$curpath" | grep -Po '([a-z_]+/)*([a-z_]+)\b')"
+		local packages="$(compgen -d -- "$curpath" | grep -Eo '([a-z_]+/)*([a-z_]+)\b')"
 		# Convert Python file paths to package paths
 		packages="${packages//\//.}"
 		if [ -n "$packages" ]; then
@@ -222,7 +222,7 @@ _python() {
 			compopt -o nospace
 		fi
 		# Get module names matching curent query; include only .py files
-		local modules="$(compgen -f -- "$curpath" | grep -Po '([a-z_]+/)*([a-z_]+)\.py')"
+		local modules="$(compgen -f -- "$curpath" | grep -Eo '([a-z_]+/)*([a-z_]+)\.py')"
 		# Convert Python file paths to module paths
 		modules="${modules//\//.}"
 		# Remove .py extension (all module names omit the .py extension)
