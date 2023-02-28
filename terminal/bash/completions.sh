@@ -5,15 +5,21 @@
 # A helper function used for retrieving the list of all npm script names for a
 # particular project (used for autocompletion)
 __get_npm_script_names() {
-	cat package.json | jq '.scripts | keys[] as $k | $k' | xargs
+	cat package.json \
+		| jq '.scripts | keys[] as $k | $k' \
+		| xargs
 }
 
 # A helper function used for retrieving the list of npm package names used for
 # autocompletion (works for npm, pnpm, and yarn)
 __get_npm_pkg_names() {
 	local package_json="$(cat package.json)"
-	local dep_list="$(echo "$package_json" | jq '.dependencies | keys[] as $k | $k'  2> /dev/null | xargs)"
-	local dev_dep_list="$(echo "$package_json" | jq '.devDependencies | keys[] as $k | $k' 2> /dev/null | xargs)"
+	local dep_list="$(echo "$package_json" \
+		| jq '.dependencies | keys[] as $k | $k' 2> /dev/null \
+		| xargs)"
+	local dev_dep_list="$(echo "$package_json" \
+		| jq '.devDependencies | keys[] as $k | $k' 2> /dev/null \
+		| xargs)"
 	echo "$dep_list $dev_dep_list" | xargs
 }
 
