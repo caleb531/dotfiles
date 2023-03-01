@@ -112,6 +112,7 @@ export RESET_BOLD=$'\e[1;0m'
 
 # Use green, underlined text for grep matches
 export GREP_COLOR=$'\e[4;32m'
+export GREP_COLORS='ms=04;32:mc=04;32:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 
 # Colorize less
 # Color syntax: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
