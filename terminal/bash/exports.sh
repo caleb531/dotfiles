@@ -82,7 +82,15 @@ export VIRTUAL_ENV_NAME='.virtualenv'
 # Disable notices for npm updates
 export NO_UPDATE_NOTIFIER=1
 
-# Ignore select Shellcheck errors/warnings
+# Ignore select Shellcheck errors/warnings:
+# - SC1090: Can't follow non-constant source. Use a directive to specify
+#   location.
+# - SC2010: Don't use ls | grep. Use a glob or a for loop with a condition to
+#   allow non-alphanumeric filenames.
+# - SC2120: foo references arguments, but none are ever passed.
+# - SC2155: Declare and assign separately to avoid masking return values.
+# - SC2207: Prefer mapfile or read -a to split command output (or quote to avoid
+#   splitting).
 export SHELLCHECK_OPTS='-e SC1090 -e SC2010 -e SC2120 -e SC2155 -e SC2207'
 
 # Colors
