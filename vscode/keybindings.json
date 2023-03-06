@@ -830,7 +830,7 @@
   {
     "key": "escape",
     "command": "workbench.action.closePanel",
-    "when": "searchViewletFocus"
+    "when": "panelFocus"
   },
   {
     "key": "cmd+k cmd+p",
