@@ -82,16 +82,23 @@ export VIRTUAL_ENV_NAME='.virtualenv'
 # Disable notices for npm updates
 export NO_UPDATE_NOTIFIER=1
 
-# Ignore select Shellcheck errors/warnings:
+# Ignore select Shellcheck errors/warnings; make sure to also update
+# vscode/settings.json (shellcheck.exclude setting) with any changes you make
+# here.
 # - SC1090: Can't follow non-constant source. Use a directive to specify
 #   location.
-# - SC2010: Don't use ls | grep. Use a glob or a for loop with a condition to
+# - SC1091: Not following: (error message here)
+# - SC2002: Useless cat. Consider cmd < file | .. or cmd file | .. instead. -
+# SC2010: Don't use ls | grep. Use a glob or a for loop with a condition to
 #   allow non-alphanumeric filenames.
+# - SC2012: Use find instead of ls to better handle non-alphanumeric filenames.
 # - SC2120: foo references arguments, but none are ever passed.
 # - SC2155: Declare and assign separately to avoid masking return values.
 # - SC2207: Prefer mapfile or read -a to split command output (or quote to avoid
 #   splitting).
-export SHELLCHECK_OPTS='-e SC1090 -e SC2010 -e SC2120 -e SC2155 -e SC2207'
+# - SC2181: Check exit code directly with e.g. if mycmd;, not indirectly with
+#   $?.
+export SHELLCHECK_OPTS='-e SC1090 -e SC1091 -e SC2002 -e SC2010 -e SC2012 -e SC2120 -e SC2155 -e SC2207 -e SC2181'
 
 # Colors
 # ANSI color reference: <http://www.termsys.demon.co.uk/vtansi.htm#colors>
