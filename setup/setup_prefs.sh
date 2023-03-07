@@ -45,6 +45,7 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 echo "- Re-enable 'Save As' menu item"
+# shellcheck disable=SC2016
 defaults write -globalDomain NSUserKeyEquivalents -dict-add 'Save As...' '@$S'
 
 echo "- Automatically quit printer app when print jobs complete"
