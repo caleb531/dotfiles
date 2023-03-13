@@ -130,7 +130,8 @@ alias restart-gpg='gpgconf --kill gpg-agent'
 # vice-versa)
 alias xcode-switch-xcode='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
 alias xcode-switch-clt='sudo xcode-select --switch /Library/Developer/CommandLineTools'
-# Remove Apple CLI tools so they can be reinstalled fresh
+# Remove Apple CLI
+ tools so they can be reinstalled fresh
 alias xcode-uninstall-tools='sudo rm -ri "$(xcode-select --print-path)"'
 
 # Create several aliases for 'code' misspellings
@@ -139,6 +140,7 @@ alias codel='code'
 alias cide='code'
 alias cod='code'
 alias coe='code'
+alias ciode='code'
 
 # Remap 'killall' to 'ka'
 alias ka='killall'
