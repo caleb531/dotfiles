@@ -86,5 +86,8 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 	bs() {
 		__b_sub start "$@"
 	}
+	bso() {
+		__b_sub start --open "$@"
+	}
 
 fi
