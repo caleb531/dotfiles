@@ -137,7 +137,7 @@
     "prefix": "ifmain",
     "body": [
       "if __name__ == '__main__':",
-      "\t${1:pass}"
+      "\t${1:main()}"
     ]
   }
 }
