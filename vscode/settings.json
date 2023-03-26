@@ -271,5 +271,6 @@
   "search.exclude": {
     "**/.svelte-kit": true
   },
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.editor.splitOnDragAndDrop": false
 }
