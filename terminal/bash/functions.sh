@@ -228,7 +228,8 @@ makerun() {
 clonecd() {
 	git clone "$@"
 	if [ $? == 0 ]; then
-		cd "$(basename "$1" .git)" || return
+		local repo_name="$(basename "$1" .git)"
+		cd "${2:-$repo_name}" || return
 	fi
 }
 
