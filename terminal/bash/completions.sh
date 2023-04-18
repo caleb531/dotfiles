@@ -63,6 +63,9 @@ _pnpm() {
 		# Complete common pnpm commands for `pnpm`
 		local npm_script_names="$(__get_npm_script_names)"
 		COMPREPLY=( $(compgen -W "add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update $npm_script_names" -- "$cur") )
+	elif [ "$second" == '-s' ]; then
+		local npm_script_names="$(__get_npm_script_names)"
+		COMPREPLY=( $(compgen -W "$npm_script_names" -- "$cur") )
 	elif [ "$prev" == 'audit' ]; then
 		# Complete useful flags for `pnpm audit`
 		COMPREPLY=( $(compgen -W '--fix --prod' -- "$cur") )
