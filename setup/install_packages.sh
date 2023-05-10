@@ -33,7 +33,7 @@ install_brew_pkg git
 install_brew_pkg diff-so-fancy
 
 install_brew_pkg openssl
-install_brew_pkg python-tk
+install_brew_pkg python
 
 install_brew_pkg ssh-copy-id
 
