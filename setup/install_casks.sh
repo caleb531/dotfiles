@@ -19,6 +19,7 @@ install_cask zoom
 install_cask microsoft-teams
 install_cask postman
 install_cask signal
+install_cask whatsapp
 # Least-essential apps
 install_cask appcleaner
 install_cask imageoptim
