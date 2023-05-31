@@ -22,11 +22,24 @@
       "slot": "slot/",
       "svg": "svg[viewBox]",
       "circle": "circle[cx][cy][r]/",
+      "clipPath": "clipPath[id]",
       "ellipse": "ellipse[cx][cy][rx][ry]/",
+      "image": "image[xlink:href][x][y][width][height]/",
       "line": "line[x1][y1][x2][y2]/",
+      "linearGradient": "linearGradient[id]",
+      "marker": "marker[id][markerWidth][markerHeight][refX][refY][orient]",
+      "mask": "mask[id]",
+      "path": "path[d]/",
+      "pattern": "pattern[id][x][y][width][height][patternUnits=userSpaceOnUse]",
       "polygon": "polygon[points]/",
       "polyline": "polyline[points]/",
-      "rect": "rect[x][y][width][height]/"
+      "radialGradient": "radialGradient[id]",
+      "rect": "rect[x][y][width][height]/",
+      "stop": "stop[offset][stop-color]/",
+      "symbol": "symbol[id][viewBox]",
+      "text": "text[x][y]",
+      "textPath": "textPath[xlink:href]",
+      "use": "use[xlink:href][x][y]/"
     }
   },
   "php": {
