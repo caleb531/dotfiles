@@ -126,7 +126,8 @@
     "requirements.txt": "properties",
     "gitignore_global": "ignore",
     "*.toml": "ini",
-    ".env*": "properties"
+    ".env*": "properties",
+    ".vercelignore": "ignore"
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
