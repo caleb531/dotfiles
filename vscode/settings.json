@@ -273,5 +273,6 @@
     "**/.svelte-kit": true
   },
   "git.openRepositoryInParentFolders": "never",
-  "workbench.editor.splitOnDragAndDrop": false
+  "workbench.editor.splitOnDragAndDrop": false,
+  "editor.linkedEditing": true
 }
