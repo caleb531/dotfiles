@@ -240,6 +240,11 @@
 	# Zip a WordPress plugin or theme
 	zip-wordpress = !zip -r $1 * -x node_modules/ -x node_modules/**\\*
 
+# Increase max size of buffer for pushes/pulls (e.g. for large repositories like
+# raycast/extensions)
+[http]
+	postBuffer = 157286400
+
 # Include user-specific git config specific to the current machine
 [include]
 	path = ~/user.inc.gitconfig
