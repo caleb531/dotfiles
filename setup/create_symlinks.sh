@@ -14,7 +14,7 @@ ln -sf ~/dotfiles/terminal/.hyper.js ~/.hyper.js
 ln -sf ~/dotfiles/terminal/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/terminal/.sqliterc ~/.sqliterc
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
-cp -n ~/dotfiles/git/default-user.inc.gitconfig ~/user.inc.gitconfig
+cp -n ~/dotfiles/git/default-user.inc.gitconfig ~/user.inc.gitconfig 2> /dev/null
 ln -sf ~/Library/Containers/com.pixelresearchlabs.osx.ringer/Data/Documents/Ringer ~/Music/Ringer
 
 # Symlink pip configuration
