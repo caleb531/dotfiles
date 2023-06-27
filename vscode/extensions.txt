@@ -36,6 +36,7 @@ svelte.svelte-vscode
 timonwong.shellcheck
 tommasov.hosts
 v4run.transpose
+vincaslt.highlight-matching-tag
 waderyan.gitblame
 wmaurer.change-case
 XadillaX.viml
