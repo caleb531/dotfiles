@@ -839,5 +839,15 @@
   {
     "key": "shift+cmd+i",
     "command": "changeEditorIndentation"
+  },
+  {
+    "key": "alt+cmd+e",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "f2",
+    "command": "-editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   }
 ]
