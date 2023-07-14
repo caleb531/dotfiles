@@ -151,11 +151,18 @@
   "explorer.autoReveal": "focusNoScroll",
   "workbench.colorCustomizations": {
     "[Monokai]": {
-      "tab.inactiveBackground": "#1E1F1C",
+      "titleBar.activeBackground": "#1e1f1c",
+      "editorGroupHeader.tabsBackground": "#1e1f1c",
+      "sideBar.background": "#1e1f1c",
+      "menu.background": "#1e1f1c",
+      "dropdown.background": "#1e1f1c",
+      "tab.inactiveBackground": "#1e1f1c",
       "tab.inactiveForeground": "#90908a",
       "tab.activeBackground": "#34352f",
       "tab.activeForeground": "#f8f8f2",
-      "breadcrumb.background": "#34352f"
+      "breadcrumb.background": "#34352f",
+      "editor.background": "#272822",
+      "activityBar.background": "#272822"
     }
   },
   "editor.rulers": [80],
