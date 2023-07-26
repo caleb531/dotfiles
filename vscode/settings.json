@@ -125,7 +125,6 @@
     "httpd-*.conf": "apacheconf",
     "requirements.txt": "properties",
     "gitignore_global": "ignore",
-    "*.toml": "ini",
     ".env*": "properties",
     ".vercelignore": "ignore"
   },
