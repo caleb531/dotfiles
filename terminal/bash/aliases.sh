@@ -77,6 +77,8 @@ alias pir='pip install -r requirements.txt'
 # Record installed Python packages
 alias pf='pip freeze'
 alias pfr='pip freeze > requirements.txt'
+# Build wheel and source tarball for Python package
+alias build='python -m build --sdist --wheel --outdir dist/ .'
 
 # Allow nvm to be used as a shortcut for fnm
 alias nvm='fnm'
