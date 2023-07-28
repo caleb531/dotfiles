@@ -21,6 +21,8 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['jekyll:build']='jekyll build'
 		['jekyll:develop']='jekyll serve'
 		['jekyll:watch']='jekyll build --watch'
+
+		['python-build:build']='python -m build --sdist --wheel --outdir dist/ .'
 	)
 
 	# Run the given build tool command name and subcommand
@@ -52,6 +54,9 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		elif __is_node_project; then
 			# shellcheck disable=SC2086
 			__b node "$action" $args
+		elif __is_python_build_project; then
+			# shellcheck disable=SC2086
+			__b python-build "$action" $args
 		else
 			>&2 echo "project type not recognized"
 		fi
