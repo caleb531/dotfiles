@@ -456,6 +456,7 @@ _bump() {
 
 }
 complete -o default -F _bump bump 2> /dev/null
+complete -o default -F _bump bump-anything 2> /dev/null
 
 # Enable completions for aliases for 'git'
 if type __git_complete &> /dev/null; then
