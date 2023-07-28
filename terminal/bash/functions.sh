@@ -246,6 +246,15 @@ clonecd() {
 	fi
 }
 
+# Pull from main/master into the current branch
+gpom() {
+	if git rev-parse --verify master &> /dev/null; then
+		git pull origin master
+	else
+		git pull origin main
+	fi
+}
+
 # Pat on the back
 pat() {
 	cowsay 'You did a good job!'
