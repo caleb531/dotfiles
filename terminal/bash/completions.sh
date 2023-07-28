@@ -448,8 +448,8 @@ _bump() {
 
 	if [ "$prev" == 'bump' ]; then
 		# Complete increment types for `bump`
-		COMPREPLY=( $(compgen -W 'major minor patch' -- "$cur") )
-	elif [ "$second" == 'major' ] || [ "$second" == 'minor' ] || [ "$second" == 'patch' ]; then
+		COMPREPLY=( $(compgen -W 'major minor patch prerelease' -- "$cur") )
+	elif [ "$second" == 'major' ] || [ "$second" == 'minor' ] || [ "$second" == 'patch' ] || [ "$second" == 'prerelease' ]; then
 		# Complete file/directory paths for any argument after first
 		COMPREPLY=()
 	fi
