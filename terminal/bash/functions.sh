@@ -42,6 +42,19 @@ mkcd() {
 	cd "${@: -1}" || return
 }
 
+# Jump to the root directory of the current project (based on .git)
+rootdir() {
+	local path="$PWD"
+	while [[ "$path" != '/' ]]; do
+		if [ -d "$path"/.git ]; then
+			cd "$path" || return 1
+			return 0
+		fi
+		path="$(dirname "$path")"
+	done
+	return 1
+}
+
 # Ease transition from n to fnm
 n() {
 	if [ -n "$1" ]; then
