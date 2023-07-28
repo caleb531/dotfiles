@@ -68,37 +68,37 @@ _brew() {
 
 	if [ "$prev" == 'brew' ] || [ "$prev" == 'help' ]; then
 		# Complete common brew commands for `brew`
-		COMPREPLY=( $(compgen -W 'cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove search switch tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- $cur) )
+		COMPREPLY=( $(compgen -W 'cleanup deps doctor help info install leaves link linkapps outdated pin prune reinstall remove search switch tap uninstall unlink unlinkapps unpin untap update upgrade uses' -- "$cur") )
 	elif [ "$second" == 'list' ] || [ "$second" == 'ls' ]; then
 		# Complete list options for `brew list` and `brew ls`
-		COMPREPLY=( $(compgen -W "--full-name --pinned --multiple --versions $(__get_installed_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "--full-name --pinned --multiple --versions $(__get_installed_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'reinstall' ] || [ "$second" == 'remove' ] || [ "$second" == 'rm' ] || [ "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew package removal commands
-		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'cleanup' ]; then
 		# Complete options and installed packages for `brew cleanup`
-		COMPREPLY=( $(compgen -W "--dry-run $(__get_installed_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "--dry-run $(__get_installed_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'pin' ] || [ "$second" == 'unpin' ]; then
 		# Complete installed packages for brew pin commands
-		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'untap' ]; then
 		# Complete all installed taps for `brew tap`
-		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(__get_brew_taps)" -- "$cur") )
 	elif [ "$second" == 'upgrade' ]; then
 		# Complete options and installed packages for `brew upgrade`
-		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'install' ] || [ "$second" == 'info' ]; then
 		# Complete all available packages for `brew install`
-		COMPREPLY=( $(compgen -W "$(__get_all_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(__get_all_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'deps' ] || [ "$second" == 'uses' ]; then
 		# Complete options and all available packages for `brew deps` and `brew uses`
-		COMPREPLY=( $(compgen -W "--installed $(__get_all_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "--installed $(__get_all_brew_packages)" -- "$cur") )
 	elif [ "$prev" == 'switch' ]; then
 		# Complete installed package names for first argument of `brew switch`
-		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'switch' ]; then
 		# Complete package versions for second argument of `brew switch`
-		COMPREPLY=( $(compgen -W "$(__get_brew_package_versions "$prev")" -- $cur) )
+		COMPREPLY=( $(compgen -W "$(__get_brew_package_versions "$prev")" -- "$cur") )
 	fi
 
 }
