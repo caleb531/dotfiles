@@ -142,3 +142,6 @@ alias ciode='code'
 
 # Remap 'killall' to 'ka'
 alias ka='killall'
+
+# Alias `bump-anything` to `version`
+alias version='bump-anything'
