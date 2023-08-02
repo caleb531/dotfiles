@@ -1,7 +1,22 @@
 {
-  "react component": {
+  "react component (arrow function(": {
     "scope": "javascriptreact,typescriptreact",
-    "prefix": "component",
+    "prefix": "componentar",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${1:$TM_FILENAME_BASE} = ($2) => {",
+      "\treturn (",
+      "\t\t${3:<div></div>}",
+      "\t);",
+      "};",
+      "",
+      "export default $1;"
+    ]
+  },
+  "react component (function definition)": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": "componentfd",
     "body": [
       "import React from 'react';",
       "",
