@@ -12,6 +12,7 @@ jeff-hykin.better-shellscript-syntax
 jock.svg
 kevinglasson.cornflakes-linter
 luggage66.AWK
+Malo.copy-json-path
 matangover.mypy
 mathematic.vscode-latex
 mattn.Lisp
