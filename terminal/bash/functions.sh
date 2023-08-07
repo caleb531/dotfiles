@@ -154,7 +154,7 @@ mre() {
 # Run Node/Python tests with Nose test runner
 rt() {
 	if [ -f package.json ]; then
-		npm test "$@"
+		npm test -- "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
 		nose2 --quiet "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
