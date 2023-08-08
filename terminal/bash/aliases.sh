@@ -92,6 +92,8 @@ alias create-svelte='pnpm create svelte@latest'
 
 # Shortcut to start jest-preview server
 alias jest-preview='pnpm exec jest-preview'
+# Shortcut to supabase CLI
+alias supabase='pnpm exec supabase'
 
 # Git
 alias gi='git'
