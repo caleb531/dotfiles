@@ -170,7 +170,7 @@ rt() {
 # Run Node/Python tests with coverage report
 cov() {
 	if [ -f package.json ]; then
-		npm run coverage "$@"
+		npm run coverage -- "$@"
 	elif [ -f .python-version ]; then
 		if [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
 			coverage run -m nose2 --quiet "$@"
