@@ -314,7 +314,17 @@
   "svg.preview.mode": "svg",
   "latex.linter.enabled": false,
   "javascript.validate.enable": false,
-  "shellcheck.exclude": ["SC1090", "SC1091", "SC2002", "SC2010", "SC2012", "SC2120", "SC2155", "SC2207", "SC2181"],
+  "shellcheck.exclude": [
+    "SC1090",
+    "SC1091",
+    "SC2002",
+    "SC2010",
+    "SC2012",
+    "SC2120",
+    "SC2155",
+    "SC2207",
+    "SC2181"
+  ],
   "css.lint.validProperties": ["alignment-baseline"],
   "scss.lint.validProperties": ["alignment-baseline"],
   "editor.guides.indentation": false,
