@@ -853,5 +853,15 @@
   {
     "key": "ctrl+alt+cmd+c",
     "command": "copy-json-path.copy"
+  },
+  {
+    "key": "alt+cmd+w",
+    "command": "toggleFindWholeWord",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "alt+cmd+w",
+    "command": "toggleSearchWholeWord",
+    "when": "searchViewletFocus"
   }
 ]
