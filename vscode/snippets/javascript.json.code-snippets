@@ -341,11 +341,18 @@
       "encodeURI($1)"
     ]
   },
-  "istanbul ignore": {
+  "istanbul ignore next": {
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
-    "prefix": "istanbulignore",
+    "prefix": "istanbulignorenext",
     "body": [
       "/* istanbul ignore next */"
+    ]
+  },
+  "istanbul ignore file": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "istanbulignorefile",
+    "body": [
+      "/* istanbul ignore file */"
     ]
   }
 }
