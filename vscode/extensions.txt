@@ -5,6 +5,7 @@ dcortes92.FreeMarker
 DigitalBrainstem.javascript-ejs-support
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
+formulahendry.auto-rename-tag
 Gruntfuggly.triggertaskonsave
 gurumukhi.selected-lines-count
 idleberg.applescript
@@ -38,6 +39,7 @@ timonwong.shellcheck
 tommasov.hosts
 v4run.transpose
 vincaslt.highlight-matching-tag
+vunguyentuan.vscode-css-variables
 waderyan.gitblame
 wmaurer.change-case
 XadillaX.viml
