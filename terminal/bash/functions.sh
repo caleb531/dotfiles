@@ -166,6 +166,14 @@ rt() {
 		return 1
 	fi
 }
+rtw() {
+	if [ -f package.json ]; then
+		npm test -- --watch "$@"
+	else
+		>&2 echo "${FUNCNAME[0]}: the watch mode for rt only works for Jest projects"
+		return 1
+	fi
+}
 
 # Run Node/Python tests with coverage report
 cov() {
