@@ -71,6 +71,8 @@
 	ama = am --abort
 	# Apply patch, storing conflicts in .rej files
 	applyr = apply --reject
+	# Get a bullet-list changelog of commits compared to another branch
+	changelog = log --pretty=format:'- %s' --reverse
 	# Apply a commit to the working directory
 	chp = cherry-pick
 	chpa = cherry-pick --abort
