@@ -204,9 +204,9 @@ _ncu() {
 
 	local cur=${COMP_WORDS[COMP_CWORD]}
 	local prev=${COMP_WORDS[COMP_CWORD-1]}
-	local second=${COMP_WORDS[1]}
+	local first=${COMP_WORDS[0]}
 
-	if [ "$prev" == 'ncu' ] || [ "$second" == '-u' ]; then
+	if [ "$first" == 'ncu' ]; then
 		# Complete installed npm packages for `ncu`
 		local pnpm_pkg_list="$(__get_npm_pkg_names)"
 		COMPREPLY=( $(compgen -W "$pnpm_pkg_list" -- "$cur") )
