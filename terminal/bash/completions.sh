@@ -14,8 +14,6 @@ __get_brew_taps() {
 	done
 }
 
-# The pattern used for matching Homebrew package/cask names
-BREW_NAME_PATT='[a-z0-9\-]+(?=\.rb)'
 # The directory containing all Homebrew taps
 BREW_TAPS_DIR="$BREW_PREFIX"/Library/Taps
 
@@ -29,11 +27,6 @@ __get_brew_package_versions() {
 	if [ -d "$BREW_PREFIX"/Cellar/"$1" ]; then
 		ls -1 "$BREW_PREFIX"/Cellar/"$1"
 	fi
-}
-
-# Retrieve list of all available Homebrew packages
-__get_all_brew_packages() {
-	ls "$BREW_TAPS_DIR"/homebrew/*/Formula "$BREW_TAPS_DIR"/homebrew/*/Casks | grep -oP "$BREW_NAME_PATT"
 }
 
 # A helper function used for retrieving the list of all npm script names for a
@@ -87,12 +80,9 @@ _brew() {
 	elif [ "$second" == 'upgrade' ]; then
 		# Complete options and installed packages for `brew upgrade`
 		COMPREPLY=( $(compgen -W "--all --cleanup $(__get_installed_brew_packages)" -- "$cur") )
-	elif [ "$second" == 'install' ] || [ "$second" == 'info' ]; then
-		# Complete all available packages for `brew install`
-		COMPREPLY=( $(compgen -W "$(__get_all_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'deps' ] || [ "$second" == 'uses' ]; then
 		# Complete options and all available packages for `brew deps` and `brew uses`
-		COMPREPLY=( $(compgen -W "--installed $(__get_all_brew_packages)" -- "$cur") )
+		COMPREPLY=( $(compgen -W "--installed" -- "$cur") )
 	elif [ "$prev" == 'switch' ]; then
 		# Complete installed package names for first argument of `brew switch`
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- "$cur") )
