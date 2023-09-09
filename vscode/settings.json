@@ -358,5 +358,6 @@
   },
   "git.openRepositoryInParentFolders": "never",
   "workbench.editor.splitOnDragAndDrop": false,
-  "editor.linkedEditing": true
+  "editor.linkedEditing": true,
+  "window.commandCenter": false
 }
