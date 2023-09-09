@@ -219,6 +219,10 @@
 	stashp = stash pop
 	# List all stashes
 	stashl = stash list
+	# Show details for a particular stash
+	stashs = stash show
+	# Show details (with contents) for a particular stash
+	stashsp = stash show -p
 	# Stash changes, including untracked files
 	stashu = stash -u
 	# Clone submodule repositories into their respective directories if empty
