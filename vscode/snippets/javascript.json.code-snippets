@@ -3,7 +3,7 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "for",
     "body": [
-      "for (${1|var,let|} ${2:i} = ${3:0}; ${2:i} < ${4:end}; ${2:i} += ${5:1}) {",
+      "for (${1|let,var|} ${2:i} = ${3:0}; ${2:i} < ${4:end}; ${2:i} += ${5:1}) {",
       "\t$6",
       "}"
     ]
@@ -12,11 +12,20 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "forin",
     "body": [
-      "for (${1|var,let|} ${2:key} in ${3:object}) {",
+      "for (${1|const,let,var|} ${2:key} in ${3:object}) {",
       "\tif Object.prototype.hasOwnProperty.call(${4:object}, ${2:key})) {",
-      "\t\t$3",
+      "\t\t$5",
       "\t}",
       "}"
+    ]
+  },
+  "for..of": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "forof",
+    "body": [
+      "for (${1|const,let,var|} ${2:key} of ${3:object}) {",
+      "\t$4",
+      "}",
     ]
   },
   "function declaration": {
