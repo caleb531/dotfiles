@@ -65,6 +65,9 @@ _brew() {
 	elif [ "$second" == 'list' ] || [ "$second" == 'ls' ]; then
 		# Complete list options for `brew list` and `brew ls`
 		COMPREPLY=( $(compgen -W "--full-name --pinned --multiple --versions $(__get_installed_brew_packages)" -- "$cur") )
+	elif [ "$second" == 'install' ]; then
+		# Complete list options for `brew install`
+		COMPREPLY=( $(compgen -W "--cask --formula --force --dry-run --verbose $(brew search /^"$cur"/ | xargs)" -- "$cur") )
 	elif [ "$second" == 'reinstall' ] || [ "$second" == 'remove' ] || [ "$second" == 'rm' ] || [ "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew package removal commands
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- "$cur") )
