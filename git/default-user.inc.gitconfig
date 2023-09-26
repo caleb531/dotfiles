@@ -5,7 +5,15 @@
 [user]
 	name = Caleb Evans
 	email = caleb@calebevans.me
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBBG2KZkyxeK+gYawtDnXFISyAz/smSGtjv1NmF1ljYx
 
-# Decide whether or not commits are signed using the user's GPG keypair
+# Configure Git to sign commits using SSH key
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
 [commit]
 	gpgsign = true

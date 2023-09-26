@@ -2,18 +2,11 @@
 
 # These settings apply to all hosts
 Host *
-	# SSH protocol v2 looks for more than just ~/.ssh/id_rsa every time you
-	# connect, even if id_rsa is your only key; explicitly declaring id_rsa as
-	# the sole IdentityFile eliminates the redundant checks
-	IdentityFile ~/.ssh/id_rsa
+	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 	# Fix OpenSSH vulnerabilities CVE-2016-0777 and CVE-2016-0778
 	UseRoaming no
 	# Disable GSSAPI auth since SSH keys are preferred for authentication
 	GSSAPIAuthentication no
-	# Load SSH key from Keychain as needed
-	# See https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain
-	AddKeysToAgent yes
-	UseKeychain yes
 
 # Use SSH (and a separate key) for all job-related Git work
 Host github.com
