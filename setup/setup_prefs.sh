@@ -146,6 +146,9 @@ echo "- Set bottom right hot corner to show/hide desktop"
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
 
+echo "- Disable clicking wallpaper to show desktop"
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
 echo "- Enable spring loading for all Dock items"
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
