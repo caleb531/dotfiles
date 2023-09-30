@@ -126,7 +126,8 @@
     "requirements.txt": "properties",
     "gitignore_global": "ignore",
     ".env*": "properties",
-    ".vercelignore": "ignore"
+    ".vercelignore": "ignore",
+    "*.peggy": "pegjs"
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
