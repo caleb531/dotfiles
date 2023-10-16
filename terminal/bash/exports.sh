@@ -29,6 +29,9 @@ export PATH="$BREW_PREFIX"/opt/gpg-agent/bin:"$PATH"
 # pnpm global store
 export PNPM_HOME="/Users/caleb/Library/pnpm"
 export PATH="$PNPM_HOME":"$PATH"
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL"/bin:"$PATH"
 # Jekyll
 export PATH="$BREW_PREFIX"/opt/ruby/bin:"$PATH"
 if [ -d "$BREW_PREFIX"/lib/ruby/gems/3.1.0 ]; then
