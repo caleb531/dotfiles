@@ -346,3 +346,18 @@ pr() {
 		>&2 echo "PR URL is empty"
 	fi
 }
+
+# Integrate changes by merging them into a target branch (default: main) and
+# then switching back to the original branch; if there is an error at any point
+# along the way (e.g. merge conflicts), the function will stop in its place and
+# allow you to resolve; when you are ready to continue, you can simply run the
+# `int` command again
+int() {( # The subshell is necessary to ensure the `set -e` call is cleaned up
+	set -e # Abort function immediately if an error is encountered
+	INT_ORIG_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+	git checkout "${1:-main}"
+	git pull
+	git merge "$INT_ORIG_BRANCH"
+	git push
+	git checkout "$INT_ORIG_BRANCH"
+)}
