@@ -5,7 +5,7 @@
 [user]
 	name = Caleb Evans
 	email = caleb@calebevans.me
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBBG2KZkyxeK+gYawtDnXFISyAz/smSGtjv1NmF1ljYx
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPQpkUQ4/swowXhU89YyraCDry4RYjiBl5dI5LiDXH8J
 
 # Configure Git to sign commits using SSH key
 
