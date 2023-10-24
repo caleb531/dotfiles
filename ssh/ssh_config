@@ -7,9 +7,3 @@ Host *
 	UseRoaming no
 	# Disable GSSAPI auth since SSH keys are preferred for authentication
 	GSSAPIAuthentication no
-
-# Use SSH (and a separate key) for all job-related Git work
-Host github.com
-	IdentityFile ~/.ssh/modeln_rsa
-Host bitbucket.org
-	IdentityFile ~/.ssh/modeln_rsa
