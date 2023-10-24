@@ -1,0 +1,6 @@
+# 1Password SSH Agent Configuration
+# (<https://developer.1password.com/docs/ssh/agent/config/>)
+
+# Only expose keys from the specified vault
+[[ssh-keys]]
+vault = "Personal"

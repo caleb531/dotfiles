@@ -26,6 +26,8 @@ ln -sf ~/dotfiles/terminal/pip.conf ~/Library/Application\ Support/pip/pip.conf
 # Symlink SSH configuration
 mkdir -p ~/.ssh
 ln -sf ~/dotfiles/ssh/ssh_config ~/.ssh/config
+mkdir -p ~/.config/1Password/ssh
+cp -n ~/dotfiles/ssh/default-1p-agent.toml ~/.config/1Password/ssh/agent.toml 2> /dev/null
 
 # Symlink GPG configuration
 mkdir -p ~/.gnupg
