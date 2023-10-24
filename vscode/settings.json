@@ -360,5 +360,6 @@
   "git.openRepositoryInParentFolders": "never",
   "workbench.editor.splitOnDragAndDrop": false,
   "editor.linkedEditing": true,
-  "window.commandCenter": false
+  "window.commandCenter": false,
+  "workbench.editor.empty.hint": "hidden"
 }
