@@ -67,6 +67,12 @@ fi
 export GPG_BIN_DIR=~/.gnupg/bin
 export GPG_TTY=$(tty)
 
+# Enable `ssh-add -L` to read SSH keys correctly from 1Password's SSH agent,
+# since it cannot seem to read IdentityAgent from my SSH config; for more
+# details, see:
+# <https://1password.community/discussion/127296/ssh-copy-id-functionality>
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
 # Number of lines of command history to keep in memory
 export HISTSIZE=250
 # Number of lines of command history to keep in file
