@@ -108,7 +108,8 @@ _npm() {
 		COMPREPLY=( $(compgen -W 'add audit cache exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update' -- "$cur") )
 	elif [ "$prev" == 'install' ] || [ "$prev" == 'i' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete common options for `npm install` and `npm uninstall`
-		COMPREPLY=( $(compgen -W '--global --save --save-dev' -- "$cur") )
+		local npm_pkg_list="$(__get_npm_pkg_names)"
+		COMPREPLY=( $(compgen -W "--global --save --save-dev $npm_pkg_list" -- "$cur") )
 	elif [ "$second" == 'update' ] || [ "$second" == 'uninstall' ] || [ "$second" == 'remove' ]; then
 		# Complete package names for `npm update/uninstall/remove`
 		local npm_pkg_list="$(__get_npm_pkg_names)"
