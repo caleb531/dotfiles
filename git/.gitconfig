@@ -146,6 +146,8 @@
 	logo = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(green)(%cr)'
 	# List commits with code changes containing the given string
 	logs = log -S
+	# Copy to the clipboard the full given commit SHA
+	long = !git rev-parse $@ | xargs echo -n | pbcopy
 	# List all tracked files, relative to the current directory
 	ls = "!f() { git ls-tree -r --name-status ${1:-HEAD}; }; f"
 	# Managing merges
