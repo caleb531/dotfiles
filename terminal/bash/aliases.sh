@@ -142,6 +142,7 @@ alias cide='code'
 alias cod='code'
 alias coe='code'
 alias ciode='code'
+alias cdoe='code'
 
 # Remap 'killall' to 'ka'
 alias ka='killall'
