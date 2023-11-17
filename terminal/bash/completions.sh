@@ -50,6 +50,12 @@ __get_npm_pkg_names() {
 	echo "$dep_list $dev_dep_list" | xargs
 }
 
+# Retrieve a flat list of all local Git branches
+__get_git_branches() {
+	# Apparently, using -E instead of -P causes dashes to get stripped out
+	git branch | grep -Pio '[a-z0-9_\-\/\.]+' | xargs
+}
+
 # Completion function for brew, the macOS package manager
 _brew() {
 
@@ -452,6 +458,22 @@ _bump() {
 }
 complete -o default -F _bump bump 2> /dev/null
 complete -o default -F _bump bump-anything 2> /dev/null
+
+# My custom Git alias for `git pull origin`, which should complete branch names
+_gpo() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local first=${COMP_WORDS[0]}
+	local second=${COMP_WORDS[1]}
+
+	if [ "$prev" == 'gpo' ]; then
+		# Complete increment types for `gpo`
+		COMPREPLY=( $(compgen -W "$(__get_git_branches)" -- "$cur") )
+	fi
+
+}
+complete -o default -F _gpo gpo 2> /dev/null
 
 # Enable completions for aliases for 'git'
 if type __git_complete &> /dev/null; then
