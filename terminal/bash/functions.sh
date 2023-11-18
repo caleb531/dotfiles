@@ -352,12 +352,19 @@ pr() {
 # along the way (e.g. merge conflicts), the function will stop in its place and
 # allow you to resolve; when you are ready to continue, you can simply run the
 # `int` command again
-int() {( # The subshell is necessary to ensure the `set -e` call is cleaned up
-	set -e # Abort function immediately if an error is encountered
-	INT_ORIG_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-	git checkout "${1:-main}"
-	git pull
-	git merge "$INT_ORIG_BRANCH"
-	git push
-	git checkout "$INT_ORIG_BRANCH"
-)}
+int() {
+	# If the last run of the `int` command completed successfully, then store
+	# the original branch name until all steps of the integration process have
+	# successfully completed
+	if [ -z "$INT_ORIG_BRANCH" ]; then
+		INT_ORIG_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+	fi
+	git checkout "${1:-main}" || return $?
+	git pull || return $?
+	git merge "$INT_ORIG_BRANCH" || return $?
+	git push || return $?
+	git checkout "$INT_ORIG_BRANCH" || return $?
+	# Unset the stored original branch name now that we've reached the end of
+	# the integration process
+	INT_ORIG_BRANCH=''
+}
