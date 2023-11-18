@@ -323,10 +323,7 @@ ssd() {
 
 # Create a pull request on Bitbucket or GitHub
 pr() {
-	git push
-	if [ $? != 0 ]; then
-		return
-	fi
+	git push || return $?
 	local branch_name="$(git rev-parse --abbrev-ref HEAD)"
 	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
 	if echo "$repo_url" | grep -Fq 'bitbucket.org'; then
