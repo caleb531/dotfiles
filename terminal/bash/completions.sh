@@ -53,7 +53,7 @@ __get_npm_pkg_names() {
 # Retrieve a flat list of all local Git branches
 __get_git_branches() {
 	# Apparently, using -E instead of -P causes dashes to get stripped out
-	git branch | grep -Pio '[a-z0-9_\-\/\.]+' | xargs
+	git branch "$@" | grep -Pio '[a-z0-9_][a-z0-9_\-\/\.]*' | xargs
 }
 
 # Completion function for brew, the macOS package manager
@@ -469,7 +469,7 @@ _gpo() {
 
 	if [ "$prev" == 'gpo' ]; then
 		# Complete increment types for `gpo`
-		COMPREPLY=( $(compgen -W "$(__get_git_branches)" -- "$cur") )
+		COMPREPLY=( $(compgen -W "$(__get_git_branches --remote)" -- "$cur") )
 	fi
 
 }
