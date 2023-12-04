@@ -321,11 +321,21 @@ ssd() {
 	sudo smartctl --all /dev/disk0
 }
 
+# The base URL for all Jira ticket URLs
+export JIRA_BASE_TICKET_URL='https://revvy-modeln.atlassian.net/browse/'
+
 # Create a pull request on Bitbucket or GitHub
 pr() {
 	git push || return $?
 	local branch_name="$(git rev-parse --abbrev-ref HEAD)"
+	local ticket_id="$(echo "$branch_name" | grep -Eo '([A-Z]+)-([0-9]+)')"
 	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
+	if [ -n "$ticket_id" ]; then
+		local pr_default_title="[${ticket_id}] "
+		local pr_default_body="Ticket: ${JIRA_BASE_TICKET_URL}${ticket_id}
+
+"
+	fi
 	if echo "$repo_url" | grep -Fq 'bitbucket.org'; then
 		# Bitbucket
 		local repo_url="${repo_url//git@bitbucket.org:/https:\/\/bitbucket.org\/}"
@@ -334,7 +344,7 @@ pr() {
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
 		local default_branch="$(git symbolic-ref refs/remotes/origin/HEAD --short | sed 's/origin\///')"
-		local pr_url="${repo_url}/compare/${default_branch}...${branch_name}"
+		local pr_url="${repo_url}/compare/${default_branch}...${branch_name}?title=${pr_default_title}&body=${pr_default_body}"
 	fi
 	if [ -n "$pr_url" ]; then
 		echo "$pr_url"
