@@ -333,7 +333,7 @@ pr() {
 	elif echo "$repo_url" | grep -Fq 'github.com'; then
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
-		local default_branch="$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')"
+		local default_branch="$(git symbolic-ref refs/remotes/origin/HEAD --short | sed 's/origin\///')"
 		local pr_url="${repo_url}/compare/${default_branch}...${branch_name}"
 	fi
 	if [ -n "$pr_url" ]; then
