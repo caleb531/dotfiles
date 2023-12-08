@@ -468,7 +468,7 @@ _gpo() {
 	local second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'gpo' ]; then
-		# Complete increment types for `gpo`
+		# Complete branch names for `gpo`
 		COMPREPLY=( $(compgen -W "$(__get_git_branches --remote)" -- "$cur") )
 	fi
 
