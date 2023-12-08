@@ -359,7 +359,7 @@ pr() {
 # along the way (e.g. merge conflicts), the function will stop in its place and
 # allow you to resolve; when you are ready to continue, you can simply run the
 # `int` command again
-int() {
+__int() {
 	# If the last run of the `int` command completed successfully, then store
 	# the original branch name until all steps of the integration process have
 	# successfully completed
@@ -370,8 +370,24 @@ int() {
 	git pull || return $?
 	git merge "$INT_ORIG_BRANCH" || return $?
 	git push || return $?
-	git checkout "$INT_ORIG_BRANCH" || return $?
+	if [ -z "$INT_DISABLE_CHECKOUT_ORIG_BRANCH" ]; then
+		git checkout "$INT_ORIG_BRANCH" || return $?
+	fi
 	# Unset the stored original branch name now that we've reached the end of
 	# the integration process
 	INT_ORIG_BRANCH=''
+}
+int() {
+	# If running `intn` fails, but then we resume the process with `int`, we
+	# should re-enable checking out of the original branch (because we ran `int`
+	# instead of `intn`)
+	INT_DISABLE_CHECKOUT_ORIG_BRANCH=''
+	__int "$@"
+}
+# A variant of the above int function which does not check out the original
+# branch upon successful completion
+intn() {
+	INT_DISABLE_CHECKOUT_ORIG_BRANCH=1
+	__int "$@"
+	INT_DISABLE_CHECKOUT_ORIG_BRANCH=''
 }

@@ -464,13 +464,13 @@ _int() {
 	local cur=${COMP_WORDS[COMP_CWORD]}
 	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'int' ]; then
+	if [ "$prev" == 'int' ] || [ "$prev" == 'intn' ]; then
 		# Complete Git branch names for `int`
 		COMPREPLY=( $(compgen -W "$(__get_git_branches)" -- "$cur") )
 	fi
 
 }
-complete -o default -F _int int 2> /dev/null
+complete -o default -F _int int intn 2> /dev/null
 
 # My custom Git alias for `git pull origin`, which should complete branch names
 _gpo() {
