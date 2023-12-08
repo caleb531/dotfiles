@@ -466,7 +466,7 @@ _int() {
 
 	if [ "$prev" == 'int' ] || [ "$prev" == 'intn' ]; then
 		# Complete Git branch names for `int`
-		COMPREPLY=( $(compgen -W "$(__get_git_branches)" -- "$cur") )
+		COMPREPLY=( $(compgen -W "$(__get_git_branches --)" -- "$cur") )
 	fi
 
 }
@@ -482,7 +482,7 @@ _gpo() {
 
 	if [ "$prev" == 'gpo' ]; then
 		# Complete branch names for `gpo`
-		COMPREPLY=( $(compgen -W "$(__get_git_branches --remote)" -- "$cur") )
+		COMPREPLY=( $(compgen -W "$(__get_git_branches --)" -- "$cur") )
 	fi
 
 }
