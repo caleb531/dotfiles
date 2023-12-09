@@ -343,8 +343,8 @@ pr() {
 	elif echo "$repo_url" | grep -Fq 'github.com'; then
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
-		local default_branch="$(git symbolic-ref refs/remotes/origin/HEAD --short | sed 's/origin\///')"
-		local pr_url="${repo_url}/compare/${default_branch}...${branch_name}?title=${pr_default_title}&body=${pr_default_body}"
+		local parent_branch="$(git show-branch -a | sed 's/].*//' | grep -F '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed 's/^.*\[//' | sed -E 's/~[0-9]+//')"
+		local pr_url="${repo_url}/compare/${parent_branch:-main}...${branch_name}?title=${pr_default_title}&body=${pr_default_body}"
 	fi
 	if [ -n "$pr_url" ]; then
 		echo "$pr_url"
