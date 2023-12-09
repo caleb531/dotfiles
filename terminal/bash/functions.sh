@@ -327,9 +327,11 @@ export JIRA_BASE_TICKET_URL='https://revvy-modeln.atlassian.net/browse/'
 # Create a pull request on Bitbucket or GitHub
 pr() {
 	git push || return $?
-	local branch_name="$(git rev-parse --abbrev-ref HEAD)"
-	local ticket_id="$(echo "$branch_name" | grep -Eo '([A-Z]+)-([0-9]+)')"
 	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
+	local branch_name="$(git rev-parse --abbrev-ref HEAD)"
+	# Detect if branch name is prefixed with the key of a Jira ticket, and if
+	# so, incorporate that ticket's key and URL into the pull request title/body
+	local ticket_id="$(echo "$branch_name" | grep -Eo '([A-Z]+)-([0-9]+)')"
 	if [ -n "$ticket_id" ]; then
 		local pr_default_title="[${ticket_id}] "
 		local pr_default_body="Ticket: ${JIRA_BASE_TICKET_URL}${ticket_id}
