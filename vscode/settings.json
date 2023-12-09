@@ -146,7 +146,7 @@
     "**/LocalDistributionAdvanced": true,
     "**/node_modules": true
   },
-  "editor.occurrencesHighlight": false,
+  "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
   "explorer.autoReveal": "focusNoScroll",
   "workbench.colorCustomizations": {
