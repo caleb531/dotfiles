@@ -85,6 +85,8 @@
 	commita = commit --amend
 	# convenient alias for misspellings of 'commit'
 	commiy = commit
+	# Delete a branch fully from both the local and remote repositories
+	delete-branch = "!f() { local branch_to_delete=$1; git branch -D $branch_to_delete; git push -d origin $branch_to_delete; }; f"
 	# Delete branches that have been merged in
 	delete-merged-local-branches = "!f() { git view-merged-local-branches ${1:-main} | xargs git branch -d; }; f"
 	delete-merged-remote-branches = "!f() { git remote prune origin && git view-merged-remote-branches ${1:-main} | xargs git push -d origin; }; f"
