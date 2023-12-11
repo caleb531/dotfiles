@@ -91,7 +91,7 @@ alias nrs='npm rebuild node-sass'
 alias create-svelte='pnpm create svelte@latest'
 
 # Shortcut to start jest-preview server
-alias jest-preview='pnpm exec jest-preview'
+alias jest-preview='npm exec jest-preview'
 
 # Git
 alias gi='git'
