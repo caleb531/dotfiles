@@ -486,6 +486,21 @@ _gpo() {
 }
 complete -o default -F _gpo gpo 2> /dev/null
 
+# My custom Git alias for opening a pull request, which should complete branch
+# names (because the alias accepts an optional branch name as its only argument)
+_pr() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'pr' ]; then
+		# Complete branch names for `pr`
+		COMPREPLY=( $(compgen -W "$(__get_git_branches --)" -- "$cur") )
+	fi
+
+}
+complete -o default -F _pr pr 2> /dev/null
+
 # Enable completions for aliases for 'git'
 if type __git_complete &> /dev/null; then
 	__git_complete gi __git_main

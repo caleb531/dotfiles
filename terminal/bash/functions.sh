@@ -328,12 +328,12 @@ export JIRA_BASE_TICKET_URL='https://revvy-modeln.atlassian.net/browse/'
 pr() {
 	git push || return $?
 	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
-	local branch_name="$(git rev-parse --abbrev-ref HEAD)"
+	local source_branch_name="$(git rev-parse --abbrev-ref HEAD)"
 	# Detect if branch name is prefixed with the key of a Jira ticket, and if
 	# so, incorporate that ticket's key and URL into the pull request title/body
-	local ticket_id="$(echo "$branch_name" | grep -Eo '([A-Z]+)-([0-9]+)')"
+	local ticket_id="$(echo "$source_branch_name" | grep -Eo '([A-Z]+)-([0-9]+)')"
 	if [ -n "$ticket_id" ]; then
-		local branch_name_without_ticket_id="$(echo "$branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /')"
+		local branch_name_without_ticket_id="$(echo "$source_branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /')"
 		echo "$branch_name_without_ticket_id"
 		local pr_default_title="[${ticket_id}] ${branch_name_without_ticket_id^}"
 		local pr_default_body="Ticket: ${JIRA_BASE_TICKET_URL}${ticket_id}
@@ -343,12 +343,11 @@ pr() {
 	if echo "$repo_url" | grep -Fq 'bitbucket.org'; then
 		# Bitbucket
 		local repo_url="${repo_url//git@bitbucket.org:/https:\/\/bitbucket.org\/}"
-		local pr_url="${repo_url}/pull-requests/new?source=${branch_name}&t=1"
+		local pr_url="${repo_url}/pull-requests/new?source=${source_branch_name}&t=1"
 	elif echo "$repo_url" | grep -Fq 'github.com'; then
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
-		local parent_branch="$(git show-branch -a 2> /dev/null | sed 's/].*//' | grep -F '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed 's/^.*\[//' | sed -E 's/~[0-9]+//')"
-		local pr_url="${repo_url}/compare/${parent_branch:-main}...${branch_name}?title=${pr_default_title}&body=${pr_default_body}"
+		local pr_url="${repo_url}/compare/${1:-main}...${source_branch_name}?title=${pr_default_title}&body=${pr_default_body}"
 	fi
 	if [ -n "$pr_url" ]; then
 		echo "$pr_url"
