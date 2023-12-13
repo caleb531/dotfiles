@@ -477,8 +477,6 @@ _gpo() {
 
 	local cur=${COMP_WORDS[COMP_CWORD]}
 	local prev=${COMP_WORDS[COMP_CWORD-1]}
-	local first=${COMP_WORDS[0]}
-	local second=${COMP_WORDS[1]}
 
 	if [ "$prev" == 'gpo' ]; then
 		# Complete branch names for `gpo`
