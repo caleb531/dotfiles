@@ -6,6 +6,7 @@ DigitalBrainstem.javascript-ejs-support
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 formulahendry.auto-rename-tag
+george-alisson.html-preview-vscode
 Gruntfuggly.triggertaskonsave
 gurumukhi.selected-lines-count
 idleberg.applescript
@@ -27,7 +28,9 @@ ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
 ms-vscode-remote.remote-ssh-edit
+orsenkucher.vscode-graphql
 patbenatar.advanced-new-file
+PolymerMallard.css-alphabetize
 rashwell.tcl
 rebornix.prolog
 redhat.java
