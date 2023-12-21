@@ -48,15 +48,15 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 	__b_sub() {
 		local action="$1"
 		local args=${*:2}
-		if [ -f _config.yml ]; then
-			# shellcheck disable=SC2086
-			__b jekyll "$action" $args
-		elif __is_node_project; then
+		if __is_node_project; then
 			# shellcheck disable=SC2086
 			__b node "$action" $args
 		elif __is_python_build_project; then
 			# shellcheck disable=SC2086
 			__b python-build "$action" $args
+		elif [ -f _config.yml ]; then
+			# shellcheck disable=SC2086
+			__b jekyll "$action" $args
 		else
 			>&2 echo "project type not recognized"
 		fi
