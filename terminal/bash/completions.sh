@@ -77,6 +77,9 @@ _brew() {
 	elif [ "$second" == 'reinstall' ] || [ "$second" == 'remove' ] || [ "$second" == 'rm' ] || [ "$second" == 'uninstall' ]; then
 		# Complete installed packages for brew package removal commands
 		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- "$cur") )
+	elif [ "$second" == 'info' ]; then
+		# Complete installed packages `brew info`
+		COMPREPLY=( $(compgen -W "$(__get_installed_brew_packages)" -- "$cur") )
 	elif [ "$second" == 'cleanup' ]; then
 		# Complete options and installed packages for `brew cleanup`
 		COMPREPLY=( $(compgen -W "--dry-run $(__get_installed_brew_packages)" -- "$cur") )
