@@ -336,7 +336,7 @@ pr() {
 	# so, incorporate that ticket's key and URL into the pull request title/body
 	local ticket_id="$(echo "$source_branch_name" | grep -Eo '([A-Z]+)-([0-9]+)')"
 	if [ -n "$ticket_id" ]; then
-		local branch_name_without_ticket_id="$(echo "$source_branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /')"
+		local branch_name_without_ticket_id="$(echo "$source_branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /g')"
 		echo "$branch_name_without_ticket_id"
 		local pr_default_title="[${ticket_id}] ${branch_name_without_ticket_id^}"
 		local pr_default_body="Ticket: ${JIRA_BASE_TICKET_URL}${ticket_id}
