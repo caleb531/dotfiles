@@ -326,7 +326,8 @@ export JIRA_BASE_TICKET_URL='https://revvy-modeln.atlassian.net/browse/'
 
 # Create a pull request on Bitbucket or GitHub
 pr() {
-	if [ -z "$1" ]; then
+	local target_branch_name="$1"
+	if [ -z "$target_branch_name" ]; then
 		>&2 echo "Please specify a branch to merge into"
 		return 1
 	fi
@@ -351,7 +352,7 @@ pr() {
 	elif echo "$repo_url" | grep -Fq 'github.com'; then
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
-		local pr_url="${repo_url}/compare/$1...${source_branch_name}?title=${pr_default_title}&body=${pr_default_body}"
+		local pr_url="${repo_url}/compare/$target_branch_name...${source_branch_name}?title=${pr_default_title}&body=${pr_default_body}"
 	fi
 	if [ -n "$pr_url" ]; then
 		echo "$pr_url"
