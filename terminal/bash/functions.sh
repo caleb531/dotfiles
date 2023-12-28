@@ -328,6 +328,7 @@ export JIRA_BASE_TICKET_URL='https://revvy-modeln.atlassian.net/browse/'
 pr() {
 	if [ -z "$1" ]; then
 		>&2 echo "Please specify a branch to merge into"
+		return 1
 	fi
 	git push || return $?
 	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
