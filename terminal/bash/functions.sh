@@ -334,16 +334,28 @@ pr() {
 	git push || return $?
 	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
 	local source_branch_name="$(git rev-parse --abbrev-ref HEAD)"
+	local pr_default_title;
+	local pr_default_body;
+	if [[ "$(git log --oneline "$target_branch_name".. | wc -l)" == 1 ]]; then
+		# If PR only consists of a single commit, use the first line of the
+		# commit message as the title, and any extended commit message as the
+		# body
+		pr_default_title="$(git show -s --format=%B | head -n 1)"
+		pr_default_body="$(git show -s --format=%B | tail -n +3 | head -n -1)"
+	else
+		# Otherwise, use the current (capitalized) branch name as the title
+		local branch_name_without_ticket_id="$(echo "$source_branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /g')"
+		pr_default_title="${branch_name_without_ticket_id^}"
+		pr_default_body=''
+	fi
 	# Detect if branch name is prefixed with the key of a Jira ticket, and if
 	# so, incorporate that ticket's key and URL into the pull request title/body
 	local ticket_id="$(echo "$source_branch_name" | grep -Eo '([A-Z]+)-([0-9]+)')"
 	if [ -n "$ticket_id" ]; then
-		local branch_name_without_ticket_id="$(echo "$source_branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /g')"
-		echo "$branch_name_without_ticket_id"
-		local pr_default_title="[${ticket_id}] ${branch_name_without_ticket_id^}"
-		local pr_default_body="Ticket: ${JIRA_BASE_TICKET_URL}${ticket_id}
+		pr_default_title="[${ticket_id}] $(echo "$pr_default_title" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /g')"
+		pr_default_body="Ticket: ${JIRA_BASE_TICKET_URL}${ticket_id}
 
-"
+${pr_default_body}"
 	fi
 	if echo "$repo_url" | grep -Fq 'bitbucket.org'; then
 		# Bitbucket
