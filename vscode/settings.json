@@ -361,5 +361,6 @@
   "editor.linkedEditing": true,
   "window.commandCenter": false,
   "workbench.editor.empty.hint": "hidden",
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "cornflakes.linter.run": "onType"
 }
