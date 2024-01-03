@@ -370,7 +370,6 @@ ${pr_default_body}"
 		local pr_url="${repo_url}/compare/$target_branch_name...${source_branch_name}?title=${pr_default_title}&body=${pr_default_body}"
 	fi
 	if [ -n "$pr_url" ]; then
-		echo "$pr_url"
 		open "$pr_url"
 	else
 		>&2 echo "PR URL is empty"
