@@ -336,12 +336,15 @@ pr() {
 	local source_branch_name="$(git rev-parse --abbrev-ref HEAD)"
 	local pr_default_title;
 	local pr_default_body;
-	if [[ "$(git log --oneline "$target_branch_name".. | wc -l)" == 1 ]]; then
+	# Some implementations of `wc` output leading spaces (despite this not being
+	# POSIX-compliant), so we must strip them out; see
+	# <https://stackoverflow.com/questions/32265439/unexpected-leading-spaces-while-using-wc-l-command>
+	if [[ "$(git log --oneline "$target_branch_name".. | wc -l | sed -E 's/ +//g')" == 1 ]]; then
 		# If PR only consists of a single commit, use the first line of the
 		# commit message as the title, and any extended commit message as the
 		# body
 		pr_default_title="$(git show -s --format=%B | head -n 1)"
-		pr_default_body="$(git show -s --format=%B | tail -n +3 | head -n -1)"
+		pr_default_body="$(git show -s --format=%B | tail -n +3)"
 	else
 		# Otherwise, use the current (capitalized) branch name as the title
 		local branch_name_without_ticket_id="$(echo "$source_branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /g')"
