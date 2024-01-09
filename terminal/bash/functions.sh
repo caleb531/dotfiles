@@ -349,7 +349,7 @@ pr() {
 		# Otherwise, use the current (capitalized) branch name as the title
 		local branch_name_without_ticket_id="$(echo "$source_branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /g')"
 		pr_default_title="${branch_name_without_ticket_id^}"
-		pr_default_body=''
+		pr_default_body="$(git log --pretty=format:'- %s' --reverse)"
 	fi
 	# Detect if branch name is prefixed with the key of a Jira ticket, and if
 	# so, incorporate that ticket's key and URL into the pull request title/body
