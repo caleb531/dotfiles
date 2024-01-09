@@ -331,6 +331,10 @@ pr() {
 		>&2 echo "Please specify a branch to merge into"
 		return 1
 	fi
+	if ! git rev-parse origin/"$target_branch_name" &> /dev/null; then
+		>&2 echo "Target branch does not exist"
+		return 1
+	fi
 	git push || return $?
 	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
 	local source_branch_name="$(git rev-parse --abbrev-ref HEAD)"
