@@ -363,5 +363,12 @@
     "body": [
       "/* istanbul ignore file */"
     ]
-  }
+  },
+  "v8 ignore": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "v8ignore",
+    "body": [
+      "/* v8 ignore next */"
+    ]
+  },
 }
