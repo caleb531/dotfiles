@@ -25,7 +25,7 @@ __is_python_build_project() {
 	fi
 	local path="$PWD"
 	while [[ "$path" != '/' ]]; do
-		if [ -f "$path"/setup.py ]; then
+		if [ -f "$path"/pyproject.toml ] || [ -f "$path"/setup.py ]; then
 			return 0
 		fi
 		path="$(dirname "$path")"
