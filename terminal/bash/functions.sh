@@ -86,23 +86,6 @@ rmvirtualenv() {
 	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
 
-# Provide convenient access to common PyPI commands
-pypi() {
-	if [ "$1" == 'test' ]; then
-		rm -rf dist
-		python setup.py sdist bdist_wheel
-		twine upload --repository testpypi dist/*
-	elif [ "$1" == 'upload' ]; then
-		rm -rf dist
-		python setup.py sdist bdist_wheel
-		twine upload dist/*
-	else
-		>&2 echo "usage: ${FUNCNAME[0]} <command>"
-		>&2 echo "Available commands: test, upload"
-		return 1
-	fi
-}
-
 # Flush all DNS caches for macOS (10.10.4 and onward)
 dnsflush() {
 	sudo dscacheutil -flushcache

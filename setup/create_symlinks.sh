@@ -37,9 +37,6 @@ ln -sf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 rm ~/.gnupg/gpg-agent.conf
 cat ~/dotfiles/gpg/gpg-agent.conf | sed "s|~|$HOME|g" > ~/.gnupg/gpg-agent.conf
 
-# Create PyPI configuration if it doesn't already exist
-ln -sf ~/dotfiles/terminal/.pypirc ~/.pypirc
-
 # Disable Bash Sessions feature in macOS El Capitan
 touch ~/.bash_sessions_disable
 

@@ -377,22 +377,6 @@ _apachectl() {
 }
 complete -o default -F _apachectl apachectl 2> /dev/null
 
-
-# Completion function for pypi, a custom function for interacting with PyPI
-_pypi() {
-
-	local cur=${COMP_WORDS[COMP_CWORD]}
-	local prev=${COMP_WORDS[COMP_CWORD-1]}
-
-	if [ "$prev" == 'pypi' ]; then
-		# Complete shortcuts to common pypi operations for `pypi`
-		COMPREPLY=( $(compgen -W 'test upload' -- "$cur") )
-	fi
-
-}
-complete -o default -F _pypi pypi 2> /dev/null
-
-
 # Completion function for mkvirtualenv, a function for creating new Python
 # virtualenvs
 _mkvirtualenv() {
