@@ -863,5 +863,15 @@
     "key": "alt+cmd+w",
     "command": "toggleSearchWholeWord",
     "when": "searchViewletFocus"
+  },
+  {
+    "key": "ctrl+alt+down",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+up",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
   }
 ]
