@@ -46,6 +46,15 @@
         }
       },
       {
+        "scope": [
+          "string.quoted.double.sql",
+          "string.quoted.other.backtick.sql"
+        ],
+        "settings": {
+          "foreground": "#FD971F"
+        }
+      },
+      {
         "scope": ["punctuation.definition.variable.svelte"],
         "settings": {
           "foreground": "#A6E22E"
