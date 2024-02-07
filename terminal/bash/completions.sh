@@ -56,6 +56,32 @@ __get_git_branches() {
 	git branch "$@" | grep -Pio '[a-z0-9_][a-z0-9_\-\/\.]*' | xargs
 }
 
+# Generate completions for Python module/package names for the current query
+__complete_python_module_names() {
+	# Convert current query file path (with /) to module path (with .)
+	local cur="$1"
+	local curpath="${cur//./\/}"
+	# Get package names matching current query; exclude hidden directories
+	local packages="$(compgen -d -- "$curpath" | grep -Eo '([a-z_]+/)*([a-z_]+)\b')"
+	# Convert Python file paths to package paths
+	packages="${packages//\//.}"
+	if [ -n "$packages" ]; then
+		# Apepnd . to package name completions for convenience (since user
+		# will type a module name next, this eliminates the need for them to
+		# type a . first)
+		packages="${packages// /. }."
+		# Ensure that no spaces follow completed package names
+		compopt -o nospace
+	fi
+	# Get module names matching curent query; include only .py files
+	local modules="$(compgen -f -- "$curpath" | grep -Eo '([a-z_]+/)*([a-z_]+)\.py')"
+	# Convert Python file paths to module paths
+	modules="${modules//\//.}"
+	# Remove .py extension (all module names omit the .py extension)
+	modules="${modules//.py/}"
+	COMPREPLY=( $(compgen -W "$packages $modules" -- "$cur") )
+}
+
 # Completion function for brew, the macOS package manager
 _brew() {
 
@@ -335,33 +361,27 @@ _python() {
 
 	# Complete package and module paths
 	if [ "$second" == '-m' ]; then
-		# Convert current query file path (with /) to module path (with .)
-		local curpath="${cur//./\/}"
-		# Get package names matching current query; exclude hidden directories
-		local packages="$(compgen -d -- "$curpath" | grep -Eo '([a-z_]+/)*([a-z_]+)\b')"
-		# Convert Python file paths to package paths
-		packages="${packages//\//.}"
-		if [ -n "$packages" ]; then
-			# Apepnd . to package name completions for convenience (since user
-			# will type a module name next, this eliminates the need for them to
-			# type a . first)
-			packages="${packages// /. }."
-			# Ensure that no spaces follow completed package names
-			compopt -o nospace
-		fi
-		# Get module names matching curent query; include only .py files
-		local modules="$(compgen -f -- "$curpath" | grep -Eo '([a-z_]+/)*([a-z_]+)\.py')"
-		# Convert Python file paths to module paths
-		modules="${modules//\//.}"
-		# Remove .py extension (all module names omit the .py extension)
-		modules="${modules//.py/}"
-		COMPREPLY=( $(compgen -W "$packages $modules" -- "$cur") )
+		__complete_python_module_names "$cur"
 	fi
 
 }
 complete -o default -F _python python 2> /dev/null
 complete -o default -F _python python2 2> /dev/null
 complete -o default -F _python python3 2> /dev/null
+
+# Completion function for python/python3 binaries
+_rt() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	# Complete package and module paths
+	if [ "$prev" == 'rt' ]; then
+		__complete_python_module_names "$cur"
+	fi
+
+}
+complete -o default -F _rt rt 2> /dev/null
 
 # Completion function for apachectl, Apache's HTTP server utility
 _apachectl() {
