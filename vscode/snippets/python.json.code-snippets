@@ -139,5 +139,19 @@
       "if __name__ == '__main__':",
       "\t${1:main()}"
     ]
+  },
+  "flake8 ignore file": {
+    "scope": "python",
+    "prefix": "flake8ignorefile",
+    "body": [
+      "# flake8: noqa"
+    ]
+  },
+  "flake8 ignore line": {
+    "scope": "python",
+    "prefix": "flake8ignoreline",
+    "body": [
+      "# noqa: ${1:errorcodes}"
+    ]
   }
 }
