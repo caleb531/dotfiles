@@ -559,14 +559,14 @@
     "command": "-workbench.action.closeOtherEditors"
   },
   {
-    "key": "alt+cmd+b",
+    "key": "ctrl+alt+cmd+b",
     "command": "highlight-matching-tag.selectPairContents",
-    "when": "editorLangId == 'handlebars' || editorLangId == 'html' || editorLangId == 'jsx-tags' || editorLangId == 'svelte' || editorLangId == 'xml'"
+    "when": "editorTextFocus"
   },
   {
-    "key": "alt+cmd+m",
+    "key": "ctrl+alt+cmd+m",
     "command": "highlight-matching-tag.jumpToMatchingTag",
-    "when": "editorLangId == 'handlebars' || editorLangId == 'html' || editorLangId == 'jsx-tags' || editorLangId == 'svelte' || editorLangId == 'xml'"
+    "when": "editorTextFocus"
   },
   {
     "key": "cmd+b",
