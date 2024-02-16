@@ -559,12 +559,12 @@
     "command": "-workbench.action.closeOtherEditors"
   },
   {
-    "key": "ctrl+alt+cmd+b",
+    "key": "shift+alt+cmd+b",
     "command": "highlight-matching-tag.selectPairContents",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+alt+cmd+m",
+    "key": "shift+alt+cmd+m",
     "command": "highlight-matching-tag.jumpToMatchingTag",
     "when": "editorTextFocus"
   },
