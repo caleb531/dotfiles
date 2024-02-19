@@ -372,5 +372,6 @@
   "window.commandCenter": false,
   "workbench.editor.empty.hint": "hidden",
   "editor.accessibilitySupport": "off",
-  "editor.stickyScroll.enabled": false
+  "editor.stickyScroll.enabled": false,
+  "black-formatter.importStrategy": "fromEnvironment"
 }
