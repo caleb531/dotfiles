@@ -368,10 +368,10 @@
   },
   "git.openRepositoryInParentFolders": "never",
   "workbench.editor.splitOnDragAndDrop": false,
-  "editor.linkedEditing": true,
   "window.commandCenter": false,
   "workbench.editor.empty.hint": "hidden",
   "editor.accessibilitySupport": "off",
   "editor.stickyScroll.enabled": false,
-  "black-formatter.importStrategy": "fromEnvironment"
+  "black-formatter.importStrategy": "fromEnvironment",
+  "svelte.plugin.html.linkedEditing.enable": false
 }

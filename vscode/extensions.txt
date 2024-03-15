@@ -6,6 +6,7 @@ dcortes92.freemarker
 digitalbrainstem.javascript-ejs-support
 editorconfig.editorconfig
 esbenp.prettier-vscode
+formulahendry.auto-rename-tag
 george-alisson.html-preview-vscode
 gruntfuggly.triggertaskonsave
 gurumukhi.selected-lines-count
