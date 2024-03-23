@@ -53,6 +53,7 @@ install_brew_pkg smartmontools
 install_brew_pkg wget
 install_brew_pkg doctl
 install_brew_pkg editorconfig
+install_brew_pkg graphviz
 
 # Install identity-related packages
 install_brew_pkg gnupg
