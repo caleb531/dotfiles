@@ -152,6 +152,7 @@
     "**/DeployDistribution": true,
     "**/DeployDistributionAdvanced": true,
     "**/DeployDistributionAdvancedSS2": true,
+    "**/htmlcov": true,
     "**/LocalDistribution": true,
     "**/LocalDistributionAdvanced": true,
     "**/node_modules": true
