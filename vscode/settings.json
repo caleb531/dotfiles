@@ -46,6 +46,12 @@
         }
       },
       {
+        "scope": ["support.other.escape.special.regexp"],
+        "settings": {
+          "foreground": "#AE81FF"
+        }
+      },
+      {
         "scope": [
           "string.quoted.double.sql",
           "string.quoted.other.backtick.sql"
