@@ -3,4 +3,4 @@
 
 # Only expose keys from the specified vault
 [[ssh-keys]]
-vault = "Personal"
+# vault = "Private"
