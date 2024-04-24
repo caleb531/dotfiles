@@ -873,5 +873,9 @@
     "key": "ctrl+alt+up",
     "command": "editor.action.insertCursorAbove",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "editor.action.toggleWordWrap"
   }
 ]
