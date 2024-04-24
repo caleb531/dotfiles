@@ -275,6 +275,25 @@ _pip() {
 }
 complete -o default -F _pip pip pip2 pip3 2> /dev/null
 
+# Completion function for pip upgrade aliases
+_pipiu() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'pipiu' ] || [ "$prev" == 'pipu' ]; then
+		# Complete installed packages for `pip show` and `pip uninstall`
+		if [ -z "$PIP_PKG_LIST" ] || [ "$PWD" != "$PIP_PKG_PWD" ]; then
+			# Cache package list for the current PWD
+			PIP_PKG_LIST="$(pip list | grep -Po '[a-z0-9\-]+(?=\=)' 2> /dev/null)"
+			PIP_PKG_PWD="$PWD"
+		fi
+		COMPREPLY=( $(compgen -W "$PIP_PKG_LIST" -- "$cur") )
+	fi
+
+}
+complete -o default -F _pipiu pipiu pipu 2> /dev/null
+
 # Completion function for gem, Ruby's built-in package manager
 _gem() {
 
