@@ -326,7 +326,9 @@
   "typescript.workspaceSymbols.scope": "currentProject",
   "emmet.includeLanguages": {
     "svg": "xml",
-    "svelte": "html"
+    "svelte": "html",
+    "mdx": "html",
+    "astro": "html"
   },
   "svg.preview.mode": "svg",
   "latex.linter.enabled": false,
