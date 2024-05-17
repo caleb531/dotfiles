@@ -71,6 +71,9 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 	bp() {
 		NODE_ENV=production JEKYLL_ENV=production __b_sub preview "$@"
 	}
+	bpo() {
+		bp --open
+	}
 	bbp() {
 		# shellcheck disable=SC2119
 		bb
