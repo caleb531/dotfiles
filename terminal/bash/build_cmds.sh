@@ -76,7 +76,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 	}
 	bbp() {
 		# shellcheck disable=SC2119
-		bb
+		bb || return 1
 		bp "$@"
 	}
 	bbpo() {
