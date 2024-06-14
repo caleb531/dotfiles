@@ -76,8 +76,6 @@ install_brew_pkg supabase/tap/supabase
 # Install Mac App Store command-line utility
 install_brew_pkg mas
 
-install_brew_pkg ruby
-
 echo "Installing gems..."
 preload_gem_list
 
