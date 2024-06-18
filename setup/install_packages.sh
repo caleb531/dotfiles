@@ -76,12 +76,6 @@ install_brew_pkg supabase/tap/supabase
 # Install Mac App Store command-line utility
 install_brew_pkg mas
 
-echo "Installing gems..."
-preload_gem_list
-
-install_gem bundler
-install_gem jekyll
-
 ~/dotfiles/setup/install_node.sh
 ~/dotfiles/setup/install_pip_packages.sh
 ~/dotfiles/setup/install_vscode_packages.sh
