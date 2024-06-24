@@ -259,7 +259,8 @@
   "window.restoreWindows": "none",
   "emmet.extensionsPath": [
     "/Users/Caleb/dotfiles/emmet",
-    "/Users/caleb/dotfiles/emmet"
+    "/Users/caleb/dotfiles/emmet",
+    "/Users/cevans/dotfiles/emmet"
   ],
   "css.completion.completePropertyWithSemicolon": false,
   "less.completion.completePropertyWithSemicolon": false,
