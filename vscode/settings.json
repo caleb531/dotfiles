@@ -384,5 +384,6 @@
   "editor.stickyScroll.enabled": false,
   "black-formatter.importStrategy": "fromEnvironment",
   "svelte.plugin.html.linkedEditing.enable": false,
-  "markdown.validate.fileLinks.enabled": "ignore"
+  "markdown.validate.fileLinks.enabled": "ignore",
+  "svg.preview.background": "dark-transparent"
 }
