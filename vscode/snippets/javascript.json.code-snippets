@@ -23,7 +23,7 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "forof",
     "body": [
-      "for (${1|const,let,var|} ${2:key} of ${3:object}) {",
+      "for (${1|const,let,var|} ${2:value} of ${3:array}) {",
       "\t$4",
       "}",
     ]
