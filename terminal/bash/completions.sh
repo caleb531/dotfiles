@@ -140,7 +140,7 @@ _npm() {
 
 	if [ "$prev" == 'npm' ] || [ "$prev" == 'help' ]; then
 		# Complete common npm commands for `npm`
-		COMPREPLY=( $(compgen -W 'add audit cache exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update' -- "$cur") )
+		COMPREPLY=( $(compgen -W 'add audit cache exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update upgrade' -- "$cur") )
 	elif [ "$prev" == 'install' ] || [ "$prev" == 'i' ] || [ "$prev" == 'uninstall' ]; then
 		# Complete common options for `npm install` and `npm uninstall`
 		local npm_pkg_list="$(__get_npm_pkg_names)"
@@ -172,7 +172,7 @@ _pnpm() {
 	if [ "$prev" == 'pnpm' ] || [ "$prev" == 'help' ]; then
 		# Complete common pnpm commands for `pnpm`
 		local npm_script_names="$(__get_npm_script_names)"
-		COMPREPLY=( $(compgen -W "add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update $npm_script_names" -- "$cur") )
+		COMPREPLY=( $(compgen -W "add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update upgrade $npm_script_names" -- "$cur") )
 	elif [ "$second" == '-s' ]; then
 		local npm_script_names="$(__get_npm_script_names)"
 		COMPREPLY=( $(compgen -W "$npm_script_names" -- "$cur") )
