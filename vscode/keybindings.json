@@ -877,5 +877,9 @@
   {
     "key": "ctrl+shift+w",
     "command": "editor.action.toggleWordWrap"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "extension.changeCase.sentence"
   }
 ]
