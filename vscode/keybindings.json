@@ -881,5 +881,10 @@
   {
     "key": "cmd+k cmd+s",
     "command": "extension.changeCase.sentence"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-cursorRight",
+    "when": "textInputFocus"
   }
 ]
