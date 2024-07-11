@@ -385,5 +385,10 @@
   "black-formatter.importStrategy": "fromEnvironment",
   "svelte.plugin.html.linkedEditing.enable": false,
   "markdown.validate.fileLinks.enabled": "ignore",
-  "svg.preview.background": "dark-transparent"
+  "svg.preview.background": "dark-transparent",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto"
 }
