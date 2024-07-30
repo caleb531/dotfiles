@@ -345,8 +345,8 @@
     "SC2207",
     "SC2181"
   ],
-  "css.lint.validProperties": ["alignment-baseline"],
-  "scss.lint.validProperties": ["alignment-baseline"],
+  "css.lint.validProperties": ["alignment-baseline", "dominant-baseline"],
+  "scss.lint.validProperties": ["alignment-baseline", "dominant-baseline"],
   "editor.guides.indentation": false,
   "editor.guides.highlightActiveIndentation": false,
   "advancedNewFile.convenienceOptions": ["current", "root"],
