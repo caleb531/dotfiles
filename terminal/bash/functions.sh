@@ -322,7 +322,6 @@ pr() {
 	local repo_url="$(git config --get remote.origin.url | sed 's/\.git//')"
 	local source_branch_name="$(git rev-parse --abbrev-ref HEAD)"
 	local pr_default_title;
-	local pr_default_body;
 	# Some implementations of `wc` output leading spaces (despite this not being
 	# POSIX-compliant), so we must strip them out; see
 	# <https://stackoverflow.com/questions/32265439/unexpected-leading-spaces-while-using-wc-l-command>
@@ -331,21 +330,16 @@ pr() {
 		# commit message as the title, and any extended commit message as the
 		# body
 		pr_default_title="$(git show -s --format=%B | head -n 1)"
-		pr_default_body="$(git show -s --format=%B | tail -n +3)"
 	else
 		# Otherwise, use the current (capitalized) branch name as the title
 		local branch_name_without_ticket_id="$(echo "$source_branch_name" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /g')"
 		pr_default_title="${branch_name_without_ticket_id^}"
-		pr_default_body=''
 	fi
 	# Detect if branch name is prefixed with the key of a Jira ticket, and if
 	# so, incorporate that ticket's key and URL into the pull request title/body
 	local ticket_id="$(echo "$source_branch_name" | grep -Eo '([A-Z]+)-([0-9]+)')"
 	if [ -n "$ticket_id" ]; then
 		pr_default_title="[${ticket_id}] $(echo "$pr_default_title" | sed -E 's/([A-Z]+)-([0-9]+)-//' | sed -E 's/(-)+/ /g')"
-		pr_default_body="Ticket: ${JIRA_BASE_TICKET_URL}${ticket_id}
-
-${pr_default_body}"
 	fi
 	if echo "$repo_url" | grep -Fq 'bitbucket.org'; then
 		# Bitbucket
@@ -354,7 +348,7 @@ ${pr_default_body}"
 	elif echo "$repo_url" | grep -Fq 'github.com'; then
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
-		local pr_url="${repo_url}/compare/$target_branch_name...${source_branch_name}?title=${pr_default_title}&body=${pr_default_body}"
+		local pr_url="${repo_url}/compare/$target_branch_name...${source_branch_name}?title=${pr_default_title}"
 	fi
 	if [ -n "$pr_url" ]; then
 		open "$pr_url"
