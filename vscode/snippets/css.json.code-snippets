@@ -157,5 +157,14 @@
       "\t$1",
       "}"
     ]
+  },
+  "reduced transparency": {
+    "scope": "css,scss,less",
+    "prefix": "reducetransparency",
+    "body": [
+      "@media (prefers-reduced-transparency: reduce) {",
+      "\t$1",
+      "}"
+    ]
   }
 }
