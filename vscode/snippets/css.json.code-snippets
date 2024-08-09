@@ -139,5 +139,23 @@
     "body": [
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"
     ]
+  },
+  "p3 colors": {
+    "scope": "css,scss,less",
+    "prefix": "p3colors",
+    "body": [
+      "@media (color-gamut: p3) {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "reduced motion": {
+    "scope": "css,scss,less",
+    "prefix": "reducemotion",
+    "body": [
+      "@media (prefers-reduced-motion: reduce) {",
+      "\t$1",
+      "}"
+    ]
   }
 }
