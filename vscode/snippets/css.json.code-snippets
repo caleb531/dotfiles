@@ -126,6 +126,15 @@
       "}"
     ]
   },
+  "light mode": {
+    "scope": "css,scss,less",
+    "prefix": "lightmode",
+    "body": [
+      "@media (prefers-color-scheme: light) {",
+      "\t$1",
+      "}"
+    ]
+  },
   "!important;": {
     "scope": "css,scss,less",
     "prefix": "!important;",
