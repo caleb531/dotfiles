@@ -175,5 +175,14 @@
       "\t$1",
       "}"
     ]
+  },
+  "high contrast": {
+    "scope": "css,scss,less",
+    "prefix": "highcontrast",
+    "body": [
+      "@media (forced-colors: active) {",
+      "\t$1",
+      "}"
+    ]
   }
 }
