@@ -13,5 +13,6 @@ if [ ! -e ~/.fnm ]; then
 	curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 fi
 source ~/dotfiles/terminal/bash/load_fnm.sh
-install_node_version 18
-fnm default 18
+DEFAULT_NODE_VERSION=20
+install_node_version "$DEFAULT_NODE_VERSION"
+fnm default "$DEFAULT_NODE_VERSION"
