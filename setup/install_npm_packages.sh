@@ -13,7 +13,7 @@ fi
 echo "Installing npm packages (node $(node -v))..."
 preload_npm_pkg_list
 
-install_npm_pkg pnpm
+install_npm_pkg pnpm@^8.0.0
 install_npm_pkg gulp-cli
 install_npm_pkg eslint
 install_npm_pkg http-server
