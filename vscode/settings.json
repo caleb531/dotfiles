@@ -155,14 +155,14 @@
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "files.exclude": {
-    "**/.aider*": true,
     "**/DeployDistribution": true,
     "**/DeployDistributionAdvanced": true,
     "**/DeployDistributionAdvancedSS2": true,
     "**/htmlcov": true,
     "**/LocalDistribution": true,
     "**/LocalDistributionAdvanced": true,
-    "**/node_modules": true
+    "**/node_modules": true,
+    "/.aider*": true
   },
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
