@@ -159,7 +159,3 @@ alias ka='killall'
 
 # Alias `bump-anything` to `version`
 alias version='bump-anything'
-
-# Configure Aider to use the more cost-effective gpt-4o-mini model and to not
-# auto-commit changes
-alias aider='aider --model openai/gpt-4o-mini --no-auto-commits'
