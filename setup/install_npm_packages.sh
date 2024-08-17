@@ -16,6 +16,8 @@ preload_npm_pkg_list
 install_npm_pkg pnpm@^8.0.0
 install_npm_pkg gulp-cli
 install_npm_pkg eslint
+install_npm_pkg globals
+install_npm_pkg @eslint/js
 install_npm_pkg http-server
 install_npm_pkg vsce
 install_npm_pkg typescript
