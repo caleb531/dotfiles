@@ -334,7 +334,6 @@
   },
   "svg.preview.mode": "svg",
   "latex.linter.enabled": false,
-  "javascript.validate.enable": false,
   "shellcheck.exclude": [
     "SC1090",
     "SC1091",
