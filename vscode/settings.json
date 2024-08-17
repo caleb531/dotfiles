@@ -155,6 +155,7 @@
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "files.exclude": {
+    "**/.aider*": true,
     "**/DeployDistribution": true,
     "**/DeployDistributionAdvanced": true,
     "**/DeployDistributionAdvancedSS2": true,
