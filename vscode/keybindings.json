@@ -838,7 +838,7 @@
   },
   {
     "key": "shift+cmd+i",
-    "command": "changeEditorIndentation"
+    "command": "changeEditorIndentation1"
   },
   {
     "key": "alt+cmd+e",
