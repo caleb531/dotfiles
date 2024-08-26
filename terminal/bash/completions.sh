@@ -395,7 +395,7 @@ _rt() {
 	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
 	# Complete package and module paths
-	if [ "$prev" == 'rt' ]; then
+	if [ "$prev" == 'rt' ] && [ -d "$VIRTUAL_ENV_NAME" ]; then
 		__complete_python_module_names "$cur"
 	fi
 
