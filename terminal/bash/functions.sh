@@ -204,6 +204,18 @@ lint() {
 	fi
 }
 
+# Format JavaScript/Python project files
+format() {
+	if [ -f package.json ]; then
+		npm run format "$@"
+	elif [ -f requirements.txt ]; then
+		black
+	else
+		>&2 echo "${FUNCNAME[0]}: not a node/python project"
+		return 1
+	fi
+}
+
 # Check Node/Python cyclomatic complexity
 cc() {
 	if [ -f requirements.txt ]; then
