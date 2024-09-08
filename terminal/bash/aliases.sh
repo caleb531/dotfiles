@@ -153,6 +153,7 @@ alias cod='code'
 alias coe='code'
 alias ciode='code'
 alias cdoe='code'
+alias coed='code'
 
 # Remap 'killall' to 'ka'
 alias ka='killall'
