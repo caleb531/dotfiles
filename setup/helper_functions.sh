@@ -43,7 +43,8 @@ is_node_version_installed() {
 is_npm_pkg_installed() {
 	if echo "$1" | grep --extended-regexp --quiet ".@."; then
 		# If package argument contains version specifier, account for that
-		echo "$NPM_PKG_LIST" | grep --quiet " $1"
+		echo "$NPM_PKG_LIST" \
+			| grep --quiet " $(echo "$1" | grep -Po '.+(?=@)')"
 	else
 		echo "$NPM_PKG_LIST" | grep --quiet " $1@"
 	fi
