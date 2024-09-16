@@ -86,6 +86,11 @@ rmvirtualenv() {
 	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
 
+# Fix "externally-managed-environment" in Python 3.12 pipx
+fix-pip() {
+	rm -rf "$(python3.12 -c 'import sysconfig; print(sysconfig.get_path("stdlib", sysconfig.get_default_scheme()))')"/EXTERNALLY-MANAGED
+}
+
 # Flush all DNS caches for macOS (10.10.4 and onward)
 dnsflush() {
 	sudo dscacheutil -flushcache
