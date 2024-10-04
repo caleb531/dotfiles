@@ -151,7 +151,7 @@
   },
   "p3 colors": {
     "scope": "css,scss,less",
-    "prefix": "p3colors",
+    "prefix": "p3",
     "body": [
       "@media (color-gamut: p3) {",
       "\t$1",
