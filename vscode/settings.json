@@ -163,8 +163,6 @@
     "**/LocalDistribution": true,
     "**/LocalDistributionAdvanced": true,
     "**/node_modules": true,
-    "**/build": true,
-    "**/dist": true,
     "/.aider*": true
   },
   "editor.occurrencesHighlight": "off",
