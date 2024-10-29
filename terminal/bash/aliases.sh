@@ -132,6 +132,7 @@ alias gpst='git pusht'
 alias gpstt='git pushtt'
 alias gpo='git pull origin'
 alias gpr='git pull --rebase'
+alias gpor='git pull --rebase origin'
 alias gr='git reset'
 alias gs='git status'
 
