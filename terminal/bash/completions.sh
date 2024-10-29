@@ -504,13 +504,14 @@ _gpo() {
 	local cur=${COMP_WORDS[COMP_CWORD]}
 	local prev=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "$prev" == 'gpo' ]; then
+	if [ "$prev" == 'gpo' ] || [ "$prev" == 'gpor' ]; then
 		# Complete branch names for `gpo`
 		COMPREPLY=( $(compgen -W "$(__get_git_branches --)" -- "$cur") )
 	fi
 
 }
 complete -o default -F _gpo gpo 2> /dev/null
+complete -o default -F _gpo gpor 2> /dev/null
 
 # My custom Git alias for opening a pull request, which should complete branch
 # names (because the alias accepts an optional branch name as its only argument)
