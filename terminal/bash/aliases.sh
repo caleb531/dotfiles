@@ -159,5 +159,5 @@ alias coed='code'
 # Remap 'killall' to 'ka'
 alias ka='killall'
 
-# Alias `bump-anything` to `version`
+# Make bump-anything more easily accessible
 alias version='bump-anything'
