@@ -329,11 +329,6 @@
     "command": "editor.action.openLink"
   },
   {
-    "key": "shift+alt+cmd+i",
-    "command": "workbench.action.debug.start",
-    "when": "debuggersAvailable && debugState == 'inactive'"
-  },
-  {
     "key": "f5",
     "command": "-workbench.action.debug.start",
     "when": "debuggersAvailable && debugState == 'inactive'"
@@ -605,11 +600,6 @@
   {
     "key": "alt+z",
     "command": "-editor.action.toggleWordWrap"
-  },
-  {
-    "key": "ctrl+alt+cmd+i",
-    "command": "editor.action.organizeImports",
-    "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
   },
   {
     "key": "shift+alt+o",
@@ -886,5 +876,44 @@
     "key": "ctrl+f",
     "command": "-cursorRight",
     "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.action.chat.open",
+    "when": "chatPanelParticipantRegistered"
+  },
+  {
+    "key": "ctrl+alt+cmd+i",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "cmd+k i",
+    "command": "-inlineChat.start",
+    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "inlineChat.start",
+    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+  },
+  {
+    "key": "cmd+i",
+    "command": "-inlineChat.start",
+    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-workbench.action.chat.openEditSession",
+    "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+i",
+    "command": "workbench.panel.chatEditing"
   }
 ]
