@@ -141,7 +141,11 @@ mre() {
 
 # Run Node/Python tests with Nose test runner
 rt() {
-	if [ -f package.json ]; then
+	if [ -f pnpm-lock.yaml ]; then
+		pnpm test -- "$@"
+	elif [ -f yarn.lock ]; then
+		yarn test -- "$@"
+	elif [ -f package.json ]; then
 		npm test -- "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
 		nose2 --quiet "$@"
@@ -155,17 +159,16 @@ rt() {
 	fi
 }
 rtw() {
-	if [ -f package.json ]; then
-		npm test -- --watch "$@"
-	else
-		>&2 echo "${FUNCNAME[0]}: the watch mode for rt only works for Jest projects"
-		return 1
-	fi
+	rt --watch "$@"
 }
 
 # Run Node/Python tests with coverage report
 cov() {
-	if [ -f package.json ]; then
+	if [ -f pnpm-lock.yaml ]; then
+		pnpm run coverage -- "$@"
+	elif [ -f yarn.lock ]; then
+		yarn run coverage -- "$@"
+	elif [ -f package.json ]; then
 		npm run coverage -- "$@"
 	elif [ -f .python-version ]; then
 		if [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
@@ -199,8 +202,12 @@ covo() {
 
 # Lint JavaScript/Python project files
 lint() {
-	if [ -f package.json ]; then
-		npm run lint "$@"
+	if [ -f pnpm-lock.yaml ]; then
+		pnpm run lint -- "$@"
+	elif [ -f yarn.lock ]; then
+		yarn run lint -- "$@"
+	elif [ -f package.json ]; then
+		npm run lint -- "$@"
 	elif [ -f requirements.txt ]; then
 		flake8 "$@" ./**/!(setup).py
 	else
@@ -211,8 +218,12 @@ lint() {
 
 # Format JavaScript/Python project files
 format() {
-	if [ -f package.json ]; then
-		npm run format "$@"
+	if [ -f pnpm-lock.yaml ]; then
+		pnpm run format -- "$@"
+	elif [ -f yarn.lock ]; then
+		yarn run format -- "$@"
+	elif [ -f package.json ]; then
+		npm run format -- "$@"
 	elif [ -f requirements.txt ]; then
 		black
 	else
