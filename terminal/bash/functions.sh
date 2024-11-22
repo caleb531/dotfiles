@@ -142,9 +142,9 @@ mre() {
 # Run Node/Python tests with Nose test runner
 rt() {
 	if [ -f pnpm-lock.yaml ]; then
-		pnpm test -- "$@"
+		pnpm test "$@"
 	elif [ -f yarn.lock ]; then
-		yarn test -- "$@"
+		yarn test "$@"
 	elif [ -f package.json ]; then
 		npm test -- "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
@@ -165,9 +165,9 @@ rtw() {
 # Run Node/Python tests with coverage report
 cov() {
 	if [ -f pnpm-lock.yaml ]; then
-		pnpm run coverage -- "$@"
+		pnpm run coverage "$@"
 	elif [ -f yarn.lock ]; then
-		yarn run coverage -- "$@"
+		yarn run coverage "$@"
 	elif [ -f package.json ]; then
 		npm run coverage -- "$@"
 	elif [ -f .python-version ]; then
@@ -203,9 +203,9 @@ covo() {
 # Lint JavaScript/Python project files
 lint() {
 	if [ -f pnpm-lock.yaml ]; then
-		pnpm run lint -- "$@"
+		pnpm run lint "$@"
 	elif [ -f yarn.lock ]; then
-		yarn run lint -- "$@"
+		yarn run lint "$@"
 	elif [ -f package.json ]; then
 		npm run lint -- "$@"
 	elif [ -f requirements.txt ]; then
@@ -219,9 +219,9 @@ lint() {
 # Format JavaScript/Python project files
 format() {
 	if [ -f pnpm-lock.yaml ]; then
-		pnpm run format -- "$@"
+		pnpm run format "$@"
 	elif [ -f yarn.lock ]; then
-		yarn run format -- "$@"
+		yarn run format "$@"
 	elif [ -f package.json ]; then
 		npm run format -- "$@"
 	elif [ -f requirements.txt ]; then
