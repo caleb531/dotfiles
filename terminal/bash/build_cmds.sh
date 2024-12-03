@@ -18,10 +18,6 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['node:develop']='npm run dev'
 		['node:preview']='npm run preview'
 
-		['jekyll:build']='jekyll build'
-		['jekyll:develop']='jekyll serve'
-		['jekyll:watch']='jekyll build --watch'
-
 		['python-build:build']='python -m build --sdist --wheel --outdir dist/ .'
 	)
 
@@ -54,9 +50,6 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		elif __is_python_build_project; then
 			# shellcheck disable=SC2086
 			__b python-build "$action" $args
-		elif [ -f _config.yml ]; then
-			# shellcheck disable=SC2086
-			__b jekyll "$action" $args
 		else
 			>&2 echo "project type not recognized"
 		fi
