@@ -18,7 +18,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['node:develop']='npm run dev'
 		['node:preview']='npm run preview'
 
-		['python-build:build']='python -m build --sdist --wheel --outdir dist/ .'
+		['python:build']='python -m build --sdist --wheel --outdir dist/ .'
 	)
 
 	# Run the given build tool command name and subcommand
@@ -49,7 +49,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 			__b node "$action" $args
 		elif __is_python_build_project; then
 			# shellcheck disable=SC2086
-			__b python-build "$action" $args
+			__b python "$action" $args
 		else
 			>&2 echo "project type not recognized"
 		fi
