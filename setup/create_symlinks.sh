@@ -13,6 +13,7 @@ ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/terminal/.hyper.js ~/.hyper.js
 ln -sf ~/dotfiles/terminal/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/terminal/.sqliterc ~/.sqliterc
+ln -sf ~/dotfiles/terminal/.webextrc ~/.webextrc
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 cp -n ~/dotfiles/git/default-user.inc.gitconfig ~/user.inc.gitconfig 2> /dev/null
 # Auto-generate allowed_signers file from git config

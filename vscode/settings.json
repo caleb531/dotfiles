@@ -144,7 +144,8 @@
     ".vercelignore": "ignore",
     "spotlight-exclusions.txt": "ignore",
     "*.peggy": "pegjs",
-    "yarn.lock": "yaml"
+    "yarn.lock": "yaml",
+    ".webextrc": "json"
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
@@ -395,5 +396,6 @@
   "editor.gotoLocation.multipleImplementations": "goto",
   "editor.gotoLocation.multipleReferences": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true
 }
