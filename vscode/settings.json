@@ -397,5 +397,6 @@
   "editor.gotoLocation.multipleReferences": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "eslint.useFlatConfig": true,
-  "chat.editing.alwaysSaveWithGeneratedChanges": true
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "telemetry.telemetryLevel": "error"
 }
