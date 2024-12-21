@@ -10,6 +10,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['node:start']='npm start'
 		['node:build']='npm run build'
 		['node:watch']='npm run watch'
+		['node:clean']='npm run clean'
 		['node:develop']='npm run dev'
 		['node:preview']='npm run preview'
 
