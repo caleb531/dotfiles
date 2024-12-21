@@ -7,11 +7,6 @@
 if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
 	declare -A build_cmd_map=(
-		['gulp:build']='gulp build'
-		['gulp:clean']='gulp clean'
-		['gulp:develop']='gulp serve'
-		['gulp:watch']='gulp build:watch'
-
 		['node:start']='npm start'
 		['node:build']='npm run build'
 		['node:watch']='npm run watch'
