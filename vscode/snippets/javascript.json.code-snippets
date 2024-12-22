@@ -101,6 +101,24 @@
       "}($3));"
     ]
   },
+  "immediately-invoked arrow function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "aiife",
+    "body": [
+      "(($1) => {",
+      "$2",
+      "})($3);"
+    ]
+  },
+  "immediately-invoked async arrow function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "asyncaiife",
+    "body": [
+      "(async ($1) => {",
+      "$2",
+      "})($3);"
+    ]
+  },
   "jquery document.ready": {
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "docready",
