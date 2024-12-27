@@ -17,7 +17,7 @@ preload_gem_list() {
 }
 
 preload_pip_pkg_list() {
-	PIP_PKG_LIST="$(pip3 list)"
+	PIP_PKG_LIST="$(pip3 list --format freeze)"
 }
 
 preload_vscode_pkg_list() {
