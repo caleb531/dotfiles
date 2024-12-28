@@ -32,6 +32,8 @@ export PATH="$PNPM_HOME":"$PATH"
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL"/bin:"$PATH"
+# Python
+export PATH=~/.local/bin:"$PATH"
 # MAMP/PHP
 export PATH=/Applications/MAMP/bin/php/php8.0.8/bin/:"$PATH"
 # Setup scripts

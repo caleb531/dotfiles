@@ -17,7 +17,7 @@ preload_gem_list() {
 }
 
 preload_pip_pkg_list() {
-	PIP_PKG_LIST="$(pip3 list --format freeze)"
+	PIP_PKG_LIST="$(pipx list --short | awk '{print $1}')"
 }
 
 preload_vscode_pkg_list() {
@@ -63,7 +63,7 @@ is_gem_installed() {
 }
 
 is_pip_pkg_installed() {
-	echo "$PIP_PKG_LIST" | grep --quiet "^$1=="
+	echo "$PIP_PKG_LIST" | grep --quiet "\b$1\b"
 }
 
 is_vscode_pkg_installed() {
@@ -125,7 +125,7 @@ install_gem() {
 install_pip_pkg() {
 	if ! is_pip_pkg_installed "$1"; then
 		echo "Installing $1..."
-		pip3 install "$@"
+		pipx install "$@"
 	fi
 }
 
