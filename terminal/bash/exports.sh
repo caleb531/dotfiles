@@ -32,14 +32,6 @@ export PATH="$PNPM_HOME":"$PATH"
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL"/bin:"$PATH"
-# Jekyll
-export PATH="$BREW_PREFIX"/opt/ruby/bin:"$PATH"
-if [ -d "$BREW_PREFIX"/lib/ruby/gems/3.1.0 ]; then
-	RUBY_GEMS_DIR="$(ls -d -1 "$BREW_PREFIX"/lib/ruby/gems/3.0.0 | tail -n 1)"
-fi
-export PATH="$RUBY_GEMS_DIR"/bin:"$PATH"
-export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/imagemagick@6/lib/pkgconfig:"$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="$BREW_PREFIX"/opt/libffi/lib/pkgconfig:"$PKG_CONFIG_PATH"
 # MAMP/PHP
 export PATH=/Applications/MAMP/bin/php/php8.0.8/bin/:"$PATH"
 # Setup scripts
