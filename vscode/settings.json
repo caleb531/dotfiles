@@ -145,7 +145,8 @@
     "spotlight-exclusions.txt": "ignore",
     "*.peggy": "pegjs",
     "yarn.lock": "yaml",
-    ".webextrc": "json"
+    ".webextrc": "json",
+    "config": "properties"
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
