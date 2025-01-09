@@ -15,6 +15,7 @@ install_cask 1password
 install_cask keyboard-maestro
 install_cask flux
 # Install additional apps
+install_cask chatgpt
 install_cask zoom
 install_cask microsoft-teams
 install_cask postman
