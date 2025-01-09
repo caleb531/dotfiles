@@ -20,7 +20,6 @@ install_cask zoom
 install_cask microsoft-teams
 install_cask postman
 install_cask keybase
-install_cask signal
 # Least-essential apps
 install_cask appcleaner
 install_cask imageoptim
