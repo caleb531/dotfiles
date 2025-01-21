@@ -34,6 +34,11 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL"/bin:"$PATH"
 # Python
 export PATH=~/.local/bin:"$PATH"
+# Fix Graphviz installation within Python projects (source:
+# <https://github.com/pygraphviz/pygraphviz/issues/11#issuecomment-2433155750>)
+export GRAPHVIZ_PREFIX=$(brew --prefix graphviz)
+export CFLAGS="-I${GRAPHVIZ_PREFIX}/include"
+export LDFLAGS="-L${GRAPHVIZ_PREFIX}/lib"
 # MAMP/PHP
 export PATH=/Applications/MAMP/bin/php/php8.0.8/bin/:"$PATH"
 # Setup scripts
