@@ -146,7 +146,8 @@
     "*.peggy": "pegjs",
     "yarn.lock": "yaml",
     ".webextrc": "json",
-    "config": "properties"
+    "config": "properties",
+    "*.share": "json"
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
