@@ -10,6 +10,13 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
+        "scope": ["support.type.custom-property.less", "support.type.custom-property.name.less"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#F8F8F2"
+        }
+      },
+      {
         "scope": ["storage.type", "support.class", "variable.parameter"],
         "settings": {
           "fontStyle": ""
