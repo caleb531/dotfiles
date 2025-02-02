@@ -23,6 +23,7 @@ pbcopy() {
 # Remove last n commands from Bash history (n defaults to 1)
 rmlastcmd() {
 	history -d "$((HISTCMD))"
+	history -w
 }
 
 # Copy last command to clipboard
