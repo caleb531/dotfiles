@@ -20,9 +20,12 @@ pbcopy() {
 	echo -n "$contents" | command pbcopy
 }
 
-# Remove last n commands from Bash history (n defaults to 1)
+# Remove last n commands from Bash history
 rmlastcmd() {
-	history -d "$((HISTCMD))"
+	local n=${1:-1}
+	for ((i = 0; i < n; i++)); do
+		history -d "$((HISTCMD))"
+	done
 	history -w
 }
 
