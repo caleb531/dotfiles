@@ -410,5 +410,9 @@
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "eslint.useFlatConfig": true,
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
-  "telemetry.telemetryLevel": "error"
+  "telemetry.telemetryLevel": "error",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.svg": "default"
+  }
 }
