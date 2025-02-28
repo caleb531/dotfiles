@@ -9,6 +9,8 @@ enable_sudo_touch_id() {
 		echo ''
 		read -rp "Overwrite $auth_file_path with the above? " answer
 		if [[ "$answer" =~ y ]]; then
+			# We are using `tee` here (which reads from stin and writes to
+			# stdout) because sudo is required to write to the file
 			echo "$updated_auth_file_contents" | sudo tee "$auth_file_path" > /dev/null
 			echo "Done. Please restart the Terminal application."
 		fi
