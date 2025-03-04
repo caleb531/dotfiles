@@ -157,7 +157,8 @@
     "yarn.lock": "yaml",
     ".webextrc": "json",
     "config": "properties",
-    "*.share": "json"
+    "*.share": "json",
+    ".aider.input.history": "properties"
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
