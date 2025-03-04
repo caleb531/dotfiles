@@ -158,7 +158,8 @@
     ".webextrc": "json",
     "config": "properties",
     "*.share": "json",
-    ".aider.input.history": "properties"
+    ".aider.input.history": "properties",
+    "*.ucf": "properties"
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
