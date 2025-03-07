@@ -28,6 +28,10 @@
 	sort = -committerdate
 
 [diff]
+	# Use the better "histogram" algorithm for diffing (see
+	# <https://blog.gitbutler.com/how-git-core-devs-configure-git/#better-diff>
+	# for an example)
+	algorithm = histogram
 	# Enable more-logical grouping of changes in diffs
 	indentHeuristic = true
 	# Consider a "word" a string of uppercase letters OR a string of lowercase
