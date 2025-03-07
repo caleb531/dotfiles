@@ -18,6 +18,11 @@
 [push]
 	default = simple
 	autoSetupRemote = true
+[fetch]
+	# Prune deleted remote branches when fetching
+	prune = true
+	# Prune deleted remote tags when fetching
+	pruneTags = true
 [pull]
 	# Merge and pull by default
 	rebase = false
