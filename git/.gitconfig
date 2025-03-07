@@ -19,7 +19,6 @@
 	default = simple
 	autoSetupRemote = true
 [pull]
-	default = simple
 	# Merge and pull by default
 	rebase = false
 
