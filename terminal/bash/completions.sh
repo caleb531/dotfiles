@@ -172,7 +172,7 @@ _pnpm() {
 	if [ "$prev" == 'pnpm' ] || [ "$prev" == 'help' ]; then
 		# Complete common pnpm commands for `pnpm`
 		local npm_script_names="$(__get_npm_script_names)"
-		COMPREPLY=( $(compgen -W "add audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update upgrade $npm_script_names" -- "$cur") )
+		COMPREPLY=( $(compgen -W "add approve-builds audit exec help info init install link list outdated prune publish remove search show start stop test uninstall unlink update upgrade $npm_script_names" -- "$cur") )
 	elif [ "$second" == '-s' ]; then
 		local npm_script_names="$(__get_npm_script_names)"
 		COMPREPLY=( $(compgen -W "$npm_script_names" -- "$cur") )
