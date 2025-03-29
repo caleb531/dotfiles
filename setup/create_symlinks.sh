@@ -30,14 +30,6 @@ ln -sf ~/dotfiles/ssh/ssh_config ~/.ssh/config
 mkdir -p ~/.config/1Password/ssh
 cp -n ~/dotfiles/ssh/default-1p-agent.toml ~/.config/1Password/ssh/agent.toml 2> /dev/null
 
-# Symlink GPG configuration
-mkdir -p ~/.gnupg
-ln -sf ~/dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
-# gpg-agent.conf can't resolve ~ to my home folder, so we must use sed to
-# evaluate the path
-rm ~/.gnupg/gpg-agent.conf
-cat ~/dotfiles/gpg/gpg-agent.conf | sed "s|~|$HOME|g" > ~/.gnupg/gpg-agent.conf
-
 # Disable Bash Sessions feature in macOS El Capitan
 touch ~/.bash_sessions_disable
 
