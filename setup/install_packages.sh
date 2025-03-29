@@ -35,6 +35,7 @@ install_brew_pkg diff-so-fancy
 
 install_brew_pkg openssl
 install_brew_pkg python
+install_brew_pkg pipx
 # Allow pip to install packages globally (i.e. outside of a virtualenv); for
 # more information, see
 # <https://packaging.python.org/en/latest/specifications/externally-managed-environments/>
