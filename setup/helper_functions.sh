@@ -75,7 +75,7 @@ tap_brew_repo() {
 }
 
 install_brew_pkg() {
-	if ! is_brew_pkg_installed "$1"; then
+	if ! is_brew_pkg_installed "$(basename "$1")"; then
 		brew install "$@"
 	fi
 }
@@ -100,7 +100,7 @@ install_npm_pkg() {
 }
 
 install_cask() {
-	if ! is_cask_installed "$1"; then
+	if ! is_cask_installed "$(basename "$1")"; then
 		echo "Installing $1..."
 		brew install --cask "$@"
 	fi
