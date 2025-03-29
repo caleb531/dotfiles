@@ -5,6 +5,7 @@ source ~/dotfiles/terminal/bash/exports.sh
 
 echo "Installing Homebrew packages..."
 preload_brew_pkg_list
+preload_cask_list
 
 install_brew_pkg bash
 
