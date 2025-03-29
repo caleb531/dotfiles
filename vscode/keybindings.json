@@ -884,8 +884,7 @@
   },
   {
     "key": "ctrl+alt+cmd+i",
-    "command": "workbench.panel.chat",
-    "when": "workbench.panel.chat.view.copilot.active"
+    "command": "workbench.panel.chat"
   },
   {
     "key": "ctrl+cmd+i",
@@ -915,5 +914,9 @@
   {
     "key": "ctrl+shift+alt+cmd+i",
     "command": "workbench.panel.chatEditing"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.action.chat.open"
   }
 ]
