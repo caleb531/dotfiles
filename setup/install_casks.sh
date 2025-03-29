@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source ~/dotfiles/setup/header.sh
+source ~/dotfiles/terminal/bash/exports.sh
 
 echo "Installing Homebrew Casks..."
 preload_cask_list
