@@ -37,7 +37,7 @@ install_brew_pkg python
 # Allow pip to install packages globally (i.e. outside of a virtualenv); for
 # more information, see
 # <https://packaging.python.org/en/latest/specifications/externally-managed-environments/>
-rm -rf "$(python3.12 -c 'import sysconfig; print(sysconfig.get_path("stdlib", sysconfig.get_default_scheme()))')"/EXTERNALLY-MANAGED
+rm -rf "$(python3 -c 'import sysconfig; print(sysconfig.get_path("stdlib", sysconfig.get_default_scheme()))')"/EXTERNALLY-MANAGED
 
 install_brew_pkg ssh-copy-id
 
