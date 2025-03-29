@@ -46,9 +46,6 @@ __output_ps1() {
 		if [ -f "$VIRTUAL_ENV"/bin/python3 ]; then
 			echo -n "py3"
 			echo -n "$SEPARATOR"
-		elif [ -f "$VIRTUAL_ENV"/bin/python2 ]; then
-			echo -n "py2"
-			echo -n "$SEPARATOR"
 		fi
 
 	fi
