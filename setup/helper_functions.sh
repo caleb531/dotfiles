@@ -134,22 +134,3 @@ install_vscode_pkg() {
 		code --install-extension "$@"
 	fi
 }
-
-install_font() {
-	local font_name="$1"
-	local dest_dir=~/Library/Fonts/"$font_name"
-	if [[ ! -d "$dest_dir" || -z "$(ls "$dest_dir"/*.ttf 2> /dev/null)" ]]; then
-		echo "Installing $font_name..."
-		local temp_dir="$(mktemp -d)"
-		local dest_archive="$temp_dir"/"$font_name".zip
-		curl \
-			--get \
-			--data-urlencode "family=$font_name" \
-			--progress \
-			'https://fonts.google.com/download' \
-			> "$dest_archive"
-		rm -rf "$dest_dir"
-		unzip -q "$dest_archive" -d "$dest_dir"
-		rm -rf "$temp_dir"
-	fi
-}
