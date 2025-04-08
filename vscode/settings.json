@@ -416,5 +416,6 @@
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.svg": "default"
-  }
+  },
+  "chat.agent.enabled": true
 }
