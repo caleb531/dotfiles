@@ -6,13 +6,23 @@
 # simply won't be exposed
 if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 
+	__get_preferred_node_package_manager() {
+		if [ -f pnpm-lock.yaml ]; then
+			pnpm "$@"
+		elif [ -f yarn.lock ]; then
+			yarn "$@"
+		else
+			npm "$@"
+		fi
+	}
+
 	declare -A build_cmd_map=(
-		['node:start']='npm start'
-		['node:build']='npm run build'
-		['node:watch']='npm run watch'
-		['node:clean']='npm run clean'
-		['node:develop']='npm run dev'
-		['node:preview']='npm run preview'
+		['node:start']='__get_preferred_node_package_manager start'
+		['node:build']='__get_preferred_node_package_manager run build'
+		['node:watch']='__get_preferred_node_package_manager run watch'
+		['node:clean']='__get_preferred_node_package_manager run clean'
+		['node:develop']='__get_preferred_node_package_manager run dev'
+		['node:preview']='__get_preferred_node_package_manager run preview'
 
 		['python:build']='python -m build --sdist --wheel --outdir dist/ .'
 	)
@@ -24,11 +34,6 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		local subcmd="${build_cmd_map["$project_type:$action"]}"
 		local args=${*:3}
 		if [ -n "$subcmd" ]; then
-			if [ -n "$args" ]; then
-				echo "Running $subcmd -- $args"
-			else
-				echo "Running $subcmd $args"
-			fi
 			# shellcheck disable=SC2086
 			$subcmd -- $args
 		else
