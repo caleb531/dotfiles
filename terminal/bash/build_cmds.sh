@@ -35,7 +35,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		local args=${*:3}
 		if [ -n "$subcmd" ]; then
 			# shellcheck disable=SC2086
-			$subcmd -- $args
+			$subcmd $args
 		else
 			>&2 echo "$action command not found for $project_type"
 		fi
