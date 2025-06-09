@@ -171,6 +171,7 @@
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "files.exclude": {
+    "**/.virtualenv": true,
     "**/*.map": true,
     "**/DeployDistribution": true,
     "**/DeployDistributionAdvanced": true,
