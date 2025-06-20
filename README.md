@@ -11,11 +11,11 @@ Linux systems.
 
 ## Terminal configuration
 
-### Bash 4
+### Bash 5
 
-macOS ships with Bash 3.2, however I use Bash 4 as my shell of choice. Bash 4
+macOS ships with Bash 3.2, however I use Bash 5 as my shell of choice. Bash 5
 adds Unicode literals, the new *globstar* option, and support for Bash
-Completion 2. These reasons are enough for me to use Bash 4 over the bundled zsh
+Completion 2. These reasons are enough for me to use Bash 5 over the bundled zsh
 shell (I also find zsh overrated, but that's just me).
 
 ### Theme
