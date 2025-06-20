@@ -6,6 +6,7 @@ ciniao0504.sql-format
 dbaeumer.vscode-eslint
 dcortes92.freemarker
 digitalbrainstem.javascript-ejs-support
+docker.docker
 editorconfig.editorconfig
 esbenp.prettier-vscode
 formulahendry.auto-rename-tag
@@ -25,7 +26,7 @@ mattn.lisp
 meganrogge.template-string-converter
 mohsen1.prettify-json
 mrmlnc.vscode-apache
-ms-azuretools.vscode-docker
+ms-azuretools.vscode-containers
 ms-playwright.playwright
 ms-python.black-formatter
 ms-python.debugpy
