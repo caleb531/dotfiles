@@ -56,6 +56,20 @@
         }
       },
       {
+        "scope": ["entity.other.attribute-name.table.toml", "support.type.property-name.table.toml"],
+        "settings": {
+          "foreground": "#A6E22E",
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": ["entity.name.tag.toml", "support.type.property-name.toml"],
+        "settings": {
+          "foreground": "#F92672",
+          "fontStyle": ""
+        }
+      },
+      {
         "scope": ["support.other.escape.special.regexp"],
         "settings": {
           "foreground": "#AE81FF"
