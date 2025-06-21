@@ -37,7 +37,7 @@ cplastcmd() {
 # Copy last command and remove it from Bash history
 cprmlastcmd() {
 	cplastcmd
-	rmlastcmd
+	rmlastcmd "$@"
 }
 
 # Create a new directory and switch to it
