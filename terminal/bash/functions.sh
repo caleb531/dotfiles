@@ -153,6 +153,8 @@ rt() {
 		npm test -- "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
 		nose2 --quiet "$@"
+	elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2==; then
+		nose2 --quiet "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 		nosetests --rednose "$@"
 	elif ls ./*.py &> /dev/null || ls tests/*.py &> /dev/null; then
@@ -176,6 +178,8 @@ cov() {
 		npm run coverage -- "$@"
 	elif [ -f .python-version ]; then
 		if [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
+			coverage run -m nose2 --quiet "$@"
+		elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2==; then
 			coverage run -m nose2 --quiet "$@"
 		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 			coverage run -m nose --rednose "$@"
