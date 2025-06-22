@@ -84,9 +84,6 @@ export HISTIGNORE='clear*:cplastcmd*:cprmlastcmd*:git clean*:git reset --hard*:h
 # Prevent Python from generating bytecode (*.pyc, __pycache__, etc.)
 export PYTHONDONTWRITEBYTECODE=1
 
-# The name of the virtualenv directory (within the respective project directory)
-export VIRTUAL_ENV_NAME='.virtualenv'
-
 # Disable notices for npm updates
 export NO_UPDATE_NOTIFIER=1
 
