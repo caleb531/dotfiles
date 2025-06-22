@@ -20,10 +20,7 @@ __is_node_project() {
 # Return code 0 if the current working directory is a Python project that uses
 # the 'build' package
 __is_python_build_project() {
-	if ! ls .virtualenv/lib/python*/site-packages/build &> /dev/null; then
-		return 1
-	fi
-	if ! ls .venv/lib/python*/site-packages/uv &> /dev/null; then
+	if ! ls "$VIRTUAL_ENV_NAME"/lib/python*/site-packages/build &> /dev/null; then
 		return 1
 	fi
 	local path="$PWD"

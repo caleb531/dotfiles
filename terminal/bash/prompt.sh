@@ -80,13 +80,7 @@ __output_ps1() {
 # Activate/deactivate Python virtualenv depending on the current directory
 __detect_python_virtualenv() {
 
-	local virtualenv
-	# Prefer uv-created virtualenvs over legacy virtualenvs
-	if [ -d .venv ]; then
-		virtualenv=./.venv
-	elif [ -d .virtualenv ]; then
-		virtualenv=./.virtualenv
-	fi
+	local virtualenv=./"$VIRTUAL_ENV_NAME"
 	# If current directory has a virtualenv that is not itself
 	if [ -f "$virtualenv"/bin/activate ] && [ "$virtualenv" != "$PWD" ]; then
 		# Activate virtualenv if it is not already active

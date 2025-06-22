@@ -80,13 +80,14 @@ mkvirtualenv() {
 	else
 		local python_path=python"$python_version_major"
 	fi
-	virtualenv --python="$python_path" .venv
-	source .venv/bin/activate
+	virtualenv --python="$python_path" "$VIRTUAL_ENV_NAME"
+	# Activate virtualenv so packages can be installed
+	source ./"$VIRTUAL_ENV_NAME"/bin/activate
 }
 
 # Remove existing Python virtualenv
 rmvirtualenv() {
-	rm -rf .virtualenv .venv
+	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
 
 # Fix "externally-managed-environment" in Python 3.12 pipx
