@@ -24,7 +24,7 @@ if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
 		['node:develop']='__get_preferred_node_package_manager run dev'
 		['node:preview']='__get_preferred_node_package_manager run preview'
 
-		['python:build']='python -m build --sdist --wheel --outdir dist/ .'
+		['python:build']='uv build --sdist --wheel --out-dir dist/'
 	)
 
 	# Run the given build tool command name and subcommand
