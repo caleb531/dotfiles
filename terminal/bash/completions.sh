@@ -264,12 +264,12 @@ _pip() {
 		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- "$cur") )
 	elif [ "$prev" == 'show' ] || [ "$second" == 'uninstall' ] || [ "$third" == '-U' ]; then
 		# Complete installed packages for `pip show` and `pip uninstall`
-		if [ -z "$PIP_PKG_LIST" ] || [ "$PWD" != "$PIP_PKG_PWD" ]; then
+		if [ -z "$PYTHON_PKG_LIST" ] || [ "$PWD" != "$PYTHON_PKG_PWD" ]; then
 			# Cache package list for the current PWD
-			PIP_PKG_LIST="$($first list --format=freeze | grep -Po '[a-z0-9\-]+(?=\=)' 2> /dev/null)"
-			PIP_PKG_PWD="$PWD"
+			PYTHON_PKG_LIST="$($first list --format=freeze | grep -Po '[a-z0-9\-]+(?=\=)' 2> /dev/null)"
+			PYTHON_PKG_PWD="$PWD"
 		fi
-		COMPREPLY=( $(compgen -W "$PIP_PKG_LIST" -- "$cur") )
+		COMPREPLY=( $(compgen -W "$PYTHON_PKG_LIST" -- "$cur") )
 	fi
 
 }
@@ -283,12 +283,12 @@ _pipiu() {
 
 	if [ "$prev" == 'pipiu' ] || [ "$prev" == 'pipu' ]; then
 		# Complete installed packages for `pip show` and `pip uninstall`
-		if [ -z "$PIP_PKG_LIST" ] || [ "$PWD" != "$PIP_PKG_PWD" ]; then
+		if [ -z "$PYTHON_PKG_LIST" ] || [ "$PWD" != "$PYTHON_PKG_PWD" ]; then
 			# Cache package list for the current PWD
-			PIP_PKG_LIST="$(pip list | grep -Po '[a-z0-9\-]+(?=\=)' 2> /dev/null)"
-			PIP_PKG_PWD="$PWD"
+			PYTHON_PKG_LIST="$(pip list | grep -Po '[a-z0-9\-]+(?=\=)' 2> /dev/null)"
+			PYTHON_PKG_PWD="$PWD"
 		fi
-		COMPREPLY=( $(compgen -W "$PIP_PKG_LIST" -- "$cur") )
+		COMPREPLY=( $(compgen -W "$PYTHON_PKG_LIST" -- "$cur") )
 	fi
 
 }

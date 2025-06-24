@@ -34,6 +34,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL"/bin:"$PATH"
 # Python
 export PATH=~/.local/bin:"$PATH"
+export PATH="$(uv tool dir)":"$PATH"
 # Fix Graphviz installation within Python projects (source:
 # <https://github.com/pygraphviz/pygraphviz/issues/11#issuecomment-2433155750>)
 export GRAPHVIZ_PREFIX=$(brew --prefix graphviz)

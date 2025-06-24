@@ -16,8 +16,8 @@ preload_gem_list() {
 	GEM_LIST="$(gem list)"
 }
 
-preload_pip_pkg_list() {
-	PIP_PKG_LIST="$(pipx list --short | awk '{print $1}')"
+preload_python_pkg_list() {
+	PYTHON_PKG_LIST="$(uv tool list | grep -Po "^[a-z0-9\-]+(?= v)")"
 }
 
 preload_vscode_pkg_list() {
@@ -62,8 +62,8 @@ is_gem_installed() {
 	echo "$GEM_LIST" | grep --quiet "^$1 "
 }
 
-is_pip_pkg_installed() {
-	echo "$PIP_PKG_LIST" | grep --quiet "\b$1\b"
+is_python_pkg_installed() {
+	echo "$PYTHON_PKG_LIST" | grep --quiet "\b$1\b"
 }
 
 is_vscode_pkg_installed() {
@@ -122,10 +122,10 @@ install_gem() {
 	fi
 }
 
-install_pip_pkg() {
-	if ! is_pip_pkg_installed "$1"; then
+install_python_pkg() {
+	if ! is_python_pkg_installed "$1"; then
 		echo "Installing $1..."
-		pipx install "$@"
+		uv tool install "$@"
 	fi
 }
 

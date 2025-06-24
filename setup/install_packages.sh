@@ -35,11 +35,10 @@ install_brew_pkg diff-so-fancy
 
 install_brew_pkg openssl
 install_brew_pkg python
-install_brew_pkg pipx
-# Allow pip to install packages globally (i.e. outside of a virtualenv); for
-# more information, see
-# <https://packaging.python.org/en/latest/specifications/externally-managed-environments/>
-rm -rf "$(python3 -c 'import sysconfig; print(sysconfig.get_path("stdlib", sysconfig.get_default_scheme()))')"/EXTERNALLY-MANAGED
+# Install uv via standalone installer (the recommended method; see
+# <https://docs.astral.sh/uv/getting-started/installation/> for alternative
+# installation methods)
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 install_brew_pkg ssh-copy-id
 
@@ -64,5 +63,5 @@ install_brew_pkg supabase/tap/supabase
 install_brew_pkg mas
 
 ~/dotfiles/setup/install_node.sh
-~/dotfiles/setup/install_pip_packages.sh
+~/dotfiles/setup/install_python_packages.sh
 ~/dotfiles/setup/install_vscode_packages.sh
