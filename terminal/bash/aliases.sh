@@ -72,6 +72,16 @@ alias tsc='tsc --noEmit'
 
 # Dependency installation packages
 
+# Install Python packages into virtualenv
+alias pir='pip install -r requirements.txt'
+# Record installed Python packages
+alias pf='pip freeze'
+alias pfr='pip freeze > requirements.txt'
+# Install and upgrade Python packages
+alias pipi='pip install'
+alias pipiu='pip install -U'
+alias pipu='pip install -U'
+
 # Allow nvm to be used as a shortcut for fnm
 alias nvm='fnm'
 # Allow m typo to point to n node switcher

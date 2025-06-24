@@ -90,6 +90,11 @@ rmvirtualenv() {
 	rm -rf ./"$VIRTUAL_ENV_NAME"
 }
 
+# Fix "externally-managed-environment" in Python 3.12 pipx
+fix-pip() {
+	rm -rf "$(python3 -c 'import sysconfig; print(sysconfig.get_path("stdlib", sysconfig.get_default_scheme()))')"/EXTERNALLY-MANAGED
+}
+
 # Flush all DNS caches for macOS (10.10.4 and onward)
 dnsflush() {
 	sudo dscacheutil -flushcache
@@ -424,4 +429,12 @@ intn() {
 	INT_DISABLE_CHECKOUT_ORIG_BRANCH=1
 	__int "$@"
 	INT_DISABLE_CHECKOUT_ORIG_BRANCH=''
+}
+
+# Upgrade all installed pip packages to the latest versions
+upgrade-all-pip-packages() {
+	pip list --outdated \
+		| awk '{print $1}' \
+		| tail -n +3 \
+		| xargs pip install -U
 }

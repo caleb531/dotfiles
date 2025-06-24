@@ -244,6 +244,56 @@ _ncu() {
 }
 complete -o default -F _ncu ncu 2> /dev/null
 
+# Completion function for pip, Python's package manager
+_pip() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+	local first=${COMP_WORDS[0]}
+	local second=${COMP_WORDS[1]}
+	local third=${COMP_WORDS[2]}
+
+	if [ "$prev" == 'pip' ] || [ "$prev" == 'pip2' ] || [ "$prev" == 'pip3' ] || [ "$prev" == 'help' ]; then
+		# Complete common pip commands for `pip`
+		COMPREPLY=( $(compgen -W 'freeze help install list search show uninstall' -- "$cur") )
+	elif [ "$prev" == '>' ] || [ "$prev" == '-r' ]; then
+		# Complete filenames when output is being redirected or for `pip install -r`
+		COMPREPLY=()
+	elif [ "$prev" == 'list'  ]; then
+		# Complete options for `pip list`
+		COMPREPLY=( $(compgen -W '--editable --local --outdated --uptodate' -- "$cur") )
+	elif [ "$prev" == 'show' ] || [ "$second" == 'uninstall' ] || [ "$third" == '-U' ]; then
+		# Complete installed packages for `pip show` and `pip uninstall`
+		if [ -z "$PYTHON_PKG_LIST" ] || [ "$PWD" != "$PYTHON_PKG_PWD" ]; then
+			# Cache package list for the current PWD
+			PYTHON_PKG_LIST="$($first list --format=freeze | grep -Po '[a-z0-9\-]+(?=\=)' 2> /dev/null)"
+			PYTHON_PKG_PWD="$PWD"
+		fi
+		COMPREPLY=( $(compgen -W "$PYTHON_PKG_LIST" -- "$cur") )
+	fi
+
+}
+complete -o default -F _pip pip pip2 pip3 2> /dev/null
+
+# Completion function for pip upgrade aliases
+_pipiu() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+	local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "$prev" == 'pipiu' ] || [ "$prev" == 'pipu' ]; then
+		# Complete installed packages for `pip show` and `pip uninstall`
+		if [ -z "$PYTHON_PKG_LIST" ] || [ "$PWD" != "$PYTHON_PKG_PWD" ]; then
+			# Cache package list for the current PWD
+			PYTHON_PKG_LIST="$(pip list | grep -Po '[a-z0-9\-]+(?=\=)' 2> /dev/null)"
+			PYTHON_PKG_PWD="$PWD"
+		fi
+		COMPREPLY=( $(compgen -W "$PYTHON_PKG_LIST" -- "$cur") )
+	fi
+
+}
+complete -o default -F _pipiu pipiu pipu 2> /dev/null
+
 # Completion function for gem, Ruby's built-in package manager
 _gem() {
 
