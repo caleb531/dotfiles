@@ -153,7 +153,7 @@ rt() {
 		npm test -- "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
 		nose2 --quiet "$@"
-	elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2==; then
+	elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2; then
 		nose2 --quiet "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 		nosetests --rednose "$@"
@@ -179,7 +179,7 @@ cov() {
 	elif [ -f .python-version ]; then
 		if [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
 			coverage run -m nose2 --quiet "$@"
-		elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2==; then
+		elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2; then
 			coverage run -m nose2 --quiet "$@"
 		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 			coverage run -m nose --rednose "$@"
@@ -200,7 +200,7 @@ cov() {
 covo() {
 	if [ -f package.json ]; then
 		open -a "$WEB_BROWSER_NAME" ./coverage/index.html
-	elif [ -f requirements.txt ]; then
+	elif [ -f pyproject.toml ] || [ -f requirements.txt ]; then
 		open -a "$WEB_BROWSER_NAME" ./htmlcov/index.html
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
