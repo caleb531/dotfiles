@@ -584,10 +584,6 @@
     "command": "workbench.action.showAllEditors"
   },
   {
-    "key": "ctrl+shift+b",
-    "command": "gitblame.addCommitHashToClipboard"
-  },
-  {
     "key": "shift+alt+down",
     "command": "-editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
