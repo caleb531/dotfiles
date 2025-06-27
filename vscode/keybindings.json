@@ -914,5 +914,10 @@
   {
     "key": "ctrl+cmd+i",
     "command": "-workbench.action.chat.open"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
   }
 ]
