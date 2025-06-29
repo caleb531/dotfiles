@@ -432,5 +432,8 @@
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.svg": "default"
   },
-  "chat.agent.enabled": true
+  "chat.agent.enabled": true,
+  "ruff.codeAction.disableRuleComment": {
+    "enable": false
+  }
 }
