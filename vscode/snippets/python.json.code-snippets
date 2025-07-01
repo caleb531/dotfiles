@@ -153,5 +153,19 @@
     "body": [
       "# noqa: ${1:errorcodes}"
     ]
+  },
+  "return type arrow": {
+    "scope": "python",
+    "prefix": "ar",
+    "body": [
+      " -> "
+    ]
+  },
+  "return type arrow (None)": {
+    "scope": "python",
+    "prefix": "arn",
+    "body": [
+      " -> None"
+    ]
   }
 }
