@@ -10,7 +10,6 @@ ln -sf ~/dotfiles/terminal/.bashrc ~/.bash_profile
 ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
 
 # Symlink miscellaneous configuration
-ln -sf ~/dotfiles/terminal/.hyper.js ~/.hyper.js
 ln -sf ~/dotfiles/terminal/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/terminal/.sqliterc ~/.sqliterc
 ln -sf ~/dotfiles/terminal/.webextrc ~/.webextrc
