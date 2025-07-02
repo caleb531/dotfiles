@@ -438,3 +438,13 @@ upgrade-all-pip-packages() {
 		| tail -n +3 \
 		| xargs pip install -U
 }
+
+# Basically `uv version`, but also auto-commits and auto-tags the release
+uvv() {
+	uv version "$@"
+	git add pyproject.toml uv.lock
+	git commit -m "Prepare v$1 release"
+	git tag "v$1"
+	git push
+	git push --tags
+}
