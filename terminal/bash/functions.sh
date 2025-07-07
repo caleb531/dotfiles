@@ -441,10 +441,11 @@ upgrade-all-pip-packages() {
 
 # Basically `uv version`, but also auto-commits and auto-tags the release
 uvv() {
-	uv version "$@" || return 1
+	local version="${1#v}"
+	uv version "$version" "${@:2}" || return 1
 	git add pyproject.toml uv.lock || return 1
-	git commit -m "Prepare v$1 release" || return 1
-	git tag "v$1" || return 1
+	git commit -m "Prepare v$version release" || return 1
+	git tag "v$version" || return 1
 	git push || return 1
 	git push --tags
 }
