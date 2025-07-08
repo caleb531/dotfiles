@@ -14,7 +14,7 @@ install_cask alfred
 install_cask visual-studio-code
 install_cask 1password
 install_cask keyboard-maestro
-install_cask flux
+install_cask flux-app
 # Install additional apps
 install_cask chatgpt
 install_cask zoom

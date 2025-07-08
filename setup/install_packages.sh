@@ -56,7 +56,7 @@ install_brew_pkg editorconfig
 install_brew_pkg graphviz
 
 # Install Supabase CLI and its dependencies
-install_cask docker
+install_cask docker-desktop
 install_brew_pkg supabase/tap/supabase
 
 # Install Mac App Store command-line utility
