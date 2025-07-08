@@ -32,8 +32,9 @@ __get_brew_package_versions() {
 # A helper function used for retrieving the list of all npm script names for a
 # particular project (used for autocompletion)
 __get_npm_script_names() {
+	# shellcheck disable=SC2016
 	cat package.json \
-		| jq '.scripts | keys[] as $k | $k' \
+		| yq '.scripts | keys[] as $k | $k' \
 		| xargs
 }
 
@@ -41,11 +42,13 @@ __get_npm_script_names() {
 # autocompletion (works for npm, pnpm, and yarn)
 __get_npm_pkg_names() {
 	local package_json="$(cat package.json)"
+	# shellcheck disable=SC2016
 	local dep_list="$(echo "$package_json" \
-		| jq '.dependencies | keys[] as $k | $k' 2> /dev/null \
+		| yq '.dependencies | keys[] as $k | $k' 2> /dev/null \
 		| xargs)"
+	# shellcheck disable=SC2016
 	local dev_dep_list="$(echo "$package_json" \
-		| jq '.devDependencies | keys[] as $k | $k' 2> /dev/null \
+		| yq '.devDependencies | keys[] as $k | $k' 2> /dev/null \
 		| xargs)"
 	echo "$dep_list $dev_dep_list" | xargs
 }

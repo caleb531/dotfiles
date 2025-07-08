@@ -27,8 +27,8 @@ install_brew_pkg rsync
 # GNU ls is required for colored ls output
 install_brew_pkg coreutils
 install_brew_pkg tree
-# The jq utility (used for JSON-parsing on the shell)
-install_brew_pkg jq
+# The yq utility (used for parsing JSON, YAML, and TOML on the shell)
+install_brew_pkg yq
 
 install_brew_pkg git
 install_brew_pkg diff-so-fancy
