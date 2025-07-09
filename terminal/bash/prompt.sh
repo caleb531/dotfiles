@@ -44,7 +44,7 @@ __output_ps1() {
 		# Output Python version used by virtualenv
 		__set_color "$BLUE"
 		if [ -f "$VIRTUAL_ENV"/bin/python3 ]; then
-			echo -n "py3"
+			echo -n "py$(python --version | grep -Eo 'Python [0-9]+\.[0-9]+' | cut -c 8-)"
 			echo -n "$SEPARATOR"
 		fi
 
