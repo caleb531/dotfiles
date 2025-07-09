@@ -446,6 +446,8 @@ uvv() {
 	git add pyproject.toml uv.lock || return 1
 	git commit -m "Prepare v$version release" || return 1
 	git tag "v$version" || return 1
+	# Prompt user to press ENTER to continue
+	read -r -p "Press ENTER to push changes and tag..."
 	git push || return 1
 	git push --tags
 }
