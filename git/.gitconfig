@@ -175,6 +175,7 @@
 	pullom = pull origin main
 	# Pull from remote, recommitting unpushed changes atop the pulled commits
 	pullr = pull --rebase
+	pullro = pull --rebase origin
 	# Push any unpushed tags (this will *not* push unpushed commits)
 	pusht = push --tags
 	# Push commits and push tags in succession
