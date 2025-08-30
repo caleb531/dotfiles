@@ -86,7 +86,7 @@ export PYTHONDONTWRITEBYTECODE=1
 
 # The name of the virtualenv directory (within the respective project directory)
 export VIRTUAL_ENV_NAME='.virtualenv'
-export UV_PROJECT_ENVIRONMENT="$VIRTUAL_ENV_NAME"
+export UV_PROJECT_ENVIRONMENT="./$VIRTUAL_ENV_NAME"
 
 # Disable notices for npm updates
 export NO_UPDATE_NOTIFIER=1
