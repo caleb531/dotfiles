@@ -218,6 +218,8 @@ lint() {
 		npm run lint -- "$@"
 	elif [ -f requirements.txt ]; then
 		flake8 "$@" ./**/!(setup).py
+	elif [ -f pyproject.toml ]; then
+		ruff check .
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 		return 1
