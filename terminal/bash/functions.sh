@@ -234,8 +234,8 @@ format() {
 		yarn run format "$@"
 	elif [ -f package.json ]; then
 		npm run format -- "$@"
-	elif [ -f requirements.txt ]; then
-		black
+	elif [ -f pyproject.toml ] || [ -f requirements.txt ]; then
+		ruff format .
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
 		return 1
