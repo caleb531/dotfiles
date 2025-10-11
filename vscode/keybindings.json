@@ -923,5 +923,9 @@
   {
     "key": "ctrl+alt+cmd+m",
     "command": "workbench.action.chat.toggleAgentMode"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "gitblame.addCommitHashToClipboard"
   }
 ]

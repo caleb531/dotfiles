@@ -51,6 +51,7 @@ v4run.transpose
 vincaslt.highlight-matching-tag
 vue.volar
 vunguyentuan.vscode-css-variables
+waderyan.gitblame
 wmaurer.change-case
 xadillax.viml
 yzhang.markdown-all-in-one
