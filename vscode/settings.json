@@ -56,7 +56,10 @@
         }
       },
       {
-        "scope": ["entity.other.attribute-name.table.toml", "support.type.property-name.table.toml"],
+        "scope": [
+          "entity.other.attribute-name.table.toml",
+          "support.type.property-name.table.toml"
+        ],
         "settings": {
           "foreground": "#A6E22E",
           "fontStyle": ""
