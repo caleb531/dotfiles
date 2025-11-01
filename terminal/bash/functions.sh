@@ -151,10 +151,13 @@ rt() {
 		yarn test "$@"
 	elif [ -f package.json ]; then
 		npm test -- "$@"
-	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
-		nose2 --quiet "$@"
+	elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q pytest; then
+
+		pytest "$@"
 	elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2; then
-		nose2 --quiet "$@"
+		nose2 "$@"
+	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
+		nose2 "$@"
 	elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 		nosetests --rednose "$@"
 	elif ls ./*.py &> /dev/null || ls tests/*.py &> /dev/null; then
