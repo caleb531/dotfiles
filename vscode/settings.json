@@ -441,5 +441,14 @@
   },
   "github.copilot.enable": {
     "markdown": true
+  },
+  "chat.tools.terminal.autoApprove": {
+    "uv run -m nose2": {
+      "approve": true
+    },
+    "uv run pytest": {
+      "approve": true
+    },
+    "pytest": true
   }
 }
