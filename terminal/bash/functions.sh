@@ -180,17 +180,18 @@ cov() {
 	elif [ -f package.json ]; then
 		npm run coverage -- "$@"
 	elif [ -f .python-version ]; then
-		if [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
-			coverage run -m nose2 --quiet "$@"
+		if [ -f pyproject.toml ] && cat pyproject.toml | grep -q pytest; then
+			pytest --cov --cov-report=html --cov-report=term "$@"
 		elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2; then
-			coverage run -m nose2 --quiet "$@"
+			nose2 --with-coverage "$@"
+		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
+			nose2 --with-coverage "$@"
 		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
 			coverage run -m nose --rednose "$@"
 		elif [ -f requirements.txt ]; then
 			coverage run -m unittest "$@"
 		fi
 		if [ $? == 0 ]; then
-			coverage report
 			coverage html
 		fi
 	else
