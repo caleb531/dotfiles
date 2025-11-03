@@ -33,8 +33,10 @@ ms-python.flake8
 ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
+ms-python.vscode-python-envs
 ms-vscode-remote.remote-ssh-edit
 patbenatar.advanced-new-file
+polymeilex.wgsl
 polymermallard.css-alphabetize
 rashwell.tcl
 rebornix.prolog
@@ -47,6 +49,7 @@ tamasfe.even-better-toml
 timonwong.shellcheck
 tommasov.hosts
 unifiedjs.vscode-mdx
+upstash.context7-mcp
 v4run.transpose
 vincaslt.highlight-matching-tag
 vue.volar
