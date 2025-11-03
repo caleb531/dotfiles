@@ -452,6 +452,9 @@
     "uv run coverage": {
       "approve": true
     },
+    "uv run ruff": {
+      "approve": true
+    },
     "pytest": true
   }
 }
