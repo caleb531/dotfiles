@@ -443,18 +443,13 @@
     "markdown": true
   },
   "chat.tools.terminal.autoApprove": {
-    "uv run -m nose2": {
-      "approve": true
-    },
-    "uv run pytest": {
-      "approve": true
-    },
-    "uv run coverage": {
-      "approve": true
-    },
-    "uv run ruff": {
-      "approve": true
-    },
-    "pytest": true
+    "uv run -m nose2": true,
+    "uv run pytest": true,
+    "uv run coverage": true,
+    "uv run ruff": true,
+    "pytest": true,
+    "ruff": true,
+    "nose2": true,
+    "coverage": true
   }
 }
