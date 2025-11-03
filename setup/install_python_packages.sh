@@ -9,3 +9,4 @@ preload_python_pkg_list
 install_python_pkg ruff
 install_python_pkg bump-anything
 install_python_pkg imessage-conversation-analyzer
+install_python_pkg unittest2pytest
