@@ -36,6 +36,7 @@ export PATH="$BUN_INSTALL"/bin:"$PATH"
 export PATH=~/.local/bin:"$PATH"
 # Fix Graphviz installation within Python projects (source:
 # <https://github.com/pygraphviz/pygraphviz/issues/11#issuecomment-2433155750>)
+export PKG_CONFIG_PATH="$(brew --prefix graphviz)/lib/pkgconfig"
 export GRAPHVIZ_PREFIX=$(brew --prefix graphviz)
 export CFLAGS="-I${GRAPHVIZ_PREFIX}/include"
 export LDFLAGS="-L${GRAPHVIZ_PREFIX}/lib"
