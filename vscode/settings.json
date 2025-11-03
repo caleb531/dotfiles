@@ -449,6 +449,9 @@
     "uv run pytest": {
       "approve": true
     },
+    "uv run coverage": {
+      "approve": true
+    },
     "pytest": true
   }
 }
