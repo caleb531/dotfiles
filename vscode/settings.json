@@ -450,6 +450,9 @@
     "pytest": true,
     "ruff": true,
     "nose2": true,
-    "coverage": true
+    "coverage": true,
+    "git status": true,
+    "git show": true,
+    "git diff": true
   }
 }
