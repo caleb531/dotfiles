@@ -46,6 +46,12 @@ export PATH=/Applications/MAMP/bin/php/php8.0.8/bin/:"$PATH"
 export PATH=~/dotfiles/setup:"$PATH"
 export PATH=~/dotfiles/private/setup:"$PATH"
 
+# Git
+
+# Ensures that remote branches don't have the origin/ prefix stripped when
+# completing commands like `git checkout` and `git switch`
+export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
+
 # Miscellaneous environment variables
 
 # Explicitly declare vim as default text editor (Git will fall back to this

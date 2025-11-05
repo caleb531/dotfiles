@@ -94,10 +94,10 @@
 	# convenient alias for misspellings of 'commit'
 	commiy = commit
 	# Delete a branch fully from both the local and remote repositories
-	delete-branch = "!f() { local branch_to_delete=$1; git branch -D $branch_to_delete; git push -d origin $branch_to_delete; }; f"
+	delete-branch = "!f() { : switch; local branch_to_delete=$1; git branch -D $branch_to_delete; git push -d origin $branch_to_delete; }; f"
 	# Delete branches that have been merged in
-	delete-merged-local-branches = "!f() { git view-merged-local-branches ${1:-main} | xargs git branch -d; }; f"
-	delete-merged-remote-branches = "!f() { git remote prune origin && git view-merged-remote-branches ${1:-main} | xargs git push -d origin; }; f"
+	delete-merged-local-branches = "!f() { : switch; git view-merged-local-branches ${1:-main} | xargs git branch -d; }; f"
+	delete-merged-remote-branches = "!f() { : switch; git remote prune origin && git view-merged-remote-branches ${1:-main} | xargs git push -d origin; }; f"
 	# Diff staged changes
 	diffc = diff --cached
 	# Diff files, highlighting only the changes within each line
@@ -159,7 +159,7 @@
 	# Copy to the clipboard the full given commit SHA
 	long = !git rev-parse $@ | xargs echo -n | pbcopy
 	# List all tracked files, relative to the current directory
-	ls = "!f() { git ls-tree -r --name-status ${1:-HEAD}; }; f"
+	ls = "!f() { : checkout; git ls-tree -r --name-status ${1:-HEAD}; }; f"
 	# Managing merges
 	mergea = merge --abort
 	mergec = merge --continue
@@ -193,7 +193,7 @@
 	rebi = rebase --interactive
 	rebasei = rebase --interactive
 	# Rename the current branch locally and on remote
-	rename-branch = "!f() { local old_branch=$(git rev-parse --abbrev-ref head); local new_branch=$1; git branch -m $new_branch; git push -u origin $new_branch; git push -d origin $old_branch; }; f"
+	rename-branch = "!f() { : switch; local old_branch=$(git rev-parse --abbrev-ref head); local new_branch=$1; git branch -m $new_branch; git push -u origin $new_branch; git push -d origin $old_branch; }; f"
 	# Reverting
 	reverta = revert --abort
 	revertc = revert --continue
@@ -251,9 +251,9 @@
 	vc = verify-commit
 	vch = verify-commit HEAD
 	# View all local branches that have not been merged into master
-	view-merged-local-branches = "!f() { git branch --merged ${1:-main} | grep -Pv '(^\\*|main|master|develop)' | less -X; }; f"
+	view-merged-local-branches = "!f() { : switch; git branch --merged ${1:-main} | grep -Pv '(^\\*|main|master|develop)' | less -X; }; f"
 	# View all remote branches that have not been merged into origin/master
-	view-merged-remote-branches = "!f() { git branch --remote --merged origin/${1:-main} | sed 's|origin/||g' | grep -Pv '(main|master|develop)' | grep -Fv $(git rev-parse --abbrev-ref HEAD) | less -X; }; f"
+	view-merged-remote-branches = "!f() { : switch; git branch --remote --merged origin/${1:-main} | sed 's|origin/||g' | grep -Pv '(main|master|develop)' | grep -Fv $(git rev-parse --abbrev-ref HEAD) | less -X; }; f"
 	# Zip a WordPress plugin or theme
 	zip-wordpress = !zip -r $1 * -x node_modules/ -x node_modules/**\\*
 
