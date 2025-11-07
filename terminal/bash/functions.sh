@@ -183,16 +183,13 @@ cov() {
 		if [ -f pyproject.toml ] && cat pyproject.toml | grep -q pytest; then
 			pytest --cov --cov-report=html --cov-report=term "$@"
 		elif [ -f pyproject.toml ] && cat pyproject.toml | grep -q nose2; then
-			nose2 --with-coverage "$@"
+			nose2 --with-coverage --coverage-report html --coverage-report term "$@"
 		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose2==; then
-			nose2 --with-coverage "$@"
+			nose2 --with-coverage --coverage-report html --coverage-report term "$@"
 		elif [ -f requirements.txt ] && cat requirements.txt | grep -q nose==; then
-			coverage run -m nose --rednose "$@"
+			coverage run -m nose --rednose "$@" && coverage html
 		elif [ -f requirements.txt ]; then
-			coverage run -m unittest "$@"
-		fi
-		if [ $? == 0 ]; then
-			coverage html
+			coverage run -m unittest "$@" && coverage html
 		fi
 	else
 		>&2 echo "${FUNCNAME[0]}: not a node/python project"
