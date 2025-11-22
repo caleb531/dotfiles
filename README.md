@@ -92,3 +92,36 @@ they are also designed to be re-run as needed. For instance,
 `create_symlinks.sh` will ensure that the home directory symlinks to these
 dotfiles are all up to date. In addition, `install_packages.sh` installs those
 preferred Homebrew packages which are missing from the current system.
+
+## Node & Python tooling
+
+Node versions are managed with `fnm` (see `setup/install_node.sh` and
+`terminal/bash/load_fnm.sh`), providing a significantly faster alternative to
+`nvm`. The interactive prompt auto-detects a project Node version and displays
+it in the PS1 string (see `terminal/bash/prompt.sh`).
+
+For Python, projects use `uv` for environment and dependency management (see
+migration helpers and replacement rules). `ruff` is used as the combined Python linter
+and formatter; its integration appears in `vscode/extensions.txt` and
+`vscode/settings.json`.
+
+## Shell functions & aliases
+
+Frequently-used helpers live in `terminal/bash/functions.sh`, including:
+
+* `mkcd` – create and enter a directory
+* `rootdir` – cd to the repository root for the current path
+* `clonecd` – clone a git repository and immediately switch to the newly-cloned
+	directory
+* `pr` – create or view pull requests (with completion support in
+	`terminal/bash/completions.sh`)
+
+Additional private helpers and host-specific functions are layered via
+host-specific bash initialization files.
+
+## Advanced completion
+
+Custom Bash completions in `terminal/bash/completions.sh` extend Bash Completion
+2 with project-specific commands (e.g. completions for my `pr` helper) and
+tooling. General shell behavior (options like `globstar`) is configured in
+`terminal/bash/config.sh`.
