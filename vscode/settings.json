@@ -454,5 +454,6 @@
     "git status": true,
     "git show": true,
     "git diff": true
-  }
+  },
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?—–"
 }
