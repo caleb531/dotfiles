@@ -11,6 +11,14 @@
     "textMateRules": [
       {
         "scope": [
+          "comment"
+        ],
+        "settings": {
+          "foreground": "#88847F"
+        }
+      },
+      {
+        "scope": [
           "support.type.custom-property.less",
           "support.type.custom-property.name.less"
         ],
