@@ -46,7 +46,6 @@ def get_symlink_filename(exclusion_path):
 
 
 def process_exclusion(exclusion_glob):
-
     did_run = False
     exclusion_glob = os.path.expanduser(exclusion_glob)
     for exclusion_path in glob.iglob(exclusion_glob, recursive=True):
@@ -71,7 +70,6 @@ def recreate_symlink_directory():
 
 
 def process_exclusions(exclusion_globs):
-
     recreate_symlink_directory()
     for exclusion_glob in exclusion_globs:
         if exclusion_glob.strip():
@@ -79,7 +77,6 @@ def process_exclusions(exclusion_globs):
 
 
 def parse_cli_args():
-
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "exclusions_list_path", nargs="?", default=DEFAULT_EXCLUSIONS_LIST_PATH
@@ -88,7 +85,6 @@ def parse_cli_args():
 
 
 def main():
-
     cli_args = parse_cli_args()
 
     with open(cli_args.exclusions_list_path, "r") as exclusions_list_file:
