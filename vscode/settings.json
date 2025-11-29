@@ -390,7 +390,10 @@
     "SC2181"
   ],
   "css.lint.validProperties": ["alignment-baseline", "dominant-baseline"],
-  "scss.lint.validProperties": ["alignment-baseline", "dominant-baseline"],
+  "scss.lint.validProperties": [
+    "alignment-baseline",
+    "dominant-baseline"
+  ],
   "editor.guides.indentation": false,
   "editor.guides.highlightActiveIndentation": false,
   "advancedNewFile.convenienceOptions": ["current", "root"],
@@ -464,5 +467,18 @@
     "git show": true,
     "git diff": true
   },
-  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?—–"
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?—–",
+  "settings.cycle": [
+    {
+      "id": "editor.guides.indentation",
+      "values": [
+        {
+          "editor.guides.indentation": true
+        },
+        {
+          "editor.guides.indentation": false
+        }
+      ]
+    }
+  ]
 }

@@ -824,6 +824,10 @@
   },
   {
     "key": "shift+cmd+i",
+    "command": "settings.cycle.editor.guides.indentation"
+  },
+  {
+    "key": "shift+alt+cmd+i",
     "command": "changeEditorIndentation1"
   },
   {
