@@ -463,6 +463,8 @@
     "ruff": true,
     "nose2": true,
     "coverage": true,
+    "pnpm exec vitest": true,
+    "pnpm vitest": true,
     "git status": true,
     "git show": true,
     "git diff": true
