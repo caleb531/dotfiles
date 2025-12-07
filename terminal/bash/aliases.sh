@@ -81,7 +81,7 @@ alias nr='npm rebuild'
 # Recompile node-sass specifically
 alias nrs='npm rebuild node-sass'
 # Audit packages with pnpm
-alias pa='pnpm audit'
+alias aud='pnpm audit'
 
 # Shortcut to create new Svelte+SvelteKit project
 alias create-svelte='pnpm create svelte@latest'
