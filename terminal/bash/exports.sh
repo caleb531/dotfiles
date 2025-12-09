@@ -40,6 +40,8 @@ export PKG_CONFIG_PATH="$(brew --prefix graphviz)/lib/pkgconfig"
 export GRAPHVIZ_PREFIX=$(brew --prefix graphviz)
 export CFLAGS="-I${GRAPHVIZ_PREFIX}/include"
 export LDFLAGS="-L${GRAPHVIZ_PREFIX}/lib"
+# Rust/Cargo
+source "$HOME/.cargo/env"
 # MAMP/PHP
 export PATH=/Applications/MAMP/bin/php/php8.0.8/bin/:"$PATH"
 # Setup scripts
