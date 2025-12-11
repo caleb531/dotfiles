@@ -16,6 +16,7 @@ install_cask 1password
 install_cask 1password-cli
 install_cask keyboard-maestro
 install_cask flux-app
+install_cask time-out
 # Install additional apps
 install_cask chatgpt
 install_cask zoom
