@@ -55,6 +55,10 @@ install_brew_pkg wget
 install_brew_pkg editorconfig
 install_brew_pkg graphviz
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+~/.cargo/bin/rustup component add rustfmt
+
 # Install Supabase CLI and its dependencies
 install_cask docker-desktop
 install_brew_pkg supabase/tap/supabase
