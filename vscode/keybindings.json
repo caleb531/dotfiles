@@ -899,7 +899,7 @@
   {
     "key": "ctrl+cmd+i",
     "command": "inlineChat.start",
-    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+    "when": "editorFocus && inlineChatPossible && !editorReadonly"
   },
   {
     "key": "cmd+i",
