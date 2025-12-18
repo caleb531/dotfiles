@@ -482,5 +482,7 @@
         }
       ]
     }
-  ]
+  ],
+  "ty.inlayHints.callArgumentNames": false,
+  "ty.inlayHints.variableTypes": false
 }
