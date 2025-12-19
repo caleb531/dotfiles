@@ -485,5 +485,6 @@
     }
   ],
   "ty.inlayHints.callArgumentNames": false,
-  "ty.inlayHints.variableTypes": false
+  "ty.inlayHints.variableTypes": false,
+  "chat.agent.maxRequests": 50
 }
