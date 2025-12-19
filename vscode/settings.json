@@ -461,6 +461,7 @@
     "uv run ruff": true,
     "pytest": true,
     "ruff": true,
+    "ty": true,
     "nose2": true,
     "coverage": true,
     "pnpm exec vitest": true,
