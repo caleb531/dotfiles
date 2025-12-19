@@ -459,6 +459,7 @@
     "uv run pytest": true,
     "uv run coverage": true,
     "uv run ruff": true,
+    "uv run ty": true,
     "pytest": true,
     "ruff": true,
     "ty": true,
