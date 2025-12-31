@@ -54,10 +54,10 @@ symlink_vscode ~/Library/Application\ Support/Code\ -\ Insiders
 # Symlink Firefox browser styles (these custom styles will only take effect
 # when the 'toolkit.legacyUserProfileCustomizations.stylesheets' about:config
 # setting has been enabled)
-symlink_firefox() {
-	pushd ~/Library/Application\ Support/Firefox/Profiles/*.default-release &> /dev/null || return
-	mkdir -p chrome
-	ln -sf ~/dotfiles/firefox/userChrome.css "$PWD"/chrome/userChrome.css
-	popd &> /dev/null || return
-}
-symlink_firefox
+# symlink_firefox() {
+# 	pushd ~/Library/Application\ Support/Firefox/Profiles/*.default-release &> /dev/null || return
+# 	mkdir -p chrome
+# 	ln -sf ~/dotfiles/firefox/userChrome.css "$PWD"/chrome/userChrome.css
+# 	popd &> /dev/null || return
+# }
+# symlink_firefox
