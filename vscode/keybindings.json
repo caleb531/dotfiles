@@ -931,5 +931,14 @@
   {
     "key": "ctrl+shift+b",
     "command": "gitblame.addCommitHashToClipboard"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "editor.action.previousMatchFindAction"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
   }
 ]
