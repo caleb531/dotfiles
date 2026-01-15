@@ -18,6 +18,7 @@ install_cask keyboard-maestro
 install_cask flux-app
 install_cask time-out
 # Install additional apps
+install_cask chatgpt
 install_cask zoom
 install_cask microsoft-teams
 install_cask postman
