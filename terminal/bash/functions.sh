@@ -243,6 +243,18 @@ format() {
 	fi
 }
 
+# Audit npm/pnpm dependencies
+aud() {
+	if [ -f pnpm-lock.yaml ]; then
+		pnpm audit "$@"
+	elif [ -f yarn.lock ] || [ -f package.json ]; then
+		npm audit -- "$@"
+	else
+		>&2 echo "${FUNCNAME[0]}: not a node project"
+		return 1
+	fi
+}
+
 # Check Node/Python cyclomatic complexity
 cc() {
 	if [ -f requirements.txt ]; then
