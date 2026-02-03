@@ -487,5 +487,6 @@
   ],
   "ty.inlayHints.callArgumentNames": false,
   "ty.inlayHints.variableTypes": false,
-  "chat.agent.maxRequests": 50
+  "chat.agent.maxRequests": 50,
+  "editor.inlayHints.enabled": "off"
 }
