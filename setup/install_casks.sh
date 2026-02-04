@@ -20,6 +20,7 @@ install_cask time-out
 # Install additional apps
 install_cask chatgpt
 install_cask zoom
+install_cask slack
 install_cask microsoft-teams
 install_cask postman
 install_cask keybase
