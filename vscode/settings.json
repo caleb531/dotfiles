@@ -464,7 +464,11 @@
     "pnpm vitest": true,
     "git status": true,
     "git show": true,
-    "git diff": true
+    "git diff": true,
+    "pnpm lint": true,
+    "pnpm check": true,
+    "pnpm -s lint": true,
+    "pnpm -s check": true
   },
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?—–",
   "settings.cycle": [
