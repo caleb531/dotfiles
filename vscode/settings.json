@@ -496,6 +496,7 @@
     "https://www.schemastore.org/": true,
     "https://json.schemastore.org/": true,
     "https://json-schema.org/": true,
-    "https://www.raycast.com": true
-  }
+    "https://www.raycast.com": true,
+    "https://schema.tauri.app": true,
+  },
 }
