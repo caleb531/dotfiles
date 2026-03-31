@@ -29,7 +29,6 @@ install_cask appcleaner
 install_cask imageoptim
 install_cask namechanger
 install_cask the-unarchiver
-install_cask jordanbaird-ice
 install_cask mamp
 rm -rf '/Applications/MAMP PRO'
 
