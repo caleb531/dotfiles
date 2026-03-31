@@ -12,6 +12,7 @@
       "button:submit": "button[type=submit]",
       "script:ts": "script[lang=ts]",
       "style:scss": "style[lang=scss]",
+      "style:postcss": "style[lang=postcss]",
       "svelte:body": "svelte:body/",
       "svelte:component": "svelte:component[this]/",
       "svelte:element": "svelte:element[this]/",
