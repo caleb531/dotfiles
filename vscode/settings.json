@@ -12,98 +12,98 @@
       {
         "scope": ["comment"],
         "settings": {
-          "foreground": "#88847F"
-        }
+          "foreground": "#88847F",
+        },
       },
       {
         "scope": [
           "support.type.custom-property.less",
-          "support.type.custom-property.name.less"
+          "support.type.custom-property.name.less",
         ],
         "settings": {
           "fontStyle": "",
-          "foreground": "#F8F8F2"
-        }
+          "foreground": "#F8F8F2",
+        },
       },
       {
         "scope": ["storage.type", "support.class", "variable.parameter"],
         "settings": {
-          "fontStyle": ""
-        }
+          "fontStyle": "",
+        },
       },
       {
         "scope": [
           "punctuation.accessor.optional.tsx",
           "punctuation.accessor.optional.ts",
           "punctuation.accessor.optional.js",
-          "punctuation.accessor.optional.jsx"
+          "punctuation.accessor.optional.jsx",
         ],
         "settings": {
-          "foreground": "#F92672"
-        }
+          "foreground": "#F92672",
+        },
       },
       {
         "scope": ["support.type.property-name.json"],
         "settings": {
           "fontStyle": "",
-          "foreground": "#A6E22E"
-        }
+          "foreground": "#A6E22E",
+        },
       },
       {
         "scope": ["meta.structure.dictionary.json string.quoted.double.json"],
         "settings": {
-          "foreground": "#E6DB74"
-        }
+          "foreground": "#E6DB74",
+        },
       },
       {
         "scope": ["meta.function-call.generic.python"],
         "settings": {
-          "foreground": "#A6E22E"
-        }
+          "foreground": "#A6E22E",
+        },
       },
       {
         "scope": [
           "entity.other.attribute-name.table.toml",
-          "support.type.property-name.table.toml"
+          "support.type.property-name.table.toml",
         ],
         "settings": {
           "foreground": "#A6E22E",
-          "fontStyle": ""
-        }
+          "fontStyle": "",
+        },
       },
       {
         "scope": ["entity.name.tag.toml", "support.type.property-name.toml"],
         "settings": {
           "foreground": "#F92672",
-          "fontStyle": ""
-        }
+          "fontStyle": "",
+        },
       },
       {
         "scope": ["support.other.escape.special.regexp"],
         "settings": {
-          "foreground": "#AE81FF"
-        }
+          "foreground": "#AE81FF",
+        },
       },
       {
         "scope": [
           "string.quoted.double.sql",
-          "string.quoted.other.backtick.sql"
+          "string.quoted.other.backtick.sql",
         ],
         "settings": {
-          "foreground": "#FD971F"
-        }
+          "foreground": "#FD971F",
+        },
       },
       {
         "scope": ["punctuation.definition.variable.svelte"],
         "settings": {
-          "foreground": "#A6E22E"
-        }
+          "foreground": "#A6E22E",
+        },
       },
       {
         "scope": ["entity.tag.apacheconf"],
         "settings": {
-          "foreground": "#F92672"
-        }
+          "foreground": "#F92672",
+        },
       },
       {
         "scope": [
@@ -153,13 +153,13 @@
           "keyword.substitute.apacheconf",
           "keyword.usertrack.apacheconf",
           "keyword.vhost_alias.apacheconf",
-          "keyword.php.apacheconf"
+          "keyword.php.apacheconf",
         ],
         "settings": {
-          "foreground": "#66D9EF"
-        }
-      }
-    ]
+          "foreground": "#66D9EF",
+        },
+      },
+    ],
   },
   "workbench.list.openMode": "doubleClick",
   "editor.fontSize": 16,
@@ -182,14 +182,14 @@
     "config": "properties",
     "*.share": "json",
     ".aider.input.history": "properties",
-    "*.ucf": "properties"
+    "*.ucf": "properties",
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
   "editor.quickSuggestions": {
     "other": true,
     "comments": true,
-    "strings": true
+    "strings": true,
   },
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -203,7 +203,7 @@
     "**/LocalDistribution": true,
     "**/LocalDistributionAdvanced": true,
     "**/node_modules": true,
-    "/.aider*": true
+    "/.aider*": true,
   },
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
@@ -290,8 +290,8 @@
       "tab.inactiveForeground": "#909090",
       "tab.lastPinnedBorder": "#41434B",
       "titleBar.activeBackground": "#1F1F22",
-      "widget.shadow": "#00000098"
-    }
+      "widget.shadow": "#00000098",
+    },
   },
   "editor.rulers": [80],
   "editor.fastScrollSensitivity": 3,
@@ -303,7 +303,7 @@
   "emmet.extensionsPath": [
     "/Users/Caleb/dotfiles/emmet",
     "/Users/caleb/dotfiles/emmet",
-    "/Users/cevans/dotfiles/emmet"
+    "/Users/cevans/dotfiles/emmet",
   ],
   "css.completion.completePropertyWithSemicolon": false,
   "less.completion.completePropertyWithSemicolon": false,
@@ -360,8 +360,8 @@
       "tfoot",
       "thead",
       "tr",
-      "ul"
-    ]
+      "ul",
+    ],
   },
   "editor.renderLineHighlight": "all",
   "editor.cursorSurroundingLines": 2,
@@ -372,7 +372,7 @@
     "svg": "xml",
     "svelte": "html",
     "mdx": "html",
-    "astro": "html"
+    "astro": "html",
   },
   "svg.preview.mode": "svg",
   "latex.linter.enabled": false,
@@ -385,7 +385,7 @@
     "SC2120",
     "SC2155",
     "SC2207",
-    "SC2181"
+    "SC2181",
   ],
   "css.lint.validProperties": ["alignment-baseline", "dominant-baseline"],
   "scss.lint.validProperties": ["alignment-baseline", "dominant-baseline"],
@@ -418,7 +418,7 @@
   "search.exclude": {
     "**/.svelte-kit": true,
     "**/build": true,
-    "**/dist": true
+    "**/dist": true,
   },
   "git.openRepositoryInParentFolders": "never",
   "workbench.editor.splitOnDragAndDrop": false,
@@ -440,14 +440,14 @@
   "telemetry.telemetryLevel": "error",
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
-    "*.svg": "default"
+    "*.svg": "default",
   },
   "chat.agent.enabled": true,
   "ruff.codeAction.disableRuleComment": {
-    "enable": false
+    "enable": false,
   },
   "github.copilot.enable": {
-    "markdown": true
+    "markdown": true,
   },
   "chat.tools.terminal.autoApprove": {
     "uv run -m nose2": true,
@@ -468,7 +468,7 @@
     "pnpm lint": true,
     "pnpm check": true,
     "pnpm -s lint": true,
-    "pnpm -s check": true
+    "pnpm -s check": true,
   },
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?—–",
   "settings.cycle": [
@@ -476,13 +476,13 @@
       "id": "editor.guides.indentation",
       "values": [
         {
-          "editor.guides.indentation": true
+          "editor.guides.indentation": true,
         },
         {
-          "editor.guides.indentation": false
-        }
-      ]
-    }
+          "editor.guides.indentation": false,
+        },
+      ],
+    },
   ],
   "ty.inlayHints.callArgumentNames": false,
   "ty.inlayHints.variableTypes": false,
@@ -498,5 +498,10 @@
     "https://json-schema.org/": true,
     "https://www.raycast.com": true,
     "https://schema.tauri.app": true,
+  },
+  "chat.tools.urls.autoApprove": {
+    "https://code.visualstudio.com": true,
+    "https://github.com/microsoft/vscode/wiki/*": true,
+    "https://supabase.com": true,
   },
 }
