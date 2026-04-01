@@ -505,4 +505,5 @@
     "https://supabase.com": true,
     "https://developers.cloudflare.com": true,
   },
+  "chat.tips.enabled": false
 }
