@@ -503,5 +503,6 @@
     "https://code.visualstudio.com": true,
     "https://github.com/microsoft/vscode/wiki/*": true,
     "https://supabase.com": true,
+    "https://developers.cloudflare.com": true,
   },
 }
