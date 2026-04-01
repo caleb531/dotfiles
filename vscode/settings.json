@@ -505,5 +505,6 @@
     "https://supabase.com": true,
     "https://developers.cloudflare.com": true,
   },
-  "chat.tips.enabled": false
+  "chat.tips.enabled": false,
+  "workbench.editor.useModal": "off",
 }
