@@ -126,5 +126,14 @@
     "body": [
       "{@const ${1:varname} = ${2:expr}}"
     ]
+  },
+  "snippet": {
+    "scope": "svelte",
+    "prefix": "snippet",
+    "body": [
+      "{#snippet ${1:snippetName}($2)}",
+      "\t$3",
+      "{/snippet}"
+    ]
   }
 }
