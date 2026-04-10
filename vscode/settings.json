@@ -505,6 +505,7 @@
     "https://supabase.com": true,
     "https://developers.cloudflare.com": true,
     "https://svelte.dev": true,
+    "https://tiptap.dev": true,
   },
   "chat.tips.enabled": false,
   "workbench.editor.useModal": "off",
