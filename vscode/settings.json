@@ -512,6 +512,7 @@
     "https://nodejs.org": true,
     "https://pnpm.io": true,
     "https://vercel.com": true,
+    "https://*.netlify.com": true
   },
   "chat.tips.enabled": false,
   "workbench.editor.useModal": "off",
