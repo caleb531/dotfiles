@@ -60,6 +60,8 @@ install_brew_pkg graphviz
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ~/.cargo/bin/rustup component add rustfmt
 
+# Install Vercel CLI
+install_brew_pkg vercel-cli
 # Install Supabase CLI and its dependencies
 install_cask docker-desktop
 install_brew_pkg supabase/tap/supabase
