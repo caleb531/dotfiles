@@ -514,6 +514,8 @@
     "https://vercel.com": true,
     "https://*.netlify.com": true,
     "https://*.microsoft.com": true,
+    "https://resend.com": true,
+    "https://www.brevo.com": true,
   },
   "chat.tips.enabled": false,
   "workbench.editor.useModal": "off",
