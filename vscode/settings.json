@@ -516,6 +516,8 @@
     "https://*.microsoft.com": true,
     "https://resend.com": true,
     "https://www.brevo.com": true,
+    "https://*.squarespace.com": true,
+    "https://ethosministry.org": true,
   },
   "chat.tips.enabled": false,
   "workbench.editor.useModal": "off",
