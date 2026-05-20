@@ -23,3 +23,4 @@ install_npm_pkg vsce
 install_npm_pkg typescript
 install_npm_pkg npm-check-updates
 install_npm_pkg vite-bundle-visualizer
+install_npm_pkg codemod
