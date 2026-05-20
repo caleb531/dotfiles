@@ -929,10 +929,6 @@
     "when": "editorFocus",
   },
   {
-    "key": "cmd+/",
-    "command": "chatgpt.addFileToThread",
-  },
-  {
     "key": "ctrl+alt+cmd+i",
     "command": "workbench.view.extension.codexSecondaryViewContainer",
   },
