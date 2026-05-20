@@ -65,6 +65,8 @@ install_brew_pkg vercel-cli
 # Install Supabase CLI and its dependencies
 install_cask docker-desktop
 install_brew_pkg supabase/tap/supabase
+# Install fly.io CLI for local debugging
+install_brew_pkg flyctl
 
 # Install Mac App Store command-line utility
 install_brew_pkg mas
