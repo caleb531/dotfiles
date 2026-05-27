@@ -43,7 +43,9 @@ cprmlastcmd() {
 # Create a new directory and switch to it
 mkcd() {
 	mkdir "$@"
-	cd "${@: -1}" || return
+	if [[ $? == 0 ]]; then
+		cd "${@: -1}" || return
+	fi
 }
 
 # Jump to the root directory of the current project (based on .git)
