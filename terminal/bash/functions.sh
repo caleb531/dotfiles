@@ -257,6 +257,11 @@ aud() {
 	fi
 }
 
+# Approve execution of pnpm postinstall scripts
+pab() {
+	pnpm approve-builds
+}
+
 # Check Node/Python cyclomatic complexity
 cc() {
 	if [ -f requirements.txt ]; then
