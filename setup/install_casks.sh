@@ -19,6 +19,7 @@ install_cask flux-app
 install_cask time-out
 # Install additional apps
 install_cask chatgpt
+install_cask codex-app
 install_cask zoom
 install_cask slack
 install_cask microsoft-teams

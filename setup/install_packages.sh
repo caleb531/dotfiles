@@ -41,6 +41,8 @@ install_brew_pkg python
 # installation methods)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+install_brew_pkg codex
+
 install_brew_pkg ssh-copy-id
 
 install_brew_pkg duti
