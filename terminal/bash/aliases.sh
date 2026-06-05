@@ -148,6 +148,9 @@ alias ciode='code'
 alias cdoe='code'
 alias coed='code'
 
+# Create aliases for `codex` misspellings
+alias codx='codex'
+
 # Remap 'killall' to 'ka'
 alias ka='killall'
 
