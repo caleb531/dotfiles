@@ -936,4 +936,13 @@
     "key": "shift+alt+cmd+i",
     "command": "workbench.action.closeAuxiliaryBar",
   },
+  {
+    "key": "alt+cmd+s",
+    "command": "-now.syncAllFiles",
+  },
+  {
+    "key": "shift+alt+cmd+s",
+    "command": "-now.syncCurrentFile",
+    "when": "editorTextFocus",
+  },
 ]
