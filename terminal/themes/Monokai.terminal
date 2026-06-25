@@ -236,9 +236,11 @@
 	<integer>20</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
+	<key>shiftReturnSendsMetaReturn</key>
+	<true/>
 	<key>type</key>
 	<string>Window Settings</string>
 	<key>useOptionAsMetaKey</key>
-	<integer>0</integer>
+	<integer>1</integer>
 </dict>
 </plist>
