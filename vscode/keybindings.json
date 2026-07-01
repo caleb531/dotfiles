@@ -929,14 +929,6 @@
     "when": "editorFocus",
   },
   {
-    "key": "ctrl+alt+cmd+i",
-    "command": "workbench.view.extension.codexSecondaryViewContainer",
-  },
-  {
-    "key": "shift+alt+cmd+i",
-    "command": "workbench.action.closeAuxiliaryBar",
-  },
-  {
     "key": "alt+cmd+s",
     "command": "-now.syncAllFiles",
   },
