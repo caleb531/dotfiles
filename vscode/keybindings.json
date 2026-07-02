@@ -899,10 +899,6 @@
     "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'",
   },
   {
-    "key": "ctrl+shift+alt+cmd+i",
-    "command": "workbench.panel.chatEditing",
-  },
-  {
     "key": "ctrl+cmd+i",
     "command": "-workbench.action.chat.open",
   },
