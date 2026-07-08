@@ -15,4 +15,5 @@ fi
 source ~/dotfiles/terminal/bash/load_fnm.sh
 DEFAULT_NODE_VERSION=22
 install_node_version "$DEFAULT_NODE_VERSION"
+install_node_version 20
 fnm default "$DEFAULT_NODE_VERSION"
