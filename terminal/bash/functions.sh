@@ -404,7 +404,7 @@ pr() {
 	if echo "$repo_url" | grep -Fq 'bitbucket.org'; then
 		# Bitbucket
 		local repo_url="${repo_url//git@bitbucket.org:/https:\/\/bitbucket.org\/}"
-		local pr_url="${repo_url}/pull-requests/new?source=${source_branch_name}&t=1"
+		local pr_url="${repo_url}/pull-requests/new?source=${source_branch_name}&dest=${target_branch_name}&t=1"
 	elif echo "$repo_url" | grep -Fq 'github.com'; then
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
