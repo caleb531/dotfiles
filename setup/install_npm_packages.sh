@@ -24,3 +24,4 @@ install_npm_pkg typescript
 install_npm_pkg npm-check-updates
 install_npm_pkg vite-bundle-visualizer
 install_npm_pkg codemod
+install_npm_pkg @oracle/suitecloud-cli

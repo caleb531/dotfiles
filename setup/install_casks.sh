@@ -31,6 +31,7 @@ install_cask imageoptim
 install_cask namechanger
 install_cask the-unarchiver
 install_cask mamp
+install_cask oracle-jdk@21
 rm -rf '/Applications/MAMP PRO'
 
 echo "Installing Quick Look plugins..."
