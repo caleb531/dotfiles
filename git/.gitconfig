@@ -47,6 +47,10 @@
 [tag]
 	sort = -v:refname
 
+[log]
+	# Set a more human-readable default date format for git log
+	date = format:%a %b %-d %Y @ %-I:%M %p
+
 # Set pleasant colors for diffs
 [color "diff-highlight"]
 	oldNormal = red bold
