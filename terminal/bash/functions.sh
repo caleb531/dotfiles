@@ -251,8 +251,10 @@ aud() {
 		pnpm audit "$@"
 	elif [ -f yarn.lock ] || [ -f package.json ]; then
 		npm audit -- "$@"
+	elif [ -f pyproject.toml ]; then
+		uv audit --preview-features audit-command "$@"
 	else
-		>&2 echo "${FUNCNAME[0]}: not a node project"
+		>&2 echo "${FUNCNAME[0]}: not a node or python project"
 		return 1
 	fi
 }
