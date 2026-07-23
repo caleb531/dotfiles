@@ -15,7 +15,7 @@ DEFAULT_EXCLUSIONS_LIST_PATH = os.path.expanduser(
     os.path.join("~", "dotfiles", "private", "setup", "spotlight-exclusions.txt")
 )
 EXCLUSIONS_SYMLINK_DIR = os.path.expanduser(os.path.join("~", "spotlight-exclusions"))
-
+SPOTLIGHT_PREF_PANE_PATH=os.path.join(os.sep, 'System', 'Library', 'PreferencePanes', 'Spotlight.prefPane')
 
 @functools.lru_cache()
 def get_indexed_paths(name):
@@ -91,6 +91,7 @@ def main():
         process_exclusions(exclusions_list_file.readlines())
     if os.listdir(EXCLUSIONS_SYMLINK_DIR):
         subprocess.call(["open", EXCLUSIONS_SYMLINK_DIR])
+        subprocess.call(["open", SPOTLIGHT_PREF_PANE_PATH])
 
 
 if __name__ == "__main__":
