@@ -7,12 +7,6 @@ prefix_rule(pattern=["pnpm", "lint"], decision="allow")
 # Allow the standard pnpm test runner
 prefix_rule(pattern=["pnpm", "test"], decision="allow")
 
-# Allow installation of the ServiceNow SDK setup skill
-prefix_rule(pattern=["python3", "/Users/caleb/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py", "--url", "https://github.com/ServiceNow/sdk/tree/master/skills/now-sdk-setup"], decision="allow")
-
-# Allow installation of the ServiceNow SDK explanation skill
-prefix_rule(pattern=["python3", "/Users/caleb/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py", "--url", "https://github.com/ServiceNow/sdk/tree/master/skills/now-sdk-explain"], decision="allow")
-
 # Allow pnpm to use the shared package store
 prefix_rule(pattern=["pnpm", "--store-dir", "/Users/caleb/Library/pnpm/store/v10"], decision="allow")
 
