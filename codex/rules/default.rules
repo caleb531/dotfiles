@@ -13,9 +13,6 @@ prefix_rule(pattern=["pnpm", "check"], decision="allow")
 # Allow pnpm to use the shared package store
 prefix_rule(pattern=["pnpm", "--store-dir", "/Users/caleb/Library/pnpm/store/v10"], decision="allow")
 
-# Allow the ServiceNow SDK package runner
-prefix_rule(pattern=["npx", "@servicenow/sdk"], decision="allow")
-
 # Allow the now-sdk command through pnpm
 prefix_rule(pattern=["pnpm", "exec", "now-sdk"], decision="allow")
 
