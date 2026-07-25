@@ -7,6 +7,9 @@ prefix_rule(pattern=["pnpm", "lint"], decision="allow")
 # Allow the standard pnpm test runner
 prefix_rule(pattern=["pnpm", "test"], decision="allow")
 
+# Allow Svelte+SvelteKit-specific checks
+prefix_rule(pattern=["pnpm", "check"], decision="allow")
+
 # Allow pnpm to use the shared package store
 prefix_rule(pattern=["pnpm", "--store-dir", "/Users/caleb/Library/pnpm/store/v10"], decision="allow")
 
