@@ -1,0 +1,74 @@
+# Allow edits within the active workspace and explicitly writable roots
+sandbox_mode = "workspace-write"
+
+# Allow network access and writes to shared development caches
+[sandbox_workspace_write]
+network_access = true
+writable_roots = [
+	"/Users/caleb/Library/pnpm/store",
+	"/Users/caleb/.cache",
+	"/Users/caleb/Library/Caches/com.apple.python",
+]
+
+# Show detailed command steps without ambient suggestions
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = false
+followUpQueueMode = "queue"
+
+# Connect to an existing Chrome instance through Chrome DevTools
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest", "--auto-connect"]
+
+# Allow Chrome DevTools to click page elements
+[mcp_servers.chrome-devtools.tools.click]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to emulate browser conditions
+[mcp_servers.chrome-devtools.tools.emulate]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to evaluate page scripts
+[mcp_servers.chrome-devtools.tools.evaluate_script]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to navigate between pages
+[mcp_servers.chrome-devtools.tools.navigate_page]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to open new pages
+[mcp_servers.chrome-devtools.tools.new_page]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to send key presses
+[mcp_servers.chrome-devtools.tools.press_key]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to resize pages
+[mcp_servers.chrome-devtools.tools.resize_page]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to capture screenshots
+[mcp_servers.chrome-devtools.tools.take_screenshot]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to capture accessibility snapshots
+[mcp_servers.chrome-devtools.tools.take_snapshot]
+approval_mode = "approve"
+
+# Document creation plugin
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+# Spreadsheet creation plugin
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+# Presentation creation plugin
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+# In-app browser plugin
+[plugins."browser@openai-bundled"]
+enabled = true

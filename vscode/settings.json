@@ -159,6 +159,12 @@
           "foreground": "#66D9EF",
         },
       },
+      {
+        "scope": ["meta.parameter.keyword.python.starlark"],
+        "settings": {
+          "foreground": "#FD971F",
+        }
+      }
     ],
   },
   "workbench.list.openMode": "doubleClick",
@@ -183,6 +189,7 @@
     "*.share": "json",
     ".aider.input.history": "properties",
     "*.ucf": "properties",
+    "*.rules": "starlark",
   },
   "editor.wordWrap": "bounded",
   "extensions.ignoreRecommendations": true,
