@@ -57,6 +57,11 @@ approval_mode = "approve"
 [mcp_servers.chrome-devtools.tools.take_snapshot]
 approval_mode = "approve"
 
+# Allow Chrome DevTools to inspect network requests
+[mcp_servers.chrome-devtools.tools.get_network_request]
+approval_mode = "approve"
+
+
 # Document creation plugin
 [plugins."documents@openai-primary-runtime"]
 enabled = true
