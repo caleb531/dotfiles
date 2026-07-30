@@ -8,3 +8,4 @@ ehthumbs.db
 Thumbs.db
 /.aider*
 project.json
+payload.json
