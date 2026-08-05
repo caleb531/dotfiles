@@ -73,7 +73,3 @@ enabled = true
 # Presentation creation plugin
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
-
-# In-app browser plugin
-[plugins."browser@openai-bundled"]
-enabled = true
