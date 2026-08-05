@@ -64,9 +64,10 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
 # Install Vercel CLI
 install_brew_pkg vercel-cli
-# Install Supabase CLI and its dependencies
+# Install Supabase CLI and its dependencies. Homebrew core currently provides
+# the same release as Supabase's tap, avoiding a third-party tap trust grant.
 install_cask docker-desktop
-install_brew_pkg supabase/tap/supabase
+install_brew_pkg supabase
 # Install fly.io CLI for local debugging
 install_brew_pkg flyctl
 
