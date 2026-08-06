@@ -530,6 +530,19 @@ _pr() {
 }
 complete -o default -F _pr pr 2> /dev/null
 
+# Completion function for killall and its ka alias; keep this intentionally
+# curated: process listings include many system daemons that are not useful to
+# restart by hand. Add personal restart targets here as they come up.
+_killall() {
+
+	local cur=${COMP_WORDS[COMP_CWORD]}
+
+	COMPREPLY=( $(compgen -W "ControlCenter Dock Finder MenuBarAgent NotificationCenter Spotlight SystemUIServer WindowManager cfprefsd pboard" -- "$cur") )
+
+}
+complete -o default -F _killall killall 2> /dev/null
+complete -o default -F _killall ka 2> /dev/null
+
 # Enable completions for aliases for 'git'
 if type __git_complete &> /dev/null; then
 	__git_complete gi __git_main
