@@ -10,8 +10,6 @@ editorconfig.editorconfig
 esbenp.prettier-vscode
 formulahendry.auto-rename-tag
 george-alisson.html-preview-vscode
-github.copilot
-github.copilot-chat
 gruntfuggly.triggertaskonsave
 gurumukhi.selected-lines-count
 idleberg.applescript

@@ -529,4 +529,5 @@
   "chat.tips.enabled": false,
   "workbench.editor.useModal": "off",
   "chat.titleBar.openInAgentsWindow.enabled": false,
+  "chat.disableAIFeatures": true,
 }
