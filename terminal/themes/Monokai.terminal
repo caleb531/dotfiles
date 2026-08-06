@@ -233,7 +233,7 @@
 	<key>name</key>
 	<string>Monokai</string>
 	<key>rowCount</key>
-	<integer>20</integer>
+	<integer>24</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>shiftReturnSendsMetaReturn</key>
