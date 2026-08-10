@@ -171,6 +171,10 @@ defaults write com.apple.systemuiserver menuExtras -array \
 echo "- Update clock to show current date and current day of the week"
 defaults write com.apple.menuextra.clock DateFormat 'EEE MMM d  h:mm a'
 
+echo "- Always show menu bar"
+defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -bool true
+defaults write com.apple.controlcenter AutoHideMenuBarOption -int 3
+
 echo "Setting miscellaneous preferences..."
 
 echo "- Enable Safari Develop menu and Web Inspector"
