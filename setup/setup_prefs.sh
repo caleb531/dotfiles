@@ -156,6 +156,21 @@ defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool fa
 echo "- Enable spring loading for all Dock items"
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
+echo "Updating menu bar..."
+
+echo "- Adding preferred menu extras..."
+
+menu_extras_dir='/System/Library/CoreServices/Menu Extras'
+defaults write com.apple.systemuiserver menuExtras -array \
+	"$menu_extras_dir/Volume.menu" \
+	"$menu_extras_dir/Bluetooth.menu" \
+	"$menu_extras_dir/AirPort.menu" \
+	"$menu_extras_dir/Battery.menu" \
+	"$menu_extras_dir/Clock.menu" \
+
+echo "- Update clock to show current date and current day of the week"
+defaults write com.apple.menuextra.clock DateFormat 'EEE MMM d  h:mm a'
+
 echo "Setting miscellaneous preferences..."
 
 echo "- Enable Safari Develop menu and Web Inspector"
@@ -171,21 +186,6 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 echo "- Make Help Viewer windows non-floating"
 defaults write com.apple.helpviewer DevMode -bool true
-
-echo "Updating menu bar..."
-
-echo "- Adding preferred menu extras..."
-
-menu_extras_dir='/System/Library/CoreServices/Menu Extras'
-defaults write com.apple.systemuiserver menuExtras -array \
-	"$menu_extras_dir/Volume.menu" \
-	"$menu_extras_dir/Bluetooth.menu" \
-	"$menu_extras_dir/AirPort.menu" \
-	"$menu_extras_dir/Battery.menu" \
-	"$menu_extras_dir/Clock.menu" \
-
-echo "- Update clock to show current date and current day of the week"
-defaults write com.apple.menuextra.clock DateFormat 'EEE MMM d  h:mm a'
 
 echo "- Prevent Terminal from restoring previous windows/state when launching"
 terminal_saved_state_dir="$HOME/Library/Saved Application State/com.apple.Terminal.savedState"
