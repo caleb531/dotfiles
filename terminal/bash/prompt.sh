@@ -9,10 +9,14 @@ __detect_node_version() {
 		nvmrc_contents="$(cat ../.nvmrc 2> /dev/null)"
 	fi
 	# If an .nvmrc exists in the current directory (that we just entered), or
-	# the parent directory, OR if the current directory's package.json contains
-	# an "engines" field, switch to that resolved node version if it's not
-	# already active
-	if [[ -n "$nvmrc_contents" && "$(node -v | cut -c2-)" != "$nvmrc_contents" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]] || [[ "$(cat package.json 2> /dev/null | yq '.engines')" != null && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
+	# the parent directory
+	if [[ -n "$nvmrc_contents" && "$(node -v | cut -c2-)" != "$nvmrc_contents" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
+		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
+		fnm use "$nvmrc_contents"
+	fi
+	# OR.. if the current directory's package.json contains an "engines" field,
+	# switch to that resolved node version if it's not already active
+	if [[ "$(cat package.json 2> /dev/null | yq '.engines')" != null && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
 		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
 		fnm use --resolve-engines
 	fi
