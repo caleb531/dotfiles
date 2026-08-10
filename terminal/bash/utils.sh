@@ -8,7 +8,7 @@ __is_node_project() {
 	fi
 	local path="$PWD"
 	while [[ "$path" != '/' ]]; do
-		if [ -f "$path"/package.json ]; then
+		if [ -f "$path"/package.json ] || [ -f "$path"/.nvmrc ]; then
 			return 0
 		fi
 		path="$(dirname "$path")"
