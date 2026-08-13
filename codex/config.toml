@@ -60,16 +60,3 @@ approval_mode = "approve"
 # Allow Chrome DevTools to inspect network requests
 [mcp_servers.chrome-devtools.tools.get_network_request]
 approval_mode = "approve"
-
-
-# Document creation plugin
-[plugins."documents@openai-primary-runtime"]
-enabled = true
-
-# Spreadsheet creation plugin
-[plugins."spreadsheets@openai-primary-runtime"]
-enabled = true
-
-# Presentation creation plugin
-[plugins."presentations@openai-primary-runtime"]
-enabled = true
