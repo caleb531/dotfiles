@@ -2,14 +2,48 @@
 # prompt.sh
 # Caleb Evans
 
+# Invoke a function upward until it succeeds or reaches the current Git root
+__walk_up_git_repo() {
+	local callback="$1"
+	local git_root
+	local search_dir="$PWD"
+
+	# Establish the inclusive traversal boundary and reject use outside a Git
+	# repo
+	if ! git_root="$(git rev-parse --show-toplevel 2> /dev/null)"; then
+		echo "Cannot walk up Git repository: current directory is not in a Git repository" >&2
+		return 1
+	fi
+
+	# Check the current directory before the boundary condition to emulate
+	# do-while
+	while true; do
+		# Stop when the callback succeeds or after checking the Git root itself
+		if "$callback" "$search_dir" || [[ "$search_dir" == "$git_root" ]]; then
+			break
+		fi
+		search_dir="$(dirname "$search_dir")"
+	done
+}
+
+# Output the contents of the .nvmrc in the given directory
+__get_nvmrc_contents() {
+	cat "$1/.nvmrc" 2> /dev/null
+}
+
 # Detect the node version for this project and switch to it
 __detect_node_version() {
-	local nvmrc_contents="$(cat .nvmrc 2> /dev/null)"
-	if [ -z "$nvmrc_contents" ]; then
-		nvmrc_contents="$(cat ../.nvmrc 2> /dev/null)"
+	local nvmrc_contents
+	if git rev-parse --git-dir > /dev/null 2>&1; then
+		# Search ancestors only when the Git root provides a clear stopping
+		# boundary
+		nvmrc_contents="$(__walk_up_git_repo __get_nvmrc_contents)"
+	else
+		# Outside a Git repo, limit detection to the current directory
+		nvmrc_contents="$(__get_nvmrc_contents "$PWD")"
 	fi
-	# If an .nvmrc exists in the current directory (that we just entered), or
-	# the parent directory
+	# If an .nvmrc exists in the current directory (that we just entered), or an
+	# ancestor within the current Git repository
 	if [[ -n "$nvmrc_contents" && "$(node -v | cut -c2-)" != "$nvmrc_contents" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
 		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
 		fnm use "$nvmrc_contents"
