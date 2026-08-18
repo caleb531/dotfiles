@@ -60,3 +60,7 @@ approval_mode = "approve"
 # Allow Chrome DevTools to inspect network requests
 [mcp_servers.chrome-devtools.tools.get_network_request]
 approval_mode = "approve"
+
+[mcp_servers.chrome-devtools.tools.close_page]
+approval_mode = "approve"
+
