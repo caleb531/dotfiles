@@ -51,3 +51,6 @@ prefix_rule(pattern=["osascript", "-e"], decision="allow")
 
 # Allow SuiteCloud object imports
 prefix_rule(pattern=["suitecloud", "object:import"], decision="allow")
+
+# Allow JSON-querying on CLI
+prefix_rule(pattern=["jq"], decision="allow")
