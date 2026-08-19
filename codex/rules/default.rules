@@ -40,6 +40,9 @@ prefix_rule(pattern=["node", "tools/servicenow/fetch-page.mjs"], decision="allow
 # Allow the awsm-sn command through pnpm
 prefix_rule(pattern=["pnpm", "exec", "awsm-sn"], decision="allow")
 
+# Allow now-sdk to query ServiceNow instance with Table API
+prefix_rule(pattern=["pnpm", "exec", "now-sdk", "query"], decision="allow")
+
 # Allow package metadata lookup through pnpm
 prefix_rule(pattern=["pnpm", "view"], decision="allow")
 
