@@ -12,6 +12,9 @@ codex_config_source="$HOME/dotfiles/codex/config.toml"
 codex_rules_source="$HOME/dotfiles/codex/rules/default.rules"
 # Install setup-managed approvals separately from interactive approvals
 codex_rules_target="$codex_config_dir/rules/default.rules"
+# Symlink AGENTS.md from the dotfiles repository
+codex_agentsmd_source="$HOME/dotfiles/codex/AGENTS.md"
+codex_agentsmd_target="$codex_config_dir/AGENTS.md"
 
 # Stop with a useful message when the TOML editor has not been installed yet
 if ! type yq &> /dev/null; then
@@ -40,3 +43,5 @@ yq eval-all \
 
 # Link setup-managed approvals so repository changes apply immediately
 ln -sf "$codex_rules_source" "$codex_rules_target"
+# Link setup-managed approvals so repository changes apply immediately
+ln -sf "$codex_agentsmd_source" "$codex_agentsmd_target"
