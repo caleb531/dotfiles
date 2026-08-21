@@ -22,6 +22,7 @@ ln -sf "$BREW_PREFIX"/bin/ggrep "$BREW_PREFIX"/bin/grep
 ln -sf "$BREW_PREFIX"/bin/gegrep "$BREW_PREFIX"/bin/egrep
 ln -sf "$BREW_PREFIX"/bin/gfgrep "$BREW_PREFIX"/bin/fgrep
 install_brew_pkg ripgrep
+install_brew_pkg fzf
 install_brew_pkg gnu-sed
 ln -sf "$BREW_PREFIX"/bin/gsed "$BREW_PREFIX"/bin/sed
 install_brew_pkg rsync

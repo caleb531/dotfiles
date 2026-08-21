@@ -1,0 +1,51 @@
+[
+  {
+    "description": "Delete unused Docker images",
+    "command": "docker image prune -a"
+  },
+  {
+    "description": "Delete Docker build cache",
+    "command": "docker builder prune"
+  },
+  {
+    "description": "Delete Homebrew cache",
+    "command": "brew cleanup --prune=all"
+  },
+  {
+    "description": "Delete Messages caches",
+    "path": "~/Library/Messages/Caches/*",
+    "app": "Messages"
+  },
+  {
+    "description": "Delete temporary Messages items",
+    "path": "~/Library/Containers/com.apple.MobileSMS/Data/tmp/TemporaryItems/*"
+  },
+  {
+    "description": "Delete Chrome updater CRX cache",
+    "path": "~/Library/Application Support/Google/GoogleUpdater/crx_cache/*"
+  },
+  {
+    "description": "Delete application logs",
+    "path": "~/Library/Logs/*"
+  },
+  {
+    "description": "Delete cached Brave browser data",
+    "path": "~/Library/Application Support/BraveSoftware/Brave-Browser/*/Service Worker/*"
+  },
+  {
+    "description": "Delete uv cache",
+    "command": "uv cache clean"
+  },
+  {
+    "description": "Delete Puppeteer cache",
+    "path": "~/.cache/puppeteer"
+  },
+  {
+    "description": "Delete Slack cache",
+    "path": "~/Library/Application Support/Slack/Cache/*"
+  },
+  {
+    "description": "Delete Codex CLI logs",
+    "path": "~/.codex/logs_2.sqlite*"
+  }
+]
