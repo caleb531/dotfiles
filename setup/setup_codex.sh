@@ -4,17 +4,6 @@ echo "Configuring Codex..."
 
 # Locate Codex user configuration while respecting a custom Codex home
 codex_config_dir="${CODEX_HOME:-"$HOME/.codex"}"
-# Store durable Codex settings in the standard user configuration file
-codex_config_file="$codex_config_dir/config.toml"
-# Read the desired Codex settings from the dotfiles repository
-codex_config_source="$HOME/dotfiles/codex/config.toml"
-# Read setup-managed command approvals from the dotfiles repository
-codex_rules_source="$HOME/dotfiles/codex/rules/default.rules"
-# Install setup-managed approvals separately from interactive approvals
-codex_rules_target="$codex_config_dir/rules/default.rules"
-# Symlink AGENTS.md from the dotfiles repository
-codex_agentsmd_source="$HOME/dotfiles/codex/AGENTS.md"
-codex_agentsmd_target="$codex_config_dir/AGENTS.md"
 
 # Stop with a useful message when the TOML editor has not been installed yet
 if ! type yq &> /dev/null; then
@@ -25,7 +14,7 @@ fi
 # Stop if Codex directory does not exist (although it should because it should
 # already be installed at this point)
 if [ ! -d "$codex_config_dir" ]; then
-	>&2 echo "Codex directory does not exist: ${codex_config_dir}"
+	>&2 echo "Codex directory does not exist: $codex_config_dir"
 	return
 fi
 
@@ -38,10 +27,10 @@ yq eval-all \
 	--output-format toml \
 	--inplace \
 	'select(fileIndex == 0) * select(fileIndex == 1)' \
-	"$codex_config_file" \
-	"$codex_config_source"
+	"$codex_config_dir"/config.toml \
+	~/dotfiles/codex/config.toml
 
 # Link setup-managed approvals so repository changes apply immediately
-ln -sf "$codex_rules_source" "$codex_rules_target"
+ln -sf ~/dotfiles/codex/rules/default.rules "$codex_config_dir"/rules/default.rules
 # Link setup-managed approvals so repository changes apply immediately
-ln -sf "$codex_agentsmd_source" "$codex_agentsmd_target"
+ln -sf ~/dotfiles/codex/AGENTS.md "$codex_config_dir"/AGENTS.md
