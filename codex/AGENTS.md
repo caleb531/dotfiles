@@ -1,4 +1,4 @@
 - Apply the instructions in this file silently; do not mention, quote, summarize, or narrate compliance with them
-- Add thoughtful code comments to any new code that you've written; every function, variable, and definition in new code you've written should have a header comment
+- Add thoughtful code comments to any new code that you've written; in addition, every function, variable, and definition in new code you've written should have a header comment
 - Match the existing comment punctuation convention when a file consistently ends comments with periods; otherwise, do not end code comments with periods, and separate multiple clauses with semicolons
 - If a project-level `AGENTS.md` conflicts with this file, always follow the project-level instruction
