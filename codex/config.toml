@@ -61,6 +61,10 @@ approval_mode = "approve"
 [mcp_servers.chrome-devtools.tools.get_network_request]
 approval_mode = "approve"
 
+# Allow Chrome DevTools to populate a form field
+[mcp_servers.chrome-devtools.tools.fill_form]
+approval_mode = "approve"
+
 [mcp_servers.chrome-devtools.tools.close_page]
 approval_mode = "approve"
 
