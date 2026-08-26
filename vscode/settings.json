@@ -211,6 +211,7 @@
     "**/LocalDistributionAdvanced": true,
     "**/node_modules": true,
     "/.aider*": true,
+    "**/.pnpm-store": true,
   },
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
