@@ -9,3 +9,4 @@ Thumbs.db
 /.aider*
 project.json
 payload.json
+.pnpm-store
