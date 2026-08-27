@@ -43,6 +43,8 @@ prefix_rule(pattern=["pnpm", "exec", "awsm-sn"], decision="allow")
 # Allow now-sdk to query ServiceNow instance with Table API
 prefix_rule(pattern=["pnpm", "exec", "now-sdk", "query"], decision="allow")
 prefix_rule(pattern=["pnpm", "exec", "@servicenow/sdk", "query"], decision="allow")
+prefix_rule(pattern=["npx", "@servicenow/sdk", "query"], decision="allow")
+prefix_rule(pattern=["pnpx", "@servicenow/sdk", "query"], decision="allow")
 
 # Allow package metadata lookup through pnpm
 prefix_rule(pattern=["pnpm", "view"], decision="allow")
@@ -55,4 +57,3 @@ prefix_rule(pattern=["suitecloud", "object:import"], decision="allow")
 
 # Allow JSON-querying on CLI
 prefix_rule(pattern=["jq"], decision="allow")
-prefix_rule(pattern=["npx", "@servicenow/sdk", "query"], decision="allow")
