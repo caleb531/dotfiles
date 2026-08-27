@@ -55,3 +55,4 @@ prefix_rule(pattern=["suitecloud", "object:import"], decision="allow")
 
 # Allow JSON-querying on CLI
 prefix_rule(pattern=["jq"], decision="allow")
+prefix_rule(pattern=["npx", "@servicenow/sdk", "query"], decision="allow")
