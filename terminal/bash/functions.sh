@@ -339,6 +339,21 @@ gap() {
 	ga -p "${@:--A}"
 }
 
+# Delete cached GitHub credentials until the macOS Keychain has none remaining
+reset-git-auth-cache() {
+	# The maximum number of credentials to delete in a single invocation
+	local max_iterations=100
+	# The number of credentials deleted so far
+	local iteration
+	# Each iteration deletes one matching credential; stop successfully when the
+	# command fails because no matching credentials remain
+	for ((iteration = 0; iteration < max_iterations; iteration++)); do
+		security delete-internet-password -s github.com || return 0
+	done
+	>&2 echo "${FUNCNAME[0]}: stopped after $max_iterations iterations"
+	return 1
+}
+
 # Fix node-gyp Xcode installation error
 xcode-fix-node-gyp() {
 	sudo xcode-select --reset
