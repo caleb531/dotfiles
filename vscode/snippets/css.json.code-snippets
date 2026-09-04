@@ -142,11 +142,18 @@
       "!important;"
     ]
   },
-  "OS-native font families": {
+  "OS-native font families (sans-serif)": {
     "scope": "css,scss,less",
-    "prefix": "osnativefontfamilies",
+    "prefix": "osnativesansserif",
     "body": [
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"
+    ]
+  },
+  "OS-native font families (serif)": {
+    "scope": "css,scss,less",
+    "prefix": "osnativeserif",
+    "body": [
+      "-apple-system-ui-serif, ui-serif, Georgia, serif;"
     ]
   },
   "p3 colors": {
