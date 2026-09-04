@@ -205,6 +205,8 @@
 	# Do useful and mysterious things
 	revl = rev-list
 	revp = rev-parse
+	# Scope authentication to the current remote URL
+	scope-auth = config credential.useHttpPath true
 	# Copy to the clipboard the truncated form of the given commit SHA
 	short = !git rev-parse --short $@ | xargs echo -n | pbcopy
 	# Show the info and changes for the given/current commit, highlighting only
