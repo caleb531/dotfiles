@@ -1,15 +1,18 @@
 [
   {
     "description": "Delete unused Docker images",
-    "command": "docker image prune -a"
+    "cleanup_command": "docker image prune -a",
+    "filesize_command": "docker system df --format '{{if eq .Type \"Images\"}}{{.Reclaimable}}{{end}}' | grep -Eo '[0-9]+([.][0-9]+)?[[:alpha:]]+'"
   },
   {
     "description": "Delete Docker build cache",
-    "command": "docker builder prune"
+    "cleanup_command": "docker builder prune",
+    "filesize_command": "docker system df --format '{{if eq .Type \"Build Cache\"}}{{.Reclaimable}}{{end}}' | grep -Eo '[0-9]+([.][0-9]+)?[[:alpha:]]+'"
   },
   {
     "description": "Delete Homebrew cache",
-    "command": "brew cleanup --prune=all"
+    "cleanup_command": "brew cleanup --prune=all",
+    "filesize_command": "brew cleanup --prune=all --dry-run 2>/dev/null | grep -Eo '[0-9]+([.][0-9]+)?[[:alpha:]]+' | tail -n 1"
   },
   {
     "description": "Delete Messages caches",
@@ -34,7 +37,8 @@
   },
   {
     "description": "Delete uv cache",
-    "command": "uv cache clean"
+    "cleanup_command": "uv cache clean",
+    "filesize_command": "uv cache size --human --preview-features cache-size"
   },
   {
     "description": "Delete Puppeteer cache",

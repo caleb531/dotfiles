@@ -3,24 +3,27 @@
 import glob
 import json
 import os
-import shlex
+import re
 import shutil
 import stat
 import subprocess
 import sys
 import time
 from dataclasses import dataclass
+from decimal import Decimal
 from pathlib import Path
 from typing import Optional, Union
 
 
-# Defines a cleanup that executes a program with an explicit argument vector
+# Defines a cleanup backed by shell commands for sizing and deletion
 @dataclass(frozen=True)
 class CommandCleanup:
     # Human-readable text shown during selection and status reporting
     description: str
-    # Executable and arguments passed directly to subprocess
-    args: tuple[str, ...]
+    # Shell command that performs the cleanup
+    cleanup_command: str
+    # Shell command that reports the reclaimable size
+    filesize_command: str
     # Application that must exit before the cleanup begins
     app: Optional[str] = None
 
@@ -36,11 +39,44 @@ class PathCleanup:
     app: Optional[str] = None
 
 
+# Couples a visible cleanup label with its normalized byte count
+@dataclass(frozen=True)
+class CleanupMeasurement:
+    # Complete text presented in the cleanup picker
+    label: str
+    # Reclaimable bytes used for sorting; unavailable measurements have no value
+    size_bytes: Optional[Decimal]
+
+
 # Represents either supported cleanup definition shape
 Cleanup = Union[CommandCleanup, PathCleanup]
 
 # Locates the definitions relative to this script rather than the working directory
 DEFINITIONS_PATH = Path(__file__).with_name("cleanup-definitions.json")
+
+# Shell invocation that enables pipelines while preserving failures from every stage
+BASH_COMMAND = ("/bin/bash", "-o", "pipefail", "-c")
+
+# Accepted command size split into a numeric amount and alphabetic units
+SIZE_PATTERN = re.compile(r"^([0-9]+(?:\.[0-9]+)?)([A-Za-z]+)$")
+
+# Decimal and binary unit multipliers used to normalize command-reported sizes
+SIZE_MULTIPLIERS = {
+    "B": 1,
+    "kB": 1000,
+    "KB": 1000,
+    "MB": 1000**2,
+    "GB": 1000**3,
+    "TB": 1000**4,
+    "PB": 1000**5,
+    "EB": 1000**6,
+    "KiB": 1024,
+    "MiB": 1024**2,
+    "GiB": 1024**3,
+    "TiB": 1024**4,
+    "PiB": 1024**5,
+    "EiB": 1024**6,
+}
 
 
 # Reports malformed or unreadable cleanup definitions
@@ -70,8 +106,10 @@ def load_cleanups() -> tuple[Cleanup, ...]:
         description = definition.get("description")
         # Optional application dependency shared by both union members
         app = definition.get("app")
-        # Command discriminator used to choose the runtime record type
-        has_command = "command" in definition
+        # Cleanup command discriminator used to choose the runtime record type
+        has_cleanup_command = "cleanup_command" in definition
+        # Size command required by every command-backed definition
+        has_filesize_command = "filesize_command" in definition
         # Path discriminator used to choose the runtime record type
         has_path = "path" in definition
         if not isinstance(description, str) or not description:
@@ -80,32 +118,37 @@ def load_cleanups() -> tuple[Cleanup, ...]:
             )
         if app is not None and not isinstance(app, str):
             raise DefinitionError(f"Cleanup definition {index} has an invalid app")
-        # The presence of one action field is the discriminator for the union
-        if has_command == has_path:
+        # Exactly one cleanup type must be present
+        if has_cleanup_command == has_path:
             raise DefinitionError(
-                f"Cleanup definition {index} must contain either command or path"
+                f"Cleanup definition {index} must contain either cleanup_command or path"
             )
 
-        if has_command:
-            # Shell-like command text from the command union member
-            command = definition["command"]
-            if not isinstance(command, str) or not command:
+        if has_cleanup_command:
+            # Shell command that performs the cleanup
+            cleanup_command = definition["cleanup_command"]
+            # Shell command that reports the reclaimable size
+            filesize_command = definition.get("filesize_command")
+            if not isinstance(cleanup_command, str) or not cleanup_command:
                 raise DefinitionError(
-                    f"Cleanup definition {index} has an invalid command"
+                    f"Cleanup definition {index} has an invalid cleanup_command"
                 )
-            try:
-                # Parse shell-style quoting without invoking a shell during execution
-                args = tuple(shlex.split(command))
-            except ValueError as error:
+            if (
+                not has_filesize_command
+                or not isinstance(filesize_command, str)
+                or not filesize_command
+            ):
                 raise DefinitionError(
-                    f"Cleanup definition {index} has an invalid command: {error}"
-                ) from error
-            if not args:
-                raise DefinitionError(
-                    f"Cleanup definition {index} has an empty command"
+                    f"Cleanup definition {index} has an invalid filesize_command"
                 )
-            cleanups.append(CommandCleanup(description, args, app))
+            cleanups.append(
+                CommandCleanup(description, cleanup_command, filesize_command, app)
+            )
         else:
+            if has_filesize_command:
+                raise DefinitionError(
+                    f"Cleanup definition {index} cannot combine filesize_command and path"
+                )
             # Home-relative glob text from the path union member
             pattern = definition["path"]
             if not isinstance(pattern, str) or not pattern:
@@ -126,11 +169,32 @@ def check_requirements() -> bool:
     return not missing
 
 
-# Presents all definitions in fzf and returns the accepted selection
-def select_cleanups(cleanups: tuple[Cleanup, ...]) -> list[Cleanup]:
+# Presents all measured definitions in fzf and returns the accepted selection
+def select_cleanups(
+    cleanups: tuple[Cleanup, ...], measurements: tuple[CleanupMeasurement, ...]
+) -> list[Cleanup]:
+    # Builds a key that places unavailable sizes after every measured size
+    def selection_sort_key(
+        indexed_measurement: tuple[int, CleanupMeasurement],
+    ) -> tuple[bool, Decimal]:
+        # Measurement being ranked for display
+        measurement = indexed_measurement[1]
+        # Numeric fallback used only when the measurement is unavailable
+        sortable_size = (
+            measurement.size_bytes
+            if measurement.size_bytes is not None
+            else Decimal(0)
+        )
+        return measurement.size_bytes is not None, sortable_size
+
+    # Measurements ranked by normalized size while retaining original cleanup indices
+    ranked_measurements = sorted(
+        enumerate(measurements), key=selection_sort_key, reverse=True
+    )
     # The hidden index gives each display string a stable identity after fzf filtering
     entries = "".join(
-        f"{index}\t{cleanup.description}\n" for index, cleanup in enumerate(cleanups)
+        f"{index}\t{measurement.label}\n"
+        for index, measurement in ranked_measurements
     )
     # Completed fzf process containing the accepted rows or cancellation status
     result = subprocess.run(
@@ -139,6 +203,7 @@ def select_cleanups(cleanups: tuple[Cleanup, ...]) -> list[Cleanup]:
             "--multi",
             "--delimiter=\\t",
             "--with-nth=2..",
+            "--layout=reverse",
             "--bind=start:select-all,space:toggle,ctrl-a:select-all,ctrl-d:deselect-all",
             "--prompt=Cleanups> ",
         ),
@@ -235,11 +300,14 @@ def wait_for_app(app: str) -> bool:
         return False
 
 
-# Executes a command cleanup without shell interpretation
+# Executes a command cleanup through Bash with pipeline failure propagation
 def run_command_cleanup(cleanup: CommandCleanup) -> bool:
     try:
         # Completed command process whose status determines cleanup success
-        result = subprocess.run(cleanup.args, check=False)
+        result = subprocess.run(
+            (*BASH_COMMAND, cleanup.cleanup_command),
+            check=False,
+        )
     except OSError as error:
         print(f"{cleanup.description}: cleanup failed: {error}", file=sys.stderr)
         return False
@@ -285,6 +353,73 @@ def format_size(size: int) -> str:
             return f"{amount:.1f}{unit}"
         amount /= 1000
     raise AssertionError("unreachable")
+
+
+# Measures all paths currently matched by a path cleanup
+def measure_path_cleanup(cleanup: PathCleanup) -> Optional[tuple[str, Decimal]]:
+    # Paths produced by expanding the definition's glob pattern
+    paths = [Path(path) for path in glob.iglob(cleanup.pattern)]
+    if not paths:
+        return format_size(0), Decimal(0)
+
+    try:
+        # Filesystem identities already included in the allocation total
+        seen_inodes: set[tuple[int, int]] = set()
+        # Total allocated bytes across all matches
+        size = sum(allocated_size(path, seen_inodes) for path in paths)
+    except OSError as error:
+        print(f"{cleanup.description}: size unavailable: {error}", file=sys.stderr)
+        return None
+    return format_size(size), Decimal(size)
+
+
+# Captures and validates the size reported by a command cleanup
+def measure_command_cleanup(cleanup: CommandCleanup) -> Optional[tuple[str, Decimal]]:
+    try:
+        # Completed size process whose stdout must contain exactly one size value
+        result = subprocess.run(
+            (*BASH_COMMAND, cleanup.filesize_command),
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+    except OSError as error:
+        print(f"{cleanup.description}: size unavailable: {error}", file=sys.stderr)
+        return None
+
+    # Non-empty stdout lines used to reject missing or ambiguous measurements
+    lines = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+    # Parsed numeric amount and units from the sole output value
+    size_match = SIZE_PATTERN.fullmatch(lines[0]) if len(lines) == 1 else None
+    if result.returncode != 0 or size_match is None:
+        print(f"{cleanup.description}: size unavailable", file=sys.stderr)
+        return None
+
+    # Unit multiplier needed to compare differently formatted size values
+    multiplier = SIZE_MULTIPLIERS.get(size_match.group(2))
+    if multiplier is None:
+        print(f"{cleanup.description}: size unavailable", file=sys.stderr)
+        return None
+    # Exact byte equivalent retained independently from the displayed value
+    size_bytes = Decimal(size_match.group(1)) * multiplier
+    return lines[0], size_bytes
+
+
+# Measures a cleanup and builds its sortable selection metadata
+def measure_cleanup(cleanup: Cleanup) -> CleanupMeasurement:
+    # Reclaimable size reported by the cleanup's measurement strategy
+    measurement = (
+        measure_command_cleanup(cleanup)
+        if isinstance(cleanup, CommandCleanup)
+        else measure_path_cleanup(cleanup)
+    )
+    # Display value used when measurement cannot produce a trustworthy result
+    displayed_size = measurement[0] if measurement is not None else "size unavailable"
+    # Byte count used to order the picker independently from display formatting
+    size_bytes = measurement[1] if measurement is not None else None
+    return CleanupMeasurement(
+        f"{cleanup.description} ({displayed_size})", size_bytes
+    )
 
 
 # Removes one matched path without following symbolic links
@@ -357,8 +492,10 @@ def main() -> int:
     if not check_requirements():
         return 1
 
+    # Display measurements corresponding positionally to cleanup definitions
+    measurements = tuple(measure_cleanup(cleanup) for cleanup in cleanups)
     # Definitions accepted by the user in fzf
-    selected = select_cleanups(cleanups)
+    selected = select_cleanups(cleanups, measurements)
     if not confirm_cleanups(selected):
         return 0
 
