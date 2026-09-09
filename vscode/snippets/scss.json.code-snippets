@@ -137,5 +137,12 @@
     "body": [
       "@use 'sass:math';\n"
     ]
-  }
+  },
+  "!default;": {
+    "scope": "scss",
+    "prefix": "!default;",
+    "body": [
+      "!default;"
+    ]
+  },
 }
