@@ -33,7 +33,8 @@
   },
   {
     "description": "Delete cached Brave browser data",
-    "path": "~/Library/Application Support/BraveSoftware/Brave-Browser/*/Service Worker/*"
+    "path": "~/Library/Application Support/BraveSoftware/Brave-Browser/*/Service Worker/*",
+    "app": "Brave Browser"
   },
   {
     "description": "Delete uv cache",
