@@ -933,4 +933,8 @@
     "command": "-now.syncCurrentFile",
     "when": "editorTextFocus",
   },
+  {
+    "key": "shift+alt+cmd+r",
+    "command": "rewrap.rewrapCommentAt"
+  },
 ]
