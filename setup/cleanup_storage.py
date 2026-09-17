@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import glob
 import json
 import os
@@ -9,6 +10,7 @@ import stat
 import subprocess
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from decimal import Decimal
 from pathlib import Path
@@ -57,6 +59,9 @@ DEFINITIONS_PATH = Path(__file__).with_name("cleanup-definitions.json")
 # Shell invocation that enables pipelines while preserving failures from every stage
 BASH_COMMAND = ("/bin/bash", "-o", "pipefail", "-c")
 
+# Number of concurrent cleanup measurements used unless the command line overrides it
+DEFAULT_WORKER_COUNT = 4
+
 # Accepted command size split into a numeric amount and alphabetic units
 SIZE_PATTERN = re.compile(r"^([0-9]+(?:\.[0-9]+)?)([A-Za-z]+)$")
 
@@ -82,6 +87,34 @@ SIZE_MULTIPLIERS = {
 # Reports malformed or unreadable cleanup definitions
 class DefinitionError(Exception):
     pass
+
+
+# Validates a command-line worker count for concurrent measurements
+def positive_integer(value: str) -> int:
+    try:
+        # Parsed integer candidate supplied by the command line
+        integer = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError("must be a positive integer") from error
+    if integer < 1:
+        raise argparse.ArgumentTypeError("must be a positive integer")
+    return integer
+
+
+# Parses command-line settings for the interactive cleanup workflow
+def parse_arguments() -> argparse.Namespace:
+    # Parser describing supported workflow configuration options
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--workers",
+        type=positive_integer,
+        default=DEFAULT_WORKER_COUNT,
+        help=(
+            "number of concurrent cleanup size measurements "
+            f"(default: {DEFAULT_WORKER_COUNT})"
+        ),
+    )
+    return parser.parse_args()
 
 
 # Loads and validates cleanup definitions from JSON
@@ -181,9 +214,7 @@ def select_cleanups(
         measurement = indexed_measurement[1]
         # Numeric fallback used only when the measurement is unavailable
         sortable_size = (
-            measurement.size_bytes
-            if measurement.size_bytes is not None
-            else Decimal(0)
+            measurement.size_bytes if measurement.size_bytes is not None else Decimal(0)
         )
         return measurement.size_bytes is not None, sortable_size
 
@@ -193,8 +224,7 @@ def select_cleanups(
     )
     # The hidden index gives each display string a stable identity after fzf filtering
     entries = "".join(
-        f"{index}\t{measurement.label}\n"
-        for index, measurement in ranked_measurements
+        f"{index}\t{measurement.label}\n" for index, measurement in ranked_measurements
     )
     # Completed fzf process containing the accepted rows or cancellation status
     result = subprocess.run(
@@ -321,9 +351,9 @@ def run_command_cleanup(cleanup: CommandCleanup) -> bool:
 
 
 # Recursively calculates allocated bytes while avoiding hard-link double counting
-def allocated_size(path: Path, seen_inodes: set[tuple[int, int]]) -> int:
-    # Metadata for the path itself without following symbolic links
-    path_stat = path.lstat()
+def allocated_size(path: str, seen_inodes: set[tuple[int, int]]) -> int:
+    # Metadata for the raw path string without following symbolic links
+    path_stat = os.lstat(path)
     # Filesystem identity used to detect repeated hard links
     inode = (path_stat.st_dev, path_stat.st_ino)
     # Match du's hard-link behavior by counting each inode only once
@@ -339,7 +369,7 @@ def allocated_size(path: Path, seen_inodes: set[tuple[int, int]]) -> int:
         with os.scandir(path) as entries:
             # Child directory entry included in the recursive allocation total
             for entry in entries:
-                size += allocated_size(Path(entry.path), seen_inodes)
+                size += allocated_size(entry.path, seen_inodes)
     return size
 
 
@@ -358,7 +388,7 @@ def format_size(size: int) -> str:
 # Measures all paths currently matched by a path cleanup
 def measure_path_cleanup(cleanup: PathCleanup) -> Optional[tuple[str, Decimal]]:
     # Paths produced by expanding the definition's glob pattern
-    paths = [Path(path) for path in glob.iglob(cleanup.pattern)]
+    paths = list(glob.iglob(cleanup.pattern))
     if not paths:
         return format_size(0), Decimal(0)
 
@@ -417,9 +447,39 @@ def measure_cleanup(cleanup: Cleanup) -> CleanupMeasurement:
     displayed_size = measurement[0] if measurement is not None else "size unavailable"
     # Byte count used to order the picker independently from display formatting
     size_bytes = measurement[1] if measurement is not None else None
-    return CleanupMeasurement(
-        f"{cleanup.description} ({displayed_size})", size_bytes
-    )
+    return CleanupMeasurement(f"{cleanup.description} ({displayed_size})", size_bytes)
+
+
+# Measures all cleanups concurrently while reporting completed work to the terminal
+def measure_cleanups(
+    cleanups: tuple[Cleanup, ...], workers: int
+) -> tuple[CleanupMeasurement, ...]:
+    # Total cleanup measurements included in the current progress display
+    total = len(cleanups)
+    # Ordered slots preserve the definition order after concurrent completion
+    measurements: list[Optional[CleanupMeasurement]] = [None] * total
+    # Worker pool overlaps independent filesystem and command-backed measurements
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        # Associates each submitted measurement with its original definition index
+        futures = {
+            executor.submit(measure_cleanup, cleanup): index
+            for index, cleanup in enumerate(cleanups)
+        }
+        # Number of completed measurements displayed to the user
+        completed = 0
+        # Finished measurement future reported in completion order
+        for future in as_completed(futures):
+            # Original position used to restore definition order after completion
+            index = futures[future]
+            measurements[index] = future.result()
+            completed += 1
+            print(
+                f"\rCalculating cleanup sizes: {completed}/{total}",
+                end="",
+                flush=True,
+            )
+    print(flush=True)
+    return tuple(measurement for measurement in measurements if measurement is not None)
 
 
 # Removes one matched path without following symbolic links
@@ -441,7 +501,7 @@ def delete_path(path: Path) -> None:
 # Calculates and removes every path matched by a path cleanup
 def run_path_cleanup(cleanup: PathCleanup) -> bool:
     # iglob preserves ordinary shell behavior where * excludes hidden children
-    paths = [Path(path) for path in glob.iglob(cleanup.pattern)]
+    paths = list(glob.iglob(cleanup.pattern))
     if not paths:
         print(f"{cleanup.description}: already clean")
         return True
@@ -461,7 +521,7 @@ def run_path_cleanup(cleanup: PathCleanup) -> bool:
     try:
         # Matched path removed as an individual rm-style argument
         for path in paths:
-            delete_path(path)
+            delete_path(Path(path))
     except OSError as error:
         # Do not claim reclaimed space after a failed or partial deletion
         print(f"{cleanup.description}: cleanup failed: {error}", file=sys.stderr)
@@ -482,6 +542,8 @@ def run_cleanup(cleanup: Cleanup) -> bool:
 
 # Runs the interactive cleanup workflow and returns its process status
 def main() -> int:
+    # Command-line settings controlling the measurement phase
+    arguments = parse_arguments()
     try:
         # Validated cleanup definitions available for interactive selection
         cleanups = load_cleanups()
@@ -492,8 +554,8 @@ def main() -> int:
     if not check_requirements():
         return 1
 
-    # Display measurements corresponding positionally to cleanup definitions
-    measurements = tuple(measure_cleanup(cleanup) for cleanup in cleanups)
+    # Display measurements retain definition order while reporting concurrent progress
+    measurements = measure_cleanups(cleanups, arguments.workers)
     # Definitions accepted by the user in fzf
     selected = select_cleanups(cleanups, measurements)
     if not confirm_cleanups(selected):
