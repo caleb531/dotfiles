@@ -382,7 +382,7 @@ ssd() {
 # The base URL for all Jira ticket URLs
 export JIRA_BASE_TICKET_URL='https://revvy-modeln.atlassian.net/browse/'
 
-# Create a pull request on Bitbucket or GitHub
+# Create a pull request on Bitbucket, GitHub, or Azure DevOps
 pr() {
 	local target_branch_name="$1"
 	if [ -z "$target_branch_name" ]; then
@@ -424,6 +424,11 @@ pr() {
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
 		local pr_url="${repo_url}/compare/$target_branch_name...${source_branch_name}?title=${pr_default_title}"
+	elif [[ "$repo_url" == https://*.visualstudio.com/* || "$repo_url" == git@vs-ssh.visualstudio.com:v3/* ]]; then
+		# Convert legacy Azure SSH remotes to their browser URL; HTTPS remotes pass through
+		repo_url="$(echo "$repo_url" | sed -E 's#^git@vs-ssh\.visualstudio\.com:v3/([^/]+)/([^/]+)/(.+)$#https://\1.visualstudio.com/\2/_git/\3#')"
+		# Azure DevOps pull request creation URL
+		local pr_url="${repo_url}/pullrequestcreate?sourceRef=${source_branch_name}&targetRef=${target_branch_name}"
 	fi
 	if [ -n "$pr_url" ]; then
 		open "$pr_url"
