@@ -88,47 +88,57 @@ alias create-svelte='pnpm create svelte@latest'
 alias jest-preview='npm exec jest-preview'
 
 # Git
-alias gi='git'
-alias got='git'
-alias gti='git'
-alias gut='git'
-alias igt='git'
-alias gbs='git bisect start'
-alias gbr='git bisect reset'
-alias gbg='git bisect good'
-alias good='git bisect good'
-alias gbb='git bisect bad'
-alias bad='git bisect bad'
-alias gcm='git commit'
-alias gcma='git commit --amend'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gdcw='git diffcw'
-alias gdcwc='git diffcwc'
-alias gdcwcw='git diffcwcw'
-alias gdw='git diffw'
-alias gdwc='git diffwc'
-alias gdwcw='git diffwcw'
-alias gdwcwc='git diffwcwc'
+# Define a Git alias and register its completion when Git completion is loaded
+git-alias() {
+	# Expand the supplied alias value now so it remains literal when invoked
+	# shellcheck disable=SC2139
+	alias "$1=$2"
+	if [ -n "$3" ] && type __git_complete &> /dev/null; then
+		__git_complete "$1" "$3"
+	fi
+}
+
+git-alias gi 'git' __git_main
+git-alias got 'git' __git_main
+git-alias gti 'git' __git_main
+git-alias gut 'git' __git_main
+git-alias igt 'git' __git_main
+git-alias gbs 'git bisect start' __git_complete_refs
+git-alias gbr 'git bisect reset' __git_complete_refs
+git-alias gbg 'git bisect good' __git_complete_refs
+git-alias good 'git bisect good' __git_complete_refs
+git-alias gbb 'git bisect bad' __git_complete_refs
+git-alias bad 'git bisect bad' __git_complete_refs
+git-alias gcm 'git commit' _git_commit
+git-alias gcma 'git commit --amend' _git_commit
+git-alias gd 'git diff' _git_diff
+git-alias gdc 'git diff --cached' _git_diff
+git-alias gdcw 'git diffcw' _git_diff
+git-alias gdcwc 'git diffcwc' _git_diff
+git-alias gdcwcw 'git diffcwcw' _git_diff
+git-alias gdw 'git diffw' _git_diff
+git-alias gdwc 'git diffwc' _git_diff
+git-alias gdwcw 'git diffwcw' _git_diff
+git-alias gdwcwc 'git diffwcwc' _git_diff
 # alias gf='git fetch'
-alias gm='git merge'
-alias gos='git push'
-alias gp='git pull'
-alias fp='git pull'
-alias gps='git push'
-alias fps='git push'
-alias gpsu='git pushu'
-alias gpsy='git pushu'
-alias gpsf='git pushf'
-alias gpst='git pusht'
-alias gpstt='git pushtt'
-alias gpsttf='git pushtt --force-with-lease'
-alias gpsftt='git pushtt --force-with-lease'
-alias gpo='git pull origin'
-alias gpr='git pull --rebase'
-alias gpor='git pull --rebase origin'
-alias gr='git reset'
-alias gs='git status'
+git-alias gm 'git merge' _git_merge
+git-alias gos 'git push' _git_push
+git-alias gp 'git pull' _git_pull
+git-alias fp 'git pull' _git_pull
+git-alias gps 'git push' _git_push
+git-alias fps 'git push' _git_push
+git-alias gpsu 'git pushu' _git_push
+git-alias gpsy 'git pushu' _git_push
+git-alias gpsf 'git pushf' _git_push
+git-alias gpst 'git pusht' _git_push
+git-alias gpstt 'git pushtt' _git_push
+git-alias gpsttf 'git pushtt --force-with-lease' _git_push
+git-alias gpsftt 'git pushtt --force-with-lease' _git_push
+git-alias gpo 'git pull origin' __git_complete_refs
+git-alias gpr 'git pull --rebase' _git_pull
+git-alias gpor 'git pull --rebase origin' __git_complete_refs
+git-alias gr 'git reset' _git_reset
+git-alias gs 'git status' _git_status
 
 # Restart GPG to fix occasional signing issues
 alias restart-gpg='gpgconf --kill gpg-agent'

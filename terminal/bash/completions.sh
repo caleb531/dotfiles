@@ -500,21 +500,6 @@ _int() {
 }
 complete -o default -F _int int intn 2> /dev/null
 
-# My custom Git alias for `git pull origin`, which should complete branch names
-_gpo() {
-
-	local cur=${COMP_WORDS[COMP_CWORD]}
-	local prev=${COMP_WORDS[COMP_CWORD-1]}
-
-	if [ "$prev" == 'gpo' ] || [ "$prev" == 'gpor' ]; then
-		# Complete branch names for `gpo`
-		COMPREPLY=( $(compgen -W "$(__get_git_branches --)" -- "$cur") )
-	fi
-
-}
-complete -o default -F _gpo gpo 2> /dev/null
-complete -o default -F _gpo gpor 2> /dev/null
-
 # My custom Git alias for opening a pull request, which should complete branch
 # names (because the alias accepts an optional branch name as its only argument)
 _pr() {
@@ -542,12 +527,3 @@ _killall() {
 }
 complete -o default -F _killall killall 2> /dev/null
 complete -o default -F _killall ka 2> /dev/null
-
-# Enable completions for aliases for 'git'
-if type __git_complete &> /dev/null; then
-	__git_complete gi __git_main
-	__git_complete got __git_main
-	__git_complete gti __git_main
-	__git_complete gut __git_main
-	__git_complete igt __git_main
-fi
