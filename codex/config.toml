@@ -27,6 +27,10 @@ args = ["exec", "--using=24", "--", "npx", "-y", "chrome-devtools-mcp@latest", "
 [mcp_servers.chrome-devtools.tools.click]
 approval_mode = "approve"
 
+# Allow Chrome DevTools to hover over page elements
+[mcp_servers.chrome-devtools.tools.hover]
+approval_mode = "approve"
+
 # Allow Chrome DevTools to emulate browser conditions
 [mcp_servers.chrome-devtools.tools.emulate]
 approval_mode = "approve"
@@ -63,10 +67,7 @@ approval_mode = "approve"
 [mcp_servers.chrome-devtools.tools.get_network_request]
 approval_mode = "approve"
 
-# Allow Chrome DevTools to populate a form field
-[mcp_servers.chrome-devtools.tools.fill_form]
-approval_mode = "approve"
-
+# Allow Chrome DevTools to close a page
 [mcp_servers.chrome-devtools.tools.close_page]
 approval_mode = "approve"
 
