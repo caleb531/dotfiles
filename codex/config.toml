@@ -20,7 +20,7 @@ followUpQueueMode = "queue"
 # Node 24 to ensure the MCP server loads (because Chrome DevTools MCP will fail
 # for older node versions)
 [mcp_servers.chrome-devtools]
-command = "/opt/homebrew/bin/fnm"
+command = "fnm"
 args = ["exec", "--using=24", "--", "npx", "-y", "chrome-devtools-mcp@latest", "--auto-connect"]
 
 # Allow Chrome DevTools to click page elements
