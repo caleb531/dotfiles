@@ -3,6 +3,24 @@ Apply the instructions in this file silently; do not mention, quote, summarize, 
 - In JavaScript and TypeScript, terminate statements with semicolons wherever syntactically applicable; do not rely on automatic semicolon insertion
 - If a project-level `AGENTS.md` conflicts with this file, always follow the project-level instruction
 
+## Critical Thinking
+
+- Establish the root cause before proposing a fix; trace the observed behavior through the relevant code, data, configuration, and environment rather than stopping at the first plausible explanation
+- Distinguish verified facts from hypotheses; check whether the explanation accounts for all reported symptoms, including timing and differences between environments; when evidence contradicts it, revise the explanation and identify a check that can distinguish the remaining possibilities
+- Fix the problem where it originates so the normal flow produces the correct result; prefer correcting source data, configuration, version mismatches, or persistence contracts over patching generated output, masking symptoms, or compensating downstream; if a workaround is necessary, explain the constraint that prevents a direct fix
+- Inspect what already exists before adding a new table, module, extension, configuration option, or code path; identify the specific requirement the existing implementation cannot meet; a different presentation or packaging choice does not by itself require separate data or configuration
+- Keep a single authoritative source for business rules, formulas, configuration, and shared values; use the existing source rather than copying it or adding overrides that must be kept in sync; apply shared fixes at the appropriate level instead of accumulating special cases for individual screens
+- Prefer native platform features, framework conventions, existing APIs, and declarative configuration when they satisfy the requirement; justify custom machinery by the concrete gap it fills, and verify claimed platform limitations before designing around them
+- Treat a minimal diff as a way to reduce regression risk and make the change reviewable; preserve existing structure and behavior where possible, and avoid incidental renaming, reformatting, refactoring, or unrelated cleanup; minimize unnecessary change without sacrificing a complete fix
+- Make complexity earn its place; add helpers, types, abstractions, dependencies, and options only when they solve a concrete problem or meaningfully improve clarity; match the implementation to its actual use, especially for one-time scripts and narrowly scoped changes
+- Keep validation and failure handling proportional to the actual contract and consequences; inspect the real data shape instead of guessing through fallback properties or adding exhaustive type and format checks; retain checks that prevent a concrete failure, and explain what they protect
+- Separate the core fix from adjacent bug fixes and optional hardening; explain what the smaller implementation solves, what it leaves unresolved, and which additional changes are necessary for the requested behavior; use concrete failure scenarios to justify broader changes rather than calling them more robust
+- Preserve semantic clarity when reusing code; share logic that represents the same rule, but don't couple unrelated behavior or group unrelated CSS selectors merely to eliminate repeated lines; a little repetition can be clearer than an abstraction that obscures meaning
+- Evaluate solutions against the full outcome, including existing behavior, user experience, security, and deployment requirements; don't make an error disappear by weakening a requirement or removing the behavior the user wanted
+- When challenged, revisit the assumptions behind the recommendation rather than merely simplifying its wording or defending the existing approach; explain the causal reasoning in plain language, support it with code, observed behavior, or documentation, and retain a recommendation when the evidence warrants it
+- Verify the original failure scenario and the behavior the fix is meant to preserve; a passing build or a successful command alone does not establish that the underlying problem is resolved; state what was verified and what remains uncertain
+- Carry the user's constraints and the reasons behind them into plans and implementation handoffs, especially minimal scope and the intended failure behavior; don't let a generated plan silently expand the task or lose the tradeoffs agreed during discussion
+
 ## Code comments
 
 - Add thoughtful code comments to any new code that you write; in addition, every function, variable, and definition in new code you've written should have a header comment
