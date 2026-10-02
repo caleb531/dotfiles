@@ -28,15 +28,6 @@ prefix_rule(pattern=["pnpm", "--store-dir", "/Users/caleb/Library/pnpm/store/v10
 # Allow the now-sdk command through pnpm
 prefix_rule(pattern=["pnpm", "exec", "now-sdk"], decision="allow")
 
-# Allow the repository ServiceNow table query helper
-prefix_rule(pattern=["node", "tools/servicenow/query-table.mjs"], decision="allow")
-
-# Allow the repository EC Nova portal creation helper
-prefix_rule(pattern=["node", "tools/servicenow/create-ec-nova-portal.mjs"], decision="allow")
-
-# Allow the repository ServiceNow page fetch helper
-prefix_rule(pattern=["node", "tools/servicenow/fetch-page.mjs"], decision="allow")
-
 # Allow the awsm-sn command through pnpm
 prefix_rule(pattern=["pnpm", "exec", "awsm-sn"], decision="allow")
 
