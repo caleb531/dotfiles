@@ -13,6 +13,12 @@ path() {
 	echo -e "${PATH//:/\\n}"
 }
 
+# Apply shared Codex configuration before launching Codex
+codex() {
+	~/dotfiles/setup/setup_codex.sh > /dev/null || return $?
+	command codex "$@"
+}
+
 # Make pbcopy trim surrounding whitespace from copied input, for convenience
 pbcopy() {
 	local contents="$(< /dev/stdin)"

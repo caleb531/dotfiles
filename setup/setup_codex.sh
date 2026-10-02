@@ -7,7 +7,7 @@ codex_config_dir="${CODEX_HOME:-"$HOME/.codex"}"
 
 # Stop with a useful message when the TOML editor has not been installed yet
 if ! type yq &> /dev/null; then
-	echo 'yq must be installed before running this script'
+	>&2 echo 'yq must be installed before running this script'
 	exit 1
 fi
 
@@ -15,7 +15,7 @@ fi
 # already be installed at this point)
 if [ ! -d "$codex_config_dir" ]; then
 	>&2 echo "Codex directory does not exist: $codex_config_dir"
-	return
+	exit 1
 fi
 
 # Because Codex CLI's config.toml mixes configuration with machine-specific
@@ -28,9 +28,9 @@ yq eval-all \
 	--inplace \
 	'select(fileIndex == 0) * select(fileIndex == 1)' \
 	"$codex_config_dir"/config.toml \
-	~/dotfiles/codex/config.toml
+	~/dotfiles/codex/config.toml || exit $?
 
 # Link setup-managed approvals so repository changes apply immediately
-ln -sf ~/dotfiles/codex/rules/default.rules "$codex_config_dir"/rules/default.rules
+ln -sf ~/dotfiles/codex/rules/default.rules "$codex_config_dir"/rules/default.rules || exit $?
 # Link setup-managed approvals so repository changes apply immediately
-ln -sf ~/dotfiles/codex/AGENTS.md "$codex_config_dir"/AGENTS.md
+ln -sf ~/dotfiles/codex/AGENTS.md "$codex_config_dir"/AGENTS.md || exit $?
