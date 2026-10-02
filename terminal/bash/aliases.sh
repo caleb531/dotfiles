@@ -160,8 +160,10 @@ alias ciode='code'
 alias cdoe='code'
 alias coed='code'
 
-# Create aliases for `codex` misspellings
+# Create convenience aliases for 'codex'
 alias codx='codex'
+alias codexr='codex resume'
+alias cr='codex resume'
 
 # Remap 'killall' to 'ka'
 alias ka='killall'
