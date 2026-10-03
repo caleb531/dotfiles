@@ -16,6 +16,10 @@ conversationDetailMode = "STEPS_COMMANDS"
 ambient-suggestions-enabled = false
 followUpQueueMode = "queue"
 
+[features]
+# Only show files in the autocomplete list when typing '@'
+mentions_v2 = false
+
 # Connect to an existing Chrome instance through Chrome DevTools; always use
 # Node 24 to ensure the MCP server loads (because Chrome DevTools MCP will fail
 # for older node versions)
