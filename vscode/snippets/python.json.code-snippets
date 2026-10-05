@@ -167,5 +167,12 @@
     "body": [
       " -> None"
     ]
+  },
+  "dict key-value pair": {
+    "scope": "python",
+    "prefix": "kv",
+    "body": [
+      "\"${1:key}\": ${2:true},"
+    ]
   }
 }
