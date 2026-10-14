@@ -33,6 +33,12 @@ __get_nvmrc_contents() {
 
 # Detect the node version for this project and switch to it
 __detect_node_version() {
+	# Skip detection if we've already selected a Node version in this directory
+	if [[ "$CURRENT_NODE_AUTO_SWITCH_PWD" == "$PWD" ]]; then
+		return
+	fi
+
+	# The Node version requested by the nearest .nvmrc within this Git repository
 	local nvmrc_contents
 	if git rev-parse --git-dir > /dev/null 2>&1; then
 		# Search ancestors only when the Git root provides a clear stopping
@@ -44,12 +50,15 @@ __detect_node_version() {
 	fi
 	# If an .nvmrc exists in the current directory (that we just entered), or an
 	# ancestor within the current Git repository
-	if [[ -n "$nvmrc_contents" && "$(node -v | cut -c2-)" != "$nvmrc_contents" && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
-		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
-		fnm use "$nvmrc_contents"
+	if [[ -n "$nvmrc_contents" ]]; then
+		if [[ "$(node -v | cut -c2-)" != "$nvmrc_contents" ]]; then
+			export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
+			fnm use "$nvmrc_contents"
+		fi
 	# OR.. if the current directory's package.json contains an "engines" field,
 	# switch to that resolved node version if it's not already active
-	elif [[ "$(cat package.json 2> /dev/null | yq '.engines')" != null && "$CURRENT_NODE_AUTO_SWITCH_PWD" != "$PWD" ]]; then
+	# Skip missing or invalid manifests (e.g. during an unresolved Git merge)
+	elif yq -e '.engines' package.json > /dev/null 2>&1; then
 		export CURRENT_NODE_AUTO_SWITCH_PWD="$PWD"
 		fnm use --resolve-engines
 	fi
