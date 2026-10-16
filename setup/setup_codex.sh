@@ -30,7 +30,8 @@ yq eval-all \
 	"$codex_config_dir"/config.toml \
 	~/dotfiles/codex/config.toml || exit $?
 
-# Link setup-managed approvals so repository changes apply immediately
-ln -sf ~/dotfiles/codex/rules/default.rules "$codex_config_dir"/rules/default.rules || exit $?
+# Link the whole directory because Codex skips symlinked rule files
+rm -rf "$codex_config_dir"/rules || exit $?
+ln -s ~/dotfiles/codex/rules "$codex_config_dir"/rules || exit $?
 # Link setup-managed approvals so repository changes apply immediately
 ln -sf ~/dotfiles/codex/AGENTS.md "$codex_config_dir"/AGENTS.md || exit $?
