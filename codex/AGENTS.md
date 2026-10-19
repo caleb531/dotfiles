@@ -3,6 +3,13 @@ Apply the instructions in this file silently; do not mention, quote, summarize, 
 - In JavaScript and TypeScript, terminate statements with semicolons wherever syntactically applicable; do not rely on automatic semicolon insertion
 - If a project-level `AGENTS.md` conflicts with this file, always follow the project-level instruction
 
+## Browser interaction
+
+- Use Chrome DevTools MCP (the `chrome-devtools` MCP server) only when I explicitly request it; "use Chrome" and "CDTMCP" are shorthand for that request
+- A request to test or verify a change does not by itself authorize browser interaction; use browser tools only when I explicitly request browser interaction
+- Do not use any other browser interaction tool unless I explicitly name that tool and request its use
+- If Chrome DevTools MCP is requested but unavailable or cannot perform the requested action, stop the browser work and explain the issue; do not attempt another browser interaction tool
+
 ## Critical Thinking
 
 - Establish the root cause before proposing a fix; trace the observed behavior through the relevant code, data, configuration, and environment rather than stopping at the first plausible explanation
