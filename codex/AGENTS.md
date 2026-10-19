@@ -10,7 +10,7 @@ Apply the instructions in this file silently; do not mention, quote, summarize, 
 - Do not use any other browser interaction tool unless I explicitly name that tool and request its use
 - If Chrome DevTools MCP is requested but unavailable or cannot perform the requested action, stop the browser work and explain the issue; do not attempt another browser interaction tool
 
-## Critical Thinking
+## Critical thinking
 
 - Establish the root cause before proposing a fix; trace the observed behavior through the relevant code, data, configuration, and environment rather than stopping at the first plausible explanation
 - Distinguish verified facts from hypotheses; check whether the explanation accounts for all reported symptoms, including timing and differences between environments; when evidence contradicts it, revise the explanation and identify a check that can distinguish the remaining possibilities
