@@ -9,6 +9,8 @@ prefix_rule(pattern=["git", "log"], decision="allow")
 prefix_rule(pattern=["git", "add"], decision="allow")
 prefix_rule(pattern=["git", "commit"], decision="allow")
 prefix_rule(pattern=["git", "stash"], decision="allow")
+prefix_rule(pattern=["git", "branch"], decision="allow")
+prefix_rule(pattern=["git", "switch"], decision="allow")
 
 # Allow the standard pnpm formatter
 prefix_rule(pattern=["pnpm", "format"], decision="allow")
