@@ -75,6 +75,12 @@ approval_mode = "approve"
 [mcp_servers.chrome-devtools.tools.close_page]
 approval_mode = "approve"
 
+# Allow Chrome DevTools to populate fields
+[mcp_servers.chrome-devtools.tools.fill]
+approval_mode = "approve"
+[mcp_servers.chrome-devtools.tools.fill_form]
+approval_mode = "approve"
+
 # Allow Chrome DevTools to start/stop performance traces
 [mcp_servers.chrome-devtools.tools.performance_start_trace]
 approval_mode = "approve"
