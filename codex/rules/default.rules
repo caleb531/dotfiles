@@ -59,3 +59,6 @@ prefix_rule(pattern=["supabase", "--version"], decision="allow")
 prefix_rule(pattern=["supabase", "status"], decision="allow")
 prefix_rule(pattern=["supabase", "migration", "list"], decision="allow")
 prefix_rule(pattern=["supabase", "migration", "--help"], decision="allow")
+
+# SuiteCloud Development Framework (SDF)
+prefix_rule(pattern=["suitecloud", "project:validate"], decision="allow")
