@@ -34,6 +34,8 @@ echo "Assigning apps to Desktop 2..."
 defaults write com.apple.spaces app-bindings -dict-add com.apple.mail "$desktop_2_uuid"
 defaults write com.apple.spaces app-bindings -dict-add com.apple.ical "$desktop_2_uuid"
 defaults write com.apple.spaces app-bindings -dict-add com.apple.reminders "$desktop_2_uuid"
+defaults write com.apple.spaces app-bindings -dict-add com.tinyspeck.slackmacgap "$desktop_2_uuid"
+defaults write com.apple.spaces app-bindings -dict-add com.microsoft.teams2 "$desktop_2_uuid"
 
 echo "Assigning apps to Desktop 3..."
 
