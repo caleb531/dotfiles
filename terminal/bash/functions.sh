@@ -481,14 +481,6 @@ intn() {
 	INT_DISABLE_CHECKOUT_ORIG_BRANCH=''
 }
 
-# Upgrade all installed pip packages to the latest versions
-upgrade-all-pip-packages() {
-	pip list --outdated \
-		| awk '{print $1}' \
-		| tail -n +3 \
-		| xargs pip install -U
-}
-
 # Basically `uv version`, but also auto-commits and auto-tags the release
 uvv() {
 	local version="${1#v}"
