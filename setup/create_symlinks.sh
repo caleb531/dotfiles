@@ -24,6 +24,10 @@ ln -sf ~/Library/Containers/com.pixelresearchlabs.osx.ringer/Data/Documents/Ring
 mkdir -p ~/Library/Application\ Support/pip
 ln -sf ~/dotfiles/terminal/pip.conf ~/Library/Application\ Support/pip/pip.conf
 
+# Symlink uv configuration
+mkdir -p ~/.config/uv
+ln -sf ~/dotfiles/terminal/uv.toml ~/.config/uv/uv.toml
+
 # Symlink SSH configuration
 mkdir -p ~/.ssh
 ln -sf ~/dotfiles/ssh/ssh_config ~/.ssh/config

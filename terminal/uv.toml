@@ -1,0 +1,2 @@
+# Exclude package distributions uploaded within the last day
+exclude-newer = "1d"
