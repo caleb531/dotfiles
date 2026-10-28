@@ -163,6 +163,7 @@ alias coed='code'
 # Create convenience aliases for 'codex'
 alias codx='codex'
 alias codexr='codex resume'
+alias codxr='codex resume'
 alias cr='codex resume'
 
 # Remap 'killall' to 'ka'
