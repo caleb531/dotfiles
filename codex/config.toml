@@ -17,6 +17,8 @@ ambient-suggestions-enabled = false
 followUpQueueMode = "queue"
 
 [features]
+# Prevent system from sleeping while agent is running an active task
+prevent_idle_sleep = true
 # Only show files in the autocomplete list when typing '@'
 mentions_v2 = false
 
