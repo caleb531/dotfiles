@@ -21,6 +21,8 @@ followUpQueueMode = "queue"
 prevent_idle_sleep = true
 # Only show files in the autocomplete list when typing '@'
 mentions_v2 = false
+# Disable JavaScript REPL (we don't need it)
+js_repl = false
 
 # Connect to an existing Chrome instance through Chrome DevTools; always use
 # Node 24 to ensure the MCP server loads (because Chrome DevTools MCP will fail
