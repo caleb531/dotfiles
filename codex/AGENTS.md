@@ -42,6 +42,7 @@ Apply the instructions in this file silently; do not mention, quote, summarize, 
 - Connect an action to its purpose with "because", "so that", "to avoid", or "this allows us to"; for workarounds, explain the specific problem and how the code addresses it, rather than merely calling the code robust or safe
 - Use "we", "us", and contractions such as "don't", "doesn't", and "can't" when they make an explanation more natural; avoid turning every comment into impersonal documentation
 - Keep straightforward comments short, but give a less obvious behavior enough explanation to be understood; wrap longer explanations across comment lines at the file's usual width, preserving normal sentence flow
+- Keep each code comment line within 80 characters, including indentation and comment markers
 - Use parentheses for brief clarifications and concrete examples, including "e.g." and "i.e." where appropriate; name exact identifiers or API methods when useful, and include a source link for a workaround when it explains a relevant limitation
 
 Examples of the intended wording:
