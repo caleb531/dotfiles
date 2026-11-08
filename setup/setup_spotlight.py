@@ -203,6 +203,7 @@ def get_indexed_children(path):
 
 # Check service registration and search results independently for every folder
 def verify_exclusions(spotlight, paths, exact=False):
+    print("Verifying Spotlight exclusions; this may take a moment...", flush=True)
     # Clear results from an earlier check if the caller changed exclusions
     get_indexed_paths.cache_clear()
     # The current native list and the number of folders that failed verification
