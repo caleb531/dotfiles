@@ -233,6 +233,40 @@ def verify_exclusions(spotlight, paths, exact=False):
     return failures == 0
 
 
+# Start the same asynchronous index rebuild for explicit and prompted requests
+def rebuild_index(check_command):
+    print(
+        "Starting a Spotlight index rebuild for the Data volume; "
+        "sudo may ask for your administrator password.",
+        flush=True
+    )
+    subprocess.run(
+        ["/usr/bin/sudo", "/usr/bin/mdutil", "-E", "/System/Volumes/Data"],
+        check=True
+    )
+    # Empty search results during rebuilding aren't proof of working exclusions
+    print(
+        "The rebuild was requested. Search results may be incomplete until "
+        f"it finishes. Afterward, run {check_command} to verify your exclusions."
+    )
+
+
+# Ask before rebuilding; an empty response or closed input means no
+def confirm_rebuild():
+    while True:
+        try:
+            # The user's response, with surrounding spaces and case ignored
+            answer = input("Rebuild the Spotlight index now? [y/N]: ").strip().lower()
+        except EOFError:
+            print()
+            return False
+        if answer in ("y", "yes"):
+            return True
+        if answer in ("", "n", "no"):
+            return False
+        print("Please enter y or n.")
+
+
 # Read the CLI options without opening Finder or System Settings
 def parse_cli_args():
     # The script's input file and optional preview, check, or rebuild mode
@@ -240,7 +274,8 @@ def parse_cli_args():
         description=__doc__,
         epilog=(
             "With no options, add any missing folder exclusions and check that "
-            "their contents no longer appear in Spotlight searches."
+            "their contents no longer appear in Spotlight searches. If "
+            "verification fails, offer to rebuild the index."
         )
     )
     parser.add_argument(
@@ -337,21 +372,7 @@ def main():
             "run setup_spotlight.py --sync --check for details"
         )
     if args.rebuild_index:
-        print(
-            "Starting a Spotlight index rebuild for the Data volume; "
-            "sudo may ask for your administrator password.",
-            flush=True
-        )
-        subprocess.run(
-            ["/usr/bin/sudo", "/usr/bin/mdutil", "-E", "/System/Volumes/Data"],
-            check=True
-        )
-        # The command starts an asynchronous rebuild; empty results aren't proof
-        print(
-            "The rebuild was requested. Search results may be incomplete until "
-            f"it finishes. Afterward, run {check_command} to verify "
-            "your exclusions."
-        )
+        rebuild_index(check_command)
         return 0
     # Let the service process new operations before checking search results
     if missing or removals:
@@ -362,6 +383,9 @@ def main():
             "No index rebuild or service restart was performed.",
             file=sys.stderr
         )
+        if confirm_rebuild():
+            rebuild_index(check_command)
+            return 0
         return 1
     return 0
 
