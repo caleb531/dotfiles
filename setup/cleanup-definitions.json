@@ -56,5 +56,43 @@
   {
     "description": "Delete Codex CLI logs",
     "path": "~/.codex/logs_2.sqlite*"
+  },
+  {
+    "description": "Empty home Trash",
+    "cleanup_command": "/usr/bin/find \"$HOME/.Trash\" -mindepth 1 -maxdepth 1 -exec /bin/rm -rf {} +",
+    "filesize_command": "du -sk \"$HOME/.Trash\" | awk '{print $1}' | numfmt --from-unit=1024 --to=si --suffix=B"
+  },
+  {
+    "description": "Delete npm download cache",
+    "path": "~/.npm/_cacache"
+  },
+  {
+    "description": "Delete additional npm cache",
+    "path": "~/.cache/npm"
+  },
+  {
+    "description": "Delete Teams cache",
+    "path": "~/Library/Containers/com.microsoft.teams2/Data/Library/Caches/*",
+    "app": "Microsoft Teams"
+  },
+  {
+    "description": "Delete VS Code web cache",
+    "path": "~/Library/Application Support/Code/Cache/*",
+    "app": "Visual Studio Code"
+  },
+  {
+    "description": "Delete VS Code compiled code cache",
+    "path": "~/Library/Application Support/Code/CachedData/*",
+    "app": "Visual Studio Code"
+  },
+  {
+    "description": "Delete VS Code extension download cache",
+    "path": "~/Library/Application Support/Code/CachedExtensionVSIXs/*",
+    "app": "Visual Studio Code"
+  },
+  {
+    "description": "Delete Slack service worker cache",
+    "path": "~/Library/Application Support/Slack/Service Worker/CacheStorage/*",
+    "app": "Slack"
   }
 ]
