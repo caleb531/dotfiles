@@ -63,7 +63,7 @@ BASH_COMMAND = ("/bin/bash", "-o", "pipefail", "-c")
 DEFAULT_WORKER_COUNT = 4
 
 # Accepted command size split into a numeric amount and alphabetic units
-SIZE_PATTERN = re.compile(r"^([0-9]+(?:\.[0-9]+)?)([A-Za-z]+)$")
+SIZE_PATTERN = re.compile(r"^([0-9]+(?:\.[0-9]+)?)\s*([A-Za-z]+)$")
 
 # Decimal and binary unit multipliers used to normalize command-reported sizes
 SIZE_MULTIPLIERS = {
@@ -373,14 +373,14 @@ def allocated_size(path: str, seen_inodes: set[tuple[int, int]]) -> int:
     return size
 
 
-# Formats a byte count with decimal units matching GNU numfmt output
-def format_size(size: int) -> str:
+# Format a byte count with whole numbers and spaced decimal units
+def format_size(size: Union[int, Decimal]) -> str:
     # Scaled numeric amount for the unit currently under consideration
-    amount = float(size)
+    amount = Decimal(size)
     # Decimal storage unit selected from smallest to largest
     for unit in ("B", "kB", "MB", "GB", "TB", "PB"):
         if amount < 1000 or unit == "PB":
-            return f"{amount:.1f}{unit}"
+            return f"{amount:.0f} {unit}"
         amount /= 1000
     raise AssertionError("unreachable")
 
@@ -432,7 +432,7 @@ def measure_command_cleanup(cleanup: CommandCleanup) -> Optional[tuple[str, Deci
         return None
     # Exact byte equivalent retained independently from the displayed value
     size_bytes = Decimal(size_match.group(1)) * multiplier
-    return lines[0], size_bytes
+    return format_size(size_bytes), size_bytes
 
 
 # Measures a cleanup and builds its sortable selection metadata
