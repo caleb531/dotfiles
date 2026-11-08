@@ -360,7 +360,12 @@ def main():
         spotlight.set_excluded(path, True)
         if path not in spotlight.exclusions():
             raise RuntimeError(f"Spotlight didn't register the exclusion: {path}")
-        print(f"Excluded: {path}", flush=True)
+        # The user's home folder and a shorter path for the status message
+        home = os.path.expanduser("~")
+        display_path = path
+        if path == home or path.startswith(home + "/"):
+            display_path = "~" + path[len(home):]
+        print(f"Excluded: {display_path}", flush=True)
     # Add the desired children before removing an old parent exclusion
     for path in removals:
         spotlight.set_excluded(path, False)
