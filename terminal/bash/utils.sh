@@ -18,7 +18,7 @@ __is_node_project() {
 
 
 # Return code 0 if the current working directory is a Python project that uses
-# the 'build' package
+# a build backend
 __is_python_build_project() {
 	if cat pyproject.toml | grep -Fq '[build-backend]' &> /dev/null; then
 		return 1
