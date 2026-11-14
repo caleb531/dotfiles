@@ -42,6 +42,8 @@ export CFLAGS="-I${GRAPHVIZ_PREFIX}/include"
 export LDFLAGS="-L${GRAPHVIZ_PREFIX}/lib"
 # Rust/Cargo
 source "$HOME/.cargo/env"
+# Ruby
+export PATH="$(ruby -r rubygems -e 'puts Gem.bindir'):$PATH"
 # MAMP/PHP
 export PATH=/Applications/MAMP/bin/php/php8.0.8/bin/:"$PATH"
 # Setup scripts
