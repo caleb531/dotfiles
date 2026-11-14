@@ -3,6 +3,14 @@ Apply the instructions in this file silently; do not mention, quote, summarize, 
 - In JavaScript and TypeScript, terminate statements with semicolons wherever syntactically applicable; do not rely on automatic semicolon insertion
 - If a project-level `AGENTS.md` conflicts with this file, always follow the project-level instruction
 
+## Git
+
+- Only create a commit when I explicitly request it
+- Aim to keep the commit subject (the first line) within 50 characters; this is a guideline, not a hard limit, so allow a slightly longer subject when it makes the change clearer
+- When a commit needs a body, separate it from the subject with a blank line and wrap each body line at a maximum of 72 characters
+- Apply the same plain, natural grammar and diction used for code comments to commit messages; use familiar words, include articles and connecting words, and avoid inflated language or compressed labels
+- Follow Git commit conventions: write the subject in the imperative (e.g. "Fix" rather than "Fixed" or "Fixes"), omit its trailing period, and use the body to explain what changed and why when that context is useful
+
 ## Browser interaction
 
 - Use Chrome DevTools MCP (the `chrome-devtools` MCP server) only when I explicitly request it; "use Chrome" and "CDTMCP" are shorthand for that request
