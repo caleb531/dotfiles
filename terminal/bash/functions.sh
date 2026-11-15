@@ -388,7 +388,7 @@ ssd() {
 # The base URL for all Jira ticket URLs
 export JIRA_BASE_TICKET_URL='https://revvy-modeln.atlassian.net/browse/'
 
-# Create a pull request on Bitbucket, GitHub, or Azure DevOps
+# Create a pull or merge request on Bitbucket, GitHub, GitLab, or Azure DevOps
 pr() {
 	local target_branch_name="$1"
 	if [ -z "$target_branch_name" ]; then
@@ -430,6 +430,12 @@ pr() {
 		# GitHub
 		local repo_url="${repo_url//git@github.com/https:\/\/github.com}"
 		local pr_url="${repo_url}/compare/$target_branch_name...${source_branch_name}?title=${pr_default_title}"
+	elif [[ "$repo_url" == https://gitlab.com/* || "$repo_url" == git@gitlab.com:* || "$repo_url" == ssh://git@gitlab.com/* ]]; then
+		# Convert GitLab SSH remotes to their browser URL
+		repo_url="${repo_url/#git@gitlab.com:/https:\/\/gitlab.com\/}"
+		repo_url="${repo_url/#ssh:\/\/git@gitlab.com\//https:\/\/gitlab.com\/}"
+		# The GitLab merge request creation URL
+		local pr_url="${repo_url}/-/merge_requests/new?merge_request[source_branch]=${source_branch_name}&merge_request[target_branch]=${target_branch_name}&merge_request[title]=${pr_default_title}"
 	elif [[ "$repo_url" == https://*.visualstudio.com/* || "$repo_url" == git@vs-ssh.visualstudio.com:v3/* ]]; then
 		# Convert legacy Azure SSH remotes to their browser URL; HTTPS remotes pass through
 		repo_url="$(echo "$repo_url" | sed -E 's#^git@vs-ssh\.visualstudio\.com:v3/([^/]+)/([^/]+)/(.+)$#https://\1.visualstudio.com/\2/_git/\3#')"
