@@ -16,6 +16,12 @@ conversationDetailMode = "STEPS_COMMANDS"
 ambient-suggestions-enabled = false
 followUpQueueMode = "queue"
 
+[tui]
+# Show model, usage limit, remaining context, and project in the footer
+status_line = ["model-with-reasoning", "five-hour-limit", "context-remaining", "project-name"]
+# Use the saved session directory when resuming or forking a session
+resume_cwd = "session"
+
 [features]
 # Prevent system from sleeping while agent is running an active task
 prevent_idle_sleep = true
@@ -73,6 +79,10 @@ approval_mode = "approve"
 
 # Allow Chrome DevTools to inspect network requests
 [mcp_servers.chrome-devtools.tools.get_network_request]
+approval_mode = "approve"
+
+# Allow Chrome DevTools to run Lighthouse audits
+[mcp_servers.chrome-devtools.tools.lighthouse_audit]
 approval_mode = "approve"
 
 # Allow Chrome DevTools to close a page
