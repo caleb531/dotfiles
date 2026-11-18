@@ -49,7 +49,11 @@
 
 [log]
 	# Set a more human-readable default date format for git log
-	date = format:%a %b %-d, %Y @ %-I:%M %p
+    date = format:%a %b %-d, %Y @ %-I:%M %p
+
+[format]
+	# Append relative date to date format
+    pretty = format:%C(yellow)commit %H%C(auto)%d%Creset%nAuthor: %an <%ae>%nDate:   %ad (%ar)%n%n%w(0,4,4)%B
 
 # Set pleasant colors for diffs
 [color "diff-highlight"]
