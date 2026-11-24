@@ -482,9 +482,12 @@ int() {
 # A variant of the above int function which does not check out the original
 # branch upon successful completion
 intn() {
+	# The integration status to return after clearing the checkout flag
+	local int_status=0
 	INT_DISABLE_CHECKOUT_ORIG_BRANCH=1
-	__int "$@"
+	__int "$@" || int_status=$?
 	INT_DISABLE_CHECKOUT_ORIG_BRANCH=''
+	return "$int_status"
 }
 
 # Basically `uv version`, but also auto-commits and auto-tags the release
