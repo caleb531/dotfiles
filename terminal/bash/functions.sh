@@ -449,11 +449,10 @@ pr() {
 	fi
 }
 
-# Integrate changes by merging them into a target branch (default: main) and
-# then switching back to the original branch; if there is an error at any point
-# along the way (e.g. merge conflicts), the function will stop in its place and
-# allow you to resolve; when you are ready to continue, you can simply run the
-# `int` command again
+# Merge and push changes to a target branch (default: main), then switch back to
+# the original branch; if you name the target branch, you can pass a command to
+# run after the push and before switching back; if a step fails, the function
+# stops in place so you can fix the issue and run `int` again
 __int() {
 	# If the last run of the `int` command completed successfully, then store
 	# the original branch name until all steps of the integration process have
@@ -465,6 +464,10 @@ __int() {
 	git pull || return $?
 	git merge "$INT_ORIG_BRANCH" || return $?
 	git push || return $?
+	# Run the optional command with the arguments as passed to `int` or `intn`
+	if [[ -n "${1:-}" && $# -gt 1 ]]; then
+		"${@:2}" || return $?
+	fi
 	if [ -z "$INT_DISABLE_CHECKOUT_ORIG_BRANCH" ]; then
 		git checkout "$INT_ORIG_BRANCH" || return $?
 	fi
