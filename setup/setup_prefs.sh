@@ -175,6 +175,10 @@ echo "- Always show menu bar"
 defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -bool true
 defaults write com.apple.controlcenter AutoHideMenuBarOption -int 3
 
+echo "- Fix lingering tooltips for certain apps"
+defaults write org.herf.Flux NSInitialToolTipDelay -int 100000
+defaults write com.microsoft.OneDrive NSInitialToolTipDelay -int 100000
+
 echo "Setting miscellaneous preferences..."
 
 echo "- Enable Safari Develop menu and Web Inspector"
@@ -201,3 +205,6 @@ defaults write com.stairways.keyboardmaestro.engine MaxClipboardHistory -int 0
 
 echo "Restarting affected processes..."
 killall Dock Finder SystemUIServer
+osascript -e 'quit app "Flux"'
+sleep 1
+open -a Flux 2> /dev/null
